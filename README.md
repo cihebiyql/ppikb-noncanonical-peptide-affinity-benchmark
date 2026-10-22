@@ -46,7 +46,7 @@ PPIKB原始v5工作簿与许可元数据见[datasets/PPIKB-v5](datasets/PPIKB-v5
 ## 获取完整内容
 
 ```bash
-git clone https://github.com/cihebiyql/ppikb-noncanonical-peptide-affinity-benchmark.git
+git clone -c core.longpaths=true -c core.autocrlf=false https://github.com/cihebiyql/ppikb-noncanonical-peptide-affinity-benchmark.git
 cd ppikb-noncanonical-peptide-affinity-benchmark
 python scripts/restore_artifacts.py
 python scripts/restore_upstream.py
