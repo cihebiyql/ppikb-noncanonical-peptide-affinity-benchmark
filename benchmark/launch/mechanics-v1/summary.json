@@ -1,0 +1,40 @@
+{
+  "scope": "real short subprocess mechanics only; no model training, GPU or holdout use",
+  "host": "cihebi",
+  "python": "/root/.venvs/peptide-omnipanel-v31-web311-20260723/bin/python",
+  "at": "2026-10-21T16:48:07.157060+00:00",
+  "pid": 676545,
+  "pgid": 676545,
+  "cases": [
+    {
+      "name": "success",
+      "actual_status": "complete",
+      "receipt": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/mechanics-v1/success.receipt.json"
+    },
+    {
+      "name": "failure",
+      "actual_status": "RuntimeError('failure exited 7')",
+      "receipt": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/mechanics-v1/failure.receipt.json"
+    },
+    {
+      "name": "deadline",
+      "actual_status": "TimeoutError('Original unit deadline reached; supervisor owns entire PGID watchdog')",
+      "receipt": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/mechanics-v1/deadline.receipt.json"
+    }
+  ],
+  "scientific_fits": 0,
+  "files": {
+    "deadline.receipt.json": "07da4a3ca60b04090e6bd09ecf73e02771a2ed64cd35555075b319f26cef8e7c",
+    "deadline.started.json": "fd55e3b56f427a0fb446b44a347bf7d88bd3e0087e52ac7c86de126ec23f2c08",
+    "deadline.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "deadline.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "failure.receipt.json": "d6eca0463798bb7f315a03b77b7f691cc9ce5ab2ba18d70feaef30c74676d239",
+    "failure.started.json": "eed128cb8ed0b5017fed75056bea21298181b6c4a81721617ea81e90babc6818",
+    "failure.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "failure.stdout.log": "5235ebe739e658fddf75fecec61cebab2eac21bf6295d67184e5dad76636217b",
+    "success.receipt.json": "2d6c84d2744bd12bad6b9ff828e81489552eda355e123bc95f1b60cb418c6fb2",
+    "success.started.json": "cfa3cbbea65253de525eb70bc65cf780d445299a721b790b882423a75b8f927c",
+    "success.stderr.log": "e2475597f32de7ddf6d5af3c47ab3aec389effd11bc7d43fcf58d9ee1cdf8e15",
+    "success.stdout.log": "10435378ee241e7fbc5c023f6884fa99ab77847da575cff9a790a2aec0cdc409"
+  }
+}

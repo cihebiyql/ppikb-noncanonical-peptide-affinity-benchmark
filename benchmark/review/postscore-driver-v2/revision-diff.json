@@ -1,0 +1,37 @@
+{
+  "source_original_sha256": "2cde66976c4909135402839dd4feb01235ccdb6d0cbfdbe679d03a1f8e677952",
+  "source_revision_sha256": "b872642908589bb617872aff2ff062174d0831533dde6b52f0865b88f26f4c9d",
+  "exact_replacements": [
+    {
+      "before": "def execute(inputs, explicit):",
+      "after": "def reuse_nn_audit(inputs, nn_map):\n    previous_failure = bound(inputs['prior_failed_pipeline'])\n    if previous_failure['status'] != 'failed_preserved_no_retry' or previous_failure['source_issuance'] != inputs['issuance']:\n        raise ValueError('Explicit original failed-pipeline provenance required')\n    completed = {s['name']: s['exit_code'] for s in previous_failure['completed_steps']}\n    if completed.get('02-NN600-independent') != 0 or completed.get('03-RF120-independent') != 1:\n        raise ValueError('Only the documented RF metadata failure can be resumed')\n    if bound(inputs['prior_NN_task_map']) != read(nn_map['path']):\n        raise ValueError('Previously audited NN600 task mapping changed')\n    files = inputs['prior_NN_audit_files']\n    if set(files) != {'independent-audit-manifest.json', 'independent-matched-target-ten-seed-summary.json', 'independent-ten-seed-summary.json', 'per-score-audit.json'}:\n        raise ValueError('Bind all four completed independent NN audit artifacts')\n    for name, entry in files.items():\n        if path(entry['path']).name != name:\n            raise ValueError('NN audit file identity differs')\n        bound(entry)\n    root = path(files['independent-audit-manifest.json']['path']).parent\n    if any(path(e['path']).parent != root for e in files.values()):\n        raise ValueError('NN artifacts must come from one actual completed audit')\n    check = bound(files['independent-audit-manifest.json'])\n    if check['evaluator_sha256'] != sha(REVIEW / 'recompute_metrics.py') or check['real_score_tasks_audited'] != 600 or not check['complete600_scores_265800_rows'] or check['metric_difference_count'] != 0 or check['all_predictions_true_labels_match'] is not True:\n        raise ValueError('Original NN600 audit incomplete or source changed')\n    return root, check\n\n\ndef execute(inputs, explicit):"
+    },
+    {
+      "before": "script_sha256=sha(REVIEW / 'recompute_RF_v5.py')",
+      "after": "script_sha256=sha(REVIEW / 'rf-subgroup-audit-recovery-v1/recompute_RF_v6.py')"
+    },
+    {
+      "before": "        numeric('02-NN600-independent', 'recompute_metrics.py', ['--selection-barrier', path(nn_ref['path']), '--barrier-sha256', nn_ref['sha256'], '--task-map', nn_map['path'],\n            '--matched-target-manifest', REVIEW / 'matched-target-diagnostics-v1/manifest.json', '--matched-target-manifest-sha256', sha(REVIEW / 'matched-target-diagnostics-v1/manifest.json'), '--output', out / 'NN-audit', '--audit-authorized-after-freeze'])\n        nn_check = read(out / 'NN-audit/independent-audit-manifest.json')",
+      "after": "        nn_audit_root, nn_check = reuse_nn_audit(inputs, nn_map)\n        save('reused-complete-NN600-audit.json', dict(original_files=inputs['prior_NN_audit_files'], original_map=inputs['prior_NN_task_map'], previous_failed_pipeline=inputs['prior_failed_pipeline'], numeric_recomputation_repeated=False))"
+    },
+    {
+      "before": "numeric('03-RF120-independent', 'recompute_RF_v5.py'",
+      "after": "numeric('03-RF120-independent', 'rf-subgroup-audit-recovery-v1/recompute_RF_v6.py'"
+    },
+    {
+      "before": "ref(out / 'NN-audit/independent-audit-manifest.json')",
+      "after": "ref(nn_audit_root / 'independent-audit-manifest.json')"
+    },
+    {
+      "before": "ref(out / 'NN-audit/per-score-audit.json')",
+      "after": "ref(nn_audit_root / 'per-score-audit.json')"
+    },
+    {
+      "before": "driver_freeze=inputs['driver_freeze'], root_explicit_driver_authorization=True,",
+      "after": "driver_freeze=inputs['driver_freeze'], root_explicit_driver_authorization=True, prior_failed_pipeline=inputs['prior_failed_pipeline'], reused_prior_NN_audit_files=inputs['prior_NN_audit_files'], RF_subgroup_audit_recovery_freeze=inputs['RF_subgroup_audit_recovery_freeze'],"
+    }
+  ],
+  "original_sources_modified": false,
+  "numerical_functions_modified": false,
+  "training_scoring_or_parameter_selection_called": false
+}

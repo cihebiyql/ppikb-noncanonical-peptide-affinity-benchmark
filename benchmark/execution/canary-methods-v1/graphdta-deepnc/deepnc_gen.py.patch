@@ -1,0 +1,11 @@
+--- D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\model-audit\author-source\thntran__DeepNC\source\models\gen.py
++++ vendor/deepnc_gen.py
+@@ -7,7 +7,7 @@
+ class GEN(torch.nn.Module):
+     def __init__(self, n_output=1, n_filters=32, embed_dim=128,num_features_xd=78, num_features_xt=25, output_dim=128, dropout=0.2):
+ 
+-        super(GEN_Conv, self).__init__()
++        super(GEN, self).__init__()
+ 
+         # SMILES graph branch
+         self.n_output = n_output

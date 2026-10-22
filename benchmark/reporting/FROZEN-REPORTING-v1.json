@@ -1,0 +1,28 @@
+{
+  "status": "frozen_preparation_ready_no_actual_result_read",
+  "utc": "2026-10-21T19:14:20.723348+00:00",
+  "python": "3.11.9",
+  "source_sha256": {
+    "report_builder.py": "e3a579bf86956745e0a882ea85ceb7267e04e290238cc17b7e0573446e4ea586",
+    "report-spec-v1.json": "6966516ef011530ad249bfd079c1e9e56d7e72ec91bcc78fa0d5dc3140154cd6",
+    "FIELD-MAPPING.md": "04d072fb4fe38cad356641561a2d1fa1c08eefa58bdb80a9abe47b2fdf92d006",
+    "README.md": "02598368a7279f663d27fa058c3415c6480da6dabafd3b2ecaa209094f8b4825"
+  },
+  "support_sha256": {
+    "test_reporting.py": "f2ae0df47cd9083d2418aa1dbae2b686dc63b07604f72a14925dec4fe8d99211",
+    "synthetic-tests.log": "3c6d4deace33db8b00c18290ab47b5082cc793db8206f026be38535716e03016",
+    "authorization-template.json": "74e96564d57cf25029351ff41d69c644603fd5c486219488b22bf4c9e04cbc6c",
+    "preparation-read-audit.json": "fc3aecb9aca834a3122aa629cd7b852a71fe3371a92bcf390255f052949b0fcc"
+  },
+  "synthetic_tests": {
+    "passed": 18,
+    "scope": "temporary artificial metric records, artificial root/joint metadata, no scientific labels or model calls"
+  },
+  "template_receipt_sha256": "53afcedd665ba7762c44861c0bd5b2afa1d51e8fd7faf9110ef89d37f9c3f7ee",
+  "CLI": "python report_builder.py actual --authorization AUTH --audited-manifest MANIFEST --joint-barrier JOINT --output OUTPUT",
+  "actual_gate": "root_final_scientific_report_authorized + source/metric/auditedmanifest/joint hashes + NN200/RF40 + approved v5 recovery index + deadline",
+  "schema_source": "review/combine_audit_tables_v5.py",
+  "actual_report_generation_authorized_in_this_task": false,
+  "dependencies": "Python standard library only",
+  "ownership_returned_to_root": true
+}

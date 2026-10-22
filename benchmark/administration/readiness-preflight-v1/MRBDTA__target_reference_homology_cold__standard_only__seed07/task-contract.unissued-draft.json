@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.0",
+  "record_type": "task_contract",
+  "is_template": true,
+  "task_id": null,
+  "run_id": "MRBDTA__target_reference_homology_cold__standard_only__seed07",
+  "contract_status": "draft",
+  "created_at": "2026-10-21T16:20:37.151064+00:00",
+  "frozen_at": null,
+  "revision": 1,
+  "previous_contract_sha256": null,
+  "revision_reason": null,
+  "identity": {
+    "title": "Predicting drug–target binding affinity through molecule representation block based on multi-head attention and skip connection",
+    "doi": "10.1093/bib/bbac468",
+    "publication_status": "version_of_record_fulltext",
+    "first_online_date": "2022-10-31",
+    "journal": null,
+    "paper_type": "published_method_article",
+    "pdf": {
+      "path": null,
+      "sha256": null,
+      "version": "missing",
+      "source_url": null
+    },
+    "primary_document": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\MRBDTA-official.html",
+      "sha256": "a99b79d2876afd8199ea9e3ff782e0d1c5c386db4dd6b8b4bde2a8b003483a55",
+      "format": "publisher_fulltext_html",
+      "source_url": "https://oup.silverchair-cdn.com/article-minimal/6782838",
+      "identity_doi_verified": true
+    },
+    "related_versions": [],
+    "eligibility": {
+      "scope": "Prior published model transferred to the newly authorized NC2099 affinity benchmark",
+      "assessment": "allowed_for_scoped_model_comparison",
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json"
+      ]
+    },
+    "missing_pdf_note": "Genuine HTML/XML primary article is verified and retained; it is not renamed or represented as a PDF. Central validator PDF-only gate requires an explicit authoritative compatibility decision."
+  },
+  "execution_scope": {
+    "objective": "PPIKB noncanonical peptide–protein Kd benchmark with standard-residue controls; stratified non-natural/PTM evaluation",
+    "authorization_reference": "Latest direct user instruction: PPIKB 2099 noncanonical Kd candidates, standard controls, separate non-natural and PTM evaluation, strict splits, independent external validation, at least five predecessor papers, all ten seeds, no novel model.",
+    "relation_to_prior_run": "New direct-user-authorized scientific target: common NC2099 plus standard-residue controls, not a continuation or deadline reset of legacy3354/11250/legacy62 runs. Root must attach matching historic task/run IDs once registered. Existing expired clocks/restrictions remain intact.",
+    "prior_run_ids": [],
+    "safety_assessment": "pending",
+    "scope_coverage": "partial_subset",
+    "intended_level": "training",
+    "excluded_claims": [
+      "No novel model",
+      "No claim to reproduce original paper tables on the changed dataset",
+      "No PepLand or PepLand-derived binding input"
+    ],
+    "restriction_check": {
+      "prior_platform_restriction": false,
+      "reason": "This scoped benchmark excludes PepLand, Twin Peaks, previously denied primary-source unit investigations, sequence design/optimization and metadata-only train exclusions. Old restricted work is not restarted.",
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json"
+      ]
+    }
+  },
+  "timing": {
+    "first_substantive_started_at": "2026-10-21T15:59:53+00:00",
+    "earliest_associated_preparation_at": null,
+    "wall_clock_cap_hours": 10,
+    "original_deadline_at": "2026-10-22T01:59:53+00:00",
+    "additional_deadlines_at": [
+      "2026-10-22T01:45:00+00:00"
+    ],
+    "effective_deadline_at": "2026-10-22T01:45:00+00:00",
+    "prior_window_expired": false,
+    "retry_resets_clock": false,
+    "timing_evidence_paths": [
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\resources\\live-probe.json"
+    ],
+    "clock_notes": "15:59:53Z is first persisted campaign clock as provided by leader; early skill reading may precede this. Conservative hard cutoff01:45Z applies to all papers/panels/seeds. prior_window_expired=false describes the newly authorized scope only; no historical expired task is revived."
+  },
+  "assets": {
+    "datasets": [
+      {
+        "name": "PPIKB_NC2099_standard7520_Kd_model_view",
+        "version": "prepared_model_view_pending_frozen_v1_adoption",
+        "source_url": "https://www.nature.com/articles/s41597-026-07962-1",
+        "license": null,
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\model-observations.jsonl",
+        "manifest_sha256": "47b8e1c210e470649e0a256710eccece6ca443d5c8ce8c14e1d83bc68d647905",
+        "sample_count": 9619,
+        "statistical_unit": "original measurement record; dependent records grouped in the frozen partition",
+        "splits": {
+          "train": null,
+          "validation": null,
+          "test": null,
+          "split_manifest_sha256": null
+        },
+        "preprocessing": "Full raw isomeric SMILES and reference protein sequence; no peptide atom cap; same original pKd, no value repair; residue strata audit metadata excluded as model features",
+        "leakage_check": {
+          "status": "pending_frozen_v1",
+          "method": "target_reference_homology_cold",
+          "evidence_paths": [
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json"
+          ]
+        },
+        "integrity": "partial",
+        "notes": "Full roster9619 =NC2099+standard7520. Final split manifest/partition counts and hashes pending. This is not a frozen split claim."
+      }
+    ],
+    "code": [
+      {
+        "role": "primary_author_source",
+        "source_url": "https://github.com/LiZhang30/MRBDTA",
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source",
+        "commit": "e338dd2f3aa55a09ba8b82c1ee5e79dc3aaab95c",
+        "archive_sha256": null,
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0",
+          "url": "https://api.github.com/licenses/apache-2.0",
+          "node_id": "MDc6TGljZW5zZTI="
+        },
+        "checkout_status": "frozen_selected_author_source",
+        "submodules_lfs": "Not asserted complete; selected source tree and manifest retained",
+        "dependency_lock_path": null,
+        "integrity": "partial",
+        "patch_path": null,
+        "evidence_paths": [
+          "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\manifest.json",
+          "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json"
+        ],
+        "notes": "Selected author implementation used through isolated adapter. Default active drug vocabulary excludes @ / and backslash; author isomeric vocabulary is commented and must explicitly be selected | Author vocabSize=62 used by Embedding although tokens1..62, so maxindex requires +1; likewise target1..25 needs26 | Author LayerNorm constructed inside forward with cuda(); CPU requires device-aware compatibility change recorded in diff; avoid hidden structural rewrite | Author positional embedding max5000; full peptide SMILES/protein >5000 need predeclared coverage/block policy; no silent truncation | Authors sum across padded positions; preserve native behavior, batch padding policies affect comparability | Quadratic self-attention on long peptide SMILES; bounded batch1/2 and fixed length contract needed | AUTHOR SOURCE BATCH1 BUG: pooled drug/target .squeeze() removes batch dimension for B=1; preserve batch dimension via narrow compatibility fix and test final singleton batch | Full peptide isomeric SMILES and author alternate vocabulary are a predeclared input configuration adaptation; cannot claim original85/100-character source input fidelity. | Native vocabulary upper-index/device/singleton compatibility issues must retain diff; architecture remains published molecule-representation blocks."
+      }
+    ],
+    "models": [
+      {
+        "name": "MRBDTA",
+        "version": "from_scratch_author_architecture_adapted_input",
+        "source_url": "https://github.com/LiZhang30/MRBDTA",
+        "path": null,
+        "sha256": null,
+        "configuration_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "configuration_sha256": "432b12241d6fff021c24bae93222d2da30927f84272b5e21e57214e7464748e6",
+        "coverage": "NC2099+standard control candidates; exact frozen per-panel/train scope pending",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0",
+          "url": "https://api.github.com/licenses/apache-2.0",
+          "node_id": "MDc6TGljZW5zZTI="
+        },
+        "integrity": "not_applicable",
+        "evidence_paths": [
+          "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json"
+        ],
+        "notes": "No pretrained or prior-task supervised weights loaded; checkpoints are outputs of the planned training rather than missing input weights."
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "pKd_MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "PPIKB_NC2099_standard7520",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd)); stratified and whole-test denominators retained",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": null,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json"
+      ]
+    }
+  ],
+  "environment": {
+    "isolation": "Existing Node23 task-specific virtual environment, no shared-environment change",
+    "environment_path": "/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/.venv",
+    "lockfile_path": null,
+    "lockfile_sha256": null,
+    "runtime_versions": {},
+    "numerical_policy": {
+      "author_entrypoint_evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json"
+      ],
+      "parameter_dtype": "float32",
+      "input_dtype": "float32 graph features and int64 token/edge indices",
+      "autocast": false,
+      "float32_matmul_precision": null,
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false,
+      "determinism": "torch.use_deterministic_algorithms(True,warn_only=True); seeds Python/NumPy/Torch; CPU; exact policy probe pending",
+      "applied_before_model_instantiation": true,
+      "actual_policy_receipt_path": null,
+      "notes": "Known from new execution/runner.py; executable environment snapshot and numerical receipt still required before freeze."
+    },
+    "shared_environment_modified": false
+  },
+  "resources": {
+    "expected_hostname": "node23",
+    "cpu_threads": 1,
+    "data_loader_workers": 0,
+    "memory_limit_bytes": 6442450944,
+    "gpu_devices": [],
+    "gpu_memory_budget_bytes": null,
+    "resource_probe_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\resources\\live-probe.json",
+    "resource_probe_at": "2026-10-22T00:00:13.0200723+08:00",
+    "start_gate": "Pending task-specific execution-time Node23 probe; maximum16 simultaneous CPU1 fits,6GiB each,pool96GiB; no GPU; no preemption",
+    "budget_basis": "Leader proposal based on real Node23 capacity probe; not yet an execution launch gate",
+    "no_preemption": true
+  },
+  "execution": {
+    "command": null,
+    "working_directory": null,
+    "seed_policy": "One model-fit seed per run; frozen split and all hyperparameter-search candidates retained; seeds 0–9 all reported",
+    "seeds": [
+      7
+    ],
+    "timeout_seconds": null,
+    "process_control": {
+      "platform": "Linux",
+      "mechanism": "Pending root process-group or cgroup bounded pool supervisor",
+      "whole_tree_bounded": null
+    },
+    "stdout_path": null,
+    "stderr_path": null
+  },
+  "stop_conditions": [
+    "达到有效截止",
+    "达到合同资源上限",
+    "执行范围超出合同",
+    "出现平台拒绝或缺少适用授权"
+  ],
+  "review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "checks": [],
+    "evidence_paths": []
+  },
+  "benchmark_metadata": {
+    "schema": "peptide-binding.nc-benchmark.plan.v1",
+    "method_id": "MRBDTA",
+    "split_id": "target_reference_homology_cold",
+    "regime_id": "standard_only",
+    "seed": 7,
+    "training_regime": {
+      "regime_id": "standard_only",
+      "train_scope": "standard_only",
+      "validation_scope": "same_as_regime",
+      "selection": "lowest validation MAE by epoch and LR; ties lower candidate index",
+      "candidates": [
+        {
+          "learning_rate": 0.001,
+          "weight_decay": 0.0
+        },
+        {
+          "learning_rate": 0.0003,
+          "weight_decay": 0.0
+        }
+      ],
+      "max_epochs": 30,
+      "patience": 5,
+      "holdout_scope": "all retained test records, mutually exclusive chemistry strata plus608 annotation-discordance sensitivity flags; score only after selection frozen"
+    },
+    "input_encoding_audit": {
+      "status": "verified",
+      "non_natural_residue_supported": true,
+      "PTM_supported": true,
+      "mixed_supported": true,
+      "peptide_sequence_projection_used": false,
+      "chemical_information_loss": "Author isomeric SMILES alternative vocabulary selected; compatibility fixes disclosed.",
+      "unrecognized_tokens_handling": "Block with explicit failed coverage; no silent standard-AA substitution",
+      "protein_prefix_length": null,
+      "full_peptide_smiles_no_cap": true,
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json"
+      ]
+    },
+    "evaluation_strata": [
+      "synthetic_D_backbone",
+      "PTM",
+      "synthetic_and_PTM",
+      "other_NC",
+      "standard20_control"
+    ],
+    "test_used_for_selection": false,
+    "external_used_for_selection": false
+  },
+  "administrative_blocker_note": "Candidate evaluated with real facts but not issued as a frozen contract; see central-validator-report.json. No bypass or execution performed."
+}

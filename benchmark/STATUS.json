@@ -1,0 +1,128 @@
+{
+  "project": "PPIKB NC affinity five-prior-method benchmark",
+  "updated_at": "2026-10-21T20:15:48.902716+00:00",
+  "phase": "training_and_validation_selection",
+  "methods": [
+    "GraphDTA-GIN",
+    "MGraphDTA",
+    "DGDTA-CL",
+    "DeepNC-GEN",
+    "GS-DTA"
+  ],
+  "NC_records": 2099,
+  "standard_control_records": 7520,
+  "panels": [
+    "source_peptide_dependency_cold",
+    "target_reference_homology_cold"
+  ],
+  "regimes": [
+    "NC_only",
+    "standard_only"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "hyperparameters": [
+    {
+      "learning_rate": 0.001,
+      "weight_decay": 0.0
+    },
+    {
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0
+    }
+  ],
+  "candidate_fits_complete": 296,
+  "candidate_fits_expected": 400,
+  "selected_units": 147,
+  "selected_units_expected": 200,
+  "failed_candidate_records": [],
+  "per_method": {
+    "GraphDTA-GIN": {
+      "candidate_fits_complete": 60,
+      "units_selected": 30,
+      "expected_fits": 80,
+      "expected_units": 40
+    },
+    "MGraphDTA": {
+      "candidate_fits_complete": 59,
+      "units_selected": 29,
+      "expected_fits": 80,
+      "expected_units": 40
+    },
+    "DGDTA-CL": {
+      "candidate_fits_complete": 60,
+      "units_selected": 30,
+      "expected_fits": 80,
+      "expected_units": 40
+    },
+    "DeepNC-GEN": {
+      "candidate_fits_complete": 59,
+      "units_selected": 29,
+      "expected_fits": 80,
+      "expected_units": 40
+    },
+    "GS-DTA": {
+      "candidate_fits_complete": 58,
+      "units_selected": 29,
+      "expected_fits": 80,
+      "expected_units": 40
+    }
+  },
+  "pools": [
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/pool-runs-v4-integration-five/progress.json",
+      "status": "complete",
+      "at": "2026-10-21T17:06:29.941173+00:00",
+      "active": [],
+      "complete_count": 5,
+      "failed_count": 0,
+      "pending": 0
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/pool-runs-v4-nc-all-seeds/progress.json",
+      "status": "stopped",
+      "at": "2026-10-21T18:09:43.880395+00:00",
+      "active": [],
+      "complete_count": 86,
+      "failed_count": 1,
+      "pending": 13
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/pool-runs-v5-all-recovery/progress.json",
+      "status": "running",
+      "at": "2026-10-21T20:15:48.288340+00:00",
+      "active": [
+        "MGraphDTA__target_reference_homology_cold__standard_only__seed04",
+        "DeepNC-GEN__target_reference_homology_cold__standard_only__seed04"
+      ],
+      "complete_count": 147,
+      "failed_count": 0,
+      "pending": 51
+    }
+  ],
+  "all_selections_frozen": false,
+  "test_scoring_started": false,
+  "raw_sources_preserved": true,
+  "novel_models": 0,
+  "PepLand_excluded": true,
+  "external_prepared_records": {
+    "PTM_source_and_chemical_cold": 75,
+    "PTM_primary": 67,
+    "PTM_conditional_sensitivity": 8,
+    "synthetic_D_backbone_supplementary_reference_view": 8,
+    "standard_supplementary_reference_view": 5
+  },
+  "external_generalization_limit": "PTM75 has2 reference-target-cold cases. Supplement13 uses related single heavy-chain reference for a whole2H2L antibody; no family-cold or actual construct claim.",
+  "hard_deadline": "2026-10-22T01:45:00+00:00",
+  "full_training_completed": false
+}

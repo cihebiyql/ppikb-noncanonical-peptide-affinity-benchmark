@@ -1,0 +1,66 @@
+{
+  "schema_version": "protein-design-resource-probe.v1",
+  "catalog_schema_version": "protein-design-resource-catalog.v1",
+  "probe_started_at": "2026-10-22T01:30:00.0592331+08:00",
+  "generated_at": "2026-10-22T01:30:07.6891138+08:00",
+  "duration_ms": 7630,
+  "read_only": true,
+  "interpretation": "Generic probes establish reachability and raw capacity only. Ready, busy, or degraded require a task contract and task-specific checks.",
+  "results": [
+    {
+      "resource_id": "node23",
+      "label": "node23 direct CPU and overflow node",
+      "probe_started_at": "2026-10-22T01:30:00.0606621+08:00",
+      "probe_completed_at": "2026-10-22T01:30:07.6870209+08:00",
+      "transport_reachable": true,
+      "reachable": true,
+      "runtime_availability": "reachable",
+      "readiness_requires_task_contract": true,
+      "observed_hostname": "node23",
+      "identity_matches_catalog": true,
+      "identity_error": null,
+      "identity": {
+        "command": "hostname; id -un; date -Is; uname -srmo",
+        "started_at": "2026-10-22T01:30:00.0640495+08:00",
+        "completed_at": "2026-10-22T01:30:01.1521093+08:00",
+        "exit_code": 0,
+        "duration_ms": 1088,
+        "output": "node23\r\nqlyu\r\n2026-10-22T01:30:07+08:00\r\nLinux 6.8.0-136-generic x86_64 GNU/Linux"
+      },
+      "capacity": {
+        "command": "uptime; nproc; free -h; df -hT / /data /data1 2>/dev/null || true",
+        "started_at": "2026-10-22T01:30:01.1801372+08:00",
+        "completed_at": "2026-10-22T01:30:02.1971141+08:00",
+        "exit_code": 0,
+        "duration_ms": 1017,
+        "output": "01:30:08 up 74 days, 16:11,  1 user,  load average: 2.13, 2.19, 2.88\r\n64\r\n               total        used        free      shared  buff/cache   available\r\nMem:           125Gi       4.3Gi        36Gi       9.0Mi        84Gi       120Gi\r\nSwap:          2.0Gi       2.0Gi       5.0Mi\r\nFilesystem       Type  Size  Used Avail Use% Mounted on\r\n/dev/sda3        ext4  549G  123G  398G  24% /\r\n10.0.0.131:/data nfs4   73T   66T  7.3T  91% /data"
+      },
+      "gpu": {
+        "command": "if command -v nvidia-smi >/dev/null 2>&1; then nvidia-smi --query-gpu=index,name,driver_version,memory.used,memory.total,utilization.gpu,temperature.gpu --format=csv,noheader,nounits; else echo NO_NVIDIA_SMI; fi",
+        "started_at": "2026-10-22T01:30:02.1979257+08:00",
+        "completed_at": "2026-10-22T01:30:03.8037492+08:00",
+        "exit_code": 0,
+        "duration_ms": 1606,
+        "output": "NO_NVIDIA_SMI"
+      },
+      "gpu_processes": {
+        "command": "if command -v nvidia-smi >/dev/null 2>&1; then nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_memory --format=csv,noheader,nounits 2>/dev/null || true; else echo NO_NVIDIA_SMI; fi",
+        "started_at": "2026-10-22T01:30:03.8043339+08:00",
+        "completed_at": "2026-10-22T01:30:05.7277489+08:00",
+        "exit_code": 0,
+        "duration_ms": 1923,
+        "output": "NO_NVIDIA_SMI"
+      },
+      "scheduler": null,
+      "checked_path": {
+        "command": "target='/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/evaluation'\nif test -e \"$target\"; then\n  probe=\"$target\"\n  echo PATH_PRESENT\nelse\n  probe=\"$target\"\n  while ! test -e \"$probe\"; do\n    parent=$(dirname -- \"$probe\")\n    if test \"$parent\" = \"$probe\"; then break; fi\n    probe=\"$parent\"\n  done\n  echo PATH_MISSING_CHECKING_PARENT\n  echo NEAREST_EXISTING_PARENT=\"$probe\"\nfi\nif test -e \"$probe\"; then\n  if test -w \"$probe\"; then echo PATH_OR_PARENT_WRITABLE; else echo PATH_OR_PARENT_NOT_WRITABLE; fi\n  echo RESOLVED_PATH=\"$(readlink -f -- \"$probe\")\"\n  findmnt -T \"$probe\" -no TARGET,SOURCE,FSTYPE,OPTIONS 2>/dev/null || true\n  df -hT \"$probe\" 2>/dev/null || true\nfi",
+        "started_at": "2026-10-22T01:30:05.7346659+08:00",
+        "completed_at": "2026-10-22T01:30:07.6867271+08:00",
+        "exit_code": 0,
+        "duration_ms": 1952,
+        "output": "PATH_MISSING_CHECKING_PARENT\r\nNEAREST_EXISTING_PARENT=/data/qlyu/projects/peptide-binding-nc-benchmark-20261021\r\nPATH_OR_PARENT_WRITABLE\r\nRESOLVED_PATH=/data/qlyu/projects/peptide-binding-nc-benchmark-20261021\r\n/data  10.0.0.131:/data nfs4   rw,relatime,vers=4.2,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.0.23,local_lock=none,addr=10.0.0.131\r\nFilesystem       Type  Size  Used Avail Use% Mounted on\r\n10.0.0.131:/data nfs4   73T   66T  7.3T  91% /data"
+      },
+      "tool_path_checks": []
+    }
+  ]
+}

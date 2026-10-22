@@ -1,0 +1,583 @@
+Luo et al. BMC Genomics    (2025) 26:105                                                                                                                BMC Genomics
+https://doi.org/10.1186/s12864-025-11234-4
+
+
+
+
+ RESEARCH                                                                                                                                                Open Access
+
+GS‑DTA: integrating graph and sequence
+models for predicting drug‑target binding
+affinity
+Junwei Luo1, Ziguang Zhu1, Zhenhan Xu1, Chuanle Xiao3, Jingjing Wei2 and Jiquan Shen1,2*
+
+
+
+  Abstract
+  Background Drug-target binding affinity (DTA) prediction is vital in drug discovery and repositioning, more
+  and more researchers are beginning to focus on this. Many effective methods have been proposed. However, some
+  current methods have certain shortcomings in focusing on important nodes in drug molecular graphs and dealing
+  with complex structural molecules. In particular, when considering important nodes and complex substructures
+  in molecules, they may not be able to fully explore the potential relationships between different parts. In addition,
+  when dealing with protein structures, some methods ignore the connections between amino acid fragments that are
+  far apart in sequence but may work synergistically in function.
+  Results In this paper, we propose a new method, called GS-DTA, for predicting DTA based on graph and sequence
+  models. GS-DTA takes simplified molecular input line input system (SMILES) of the drug and the protein amino acid
+  sequence as input. First, each drug is modeled as a graph, in which a vertex is an atom and an edge represents
+  interaction between atoms. Then GATv2-GCN and the three-layer GCN networks are used to extract the features
+  of the drug. GATv2-GCN enhances the model’s ability to focus on important nodes by assigning dynamic attention
+  scores, which improves the learning of the graph structure’s intricate patterns. Besides, The three-layer GCN can cap-
+  tures hierarchical features of the drug through deeper propagation and feature transformation. Meanwhile, for each
+  protein, a framework combining CNN, Bi-LSTM, and Transformer is used to extract the contextual and structural
+  information of the protein amino acid sequences, and this combination can help to understand a comprehensive
+  and detailed features of the protein. Finally, the obtained drug and protein feature vectors are combined to predict
+  DTA through the fully connected layer. The source code can be downloaded from https://​github.​com/​zhuzi​guang/​
+  GS-​DTA.
+  Conclusions The results show that GS-DTA achieves good performance in terms of MSE, CI, and ­r2m on the Davis
+  and KIBA datasets, improving the accuracy of DTA prediction.
+  Keywords Drug-target binding affinity, Graph neural networks, Transformer
+
+
+                                                                                          Background
+*Correspondence:                                                                          Drug-target interaction (DTI) prediction is vital in drug
+Jiquan Shen                                                                               discovery and repositioning [1–3] because only drugs
+sjq@hpu.edu.cn
+1
+  School of Software, Henan Polytechnic University, Jiaozuo 454000, China                 and targets with similar molecular structures are com-
+2
+  College of Chemical and Environmental Engineering, Anyang Institute                     patible. Unlike DTI prediction methods based on binary
+of Technology, Anyang 455000, China                                                       classification tasks [4, 5], Drug-target binding affin-
+3
+  State Key Laboratory of Ophthalmology, Zhongshan Ophthalmic Center,
+Sun Yat-Sen University, Guangzhou 510060, China                                           ity (DTA) refers to the binding strength between drug
+                                                                                          and their target proteins, a regression task [6, 7]. DTA
+
+                                         © The Author(s) 2025. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
+                                         International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long
+                                         as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if
+                                         you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or
+                                         parts of it. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated
+                                         otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not
+                                         permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To
+                                         view a copy of this licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by-​nc-​nd/4.​0/.
+Luo et al. BMC Genomics   (2025) 26:105                                                                                               Page 2 of 10
+
+
+
+
+prediction provides important information and data sup-                  proposes a bidirectional attention mechanism to encode
+port for DTI prediction [8, 9], helping to determine pos-                the binding strength between each protein structure and
+sible interactions between drugs and potential targets,                  drug substructure. Although sequence-based methods
+thereby guiding the prediction and research of drug-tar-                 have achieved good results in DTA prediction, there is a
+get interactions, so accurate prediction and measurement                 risk of losing molecular structure information. CSatDTA
+of DTA is crucial in the drug discovery and development                  [16] uses a convolution-based self-attention mechanism
+process. For this reason, more and more researchers are                  to analyze drug and target sequences. With the continu-
+focusing on the research of DTA prediction.                              ous development of graph neural networks (GNN) [17,
+  Recently, multiple computational approaches for pre-                   18], many researchers adopt GNN models to predict DTA
+dicting DTA have been proposed. SimBoost [10] is a                       in order to retain as much molecular structure informa-
+technique that uses gradient-enhanced supervised learn-                  tion as possible. Utilizing multiple graph convolutional
+ing methods to predict DTA. In the KronRLS [11] model,                   layers (MGNN) and a multiscale convolutional neural
+the Kronecker products of drug and target pairs are gen-                 network (MCNN), MGraphDTA [19] captures multi-
+erated to compute the kernel K for these drug and protein                scale features of drug and target. DeepGLSTM [20] uses
+pairs, which is then used in a regularized least-squares                 three GCN blocks to learn the topological information of
+regression model (RLS) to predict binding affinity.                      drug. DGraphDTA [21] first converts protein sequences
+  With the development of deep learning [12], some deep                  into contact graphs and then processes them into protein
+learning-based methods for predicting DTA have been                      graphs. After this, the protein graph and the drug mol-
+proposed. Some prediction methods are summarized in                      ecule graph are sent to the GNN to predict DTA. Com-
+Table 1. DeepDTA [7] introduces a new method to pre-                     pared to traditional methods based on one-dimensional
+dict drug-target binding affinity using deep learning,                   protein sequences, 2D graph structures can provide more
+which only requires sequence information of proteins and                 structural information about proteins and demonstrate
+drugs. Through convolutional neural networks (CNN),                      significant advantages in DTA prediction. GraphDTA [6]
+DeepDTA extracts features from the raw sequence data                     uses various GNN variant models to extract drug feature
+of proteins and drugs and uses fully connected layers to                 representations, improving the prediction effectiveness
+predict DTA. WideDTA [13] is designed based on Deep-                     of DTA. OdinDTA [22] integrates a mutual attention
+DTA and used the same architecture as DeepDTA, But                       mechanism and a pre-trained protein model with a con-
+the difference is that this method combines four different               ventional three-channel prediction framework. DGDTA
+text information: Ligand SMILES, Ligand Max Common                       [23] proposes a method that combines a dynamic graph
+Substructure, Protein Sequence, and Protein Motifs and                   attention network with a bidirectional long short-term
+Domains. The results show that the added textual infor-                  memory network to predict DTA. GDilatedDTA [24]
+mation helps the model achieve better results. DeepCDA                   proposes a DTA prediction model based on graph dila-
+[14] combines CNN and LSTM [15] to achieve bet-                          tion convolution strategy, which uses a weight matrix
+ter representation of drug and protein features. It also                 to enhance the interpretability of the binding process
+
+
+Table 1 Predcition methods
+Method             Published year Model                                 Summary
+
+SimBoost           2016            Gradient boosting regression trees   The binding affinity problem of compounds and proteins is considered
+                                                                        as a continuous value prediction problem rather than a binary classifica-
+                                                                        tion problem
+DeepDTA            2018            CNN                                  Using Convolutional Neural Networks to Process 1D Representations
+                                                                        of Protein and Drug Sequences
+WideDTA            2019            CNN                                  This method integrates four distinct textual information sources pertaining
+                                                                        to proteins and ligands
+DeepCDA            2020            CNN + LSTM                           Convolutional networks and LSTM layers are combined into a unified
+                                                                        framework to effectively encode local and global temporal patterns
+GraphDTA           2021            GCN + CNN                            Using a variety of graph neural networks
+DeepGLSTM          2022            GCN + BiLSTM                         Three GCN blocks are used to learn the topological information of drug
+                                                                        molecules, and BiLSTM is used to learn the representation of protein
+                                                                        sequences
+GdilatedDTA        2024            McGEN + MLRCN + BiLSTM               Predicting drug affinity using a graph-based dilated convolution strategy
+AttentionMGT-DTA 2024              GraphTransformer + Cross-Attention Two attention mechanisms are adopted to integrate and interact informa-
+                                                                      tion between different protein patterns and drug target pairs
+Luo et al. BMC Genomics   (2025) 26:105                                                                           Page 3 of 10
+
+
+
+
+between drugs and targets. AttentionMGT-DTA [25]               long-range dependencies, Transformer uses a attention
+constructs a protein pocket graph based on the Alpha-          mechanism that allows it to incorporate global information,
+Fold database to represent the target protein, and intro-      enabling the model to understand how distant positions
+duces a joint-attention mechanism to generate affinity         in the sequence may contribute to the protein’s functional
+results for the matrix interacting with atom-residue.          regions. By combining these three networks, the model is
+  However, there are still some problems that affect           able to extract features from protein sequences at multiple
+accurate DTA prediction. (1) Some current methods              levels, including local, contextual, and global, resulting in
+may focus more on local information and relatively less        a more comprehensive representation. GS-DTA combines
+on global information in drug feature extraction. This         multiple network models to complement the weaknesses of
+strategy, although effective, may miss some important          a single network, reduce the deviation caused by a single
+features in the global context when dealing with the com-      model, and improve the robustness and generalization abil-
+plex structure of drugs. (2) Some current methods may          ity of the overall model.
+fail to fully capture the complex structural and functional
+information of proteins.                                       Datasets
+  To solve the above problems, this paper proposes a           In our study, we utilized two widely recognized benchmark
+method called GS-DTA. In GS-DTA, we designed and               datasets, Davis [26] and KIBA [27], to both train and evalu-
+implemented a hybrid graph neural network model com-           ate the performance of GS-DTA. These datasets, which are
+bining GATv2, GCN, and three-layer GCN to compre-              publicly accessible, serve as established standards for DTA
+hensively extract the features of drug. By using multi-layer   prediction. The Davis dataset contains 442 proteins and 72
+GCN, nodes can obtain more extensive neighborhood              drugs, measured by Kd values, and a total of 30,056 interac-
+information, thereby extracting different levels of infor-     tions between drugs and targets. The KIBA dataset com-
+mation in the molecular structure, which helps the model       prises 229 proteins, 2116 drugs, and 118,254 drug-target
+identify complex molecular features. The GATv2 net-            interactions [6].
+work introduces an attention mechanism, which enables            In the benchmark setting, each dataset is divided into
+the model to dynamically focus on important nodes and          several parts, where one part is reserved for testing, and
+edges in the drug molecule graph, making feature extrac-       other parts are used for training. This paper conducts tests
+tion more selective and targeted. GCN focuses on acquir-       on these two data sets to comprehensively evaluate the pre-
+ing global information in molecular structure, while GATv2     dictive power of GS-DTA. The details of these two datasets
+can supplement the limitations of GCN. The combination         are shown in Table 2.
+of the two enhances the robustness of the model, mak-
+ing it more adaptable and generalizable when facing mol-       Methods
+ecules with different structures. In addition, Proteins        GS-DTA uses the SMILES of drug and protein sequences
+are composed of amino acids linked together by peptide         to predict DTA. The architecture of GS-DTA is shown in
+bonds, forming a polypeptide chain whose sequence deter-       Fig. 1. The overall framework consists of three main steps:
+mines the protein’s function. Within the protein sequence,     (1) Extracting drug features; The SMILES of drug are con-
+there are crucial features such as ligand-binding sites and    verted into a drug molecular graph, and a hybrid graph
+the chemical properties of amino acids, which tend to be       neural network is used to extract drug features. (2) Extract-
+concentrated in localized regions. Convolutional neural        ing protein features; By using a convolutional neural net-
+networks (CNNs) are particularly effective at identifying      work (CNN), a Bidirectional long short-term memory
+these local features, allowing the model to quickly cap-       network (Bi-LSTM), and a Transformer [28] module, we
+ture important information in the sequence. However,           consider the local and global information between amino
+the functionality of some amino acids depends not only         acid sequences to extract important features. (3) Perform-
+on their immediate surroundings but also on the residues       ing DTA prediction; the drug and protein features are con-
+before and after them in the sequence. Since CNNs do           nected and input into the fully connected layer for DTA
+not inherently account for the sequence order or depend-       prediction.
+encies between adjacent amino acids, Bidirectional Long
+Short-Term Memory (BiLSTM) comes in to model these
+contextual dependencies, offering a deeper understand-
+ing of how adjacent amino acids influence each other’s         Table 2 Datasets
+function. Moreover, in protein structures, distant amino       Dataset   Proteins   Compounds   Interactions   Train    Test
+acid residues can sometimes be spatially close, interact-
+ing synergistically and impacting the drug-binding affinity.   Davis     442        72          30,056         25,046   5010
+Because CNN and BiLSTM are limited in capturing these          KIBA      229        2116        118,254        98,545   19,709
+Luo et al. BMC Genomics    (2025) 26:105     Page 4 of 10
+
+
+
+
+ Fig. 1 The architecture diagram of GS-DTA
+Luo et al. BMC Genomics   (2025) 26:105                                                                                                                                                                   Page 5 of 10
+
+
+
+
+Extracting drug features                                                                                       hi
+                                                                                                                  (0)
+                                                                                                                        = one − hot(Featuer)                                                                      (1)
+SMILES is a string representation used to depict molec-
+ular structures, it is a linear encoding method based on                                              In the above formula, Feature represents the atom
+atoms and bonds that can concisely represent the chemi-                                             type, atomic degree, atomic implicit valence, and atomic
+cal molecular structure, including atom types, connec-                                              aromaticity.
+tions between atoms, and the topology of the molecule.                                                After initializing the node features, update the node fea-
+This representation applies to most biological macromol-                                            tures through the attention mechanism of GATv2:
+ecules such as proteins, peptides, and nucleic acids.
+  SMILES can effectively represent important informa-                                                             (1)                                (1)                 (0)
+tion about drug. Through the SMILES representation,                                                            hi       =σ                        αij W (1) hj                                                    (2)
+the molecule’s atoms, bonds, and topological structure                                                                                j∈N (i)
+can be described, thereby facilitating the storage, trans-
+                                                                                                      The attention coefficient αij(1) is calculated in the follow-
+mission, and processing of chemical information. How-
+                                                                                                    ing way:
+ever, using SMILES may cause the following problems:
+(1) SMILES is a linear string representation. Although it
+                                                                                                                                                           
+                                                                                                          (1)                                 (0)        (0)
+                                                                                                         eij = LeakyReLU a(1)T W (1) hi ||W (1) hj               (3)
+can represent the molecular structure, it easily ignores
+the topological information of the molecule. (2) For a
+long SMILES sequences, specific structural features may
+                                                                                                                                        
+                                                                                                                                         (1)
+                                                                                                                                   exp eij
+be difficult to interpret intuitively. To solve the above                                                         (1)
+                                                                                                               αij =
+problems, this paper converts the SMILES of drug into
+                                                                                                                                          
+                                                                                                                                             (1)                                                                  (4)
+                                                                                                                                      exp eik
+graphs. Moreover, GNN can propagate information                                                                                k∈N (i)
+between nodes, capture long-range dependencies and
+                                                                                                      W(1) is the trainable weight matrix, a(1) is the parameter
+local information within molecules, and enhance the
+                                                                                                    vector of the attention mechanism, and || represents the
+richness and robustness of feature representation.
+                                                                                                    connection operation of the vector. According to the calcu-
+  In this paper, GS-DTA uses the SMILES of drug as
+                                                                                                    lated attention coefficient, the above features are weighted
+input, and then uses RDKit [28, 29] to build a graph for
+                                                                                                    and summed:
+each drug. For each drug, we construct a graph G(V, E),
+V is the set of vertices in the graph, each vertex refers to                                                                     
+an atom. E is the set of edges in the graph, and each edge                                                 (1)
+                                                                                                                      �
+                                                                                                         hi ′ = σ        αij Whj                           (5)
+represents the chemical bond between atoms. The fea-                                                                                   j∈Ni
+tures of a vertex include a variety of properties, such as
+atomic symbols, atomic degrees, the number of hydrogen                                              h(1)
+                                                                                                      i
+                                                                                                         ′ is the new feature output by GATv2 for each node i,
+
+atoms around the atoms, atomic implicit valence, and                                                and σ is the activation function. To further improve the
+atomic aromaticity. Table 3 lists the drug characteristics                                          expression ability of the model, the attention mechanism
+in detail.                                                                                          is expanded to a multi-head attention mechanism.
+  First, a vertex is represented as v = {f1, f2, f3, f4, f5}.                                                                                  
+                                                                                                                           K �
+Among them, f1-f5 represent the one-hot encoding vec-                                                        (1)        1 �        (k)      (0)
+tor of atom type, atom degree, atom implicit valence and                                                   hi ′′ = σ            αij W (k) hj            (6)
+                                                                                                                       K
+atom aromatic respectively. Then the characteristics of                                                                                        k=1 j∈Ni
+
+each drug H = {v1, v2, v3…, vn} are obtained.
+
+
+
+
+Table 3 The atom features for drug graph representation
+Feature                                   Description                                                                                                                                                     Dimension
+
+Atom type                                 ‘C’, ‘N’, ‘O’, ‘S’, ‘F’, ‘Si’, ‘P’, ‘CL’, ‘Br’, ‘Mg’, ‘Na’, ‘Ca’, ‘Fe’, ‘As’, ‘Al’, ‘I’, ‘B’, ‘V’, ‘K’, ‘Tl’, ‘Yb’, ‘Sb’, ‘Sn’, ‘Ag’, ‘Pd’, ‘Co’, ‘Se’, ‘Ti’,   44
+                                          ‘Zn’, ‘H’, ‘Li’, ‘Ge’, ‘Cu’, ‘Au’, ‘Ni’, ‘Cd’, ‘In’, ‘Mn’, ‘Zr’, ‘Cr’, ‘Pt’, ‘Hg’, ‘Pb’, ‘Unknown’
+Atom degree                               0,1,2,3,4,5,6,7,8,9,10                                                                                                                                          11
+Atom total num H                          0,1,2,3,4,5,6,7,8,9,10                                                                                                                                          11
+Atom implicit valence                     0,1,2,3,4,5,6,7,8,9,10                                                                                                                                          11
+Atom is aromatic                          0 or 1                                                                                                                                                          1
+total                                                                                                                                                                                                     78
+Luo et al. BMC Genomics      (2025) 26:105                                                                                                    Page 6 of 10
+
+
+
+
+where K is the number of attention heads, αij(k) is the                          The Calculation of attention weight:
+attention coefficient of the k-th head, and W(k) is the                                                                           T 
+                                                                                                                 Query(i) · Key(i)
+                                                                                                                           
+weight matrix of the k-th head.                                                     Attention(i) = Softmax                             · Value(i)   (13)
+                                                                                                                           dk
+
+                                                                                 Merger of multiple heads’ attention:
+Extracting protein features
+Protein sequences are usually represented by a string                               headi = Attention(i) · WiO                                       (14)
+of letters, each letter corresponding to a specific amino
+acid. Some previous studies (DeepDTA, DeepCDA,                                   Output features:
+etc.) usually use protein sequences as input to the                                                                                                
+model. These studies used a 1D convolutional layer to                               Z (l) = LayerNorm Concat(head1 , head2 , ..., headh ) · W O + H
+
+extract valuable features from protein sequences.                                                                                   (15)
+  In this paper, we convert each amino acid into a                               Among them, H is the output feature sequence of Bi-
+numerical value, representing the protein as a sequence                        LSTM, Z (l)is the output feature sequence of Transformer,
+of integers. We apply an embedding layer to this                               WQ, WK, WV, WO, is the weight matrix, dk is the dimen-
+sequence, where each amino acid is represented by a                            sion of Key, and h is the number of attention heads.
+128-dimensional vector. For training, the sequences
+are standardized to a fixed length of 1000; shorter                            Performing DTA prediction
+sequences are padded with zeros to reach this length.                          The above-learned drug vector and protein vector are
+First, CNN is used to initially extract protein features,                      connected and sent to the fully connected layer to obtain
+and pooling operations are used to improve the gener-                          the final DTA prediction value y:
+alization ability of the model. Using P to represent the
+protein features extracted by the CNN network and a                                 y = Woutput [D, P] + boutput                                     (16)
+bidirectional long short-term memory network (Bi-
+                                                                               where Woutput represents the weight matrix of the fully
+LSTM) is used to further extract features:
+                                                                               connected layer, boutput represent the bias of the fully con-
+     −
+     →                                                                         nected layer.
+     ht = LSTMforward (Pt , ht−1 )                                       (7)
+                                                                               Experiment and results
+     −
+     ←                                                                         Experimental settings
+     ht = LSTMbackward (Pt , ht+1 )                                      (8)
+                                                                               The data sets used in the experiment include Davis data-
+          → ←
+         −    −                                                              set and KIBA dataset. GS-DTA takes drug SMILES and
+     ht = ht ; ht                                                        (9)   amino acid sequence as input. This article uses Python
+                                                                               3.7.12, PyTorch1.13 and PyG2.3.1 to implement dynamic
+ht-1 and ht+1 represent the hidden state at time steps t-1                     GAT, LSTM and Transformer. In this paper, dropout is
+and t + 1 respectively. H = [h1, h2, h3, …, hn], H represents                  set to 0.2. Then, the proposed method was trained on the
+the vector composition of Bi-LSTM module output.                               above dataset for 1000 epochs and used the Adam opti-
+  Based on the features extracted by Bi-LSTM, we                               mizer with a learning rate of 0.0005. The device used for
+adopt Transformer to dynamically assign different                              the experiment was Intel(R) Xeon(R) Gold 6330 CPU
+weights to each feature through its attention mecha-                           @2.00 GHz and NVIDIA GeForce RTX 4090GPU.The
+nism, allowing the model to automatically focus on the                         best settings of hyperparameter optimization are pre-
+most informative parts of the sequence, thereby further                        sented in Table 4.
+extracting useful features:
+                                                                             Evaluation metrics
+     Z = LayerNorm H + MultiHeadSelfAttention(H ) + FeedForward(H )
+                                                                               We assess regression tasks using the three evaluation met-
+                                                                       (10)
+                                                                               rics: mean squared error (MSE), concordance index (CI),
+     MultiHeadSelfAttention(H ) = Concat(head1 , head2 , ..., headh ) · W O    and ­rm2 index.
+                                                     (11)                        The mean-square error (MSE) is a measure that reflects
+  For each attention head i, the calculation process is as                     the degree of difference between the model’s predicted
+follows:                                                                       value and the true value. The smaller the value, the better.
+  The Calculation of Query, Key, and Value:                                    The calculation method is detailed in Eq. 17.
+     Query(i) = H · W Q , Key(i) = H · W K , Value(i) = H · W V        (12)
+Luo et al. BMC Genomics        (2025) 26:105                                                                        Page 7 of 10
+
+
+
+
+Table 4 The setting of hyperparameters                               the results confirm that the data predicted by GS-DTA
+Hyperparameters                                           Setting
+                                                                     is very close to the real values of the Davis and KIBA
+                                                                     datasets.
+Number of transformer layers                              2
+Number of attention heads                                 4          Performance comparison
+Dropout rate of transformer                               0.2        In this section, Table 5 shows the experimental results of
+Learning rate                                             0.0005     GS-DTA and other methods. The evaluation metric val-
+Batch size                                                512        ues of other methods are extracted from their published
+Epoch                                                     1000       papers. To be consistent with the ablation experiments
+                                                                     in 3.4.3, we use the same dataset and evaluation metrics.
+                                                                     As shown in Table 5 on the Davis dataset and the Kiba
+                       n                                             dataset, GS-DTA is better than most other methods in
+                  1  ∧      2
+        MSE =          yi −yi                                 (17)   CI, MSE, and ­rm2 indicators. GS-DTA ranks first in CI
+                  n                                                  and ­r2m on the Davis dataset, and ranks first in CI and
+                       i=1
+                                                                     MSE on the KIBA dataset. Although it fails to rank first
+  The concordance index (CI) evaluates the discriminative            in MSE on the Davis dataset and ­r2m on the KIBA data-
+performance of different models. The CI value closer to 1            set, it ranks second. The experimental results prove the
+indicates a better fit of the model. Equation 18 shows the           effectiveness of GS-DTA.
+calculation method.
+                1                                                 Ablation study
+      CI =             ϕ bi − bj                              (18)
+                Z σ >σ                                               In our ablation experiments, we demonstrate the efficacy
+                   i    j
+                                                                     of GS-DTA. To ensure fairness, we selected identical
+  The ­rm2 index is utilized in DeepGLSTM, serves as an              training and test datasets, as well as evaluation metrics.
+evaluation metric for regression tasks. Equation 19 outlines         GS-DTA uses GATV2 combined with GCN and three-
+the calculation procedure.                                           layer GCN for drug processing, while combining CNN,
+                                                                   Bi-LSTM and Transformer to extract features from pro-
+                                                                     tein amino acid sequences to improve model accuracy.
+                       
+      2
+     rm = r 2 × 1 − r 2 − r02                           (19)
+                                                                     Bi-LSTM and Transformer represent two widely used
+                                                                     neural network architectures for sequence data analysis.
+Where the squares of the correlation coefficients with               Bi-LSTM effectively captures long-term dependencies
+and without the intercept are denoted as r­2 and ­ r02,              within sequences, mitigating issues such as vanishing or
+respectively.                                                        exploding gradients encountered in traditional RNNs.
+                                                                     Transformer, employs a attention mechanism, facilitating
+Results                                                              direct modeling of dependencies between any two posi-
+Comparison of the predicted and real values                          tions in a sequence, regardless of sequence length.
+In this section, we compare the predicted and real val-                This parallel processing capability enables efficient
+ues of the Davis and KIBA datasets. As shown in Fig. 2,              handling of long sequences, with the added benefit of
+
+
+
+
+ Fig. 2 Comparison of predicted values with true values
+Luo et al. BMC Genomics    (2025) 26:105                                                                              Page 8 of 10
+
+
+
+
+Table 5 Comparison result based on the Davis and KIBA dataset      effectively addressed, thereby enhancing the performance
+Dataset      Methods                   CI          MSE     r2m
+                                                                   and efficacy of sequence data processing. To verify the
+                                                                   effectiveness of the model, we reduce the network one
+Davis        KronRLS                   0.871       0.379   0.407   by one and conduct detailed ablation experiments, which
+             SimBoost                  0.872       0.282   0.644   are listed in Table 6
+             DeepDTA                   0.878       0.261   0.631      The ablation experiment results show that GS-DTA
+             DeepCDA                   0.891       0.248   0.652   achieved good results on both the Davis dataset and the
+             GraphDTA(GAT)             0.892       0.232   0.689   KIBA dataset. On the Davis dataset, the CI, MSE, and r­ 2m
+             GraphDTA(GAT-GCN)         0.881       0.245   0.667   of GS-DTA reached 0.903, 0.213, and 0.709; on the KIBA
+             DeepGLSTM                 0.893       0.236   0.679   dataset, the CI, MSE, and r­ 2m of GS-DTA reached 0.905,
+             GdilatedDTA               0.885       0.237   0.686   0.124, and 0.806. Although the MSE on the Davis dataset
+             AttentionMGT-DTA          0.891       0.193   0.699   is 0.3% lower than that of model 1, r­ 2m is 0.1% lower than
+             DGDTA-CL                  0.889       0.237   0.672   model 3 on the KIBA dataset. GS-DTA still has the best
+             DGDTA-AL                  0.899       0.225   0.707   results from an overall perspective. The ablation experi-
+             GS-DTA                    0.903       0.213   0.709   ment results prove the effectiveness of the model pro-
+KIBA         KronRLS                   0.782       0.411   0.342   posed in this paper.
+             SimBoost                  0.836       0.222   0.629
+             DeepDTA                   0.863       0.194   0.673   Discussion
+             DeepCDA                   0.889       0.176   0.682   This study introduces GS-DTA, which integrates a
+             GraphDTA(GAT)             0.866       0.179   0.738   hybrid graph neural network model to extract drug
+             GraphDTA(GAT-GCN)         0.891       0.139   0.789   features and a network model that combines CNN, Bi-
+             DeepGLSTM                 0.890       0.143   0.789   LSTM, and Transformer to extract protein features.
+             GdilatedDTA               0.876       0.156   0.775   Compared with other models, our model better consid-
+             AttentionMGT-DTA          0.893       0.140   0.786   ers both local and global information when extracting
+             DGDTA-CL                  0.902       0.125   0.809   drug and protein features, and obtains richer protein
+             DGDTA-AL                  0.881       0.162   0.762   and drug features. Besides, When extracting features,
+             GS-DTA                    0.905       0.124   0.806   the model automatically identifies molecular features
+                                                                   or protein domains that are highly correlated with
+                                                                   binding affinity. These regions “noticed” by the model
+capturing various levels of feature representation through         may play a key role in targeted drug design. In addi-
+stacked Transformer layers. By combining LSTM and                  tion, We conducted ablation experiments on Davis and
+Transformer, we synergistically harness their respective           KIBA datasets and compared the proposed method
+strengths: LSTM excels at capturing long-term depend-              with some other DTA models. The results demonstrate
+encies, while Transformer’s parallel processing and self-          the effectiveness of GS-DTA.
+attention mechanisms enable comprehensive modeling                   In the context of drug development, GS-DTA’s
+of positional dependencies. This integration ensures that          approach has the potential to significantly accelerate
+both long-term dependencies and local intricacies are              the drug discovery process by reducing the need for
+
+
+
+Table 6 Ablation study on the Davis and KIBA dataset
+Dataset       Methods         GATv2-GCN        3 × GCN      CNN       BiLSTM      Transformer      CI         MSE           r2m
+
+Davis         Model-1         √                -            √         √           √                0.900      0.210         0.708
+              Model-2         √                √            √         √           -                0.892      0.224         0.674
+              Model-3         √                √            √         -           √                0.901      0.215         0.670
+              Model-4         √                √            -         √           √                0.900      0.212         0.708
+              GS-DTA          √                √            √         √           √                0.903      0.213         0.709
+KIBA          Model-1         √                -            √         √           √                0.899      0.125         0.793
+              Model-2         √                √            √         √           -                0.901      0.126         0.796
+              Model-3         √                √            √         -           √                0.904      0.124         0.807
+              Model-4         √                √            -         √           √                0.896      0.137         0.797
+              GS-DTA          √                √            √         √           √                0.905      0.124         0.806
+Luo et al. BMC Genomics        (2025) 26:105                                                                                                        Page 9 of 10
+
+
+
+
+costly and time-consuming experimental screenings.                               Competing interests
+                                                                                 The authors declare no competing interests.
+By enabling efficient predictions of drug-target bind-
+ing affinity, this model aids in early-stage drug develop-
+ment by quickly identifying promising candidate drugs                            Received: 14 August 2024 Accepted: 10 January 2025
+with favorable interaction profiles. In the future, we will
+also focus on other areas that can help drug develop-
+ment, such as drug synergy prediction [9], drug-drug
+interactions, etc.                                                               References
+                                                                                 1. Hughes JP, Rees S, Kalindjian SB, et al. Principles of early drug discovery. Br
+                                                                                     J Pharmacol. 2011;162(6):1239–49.
+                                                                                 2. Leelananda SP, Lindert S. Computational methods in drug discovery.
+                                                                                     Beilstein J Org Chem. 2016;12(1):2694–718.
+Conclusions                                                                      3. Strittmatter SM. Overcoming drug development bottlenecks with repur-
+Although GS-DTA has achieved good performance                                        posing: old drugs learn new tricks. Nat Med. 2014;20(6):590–1.
+in predicting DTA by considering both global and                                 4. Chu Y, Shan X, Chen T, et al. DTI-MLCD: predicting drug-target interactions
+                                                                                     using multi-label learning with community detection method. Briefings
+local information of drug and protein features, it also
+                                                                                     in bioinformatics. 2021;22(3):bbaa205.
+has some limitations. First, the fusion of hybrid graph                          5. Weng Y, Lin C, Zeng X, et al. Drug target interaction prediction using
+neural networks increases the model complexity and                                   multi-task learning and co-attention[C]//2019 IEEE International Confer-
+                                                                                     ence on Bioinformatics and Biomedicine (BIBM). IEEE. 2019:528–533.
+training overhead; Second, the structural informa-
+                                                                                 6. Nguyen T, Le H, Quinn TP, et al. GraphDTA: predicting drug–target binding
+tion of proteins is important for predicting DTA, GS-                                affinity with graph neural networks. Bioinformatics. 2021;37(8):1140–7.
+DTA only consider one-dimensional protein sequences                              7. Öztürk H, Özgür A, Ozkirimli E. DeepDTA: deep drug–target binding affin-
+                                                                                     ity prediction. Bioinformatics. 2018;34(17):i821–9.
+for extracting features. In the future, we will focus on
+                                                                                 8. Dehghan A , Abbasi K , Razzaghi P ,et al.CCL-DTI: contributing the con-
+other dimensions of protein information and further                                  trastive loss in drug–target interaction prediction. BMC Bioinformatics.
+enhance the features by combining data from different                                2024;25(1). https://​doi.​org/​10.​1186/​s12859-​024-​05671-3.
+                                                                                 9. Rafiei F, Zeraati H, Abbasi K, et al. CFSSynergy: combining feature-based
+dimensions.
+                                                                                     and similarity-based methods for drug synergy prediction. J Chem Inf
+                                                                                     Model. 2024;64(7):2577–85.
+Abbreviations
+                                                                                 10. He T, Heidemeyer M, Ban F, et al. SimBoost: a read-across approach
+GS-DTA	Graph and Sequence DTA
+                                                                                     for predicting drug–target binding affinities using gradient boosting
+DTA	Drug–target binding affinity
+                                                                                     machines. Journal of cheminformatics. 2017;9:1–14.
+GAT​	Graph attention network
+                                                                                 11. Cichonska A, Pahikkala T, Szedmak S, et al. Learning with multiple
+GCN	Graph convolutional network
+                                                                                     pairwise kernels for drug bioactivity prediction. Bioinformatics.
+Bi-LSTM	Bidirectional long short-term memory
+                                                                                     2018;34(13):i509–18.
+SMILES	Simplified molecular input line entry system
+                                                                                 12. Schmidhuber J. Deep learning in neural networks: An overview. Neural
+CNN	Convolutional neural network
+                                                                                     Netw. 2015;61:85–117.
+GATv2	Dynamic graph attention network
+                                                                                 13. Öztürk H, Ozkirimli E, Özgür A. WideDTA: prediction of drug-target bind-
+                                                                                     ing affinity. arXiv preprint arXiv:​1902.​04166, 2019.
+Authors’ contributions
+                                                                                 14. Abbasi K, Razzaghi P, Poso A, et al. DeepCDA: deep cross-domain
+All authors contributed to the design of the method. JWL and ZGZ partici-
+                                                                                     compound–protein affinity prediction through LSTM and convolutional
+pated in the design of the study and the analysis of the experimental results.
+                                                                                     neural networks. Bioinformatics. 2020;36(17):4633–42.
+ZHX, CLX and ZGZ provided important support in data collection and pre-
+                                                                                 15. Yu Y, Si X, Hu C, et al. A review of recurrent neural networks: LSTM cells
+processing, and assisted in building the preliminary framework of the model.
+                                                                                     and network architectures. Neural Comput. 2019;31(7):1235–70.
+JJW and JQS provided technical support during model training, hyperparam-
+                                                                                 16. Ghimire A, Tayara H, Xuan Z, et al. CSatDTA: prediction of drug–target
+eter adjustment, and experiments. All authors have read and approved the
+                                                                                     binding affinity using convolution model with self-attention. Int J Mol Sci.
+final manuscript for publication.
+                                                                                     2022;23(15):8453.
+                                                                                 17. Zhou J, Cui G, Hu S, et al. Graph neural networks: A review of methods
+Funding
+                                                                                     and applications. AI open. 2020;1:57–81.
+This research was supported by the Henan Provincial Department of Science
+                                                                                 18. Xu K, Hu W, Leskovec J, et al. How powerful are graph neural networks?.
+and Technology Research Project (Grant No. 242102210097), and Innovative
+                                                                                     arXiv preprint arXiv:​1810.​00826, 2018.
+Research Team of Henan Polytechnic University (Grant No. T2021-3).
+                                                                                 19. Yang Z, Zhong W, Zhao L, et al. MGraphDTA: deep multiscale graph neu-
+                                                                                     ral network for explainable drug–target binding affinity prediction. Chem
+Data availability
+                                                                                     Sci. 2022;13(3):816–33.
+The Davis and KIBA data can be downloaded from https://​github.​com/​thinng/​
+                                                                                 20. Mukherjee S, Ghosh M, Basuchowdhuri P. DeepGLSTM: deep graph
+Graph​DTA/​tree/​master. The source code is available from GitHub at https://​
+                                                                                     convolutional network and LSTM based approach for predicting drug-
+github.​com/​zhuzi​guang/​GS-​DTA.
+                                                                                     target binding affinity[C]//Proceedings of the 2022 SIAM international
+                                                                                     conference on data mining (SDM). Soc Industr Appl Mathematics, 2022:
+Declarations                                                                         729–737.
+                                                                                 21. Jiang M, Li Z, Zhang S, et al. Drug–target affinity prediction using graph
+Ethics approval and consent to participate                                           neural network and contact maps. RSC Adv. 2020;10(35):20701–12.
+Not applicable.                                                                  22. Xu S, Wang R. OdinDTA: Combining Mutual Attention and Pre-training for
+                                                                                     Drug-target Affinity Prediction[C]//2023 IEEE 35th International Confer-
+Consent for publication                                                              ence on Tools with Artificial Intelligence (ICTAI). IEEE. 2023: 680–687.
+Not applicable.                                                                  23. Zhai H, Hou H, Luo J, et al. DGDTA: dynamic graph attention net-
+                                                                                     work for predicting drug–target binding affinity. BMC Bioinformatics.
+                                                                                     2023;24(1):367.
+Luo et al. BMC Genomics        (2025) 26:105                                      Page 10 of 10
+
+
+
+
+24. Zhang L, Zeng W, Chen J, et al. GDilatedDTA: Graph dilation convolution
+    strategy for drug target binding affinity prediction. Biomed Signal Process
+    Control. 2024;92: 106110.
+25. Wu H, Liu J, Jiang T, et al. AttentionMGT-DTA: A multi-modal drug-target
+    affinity prediction using graph transformer and attention mechanism.
+    Neural Netw. 2024;169:623–36.
+26. Davis MI, Hunt JP, Herrgard S, et al. Comprehensive analysis of kinase
+    inhibitor selectivity. Nat Biotechnol. 2011;29(11):1046–51.
+27. Tang J, Szwajda A, Shakyawar S, et al. Making sense of large-scale kinase
+    inhibitor bioactivity data sets: a comparative and integrative analysis. J
+    Chem Inf Model. 2014;54(3):735–43.
+28. Bento AP, Hersey A, Félix E, et al. An open source chemical structure cura-
+    tion pipeline using RDKit. Journal of Cheminformatics. 2020;12:1–16.
+29. Landrum G. RDKit: A software suite for cheminformatics, computational
+    chemistry, and predictive modeling. Greg Landrum. 2013;8(31.10):5281.
+
+
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in pub-
+lished maps and institutional affiliations.
+

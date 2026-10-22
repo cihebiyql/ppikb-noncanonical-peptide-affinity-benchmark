@@ -1,0 +1,2171 @@
+{
+  "schema_version": "1.0",
+  "record_type": "result_record",
+  "is_template": false,
+  "task_id": "S300_0a445649ae97",
+  "run_id": "MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1",
+  "contract_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\i1\\NN200\\MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1\\task-contract.json",
+  "contract_sha256": "388ae1bf5d84989a5eaee4a59bc2bfb10a89662d0e3e0cbc82e99d31fcf5b2be",
+  "recorded_at": "2026-10-22T00:32:43.116189+00:00",
+  "lifecycle_status": "succeeded",
+  "reproduction_level": "independent_inference",
+  "scope_coverage": "partial_subset",
+  "claims": [
+    {
+      "text": "Recorded actual scoped independent_inference execution and available bound metrics",
+      "evidence_type": "source_fact",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/unit-complete.json"
+      ],
+      "limitations": "Missing required endpoints remain partial. Original-paper metrics non-comparable; historical failures and chemistry/external-scope limits remain. No full-paper replication claim."
+    }
+  ],
+  "assets_integrity": {
+    "datasets": {
+      "status": "complete",
+      "scope": "Actual bounded common-data stage, linked author/source/runtime metadata; no full-paper replication claim",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/unit-complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/pool-exit-verification.json"
+      ],
+      "notes": "Frozen scoped assets and actual producer/root-audit receipt integrity support availability; no new raw-payload read or full-paper claim by this metadata archival tool"
+    },
+    "code": {
+      "status": "partial",
+      "scope": "Actual bounded common-data stage, linked author/source/runtime metadata; no full-paper replication claim",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/unit-complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/pool-exit-verification.json"
+      ],
+      "notes": "Scientific data bytes are not re-opened by this archival tool; producer and independent reviewer evidence retained"
+    },
+    "models": {
+      "status": "complete",
+      "scope": "Actual bounded common-data stage, linked author/source/runtime metadata; no full-paper replication claim",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/unit-complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/pool-exit-verification.json"
+      ],
+      "notes": "Frozen scoped assets and actual producer/root-audit receipt integrity support availability; no new raw-payload read or full-paper claim by this metadata archival tool"
+    },
+    "environment": {
+      "status": "partial",
+      "scope": "Actual bounded common-data stage, linked author/source/runtime metadata; no full-paper replication claim",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/unit-complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/pool-exit-verification.json"
+      ],
+      "notes": "Scientific data bytes are not re-opened by this archival tool; producer and independent reviewer evidence retained"
+    }
+  },
+  "execution": {
+    "performed": true,
+    "hostname": "cihebi",
+    "pid": 805566,
+    "pgid": 805566,
+    "started_at": "2026-10-21T22:55:20.823602+00:00",
+    "ended_at": "2026-10-21T22:55:47.523760+00:00",
+    "exit_code": 0,
+    "exit_status": "verified separately by supervising pool after this unit exits",
+    "stdout_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/pool-runs/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1.stdout.log",
+    "stderr_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/pool-runs/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1.stderr.log",
+    "exit_verification_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/pool-exit-verification.json",
+    "command": [
+      "/root/.venvs/peptide-omnipanel-v31-web311-20260723/bin/python",
+      "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/score_unit.py",
+      "--binding",
+      "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/bindings/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1.json"
+    ],
+    "handles_absent_verified_at": "2026-10-21T22:55:47.582514+00:00",
+    "receipt_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/unit-complete.json",
+    "receipt_sha256": "94a73497c70039b945b8e10ee9b5dcbd841102e185c6f080e617f99a0c0495f9",
+    "exit_verification_sha256": "fbe7013b700e4e7b67ae2f309e6b9a6653c1a21e762b57547ad8259a7c59d531",
+    "working_directory": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021",
+    "environment_path": "/root/.venvs/peptide-omnipanel-v31-web311-20260723",
+    "effective_deadline_at": "2026-10-22T01:45:00+00:00",
+    "timeout_seconds": 1200,
+    "seeds": [
+      6
+    ]
+  },
+  "metric_comparisons": [
+    {
+      "target_id": "internal::all:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1039,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.6033492542077068,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::all:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1039,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 2.0470000199819314,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::all:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1039,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.11396067969816531,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::all:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1039,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.12433092293084336,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::all:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1039,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.27148058062122105,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::standard20_control:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 736,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.6148971356757906,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::standard20_control:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 736,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 2.064144724142252,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::standard20_control:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 736,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.17293451068160767,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::standard20_control:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 736,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.20952652067869398,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::standard20_control:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 736,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.23109589856275115,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::PTM:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 158,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.348371135980076,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::PTM:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 158,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.7350244822406833,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::PTM:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 158,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.0827653597850294,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::PTM:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 158,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.08266142863587425,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::PTM:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 158,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.5166154743437923,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::synthetic_D_backbone:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 100,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.7667028741922834,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::synthetic_D_backbone:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 100,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 2.1450182625830103,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::synthetic_D_backbone:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 100,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.045976032201678056,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::synthetic_D_backbone:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 100,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.05260203900282472,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::synthetic_D_backbone:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 100,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.26665229492411835,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::synthetic_and_PTM:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 39,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.6598341525743159,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::synthetic_and_PTM:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 39,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 2.1770332939644366,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::synthetic_and_PTM:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 39,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.1133549852688202,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::synthetic_and_PTM:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 39,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.05133156389657466,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::synthetic_and_PTM:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 39,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.30401553218997934,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::other_NC:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 6,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 3.8115207349911167,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::other_NC:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 6,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 4.024468299591541,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::other_NC:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 6,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.9717045457943339,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::other_NC:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 6,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.9411239481143204,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::other_NC:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 6,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -3.057790763390731,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::NC_core:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 303,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.5752989546680702,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::NC_core:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 303,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 2.0047442595795526,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::NC_core:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 303,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.05610831121231531,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::NC_core:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 303,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.040385414388203464,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "internal::NC_core:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 303,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.3901586078212598,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "external75::all:MAE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 75,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.5699837324545602,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "external75::all:RMSE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 75,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 2.0865688016408064,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "external75::all:Pearson",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 75,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.1300330500929529,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "external75::all:Spearman",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 75,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.181401734211428,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "external75::all:R2",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 75,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.5370802095872818,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "external75::primary67:MAE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 67,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.610431422264459,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::primary67:RMSE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 67,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 2.141114055353847,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::primary67:Pearson",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 67,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.13611195466806736,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::primary67:Spearman",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 67,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.21552369273582567,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::primary67:R2",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 67,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.5182664915821473,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::conditional8:MAE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.2312343302966575,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::conditional8:RMSE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.5564363394583507,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::conditional8:Pearson",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.04439695346362597,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::conditional8:Spearman",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.09759000729485323,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::conditional8:R2",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -1.0745981062108356,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::target_reference_cold2:MAE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 2,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 3.5410177286926956,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::target_reference_cold2:RMSE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 2,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 3.6460740124595987,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::target_reference_cold2:Pearson",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 2,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.9999999999999998,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::target_reference_cold2:Spearman",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 2,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.9999999999999998,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "external75::target_reference_cold2:R2",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 2,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -127.85960150608307,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::all:MAE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 13,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.1768761062533477,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::all:RMSE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 13,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.2113134786941193,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::all:Pearson",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 13,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.923246370329157,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::all:Spearman",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 13,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.5337006424443076,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::all:R2",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 13,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -0.12685602283069408,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::synthetic_D_backbone:MAE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.0808660288626073,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::synthetic_D_backbone:RMSE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.1232837664661504,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::synthetic_D_backbone:Pearson",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.9706497942565839,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::synthetic_D_backbone:Spearman",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.5389318178609664,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::synthetic_D_backbone:R2",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.2492453553751971,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::standard20_control:MAE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 5,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.3304922300785322,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::standard20_control:RMSE",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 5,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "actual_value": 1.3401875322213366,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::standard20_control:Pearson",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 5,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.43063564077446853,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::standard20_control:Spearman",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 5,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": 0.6,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    },
+    {
+      "target_id": "supplement13::standard20_control:R2",
+      "paper_endpoint": "New PPIKB NC benchmark post-selection holdout inference",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 5,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "actual_value": -64.47606161682998,
+      "baseline_value": null,
+      "absolute_difference": null,
+      "relative_difference": null,
+      "comparability": "not_comparable",
+      "tolerance_reference": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "New dataset and frozen common-data transfer benchmark; original paper table scores are not comparable."
+      },
+      "passed": null,
+      "reason": "Published original-paper value is not comparable on this changed dataset.",
+      "evidence_paths": [
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "role": "metadata_receipt",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/unit-complete.json",
+      "location": "remote",
+      "available": true,
+      "sha256": "94a73497c70039b945b8e10ee9b5dcbd841102e185c6f080e617f99a0c0495f9",
+      "notes": "Exact metadata file checked; scientific payload hashes remain producer/independent-review references"
+    },
+    {
+      "role": "metadata_receipt",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/pool-exit-verification.json",
+      "location": "remote",
+      "available": true,
+      "sha256": "fbe7013b700e4e7b67ae2f309e6b9a6653c1a21e762b57547ad8259a7c59d531",
+      "notes": "Exact metadata file checked; scientific payload hashes remain producer/independent-review references"
+    },
+    {
+      "role": "metadata_receipt",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+      "location": "remote",
+      "available": true,
+      "sha256": "88cf80990f0216c101ce6972d4b231605fde13213059613c00ad704eb645fa04",
+      "notes": "Exact metadata file checked; scientific payload hashes remain producer/independent-review references"
+    },
+    {
+      "role": "metadata_receipt",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+      "location": "remote",
+      "available": true,
+      "sha256": "959ae533240ad2786d69ae5a8e962e7717235052b95fbeabd9f16370c4abd8d2",
+      "notes": "Exact metadata file checked; scientific payload hashes remain producer/independent-review references"
+    },
+    {
+      "role": "metadata_receipt",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+      "location": "remote",
+      "available": true,
+      "sha256": "7f1a6258f716d79e6e5f640fdcd27e25ae48ce22aaade71800828bc5d5a7ce62",
+      "notes": "Exact metadata file checked; scientific payload hashes remain producer/independent-review references"
+    },
+    {
+      "role": "metadata_receipt",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/all200-selections-frozen.json",
+      "location": "remote",
+      "available": true,
+      "sha256": "87382517bf1ee4cbe7e6f7c192de27cb3143dbdf6197490ab95572972b691e1a",
+      "notes": "Exact metadata file checked; scientific payload hashes remain producer/independent-review references"
+    }
+  ],
+  "differences": [],
+  "incomplete_reasons": [],
+  "review": {
+    "status": "accepted",
+    "reviewer": "root explicit postjoint review and independent720-receipt validation",
+    "reviewed_at": "2026-10-22T00:32:43.157264+00:00",
+    "checks": [
+      {
+        "item": "identity",
+        "passed": true,
+        "reason": "Bound actual metadata/producer/independent reviewer evidence at scoped new-data level, not full paper"
+      },
+      {
+        "item": "assets",
+        "passed": true,
+        "reason": "Bound actual metadata/producer/independent reviewer evidence at scoped new-data level, not full paper"
+      },
+      {
+        "item": "contract",
+        "passed": true,
+        "reason": "Bound actual metadata/producer/independent reviewer evidence at scoped new-data level, not full paper"
+      },
+      {
+        "item": "execution",
+        "passed": true,
+        "reason": "Bound actual metadata/producer/independent reviewer evidence at scoped new-data level, not full paper"
+      },
+      {
+        "item": "comparison",
+        "passed": true,
+        "reason": "Bound actual metadata/producer/independent reviewer evidence at scoped new-data level, not full paper"
+      },
+      {
+        "item": "claims",
+        "passed": true,
+        "reason": "Bound actual metadata/producer/independent reviewer evidence at scoped new-data level, not full paper"
+      },
+      {
+        "item": "preservation",
+        "passed": true,
+        "reason": "Bound actual metadata/producer/independent reviewer evidence at scoped new-data level, not full paper"
+      }
+    ],
+    "evidence_paths": [
+      "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json",
+      "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v2/runs/actual-v2/RF-audit/per-score-audit.json"
+    ],
+    "notes": null
+  },
+  "stage_lineage": {
+    "training_run_id": "MGraphDTA__source_peptide_dependency_cold__NC_only__seed06",
+    "training_stage": {
+      "contract": {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/issued-gpu-v4/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06/task-contract.json",
+        "sha256": "4a6c1514b5f36d5edf852003165db5d31edb019094fa10e1baba885f0f043208"
+      },
+      "unit_receipt": {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/receipts-v4/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06/unit-complete.json",
+        "sha256": "11e8f03c4c1d8f1c66331152dac189f4c5656b090e4319340473b39d0e5569c1"
+      },
+      "exit_verification": {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/pool-runs-v4-nc-all-seeds/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06.terminal.json",
+        "sha256": "e400bd7291e0cd811dc59005e1ea240752ec741f6e4ff9b8d89b6786efbf16ef"
+      }
+    },
+    "evaluation_unit_receipt": {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/unit-complete.json",
+      "sha256": "94a73497c70039b945b8e10ee9b5dcbd841102e185c6f080e617f99a0c0495f9"
+    },
+    "pool_exit_verification": {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/scoring-launch-v1/receipts/MGraphDTA__source_peptide_dependency_cold__NC_only__seed06__evaluation_v1/pool-exit-verification.json",
+      "sha256": "fbe7013b700e4e7b67ae2f309e6b9a6653c1a21e762b57547ad8259a7c59d531"
+    },
+    "score_receipts": [
+      {
+        "role": "internal",
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/source_test/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "sha256": "88cf80990f0216c101ce6972d4b231605fde13213059613c00ad704eb645fa04"
+      },
+      {
+        "role": "external75",
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/external75/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "sha256": "959ae533240ad2786d69ae5a8e962e7717235052b95fbeabd9f16370c4abd8d2"
+      },
+      {
+        "role": "supplement13",
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/scores/supplement13/source_peptide_dependency_cold/MGraphDTA/NC_only/seed-6/complete.json",
+        "sha256": "7f1a6258f716d79e6e5f640fdcd27e25ae48ce22aaade71800828bc5d5a7ce62"
+      }
+    ],
+    "global_barrier": {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/all200-selections-frozen.json",
+      "sha256": "87382517bf1ee4cbe7e6f7c192de27cb3143dbdf6197490ab95572972b691e1a"
+    },
+    "independent_review": {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/NN-audit/per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "historical_failed_attempt": null
+  },
+  "scientific_output_hashes_from_receipts": {
+    "internal": {
+      "predictions_sha256": "901b592086544fecd48d34e1481b302f757e2fb5f2dc6637df331d3e2724d68d",
+      "blind_predictions_sha256": "7712723612ff29f0eeaff31e2186bab1dee68979e9d4b76302833b786bf7b474",
+      "gold_source_sha256": "8a2c4e545ec322184ea57504cf875abc61805db8bef1b265034f95f4de4d2a7a",
+      "selection_sha256": "865400b3b0b49b4b5b32ccf68f8aa2b80114ccd8f76ef8d6a92edee7f0f2f895",
+      "checkpoint_sha256": "b47b79a446d43581e45e9de3242f2eb39ad6451aaf8be2a2042968cc201a5b0c"
+    },
+    "external75": {
+      "predictions_sha256": "fea9bd6edf7d9f88f4a3c3fe54e08385c9132a21c00dc8115151c4366df93465",
+      "blind_predictions_sha256": "abf4f2869c05968c3df6f7f7d1ad005c62b13196d87210a5dd41032fc4babc07",
+      "gold_source_sha256": "b53ffe5098b9db34b02ca7503840acb375b74c1224ae30203748b5f0d89fa3eb",
+      "selection_sha256": "865400b3b0b49b4b5b32ccf68f8aa2b80114ccd8f76ef8d6a92edee7f0f2f895",
+      "checkpoint_sha256": "b47b79a446d43581e45e9de3242f2eb39ad6451aaf8be2a2042968cc201a5b0c"
+    },
+    "supplement13": {
+      "predictions_sha256": "1b0e1157f41e625f32b4587de5884201c95082ed3b75cc7b496661f78e668c41",
+      "blind_predictions_sha256": "8fb365de6407d960298323955ff904ed566bcf3b632d236b63335d3e8a2208df",
+      "gold_source_sha256": "ab8514ee1fa1332205d8933ac27cd21e9ef51649d4ffa54f38607f316b1709cd",
+      "selection_sha256": "865400b3b0b49b4b5b32ccf68f8aa2b80114ccd8f76ef8d6a92edee7f0f2f895",
+      "checkpoint_sha256": "b47b79a446d43581e45e9de3242f2eb39ad6451aaf8be2a2042968cc201a5b0c"
+    }
+  }
+}

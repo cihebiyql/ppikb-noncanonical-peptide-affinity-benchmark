@@ -1,0 +1,225 @@
+{
+  "schema": "peptide-binding.nc-benchmark.actual-registration-adoption.v4",
+  "is_template": true,
+  "draft_index_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\drafts-gpu-five-facts-v3\\draft-index.json",
+  "shared": {
+    "execution_scope": {
+      "authorization_reference": "Direct latest user instruction and frozen control/user-authorization.json",
+      "authorization_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\user-authorization.json",
+      "authorization_sha256": "5a474f5725f4fd0b1f7dc31a2e5f859eb61a2c48a4aebdd01a1945494ca16ffd",
+      "safety_assessment": "allowed"
+    },
+    "timing": {
+      "timing_evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\user-authorization.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\resources\\live-probe.json"
+      ]
+    },
+    "resources": {
+      "expected_hostname": "cihebi",
+      "cpu_threads": 2,
+      "data_loader_workers": 0,
+      "memory_limit_bytes": 4294967296,
+      "gpu_devices": [
+        "GPU-e9419f8b-b24b-a22b-c8ec-8f5173f4b45a"
+      ],
+      "gpu_memory_budget_bytes": 3221225472,
+      "no_preemption": true,
+      "budget_basis": "Root-owned one RTX5080, two concurrent private process groups; worker CPU2/RSS4GiB/allocator3GiB; pool owned GPU<=8GiB and hostRSS<=12GiB; no shared environment change",
+      "start_gate": "Actual root launch pool rechecks GPU process/usage, CPU affinity/RSS and immutable inputs before each new unit; WSL external-process visibility limitations preserved"
+    },
+    "environment": {
+      "environment_path": "/root/.venvs/peptide-omnipanel-v31-web311-20260723",
+      "shared_environment_modified": false
+    },
+    "execution": {
+      "working_directory": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021",
+      "process_control": {
+        "platform": "Linux WSL",
+        "mechanism": "Root launch/pool_supervisor.py creates private PGID/session, checks owned PID identity/RSS/GPU reservations and bounds descendants to original deadline; run_unit.py children inherit PGID",
+        "whole_tree_bounded": true
+      }
+    }
+  },
+  "methods": {
+    "GraphDTA-GIN": {
+      "task_id": "S299_ef670bb4eeb4",
+      "identity": {
+        "pdf": {
+          "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-author-lab.pdf",
+          "sha256": "ef670bb4eeb41ba7db7449f15dd8a8861d6c01029e597e802db8a38df70df907"
+        }
+      },
+      "registered_task_identity": {
+        "task_id": "S299_ef670bb4eeb4",
+        "linked_task_ids": [],
+        "registration_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\registered-paper-map.json",
+        "registration_sha256": "80a768edb439bd4f57a0a12f31d75083bea728a5c1de78c3dc3c3be7251e688c",
+        "registration_receipt_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\registration-receipt.json",
+        "registration_receipt_sha256": "9278495258a69fd1c58758097f00761c1aca452fa1e45efcb95e53966aafd6d0"
+      },
+      "benchmark_metadata": {
+        "input_encoding_audit": {
+          "status": "verified",
+          "non_natural_residue_supported": true,
+          "PTM_supported": true,
+          "mixed_supported": true,
+          "peptide_sequence_projection_used": false,
+          "chemical_information_loss": "Author graph inputs are stereochemistry-blind; full raw isomeric SMILES retained as provenance and evaluated for blind equivalence sensitivity.",
+          "unrecognized_tokens_handling": "Block with explicit failed coverage; no silent standard-AA substitution",
+          "protein_prefix_length": 1000,
+          "full_peptide_smiles_no_cap": true,
+          "evidence_paths": [
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json"
+          ]
+        }
+      }
+    },
+    "MGraphDTA": {
+      "task_id": "S300_0a445649ae97",
+      "identity": {
+        "pdf": {
+          "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\MGraphDTA-PMC-published.pdf",
+          "sha256": "0a445649ae97d8c2ff2a10842de18bdab946bf22c9471bd81e5a6a9ef581516c"
+        }
+      },
+      "registered_task_identity": {
+        "task_id": "S300_0a445649ae97",
+        "linked_task_ids": [],
+        "registration_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\registered-paper-map.json",
+        "registration_sha256": "80a768edb439bd4f57a0a12f31d75083bea728a5c1de78c3dc3c3be7251e688c",
+        "registration_receipt_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\registration-receipt.json",
+        "registration_receipt_sha256": "9278495258a69fd1c58758097f00761c1aca452fa1e45efcb95e53966aafd6d0"
+      },
+      "benchmark_metadata": {
+        "input_encoding_audit": {
+          "status": "verified",
+          "non_natural_residue_supported": true,
+          "PTM_supported": true,
+          "mixed_supported": true,
+          "peptide_sequence_projection_used": false,
+          "chemical_information_loss": "Author graph inputs are stereochemistry-blind; full raw isomeric SMILES retained as provenance and evaluated for blind equivalence sensitivity.",
+          "unrecognized_tokens_handling": "Block with explicit failed coverage; no silent standard-AA substitution",
+          "protein_prefix_length": 1200,
+          "full_peptide_smiles_no_cap": true,
+          "evidence_paths": [
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json"
+          ]
+        }
+      }
+    },
+    "DGDTA-CL": {
+      "task_id": "S301_6cf263a8a267",
+      "identity": {
+        "pdf": {
+          "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DGDTA.pdf",
+          "sha256": "6cf263a8a267f0ca5f7aecdce791f57968b197c4cdff3e165ffa0925da3169ff"
+        }
+      },
+      "registered_task_identity": {
+        "task_id": "S301_6cf263a8a267",
+        "linked_task_ids": [],
+        "registration_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\registered-paper-map.json",
+        "registration_sha256": "80a768edb439bd4f57a0a12f31d75083bea728a5c1de78c3dc3c3be7251e688c",
+        "registration_receipt_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\registration-receipt.json",
+        "registration_receipt_sha256": "9278495258a69fd1c58758097f00761c1aca452fa1e45efcb95e53966aafd6d0"
+      },
+      "benchmark_metadata": {
+        "input_encoding_audit": {
+          "status": "verified",
+          "non_natural_residue_supported": true,
+          "PTM_supported": true,
+          "mixed_supported": true,
+          "peptide_sequence_projection_used": false,
+          "chemical_information_loss": "Author graph inputs are stereochemistry-blind; full raw isomeric SMILES retained as provenance and evaluated for blind equivalence sensitivity.",
+          "unrecognized_tokens_handling": "Block with explicit failed coverage; no silent standard-AA substitution",
+          "protein_prefix_length": 1000,
+          "full_peptide_smiles_no_cap": true,
+          "evidence_paths": [
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json"
+          ]
+        }
+      }
+    },
+    "DeepNC-GEN": {
+      "task_id": "S302_401fdeeb8b77",
+      "identity": {
+        "pdf": {
+          "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DeepNC-PMC-published.pdf",
+          "sha256": "401fdeeb8b777f29d38628417d71ff967883575b13381b6430843e08154dce16"
+        }
+      },
+      "registered_task_identity": {
+        "task_id": "S302_401fdeeb8b77",
+        "linked_task_ids": [],
+        "registration_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\registered-paper-map.json",
+        "registration_sha256": "80a768edb439bd4f57a0a12f31d75083bea728a5c1de78c3dc3c3be7251e688c",
+        "registration_receipt_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\registration-receipt.json",
+        "registration_receipt_sha256": "9278495258a69fd1c58758097f00761c1aca452fa1e45efcb95e53966aafd6d0"
+      },
+      "benchmark_metadata": {
+        "input_encoding_audit": {
+          "status": "verified",
+          "non_natural_residue_supported": true,
+          "PTM_supported": true,
+          "mixed_supported": true,
+          "peptide_sequence_projection_used": false,
+          "chemical_information_loss": "Author graph inputs are stereochemistry-blind; full raw isomeric SMILES retained as provenance and evaluated for blind equivalence sensitivity.",
+          "unrecognized_tokens_handling": "Block with explicit failed coverage; no silent standard-AA substitution",
+          "protein_prefix_length": 1000,
+          "full_peptide_smiles_no_cap": true,
+          "evidence_paths": [
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json"
+          ]
+        }
+      }
+    },
+    "GS-DTA": {
+      "task_id": "S303_725e257cf378",
+      "identity": {
+        "pdf": {
+          "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\replacement-gs-dta\\GS-DTA-published.pdf",
+          "sha256": "725e257cf378b2959afc34dd8b65d8c29787af6330c1d9fee3b464fd0a0619e3"
+        }
+      },
+      "registered_task_identity": {
+        "task_id": "S303_725e257cf378",
+        "linked_task_ids": [],
+        "registration_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\registered-paper-map.json",
+        "registration_sha256": "80a768edb439bd4f57a0a12f31d75083bea728a5c1de78c3dc3c3be7251e688c",
+        "registration_receipt_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\registration-receipt.json",
+        "registration_receipt_sha256": "9278495258a69fd1c58758097f00761c1aca452fa1e45efcb95e53966aafd6d0"
+      },
+      "benchmark_metadata": {
+        "input_encoding_audit": {
+          "status": "verified",
+          "non_natural_residue_supported": true,
+          "PTM_supported": true,
+          "mixed_supported": true,
+          "peptide_sequence_projection_used": false,
+          "chemical_information_loss": "Author graph inputs are stereochemistry-blind; full raw isomeric SMILES retained as provenance and evaluated for blind equivalence sensitivity.",
+          "unrecognized_tokens_handling": "Block with explicit failed coverage; no silent standard-AA substitution",
+          "protein_prefix_length": 1000,
+          "full_peptide_smiles_no_cap": true,
+          "evidence_paths": [
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\replacement-gs-dta\\candidate-audit.json",
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\gs-dta\\canary-gpu-v1\\result.json",
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\gs-dta\\canary-gpu-v1\\watchdog-receipt.json"
+          ]
+        }
+      }
+    }
+  },
+  "splits": {},
+  "units": {},
+  "freeze_state": "waiting_only_for_final_v4_specs_launch_proof_and_environment_snapshot",
+  "do_not_start_reason": [
+    "Exact final unit commands and dynamic SHA binding policy not filled",
+    "Final immutable fit spec/launch wrapper proof/environment freeze must be provided",
+    "No formal contract issued and no workload launched by this preparation"
+  ]
+}

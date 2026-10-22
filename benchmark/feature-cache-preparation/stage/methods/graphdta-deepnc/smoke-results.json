@@ -1,0 +1,142 @@
+{
+  "scope": "CPU synthetic component smoke only, no benchmark training or performance estimate",
+  "host": "node23",
+  "torch": "2.6.0+cu124",
+  "torch_geometric": "2.6.1",
+  "rdkit": "2024.03.2",
+  "cuda_visible_devices": "",
+  "cpu_affinity": [
+    0
+  ],
+  "torch_threads": 1,
+  "elapsed_seconds": 2.0587706565856934,
+  "max_rss_kib": 733704,
+  "tests": {
+    "pickle_CPU_roundtrip": true,
+    "both_author_preprocessing_agree": true,
+    "target_truncation_audit": [
+      {
+        "record_id": "smoke-chemical-a",
+        "target_original_length": 1260,
+        "target_effective_length": 1000,
+        "target_truncated": true,
+        "target_coverage": 0.7936507936507936,
+        "target_full_sha256": "7e0d7675dc8f0800de907681f4c7c79cc5ec238fa0addc28d324418e009b3212",
+        "target_effective_sha256": "ea047d8e562a3bc31e34bd2e0eb408af9c9db321805dbf5fc26e335ea404603c",
+        "target_encoded_sha256": "d5d5a40cfc2d4bffbd8b4b3e2d378fc528bd6512925493b24cd46a7ef07508ec",
+        "smiles_sha256": "cdd493ae9792059ac4e23090a7f5528a7b1315bea3ab6d199f7e9aefa120e10d",
+        "molecule_atoms_original": 6,
+        "molecule_atoms_effective": 6,
+        "molecule_truncated": false,
+        "directed_edges": 10,
+        "graph_feature_sha256": "f66572c848ce568f5465a7e58dd7860100e8235a36c4cbeb05d1c397a10c5fed",
+        "atom_chirality_encoded": false,
+        "bond_order_encoded": false
+      },
+      {
+        "record_id": "smoke-chemical-b",
+        "target_original_length": 140,
+        "target_effective_length": 140,
+        "target_truncated": false,
+        "target_coverage": 1.0,
+        "target_full_sha256": "56a7d482da8d382443976fa17099b3e895f7f39041cc33fd660948f6bc875261",
+        "target_effective_sha256": "56a7d482da8d382443976fa17099b3e895f7f39041cc33fd660948f6bc875261",
+        "target_encoded_sha256": "3e8921c25bcc8c2a58cbe574bf5ff9ac1a29e1dff5a58a47374bf832fd9fc2fd",
+        "smiles_sha256": "30fe3809efbe5f6b082d9b94d27a0c7c9ecd1364a816d59c3d31ce32bcdf848e",
+        "molecule_atoms_original": 5,
+        "molecule_atoms_effective": 5,
+        "molecule_truncated": false,
+        "directed_edges": 8,
+        "graph_feature_sha256": "3f25d34aa570cfcb3e8a180be094781ad75cd047db2debf820e3b0ea1d5a27d0",
+        "atom_chirality_encoded": false,
+        "bond_order_encoded": false
+      }
+    ],
+    "D_L_feature_collision_confirmed_limitation": true,
+    "empty_edge_graph_encoded": true,
+    "600_atom_graph_uncapped": true
+  },
+  "pyg_GENConv_constructor_sha256": "64ac3becdd028a6cadc8bc4cfe945ac6c178fad1c408957bd4d4211017f12e4e",
+  "pyg_GENConv_softmax_sg_compatibility": "native semi_grad=True compatibility path; no model patch needed",
+  "methods": [
+    {
+      "method_id": "GraphDTA-GIN",
+      "parameter_count": 1297505,
+      "atom_feature_dim": 78,
+      "target_alphabet": "ABCDEFGHIKLMNOPQRSTUVWXYZ",
+      "target_token_length": 1000,
+      "target_view": "author first-1000-residue prefix; every record carries coverage and hashes",
+      "molecule_atom_cap": null,
+      "atom_feature_normalization": "per atom feature / sum(feature), original author",
+      "pooling": "global_add_pool (both methods; DeepNC misleading source comment says max)",
+      "chirality_encoded": false,
+      "bond_order_encoded": false,
+      "stereochemistry_limitation": "D/L stereoisomers can have identical input graphs; no novel features added",
+      "pretraining": false,
+      "architecture_defaults_preserved": true,
+      "default_dropout": 0.2,
+      "constructor_patch": null,
+      "batch_sizes_forward_backward": [
+        1,
+        2
+      ],
+      "finite_gradients": true,
+      "batch_permutation_invariance": true,
+      "batch_partition_invariance": true,
+      "maximum_permutation_abs_error": 0.0,
+      "maximum_partition_abs_error": 7.450580596923828e-09,
+      "synthetic_mse_smoke_only": [
+        25.42707061767578,
+        30.96120834350586
+      ]
+    },
+    {
+      "method_id": "DeepNC-GEN",
+      "parameter_count": 4933417,
+      "atom_feature_dim": 78,
+      "target_alphabet": "ABCDEFGHIKLMNOPQRSTUVWXYZ",
+      "target_token_length": 1000,
+      "target_view": "author first-1000-residue prefix; every record carries coverage and hashes",
+      "molecule_atom_cap": null,
+      "atom_feature_normalization": "per atom feature / sum(feature), original author",
+      "pooling": "global_add_pool (both methods; DeepNC misleading source comment says max)",
+      "chirality_encoded": false,
+      "bond_order_encoded": false,
+      "stereochemistry_limitation": "D/L stereoisomers can have identical input graphs; no novel features added",
+      "pretraining": false,
+      "architecture_defaults_preserved": true,
+      "default_dropout": 0.2,
+      "constructor_patch": "undefined GEN_Conv -> GEN",
+      "batch_sizes_forward_backward": [
+        1,
+        2
+      ],
+      "finite_gradients": true,
+      "batch_permutation_invariance": true,
+      "batch_partition_invariance": true,
+      "maximum_permutation_abs_error": 3.725290298461914e-09,
+      "maximum_partition_abs_error": 1.1175870895385742e-08,
+      "synthetic_mse_smoke_only": [
+        25.483116149902344,
+        31.167463302612305
+      ],
+      "GENConv_aggregators": [
+        {
+          "type": "SoftmaxAggregation",
+          "semi_grad": true,
+          "t": 1.0
+        },
+        {
+          "type": "SoftmaxAggregation",
+          "semi_grad": true,
+          "t": 1.0
+        },
+        {
+          "type": "SoftmaxAggregation",
+          "semi_grad": true,
+          "t": 1.0
+        }
+      ]
+    }
+  ]
+}

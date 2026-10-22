@@ -1,0 +1,95 @@
+{
+  "status": "complete_postjoint_metric_table_assembly",
+  "categories": {
+    "five_prior_paper_NN": {
+      "score_receipts": 600,
+      "prediction_rows": 265800,
+      "prediction_rows_by_raw_dataset": {
+        "source_test": 103900,
+        "external75": 15000,
+        "supplement13": 2600,
+        "target_test": 144300
+      },
+      "distinct_method_ids": [
+        "DGDTA-CL",
+        "DeepNC-GEN",
+        "GS-DTA",
+        "GraphDTA-GIN",
+        "MGraphDTA"
+      ],
+      "paper_count": 5,
+      "paper_count_scope": "Distinct original NN paper methods only; metric/seed/receipt rows do not add papers."
+    },
+    "auxiliary_handcrafted_RF": {
+      "score_receipts": 120,
+      "prediction_rows": 53160,
+      "prediction_rows_by_raw_dataset": {
+        "source_test": 20780,
+        "external75": 3000,
+        "supplement13": 520,
+        "target_test": 28860
+      },
+      "distinct_method_ids": [
+        "RF-Morgan2-chiral-AAC-DP"
+      ],
+      "paper_count": 0,
+      "paper_count_scope": "Distinct original NN paper methods only; metric/seed/receipt rows do not add papers."
+    },
+    "three_deterministic_references": {
+      "score_receipts": 360,
+      "prediction_rows": 159480,
+      "prediction_rows_by_raw_dataset": {
+        "source_test": 62340,
+        "external75": 9000,
+        "supplement13": 1560,
+        "target_test": 86580
+      },
+      "distinct_method_ids": [
+        "reference:target_reference_train_median",
+        "reference:train_mean",
+        "reference:train_median"
+      ],
+      "paper_count": 0,
+      "paper_count_scope": "Distinct original NN paper methods only; metric/seed/receipt rows do not add papers."
+    }
+  },
+  "ledger_score_receipts": 1080,
+  "ledger_prediction_rows": 478440,
+  "distinct_prior_paper_methods": 5,
+  "new_paper_count_from_RF_or_references": 0,
+  "input_map_sha256": "b3ec36fbf5f11cf1aa1f93202835607897dc799f200c2ef38b18dbbd04682c40",
+  "joint_barrier_sha256": "5c506a6c9d1f140ef0556a2c35e46c0252a7710295017ce080a7830650443fcf",
+  "per_seed_table_sha256": "80d0a2720a3d568de0c41e9953c44aeeab2b217b4fb677ecf317f932f4b9d724",
+  "summary_table_sha256": "9f92aac1331f03f295e64bee138dac2f45ca3139a1ae37005b8639e109416ec0",
+  "raw_gold_predictions_models_or_feature_matrices_read_by_combiner": false,
+  "numeric_metric_recalculation_from_raw_data": false,
+  "no_fitting_selection_or_retraining": true,
+  "seed_SD_scope": "Training-seed variation only; deterministic values repeat, undefined metrics remain null.",
+  "macro_scope": "Older NN/reference all-row macros stay all_diagnostic; only available cohort macros are displayed. Matched target NC/standard diagnostics retain frozen subsets.",
+  "paper_count_scope": "Count five distinct NN methods once; table rows and 1080receipts are not papers.",
+  "script_sha256": "b56d111c9e9361eea7c9f3e4c26c57190b819c3891da8126ff7437488618d586",
+  "schema": "postjoint_metric_table_assembly_with_preregistered_extension_v6",
+  "schema_version": 6,
+  "generated_by": "review/merge_metric_extension_v6.py",
+  "basis": "Unchanged independently audited v5 base plus preregistered v6 metric-only diagnostic extension; not output of the old v5 generator.",
+  "original_v5_manifest": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\base-v5\\unified-table-manifest.json",
+    "sha256": "eda5c793840c275aada8326465c4360af005f6fe083f26b4229f7a342602c876"
+  },
+  "v6_extension_manifest": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\extension-v6\\extension-manifest.json",
+    "sha256": "ec43a857aee75884fb97222ae185a0534db7865a2c2d00a5c01154a3e448264b"
+  },
+  "original_v5_rows_sha256": "68827e306b3622c07e0b6506f3abcbdd6ac3d067b08a9584ddfe291439b761fa",
+  "original_v5_row_count": 91400,
+  "original_v5_rows_preserved_verbatim_values": true,
+  "extension_diagnostic_cases": 360,
+  "additional_scores": 0,
+  "additional_prediction_rows": 0,
+  "extension_metric_rows": 25200,
+  "equal_duplicate_keys_deduplicated": 1200,
+  "raw_gold_predictions_models_or_feature_matrices_read_by_merge": false,
+  "missing_source_metadata": "Explicit missing_source_refs/counts stay in bound v6 case sidecars; canonical columns match frozen reporting v1.",
+  "generic_status_scope": "Complete assembly is a truthful cross-version state; schema_version6, generator and both source manifests remain explicit.",
+  "RF_scope": "Original RF rows preserved; forty existing internal prediction cases add fourNC-stratum macros. Existing RF NCclean/standardclean and NC/standard macros match exactly and equal duplicate keys deduplicate; no new RF score or prediction."
+}

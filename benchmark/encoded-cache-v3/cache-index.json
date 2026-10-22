@@ -1,0 +1,1420 @@
+{
+  "schema": "feature-cache-index-v1",
+  "scope": "fixed author CPU feature encoding, no models fit",
+  "source_gpu_spec_index_sha256": "b18980dbfa794325cc31658b94f3bd7e55e4c2916f4ae51776ace5428ed24c35",
+  "expected_cells": 20,
+  "consumer_torch_abi_verified": false,
+  "consumer_note": "GPU runner must independently unpickle and verify signature/adapter hash; never relabel producer runtime",
+  "by_cell": {
+    "source_peptide_dependency_cold__DGDTA-CL__NC_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "input_sha256": {
+        "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+        "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+      },
+      "outputs": [
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-DGDTA-CL-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DGDTA-CL-train.pkl",
+          "bytes": 71857492,
+          "sha256": "396e033b09fd1afd2b56e02eacd827fe3099e361cc535096f0e39e3064ab3f6e",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-DGDTA-CL-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DGDTA-CL-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-DGDTA-CL-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DGDTA-CL-train.input-audit.jsonl",
+          "bytes": 830123,
+          "sha256": "d88e619e71e3743cf60bfeb7d57a8f4a4932ab5a44f042263160350699cfa14b",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-DGDTA-CL-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DGDTA-CL-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "bytes": 9355223,
+          "sha256": "da3dc6f3710efc7e15824399fa8a428ecfd71a5e0b22456e85ad1fe130a6023e",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 133175,
+          "sha256": "7deb75971221b7a21700a3b98df304f42260c046946667ae678425f13c12bc01",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "target_reference_homology_cold__DeepNC-GEN__NC_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "input_sha256": {
+        "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+        "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+      },
+      "outputs": [
+        {
+          "filename": "target_reference_homology_cold-NC_only-DeepNC-GEN-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-train.pkl",
+          "bytes": 60180424,
+          "sha256": "28ae4080b45dfbb25aa93f8c2463cc5e0abce46f548d77d55f32268024ff872a",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-DeepNC-GEN-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-DeepNC-GEN-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-train.input-audit.jsonl",
+          "bytes": 1251402,
+          "sha256": "f673edde16f9a2d7a8557da975b98dba94a3a8746b09319023847290534d65bc",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-DeepNC-GEN-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "bytes": 16513375,
+          "sha256": "a30190c162bbca611d732d29a555f6e10411703199122ed15f1cd08134e31935",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 318016,
+          "sha256": "20ef023275893844fbd4da3bf8b7e35199bc2a3e09e02ffa31cb48a9d11edee0",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "target_reference_homology_cold__GS-DTA__NC_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "1665c2d2662e42b716fb41b9da35367f8a4e1eb9a0de2ea64bd366a31c0fd0df",
+      "input_sha256": {
+        "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+        "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+      },
+      "outputs": [
+        {
+          "filename": "target_reference_homology_cold-NC_only-GS-DTA-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GS-DTA-train.pkl",
+          "bytes": 60266403,
+          "sha256": "81f3ad7e3d6e62c9e1bf0bd884c708ba8088e95ba0ddf75377e38bd66e585cb9",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-GS-DTA-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GS-DTA-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-GS-DTA-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GS-DTA-train.input-audit.jsonl",
+          "bytes": 1383413,
+          "sha256": "838783575cdb9e620d88a73446d6705d8a0e35717acda1bcb6e913622004a1c0",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-GS-DTA-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GS-DTA-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-GS-DTA-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GS-DTA-validation-same_as_regime.pkl",
+          "bytes": 16535252,
+          "sha256": "dd38766a47218b30bd8a0b4f03101a31f9080d025238ff453f5096c8d0c0f88f",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-GS-DTA-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GS-DTA-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 351520,
+          "sha256": "1c28da5b4752c53c3cab86cf518edfc36aefdbc09b2783f0ca8b147a10811ad5",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "target_reference_homology_cold__DGDTA-CL__NC_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "input_sha256": {
+        "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+        "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+      },
+      "outputs": [
+        {
+          "filename": "target_reference_homology_cold-NC_only-DGDTA-CL-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DGDTA-CL-train.pkl",
+          "bytes": 61382075,
+          "sha256": "926d1a010855e5b7746180713ef5a0d094130f291a61575aa6c3e68394b594a6",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-DGDTA-CL-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DGDTA-CL-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-DGDTA-CL-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DGDTA-CL-train.input-audit.jsonl",
+          "bytes": 755027,
+          "sha256": "375409b0525729d98c0efb61b56243f23356d74f0bae5948d028685c00d44531",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-DGDTA-CL-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DGDTA-CL-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "bytes": 16818700,
+          "sha256": "cca98ba7d603b85e2d287dcb62790878efc23b1952777f131ff108e93b46e0bd",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 191884,
+          "sha256": "0b5d127f67911c3c5fda7e24820e0abe7f5851c335db3011dfcadd7a9605b8bf",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "target_reference_homology_cold__GraphDTA-GIN__NC_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "input_sha256": {
+        "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+        "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+      },
+      "outputs": [
+        {
+          "filename": "target_reference_homology_cold-NC_only-GraphDTA-GIN-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GraphDTA-GIN-train.pkl",
+          "bytes": 60180424,
+          "sha256": "1c30252a63badec7fda72ee4813dff7886368df69b0c33277f219132b7e95da7",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-GraphDTA-GIN-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GraphDTA-GIN-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "bytes": 1254220,
+          "sha256": "ca2b984f001aedba1124c911b0befa4628c7ea5cabf559bd1f3471cadb2dee2b",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "bytes": 16513375,
+          "sha256": "66bb579197e5ed606626104dc0ae6dc590a168f080498a465aebaa39d0e9d440",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 318732,
+          "sha256": "a29aa7e42673086011215d5df8a05e70c9cca3ffbfd2c31b7c58a81d983e85f8",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "source_peptide_dependency_cold__DeepNC-GEN__NC_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "input_sha256": {
+        "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+        "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+      },
+      "outputs": [
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-DeepNC-GEN-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DeepNC-GEN-train.pkl",
+          "bytes": 70537785,
+          "sha256": "1f16609755f1f2c96590aea016ff6568fb8fc69151e272ddd3fca6007eb62a6e",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-DeepNC-GEN-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DeepNC-GEN-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-DeepNC-GEN-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DeepNC-GEN-train.input-audit.jsonl",
+          "bytes": 1375595,
+          "sha256": "9ba6af3cae43ac64d6eec41dc1554423282f22bd92fe0d17edbc9965d7ca3cdd",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-DeepNC-GEN-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DeepNC-GEN-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "bytes": 9143752,
+          "sha256": "e2acace3229206cc5daa50dc23d8ac22d829b1a16bbf3d082f41ebeffaaad9bf",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 220492,
+          "sha256": "c10f585b4ea7c20e4a1058b4d62627fe2ca0375685cd98407e052b1127c576c6",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "source_peptide_dependency_cold__GraphDTA-GIN__NC_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "input_sha256": {
+        "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+        "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+      },
+      "outputs": [
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-GraphDTA-GIN-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GraphDTA-GIN-train.pkl",
+          "bytes": 70537785,
+          "sha256": "10c6d6af4d77bf564f8b43b595bcb2ddd0157a001566b4de8c8c56d571124997",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-GraphDTA-GIN-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GraphDTA-GIN-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "bytes": 1378691,
+          "sha256": "1be183b5e3e52fe46d9766d46246ce5c6c3e6376ff615aeaead4f1e0cf8aaeae",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "bytes": 9143752,
+          "sha256": "d44ec5c1f6f8ccb0db9416cd3783ea0622df51a859fe923dcdbdf4d91d52ec22",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 220988,
+          "sha256": "6b45b5a6fcacb0be9f35dbc893d1dcb8e93c899c228c3ecc5e94d6d14b016577",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "source_peptide_dependency_cold__GS-DTA__NC_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "1665c2d2662e42b716fb41b9da35367f8a4e1eb9a0de2ea64bd366a31c0fd0df",
+      "input_sha256": {
+        "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+        "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+      },
+      "outputs": [
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-GS-DTA-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GS-DTA-train.pkl",
+          "bytes": 70632270,
+          "sha256": "225c2137f6520e3ff20ec710057a95b0fce3f38ed8a8f7f91c02d93f34130c70",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-GS-DTA-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GS-DTA-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-GS-DTA-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GS-DTA-train.input-audit.jsonl",
+          "bytes": 1520147,
+          "sha256": "5cb90b9c330725bfc7fb59698e366870de95170aa6e5549c840bbf848aa4fe27",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-GS-DTA-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GS-DTA-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-GS-DTA-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GS-DTA-validation-same_as_regime.pkl",
+          "bytes": 9158910,
+          "sha256": "a1ecdfb45f8987d073d9b4cbadd1b77c537494c11792f7b2f4693b52c8398f2e",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-GS-DTA-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GS-DTA-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 243420,
+          "sha256": "d25039b30c557354751246c849693f4db2ee65f2f40c5702f2597f228da4ea8b",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "target_reference_homology_cold__GS-DTA__standard_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "1665c2d2662e42b716fb41b9da35367f8a4e1eb9a0de2ea64bd366a31c0fd0df",
+      "input_sha256": {
+        "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+        "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+      },
+      "outputs": [
+        {
+          "filename": "target_reference_homology_cold-standard_only-GS-DTA-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GS-DTA-train.pkl",
+          "bytes": 294075030,
+          "sha256": "ae754272b0f82c8d3403a04e96ac752e2d3be855383da4aee1d969559a0b05f6",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-GS-DTA-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GS-DTA-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-GS-DTA-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GS-DTA-train.input-audit.jsonl",
+          "bytes": 5229168,
+          "sha256": "b535ab5d50d529ddca6c0013e1fa8e676c3c8841bd8f321df6bd46f173bc376d",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-GS-DTA-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GS-DTA-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-GS-DTA-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GS-DTA-validation-same_as_regime.pkl",
+          "bytes": 58731354,
+          "sha256": "17811fb149f1b2ad91f061c083f5061eab27f2524689f087f3aa5d34d1507a7c",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-GS-DTA-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GS-DTA-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 1065509,
+          "sha256": "9bcc4de21fe221baad74b09a964b7a38280b2523e5f6fe635e6ae8e75c8b4424",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "source_peptide_dependency_cold__DGDTA-CL__standard_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "input_sha256": {
+        "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+        "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+      },
+      "outputs": [
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-DGDTA-CL-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DGDTA-CL-train.pkl",
+          "bytes": 355860065,
+          "sha256": "f893dd090ef3b7a82c6281bdf1b76c2873411f3f206098ee1659f659b097390f",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-DGDTA-CL-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DGDTA-CL-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-DGDTA-CL-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DGDTA-CL-train.input-audit.jsonl",
+          "bytes": 3211278,
+          "sha256": "1dd5cbd5b9112f855c171a5466602313702c21a592f21427b7024157828ca0eb",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-DGDTA-CL-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DGDTA-CL-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "bytes": 33480537,
+          "sha256": "7ad389690503eb9f0d4d4f95241ef7feaa65d0926dc07b86e56ee997ce2c4d85",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 425135,
+          "sha256": "adfd4d1e94395c8216e127ef0cb80088496a01795d66b2ece14d8dd4244f74fe",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "target_reference_homology_cold__GraphDTA-GIN__standard_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "input_sha256": {
+        "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+        "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+      },
+      "outputs": [
+        {
+          "filename": "target_reference_homology_cold-standard_only-GraphDTA-GIN-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GraphDTA-GIN-train.pkl",
+          "bytes": 293750218,
+          "sha256": "e10e98e8e74306d8fda4a4cec6109bf78c44d78699305f07e77923f9fb4e12a3",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-GraphDTA-GIN-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GraphDTA-GIN-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "bytes": 4739957,
+          "sha256": "a92aa6b2960f03987c73b146c2d8813be6fe1ec56bd57aa110e0f2be4200c808",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "bytes": 58665121,
+          "sha256": "35eefdfd9d10c1707fe0e062f0d0158a5c193453130b59e71765f7232b8746b3",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 966543,
+          "sha256": "32aa3803bc6c90ede81fe28a132192974e995819abc6a7c754362fc2b913f738",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "source_peptide_dependency_cold__GS-DTA__standard_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "1665c2d2662e42b716fb41b9da35367f8a4e1eb9a0de2ea64bd366a31c0fd0df",
+      "input_sha256": {
+        "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+        "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+      },
+      "outputs": [
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-GS-DTA-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GS-DTA-train.pkl",
+          "bytes": 351163253,
+          "sha256": "1a90acad6826b699d41a89a0e0cbd5873c0eab9b3a33ba08b4368cb55fb25a2d",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-GS-DTA-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GS-DTA-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-GS-DTA-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GS-DTA-train.input-audit.jsonl",
+          "bytes": 5885766,
+          "sha256": "e80eab4a891c5967d85091cfe935af9187a4fb13ffa66c059ca34acf0dabc8ad",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-GS-DTA-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GS-DTA-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-GS-DTA-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GS-DTA-validation-same_as_regime.pkl",
+          "bytes": 32859761,
+          "sha256": "9c1be9cdefc9a221b2cedbc03813bfc51a72820c87e1069ef2bfcacfe500cf79",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-GS-DTA-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GS-DTA-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 777602,
+          "sha256": "8a34748e70f1dcc1ac7b9c129832ffa3e08cd82aa67c5135b7967d8e9fd16d5f",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GS-DTA-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "source_peptide_dependency_cold__GraphDTA-GIN__standard_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "input_sha256": {
+        "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+        "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+      },
+      "outputs": [
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.pkl",
+          "bytes": 350797711,
+          "sha256": "6b4ec19cbdeb4f644ae7882cc47f2c32c38190ae8f1eb1b57ab09ca693ab197a",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "bytes": 5335841,
+          "sha256": "575074c97ac898cbcdae3c71182ba366f0939b0e1e0c524c58fca8e7f2e28305",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "bytes": 32811419,
+          "sha256": "861f4e9e10c2239db2a42c1d7f69465512d409712df23584b49f5b37eebbe794",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 705706,
+          "sha256": "5aeae4b18b0ef2393279f6cdf5d9ea94705091356cb9a5622fe2bb964f2381ba",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "target_reference_homology_cold__DGDTA-CL__standard_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "input_sha256": {
+        "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+        "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+      },
+      "outputs": [
+        {
+          "filename": "target_reference_homology_cold-standard_only-DGDTA-CL-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DGDTA-CL-train.pkl",
+          "bytes": 298248319,
+          "sha256": "2fb948e80155247e7e6a6a7fa476cc5d238b725ccbdb20a78a1f2da9209cd75a",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-DGDTA-CL-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DGDTA-CL-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-DGDTA-CL-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DGDTA-CL-train.input-audit.jsonl",
+          "bytes": 2852500,
+          "sha256": "f1d38b2984c799a262e2dee6ab9054fdad1adb0366be7583469522492991127b",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-DGDTA-CL-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DGDTA-CL-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "bytes": 59585160,
+          "sha256": "dc22bc2b55abbbede56b76394c3aa5978dbb47f2fe6b1c51137a9c0ae71980e9",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DGDTA-CL-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 582012,
+          "sha256": "d75582e533ca3c32bab70ced5b435358d4493ce396d952a5498b212cb0787736",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DGDTA-CL-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "source_peptide_dependency_cold__DeepNC-GEN__standard_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "input_sha256": {
+        "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+        "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+      },
+      "outputs": [
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-DeepNC-GEN-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DeepNC-GEN-train.pkl",
+          "bytes": 350797711,
+          "sha256": "3dd0f41b85479bef8eb184b9b10036deec9fd1053f05f72755539ed241405c74",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-DeepNC-GEN-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DeepNC-GEN-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-DeepNC-GEN-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DeepNC-GEN-train.input-audit.jsonl",
+          "bytes": 5323857,
+          "sha256": "f5a5dc1c0305a8ee21cf79089cf4275bb4b2d400bc0f68cddc3fb2edb737610e",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-DeepNC-GEN-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DeepNC-GEN-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "bytes": 32811419,
+          "sha256": "76618fba502babd329edb527b6b71d62181ff5e90d76b699c12535f3cde3fedb",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 704122,
+          "sha256": "b2d2cbe801d086d89e2543689b7f430dc48bd8466d03b78207552ca45eaf2ae0",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "target_reference_homology_cold__DeepNC-GEN__standard_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "input_sha256": {
+        "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+        "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+      },
+      "outputs": [
+        {
+          "filename": "target_reference_homology_cold-standard_only-DeepNC-GEN-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DeepNC-GEN-train.pkl",
+          "bytes": 293750218,
+          "sha256": "5af3eeee8b9af8465263a6a31eea0fadfe8804dbb5c3605bd2ca10eb37ea01be",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-DeepNC-GEN-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DeepNC-GEN-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-DeepNC-GEN-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DeepNC-GEN-train.input-audit.jsonl",
+          "bytes": 4729309,
+          "sha256": "79d18628b7799f862d044c5e464ce1197ebdcb7f4265bec657dc862465f55d7a",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-DeepNC-GEN-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DeepNC-GEN-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "bytes": 58665121,
+          "sha256": "2b719b0cfff124c07868526f4934204a5f6b7a0677457b2398ebf3c205dceb64",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DeepNC-GEN-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 964373,
+          "sha256": "b8dd7d62d6715a51514f00f47755425308f142c1929f2cff206736097b7bbb4e",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "target_reference_homology_cold__MGraphDTA__NC_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "input_sha256": {
+        "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+        "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+      },
+      "outputs": [
+        {
+          "filename": "target_reference_homology_cold-NC_only-MGraphDTA-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-MGraphDTA-train.pkl",
+          "bytes": 39513141,
+          "sha256": "e3a14d54174d1c5d1d673b5141f36000f5027d65bb50bce6cac4d592a8d3be56",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-MGraphDTA-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-MGraphDTA-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-MGraphDTA-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-MGraphDTA-train.input-audit.jsonl",
+          "bytes": 756960,
+          "sha256": "934163cb67d13b115cebdf449cb423eee22a74f40db7fa1e7ba2047db71b1712",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-MGraphDTA-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-MGraphDTA-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-MGraphDTA-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-MGraphDTA-validation-same_as_regime.pkl",
+          "bytes": 10651412,
+          "sha256": "6a6265b109e5cf479be33125e4a3dd7d3b6f7a129909f073d112985368afe925",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-MGraphDTA-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-MGraphDTA-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-NC_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 192257,
+          "sha256": "3c2b614f9588ba0f9fc8d7879018dfff9f0573ec835399c1acc24783426cc562",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-NC_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "source_peptide_dependency_cold__MGraphDTA__NC_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "input_sha256": {
+        "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+        "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+      },
+      "outputs": [
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-MGraphDTA-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-MGraphDTA-train.pkl",
+          "bytes": 45583712,
+          "sha256": "8bc1a408471801d92e0eafc68860bd0c7bcf11ea18b821afbfb4be51ed5b00e6",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-MGraphDTA-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-MGraphDTA-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-MGraphDTA-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-MGraphDTA-train.input-audit.jsonl",
+          "bytes": 832006,
+          "sha256": "86a720e583e274eea697253864151a0c4589c4d46cddc7825f0305960d4bde37",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-MGraphDTA-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-MGraphDTA-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-MGraphDTA-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-MGraphDTA-validation-same_as_regime.pkl",
+          "bytes": 6248024,
+          "sha256": "1fdc3688283f68ade1b7363cb80c3df754490dc26208734d4dc73cdf9957bf99",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-MGraphDTA-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-MGraphDTA-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-NC_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 133598,
+          "sha256": "ff7723217ce81eef6499069ed5c2ac01c2bd57c96f7d32cc611f2f77088cc9d5",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-NC_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-NC_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "target_reference_homology_cold__MGraphDTA__standard_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "input_sha256": {
+        "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+        "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+      },
+      "outputs": [
+        {
+          "filename": "target_reference_homology_cold-standard_only-MGraphDTA-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-MGraphDTA-train.pkl",
+          "bytes": 182114642,
+          "sha256": "eace3a73ad998018d0f319228f1669ae9de29638c1e2577e51cfe43f87d16499",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-MGraphDTA-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-MGraphDTA-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-MGraphDTA-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-MGraphDTA-train.input-audit.jsonl",
+          "bytes": 2859424,
+          "sha256": "9d926205227e3cc618478e574a9eec0004ff7d7747aead87ac6956b1d0868db5",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-MGraphDTA-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-MGraphDTA-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-MGraphDTA-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-MGraphDTA-validation-same_as_regime.pkl",
+          "bytes": 36532710,
+          "sha256": "e3d502775be1be0ccdfa2d2ec728c854b2fe268d3a23363c1ba4f060cc77df0c",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-MGraphDTA-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-MGraphDTA-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "target_reference_homology_cold-standard_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 583726,
+          "sha256": "51c93d5a3215c28f2330af550340aff8ef7baee3879187fafdf4f1fde9554941",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\target_reference_homology_cold-standard_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-standard_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    },
+    "source_peptide_dependency_cold__MGraphDTA__standard_only": {
+      "status": "materialized_producer_verified",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "producer_versions": {
+        "torch": "2.6.0+cu124",
+        "pyg": "2.6.1",
+        "rdkit": "2024.03.2",
+        "numpy": "1.26.4"
+      },
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "input_sha256": {
+        "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+        "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+      },
+      "outputs": [
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-MGraphDTA-train.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-MGraphDTA-train.pkl",
+          "bytes": 214926993,
+          "sha256": "25d86c54fc8ea6fa5943ba7d8a392f509425896beff04753a99aef7b32934f7a",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-MGraphDTA-train.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-MGraphDTA-train.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-MGraphDTA-train.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-MGraphDTA-train.input-audit.jsonl",
+          "bytes": 3219451,
+          "sha256": "429a23105ea0a22f9d572b1e0571da047d2543c62377f964be45563e16458a2e",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-MGraphDTA-train.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-MGraphDTA-train.input-audit.jsonl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-MGraphDTA-validation-same_as_regime.pkl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-MGraphDTA-validation-same_as_regime.pkl",
+          "bytes": 21771664,
+          "sha256": "4e911771f70784b3a31e48df1dcde86c177851d4bef2fb1e6beb8386e2da4c11",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-MGraphDTA-validation-same_as_regime.pkl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-MGraphDTA-validation-same_as_regime.pkl",
+          "adopted": true
+        },
+        {
+          "filename": "source_peptide_dependency_cold-standard_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "bytes": 425754,
+          "sha256": "5cf6893bb59296c9fd45a35f05726dfa7ad19b60c96a18b449c2bce2838f8dd5",
+          "local_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\encoded-cache-v3\\source_peptide_dependency_cold-standard_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-MGraphDTA-validation-same_as_regime.input-audit.jsonl",
+          "adopted": true
+        }
+      ],
+      "consumer_abi_verified": false,
+      "model_fits": 0
+    }
+  },
+  "processes": [
+    {
+      "cell_id": "source_peptide_dependency_cold__DGDTA-CL__NC_only",
+      "pid": 672891,
+      "pgid": 672891,
+      "returncode": 0,
+      "peak_rss_bytes": 848744448,
+      "seconds": 24.10813856124878,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__DGDTA-CL__NC_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__DGDTA-CL__NC_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "target_reference_homology_cold__DeepNC-GEN__NC_only",
+      "pid": 674062,
+      "pgid": 674062,
+      "returncode": 0,
+      "peak_rss_bytes": 806649856,
+      "seconds": 21.282992362976074,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__DeepNC-GEN__NC_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__DeepNC-GEN__NC_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "source_peptide_dependency_cold__GS-DTA__NC_only",
+      "pid": 672897,
+      "pgid": 672897,
+      "returncode": 0,
+      "peak_rss_bytes": 800108544,
+      "seconds": 22.21997880935669,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__GS-DTA__NC_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__GS-DTA__NC_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "source_peptide_dependency_cold__GraphDTA-GIN__NC_only",
+      "pid": 672888,
+      "pgid": 672888,
+      "returncode": 0,
+      "peak_rss_bytes": 802217984,
+      "seconds": 22.10776114463806,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__GraphDTA-GIN__NC_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__GraphDTA-GIN__NC_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "target_reference_homology_cold__GS-DTA__NC_only",
+      "pid": 674065,
+      "pgid": 674065,
+      "returncode": 0,
+      "peak_rss_bytes": 806731776,
+      "seconds": 25.174813747406006,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__GS-DTA__NC_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__GS-DTA__NC_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "target_reference_homology_cold__DGDTA-CL__NC_only",
+      "pid": 672902,
+      "pgid": 672902,
+      "returncode": 0,
+      "peak_rss_bytes": 846794752,
+      "seconds": 22.251787185668945,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__DGDTA-CL__NC_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__DGDTA-CL__NC_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "source_peptide_dependency_cold__GS-DTA__standard_only",
+      "pid": 672896,
+      "pgid": 672896,
+      "returncode": 0,
+      "peak_rss_bytes": 1139523584,
+      "seconds": 97.72897815704346,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__GS-DTA__standard_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__GS-DTA__standard_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "target_reference_homology_cold__GraphDTA-GIN__NC_only",
+      "pid": 672898,
+      "pgid": 672898,
+      "returncode": 0,
+      "peak_rss_bytes": 797691904,
+      "seconds": 19.33090353012085,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__GraphDTA-GIN__NC_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__GraphDTA-GIN__NC_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "target_reference_homology_cold__DGDTA-CL__standard_only",
+      "pid": 672903,
+      "pgid": 672903,
+      "returncode": 0,
+      "peak_rss_bytes": 1361186816,
+      "seconds": 101.53624439239502,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__DGDTA-CL__standard_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__DGDTA-CL__standard_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "source_peptide_dependency_cold__DeepNC-GEN__NC_only",
+      "pid": 672892,
+      "pgid": 672892,
+      "returncode": 0,
+      "peak_rss_bytes": 806813696,
+      "seconds": 21.100159645080566,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__DeepNC-GEN__NC_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__DeepNC-GEN__NC_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "target_reference_homology_cold__GraphDTA-GIN__standard_only",
+      "pid": 672899,
+      "pgid": 672899,
+      "returncode": 0,
+      "peak_rss_bytes": 1103405056,
+      "seconds": 67.14967226982117,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__GraphDTA-GIN__standard_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__GraphDTA-GIN__standard_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "source_peptide_dependency_cold__DeepNC-GEN__standard_only",
+      "pid": 672895,
+      "pgid": 672895,
+      "returncode": 0,
+      "peak_rss_bytes": 1139015680,
+      "seconds": 91.52295684814453,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__DeepNC-GEN__standard_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__DeepNC-GEN__standard_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "source_peptide_dependency_cold__GraphDTA-GIN__standard_only",
+      "pid": 672890,
+      "pgid": 672890,
+      "returncode": 0,
+      "peak_rss_bytes": 1148002304,
+      "seconds": 101.40430474281311,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__GraphDTA-GIN__standard_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__GraphDTA-GIN__standard_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "target_reference_homology_cold__DeepNC-GEN__standard_only",
+      "pid": 674064,
+      "pgid": 674064,
+      "returncode": 0,
+      "peak_rss_bytes": 1115090944,
+      "seconds": 88.63812780380249,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__DeepNC-GEN__standard_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__DeepNC-GEN__standard_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "target_reference_homology_cold__GS-DTA__standard_only",
+      "pid": 674066,
+      "pgid": 674066,
+      "returncode": 0,
+      "peak_rss_bytes": 1114284032,
+      "seconds": 88.37184643745422,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__GS-DTA__standard_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__GS-DTA__standard_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "source_peptide_dependency_cold__DGDTA-CL__standard_only",
+      "pid": 672893,
+      "pgid": 672893,
+      "returncode": 0,
+      "peak_rss_bytes": 1483247616,
+      "seconds": 111.14571690559387,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__DGDTA-CL__standard_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__DGDTA-CL__standard_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "source_peptide_dependency_cold__MGraphDTA__NC_only",
+      "pid": 672889,
+      "pgid": 672889,
+      "returncode": 0,
+      "peak_rss_bytes": 878866432,
+      "seconds": 220.15248227119446,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__MGraphDTA__NC_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__MGraphDTA__NC_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "target_reference_homology_cold__MGraphDTA__NC_only",
+      "pid": 672900,
+      "pgid": 672900,
+      "returncode": 0,
+      "peak_rss_bytes": 873865216,
+      "seconds": 275.8198561668396,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__MGraphDTA__NC_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__MGraphDTA__NC_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "target_reference_homology_cold__MGraphDTA__standard_only",
+      "pid": 672901,
+      "pgid": 672901,
+      "returncode": 0,
+      "peak_rss_bytes": 1203027968,
+      "seconds": 1592.4781477451324,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__MGraphDTA__standard_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/target_reference_homology_cold__MGraphDTA__standard_only.stderr.log",
+      "status": "completed"
+    },
+    {
+      "cell_id": "source_peptide_dependency_cold__MGraphDTA__standard_only",
+      "pid": 672894,
+      "pgid": 672894,
+      "returncode": 0,
+      "peak_rss_bytes": 1267286016,
+      "seconds": 1777.9531610012054,
+      "stop_reason": null,
+      "stdout": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__MGraphDTA__standard_only.stdout.log",
+      "stderr": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/logs/source_peptide_dependency_cold__MGraphDTA__standard_only.stderr.log",
+      "status": "completed"
+    }
+  ],
+  "producer": "node23 Torch2.6/PyG2.6.1/RDKit2024.03.2",
+  "updated_unix": 1792603031.809628,
+  "ready_cells": [
+    "source_peptide_dependency_cold__DGDTA-CL__NC_only",
+    "target_reference_homology_cold__DeepNC-GEN__NC_only",
+    "target_reference_homology_cold__GS-DTA__NC_only",
+    "target_reference_homology_cold__DGDTA-CL__NC_only",
+    "target_reference_homology_cold__GraphDTA-GIN__NC_only",
+    "source_peptide_dependency_cold__DeepNC-GEN__NC_only",
+    "source_peptide_dependency_cold__GraphDTA-GIN__NC_only",
+    "source_peptide_dependency_cold__GS-DTA__NC_only",
+    "target_reference_homology_cold__GS-DTA__standard_only",
+    "source_peptide_dependency_cold__DGDTA-CL__standard_only",
+    "target_reference_homology_cold__GraphDTA-GIN__standard_only",
+    "source_peptide_dependency_cold__GS-DTA__standard_only",
+    "source_peptide_dependency_cold__GraphDTA-GIN__standard_only",
+    "target_reference_homology_cold__DGDTA-CL__standard_only",
+    "source_peptide_dependency_cold__DeepNC-GEN__standard_only",
+    "target_reference_homology_cold__DeepNC-GEN__standard_only",
+    "target_reference_homology_cold__MGraphDTA__NC_only",
+    "source_peptide_dependency_cold__MGraphDTA__NC_only",
+    "target_reference_homology_cold__MGraphDTA__standard_only",
+    "source_peptide_dependency_cold__MGraphDTA__standard_only"
+  ],
+  "ready_cell_count": 20,
+  "pool_complete": true,
+  "completed_producer_cells": 20,
+  "failed_cells": []
+}

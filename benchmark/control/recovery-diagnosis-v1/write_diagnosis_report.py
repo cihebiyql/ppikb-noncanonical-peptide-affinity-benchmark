@@ -1,0 +1,78 @@
+from pathlib import Path
+import json,hashlib,datetime,inspect
+P=Path(__file__).resolve().parent
+summary=json.loads((P/'diagnosis-summary.json').read_text(encoding='utf-8'))
+source=inspect.getsource(Path.read_text)
+(P/'windows-python-pathlib-read-text-source.txt').write_text(source,encoding='utf-8')
+case_rows=[]
+for case in summary['synthetic_cases']:
+ case_rows.append('| '+str(case['scenario'])+' | '+('成功' if case['ok'] else '受阻')+' | '+str(case.get('error_class') or '—')+' | '+str(case.get('errno') or '—')+' |')
+failure=summary['original_failure'];deadline=failure.get('original_unit_deadline_epoch')
+unit_deadline=datetime.datetime.fromtimestamp(deadline,datetime.timezone.utc).isoformat() if deadline else '原收据未提供'
+report=f'''# 活JSON观察与WSL原子替换故障：有界诊断
+
+结论：**普通Windows Python读句柄与WSL/DrvFs原子替换之间的共享删除冲突已在自有合成JSON上复现。原停机由watchdog捕获I/O异常后主动终止自有worker的因果链明确；具体原始异常文件和当时锁持有者仍未被原收据记录。** 因此机制为高置信，原事件具体归因为中等置信。
+
+## 原始停机证据
+
+- 原pool状态：86个complete、1个failed；异常类型`PermissionError`，errno13。原reason只保存异常repr，缺少filename与traceback。
+- 失败unit：`MGraphDTA__target_reference_homology_cold__NC_only__seed08`；worker退出码`-15`，与监督器主动发送终止信号一致。
+- unit开始时间：`{failure['worker_started_at']}`；终态时间：`{failure['worker_terminal_at']}`。candidate0的部分产物没有在本诊断中打开、删除或修改。
+- 原global截止：`{failure['global_deadline']}`；原unit有效截止：`{unit_deadline}`。诊断没有改变任一时钟，也未启动恢复训练。
+- 原progress字节副本为`original-progress.snapshot.json`，SHA `{json.loads((P/'initial-evidence-summary.json').read_text(encoding='utf-8'))['progress_sha256']}`。失败unit启动／终态及stdout／stderr也按原字节保存，输出时仅摘要class／errno，原文没有丢弃。
+
+## 冻结代码中的路径
+
+`common.write`先写同目录临时JSON，再调用`Path.replace`替换目标。冻结watchdog中，`process_table`对逐PID读权限错误已有捕获；活进度写入是另一条可能抛出errno13的文件路径。watchdog的异常分支将reason设为`watchdog_failed:<exception repr>`，随后调用`stop_owned_group`终止自有会话。原异常、终态与该分支一致。
+
+精确源行号见`source-causal-chain.json`。两个冻结脚本SHA前后均一致：
+
+- common.py：`35c91d520885e6a447be2863ff7b60df91a8a2bfbc30c336fff7d7cbfd9a1632`
+- pool_supervisor.py：`73a5dc2e13ebfbe19ebcf91b30d814304eacf0b8338345c4b35ef3202deb43b7`
+
+`control/progress_snapshot.py`通过Windows Python的`Path.read_text`读取活progress。Windows Python3.11.9的该函数内部使用普通`self.open(mode='r', ...)`；本诊断保存了标准库函数源码，并用同一种普通打开方式持续持有合成文件读fd。持有时长被人为扩大以消除时序碰运气，实际原读取的重叠窗口仍未知。
+
+## 七个无模型合成案例
+
+每个writer都调用原冻结common.write；目标均在本诊断独占目录。没有修改共享flags、原progress、内核或WSL配置。
+
+| 案例 | 原子替换结果 | 异常class | errno |
+| --- | --- | --- | --- |
+{chr(10).join(case_rows)}
+
+关键复现中，异常路径为自有`synthetic.json.tmp`到`synthetic.json`；目标保留旧内容、临时文件保留，符合替换阶段被Windows共享删除规则阻断的机制。普通Windows Python案例没有使用自定义share flags。
+
+**反证保留：当前PowerShell7.6.5的实际Get-Content -Wait案例成功。** 因而不能把所有Get-Content操作或此次实际Get-Content认定为已证实原因。FileStream(Read, FileShare.Read)和普通Windows Python持续读fd的失败，证明的是缺少删除共享时存在该机制；它们没有唯一确定原事件持锁者。
+
+没有把此次停机归为模型OOM：记录的停止原因是watchdog I/O异常，worker被主动终止。保存的外层失败日志中没有发现CUDA OOM文本；这项文本检查不等于对模型全部内存历史作证明。
+
+## 可靠观察方式
+
+优先在WSL内读取活JSON，保持POSIX读／原子替换语义。`read_live_json_wsl.py --path <本项目某pool的WSL绝对progress.json路径>`仅输出状态、计数和脱敏异常class／errno，避免把原错误文本当作工具设置错误。可由root在WSL中运行既有snapshot脚本；本诊断没有执行会写STATUS的snapshot入口。
+
+若需要Windows侧观察，显式允许删除共享：
+
+```powershell
+$sharing = [System.IO.FileShare]::ReadWrite -bor [System.IO.FileShare]::Delete
+$stream = [System.IO.FileStream]::new($ownedProgressPath, [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, $sharing)
+try {{
+    $reader = [System.IO.StreamReader]::new($stream, [System.Text.Encoding]::UTF8)
+    try {{ $text = $reader.ReadToEnd() }} finally {{ $reader.Dispose() }}
+}} finally {{ $stream.Dispose() }}
+```
+
+相应Read|Delete和ReadWrite|Delete合成案例都已成功。只读静态／已关闭文件不涉及生产者原子替换的竞争窗口；活文件统一用WSL观察可减少跨OS共享模式差异。
+
+## 置信度与未动范围
+
+- 高置信：缺DeleteShare的Windows读句柄可以使此冻结writer的DrvFs原子替换抛出errno13；普通Windows Python默认read fd已复现。
+- 高置信：原worker退出与冻结watchdog异常后主动停组的分支一致，原记录不是模型OOM触发分支。
+- 中等置信：原事件属于活progress原子替换与Windows观察者重叠；没有原文件路径／traceback，不能排除同watchdog内其他文件I/O瞬态。
+- 未知：原时刻具体持锁进程、句柄以及失败发生在临时写入还是替换阶段。合成实验明确捕获到替换阶段路径，原事件没有。
+
+诊断开始`{summary['diagnosis_started_utc']}`，证据收束`{summary['diagnosis_finished_utc']}`，在原10分钟窗口内完成。原progress前后SHA一致；训练、数据、冻结脚本、检查点和原截止均未改变。所有测试只有自有短读写进程，没有GPU或模型调用。
+'''
+(P/'诊断结论与安全观察方式.md').write_text(report,encoding='utf-8')
+manifest={'status':'bounded_diagnosis_complete_no_training','started_utc':summary['diagnosis_started_utc'],'finished_utc':summary['diagnosis_finished_utc'],'synthetic_cases':len(summary['synthetic_cases']),'source_scripts_unchanged':summary['frozen_scripts_unchanged'],'original_progress_unchanged':summary['original_progress_unchanged_by_diagnosis'],'mechanism_confidence':'high','specific_original_event_attribution':'moderate','Get_Content_unique_attribution':False,'models_started':0,'original_checkpoints_opened_or_modified':False,'deadline_extended':False,'files':{p.name:{'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size} for p in P.iterdir() if p.is_file() and p.name!='delivery-manifest.json'}}
+(P/'delivery-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+print(json.dumps({'status':manifest['status'],'synthetic_cases':manifest['synthetic_cases'],'mechanism_confidence':'high','specific_event_attribution':'moderate','models_started':0},ensure_ascii=False))

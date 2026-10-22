@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\administration\validate_stage_result_index.py", line 39, in <module>
+    report = validator.validate(contract, result, contract_bytes=contract_file.read_bytes(), check_files=False)
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciheb\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1050, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciheb\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '\\mnt\\d\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\i1\\NN200\\GraphDTA-GIN__source_peptide_dependency_cold__NC_only__seed00__evaluation_v1\\task-contract.json'

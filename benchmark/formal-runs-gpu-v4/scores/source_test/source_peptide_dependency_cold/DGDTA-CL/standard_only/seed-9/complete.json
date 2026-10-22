@@ -1,0 +1,157 @@
+{
+  "status": "complete",
+  "stage": "post-selection-score-only",
+  "prediction_protocol": "label-free cached X; blind first, gold later",
+  "method_id": "DGDTA-CL",
+  "split_id": "source_peptide_dependency_cold",
+  "regime": "standard_only",
+  "seed": 9,
+  "holdout_id": "source_test",
+  "holdout_kind": "internal_source_peptide_dependency_cold",
+  "n": 1039,
+  "metrics": {
+    "all": {
+      "n": 1039,
+      "MAE": 1.4597110092295518,
+      "RMSE": 1.8251487566751352,
+      "Pearson": 0.18886982678387731,
+      "Spearman": 0.19208477933831608,
+      "R2": -0.010812424808268162
+    },
+    "PTM": {
+      "n": 158,
+      "MAE": 1.2331404557699934,
+      "RMSE": 1.5514116467704793,
+      "Pearson": 0.03389721369625502,
+      "Spearman": 0.034195198944880094,
+      "R2": -0.21260223156244673
+    },
+    "other_NC": {
+      "n": 6,
+      "MAE": 1.622628291016304,
+      "RMSE": 1.814562628483311,
+      "Pearson": 0.7324772650852174,
+      "Spearman": 0.6982532518267537,
+      "R2": 0.17507103674016744
+    },
+    "standard20_control": {
+      "n": 736,
+      "MAE": 1.481963974945807,
+      "RMSE": 1.863521523521211,
+      "Pearson": 0.17199123505679625,
+      "Spearman": 0.16442783226958352,
+      "R2": -0.0034146166597657235
+    },
+    "synthetic_D_backbone": {
+      "n": 100,
+      "MAE": 1.4721345331507993,
+      "RMSE": 1.7782517845829373,
+      "Pearson": 0.4495331275020062,
+      "Spearman": 0.44113617818750733,
+      "R2": 0.12947362753408076
+    },
+    "synthetic_and_PTM": {
+      "n": 39,
+      "MAE": 1.9007394347834317,
+      "RMSE": 2.2008544546040025,
+      "Pearson": 0.2978237885205377,
+      "Spearman": 0.2763383005025088,
+      "R2": -0.3327088099340032
+    },
+    "NC_core": {
+      "n": 303,
+      "MAE": 1.4056576007570647,
+      "RMSE": 1.7283953129857395,
+      "Pearson": 0.2638865505507208,
+      "Spearman": 0.2676485567390035,
+      "R2": -0.03331457663117332
+    },
+    "standard": {
+      "n": 736,
+      "MAE": 1.481963974945807,
+      "RMSE": 1.863521523521211,
+      "Pearson": 0.17199123505679625,
+      "Spearman": 0.16442783226958352,
+      "R2": -0.0034146166597657235
+    },
+    "exclude_discordant_sensitivity": {
+      "n": 998,
+      "MAE": 1.4850098351970142,
+      "RMSE": 1.8495009850257706,
+      "Pearson": 0.1830509237625911,
+      "Spearman": 0.1812032538405005,
+      "R2": -0.01631944544411712
+    },
+    "exclude_discordant:PTM": {
+      "n": 130,
+      "MAE": 1.3539379126467084,
+      "RMSE": 1.6619069168286544,
+      "Pearson": -0.005813227277294646,
+      "Spearman": 0.0003922700879883771,
+      "R2": -0.26784011891985604
+    },
+    "exclude_discordant:other_NC": {
+      "n": 6,
+      "MAE": 1.622628291016304,
+      "RMSE": 1.814562628483311,
+      "Pearson": 0.7324772650852174,
+      "Spearman": 0.6982532518267537,
+      "R2": 0.17507103674016744
+    },
+    "exclude_discordant:standard20_control": {
+      "n": 724,
+      "MAE": 1.487634737401259,
+      "RMSE": 1.8709324627403756,
+      "Pearson": 0.16789224523790436,
+      "Spearman": 0.15524033733841858,
+      "R2": -0.005100354036679633
+    },
+    "exclude_discordant:synthetic_D_backbone": {
+      "n": 100,
+      "MAE": 1.4721345331507993,
+      "RMSE": 1.7782517845829373,
+      "Pearson": 0.4495331275020062,
+      "Spearman": 0.44113617818750733,
+      "R2": 0.12947362753408076
+    },
+    "exclude_discordant:synthetic_and_PTM": {
+      "n": 38,
+      "MAE": 1.8955556300752296,
+      "RMSE": 2.203503232570377,
+      "Pearson": 0.2720809052867699,
+      "Spearman": 0.2366044470230162,
+      "R2": -0.43847664669004605
+    }
+  },
+  "selection_sha256": "476d109b4f6cc903da6b9a70894a94d0b60c879b86f890967f4b4ecbdb33ef61",
+  "checkpoint_sha256": "9c1258adc70858f698458ad66c6edb00c2614ce0cf5cba2db2368ba6b1f49e9b",
+  "barrier_sha256": "87382517bf1ee4cbe7e6f7c192de27cb3143dbdf6197490ab95572972b691e1a",
+  "barrier_audit_sha256": "e97e93b046d8baee5a0c170ba252e6b43573c7edf971ae835ed0a5cc58de37b8",
+  "authorization_sha256": "b9f56276fb5a9ae82220cc9c9dce299d7f497071271d7eb75f07206c30e15742",
+  "score_spec_sha256": "5c070dc129b4b4d31e0df69b81817281a60a02a1e0603d9ccb90c6921ef59e2d",
+  "input_sha256": "db0ca035a5c318f49fbba47b1907e3170c5523fedef319373bbe439273a227bc",
+  "X_cache_sha256": "5d860dbc4faa801cabc4717705ba07d5db584ca7fb3f6f655d60025171d0c2ee",
+  "cache_producer_versions": {
+    "python": "3.11.13 (main, Jun  5 2025, 13:12:00) [GCC 11.2.0]",
+    "torch": "2.6.0+cu124",
+    "pyg": "2.6.1",
+    "rdkit": "2024.03.2",
+    "numpy": "1.26.4"
+  },
+  "blind_predictions_sha256": "c228ef9fa15f93b569d72163347ba62461a71a0a8e2cfd0da6e12f1b16609aeb",
+  "predictions_sha256": "c42aaa915caf09bcbd3af610d7d616976ebbb1f650dc4cd3e5ee9ab3e93848f1",
+  "gold_source_sha256": "8a2c4e545ec322184ea57504cf875abc61805db8bef1b265034f95f4de4d2a7a",
+  "device_receipt": {
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5080",
+    "total_memory_bytes": 17066033152,
+    "gpu_allocator_budget_bytes": 3221225472,
+    "allocator_budget_excludes_cuda_context_and_RSS": true,
+    "determinism": "seeded; deterministic_algorithms warn_only; GPU bitwise reproducibility not guaranteed"
+  },
+  "no_parameter_updates": true,
+  "cached_y_constant_zero": true,
+  "true_gold_used_only_after_blind_file": true,
+  "metric_implementation": "independent metrics_stable.py; exact all(x==x[0]) constant detection; undefined is null",
+  "external_67_8_2_or_supplement_subgroups": "Independent review recomputes declared external subsets from retained flags; this receipt does not certify external independence"
+}

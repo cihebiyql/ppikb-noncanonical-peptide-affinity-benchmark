@@ -1,0 +1,93 @@
+{
+  "status": "complete",
+  "stage": "post-selection-score-only",
+  "prediction_protocol": "label-free cached X; blind first, gold later",
+  "method_id": "DGDTA-CL",
+  "split_id": "target_reference_homology_cold",
+  "regime": "NC_only",
+  "seed": 7,
+  "holdout_id": "external75",
+  "holdout_kind": "retrospective_PTM_reference_view_75_primary67_conditional8_cold2_not_family_cold",
+  "n": 75,
+  "metrics": {
+    "all": {
+      "n": 75,
+      "MAE": 1.5275599287317843,
+      "RMSE": 2.0213133689731118,
+      "Pearson": -0.19979795314739346,
+      "Spearman": -0.04275085003770045,
+      "R2": -0.4424421639069498
+    },
+    "PTM": {
+      "n": 75,
+      "MAE": 1.5275599287317843,
+      "RMSE": 2.0213133689731118,
+      "Pearson": -0.19979795314739346,
+      "Spearman": -0.04275085003770045,
+      "R2": -0.4424421639069498
+    },
+    "NC_core": {
+      "n": 75,
+      "MAE": 1.5275599287317843,
+      "RMSE": 2.0213133689731118,
+      "Pearson": -0.19979795314739346,
+      "Spearman": -0.04275085003770045,
+      "R2": -0.4424421639069498
+    },
+    "standard": {
+      "n": 0,
+      "MAE": null,
+      "RMSE": null,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": null
+    },
+    "exclude_discordant_sensitivity": {
+      "n": 75,
+      "MAE": 1.5275599287317843,
+      "RMSE": 2.0213133689731118,
+      "Pearson": -0.19979795314739346,
+      "Spearman": -0.04275085003770045,
+      "R2": -0.4424421639069498
+    },
+    "exclude_discordant:PTM": {
+      "n": 75,
+      "MAE": 1.5275599287317843,
+      "RMSE": 2.0213133689731118,
+      "Pearson": -0.19979795314739346,
+      "Spearman": -0.04275085003770045,
+      "R2": -0.4424421639069498
+    }
+  },
+  "selection_sha256": "cdfb2ed60bc937a2d4b6842569a4e7120750f8ace6b0b0c9f615156a262fc111",
+  "checkpoint_sha256": "87c25f2e458149f0793b3cc764c6430f6271a5cb5b745550f1184ceb6951f20f",
+  "barrier_sha256": "87382517bf1ee4cbe7e6f7c192de27cb3143dbdf6197490ab95572972b691e1a",
+  "barrier_audit_sha256": "e97e93b046d8baee5a0c170ba252e6b43573c7edf971ae835ed0a5cc58de37b8",
+  "authorization_sha256": "b9f56276fb5a9ae82220cc9c9dce299d7f497071271d7eb75f07206c30e15742",
+  "score_spec_sha256": "80206b76bfe36901a82f90b61929edc7926d4ac37ec7247dc8b38eed061d9584",
+  "input_sha256": "f3a8304cdab5e7c0d18cfae2e75518348dd9f0434f24f9bec2c1999e02569ae4",
+  "X_cache_sha256": "b91577ab1d144b40f4e89acf52b3581e94279cd323ce5dd08c7768d77ec2c855",
+  "cache_producer_versions": {
+    "python": "3.11.13 (main, Jun  5 2025, 13:12:00) [GCC 11.2.0]",
+    "torch": "2.6.0+cu124",
+    "pyg": "2.6.1",
+    "rdkit": "2024.03.2",
+    "numpy": "1.26.4"
+  },
+  "blind_predictions_sha256": "4cefdbcc799c1129b5dad2c350d7f75e2fdf42bf3cac08634a705b4d2da0ce03",
+  "predictions_sha256": "3566ac59f2ea288828964973b384c1b41e760d10b2e021237c381deb99adfea7",
+  "gold_source_sha256": "b53ffe5098b9db34b02ca7503840acb375b74c1224ae30203748b5f0d89fa3eb",
+  "device_receipt": {
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5080",
+    "total_memory_bytes": 17066033152,
+    "gpu_allocator_budget_bytes": 3221225472,
+    "allocator_budget_excludes_cuda_context_and_RSS": true,
+    "determinism": "seeded; deterministic_algorithms warn_only; GPU bitwise reproducibility not guaranteed"
+  },
+  "no_parameter_updates": true,
+  "cached_y_constant_zero": true,
+  "true_gold_used_only_after_blind_file": true,
+  "metric_implementation": "independent metrics_stable.py; exact all(x==x[0]) constant detection; undefined is null",
+  "external_67_8_2_or_supplement_subgroups": "Independent review recomputes declared external subsets from retained flags; this receipt does not certify external independence"
+}

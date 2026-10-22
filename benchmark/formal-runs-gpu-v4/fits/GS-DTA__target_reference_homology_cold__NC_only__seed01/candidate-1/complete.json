@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "method_id": "GS-DTA",
+  "split_id": "target_reference_homology_cold",
+  "regime": "NC_only",
+  "seed": 1,
+  "candidate_index": 1,
+  "hyperparameters": {
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0
+  },
+  "best_validation_MAE": 1.527411219283722,
+  "best_epoch": 3,
+  "train_n": 1409,
+  "validation_n": 358,
+  "validation_scope": "same_as_regime",
+  "effective_validation_scope": "NC_only",
+  "checkpoint_sha256": "9fc753fb3ed60c929a10d7de1aaf2908a0a2e64b037d152f54f7cd91a8d7225a",
+  "fit_spec_sha256": "a47fb6455d46abaf7a315de56c5f46a6c20da2a7df22a4dff87ae19c91979f69",
+  "validation_predictions_sha256": "b86b5c733367643f32dba93938a7c34abdc799f93b5eebfc7a774b7c84113726",
+  "adapter_tree_sha256": "1665c2d2662e42b716fb41b9da35367f8a4e1eb9a0de2ea64bd366a31c0fd0df",
+  "runner_sha256": "9abe4a9fba5840a6200aecf40fdfb436abbf61d78c3a9a2f28baae7712c6913e",
+  "device_receipt": {
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5080",
+    "total_memory_bytes": 17066033152,
+    "gpu_allocator_budget_bytes": 3221225472,
+    "allocator_budget_excludes_cuda_context_and_RSS": true,
+    "determinism": "seeded; deterministic_algorithms warn_only; GPU bitwise reproducibility not guaranteed"
+  },
+  "elapsed_seconds": 27.654219150543213,
+  "test_label_reads": 0,
+  "external_label_reads": 0,
+  "procedural_holdout_boundary": "separate files and fit entrypoint; not an OS security guarantee"
+}

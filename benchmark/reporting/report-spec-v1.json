@@ -1,0 +1,18 @@
+{
+  "scope": "metric-only final reporting; preparation template and synthetic tests only",
+  "input_schema_source": "review/combine_audit_tables_v5.py -> unified-per-seed-metrics.json",
+  "metric_order": ["MAE", "RMSE", "Pearson", "Spearman", "R2"],
+  "seeds": [0,1,2,3,4,5,6,7,8,9],
+  "summary": "arithmetic mean of defined seeds and sample SD ddof1; completed/defined/missing seed counts retained; no imputation",
+  "main": {"dataset_id":"PPIKB-internal","cohort":"NC_core","aggregation":"row_micro","source_n":303,"target_n":332},
+  "method_count": {"prior_paper_NN":5,"auxiliary_RF":1,"deterministic_references_separate":3},
+  "ledger": {"NN":{"fits":400,"selections":200,"scores":600,"rows":265800,"preserved_io_interrupted_attempt":1},"RF":{"fits":80,"selections":40,"scores":120,"rows":53160},"reference":{"rule_calls":120,"scores":360,"rows":159480}},
+  "required_barrier": "all_200_NN_plus_40_RF_frozen",
+  "actual_generation_requires": "explicit root_final_scientific_report_authorized plus source/table/manifest/joint SHA and deadline",
+  "partial_policy": "only explicit root allow_partial_audited_coverage and independently_audited_available_metrics=true; show coverage without completion inference",
+  "prohibited_inputs": ["raw gold", "raw predictions", "model/checkpoint", "training labels", "feature matrices"],
+  "training_metadata_optional": "only explicit SHA-bound complete.json/selection.json/failed.json map; absent completed epochs/earlystop/cap stay null",
+  "cross_panel_pooling": false,
+  "seed_t_test": false,
+  "new_model_selection": false
+}

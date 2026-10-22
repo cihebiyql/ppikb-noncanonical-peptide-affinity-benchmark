@@ -1,0 +1,48 @@
+{
+  "actual_extra_interrupted_attempts": 2,
+  "kind": "derived_evidence_sidecar_not_original_failed_json",
+  "original_failed_json_files_found": 1,
+  "original_failed_json_file_count_is_not_attempt_count": true,
+  "attempts": [
+    {
+      "attempt_type": "IO_watchdog_interruption",
+      "count": 1,
+      "recovery_contract": {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/io-recovery01/issued-root-v2/MGraphDTA__target_reference_homology_cold__NC_only__seed08__io_recovery01/task-contract.json",
+        "sha256": "62e9154385c4375be6f56e4118923fabce58e0dafe3e3ed24543aa5aa5f4326d"
+      },
+      "original_failed_spec": {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/gpu-fit-specs-v4/MGraphDTA__target_reference_homology_cold__NC_only__seed08.json",
+        "sha256": "ca9d1bf2e92647e6585660cc368b139eb9d532182540a01160a554683744a572"
+      },
+      "original_failed_terminal": {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/pool-runs-v4-nc-all-seeds/MGraphDTA__target_reference_homology_cold__NC_only__seed08.terminal.json",
+        "sha256": "b59f194a5c74a518380427d0138d8b5c944949e38079d9d7ad505f042f6c64bb"
+      },
+      "original_failed_json_refs": [],
+      "original_failed_json_absent": true,
+      "never_fabricated_failed_json": true,
+      "runtime_error_attribution": "Watchdog PermissionError/termination; source-recorded interrupted process retained"
+    },
+    {
+      "attempt_type": "CUDA_unknown_error",
+      "count": 1,
+      "attempt_chain": {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/CUDA-ATTEMPT-CHAIN.json",
+        "sha256": "d2338c08ad35006eac485064767c56c95c0b818515a98e813273ac9b8f5b128f"
+      },
+      "full_archive_manifest": {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/execution-v1/archive-complete.json",
+        "sha256": "74f41504b464f175eba1b09831053b967d80f90c9435ae8428e5541bc595b140"
+      },
+      "original_archived_failed_json_refs": [
+        {
+          "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/execution-v1/archive/fit-root/candidate-0/failed.json",
+          "sha256": "05e2b10e399e74124b2c039bc92522b489612f2791c7925ee6ed71655b51fe37"
+        }
+      ],
+      "runtime_error_attribution": "CUDAunknown runtime error; native overall old exit remained unobserved, outer1 retained in chain"
+    }
+  ],
+  "reporter_optional_map_should_not_be_used_as_complete_interruption_account": true
+}

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\administration\postjoint_issue_all.py", line 217, in <module>
+    issue(pc.read(args.inputs), args.out)
+  File "D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\administration\postjoint_issue_all.py", line 183, in issue
+    prepare_evaluation_contracts.generate(nn_plan, output / "NN200", issue=True)
+  File "D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\administration\prepare_evaluation_contracts.py", line 169, in generate
+    pc.write_new(folder / "central-validator-report.json", report)
+  File "D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\administration\prepare_campaign.py", line 49, in write_new
+    with path.open("x", encoding="utf-8", newline="\n") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciheb\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\issued-240\\NN200\\GraphDTA-GIN__source_peptide_dependency_cold__standard_only__seed00__evaluation_v1\\central-validator-report.json'

@@ -1,0 +1,17 @@
+{
+  "scope": "GraphDTA-GIN and DeepNC-GEN synthetic component smoke; no full training, no real peptide optimization",
+  "expected_host": "node23",
+  "environment": "/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/.venv/bin/python",
+  "entrypoint": "run_bounded_smoke.py -> smoke.py",
+  "remote_output": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/graphdta-deepnc/smoke-20261022-v1",
+  "cpu_cores": 1,
+  "max_tree_rss_bytes": 4294967296,
+  "memory_enforcement": "process-tree /proc VmRSS watchdog, 0.1 second polling; kill process group above cap",
+  "timeout_seconds": 180,
+  "gpu_count": 0,
+  "CUDA_VISIBLE_DEVICES": "",
+  "seed": 0,
+  "method_ids": ["GraphDTA-GIN", "DeepNC-GEN"],
+  "batch_sizes": [1, 2],
+  "stopping_condition": "one forward/backward per method per batch size plus evaluation permutation/partition checks, or resource limit/error"
+}

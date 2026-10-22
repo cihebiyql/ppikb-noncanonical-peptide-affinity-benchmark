@@ -1,0 +1,164 @@
+{
+  "scope": "label-free metadata/IDs mechanical audit only; no heldout numeric truth or model prediction read",
+  "frozen_inputs_rows": 9619,
+  "NC_rows": 2099,
+  "standard_rows": 7520,
+  "input_fields": [
+    "NC_core",
+    "achiral_entity_id",
+    "annotation_unresolved_components",
+    "canonical_isomeric_smiles",
+    "chemical_entity_id",
+    "chemistry_flags",
+    "endpoint",
+    "evaluation_stratum",
+    "noncanonical_subtypes",
+    "peptide_sequence",
+    "peptide_sequence_raw",
+    "peptide_smiles",
+    "record_id",
+    "residue_class_graph_discordance",
+    "source_location",
+    "source_record_id",
+    "study_id",
+    "target_id",
+    "target_sequence",
+    "target_sequence_scope"
+  ],
+  "strata": {
+    "PTM": 1002,
+    "other_NC": 106,
+    "synthetic_D_backbone": 723,
+    "synthetic_and_PTM": 268,
+    "standard20_control": 7520
+  },
+  "strata_annotation_mapping_mismatches": 0,
+  "NC_boolean_type_errors": 0,
+  "discordance_flag_value_types": [
+    {
+      "key": "residue_class_graph_discordance",
+      "type": "bool",
+      "value": "False",
+      "n": 9011
+    },
+    {
+      "key": "residue_class_graph_discordance",
+      "type": "bool",
+      "value": "True",
+      "n": 608
+    }
+  ],
+  "flagged_discordance_rows": 608,
+  "sensitivity_panels": [
+    {
+      "panel": "source_peptide_dependency_cold",
+      "evaluation_regime": "NC_only",
+      "test_n": 303,
+      "sensitivity_n": 274,
+      "discordant_excluded": 29,
+      "sensitivity_membership_exactly_matches_flags": true,
+      "strata_test_counts": {
+        "PTM": 158,
+        "synthetic_D_backbone": 100,
+        "synthetic_and_PTM": 39,
+        "other_NC": 6
+      },
+      "strata_sensitivity_counts": {
+        "PTM": 130,
+        "synthetic_D_backbone": 100,
+        "synthetic_and_PTM": 38,
+        "other_NC": 6
+      }
+    },
+    {
+      "panel": "source_peptide_dependency_cold",
+      "evaluation_regime": "standard_only",
+      "test_n": 736,
+      "sensitivity_n": 724,
+      "discordant_excluded": 12,
+      "sensitivity_membership_exactly_matches_flags": true,
+      "strata_test_counts": {
+        "standard20_control": 736
+      },
+      "strata_sensitivity_counts": {
+        "standard20_control": 724
+      }
+    },
+    {
+      "panel": "target_reference_homology_cold",
+      "evaluation_regime": "NC_only",
+      "test_n": 332,
+      "sensitivity_n": 261,
+      "discordant_excluded": 71,
+      "sensitivity_membership_exactly_matches_flags": true,
+      "strata_test_counts": {
+        "synthetic_D_backbone": 93,
+        "PTM": 190,
+        "synthetic_and_PTM": 37,
+        "other_NC": 12
+      },
+      "strata_sensitivity_counts": {
+        "synthetic_D_backbone": 91,
+        "synthetic_and_PTM": 28,
+        "PTM": 130,
+        "other_NC": 12
+      }
+    },
+    {
+      "panel": "target_reference_homology_cold",
+      "evaluation_regime": "standard_only",
+      "test_n": 1111,
+      "sensitivity_n": 1067,
+      "discordant_excluded": 44,
+      "sensitivity_membership_exactly_matches_flags": true,
+      "strata_test_counts": {
+        "standard20_control": 1111
+      },
+      "strata_sensitivity_counts": {
+        "standard20_control": 1067
+      }
+    }
+  ],
+  "external_metadata": {
+    "rows": 75,
+    "strata": {
+      "PTM": 75
+    },
+    "primary": 67,
+    "conditional_sensitivity": 8,
+    "target_reference_cold": 2,
+    "primary_sensitivity_disjoint": true,
+    "primary_union_sensitivity_equals_all": true,
+    "target_reference_cold_is_subset_of_primary": true,
+    "input_IDs_match_all": true,
+    "external_family_cold_certified_rows": 0,
+    "actual_assay_clone_verified_rows": 0,
+    "resources": {
+      "SH2_ProBound": 45,
+      "Kliche2023_phosphomimetic": 30
+    },
+    "primary_resources": {
+      "SH2_ProBound": 45,
+      "Kliche2023_phosphomimetic": 22
+    }
+  },
+  "allowed_files_read": [
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\inputs.jsonl",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\NC_only\\test-ids.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\NC_only\\test-sensitivity-excluding-graph-discordance-ids.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\standard_only\\test-ids.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\standard_only\\test-sensitivity-excluding-graph-discordance-ids.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\NC_only\\test-ids.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\NC_only\\test-sensitivity-excluding-graph-discordance-ids.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\standard_only\\test-ids.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\standard_only\\test-sensitivity-excluding-graph-discordance-ids.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-views-v1\\inputs75.jsonl",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-views-v1\\ids-all75.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-views-v1\\ids-primary67.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-views-v1\\ids-conditional-sensitivity8.json",
+    "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-views-v1\\ids-reference-target-cold2.json"
+  ],
+  "real_gold_reads": 0,
+  "real_prediction_reads": 0,
+  "training_or_model_selection": false
+}

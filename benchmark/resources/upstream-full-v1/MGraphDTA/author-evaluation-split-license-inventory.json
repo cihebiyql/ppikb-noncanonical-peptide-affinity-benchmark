@@ -1,0 +1,537 @@
+{
+  "evaluation_split_training_script_candidates": [
+    {
+      "path": "classification/dataset.py",
+      "sha256": "8bc983b07f342753ea2ff5603a2914e650e233921140791fba66c53c9f3f504e",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 12,
+            "text": "elif types == 'test':"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "classification/log/basic_logger.py",
+      "sha256": "14ca9a8a0303beaf17809aa5e0e850965806b468fb374e81a0c947aceb3c7b2b",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 48,
+            "text": "logger = BasicLogger('test.log')"
+          },
+          {
+            "line": 49,
+            "text": "logger.info(\"This is a test\")"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "classification/metrics.py",
+      "sha256": "44e55158ed2c9006a9761d6efd9c80190873f4220b151a70c6aa4a2c94d90019",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 2,
+            "text": "from sklearn.metrics import roc_auc_score, cohen_kappa_score"
+          },
+          {
+            "line": 9,
+            "text": "CI = np.sum(gt_mask * h_one * 1.0 + gt_mask * h_half * 0.5) / np.sum(gt_mask)"
+          },
+          {
+            "line": 11,
+            "text": "return CI"
+          },
+          {
+            "line": 102,
+            "text": "auc_score = roc_auc_score"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "classification/preprocessing.py",
+      "sha256": "9d8e3e7f7e6f896d66e1ffe8a320524a8f5f77597e45a7a8e01f98dbec921482",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 28,
+            "text": "# Split data in train:val:test = 8:1:1 with the same random seed as previous study."
+          },
+          {
+            "line": 42,
+            "text": "print(f\"{data_set} split done!\")"
+          },
+          {
+            "line": 46,
+            "text": "print(\"Number of test: \", len(df_test))"
+          },
+          {
+            "line": 122,
+            "text": "elif types == 'test':"
+          },
+          {
+            "line": 201,
+            "text": "test_list = [test for test in test_list if self.pre_filter(test)]"
+          },
+          {
+            "line": 206,
+            "text": "test_list = [self.pre_transform(test) for test in test_list]"
+          },
+          {
+            "line": 218,
+            "text": "# save preprocessed test data:"
+          }
+        ],
+        "checkpoint_selection": [
+          {
+            "line": 212,
+            "text": "torch.save((data, slices), self.processed_paths[0])"
+          },
+          {
+            "line": 216,
+            "text": "torch.save((data, slices), self.processed_paths[1])"
+          },
+          {
+            "line": 220,
+            "text": "torch.save((data, slices), self.processed_paths[2])"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "classification/test.py",
+      "sha256": "927a1bb0f0427ab482b5a174b9b36ccdbe7e88487eebe1e2fd74647cb9a2d963",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 73,
+            "text": "test_set = GNNDataset(fpath, types='test')"
+          },
+          {
+            "line": 74,
+            "text": "print(\"Number of test: \", len(test_set))"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "classification/train.py",
+      "sha256": "8d09d2563bb0d1d8e2de6eea2258b9e9b46916bd66a3742cdedd3660dba4cd1b",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 91,
+            "text": "test_set = GNNDataset(fpath, types='test')"
+          },
+          {
+            "line": 95,
+            "text": "logger.info(f\"Number of test: {len(test_set)}\")"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "classification/utils.py",
+      "sha256": "4a113a6fa2d9799f2d1574fccb3b8f442ad5f3b04f3b1a57bc2e41cc4728488f",
+      "evidence": {
+        "checkpoint_selection": [
+          {
+            "line": 55,
+            "text": "def save_checkpoint(model, model_dir, epoch, val_loss, val_acc):"
+          },
+          {
+            "line": 57,
+            "text": "torch.save(model, model_path)"
+          },
+          {
+            "line": 64,
+            "text": "torch.save(model.state_dict(), model_path)"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "filtered_davis/dataset.py",
+      "sha256": "36b629b038a8d393e6846ad9c4f4cbcb63bd1b8529db9a529c2a84e00270a9cb",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 6,
+            "text": "def read_sets(fpath, fold, split_type='warm'):"
+          },
+          {
+            "line": 7,
+            "text": "filename = split_type + '.kfold'"
+          },
+          {
+            "line": 8,
+            "text": "print(f\"Reading fold_{fold} from {fpath}\")"
+          },
+          {
+            "line": 11,
+            "text": "kfold = pickle.load(f)"
+          },
+          {
+            "line": 13,
+            "text": "return kfold[f\"fold_{fold}\"]"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "filtered_davis/log/basic_logger.py",
+      "sha256": "14ca9a8a0303beaf17809aa5e0e850965806b468fb374e81a0c947aceb3c7b2b",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 48,
+            "text": "logger = BasicLogger('test.log')"
+          },
+          {
+            "line": 49,
+            "text": "logger.info(\"This is a test\")"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "filtered_davis/metrics.py",
+      "sha256": "44e55158ed2c9006a9761d6efd9c80190873f4220b151a70c6aa4a2c94d90019",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 2,
+            "text": "from sklearn.metrics import roc_auc_score, cohen_kappa_score"
+          },
+          {
+            "line": 9,
+            "text": "CI = np.sum(gt_mask * h_one * 1.0 + gt_mask * h_half * 0.5) / np.sum(gt_mask)"
+          },
+          {
+            "line": 11,
+            "text": "return CI"
+          },
+          {
+            "line": 102,
+            "text": "auc_score = roc_auc_score"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "filtered_davis/preprocessing.py",
+      "sha256": "0c533855f4e12c6c757847fc7ccbe7c88176b9f9eeee45083ec59df82d81ec7a",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 19,
+            "text": "Note that training and test datasets are the same as GraphDTA"
+          }
+        ],
+        "checkpoint_selection": [
+          {
+            "line": 125,
+            "text": "torch.save((data, slices), self.processed_paths[0])"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "filtered_davis/test.py",
+      "sha256": "ce9e605584c15c14eb360bf77ba5d5c63ac80bb12e7a64cb4e48bfb2096433ee",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 9,
+            "text": "from scipy.stats import spearmanr"
+          },
+          {
+            "line": 38,
+            "text": "epoch_spearm = spearmanr(label, pred)[0]"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "filtered_davis/train.py",
+      "sha256": "a57b9a0aad57b4c268fab501cd19b11efcbe2d7baf995c96c601631d85c9a945",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 109,
+            "text": "cindex = get_cindex(data.y.detach().cpu().numpy().reshape(-1), pred.detach().cpu().numpy().reshape(-1))"
+          },
+          {
+            "line": 116,
+            "text": "running_cindex.update(cindex, data.y.size(0))"
+          },
+          {
+            "line": 130,
+            "text": "msg = \"epoch-%d, loss-%.4f, cindex-%.4f, val_loss-%.4f, test_loss-%.4f\" % (global_epoch, epoch_loss, epoch_cindex, val_loss, test_loss)"
+          }
+        ],
+        "split_or_validation": [
+          {
+            "line": 41,
+            "text": "parser.add_argument('--fold', required=True, help='k-th fold, from 0 to 4')"
+          },
+          {
+            "line": 51,
+            "text": "fold_num=args.fold,"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "filtered_davis/utils.py",
+      "sha256": "4a113a6fa2d9799f2d1574fccb3b8f442ad5f3b04f3b1a57bc2e41cc4728488f",
+      "evidence": {
+        "checkpoint_selection": [
+          {
+            "line": 55,
+            "text": "def save_checkpoint(model, model_dir, epoch, val_loss, val_acc):"
+          },
+          {
+            "line": 57,
+            "text": "torch.save(model, model_path)"
+          },
+          {
+            "line": 64,
+            "text": "torch.save(model.state_dict(), model_path)"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "regression/log/basic_logger.py",
+      "sha256": "14ca9a8a0303beaf17809aa5e0e850965806b468fb374e81a0c947aceb3c7b2b",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 48,
+            "text": "logger = BasicLogger('test.log')"
+          },
+          {
+            "line": 49,
+            "text": "logger.info(\"This is a test\")"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "regression/metrics.py",
+      "sha256": "44e55158ed2c9006a9761d6efd9c80190873f4220b151a70c6aa4a2c94d90019",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 2,
+            "text": "from sklearn.metrics import roc_auc_score, cohen_kappa_score"
+          },
+          {
+            "line": 9,
+            "text": "CI = np.sum(gt_mask * h_one * 1.0 + gt_mask * h_half * 0.5) / np.sum(gt_mask)"
+          },
+          {
+            "line": 11,
+            "text": "return CI"
+          },
+          {
+            "line": 102,
+            "text": "auc_score = roc_auc_score"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "regression/preprocessing.py",
+      "sha256": "35175f45a1e19de203375a7f85b011965b2e7c792b58c3f9dc91362bd11991b1",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 19,
+            "text": "Note that training and test datasets are the same as GraphDTA"
+          },
+          {
+            "line": 114,
+            "text": "test_list = [test for test in test_list if self.pre_filter(test)]"
+          },
+          {
+            "line": 118,
+            "text": "test_list = [self.pre_transform(test) for test in test_list]"
+          },
+          {
+            "line": 127,
+            "text": "# save preprocessed test data:"
+          }
+        ],
+        "checkpoint_selection": [
+          {
+            "line": 124,
+            "text": "torch.save((data, slices), self.processed_paths[0])"
+          },
+          {
+            "line": 128,
+            "text": "torch.save((data, slices), self.processed_paths[1])"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "regression/test.py",
+      "sha256": "3a030fd09477bcf03ccfa0912d29df4943d3260bf33d289e53e2afa77a0bca21",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 58,
+            "text": "print(\"Number of test: \", len(test_set))"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "regression/train.py",
+      "sha256": "451e61639e87ea9fbf1c9102d35b050054e93a5791c629e1ec90ab5b78dd1359",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 107,
+            "text": "cindex = get_cindex(data.y.detach().cpu().numpy().reshape(-1), pred.detach().cpu().numpy().reshape(-1))"
+          },
+          {
+            "line": 114,
+            "text": "running_cindex.update(cindex, data.y.size(0))"
+          },
+          {
+            "line": 127,
+            "text": "msg = \"epoch-%d, loss-%.4f, cindex-%.4f, test_loss-%.4f\" % (global_epoch, epoch_loss, epoch_cindex, test_loss)"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "regression/utils.py",
+      "sha256": "4a113a6fa2d9799f2d1574fccb3b8f442ad5f3b04f3b1a57bc2e41cc4728488f",
+      "evidence": {
+        "checkpoint_selection": [
+          {
+            "line": 55,
+            "text": "def save_checkpoint(model, model_dir, epoch, val_loss, val_acc):"
+          },
+          {
+            "line": 57,
+            "text": "torch.save(model, model_path)"
+          },
+          {
+            "line": 64,
+            "text": "torch.save(model.state_dict(), model_path)"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "visualization/preprocessing.py",
+      "sha256": "908973f04f48e815fd3f55f2b2b49e1f1f68c3250f111406ad1fc2034a67ba73",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 106,
+            "text": "test_list = [test for test in test_list if self.pre_filter(test)]"
+          },
+          {
+            "line": 110,
+            "text": "test_list = [self.pre_transform(test) for test in test_list]"
+          },
+          {
+            "line": 119,
+            "text": "# save preprocessed test data:"
+          }
+        ],
+        "checkpoint_selection": [
+          {
+            "line": 116,
+            "text": "torch.save((data, slices), self.processed_paths[0])"
+          },
+          {
+            "line": 120,
+            "text": "torch.save((data, slices), self.processed_paths[1])"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "visualization/utils.py",
+      "sha256": "610d2e61a6567e1815959ec44955c93e5253da87693ed9012c22e7d29a4045b8",
+      "evidence": {
+        "checkpoint_selection": [
+          {
+            "line": 56,
+            "text": "def save_checkpoint(model, model_dir, epoch, val_loss, val_acc):"
+          },
+          {
+            "line": 58,
+            "text": "torch.save(model, model_path)"
+          },
+          {
+            "line": 65,
+            "text": "torch.save(model.state_dict(), model_path)"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "visualization/visualization_mgnn.py",
+      "sha256": "5bad2058f55642d0d758e86bc042d188d8291831e94904f53e67d943578b1d97",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 69,
+            "text": "load_model_dict(model, 'pretrained_model/epoch-173, loss-0.1468, cindex-0.8998, test_loss-0.1750.pt')"
+          },
+          {
+            "line": 71,
+            "text": "model_dict = torch.load('pretrained_model/epoch-173, loss-0.1468, cindex-0.8998, test_loss-0.1750.pt')"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    }
+  ],
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1068,
+      "sha256": "f51e63f3a2c8f814a97a112153d44f3f5eb40113148bf204fe8d18bfb6ab287e",
+      "archive_crc32": "d520f706"
+    }
+  ],
+  "license_status": "file_present_text_not_legally_interpreted",
+  "gitmodules_present": false,
+  "git_lfs_pointer_paths": [],
+  "submodules_or_LFS_payloads_fetched": false
+}

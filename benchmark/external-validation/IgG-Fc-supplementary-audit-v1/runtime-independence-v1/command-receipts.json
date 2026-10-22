@@ -1,0 +1,206 @@
+[
+  {
+    "name": "runtime-canary",
+    "command": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1",
+      "printf %s dGVzdCAtdyAvZGF0YS9xbHl1L3Byb2plY3RzL3BlcHRpZGUtYmluZGluZy1iZW5jaG1hcmstMjAyNjEwMjAvY29tbW9uLXByaW9yLW1ldGhvZHMtMjAyNjEwMjEgJiYgL2RhdGEvcWx5dS9wcm9qZWN0cy9wZXB0aWRlLWJpbmRpbmctYmVuY2htYXJrLTIwMjYxMDIwL2NvbW1vbi1wcmlvci1tZXRob2RzLTIwMjYxMDIxLy52ZW52L2Jpbi9weXRob24gLWMgJ2ltcG9ydCBzb2NrZXQscmRraXQsQmlvO2Zyb20gcmRraXQgaW1wb3J0IENoZW07YXNzZXJ0IHNvY2tldC5nZXRob3N0bmFtZSgpPT0ibm9kZTEiO2Fzc2VydCBDaGVtLk1vbEZyb21TbWlsZXMoIkNDTyIpIGlzIG5vdCBOb25lO3ByaW50KHJka2l0Ll9fdmVyc2lvbl9fLEJpby5fX3ZlcnNpb25fXykn | base64 -d | bash"
+    ],
+    "exit": 0,
+    "seconds": 2.2368335723876953
+  },
+  {
+    "name": "new-directory",
+    "command": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1",
+      "printf %s bWtkaXIgL2RhdGEvcWx5dS9wcm9qZWN0cy9wZXB0aWRlLWJpbmRpbmctYmVuY2htYXJrLTIwMjYxMDIwL2NvbW1vbi1wcmlvci1tZXRob2RzLTIwMjYxMDIxL25jLWV4dGVybmFsLWlnZy1hdWRpdC0yMDI2MTAyMi12MQ== | base64 -d | bash"
+    ],
+    "exit": 0,
+    "seconds": 2.06852650642395
+  },
+  {
+    "name": "upload-all-PPIKB-label-free-molecules.jsonl",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\all-PPIKB-label-free-molecules.jsonl",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-audit-20261022-v1/all-PPIKB-label-free-molecules.jsonl"
+    ],
+    "exit": 0,
+    "seconds": 7.028951406478882
+  },
+  {
+    "name": "upload-blind-inputs-with-certified-format-conversion.jsonl",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\supplement-inputs13-not-adopted.jsonl",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-audit-20261022-v1/blind-inputs-with-certified-format-conversion.jsonl"
+    ],
+    "exit": 0,
+    "seconds": 2.84932017326355
+  },
+  {
+    "name": "upload-audit_all_ppikb_chemistry_cpu.py",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\audit_all_ppikb_chemistry_cpu.py",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-audit-20261022-v1/audit_all_ppikb_chemistry_cpu.py"
+    ],
+    "exit": 0,
+    "seconds": 1.1473660469055176
+  },
+  {
+    "name": "upload-target-reference-and-main-inputs.json",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\target-reference-and-main-inputs.json",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-audit-20261022-v1/target-reference-and-main-inputs.json"
+    ],
+    "exit": 0,
+    "seconds": 1.3367362022399902
+  },
+  {
+    "name": "upload-audit_target_reference_cpu.py",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\audit_target_reference_cpu.py",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-audit-20261022-v1/audit_target_reference_cpu.py"
+    ],
+    "exit": 0,
+    "seconds": 1.3125250339508057
+  },
+  {
+    "name": "all-PPIKB-molecular-audit",
+    "command": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1",
+      "printf %s Y2QgL2RhdGEvcWx5dS9wcm9qZWN0cy9wZXB0aWRlLWJpbmRpbmctYmVuY2htYXJrLTIwMjYxMDIwL2NvbW1vbi1wcmlvci1tZXRob2RzLTIwMjYxMDIxL25jLWV4dGVybmFsLWlnZy1hdWRpdC0yMDI2MTAyMi12MSAmJiBDVURBX1ZJU0lCTEVfREVWSUNFUz0gT01QX05VTV9USFJFQURTPTEgT1BFTkJMQVNfTlVNX1RIUkVBRFM9MSB0aW1lb3V0IDE5MHMgL2RhdGEvcWx5dS9wcm9qZWN0cy9wZXB0aWRlLWJpbmRpbmctYmVuY2htYXJrLTIwMjYxMDIwL2NvbW1vbi1wcmlvci1tZXRob2RzLTIwMjYxMDIxLy52ZW52L2Jpbi9weXRob24gYXVkaXRfYWxsX3BwaWtiX2NoZW1pc3RyeV9jcHUucHk= | base64 -d | bash"
+    ],
+    "exit": 0,
+    "seconds": 91.37076497077942
+  },
+  {
+    "name": "target-reference-audit",
+    "command": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1",
+      "printf %s Y2QgL2RhdGEvcWx5dS9wcm9qZWN0cy9wZXB0aWRlLWJpbmRpbmctYmVuY2htYXJrLTIwMjYxMDIwL2NvbW1vbi1wcmlvci1tZXRob2RzLTIwMjYxMDIxL25jLWV4dGVybmFsLWlnZy1hdWRpdC0yMDI2MTAyMi12MSAmJiBDVURBX1ZJU0lCTEVfREVWSUNFUz0gT01QX05VTV9USFJFQURTPTEgT1BFTkJMQVNfTlVNX1RIUkVBRFM9MSB0aW1lb3V0IDEzMHMgL2RhdGEvcWx5dS9wcm9qZWN0cy9wZXB0aWRlLWJpbmRpbmctYmVuY2htYXJrLTIwMjYxMDIwL2NvbW1vbi1wcmlvci1tZXRob2RzLTIwMjYxMDIxLy52ZW52L2Jpbi9weXRob24gYXVkaXRfdGFyZ2V0X3JlZmVyZW5jZV9jcHUucHk= | base64 -d | bash"
+    ],
+    "exit": 0,
+    "seconds": 34.611056089401245
+  },
+  {
+    "name": "download-external-versus-all-PPIKB-chemical-overlap.jsonl",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-audit-20261022-v1/external-versus-all-PPIKB-chemical-overlap.jsonl",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\runtime-independence-v1\\external-versus-all-PPIKB-chemical-overlap.jsonl"
+    ],
+    "exit": 0,
+    "seconds": 2.9929795265197754
+  },
+  {
+    "name": "download-full-PPIKB-chemical-runtime-receipt.json",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-audit-20261022-v1/full-PPIKB-chemical-runtime-receipt.json",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\runtime-independence-v1\\full-PPIKB-chemical-runtime-receipt.json"
+    ],
+    "exit": 0,
+    "seconds": 1.510118007659912
+  },
+  {
+    "name": "download-supplement-target-reference-audit.json",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-audit-20261022-v1/supplement-target-reference-audit.json",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\runtime-independence-v1\\supplement-target-reference-audit.json"
+    ],
+    "exit": 0,
+    "seconds": 1.039663314819336
+  },
+  {
+    "name": "process-state-3828762",
+    "command": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1",
+      "printf %s aWYgdGVzdCAtZCAvcHJvYy8zODI4NzYyOyB0aGVuIGVjaG8gUFJFU0VOVDsgZWxzZSBlY2hvIEVYSVRFRDsgZmk= | base64 -d | bash"
+    ],
+    "exit": 0,
+    "seconds": 0.8859405517578125
+  },
+  {
+    "name": "process-state-3838652",
+    "command": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1",
+      "printf %s aWYgdGVzdCAtZCAvcHJvYy8zODM4NjUyOyB0aGVuIGVjaG8gUFJFU0VOVDsgZWxzZSBlY2hvIEVYSVRFRDsgZmk= | base64 -d | bash"
+    ],
+    "exit": 0,
+    "seconds": 0.8518977165222168
+  }
+]

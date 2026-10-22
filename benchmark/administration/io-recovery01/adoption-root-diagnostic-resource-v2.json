@@ -1,0 +1,127 @@
+{
+  "schema": "nc-recovery-real-diagnostic-resource-adoption.v1",
+  "draft_index_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\io-recovery01\\single-recovery-draft-index.json",
+  "shared": {
+    "resources": {
+      "resource_probe_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\recovery-resource-probe-v1.json",
+      "resource_probe_sha256": "2017f54851991e074389fa1f2cf1e52372422924abb11e9449fa1cbade363978",
+      "resource_probe_at": "2026-10-21T18:18:40.022299+00:00",
+      "start_gate": "Root fresh probe: failed wrapper705188 absent; three GPU samples no reported compute processes and1percent utilization; new pool must recheck actual ownership/memory and no overlapping old pool immediately before launch",
+      "recovery_live_resource_status": "root_probe_passed_original_runtime_and_GPU"
+    },
+    "timing": {
+      "timing_evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\user-authorization.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\resources\\live-probe.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\recovery-resource-probe-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\recovery-diagnosis-v1\\diagnosis-summary.json"
+      ]
+    },
+    "recovery_metadata": {
+      "live_resource_ready": true,
+      "diagnostic_receipt": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\recovery-diagnosis-v1\\diagnosis-summary.json",
+        "sha256": "73ea7b1fbac4042a11620fb05685a43c2cf30e6b83af4e292e90a06928454284"
+      },
+      "resource_receipt": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\recovery-resource-probe-v1.json",
+        "sha256": "2017f54851991e074389fa1f2cf1e52372422924abb11e9449fa1cbade363978"
+      },
+      "diagnosis_state": "Root synthetic minimal reproduction confirms Windows plain Python read handle can cause same-type WSL atomic-rename PermissionError13; original lacks exact path/stack, so attribution remains moderate. No safety/platform rejection or model/OOM claim."
+    },
+    "assets": {
+      "datasets": [
+        {
+          "name": "PPIKB_NC2099_standard7520_Kd_frozen_v1",
+          "version": "frozen-v1",
+          "source_url": "https://www.nature.com/articles/s41597-026-07962-1",
+          "license": null,
+          "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\manifest.json",
+          "manifest_sha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2",
+          "sha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2",
+          "sample_count": 9619,
+          "statistical_unit": "measurement record; full declared source/chemical or target-reference components assigned together",
+          "splits": {
+            "train": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\train-ids.json",
+            "validation": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\validation-ids.json",
+            "test": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\test-ids.json",
+            "split_manifest_sha256": "3c880300ccbfb479629d77165988c8756f2ee8e6ad46d86146f06706c10f6c4f"
+          },
+          "preprocessing": "No label repair; all original9619 records retained; raw/atomic isomeric SMILES preserved; no peptide cap; annotations used for strata only; model protein prefix limits disclosed",
+          "leakage_check": {
+            "status": "verified_under_declared_panel_definition",
+            "method": "target_reference_homology_cold",
+            "evidence_paths": [
+              "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\independent-leakage-verification.json",
+              "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+            ]
+          },
+          "integrity": "complete",
+          "notes": "Frozen input/label metadata checked by byte SHA at preparation; actual remote training projections must still be hash-verified before launch. Source panel not70/15/15 due giant component; achieved counts preserved. Recovery inherits original payload hashes without re-opening JSONL gold/input bytes; actual WSL paths and declared digests retained. Original training contract is unchanged.",
+          "frozen_files": [
+            {
+              "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/data-protocol/frozen-v1/inputs.jsonl",
+              "sha256": "fd8ae1207818a4b1533c1b1a4ef5b299593a82700fb62c9ef2490656c9af01f5",
+              "location": "remote",
+              "notes": "Exact previously frozen SHA inherited; actual WSL payload reference is not re-opened by this Windows recovery administrative check. Runtime launch separately re-verifies actual train/validation projections."
+            },
+            {
+              "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/data-protocol/frozen-v1/labels.jsonl",
+              "sha256": "8a2c4e545ec322184ea57504cf875abc61805db8bef1b265034f95f4de4d2a7a",
+              "location": "remote",
+              "notes": "Exact previously frozen SHA inherited; actual WSL payload reference is not re-opened by this Windows recovery administrative check. Runtime launch separately re-verifies actual train/validation projections."
+            },
+            {
+              "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/data-protocol/frozen-v1/quality-flags.jsonl",
+              "sha256": "a1e7e041b427b1c7125f433fc101cb4752538041584c402355e0c5444408060a",
+              "location": "remote",
+              "notes": "Exact previously frozen SHA inherited; actual WSL payload reference is not re-opened by this Windows recovery administrative check. Runtime launch separately re-verifies actual train/validation projections."
+            },
+            {
+              "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\residue-class-graph-discordance.json",
+              "sha256": "1f8f622e70b2e6fe4d760b3f01f003bc3ee8cdfe8d788b7b73917e1031cdb8f4"
+            }
+          ],
+          "actual_panel_counts": {
+            "train": 6733,
+            "validation": 1443,
+            "test": 1443
+          },
+          "actual_panel_strata": {
+            "train": {
+              "standard20_control": 5324,
+              "synthetic_D_backbone": 540,
+              "PTM": 615,
+              "other_NC": 87,
+              "synthetic_and_PTM": 167
+            },
+            "validation": {
+              "standard20_control": 1085,
+              "synthetic_D_backbone": 90,
+              "other_NC": 7,
+              "PTM": 197,
+              "synthetic_and_PTM": 64
+            },
+            "test": {
+              "synthetic_D_backbone": 93,
+              "standard20_control": 1111,
+              "PTM": 190,
+              "synthetic_and_PTM": 37,
+              "other_NC": 12
+            }
+          }
+        }
+      ]
+    }
+  },
+  "methods": {},
+  "splits": {},
+  "units": {},
+  "does_not_authorize_launch": true,
+  "root_signature_step": "Root reviews exact metadata diff then invokes unchanged administrative freeze_contracts.py --freeze and separately issues binding with deadline equal original20:09:02.438325Z",
+  "administrative_payload_reference_changes": [
+    "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/data-protocol/frozen-v1/inputs.jsonl",
+    "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/data-protocol/frozen-v1/labels.jsonl",
+    "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/data-protocol/frozen-v1/quality-flags.jsonl"
+  ]
+}

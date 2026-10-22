@@ -1,0 +1,50 @@
+{
+  "schema": "metric-adapter-cohort-map-v1",
+  "cohorts": {
+    "all": "all",
+    "NC_core": "NC_all",
+    "standard": "standard20_control",
+    "standard20_control": "standard20_control",
+    "synthetic_and_PTM": "synthetic_and_PTM",
+    "synthetic_D_backbone": "synthetic_D_backbone",
+    "PTM": "PTM",
+    "other_NC": "other_NC",
+    "exclude_discordant_sensitivity": "all",
+    "NC_core_exclude_discordant_sensitivity": "NC_all",
+    "standard_exclude_discordant_sensitivity": "standard20_control",
+    "standard20_control_exclude_discordant_sensitivity": "standard20_control",
+    "exclude_discordant:standard20_control": "standard20_control",
+    "exclude_discordant:synthetic_and_PTM": "synthetic_and_PTM",
+    "exclude_discordant:synthetic_D_backbone": "synthetic_D_backbone",
+    "exclude_discordant:PTM": "PTM",
+    "exclude_discordant:other_NC": "other_NC",
+    "external_primary67": "PTM",
+    "external_conditional_sensitivity8": "PTM",
+    "external_reference_target_cold2": "PTM",
+    "supplement_NC8": "synthetic_D_backbone",
+    "supplement_standard5": "standard20_control",
+    "NC_matched": "NC_all",
+    "standard_matched": "standard20_control"
+  },
+  "micro_aggregations": [
+    "matched_row_micro",
+    "row_micro"
+  ],
+  "macro_excluded_preserved": [
+    "equal_weight_study_id",
+    "equal_weight_target_id",
+    "equal_weight_target_reference_sequence_sha",
+    "matched_equal_study_id",
+    "matched_equal_target_reference"
+  ],
+  "macro_only_diagnostic_cohort": "all_diagnostic",
+  "evaluation_set_id_segments": [
+    "category",
+    "dataset_id",
+    "original cohort",
+    "aggregation"
+  ],
+  "n_unit_required": "observation_rows",
+  "seed_count_source": "defined_seed_count",
+  "counter_null_policy": "reject rather than impute; old importer cannot represent unknown counter"
+}

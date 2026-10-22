@@ -1,0 +1,1353 @@
+{
+  "schema_version": "1.0",
+  "record_type": "task_contract",
+  "is_template": true,
+  "task_id": "S299_ef670bb4eeb4",
+  "run_id": "RF-Classic__target_reference_homology_cold__standard_only__seed08",
+  "contract_status": "draft",
+  "created_at": "2026-10-21T18:03:17.977966+00:00",
+  "frozen_at": null,
+  "revision": 1,
+  "previous_contract_sha256": null,
+  "revision_reason": null,
+  "identity": {
+    "title": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+    "doi": "10.1093/bioinformatics/btaa921",
+    "publication_status": "version_of_record_fulltext",
+    "first_online_date": "2020-10-24",
+    "journal": null,
+    "paper_type": "published_method_article",
+    "pdf": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-author-lab.pdf",
+      "sha256": "ef670bb4eeb41ba7db7449f15dd8a8861d6c01029e597e802db8a38df70df907",
+      "version": "version_of_record",
+      "source_url": null
+    },
+    "primary_document": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-official.html",
+      "sha256": "b19c89f1602bb4af89c6888f42d6acb5f023a46d7461c364634fab7037b3d999",
+      "format": "publisher_fulltext_html",
+      "source_url": "https://oup.silverchair-cdn.com/article-minimal/5942970",
+      "identity_doi_verified": true
+    },
+    "related_versions": [],
+    "eligibility": {
+      "scope": "Prior published model transferred to the newly authorized NC2099 affinity benchmark",
+      "assessment": "allowed_for_scoped_model_comparison",
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar-v2.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar-v3.json"
+      ]
+    },
+    "missing_pdf_note": null,
+    "administrative_anchor_only": true,
+    "administrative_identity_explanation": "S299/GraphDTA is the registered benchmark anchor, not the source or paper identity of this RandomForest baseline. This stage contributes0 predecessor papers."
+  },
+  "execution_scope": {
+    "objective": "Additional pre-holdout preregistered RandomForest classical affinity reference; two fixed candidates selected by validation MAE only; not an author method",
+    "authorization_reference": "Direct latest user instruction and frozen control/user-authorization.json",
+    "relation_to_prior_run": "Auxiliary classic comparison within same user-authorized NC benchmark and original clock; no change to five-paper NN200/400/600 protocol",
+    "prior_run_ids": [
+      "GraphDTA-GIN__target_reference_homology_cold__standard_only__seed08"
+    ],
+    "safety_assessment": "allowed",
+    "scope_coverage": "partial_subset",
+    "intended_level": "training",
+    "excluded_claims": [
+      "RF is not GraphDTA or a published author implementation",
+      "RF contributes0 to the required five predecessor papers",
+      "No original-paper numerical replication claim",
+      "No novel model or targeted peptide optimization",
+      "No reset of original clock or previously restricted workflows",
+      "No RF continuation or model choice based on holdout performance"
+    ],
+    "restriction_check": {
+      "prior_platform_restriction": false,
+      "reason": "This scoped benchmark excludes PepLand, Twin Peaks, previously denied primary-source unit investigations, sequence design/optimization and metadata-only train exclusions. Old restricted work is not restarted.",
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json"
+      ]
+    },
+    "authorization_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\user-authorization.json",
+    "authorization_sha256": "5a474f5725f4fd0b1f7dc31a2e5f859eb61a2c48a4aebdd01a1945494ca16ffd"
+  },
+  "timing": {
+    "first_substantive_started_at": "2026-10-21T15:59:53+00:00",
+    "earliest_associated_preparation_at": null,
+    "wall_clock_cap_hours": 10,
+    "original_deadline_at": "2026-10-22T01:59:53+00:00",
+    "additional_deadlines_at": [
+      "2026-10-22T01:45:00+00:00"
+    ],
+    "effective_deadline_at": "2026-10-22T01:45:00+00:00",
+    "prior_window_expired": false,
+    "retry_resets_clock": false,
+    "timing_evidence_paths": [
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\user-authorization.json",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\resources\\live-probe.json"
+    ],
+    "clock_notes": "15:59:53Z is first persisted campaign clock as provided by leader; early skill reading may precede this. Conservative hard cutoff01:45Z applies to all papers/panels/seeds. prior_window_expired=false describes the newly authorized scope only; no historical expired task is revived."
+  },
+  "assets": {
+    "datasets": [
+      {
+        "name": "PPIKB_NC2099_standard7520_Kd_frozen_v1",
+        "version": "frozen-v1",
+        "source_url": "https://www.nature.com/articles/s41597-026-07962-1",
+        "license": null,
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\manifest.json",
+        "manifest_sha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2",
+        "sha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2",
+        "sample_count": 9619,
+        "statistical_unit": "measurement record; full declared source/chemical or target-reference components assigned together",
+        "splits": {
+          "train": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\train-ids.json",
+          "validation": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\validation-ids.json",
+          "test": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\test-ids.json",
+          "split_manifest_sha256": "3c880300ccbfb479629d77165988c8756f2ee8e6ad46d86146f06706c10f6c4f"
+        },
+        "preprocessing": "No label repair; all original9619 records retained; raw/atomic isomeric SMILES preserved; no peptide cap; annotations used for strata only; model protein prefix limits disclosed",
+        "leakage_check": {
+          "status": "verified_under_declared_panel_definition",
+          "method": "target_reference_homology_cold",
+          "evidence_paths": [
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\independent-leakage-verification.json",
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+          ]
+        },
+        "integrity": "complete",
+        "notes": "Frozen input/label metadata checked by byte SHA at preparation; actual remote training projections must still be hash-verified before launch. Source panel not70/15/15 due giant component; achieved counts preserved.",
+        "frozen_files": [
+          {
+            "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\inputs.jsonl",
+            "sha256": "fd8ae1207818a4b1533c1b1a4ef5b299593a82700fb62c9ef2490656c9af01f5"
+          },
+          {
+            "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\labels.jsonl",
+            "sha256": "8a2c4e545ec322184ea57504cf875abc61805db8bef1b265034f95f4de4d2a7a"
+          },
+          {
+            "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\quality-flags.jsonl",
+            "sha256": "a1e7e041b427b1c7125f433fc101cb4752538041584c402355e0c5444408060a"
+          },
+          {
+            "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\residue-class-graph-discordance.json",
+            "sha256": "1f8f622e70b2e6fe4d760b3f01f003bc3ee8cdfe8d788b7b73917e1031cdb8f4"
+          }
+        ],
+        "actual_panel_counts": {
+          "train": 6733,
+          "validation": 1443,
+          "test": 1443
+        },
+        "actual_panel_strata": {
+          "train": {
+            "standard20_control": 5324,
+            "synthetic_D_backbone": 540,
+            "PTM": 615,
+            "other_NC": 87,
+            "synthetic_and_PTM": 167
+          },
+          "validation": {
+            "standard20_control": 1085,
+            "synthetic_D_backbone": 90,
+            "other_NC": 7,
+            "PTM": 197,
+            "synthetic_and_PTM": 64
+          },
+          "test": {
+            "synthetic_D_backbone": 93,
+            "standard20_control": 1111,
+            "PTM": 190,
+            "synthetic_and_PTM": 37,
+            "other_NC": 12
+          }
+        }
+      }
+    ],
+    "code": [
+      {
+        "role": "auxiliary_classical_reference_implementation",
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\auxiliary-rf-baseline",
+        "commit": null,
+        "archive_sha256": null,
+        "integrity": "partial",
+        "notes": "Actual RF implementation, explicit sklearn defaults and environment source hashes are being prepared by assigned RF agent; not frozen or executed by this administrative draft. No GraphDTA author code is used by the RF method."
+      }
+    ],
+    "models": [
+      {
+        "name": "sklearn RandomForestRegressor classic reference",
+        "path": null,
+        "sha256": null,
+        "integrity": "not_applicable",
+        "notes": "No pretrained input weights. Fresh RF is fitted twice per seed using preregistered leaf2/leaf5; trained estimator artifacts will be actual future outputs."
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "all:MAE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "all:RMSE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "all:Pearson",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "all:Spearman",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "all:R2",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_D_backbone:MAE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_D_backbone:RMSE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_D_backbone:Pearson",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_D_backbone:Spearman",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_D_backbone:R2",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "standard20_control:MAE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "standard20_control:RMSE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "standard20_control:Pearson",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "standard20_control:Spearman",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "standard20_control:R2",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "PTM:MAE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "PTM:RMSE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "PTM:Pearson",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "PTM:Spearman",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "PTM:R2",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_and_PTM:MAE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_and_PTM:RMSE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_and_PTM:Pearson",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_and_PTM:Spearman",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_and_PTM:R2",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "other_NC:MAE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "other_NC:RMSE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "other_NC:Pearson",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "other_NC:Spearman",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "other_NC:R2",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "NC_core:MAE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "NC_core:RMSE",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "NC_core:Pearson",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "NC_core:Spearman",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "NC_core:R2",
+      "paper_endpoint": "New common-data classical reference benchmark; no corresponding RF paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Generic classical RF reference, not an author-paper reproduction; S299 paper is an administrative anchor only."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    }
+  ],
+  "environment": {
+    "isolation": "Existing generic WSL sklearn/RDKit runtime, task-owned source/data; no shared environment changes",
+    "environment_path": "/root/.venvs/peptide-omnipanel-v31-web311-20260723",
+    "lockfile_path": null,
+    "lockfile_sha256": null,
+    "runtime_versions": {},
+    "numerical_policy": {
+      "author_entrypoint_evidence_paths": [],
+      "parameter_dtype": null,
+      "input_dtype": null,
+      "autocast": null,
+      "float32_matmul_precision": null,
+      "cuda_matmul_allow_tf32": null,
+      "cudnn_allow_tf32": null,
+      "determinism": null,
+      "applied_before_model_instantiation": null,
+      "actual_policy_receipt_path": null,
+      "notes": "Actual sklearn/RDKit/NumPy/SciPy versions, complete effective RF get_params and numeric feature dtype receipt required before any real issuance; no Torch/GPU path used by RF."
+    },
+    "shared_environment_modified": false
+  },
+  "resources": {
+    "expected_hostname": "cihebi",
+    "cpu_threads": 1,
+    "data_loader_workers": 0,
+    "memory_limit_bytes": 2147483648,
+    "gpu_devices": [],
+    "gpu_memory_budget_bytes": null,
+    "resource_probe_path": null,
+    "resource_probe_at": null,
+    "start_gate": "Pending actual live CPU/memory capacity. At most4 CPU-only workers with1thread and2GiB RSS each; coexistence must not preempt original NN jobs; lower concurrency if live reservation unavailable",
+    "budget_basis": "Root preregistered extra classical comparison before any holdout predictions; bounded optional auxiliary stage must not block five core methods",
+    "no_preemption": true
+  },
+  "execution": {
+    "command": null,
+    "working_directory": null,
+    "seed_policy": "Exactly0–9; same fixed NN cohort-wide partitions; one RF seed per unit and two fixed leaf candidates; validation only",
+    "seeds": [
+      8
+    ],
+    "timeout_seconds": 1800,
+    "process_control": {
+      "platform": "Linux WSL",
+      "mechanism": "Pending actual CPU private-PGID supervisor; four workers max, whole-tree RSS and original deadline guard",
+      "whole_tree_bounded": null
+    },
+    "stdout_path": null,
+    "stderr_path": null
+  },
+  "stop_conditions": [
+    "达到有效截止",
+    "达到合同资源上限",
+    "执行范围超出合同",
+    "出现平台拒绝或缺少适用授权"
+  ],
+  "review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "checks": [],
+    "evidence_paths": []
+  },
+  "benchmark_metadata": {
+    "method_id": "RF-Classic",
+    "split_id": "target_reference_homology_cold",
+    "regime_id": "standard_only",
+    "seed": 8,
+    "test_used_for_selection": false,
+    "external_used_for_selection": false,
+    "validation_scope": "same_as_regime",
+    "paper_count_contribution": 0
+  },
+  "baseline_metadata": {
+    "identity_role": "auxiliary_generic_classic_comparison_not_predecessor_paper",
+    "administrative_anchor": "S299_ef670bb4eeb4",
+    "anchor_contract": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\issued-gpu-v4\\GraphDTA-GIN__target_reference_homology_cold__standard_only__seed08\\task-contract.json",
+      "sha256": "71c9654ce863fb3d34881ebd90e631c8b257f1cb465e4daa4b4311d19e545513"
+    },
+    "features": {
+      "peptide": "Morgan radius2/2048bits/useChirality=true on full ligand graph",
+      "target": "first1000 amino acids; AAC20 +dipeptide400 +length; exact numeric definitions/dtypes frozen by actual code before fitting"
+    },
+    "candidate_definitions": [
+      {
+        "n_estimators": 200,
+        "max_features": "sqrt",
+        "min_samples_leaf": 2,
+        "n_jobs": 1,
+        "random_state": 8
+      },
+      {
+        "n_estimators": 200,
+        "max_features": "sqrt",
+        "min_samples_leaf": 5,
+        "n_jobs": 1,
+        "random_state": 8
+      }
+    ],
+    "all_other_effective_parameters": "Must be explicitly captured from the actual installed sklearn regressor; defaults are not guessed here",
+    "selection": "minimum validation MAE; fixed candidate order leaf2 then5 breaks exact ties; no test-based decision",
+    "expected_total_units": 40,
+    "expected_total_fits": 80,
+    "expected_future_score_receipts": 120,
+    "expected_future_prediction_rows": 53160,
+    "joint_holdout_policy": "Root high-level scoring authorization additionally requires RF40 frozen or a preregistered resource/asset failure terminal decision; original NN200 scorer gate remains unchanged",
+    "optional_failure_policy": "Record bounded preparation/fit failures and actual resource/asset reason; do not hold five core methods hostage or choose RF inclusion using holdout scores",
+    "stage_status": "draft_only_no_actual_fit"
+  }
+}

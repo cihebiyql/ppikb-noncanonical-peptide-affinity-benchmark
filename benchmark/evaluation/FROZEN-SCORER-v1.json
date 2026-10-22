@@ -1,0 +1,34 @@
+{
+  "status": "prepared_frozen_not_real_scoring_authorized",
+  "evaluation_code_sha256": {
+    "common.py": "043f2020de55eab3b10d2f4027be40ee223af1f659fe7ad9e58070c995a8c25d",
+    "feature_cache.py": "4ef6b0c41d5a8a5f4232a6f6b92a00fce6f83dd00fdbdbe40543b0fbace426e6",
+    "score_cached.py": "86cf4cf8e801b78991fc2e9a7e6a89f94b954cc4b37037186640be215ee43bfc",
+    "metrics_stable.py": "d6b5e596a72474f7980daddf351721fa1881f2d26ec47a0e49f3c9cd733c81ea"
+  },
+  "frozen_runner_sha256": "9abe4a9fba5840a6200aecf40fdfb436abbf61d78c3a9a2f28baae7712c6913e",
+  "X_cache_final_manifest_sha256": "69ec6cc683b83cfa38b3b8d70e01f348bfc8703690feb8c8431416ad8306f7eb",
+  "forward_y_proof_sha256": "ec2c2ce7a7af6464cc0c85231032d5807ccefcfdf47bd41ccc7e51829dc0063e",
+  "consumer_compatibility_sha256": "78d1079372363d535fb6bd76a1b2198b12f734f264596aadbb8440e3ec8cb60f",
+  "gate_tests": "5 passed; unit-gates.log",
+  "stable_metrics_tests": "5 passed; unit-metrics.log",
+  "real_holdout_forward_count": 0,
+  "real_gold_reads": 0,
+  "real_selection_reads": 0,
+  "real_trained_checkpoint_reads": 0,
+  "cache_generation_is_not_scoring_authorization": true,
+  "expected_final_selection_count": 200,
+  "score_cli": "score_cached.py audit-barrier / score; see README.md",
+  "templates": [
+    "authorization.example.json",
+    "score-spec.example.json"
+  ],
+  "dataset_mapping": {
+    "source_test": "PPIKB-internal/source_peptide_dependency_cold",
+    "target_test": "PPIKB-internal/target_reference_homology_cold",
+    "external75": "PTM-external75",
+    "supplement13": "IgG-supplement13"
+  },
+  "internal_panel_guard": "cache metadata source_test/target_test is enforced against selection.split_id; explicit selection_split_id recommended",
+  "training_and_selection_code_not_modified": true
+}

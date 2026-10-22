@@ -1,0 +1,175 @@
+00:28:35 [INFO] instsci.fetcher: Checking Unpaywall for OA version of 10.1093/bib/bbac468...
+00:28:35 [INFO] instsci.fetcher: No OA version found for 10.1093/bib/bbac468.
+00:28:35 [INFO] instsci.fetcher: Elsevier API key is not configured; run instsci elsevier-setup first
+00:28:37 [INFO] instsci.fetcher: Resolved DOI 10.1093/bib/bbac468 → https://academic.oup.com/bib/article/doi/10.1093/bib/bbac468/6782838 (status=403)
+00:28:37 [INFO] instsci.fetcher: Trying CARSI publisher PDF: https://academic.oup.com/bib/article-pdf/doi/10.1093/bib/bbac468/6782838/bbac468.pdf
+00:28:37 [WARNING] instsci.fetcher: CARSI PDF failed: 403 Client Error: Forbidden for url: https://academic.oup.com/bib/article-pdf/doi/10.1093/bib/bbac468/6782838/bbac468.pdf
+00:28:37 [INFO] instsci.fetcher: Trying CARSI HTML: https://academic.oup.com/bib/article/doi/10.1093/bib/bbac468/6782838
+00:28:40 [WARNING] instsci.fetcher: CARSI HTML failed: 403 Client Error: Forbidden for url: https://academic.oup.com/bib/article/doi/10.1093/bib/bbac468/6782838
+00:28:40 [INFO] instsci.fetcher: Trying constructed publisher PDF URL: https://academic.oup.com/bib/article-pdf/doi/10.1093/bib/bbac468/6782838/bbac468.pdf
+00:28:40 [INFO] instsci.auth: All saved cookies have expired.
+00:28:40 [INFO] instsci.auth: No valid session found. Opening browser for login...
+
+  CloakBrowser — stealth Chromium for automation
+  https://github.com/CloakHQ/CloakBrowser
+
+  Running the free binary (v146). The latest binary (v150) is free too, with 1 concurrent session.
+  Get your key: run  cloakbrowser login  or visit https://cloakbrowser.dev/free
+  For more than one concurrent session → https://cloakbrowser.dev
+  Star us if CloakBrowser helps your project!
+
+00:28:41 [INFO] httpx: HTTP Request: GET https://pypi.org/pypi/cloakbrowser/json "HTTP/1.1 200 OK"
+00:28:41 [INFO] httpx: HTTP Request: GET https://api.github.com/repos/CloakHQ/cloakbrowser/releases?per_page=10 "HTTP/1.1 200 OK"
+00:28:41 [WARNING] cloakbrowser: Update available: cloakbrowser 0.5.5 → 0.6.3. Run: pip install --upgrade cloakbrowser
+┌───────────────────── Traceback (most recent call last) ─────────────────────┐
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\instsci\c │
+│ li.py:490 in fetch                                                          │
+│                                                                             │
+│    487 │   fetcher = PaperFetcher(config)                                   │
+│    488 │   try:                                                             │
+│    489 │   │   console.print(f"[bold]Fetching:[/bold] {identifier}")        │
+│ >  490 │   │   result = fetcher.fetch_with_result(identifier, use_cache=not │
+│        no_cache)                                                            │
+│    491 │   │   paper = result.paper                                         │
+│    492 │   │                                                                │
+│    493 │   │   if result.status != "success":                               │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\instsci\f │
+│ etcher.py:277 in fetch_with_result                                          │
+│                                                                             │
+│    274 │   │   attempts: list[dict[str, str]] = []                          │
+│    275 │   │   token = _ATTEMPT_LOG.set(attempts)                           │
+│    276 │   │   try:                                                         │
+│ >  277 │   │   │   paper = self.fetch(identifier, use_cache=use_cache)      │
+│    278 │   │   except ValueError as exc:                                    │
+│    279 │   │   │   doi = self._parse_doi(identifier) or ""                  │
+│    280 │   │   │   url = self._parse_url(identifier) or ""                  │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\instsci\f │
+│ etcher.py:240 in fetch                                                      │
+│                                                                             │
+│    237 │   │                                                                │
+│    238 │   │   # Step 5: Try direct publisher PDF URL construction before   │
+│        campus gateway HTML.                                                 │
+│    239 │   │   if doi and not paper.pdf_path:                               │
+│ >  240 │   │   │   pdf_paper = self._try_publisher_pdf(doi, url, paper)     │
+│    241 │   │   │   _record_paper_attempt("publisher_pdf", pdf_paper)        │
+│    242 │   │   │   if pdf_paper and len(pdf_paper.full_text or "") >=       │
+│        MIN_FULLTEXT_LEN:                                                    │
+│    243 │   │   │   │   self._save_cache(pdf_paper)                          │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\instsci\f │
+│ etcher.py:497 in _try_publisher_pdf                                         │
+│                                                                             │
+│    494 │   │                                                                │
+│    495 │   │   logger.info("Trying constructed publisher PDF URL: %s",      │
+│        pdf_url)                                                             │
+│    496 │   │                                                                │
+│ >  497 │   │   if not self.auth.login():                                    │
+│    498 │   │   │   logger.error("Institutional access authentication        │
+│        failed.")                                                            │
+│    499 │   │   │   return None                                              │
+│    500                                                                      │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\instsci\a │
+│ uth.py:157 in login                                                         │
+│                                                                             │
+│   154 │   │   │   return True                                               │
+│   155 │   │                                                                 │
+│   156 │   │   logger.info("No valid session found. Opening browser for      │
+│       login...")                                                            │
+│ > 157 │   │   return self._browser_login()                                  │
+│   158 │                                                                     │
+│   159 │   def _try_load_cookies(self) -> bool:                              │
+│   160 │   │   """Try to load cookies from file and validate them."""        │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\instsci\a │
+│ uth.py:219 in _browser_login                                                │
+│                                                                             │
+│   216 │   │   # Test if persistent context has a valid session by           │
+│       navigating to the gateway base                                        │
+│   217 │   │   # (just having cookies is not enough; some sessions are tied  │
+│       to TLS state).                                                        │
+│   218 │   │   # Use networkidle to wait for all CAS redirects to complete   │
+│ > 219 │   │   self._page.goto(self._webvpn_base, wait_until="networkidle",  │
+│       timeout=30000)                                                        │
+│   220 │   │   current_url = self._page.url                                  │
+│   221 │   │   logger.info("Session test: navigated to campus gateway,       │
+│       landed on %s", current_url[:80])                                      │
+│   222                                                                       │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\playwrigh │
+│ t\sync_api\_generated.py:9875 in goto                                       │
+│                                                                             │
+│    9872 │   │   """                                                         │
+│    9873 │   │                                                               │
+│    9874 │   │   return mapping.from_impl_nullable(                          │
+│ >  9875 │   │   │   self._sync(                                             │
+│    9876 │   │   │   │   self._impl_obj.goto(                                │
+│    9877 │   │   │   │   │   url=url,                                        │
+│    9878 │   │   │   │   │   timeout=to_milliseconds(timeout),               │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\playwrigh │
+│ t\_impl\_sync_base.py:115 in _sync                                          │
+│                                                                             │
+│   112 │   │   while not task.done():                                        │
+│   113 │   │   │   self._dispatcher_fiber.switch()                           │
+│   114 │   │   asyncio._set_running_loop(self._loop)                         │
+│ > 115 │   │   return task.result()                                          │
+│   116 │                                                                     │
+│   117 │   def _wrap_handler(                                                │
+│   118 │   │   self, handler: Union[Callable[..., Any], Any]                 │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\playwrigh │
+│ t\_impl\_page.py:560 in goto                                                │
+│                                                                             │
+│    557 │   │   waitUntil: DocumentLoadState = None,                         │
+│    558 │   │   referer: str = None,                                         │
+│    559 │   ) -> Optional[Response]:                                         │
+│ >  560 │   │   return await                                                 │
+│        self._main_frame.goto(**locals_to_params(locals()))                  │
+│    561 │                                                                    │
+│    562 │   async def reload(                                                │
+│    563 │   │   self,                                                        │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\playwrigh │
+│ t\_impl\_frame.py:156 in goto                                               │
+│                                                                             │
+│   153 │   │   return cast(                                                  │
+│   154 │   │   │   Optional[Response],                                       │
+│   155 │   │   │   from_nullable_channel(                                    │
+│ > 156 │   │   │   │   await self._channel.send(                             │
+│   157 │   │   │   │   │   "goto", self._navigation_timeout,                 │
+│       locals_to_params(locals())                                            │
+│   158 │   │   │   │   )                                                     │
+│   159 │   │   │   ),                                                        │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\playwrigh │
+│ t\_impl\_connection.py:76 in send                                           │
+│                                                                             │
+│    73 │   │   is_internal: bool = False,                                    │
+│    74 │   │   title: str = None,                                            │
+│    75 │   ) -> Any:                                                         │
+│ >  76 │   │   return await self._connection.wrap_api_call(                  │
+│    77 │   │   │   lambda: self._inner_send(method, timeout_calculator,      │
+│       params, False),                                                       │
+│    78 │   │   │   is_internal,                                              │
+│    79 │   │   │   title,                                                    │
+│                                                                             │
+│ C:\Users\ciheb\AppData\Roaming\uv\tools\instsci\Lib\site-packages\playwrigh │
+│ t\_impl\_connection.py:632 in wrap_api_call                                 │
+│                                                                             │
+│   629 │   │   try:                                                          │
+│   630 │   │   │   return await cb()                                         │
+│   631 │   │   except Exception as error:                                    │
+│ > 632 │   │   │   raise rewrite_error(error, f"{parsed_st['apiName']}:      │
+│       {error}") from None                                                   │
+│   633 │   │   finally:                                                      │
+│   634 │   │   │   self._api_zone.set(None)                                  │
+│   635                                                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+Error: Page.goto: Protocol error (Page.navigate): Cannot navigate to invalid 
+URL
+Call log:
+  - navigating to "", waiting until "networkidle"
+

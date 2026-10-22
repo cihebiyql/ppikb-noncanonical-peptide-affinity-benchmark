@@ -1,0 +1,33 @@
+{
+  "method_id": "DeepNC-GEN",
+  "split_id": "target_reference_homology_cold",
+  "regime": "NC_only",
+  "seed": 0,
+  "validation_scope": "same_as_regime",
+  "max_epochs": 20,
+  "patience": 5,
+  "batch_size": 32,
+  "gradient_accumulation": 1,
+  "cpu_threads": 1,
+  "device": "cpu",
+  "y_standardize": false,
+  "gpu_explicitly_authorized": false,
+  "gpu_allocator_budget_bytes": null,
+  "train_rows": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/stage/inputs/target_reference_homology_cold/train.jsonl",
+  "validation_rows": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/stage/inputs/target_reference_homology_cold/validation.jsonl",
+  "train_rows_sha256": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+  "validation_rows_sha256": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb",
+  "methods_root": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/stage/methods",
+  "run_root": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/no-fit-output/target_reference_homology_cold__DeepNC-GEN__NC_only",
+  "cache_root": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3",
+  "candidates": [
+    {
+      "learning_rate": 0.001,
+      "weight_decay": 0.0
+    },
+    {
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0
+    }
+  ]
+}

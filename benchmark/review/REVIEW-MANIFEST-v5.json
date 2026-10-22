@@ -1,0 +1,98 @@
+{
+  "schema": "independent-RF-and-combined-table-review-v5",
+  "created_utc": "2026-10-21T18:49:31.431636+00:00",
+  "status": "prepared_and_synthetic_verified_not_real_authorized",
+  "RF_numeric_mapping_gate_cases_passed": 58,
+  "combined_table_e2e_cases_passed": 9,
+  "CLI_help_exit_codes": [
+    0,
+    0
+  ],
+  "actual_gold_training_label_prediction_model_matrix_reads": false,
+  "actual_RF_scores_audited": 0,
+  "actual_reference_fits": 0,
+  "preserved_history": [
+    {
+      "history": "REVIEW-MANIFEST-v3.json",
+      "manifest_SHA": "cfdccb3d70847b1315a2d3c4ccbc8e0ebb4377fcec2730313ce41cf29e3bdb02",
+      "artifacts_unchanged": true
+    },
+    {
+      "history": "REVIEW-MANIFEST-v4.json",
+      "manifest_SHA": "24f2c7836b626b6df88bd311e5590d15b8cc104e9a681886024419802eef962e",
+      "artifacts_unchanged": true
+    }
+  ],
+  "frozen_dependencies": {
+    "independent_numeric_helper_sha256": "baf78bfa88bf2ba49fcd1f6baae5560c0d89215934c62236e53e9045d36832c8",
+    "RF_source_freeze_sha256": "078c507e790140d66e3419246d01d18f6bb2fa785afdb6ef6075cec0df3998ab",
+    "joint_NN_approved_execution_index_sha256": "c7b3bde68c9a741c0ac3f255a825e4a55dd7234e2b4e6d48f212fee8d5609ab1"
+  },
+  "real_gate": "new explicit root authorization + exact jointNN200/RF40 barrier + code/helper/taskmap/spec/record SHA bindings",
+  "separate_denominators": {
+    "NN": {
+      "scores": 600,
+      "prediction_rows": 265800,
+      "paper_count": 5
+    },
+    "RF": {
+      "scores": 120,
+      "prediction_rows": 53160,
+      "paper_count": 0
+    },
+    "three_deterministic_references": {
+      "scores": 360,
+      "prediction_rows": 159480,
+      "paper_count": 0
+    }
+  },
+  "synthetic_scope": "58 tests: pure numeric/record checks and generic temporary file audit; 9 tests: full synthetic metric-metadata CLI assembly with explicit mocked gate, separately gate-tested. No actual benchmark execution.",
+  "development_note": "One unmatched-brace syntax check failed during unfinished v5 subgroup helper edit; corrected before final67-case run. No frozen history or production code changed.",
+  "artifacts": [
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/recompute_RF_v5.py",
+      "bytes": 29899,
+      "sha256": "9d6f1e67d6a08c45316014729ffc850e1d59bd6ab3da1c989bcb4280e731e905"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/combine_audit_tables_v5.py",
+      "bytes": 10282,
+      "sha256": "ac9cb4a7987d03224a87cd6a96d1b4194b5c02e7a53ecfb5b3be86640426123c"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/test_RF_audit_v5.py",
+      "bytes": 22213,
+      "sha256": "654d4662df2112c2ea8b86ee9aedbdb863f3e18941b166db00d1a44c6e166fb7"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/test_combiner_e2e_v5.py",
+      "bytes": 7712,
+      "sha256": "5e6e0baf7ea6217b2e76f6a82e79834be8e54f7d6d3c549ebdd574f89f029f2b"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/RF-audit-synthetic-verification-v5.json",
+      "bytes": 5657,
+      "sha256": "0e14305a3cd744b7d2890accd004316396d492b6b96d71c978922f0912d38ae0"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/combined-table-e2e-synthetic-verification-v5.json",
+      "bytes": 1411,
+      "sha256": "1d9e020db927363a21bc327dad33e1393f8179a56e70e74737653d668807b089"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/RF独立重算与统一表说明-v5.md",
+      "bytes": 4234,
+      "sha256": "4e076a6f19eb68d659d07325c21f4ece2fccfd325a277b27deb2943a5f9f532d"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/RF-independent-audit-authorization.example-v5.json",
+      "bytes": 499,
+      "sha256": "60b524409b3a97c5fc65d10f662ec49db589c1898f1e74bb847f82793532c41b"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/combined-table-authorization.example-v5.json",
+      "bytes": 756,
+      "sha256": "127d9a2a015353f9bea7749ffc62546b86471761d72d6e6e098c38a5f2218f28"
+    }
+  ]
+}

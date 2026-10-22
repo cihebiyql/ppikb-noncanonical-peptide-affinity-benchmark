@@ -1,0 +1,232 @@
+{
+  "evaluation_split_training_script_candidates": [
+    {
+      "path": "create_data.py",
+      "sha256": "dbfda7dffdd7757e2bf58d87e8e6baeb1346959da01b75d9193549f5269bcbfa",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 53,
+            "text": "train_indices = json.load(open(data_path + \"folds/train_fold_setting1.txt\"))"
+          },
+          {
+            "line": 55,
+            "text": "test_indices = json.load(open(data_path + \"folds/test_fold_setting1.txt\"))"
+          },
+          {
+            "line": 64,
+            "text": "for phase in ['train', 'test']:"
+          },
+          {
+            "line": 68,
+            "text": "elif phase == 'test':"
+          },
+          {
+            "line": 80,
+            "text": "print(f'Train fold size: {len(train_indices)}')"
+          },
+          {
+            "line": 81,
+            "text": "print(f'Test fold size: {len(test_indices)}')"
+          },
+          {
+            "line": 90,
+            "text": "for phase in ['train', 'test']:"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "main.py",
+      "sha256": "029c6f646cbc4e8c891e117e78d0fe6151d732d4fa62b5e0c5c39b1e88d245bc",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 84,
+            "text": "ret = [rmse(G, P), mse(G, P), pearson(G, P), spearman(G, P), ci(G, P)]"
+          },
+          {
+            "line": 92,
+            "text": "print(f'rmse improved at epoch {best_epoch}; best_mse,best_ci: {best_mse}, {best_ci}, {model_st}, {dataset}')"
+          },
+          {
+            "line": 96,
+            "text": "results_df = results_df.append({'epoch': epoch + 1, 'rmse': ret[0], 'mse': ret[1],"
+          },
+          {
+            "line": 97,
+            "text": "'pearson': ret[2], 'spearman': ret[3], 'ci': ret[4]},"
+          }
+        ],
+        "checkpoint_selection": [
+          {
+            "line": 75,
+            "text": "best_mse = float('inf')"
+          },
+          {
+            "line": 76,
+            "text": "best_ci = 0"
+          },
+          {
+            "line": 77,
+            "text": "best_epoch = -1"
+          },
+          {
+            "line": 85,
+            "text": "if ret[1] < best_mse:"
+          },
+          {
+            "line": 86,
+            "text": "torch.save(model.state_dict(), model_file_name)"
+          },
+          {
+            "line": 89,
+            "text": "best_epoch = epoch + 1"
+          },
+          {
+            "line": 90,
+            "text": "best_mse = ret[1]"
+          },
+          {
+            "line": 91,
+            "text": "best_ci = ret[-1]"
+          },
+          {
+            "line": 92,
+            "text": "print(f'rmse improved at epoch {best_epoch}; best_mse,best_ci: {best_mse}, {best_ci}, {model_st}, {dataset}')"
+          },
+          {
+            "line": 94,
+            "text": "print(f'{ret[1]} No improvement since epoch {best_epoch}; best_mse,best_ci: {best_mse}, {best_ci}, {model_st}, {dataset}')"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "utils.py",
+      "sha256": "8469c1b4e3739c5f88ddbf88a22671d9d884f2fabac590bb7563fe4d3345ecb5",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 68,
+            "text": "def rmse(y,f):"
+          },
+          {
+            "line": 69,
+            "text": "rmse = sqrt(((y - f)**2).mean(axis=0))"
+          },
+          {
+            "line": 70,
+            "text": "return rmse"
+          },
+          {
+            "line": 71,
+            "text": "def mse(y,f):"
+          },
+          {
+            "line": 72,
+            "text": "mse = ((y - f)**2).mean(axis=0)"
+          },
+          {
+            "line": 73,
+            "text": "return mse"
+          },
+          {
+            "line": 78,
+            "text": "rs = stats.spearmanr(y, f)[0]"
+          },
+          {
+            "line": 80,
+            "text": "def ci(y,f):"
+          },
+          {
+            "line": 100,
+            "text": "ci = S/z"
+          },
+          {
+            "line": 101,
+            "text": "return ci"
+          }
+        ],
+        "checkpoint_selection": [
+          {
+            "line": 66,
+            "text": "torch.save((data, slices), self.processed_paths[0])"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "validation.py",
+      "sha256": "60b44ecef47275d901ebfb913e9715c001d4d69d3607fe253a3c21f97e7463ab",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 89,
+            "text": "valid_mse = mse(valid_labels, valid_preds)"
+          },
+          {
+            "line": 97,
+            "text": "test_metrics = [rmse(test_labels, test_preds), mse(test_labels, test_preds),"
+          },
+          {
+            "line": 98,
+            "text": "pearson(test_labels, test_preds), spearman(test_labels, test_preds), ci(test_labels, test_preds)]"
+          },
+          {
+            "line": 103,
+            "text": "print(f'RMSE improved at epoch {best_epoch}; best_test_mse, best_test_ci: {best_test_mse}, {best_test_ci}, {model_name}, {dataset}')"
+          }
+        ],
+        "split_or_validation": [
+          {
+            "line": 87,
+            "text": "print('Predicting for validation data')"
+          },
+          {
+            "line": 95,
+            "text": "print('Predicting for test data')"
+          }
+        ],
+        "checkpoint_selection": [
+          {
+            "line": 81,
+            "text": "best_epoch = -1"
+          },
+          {
+            "line": 93,
+            "text": "best_epoch = epoch + 1"
+          },
+          {
+            "line": 94,
+            "text": "torch.save(model.state_dict(), model_file)"
+          },
+          {
+            "line": 103,
+            "text": "print(f'RMSE improved at epoch {best_epoch}; best_test_mse, best_test_ci: {best_test_mse}, {best_test_ci}, {model_name}, {dataset}')"
+          },
+          {
+            "line": 105,
+            "text": "print(f'{valid_mse} No improvement since epoch {best_epoch}; best_test_mse, best_test_ci: {best_test_mse}, {best_test_ci}, {model_name}, {dataset}')"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    }
+  ],
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "archive_crc32": "97673d00"
+    }
+  ],
+  "license_status": "file_present_text_not_legally_interpreted",
+  "gitmodules_present": false,
+  "git_lfs_pointer_paths": [],
+  "submodules_or_LFS_payloads_fetched": false
+}

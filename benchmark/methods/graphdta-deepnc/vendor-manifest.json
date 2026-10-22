@@ -1,0 +1,30 @@
+[
+  {
+    "method": "GraphDTA-GIN",
+    "source_model": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thinng__GraphDTA\\source\\models\\ginconv.py",
+    "source_model_sha256": "6bac0ca17e7185468a824646b2a658d21124264beb203b192e1a40abcb679c9d",
+    "source_preprocessing": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thinng__GraphDTA\\source\\create_data.py",
+    "source_preprocessing_sha256": "87547db4736405097adcbea2de68e25075af4a0bb057bb9e2d46ee49dd38d223",
+    "adapted_model": "vendor\\graphdta_gin.py",
+    "adapted_model_sha256": "6bac0ca17e7185468a824646b2a658d21124264beb203b192e1a40abcb679c9d",
+    "feature_file": "vendor\\graphdta_gin_features.py",
+    "feature_sha256": "503d4a2a8a8b23b2493e2a5aa9be6a7dfa25ecfe5a1f875cea9da90d83fcef3f",
+    "preprocessing_extraction": "AST function extraction; original function semantics preserved; removes module-level author dataset I/O",
+    "changes": []
+  },
+  {
+    "method": "DeepNC-GEN",
+    "source_model": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\source\\models\\gen.py",
+    "source_model_sha256": "8e9e5f65cbc7f562e8eaae9172c24805890de3ac7cac8a13c830f20e5d718032",
+    "source_preprocessing": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\source\\prepare_data.py",
+    "source_preprocessing_sha256": "75c133600ab6cf505d67c79e48a076d5abb12f7bf117815304bf332345e83cf8",
+    "adapted_model": "vendor\\deepnc_gen.py",
+    "adapted_model_sha256": "3c51159bf006345f3f1c3fbb69aeab1bb08995272de718ca85e39096bc97aed3",
+    "feature_file": "vendor\\deepnc_gen_features.py",
+    "feature_sha256": "503d4a2a8a8b23b2493e2a5aa9be6a7dfa25ecfe5a1f875cea9da90d83fcef3f",
+    "preprocessing_extraction": "AST function extraction; original function semantics preserved; removes module-level author dataset I/O",
+    "changes": [
+      "Fix author NameError: constructor references undefined GEN_Conv although class is named GEN. No architecture change."
+    ]
+  }
+]

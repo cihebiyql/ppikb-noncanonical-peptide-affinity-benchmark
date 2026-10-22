@@ -1,0 +1,19 @@
+{
+  "status": "prepared_not_authorized_for_real_fit_or_scoring",
+  "method_id": "RF-Morgan2-chiral-AAC-DP",
+  "author_model_reproduction": false,
+  "paper_count": 0,
+  "not_counted_in_original_five_NN_papers": true,
+  "NN_contracts_unchanged": {"selections": 200, "candidate_fits": 400, "scores": 600, "prediction_rows": 265800},
+  "RF_plan": {"panels": 2, "regimes": ["NC_only", "standard_only"], "seeds": [0,1,2,3,4,5,6,7,8,9], "units": 40, "candidate_fits": 80, "scores": 120, "prediction_rows": 53160},
+  "candidate_profiles": [{"candidate_index":0,"min_samples_leaf":2},{"candidate_index":1,"min_samples_leaf":5}],
+  "fixed_parameters": {"n_estimators":200,"max_features":"sqrt","max_depth":null,"bootstrap":true,"n_jobs":1,"random_state":"training seed"},
+  "remaining_parameters": "explicit installed-sklearn defaults, frozen by environment asset probe before real fitting",
+  "selection": {"metric":"validation MAE","validation_scope":"same_as_regime","tie_break":"lower candidate_index (leaf2)","retain":"both models, both per-row validation predictions and all candidate metrics"},
+  "fit_label_boundary": "Only prepared-panels-wsl-v3/<panel>/train.jsonl and validation.jsonl filtered by same NC_core regime; never frozen-v1/labels.jsonl",
+  "scoring_gate": "original complete NN200 barrier unchanged plus complete independent RF40 barrier, combined root-authorized joint barrier before any gold/prediction",
+  "approved_NN_execution_index": {"path":"administration/io-recovery01/execution-index-v5-recovery.json","sha256":"c7b3bde68c9a741c0ac3f255a825e4a55dd7234e2b4e6d48f212fee8d5609ab1","meaning":"root-approved isolated IO recovery replaces the failed old slot without changing NN science/data; old v4 paths are not required"},
+  "scoring": "persist blind predictions and SHA first, then open permitted holdout gold and join record IDs",
+  "deadline": "original root deadline/clock unchanged",
+  "future_fit_resources": "root must issue a new explicit bounded CPU-only authorization; no real fit yet"
+}

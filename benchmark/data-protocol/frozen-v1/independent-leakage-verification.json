@@ -1,0 +1,68 @@
+{
+  "all_checks_passed": true,
+  "source_inputs_unchanged": true,
+  "target_all_pair_runtime_receipt": {
+    "host": "node23",
+    "Bio_version": "1.85",
+    "workers": 8,
+    "pairs_examined_or_mathematically_excluded": 1025797,
+    "positive_edges": 1172,
+    "main_sequences": 1411,
+    "union_sequences": 1433,
+    "wall_seconds": 277.6773211956024,
+    "gpu_used": false,
+    "labels_read": false,
+    "mode": "all_pairs",
+    "identity_definition": "exact matched residues / nongap paired columns",
+    "coverage_definition": "nongap paired columns / each full reference sequence length",
+    "threshold_identity": 0.3,
+    "threshold_both_coverage": 0.8,
+    "extra_positive_links": "exact sequence containment, shorter length >=40 aa",
+    "length_ratio_skip": "minimum_length / maximum_length <0.8 proves impossible for paired-column both coverage",
+    "composition_skip": "sum min amino acid counts <0.24*max length proves impossible",
+    "scoring": {
+      "substitution_matrix": "BLOSUM62",
+      "local_open_gap": -10,
+      "local_extend_gap": -0.5,
+      "alignment_selection": "first optimal alignment returned by frozen Bio version"
+    },
+    "claim_boundary": "declared full-reference similarity and exact domain containment; not a certified universal protein-family holdout"
+  },
+  "panel_audits": {
+    "source_peptide_dependency_cold": {
+      "exact_source_aliases_cross_partition": 0,
+      "exact_isomeric_graphs_cross_partition": 0,
+      "exact_achiral_graphs_cross_partition": 0,
+      "exact_target_reference_sequences_cross_partition": 205,
+      "target_effective_prefix_1000_cross_partition": 205,
+      "declared_target_similarity_edges_cross_partition": 549,
+      "declared_chemical_neighbor_edges_cross_partition": 0,
+      "rows": 9619,
+      "assignment_sha256": "ec7e1757da0fd14b9d685e14e6030402a41d49628ca0acaeb70f35ca56a87230"
+    },
+    "target_reference_homology_cold": {
+      "exact_source_aliases_cross_partition": 432,
+      "exact_isomeric_graphs_cross_partition": 223,
+      "exact_achiral_graphs_cross_partition": 223,
+      "exact_target_reference_sequences_cross_partition": 0,
+      "target_effective_prefix_1000_cross_partition": 0,
+      "declared_target_similarity_edges_cross_partition": 0,
+      "declared_chemical_neighbor_edges_cross_partition": 4730,
+      "rows": 9619,
+      "assignment_sha256": "3c880300ccbfb479629d77165988c8756f2ee8e6ad46d86146f06706c10f6c4f"
+    },
+    "dual_source_peptide_target_diagnostic": {
+      "exact_source_aliases_cross_partition": 0,
+      "exact_isomeric_graphs_cross_partition": 0,
+      "exact_achiral_graphs_cross_partition": 0,
+      "exact_target_reference_sequences_cross_partition": 0,
+      "target_effective_prefix_1000_cross_partition": 0,
+      "declared_target_similarity_edges_cross_partition": 0,
+      "declared_chemical_neighbor_edges_cross_partition": 0,
+      "rows": 9619,
+      "assignment_sha256": "85218db32dbc9bf843164b2edb8fd5b2b7c37ea015d1ce806bbc639c426b1628"
+    }
+  },
+  "models_fit": 0,
+  "claimed_scope": "Zero overlaps only for each panel declared constraints. Crossings intentionally allowed on other axes are reported."
+}

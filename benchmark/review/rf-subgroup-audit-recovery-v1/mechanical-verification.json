@@ -1,0 +1,76 @@
+{
+  "schema": "RF-subgroup-audit-recovery-mechanics.v1",
+  "status": "passed",
+  "passed_cases": 15,
+  "cases": [
+    {
+      "case": "missing_supplement_flags_derived_from_frozen_IDs",
+      "passed": true
+    },
+    {
+      "case": "source_metadata_not_changed_by_private_assembly",
+      "passed": true
+    },
+    {
+      "case": "existing_correct_flags_preserved_idempotently",
+      "passed": true
+    },
+    {
+      "case": "existing_wrong_flag_never_overwritten",
+      "passed": true
+    },
+    {
+      "case": "existing_null_flag_not_silently_imputed",
+      "passed": true
+    },
+    {
+      "case": "integer_flag_not_accepted_as_boolean",
+      "passed": true
+    },
+    {
+      "case": "frozen_NC_metadata_disagreement_still_rejected",
+      "passed": true
+    },
+    {
+      "case": "frozen_ID_outside_cohort_rejected",
+      "passed": true
+    },
+    {
+      "case": "external67_8_2_exact_definition_retained",
+      "passed": true
+    },
+    {
+      "case": "external_existing_mapping_conflict_rejected",
+      "passed": true
+    },
+    {
+      "case": "only_subgroup_assembly_and_two_path_dependent_functions_changed",
+      "passed": true
+    },
+    {
+      "case": "true_join_blind_SHA_metrics_tables_unchanged",
+      "passed": true
+    },
+    {
+      "case": "project_helper_paths_point_to_original_review_root",
+      "passed": true
+    },
+    {
+      "case": "numeric_helper_SHA_unchanged",
+      "passed": true
+    },
+    {
+      "case": "old_RFv5_SHA_unchanged",
+      "passed": true
+    }
+  ],
+  "changed_functions": [
+    "attach_frozen_subgroups",
+    "authorize",
+    "numeric_helper"
+  ],
+  "actual_gold_prediction_model_matrix_or_label_reads": false,
+  "actual_RF_audit_or_score_runs": 0,
+  "numeric_helper_sha256": "baf78bfa88bf2ba49fcd1f6baae5560c0d89215934c62236e53e9045d36832c8",
+  "new_script_sha256": "ac3504aa47dac9eacafb2dca8410cab1c9beccdd40053d1d04b26a2d81359292"
+}

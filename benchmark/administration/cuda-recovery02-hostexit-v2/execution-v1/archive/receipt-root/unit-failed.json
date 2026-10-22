@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "finished_at": "2026-10-21T20:56:45.268564+00:00",
+  "error": "RuntimeError('candidate-0 exited 1')",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/run_unit.py\", line 84, in execute\n    for index in [0,1]:run_stage([sys.executable,str(runner),'fit','--spec',str(path(args.spec)),'--candidate-index',str(index)],folder,'candidate-'+str(index),cutoff)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/run_unit.py\", line 73, in run_stage\n    if process.returncode:raise RuntimeError(name+' exited '+str(process.returncode))\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: candidate-0 exited 1\n",
+  "deadline": "2026-10-21T22:54:18.479676+00:00",
+  "clock_reset": false
+}

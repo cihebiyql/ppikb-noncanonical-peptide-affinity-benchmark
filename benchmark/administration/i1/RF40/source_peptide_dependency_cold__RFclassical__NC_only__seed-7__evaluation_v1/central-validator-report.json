@@ -1,0 +1,962 @@
+{
+  "valid": true,
+  "valid_for_execution": true,
+  "valid_for_acceptance": false,
+  "errors": [],
+  "execution_blockers": [],
+  "files_checked": [
+    {
+      "field": "contract.identity.pdf.path",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-author-lab.pdf",
+      "hash_verified": true
+    },
+    {
+      "field": "contract.identity.primary_document.path",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-official.html",
+      "hash_verified": true
+    },
+    {
+      "field": "contract.identity.eligibility.evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.identity.eligibility.evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.identity.eligibility.evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar-v2.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.identity.eligibility.evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar-v3.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.execution_scope.restriction_check.evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.execution_scope.restriction_check.evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.execution_scope.authorization_path",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\user-authorization.json",
+      "hash_verified": true
+    },
+    {
+      "field": "contract.assets.code[0].path",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\rf-classic-ready-v2\\rf-frozen-source-snapshot.zip",
+      "hash_verified": true
+    },
+    {
+      "field": "contract.assets.code[0].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\auxiliary-rf-baseline\\SOURCE-FREEZE-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.assets.code[0].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\auxiliary-RF-source-metadata-review-v4.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[0].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[0].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[0].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[0].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[1].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[1].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[1].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[1].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[2].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[2].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[2].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[2].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[3].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[3].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[3].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[3].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[4].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[4].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[4].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[4].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[5].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[5].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[5].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[5].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[6].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[6].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[6].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[6].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[7].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[7].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[7].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[7].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[8].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[8].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[8].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[8].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[9].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[9].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[9].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[9].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[10].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[10].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[10].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[10].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[11].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[11].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[11].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[11].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[12].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[12].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[12].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[12].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[13].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[13].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[13].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[13].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[14].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[14].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[14].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[14].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[15].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[15].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[15].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[15].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[16].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[16].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[16].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[16].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[17].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[17].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[17].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[17].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[18].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[18].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[18].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[18].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[19].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[19].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[19].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[19].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[20].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[20].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[20].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[20].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[21].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[21].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[21].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[21].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[22].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[22].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[22].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[22].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[23].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[23].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[23].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[23].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[24].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[24].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[24].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[24].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[25].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[25].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[25].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[25].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[26].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[26].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[26].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[26].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[27].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[27].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[27].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[27].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[28].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[28].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[28].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[28].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[29].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[29].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[29].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[29].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[30].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[30].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[30].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[30].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[31].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[31].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[31].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[31].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[32].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[32].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[32].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[32].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[33].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[33].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[33].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[33].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[34].evidence_paths[0]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[34].evidence_paths[1]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[34].evidence_paths[2]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.targets[34].evidence_paths[3]",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\summary.json",
+      "hash_verified": false
+    },
+    {
+      "field": "contract.environment.lockfile_path",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\auxiliary-rf-baseline\\installed-assets-v1.json",
+      "hash_verified": true
+    },
+    {
+      "field": "contract.resources.resource_probe_path",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\rf-live-resource-v1.json",
+      "hash_verified": true
+    },
+    {
+      "field": "contract.evaluation_stage.training_contract_path",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\rf-classic-ready-v2\\issued\\source_peptide_dependency_cold__RFclassical__NC_only__seed-7\\task-contract.json",
+      "hash_verified": true
+    }
+  ],
+  "files_skipped": [
+    {
+      "field": "contract.assets.datasets[0].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/source_test__source_peptide_dependency_cold__RFclassical.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.assets.datasets[1].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/external75__source_peptide_dependency_cold__RFclassical.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.assets.datasets[2].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/supplement13__source_peptide_dependency_cold__RFclassical.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.assets.models[0].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/real-runs-v1/source_peptide_dependency_cold__RFclassical__NC_only__seed-7/candidate-0/model.joblib",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.environment.environment_path",
+      "path": "/root/.venvs/peptide-omnipanel-v31-web311-20260723",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.execution.stdout_path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/pool-runs/source_peptide_dependency_cold__RFclassical__NC_only__seed-7__evaluation_v1.stdout.log",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.execution.stderr_path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/pool-runs/source_peptide_dependency_cold__RFclassical__NC_only__seed-7__evaluation_v1.stderr.log",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.selection.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/real-runs-v1/source_peptide_dependency_cold__RFclassical__NC_only__seed-7/selection.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.score_specs[0].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/source_test__source_peptide_dependency_cold__RFclassical.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.score_specs[1].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/external75__source_peptide_dependency_cold__RFclassical.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.score_specs[2].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/supplement13__source_peptide_dependency_cold__RFclassical.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.authorization.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/RF-score-authorization.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.joint_barrier.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/all240-joint-frozen.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.NN_barrier.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/all200-selections-frozen.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.RF_barrier.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/all40-selections-frozen-v1.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.live_cpu_proof.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/fresh-CPU-time-proof.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.worker.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf_score.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[0].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rfs_common.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[1].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rf_score_pool.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[2].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rf_score_unit.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[3].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-launch-v1/rf_common.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[4].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/common.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[5].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/evaluation/metrics_stable.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[6].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/features.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[7].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/common.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[8].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf_runner.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[9].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf_score.py",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[10].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/feature-spec-v1.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[11].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/protocol-v1.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[12].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/installed-assets-v1.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.rf_score_execution_stage.code_files[13].path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/installed-binaries-v1.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.evaluation_stage.datasets[0].score_spec.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/source_test__source_peptide_dependency_cold__RFclassical.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.evaluation_stage.datasets[1].score_spec.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/external75__source_peptide_dependency_cold__RFclassical.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.evaluation_stage.datasets[2].score_spec.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/supplement13__source_peptide_dependency_cold__RFclassical.json",
+      "reason": "remote reference; local integrity not verified"
+    },
+    {
+      "field": "contract.evaluation_stage.root_joint_barrier.path",
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/all240-joint-frozen.json",
+      "reason": "remote reference; local integrity not verified"
+    }
+  ],
+  "validation_mode": "execution"
+}

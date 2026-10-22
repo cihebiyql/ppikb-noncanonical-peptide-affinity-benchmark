@@ -1,0 +1,93 @@
+{
+  "schema": "root-accepted-supplement13-scoring-view.v1",
+  "status": "accepted_inputs_prepared_not_inferred",
+  "recorded_at_utc": "2026-10-21T17:27:51.699623+00:00",
+  "recorded_at_Asia_Shanghai": "2026-10-22T01:27:51.699623+08:00",
+  "root_direct_task_decision": {
+    "issuer": "/root",
+    "authority": "Direct same-thread parent task accepting13 solely on traceable chemical/source/input evidence within user-authorized benchmark scope",
+    "decision_text": "Accept13 as a separate post-freeze diagnostic:8synthetic_D_backbone+5standard20_control; source+declaredchemicalcold; allreference-target-related;449aaheavyFc-side reference view; preserve2H2L/lot/glycoform limits; no merge into75 and no training or model selection changes.",
+    "decision_basis": [
+      "SourceDOI/PMID/title provenance independently checked against all21845 PPIKB rows.",
+      "Original-author measured entities passed explicitcaps/residue/stereochemistry/disulfide/formula checks.",
+      "Exactstereo/achiral/Morgan>=.8 audit against11256 graphs passed.",
+      "Full449heavy+214light2H2L reference identity preserved independently."
+    ],
+    "decision_did_not_consult_test_external_or_supplement_model_scores": true
+  },
+  "source_candidate_manifest": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\postfreeze-supplement-candidate-manifest.json",
+  "source_candidate_manifest_sha256": "5a4be60f2b4579d51aa1ff42257751bc8a0619ecb11c207e473b71bdb7a07bfc",
+  "preserved_external75_acceptance_manifest_sha256": "85973838adc28c0b6b9134a28a90312162a158eafd20f8b2bf14e68e13d36c4d",
+  "counts": {
+    "total": 13,
+    "NC_core": 8,
+    "standard_controls": 5,
+    "synthetic_D_backbone": 8,
+    "standard20_control": 5,
+    "PTM": 0,
+    "source_cold": 13,
+    "declared_chemical_cold": 13,
+    "reference_target_related": 13,
+    "reference_target_cold": 0,
+    "family_cold_certified": 0,
+    "whole2H2L_or_assayed_construct_certified": 0,
+    "model_predictions": 0
+  },
+  "gold_policy": {
+    "immutable_original_gold_sha256": "ab8514ee1fa1332205d8933ac27cd21e9ef51649d4ffa54f38607f316b1709cd",
+    "accepted_gold_copy_sha256": "ab8514ee1fa1332205d8933ac27cd21e9ef51649d4ffa54f38607f316b1709cd",
+    "exact_bytes_preserved": true,
+    "location": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\gold\\gold13.jsonl",
+    "usage": "Only after all200 original candidate selections are frozen; no relabelling, tuning, candidate reselection, or acceptance by observed test performance.",
+    "isolation": "Separatefiles and cache-only label-free input delivery under shared user account; noOS-access enforcement claim.",
+    "exposure": "Retrospective original labels previously inspected during source preparation, not prospectiveblind."
+  },
+  "target_input_scope": "Exactly449aa heavy reference forFc-side interaction. Full2H2L provenance separately retained. No artificial light/heavy concatenation, no whole antibody/lot/glycoform or family-cold certification.",
+  "evaluation_policy": "Keep this13-case supplement separate from old75 and all train/validation/test pools. Score all13once per frozen model/seed; reuse predictions to summarize8NC and5standard controls. Preserve all10seeds and missing/modelrejection reasons. One original study is not13independent systems.",
+  "selection_barrier_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/all-selections-frozen.json",
+  "no_model_or_optimizer_or_cache_encoder_called_by_this_preparation": true,
+  "historical_not_adopted_files_preserved": true,
+  "external75_all_accepted_artifact_hashes_unchanged": true,
+  "artifacts": [
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\inputs\\input13.jsonl",
+      "sha256": "6c7839966e786cc62fb3c1e49eee64898b539a9f2454941e5ec09f0593da44ad",
+      "bytes": 63761
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\gold\\gold13.jsonl",
+      "sha256": "ab8514ee1fa1332205d8933ac27cd21e9ef51649d4ffa54f38607f316b1709cd",
+      "bytes": 9416
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\provenance\\target-reference-multichain.json",
+      "sha256": "5db675dba0215f8115938e5005d915a7a6b99d20cddde85431f8dd16bca31e12",
+      "bytes": 2216
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\ids-all13.json",
+      "sha256": "4ca3c9486437e22dc086c90f60e25c93329caf3cc9908312f46dc26e7219e474",
+      "bytes": 393
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\ids-nc8.json",
+      "sha256": "21561c5995ea66f718ba86eba891560ae2a98ec84ecf256f4ab659d47418ebd7",
+      "bytes": 243
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\ids-standard5.json",
+      "sha256": "33e360fc361d7dab54777d71d524d6adf2914de6106017350810bf31df00cbc5",
+      "bytes": 153
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\source_peptide_dependency_cold-supplement13-score.cpu.json",
+      "sha256": "70957bf39f59aca803318e1c41209e6592dc7f7876201decf664067e94f42eac",
+      "bytes": 2181
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\target_reference_homology_cold-supplement13-score.cpu.json",
+      "sha256": "d8ba3062bf8989fdd4455f9f4106dd823da00098f15e7ea3661b69432a5e9421",
+      "bytes": 2181
+    }
+  ]
+}

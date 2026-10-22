@@ -1,0 +1,140 @@
+{
+  "schema": "deterministic-train-only-reference-plan.v1",
+  "status": "frozen_prepared_not_fit",
+  "created_utc": "2026-10-21T17:44:11.393401+00:00",
+  "reference_rule_ids": [
+    "train_mean",
+    "train_median",
+    "target_reference_train_median"
+  ],
+  "rules": {
+    "train_mean": "Predict arithmetic mean of pKd over all corresponding panel/regime training observations. No feature,validation or holdout fitting.",
+    "train_median": "Predict median pKd over corresponding panel/regime training observations. No feature,validation or holdout fitting.",
+    "target_reference_train_median": "Exact complete database target_sequence SHA256 lookup: median of corresponding panel/regime training labels at that reference. If unseen target, fall back to same training subset global median. No minimum-count tuning or source/target similarity model."
+  },
+  "labels_read_during_preparation": false,
+  "reference_statistics_fitted_during_preparation": false,
+  "holdout_predictions_or_gold_read": false,
+  "training_label_source": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\labels.jsonl",
+    "declared_sha256": "8a2c4e545ec322184ea57504cf875abc61805db8bef1b265034f95f4de4d2a7a",
+    "declaration_source": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\manifest.json",
+    "label_file_opened_or_rehashed_now": false,
+    "runtime_scope": "After all200 NN selections and explicit root authorization only. Only frozen train IDs below may enter fit_reference; never validation/test/external values."
+  },
+  "label_free_inputs": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\inputs.jsonl",
+    "sha256": "fd8ae1207818a4b1533c1b1a4ef5b299593a82700fb62c9ef2490656c9af01f5"
+  },
+  "source_files_verified_during_preparation": [
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\manifest.json",
+      "sha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\inputs.jsonl",
+      "sha256": "fd8ae1207818a4b1533c1b1a4ef5b299593a82700fb62c9ef2490656c9af01f5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\NC_only\\train-ids.json",
+      "sha256": "4b955b453d05e4b968bebafd03d48efab04414d8750c0e89415cc8dae7e8cfc2"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\standard_only\\train-ids.json",
+      "sha256": "2f44d7596d924cc2a3e685804d392f5408419996d012447891e35af3d2c7931b"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\NC_only\\train-ids.json",
+      "sha256": "ac6819116cfddc5f20781bfab73677c2101f89e4ff7a47769118a1938d59d79a"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\standard_only\\train-ids.json",
+      "sha256": "c332fd508b743587a155749a54a20a8efff52376d098659cb233b1b4535da026"
+    }
+  ],
+  "training_contexts": [
+    {
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "train_n": 1548,
+      "train_ids_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\NC_only\\train-ids.json",
+      "train_ids_sha256": "4b955b453d05e4b968bebafd03d48efab04414d8750c0e89415cc8dae7e8cfc2"
+    },
+    {
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "train_n": 5992,
+      "train_ids_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\standard_only\\train-ids.json",
+      "train_ids_sha256": "2f44d7596d924cc2a3e685804d392f5408419996d012447891e35af3d2c7931b"
+    },
+    {
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "train_n": 1409,
+      "train_ids_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\NC_only\\train-ids.json",
+      "train_ids_sha256": "ac6819116cfddc5f20781bfab73677c2101f89e4ff7a47769118a1938d59d79a"
+    },
+    {
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "train_n": 5324,
+      "train_ids_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\standard_only\\train-ids.json",
+      "train_ids_sha256": "c332fd508b743587a155749a54a20a8efff52376d098659cb233b1b4535da026"
+    }
+  ],
+  "training_regimes": [
+    "NC_only",
+    "standard_only"
+  ],
+  "pooled_training": false,
+  "seed_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed_policy": "Actual same deterministic functions are re-evaluated for each seed0..9 and saved per run. No RNG parameters: prediction vectors should be identical; defined-metric SD expected0, undefined metrics staynull. Not10 independent biological replicates.",
+  "reference_run_identities": 120,
+  "unique_rule_by_training_contexts": 12,
+  "reference_score_receipts": 360,
+  "reference_prediction_rows_by_dataset": {
+    "PPIKB-internal": 148920,
+    "PTM-external75": 9000,
+    "IgG-supplement13": 1560
+  },
+  "reference_prediction_rows_total": 159480,
+  "NN_reference_accounting_separation": {
+    "NN_papers": 5,
+    "NN_candidate_fits": 400,
+    "NN_selected_units": 200,
+    "NN_score_receipts": 600,
+    "NN_prediction_rows": 265800,
+    "deterministic_rules_do_not_increment_paper_count_or_NN_fits": true
+  },
+  "datasets": [
+    "PPIKB-internal",
+    "PTM-external75",
+    "IgG-supplement13"
+  ],
+  "matched_target_manifest": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\manifest.json",
+    "sha256": "60b3d8e00d10f6d6dde0ee645e18715692c8b271c3e4926ca73c40d8aad89099"
+  },
+  "metrics": "Same stable independent metrics/strata/608flag sensitivity/67+8+2/NC8+standard5/matched-target/source_ref rules as frozen evaluation-plan-v2; NC main performance is NC_core, not mixedall.",
+  "source_reference_scope": "study_id macros retain source_refs; metadata aliases are not independent original experiments",
+  "dependency_limits": [
+    "Repeated measurements and peptide/chemical/source/target dependence remain; no new independent biology from ten deterministic seed files.",
+    "Training statistics are observation-row summaries, preserving repeats under existing benchmark protocol.",
+    "An exact target-reference lookup does not certify actual assay constructs or transfer to target families."
+  ],
+  "gate": "CLI requires verified unchanged complete200 selection barrier plus separate root real-audit authorization before any training labels are opened. No fit/inference run now.",
+  "reference_script_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\deterministic_references.py",
+  "reference_script_sha256": "d2cfe13ef2d84cffbefe1f5018eca686d6293f9a2f0dbdd1cff34167ca88990e",
+  "metric_helper_sha256": "b450658076adfed65319d0e1f7ec27429133508008e394ec37951bb5ce93d9c7"
+}

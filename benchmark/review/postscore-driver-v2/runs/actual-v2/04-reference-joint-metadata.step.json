@@ -1,0 +1,17 @@
+{
+  "name": "04-reference-joint-metadata",
+  "argv": [
+    "wsl.exe",
+    "--exec",
+    "/usr/bin/python3",
+    "-c",
+    "import runpy,sys,json; m=runpy.run_path(sys.argv[1]); j,t=m['require_joint'](sys.argv[2],sys.argv[3],sys.argv[4]); print(json.dumps({'status':j['status'],'mode':sys.argv[4],'metadata_only':True}))",
+    "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/joint_audit_gate_v4.py",
+    "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v2/runs/actual-v2/maps-and-authorizations/joint-NN-reference-auth.json",
+    "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/all240-joint-frozen.json",
+    "references"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-10-22T00:28:14.978917+00:00",
+  "finished_at": "2026-10-22T00:28:19.030572+00:00"
+}

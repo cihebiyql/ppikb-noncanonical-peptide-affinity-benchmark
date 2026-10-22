@@ -1,0 +1,46 @@
+/data/qlyu/anaconda3/envs/cuda12.1/lib/python3.11/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+{
+  "status": "passed",
+  "host": "node23",
+  "pid": 630926,
+  "torch_version": "2.6.0+cu124",
+  "cpu_threads": 1,
+  "elapsed_seconds": 1.7738869190216064,
+  "max_rss_kib": 804792,
+  "claim": "component CPU import/forward/backward regression only; no benchmark results",
+  "methods": [
+    {
+      "method_id": "MGraphDTA",
+      "eval_single_batch_permutation_pass": true,
+      "repeated_batch_cache_unchanged": true,
+      "backward_finite": true,
+      "max_single_batch_difference": 7.450580596923828e-09,
+      "parameter_count": 3045461,
+      "atom_feature_dim": 22,
+      "protein_cap": 1200,
+      "atom_truncation": false,
+      "chirality_collision_explicitly_verified": true,
+      "batch_targets": [
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "method_id": "DGDTA-CL",
+      "eval_single_batch_permutation_pass": true,
+      "repeated_batch_cache_unchanged": true,
+      "backward_finite": true,
+      "max_single_batch_difference": 3.725290298461914e-09,
+      "parameter_count": 3843261,
+      "atom_feature_dim": 78,
+      "protein_cap": 1000,
+      "atom_truncation": false,
+      "chirality_collision_explicitly_verified": true,
+      "batch_targets": [
+        1.0,
+        2.0
+      ]
+    }
+  ]
+}

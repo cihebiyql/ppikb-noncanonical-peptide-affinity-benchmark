@@ -1,0 +1,35 @@
+{
+  "revision": "gpu-v3-bounded-runner-adaptation",
+  "status": "8 unit tests passed; no formal candidate fit launched",
+  "formal_methods": [
+    "GraphDTA-GIN",
+    "MGraphDTA",
+    "DGDTA-CL",
+    "DeepNC-GEN",
+    "GS-DTA"
+  ],
+  "MRBDTA": "interface and historical smoke retained; omitted from formal grid",
+  "max_epochs": 20,
+  "patience": 5,
+  "candidate_fits": 400,
+  "selections": 200,
+  "builder_default_device": "cpu",
+  "cuda_requires_explicit_authorization": true,
+  "gpu_allocator_budget_max_bytes": 3221225472,
+  "gpu_budget_boundary": "PyTorch allocator only; context, RSS and concurrency enforced by root launcher",
+  "unit_test_log": "unit-tests-gpu-revision.log",
+  "checks": {
+    "GPU_available_authorized_allocator": "mocked unit tests, not GPU execution",
+    "builder_grid": "400 specs in disposable temporary directory only",
+    "existing_fit_select_score": "CPU linear fixture with no heldout access during fit/select"
+  },
+  "files": {
+    "runner.py": "9abe4a9fba5840a6200aecf40fdfb436abbf61d78c3a9a2f28baae7712c6913e",
+    "build_specs.py": "257254f5b3b6d94deab586ab55d7cb633a07463c60aa50cdaa14b6cb21f5a1b7",
+    "test_runner.py": "4cc0b5ef9009a7cc39b6c3e89d6f6513c238300f1c5e33ce7547d8db94b0786b",
+    "README.md": "e319172cd249713e4f331ada1260395a950b73e26e426793a7a53dca6c58e357"
+  },
+  "old_specs": "formal-specs-v2 CPU30 untouched; not launched",
+  "new_specs": "not generated; awaiting root WSL paths for formal-specs-gpu-v3",
+  "ownership": "returned to root; launch/ untouched"
+}

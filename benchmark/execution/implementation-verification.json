@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "formal_fits_launched": false,
+  "candidate_fits": 400,
+  "selections": 200,
+  "execution_index_sha256": "2d2eb2c530f1480c99e46759ab5fca44b28a8b3d180c1915da70fd1d4b497b98",
+  "grid_unique": true,
+  "all_train_validation_file_hashes_verified": true,
+  "counts": [
+    {
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "train": 1548,
+      "validation": 248
+    },
+    {
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "train": 5992,
+      "validation": 792
+    },
+    {
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "train": 1409,
+      "validation": 358
+    },
+    {
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "train": 5324,
+      "validation": 1085
+    }
+  ],
+  "canaries": [
+    {
+      "method_id": "GraphDTA-GIN",
+      "mean_last_three_step_seconds": 0.2025442123413086,
+      "max_rss_MiB": 806.42578125,
+      "full_30_epoch_training_update_core_hours": 15.157058556874594
+    },
+    {
+      "method_id": "DeepNC-GEN",
+      "mean_last_three_step_seconds": 1.339982032775879,
+      "max_rss_MiB": 1163.69921875,
+      "full_30_epoch_training_update_core_hours": 100.27532211939494
+    },
+    {
+      "method_id": "MGraphDTA",
+      "mean_last_three_step_seconds": 2.127444267272949,
+      "max_rss_MiB": 1486.87890625,
+      "full_30_epoch_training_update_core_hours": 159.2037460009257
+    },
+    {
+      "method_id": "DGDTA-CL",
+      "mean_last_three_step_seconds": 1.7049606641133626,
+      "max_rss_MiB": 1613.83203125,
+      "full_30_epoch_training_update_core_hours": 127.58788969781662
+    },
+    {
+      "method_id": "MRBDTA",
+      "mean_last_three_step_seconds": 1.6372215747833252,
+      "max_rss_MiB": 963.1953125,
+      "full_30_epoch_training_update_core_hours": 487.3462887605031
+    }
+  ],
+  "total_training_update_core_hours_full_budget": 889.570305135515,
+  "lower_bound_16_parallel_wall_hours": 55.59814407096969,
+  "timing_scope": "rough training-update extrapolation only; excludes validation/IO/encoding, heterogeneous input lengths, contention and early stopping",
+  "pending": [
+    "root freeze launch resource contract",
+    "stage canonical production methods folders",
+    "root authorize cache prewarm and formal launcher"
+  ]
+}

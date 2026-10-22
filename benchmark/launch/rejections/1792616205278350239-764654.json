@@ -1,0 +1,17 @@
+{
+  "status": "rejected_or_failed",
+  "at": "2026-10-21T20:56:45.278364+00:00",
+  "args": {
+    "spec": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/gpu-fit-specs-v4/MGraphDTA__target_reference_homology_cold__standard_only__seed06.json",
+    "spec_sha256": "62cb03bbc33f3bbcfd63f4d9c2b59513d7b6d60ffe7528462e6e18d73f17e8f7",
+    "contract": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/issued-gpu-v4/MGraphDTA__target_reference_homology_cold__standard_only__seed06/task-contract.json",
+    "contract_sha256": "3ed3deba92dff057d824050a419bb790df82d4eb15ae23ab4b41e34a0641f4f2",
+    "validation": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/issued-gpu-v4/MGraphDTA__target_reference_homology_cold__standard_only__seed06/execution-validation.json",
+    "validation_sha256": "59f5f7a0dda5b93e89b046d6e72bf1546839426528a058b5f5c485fe90f11bd1",
+    "deadline": "2026-10-21T22:54:18.479676+00:00"
+  },
+  "error": "RuntimeError('candidate-0 exited 1')",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/run_unit.py\", line 99, in main\n    try:result=execute(args)\n               ^^^^^^^^^^^^^\n  File \"/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/run_unit.py\", line 84, in execute\n    for index in [0,1]:run_stage([sys.executable,str(runner),'fit','--spec',str(path(args.spec)),'--candidate-index',str(index)],folder,'candidate-'+str(index),cutoff)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/run_unit.py\", line 73, in run_stage\n    if process.returncode:raise RuntimeError(name+' exited '+str(process.returncode))\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: candidate-0 exited 1\n",
+  "actual_pid": 764654,
+  "score_started": false
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "independent-auxiliary-rf-review-plan.v4",
+  "status": "awaiting_RF_agent_final_source_and_metadata_handoff_no_fitting",
+  "scope": "Only review newly preregistered auxiliary RF source, schema, metadata and gates; existing NN reviewer history remains unchanged",
+  "root_preregistered_feature_contract": {
+    "peptide": "Full recorded chemical graph Morgan radius2/2048bits/useChiralityTrue; retain unassigned stereochemistry as unknown, never canonicalize NC into20residue sequences",
+    "protein": "First1000 amino acids, AAC20+dipeptide400+length1; denominator/unknown residue/short sequence/length definition must be explicit in final authoring-agent schema",
+    "feature_dimensions": 2469
+  },
+  "root_preregistered_RF_contract": {
+    "n_estimators": 200,
+    "max_features": "sqrt",
+    "min_samples_leaf_candidates": [2, 5],
+    "bootstrap": true,
+    "max_depth": null,
+    "n_jobs": 1,
+    "random_state": "seed0..9",
+    "remaining_defaults": "Must be explicitly recorded against installed sklearn version, not silently inherited",
+    "selection": "Corresponding panel/regime training only; same-regime validation MAE selects2vs5; tie rule predeclared; never holdout selection"
+  },
+  "new_gate_rule": "All future scoring and real-data recomputation, including deterministic references, require separately root-authorized jointNN200+RF40 completion barrier. Original NN200 hard barrier and its frozen code remain intact.",
+  "accounting_separate_categories": {
+    "five_prior_paper_NN": {
+      "paper_count": 5,
+      "candidate_fits": 400,
+      "selected_units": 200,
+      "score_receipts": 600,
+      "prediction_rows": 265800
+    },
+    "auxiliary_handcrafted_RF": {
+      "additional_prior_paper_count": 0,
+      "candidate_fits": 80,
+      "selected_units": 40,
+      "score_receipts": 120,
+      "prediction_rows": 53160,
+      "internal_prediction_rows": 49640,
+      "external75_prediction_rows": 3000,
+      "supplement13_prediction_rows": 520
+    },
+    "three_deterministic_references": {
+      "additional_prior_paper_count": 0,
+      "NN_candidate_fits": 0,
+      "materialized_seed_run_identities": 120,
+      "score_receipts": 360,
+      "prediction_rows": 159480
+    },
+    "cross_category_ledger_only": {
+      "score_receipts": 1080,
+      "prediction_rows": 478440,
+      "not_a_prior_paper_count": true
+    }
+  },
+  "real_training_labels_read": false,
+  "real_holdout_gold_predictions_or_models_read": false,
+  "RF_fit_or_inference_started_by_reviewer": false,
+  "existing_26_and42_review_artifacts_modified": false,
+  "next_step": "Await final RF source/schema/spec/barrier metadata; issue separate versioned source review and compatibility plan; actual recomputation requires a new explicit root authorization after joint barrier"
+}

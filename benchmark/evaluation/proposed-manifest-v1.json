@@ -1,0 +1,231 @@
+{
+  "schema": "label-free-fixed-author-X-v1",
+  "status": "PROPOSED_AWAITING_ROOT_CACHE_AUTHORIZATION",
+  "datasets": {
+    "source_test": {
+      "input_relative": "execution/prepared-panels-wsl-v3/source_peptide_dependency_cold/test-inputs.jsonl",
+      "input_sha256": "db0ca035a5c318f49fbba47b1907e3170c5523fedef319373bbe439273a227bc",
+      "input_bytes": 2023468,
+      "n": 1039,
+      "windows_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\execution\\prepared-panels-wsl-v3\\source_peptide_dependency_cold\\test-inputs.jsonl",
+      "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/execution/prepared-panels-wsl-v3/source_peptide_dependency_cold/test-inputs.jsonl",
+      "node_staged_path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/evaluation/stage/inputs/source_test.jsonl",
+      "gold_keys_detected": false,
+      "record_ids_unique": true
+    },
+    "target_test": {
+      "input_relative": "execution/prepared-panels-wsl-v3/target_reference_homology_cold/test-inputs.jsonl",
+      "input_sha256": "8b160ee568a6ac561bfed5ffc81491a11ff64fa1d83eb566d4852ba0fdd01b60",
+      "input_bytes": 3241585,
+      "n": 1443,
+      "windows_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\execution\\prepared-panels-wsl-v3\\target_reference_homology_cold\\test-inputs.jsonl",
+      "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/execution/prepared-panels-wsl-v3/target_reference_homology_cold/test-inputs.jsonl",
+      "node_staged_path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/evaluation/stage/inputs/target_test.jsonl",
+      "gold_keys_detected": false,
+      "record_ids_unique": true
+    },
+    "external75": {
+      "input_relative": "external-validation/scoring-views-v1/inputs75.jsonl",
+      "input_sha256": "f3a8304cdab5e7c0d18cfae2e75518348dd9f0434f24f9bec2c1999e02569ae4",
+      "input_bytes": 396018,
+      "n": 75,
+      "windows_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-views-v1\\inputs75.jsonl",
+      "wsl_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/external-validation/scoring-views-v1/inputs75.jsonl",
+      "node_staged_path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/evaluation/stage/inputs/external75.jsonl",
+      "gold_keys_detected": false,
+      "record_ids_unique": true
+    }
+  },
+  "jobs": [
+    {
+      "dataset_id": "source_test",
+      "method_id": "GraphDTA-GIN",
+      "input_sha256": "db0ca035a5c318f49fbba47b1907e3170c5523fedef319373bbe439273a227bc",
+      "n": 1039,
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "signature": "e169da86ad1f4e024da5920392c794dea84fd2eb70ca25bd833989ff3402de9c",
+      "cache_filename": "source_test__GraphDTA-GIN__X_e169da86ad1f4e02.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "source_test",
+      "method_id": "MGraphDTA",
+      "input_sha256": "db0ca035a5c318f49fbba47b1907e3170c5523fedef319373bbe439273a227bc",
+      "n": 1039,
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "signature": "8d284e9e6c65d7d99920498f046990856bdd6dfbd50edc5908614bc2fe76f271",
+      "cache_filename": "source_test__MGraphDTA__X_8d284e9e6c65d7d9.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "source_test",
+      "method_id": "DGDTA-CL",
+      "input_sha256": "db0ca035a5c318f49fbba47b1907e3170c5523fedef319373bbe439273a227bc",
+      "n": 1039,
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "signature": "c7b19569429e2f9d611d194ac14e3bf8b539013993c803af4f5bc3c02062f9d8",
+      "cache_filename": "source_test__DGDTA-CL__X_c7b19569429e2f9d.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "source_test",
+      "method_id": "DeepNC-GEN",
+      "input_sha256": "db0ca035a5c318f49fbba47b1907e3170c5523fedef319373bbe439273a227bc",
+      "n": 1039,
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "signature": "84b243cd59abb5bafa7f14bdc5b58b422746d048d34f73431d156d9fbfc9aaa5",
+      "cache_filename": "source_test__DeepNC-GEN__X_84b243cd59abb5ba.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "source_test",
+      "method_id": "GS-DTA",
+      "input_sha256": "db0ca035a5c318f49fbba47b1907e3170c5523fedef319373bbe439273a227bc",
+      "n": 1039,
+      "adapter_tree_sha256": "1665c2d2662e42b716fb41b9da35367f8a4e1eb9a0de2ea64bd366a31c0fd0df",
+      "signature": "e1af461d46385b02c3f534106ea158155a927058fc178fc57279bb8a78c7dc7b",
+      "cache_filename": "source_test__GS-DTA__X_e1af461d46385b02.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "target_test",
+      "method_id": "GraphDTA-GIN",
+      "input_sha256": "8b160ee568a6ac561bfed5ffc81491a11ff64fa1d83eb566d4852ba0fdd01b60",
+      "n": 1443,
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "signature": "337a3b128dbb975772fd10329b52f142fa6cd90457083f083bc266ec31a5b889",
+      "cache_filename": "target_test__GraphDTA-GIN__X_337a3b128dbb9757.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "target_test",
+      "method_id": "MGraphDTA",
+      "input_sha256": "8b160ee568a6ac561bfed5ffc81491a11ff64fa1d83eb566d4852ba0fdd01b60",
+      "n": 1443,
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "signature": "8bb80b6e728e90dd90c717d2aadc46027cca17cf21057a6b93877f55b9f54f22",
+      "cache_filename": "target_test__MGraphDTA__X_8bb80b6e728e90dd.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "target_test",
+      "method_id": "DGDTA-CL",
+      "input_sha256": "8b160ee568a6ac561bfed5ffc81491a11ff64fa1d83eb566d4852ba0fdd01b60",
+      "n": 1443,
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "signature": "a6b7cdd7e6d7a01c5675e09616dec7ca59af1237962ac9114cf16b17a8851082",
+      "cache_filename": "target_test__DGDTA-CL__X_a6b7cdd7e6d7a01c.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "target_test",
+      "method_id": "DeepNC-GEN",
+      "input_sha256": "8b160ee568a6ac561bfed5ffc81491a11ff64fa1d83eb566d4852ba0fdd01b60",
+      "n": 1443,
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "signature": "274c69be096c7bde014b8b365b857ea500a003e9dd84485fe0b7d0f88f1cd27b",
+      "cache_filename": "target_test__DeepNC-GEN__X_274c69be096c7bde.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "target_test",
+      "method_id": "GS-DTA",
+      "input_sha256": "8b160ee568a6ac561bfed5ffc81491a11ff64fa1d83eb566d4852ba0fdd01b60",
+      "n": 1443,
+      "adapter_tree_sha256": "1665c2d2662e42b716fb41b9da35367f8a4e1eb9a0de2ea64bd366a31c0fd0df",
+      "signature": "a57d6bdd60f6f2af171ee6cdcf4abf328cb38afa89f9e65be9564da67408358c",
+      "cache_filename": "target_test__GS-DTA__X_a57d6bdd60f6f2af.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "external75",
+      "method_id": "GraphDTA-GIN",
+      "input_sha256": "f3a8304cdab5e7c0d18cfae2e75518348dd9f0434f24f9bec2c1999e02569ae4",
+      "n": 75,
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "signature": "0d6e8f0860f3219b6f7bd366ad437deca3dc422ec5132dbafdece4f1e02f29c3",
+      "cache_filename": "external75__GraphDTA-GIN__X_0d6e8f0860f3219b.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "external75",
+      "method_id": "MGraphDTA",
+      "input_sha256": "f3a8304cdab5e7c0d18cfae2e75518348dd9f0434f24f9bec2c1999e02569ae4",
+      "n": 75,
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "signature": "28e6adb304fdb17bda928af9a6bbe70fc2fc4ebf7eacfffac310c8f86c96c378",
+      "cache_filename": "external75__MGraphDTA__X_28e6adb304fdb17b.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "external75",
+      "method_id": "DGDTA-CL",
+      "input_sha256": "f3a8304cdab5e7c0d18cfae2e75518348dd9f0434f24f9bec2c1999e02569ae4",
+      "n": 75,
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "signature": "1e2ef11d2c2ef8e63bbcd2b048443630f6ba61821c5109c46c43e6d1014f53a8",
+      "cache_filename": "external75__DGDTA-CL__X_1e2ef11d2c2ef8e6.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "external75",
+      "method_id": "DeepNC-GEN",
+      "input_sha256": "f3a8304cdab5e7c0d18cfae2e75518348dd9f0434f24f9bec2c1999e02569ae4",
+      "n": 75,
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "signature": "63c15491b72065e04c7a016b8a0d41178c48b627b01ff104d29ca15427dcd7f6",
+      "cache_filename": "external75__DeepNC-GEN__X_63c15491b72065e0.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    },
+    {
+      "dataset_id": "external75",
+      "method_id": "GS-DTA",
+      "input_sha256": "f3a8304cdab5e7c0d18cfae2e75518348dd9f0434f24f9bec2c1999e02569ae4",
+      "n": 75,
+      "adapter_tree_sha256": "1665c2d2662e42b716fb41b9da35367f8a4e1eb9a0de2ea64bd366a31c0fd0df",
+      "signature": "963f1e1f1b6b31636687e07719518d09b411f477d854564e75a552b864ec597c",
+      "cache_filename": "external75__GS-DTA__X_963f1e1f1b6b3163.pkl",
+      "cache_generation_requires_models": false,
+      "placeholder_pKd": 0.0
+    }
+  ],
+  "job_count": 15,
+  "runner_sha256": "9abe4a9fba5840a6200aecf40fdfb436abbf61d78c3a9a2f28baae7712c6913e",
+  "no_gold_selection_or_weights_accessed": true,
+  "resource_proposal": {
+    "host": "node23",
+    "max_parallel": 8,
+    "cpu_per_job": 1,
+    "nice": 15,
+    "rss_watch_bytes": 4294967296,
+    "timeout_seconds_per_job": 1800,
+    "gpu_count": 0,
+    "CUDA_VISIBLE_DEVICES": "",
+    "global_deadline": "same root 01:45Z; no reset"
+  },
+  "node_runner": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/stage/runner.py",
+  "node_methods_root": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/stage/methods",
+  "consumer_runner": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/execution/runner.py",
+  "consumer_methods_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/methods",
+  "cache_generation_authorization_template": {
+    "root_cache_generation_authorized": false,
+    "manifest_sha256": "FILL_AFTER_ROOT_REVIEW"
+  },
+  "true_scoring_authorized": false,
+  "IgG13_included": false,
+  "provenance": "Only fixed author X, raw input-byte identity and source hashes; no fitting and no true holdout predictions"
+}

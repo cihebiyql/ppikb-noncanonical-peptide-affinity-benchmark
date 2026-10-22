@@ -1,0 +1,52 @@
+{
+  "schema": "independent-cuda-recovery02-review-plan.v1",
+  "status": "design_conditionally_acceptable_waiting_admin_source_metadata",
+  "review_scope": "Source and JSON metadata only. No archiving, launch, model/checkpoint/prediction/gold/label payload reads. Frozen scientific sources and v3-v6 review history remain unchanged.",
+  "failure_scope_from_parent_not_reclassified": {
+    "cell": ["MGraphDTA", "target_reference_homology_cold", "standard_only", 6],
+    "candidate": 0,
+    "failure": "CUDA unknown, process exit1 at approximately2026-10-21T20:57Z",
+    "original_absolute_unit_ceiling": "2026-10-21T22:54:18.479676+00:00",
+    "original_global_cutoff": "2026-10-22T01:45:00+00:00",
+    "classification": "Technical execution failure, not a platform refusal. Exact CUDA root cause not established by this metadata review."
+  },
+  "science_invariants": {
+    "approved_execution_index_sha256": "c7b3bde68c9a741c0ac3f255a825e4a55dd7234e2b4e6d48f212fee8d5609ab1",
+    "unchanged": ["scientific execution index bytes", "original fit spec bytes", "original contract bytes", "method", "panel", "training regime", "seed", "data and feature-cache identities", "both candidate settings", "training/selection implementation", "validation-only selection rule", "original global cutoff"],
+    "final_successful_scientific_cells": 200,
+    "final_valid_candidate_configurations": 400,
+    "technical_attempts_are_not_new_seeds_or_cells": true,
+    "prior_IO_failure_also_retained": true,
+    "extra_incomplete_candidate_attempts_if_retry_succeeds": 2
+  },
+  "necessary_runtime_controls": [
+    "Wait for actual old pool process exit2 and verify private process groups absent; do not archive while any producer can write.",
+    "Old terminal truth:199successful/1failed, status may be complete/reasonnull but actual exit2. Never relabel it exit0.",
+    "Use a new retry pool output_root and a new binding_receipt path; keep old pool started/terminal/stdout/stderr and old bound-entry receipt unchanged.",
+    "Both new binding.deadline AND new runtime pool index.deadline must be at most original unit ceiling22:54:18.479676Z. Frozen whole-PGID watchdog uses pool index deadline; frozen bound wrapper uses binding deadline.",
+    "Use one worker; allow exactly the failed scientific slot to launch. Other199 slots only validate_complete/skip.",
+    "New retry must exit0 with200completed/0failed; record199skip plus1actual launch explicitly. A second failure or expired original ceiling stops, without padding or another automatic retry."
+  ],
+  "archive_protocol": {
+    "description": "Reuse the original output namespace after preserving old bytes; do not describe the historical path itself as immutable.",
+    "exact_roots": ["failed spec run_root only", "failed spec launch_proof receipt_root only"],
+    "before_mutation": ["Exact absolute resolved paths must match only the failed cell", "No overlapping source/archive trees", "Fresh unique archive destination, no overwrite", "Reject symlinks/reparse traversal/unexpected external roots", "Complete pre-inventory of files and empty directories"],
+    "mapping": "Every original path has one immutable archive path and before/after size+SHA256 for files; preserve directory structure/empty directories. Exhaustive relative-path sets must match.",
+    "acceptance": "Admin/root recomputes real archive byte SHA. Independent reviewer checks metadata internal consistency only and explicitly does not claim checkpoint/prediction bytes were rehashed by reviewer.",
+    "failure_behavior": "If either archive root is partial, target exists, hash/inventory differs, source remains nonempty, or processes remain, stop before retry. Keep any partial archive evidence. No recursive delete or silent cleanup.",
+    "namespace_reuse": "New files may occupy original scientific paths only after archive acceptance; old absolute-path references resolve via the signed oldpath-to-archivepath attempt map."
+  },
+  "attempt_identity": {
+    "scientific_run_id": "unchanged scientific cell identity",
+    "new_attempt_id": "unique cuda-recovery02 attempt id outside frozen scientific contract/spec",
+    "must_bind": ["old failure terminal and original binding/start proof", "old pool index/progress/actual exit2 proof", "archive acceptance manifest SHA", "original spec/contract/index SHA", "original unit start and absolute ceiling", "new runtime pool/binding/unique binding-receipt", "new actual started/terminal/exit0 proof"],
+    "central_results": "Frozen archive assembler v1 only recognizes contract.recovery_metadata and would miss this CUDA event because original contract stays unchanged. New administrative evidence must link the external cuda-recovery02 chain to this exact cell at final result/archive adoption, alongside the earlier IO attempt."
+  },
+  "independent_metadata_checker_proposal": {
+    "input": "Explicit root/admin JSON refs for original spec/contract/index, old closed-pool progress+exit proof, immutable archive pre/post manifests+acceptance, new binding/index, and later new closed-pool progress+exit proof. No directory scan or payload paths opened.",
+    "checks": ["fixed cell identity and unique200 grid", "c7 index byte SHA unchanged", "original spec/contract byte SHA unchanged", "old199/1 exit2 exact membership", "one-to-one complete declared file/directory archive mapping and equal before/after file SHA/size", "original failed roots absent/empty acceptance certificate", "fresh attempt/binding/output names", "dual clock caps", "new pool max_concurrent1 and exact199skip/1launch", "new200/0 exit0", "preserved old logs/metadata refs", "final administrative attempt-chain linkage"],
+    "claim_boundary": "Static/source and metadata verification; actual archive payload integrity and live process absence require independently root-certified real byte/process checks.",
+    "status": "Await actual admin source/schema before implementing adapter-specific checks."
+  },
+  "actual_archive_launch_or_data_access_by_reviewer": 0
+}

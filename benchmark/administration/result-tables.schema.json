@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "peptide-binding.nc-benchmark.result-tables.v1",
+  "title": "NC benchmark result table contract (supplements authoritative result-record)",
+  "description": "Tables may be JSONL or CSV; schema describes parsed rows. Metrics must be finite or null with a reason; null never means zero. This is not a fabricated result file.",
+  "$defs": {
+    "prediction": {
+      "type": "object",
+      "required": ["run_id", "method_id", "split_id", "regime_id", "seed", "partition", "record_id", "chemistry_stratum", "endpoint", "observed_pKd", "predicted_pKd", "contract_sha256", "input_manifest_sha256", "model_sha256", "prediction_status"],
+      "properties": {
+        "run_id": {"type": "string"}, "method_id": {"type": "string"}, "split_id": {"type": "string"}, "regime_id": {"type": "string"},
+        "seed": {"enum": [0,1,2,3,4,5,6,7,8,9]},
+        "partition": {"enum": ["train", "validation", "test", "external"]},
+        "record_id": {"type": "string"}, "source_group": {"type": ["string", "null"]}, "target_cluster": {"type": ["string", "null"]}, "peptide_cluster": {"type": ["string", "null"]},
+        "chemistry_stratum": {"enum": ["synthetic_D_backbone", "PTM", "synthetic_and_PTM", "other_NC", "standard20_control"]},
+        "endpoint": {"const": "Kd"}, "observed_pKd": {"type": "number"}, "predicted_pKd": {"type": ["number", "null"]},
+        "contract_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "input_manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "model_sha256": {"type": ["string", "null"]},
+        "prediction_status": {"enum": ["succeeded", "unsupported_input", "failed", "not_run"]}, "reason": {"type": ["string", "null"]}
+      }
+    },
+    "metric": {
+      "type": "object",
+      "required": ["run_id", "method_id", "split_id", "regime_id", "seed", "partition", "chemistry_stratum", "metric", "aggregation", "denominator", "value", "reason", "prediction_file_sha256"],
+      "properties": {
+        "run_id": {"type": "string"}, "method_id": {"type": "string"}, "split_id": {"type": "string"}, "regime_id": {"type": "string"}, "seed": {"enum": [0,1,2,3,4,5,6,7,8,9]},
+        "partition": {"enum": ["train", "validation", "test", "external"]}, "chemistry_stratum": {"type": "string"},
+        "metric": {"enum": ["MAE", "RMSE", "Pearson", "Spearman", "R2", "coverage"]},
+        "aggregation": {"enum": ["record_micro", "source_macro", "target_macro", "peptide_cluster_macro"]},
+        "denominator": {"type": "integer", "minimum": 0}, "value": {"type": ["number", "null"]}, "reason": {"type": ["string", "null"]},
+        "prediction_file_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "trial": {
+      "type": "object",
+      "required": ["run_id", "candidate_id", "seed", "hyperparameters", "validation_metric", "validation_value", "selected", "test_used_for_selection", "external_used_for_selection", "status"],
+      "properties": {
+        "run_id": {"type": "string"}, "candidate_id": {"type": "string"}, "seed": {"enum": [0,1,2,3,4,5,6,7,8,9]},
+        "hyperparameters": {"type": "object"}, "validation_metric": {"type": "string"}, "validation_value": {"type": ["number", "null"]}, "selected": {"type": "boolean"},
+        "test_used_for_selection": {"const": false}, "external_used_for_selection": {"const": false},
+        "status": {"enum": ["succeeded", "failed", "timed_out", "unsupported_input", "not_run"]}
+      }
+    }
+  }
+}

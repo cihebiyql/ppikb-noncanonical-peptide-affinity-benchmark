@@ -1,0 +1,31 @@
+{
+  "schema": "CUDA-recovery02-WSL-synthetic-verification.v1",
+  "recorded_at": "2026-10-21 21:09:06 UTC",
+  "source_tool_chunk_id": "20c29a",
+  "command": [
+    "wsl.exe",
+    "--cd",
+    "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02",
+    "--exec",
+    "env",
+    "CUDA_VISIBLE_DEVICES=",
+    "OMP_NUM_THREADS=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "/root/.venvs/peptide-omnipanel-v31-web311-20260723/bin/python",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "-v",
+    "test_recovery.py"
+  ],
+  "actual_exit_code": 0,
+  "actual_tests_passed": 21,
+  "actual_unittest_seconds": 0.151,
+  "source_freeze_sha256": "b20b3a08464d2534d583561bac2bda2dd1993d90a802cf8c12efb07e4fc4b0cf",
+  "synthetic_only": true,
+  "real_failed_tree_moves": 0,
+  "real_retry_launches": 0,
+  "real_scientific_model_gold_prediction_reads": 0
+}

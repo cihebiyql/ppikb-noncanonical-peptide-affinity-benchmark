@@ -1,0 +1,173 @@
+{
+  "status": "proposal_not_training_authorization",
+  "split_seed": "nc-protocol-20261021-v1",
+  "training_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "input_label_access": "none; grouping input contains no numeric affinity",
+  "rows": 9619,
+  "source_dependency_edge_counts": {
+    "source_alias": 25821,
+    "chemical": 4479,
+    "achiral": 4479,
+    "raw_parent": 4460,
+    "one_substitution": 73270,
+    "study": 6253,
+    "chemical_neighbor": 13852
+  },
+  "panels": {
+    "source_peptide_dependency_cold": {
+      "components": 564,
+      "largest_component_rows": 7540,
+      "largest_component_fraction": 0.783865266659736,
+      "largest_10_component_sizes": [
+        7540,
+        37,
+        37,
+        28,
+        27,
+        26,
+        25,
+        24,
+        22,
+        21
+      ],
+      "split_sizes": {
+        "train": 7540,
+        "validation": 1040,
+        "test": 1039
+      },
+      "strata_by_split": {
+        "train": {
+          "standard20_control": 5992,
+          "synthetic_D_backbone": 536,
+          "other_NC": 86,
+          "PTM": 747,
+          "synthetic_and_PTM": 179
+        },
+        "validation": {
+          "standard20_control": 792,
+          "synthetic_D_backbone": 87,
+          "PTM": 97,
+          "other_NC": 14,
+          "synthetic_and_PTM": 50
+        },
+        "test": {
+          "standard20_control": 736,
+          "PTM": 158,
+          "synthetic_D_backbone": 100,
+          "synthetic_and_PTM": 39,
+          "other_NC": 6
+        }
+      },
+      "70_15_15_group_split_feasible": false,
+      "zero_component_overlap": true,
+      "assignment_sha256": "ec7e1757da0fd14b9d685e14e6030402a41d49628ca0acaeb70f35ca56a87230"
+    },
+    "target_reference_homology_cold": {
+      "components": 969,
+      "largest_component_rows": 399,
+      "largest_component_fraction": 0.04148040336833351,
+      "largest_10_component_sizes": [
+        399,
+        336,
+        283,
+        216,
+        200,
+        198,
+        151,
+        150,
+        135,
+        106
+      ],
+      "split_sizes": {
+        "train": 6733,
+        "validation": 1443,
+        "test": 1443
+      },
+      "strata_by_split": {
+        "train": {
+          "standard20_control": 5324,
+          "synthetic_D_backbone": 540,
+          "PTM": 615,
+          "other_NC": 87,
+          "synthetic_and_PTM": 167
+        },
+        "validation": {
+          "standard20_control": 1085,
+          "synthetic_D_backbone": 90,
+          "other_NC": 7,
+          "PTM": 197,
+          "synthetic_and_PTM": 64
+        },
+        "test": {
+          "synthetic_D_backbone": 93,
+          "standard20_control": 1111,
+          "PTM": 190,
+          "synthetic_and_PTM": 37,
+          "other_NC": 12
+        }
+      },
+      "70_15_15_group_split_feasible": true,
+      "zero_component_overlap": true,
+      "assignment_sha256": "3c880300ccbfb479629d77165988c8756f2ee8e6ad46d86146f06706c10f6c4f"
+    },
+    "dual_source_peptide_target_diagnostic": {
+      "components": 183,
+      "largest_component_rows": 8948,
+      "largest_component_fraction": 0.9302422289219253,
+      "largest_10_component_sizes": [
+        8948,
+        43,
+        27,
+        24,
+        21,
+        19,
+        17,
+        13,
+        12,
+        12
+      ],
+      "split_sizes": {
+        "train": 8948,
+        "validation": 336,
+        "test": 335
+      },
+      "strata_by_split": {
+        "train": {
+          "standard20_control": 7039,
+          "synthetic_D_backbone": 673,
+          "other_NC": 103,
+          "PTM": 879,
+          "synthetic_and_PTM": 254
+        },
+        "validation": {
+          "synthetic_D_backbone": 29,
+          "standard20_control": 203,
+          "PTM": 98,
+          "synthetic_and_PTM": 5,
+          "other_NC": 1
+        },
+        "test": {
+          "standard20_control": 278,
+          "PTM": 25,
+          "other_NC": 2,
+          "synthetic_D_backbone": 21,
+          "synthetic_and_PTM": 9
+        }
+      },
+      "70_15_15_group_split_feasible": false,
+      "zero_component_overlap": true,
+      "assignment_sha256": "85218db32dbc9bf843164b2edb8fd5b2b7c37ea015d1ce806bbc639c426b1628"
+    }
+  }
+}

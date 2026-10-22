@@ -1,0 +1,377 @@
+[
+  {
+    "task_id": "S299_ef670bb4eeb4",
+    "title": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+    "doi": "10.1093/bioinformatics/btaa921",
+    "status": "succeeded",
+    "lifecycle_status": "succeeded",
+    "reproduction_level": "training",
+    "scope_coverage": "partial_subset",
+    "summary": "共同NC亲和力基准：该作者实现完成2面板×2训练口径×10种子，实际训练与三数据评分收据、独立重算均保留。",
+    "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-author-lab.pdf",
+    "source_sha256": "ef670bb4eeb41ba7db7449f15dd8a8861d6c01029e597e802db8a38df70df907",
+    "linked_task_ids": [],
+    "publication_status": "published",
+    "dataset": "PPIKB NC2099＋标准7520；来源/肽依赖冷与参考序列同源冷，原数据及身份冲突旗标保留。",
+    "innovation": "无创新模型；五篇已发表方法共同数据适配比较。",
+    "actual_results": "80候选拟合、40验证选择、120评分收据；详细数值与每seed结果见本轮标准结果索引及独立审计。",
+    "differences": "改变数据集与任务范围；原论文主表不作直接数值复现比较。蛋白前缀、化学表示限制、必要适配与统一预算均保留。",
+    "incomplete_reason": null,
+    "execution_location": "本地WSL RTX5080通用现有runtime；Node23仅预处理，Node1忙碌GPU不使用。",
+    "review_status": "accepted",
+    "result_record_index": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\f1\\standard-result-index.with-CUDA.windows-paths.json",
+    "independent_NN_audit": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit\\per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "additional_classic_RF": {
+      "paper_count_contribution": 0,
+      "units": 40,
+      "scores": 120,
+      "rows": 53160,
+      "independent_audit": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\RF-audit\\per-score-audit.json",
+        "sha256": "8951c6eed9c5f21b9328dcd57ee22dccd77c4ff1d8aa233dbdbc55dcf4176dfb"
+      },
+      "scope": "独立附加经典参照，不归给该作者模型或虚增论文数量"
+    },
+    "result_record_index_sha256": "376f043d8d1045a2c3fed924147f57581ebae5c338285ddbcbf204a1e53a4dc7",
+    "final_administrative_validation": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\v1\\normalized-v2\\summary.json",
+      "sha256": "c7861e41aa25895aed74d9c146375bfd6e3f80c8c1fc687403f73275b7245b09"
+    },
+    "final_adoption_validation": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\v1\\normalized-v2\\batch-result-adoption-proposal.json",
+      "sha256": "3afbfba88bf254d6881356cf7880ebfd19a9a859e58bde617a5a2e53a680ceb8"
+    },
+    "benchmark_CUDA_lineage_sidecar": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\i1\\POSTJOINT-CUDA-LINEAGE.json",
+      "sha256": "53ae604eb9be9a131693fe7d246f298a2add132f364d04076176e04dd2f8094d"
+    },
+    "benchmark_CUDA_attempt_chain": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\CUDA-ATTEMPT-CHAIN.json",
+      "sha256": "d2338c08ad35006eac485064767c56c95c0b818515a98e813273ac9b8f5b128f"
+    },
+    "actual_independent_audit_pipeline": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\POSTSCORE-AUDIT-READY.json",
+      "sha256": "c9c5ae22449822aef294ba281f44915adfad73b46f469d6ebc4d7d2735062480"
+    },
+    "retained_prior_failed_audit_pipeline": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\POSTSCORE-AUDIT-FAILED.json",
+      "sha256": "b245726ab056d67520aab686883195b8c2758e014fcb7baba059bb52aadf1da5"
+    },
+    "actual_RF_subgroup_audit_recovery": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\rf-subgroup-audit-recovery-v1\\SOURCE-FREEZE-v1.json",
+      "sha256": "d7e7b759473b22f6c3849c9c20cb9be11c6f9d2a4f0bb0958270735958d4792c"
+    },
+    "training_hyperparameter_evidence": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\training-metadata-v1\\FINAL-MANIFEST.json",
+      "sha256": "92ff06efbac7182038eab1717ff749966c5cd5fe9afbefc50caf6bbde2f16d5b"
+    },
+    "existing_epoch_budget_diagnostic": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\training-logs-v1\\verification.json",
+      "sha256": "cb59429cb15c19526cbe632d3919ed6550c0b1de5f5440bf958feb23f78adb22"
+    },
+    "full_paper_reproduction_claim": false
+  },
+  {
+    "task_id": "S300_0a445649ae97",
+    "title": "MGraphDTA: deep multiscale graph neural network for explainable drug–target binding affinity prediction",
+    "doi": "10.1039/d1sc05180f",
+    "status": "succeeded",
+    "lifecycle_status": "succeeded",
+    "reproduction_level": "training",
+    "scope_coverage": "partial_subset",
+    "summary": "共同NC亲和力基准：该作者实现完成2面板×2训练口径×10种子，实际训练与三数据评分收据、独立重算均保留。",
+    "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\MGraphDTA-PMC-published.pdf",
+    "source_sha256": "0a445649ae97d8c2ff2a10842de18bdab946bf22c9471bd81e5a6a9ef581516c",
+    "linked_task_ids": [],
+    "publication_status": "published",
+    "dataset": "PPIKB NC2099＋标准7520；来源/肽依赖冷与参考序列同源冷，原数据及身份冲突旗标保留。",
+    "innovation": "无创新模型；五篇已发表方法共同数据适配比较。",
+    "actual_results": "80候选拟合、40验证选择、120评分收据；详细数值与每seed结果见本轮标准结果索引及独立审计。",
+    "differences": "改变数据集与任务范围；原论文主表不作直接数值复现比较。蛋白前缀、化学表示限制、必要适配与统一预算均保留。 两次技术中断分别为IO watchdog和CUDAunknown，原件/完整归档及同配置恢复链保留；旧池外层exit1与原生exit2推断分开，新retry实际native0。400有效NNfit/200格不因中断增计。",
+    "incomplete_reason": null,
+    "execution_location": "本地WSL RTX5080通用现有runtime；Node23仅预处理，Node1忙碌GPU不使用。",
+    "review_status": "accepted",
+    "result_record_index": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\f1\\standard-result-index.with-CUDA.windows-paths.json",
+    "independent_NN_audit": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit\\per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "additional_classic_RF": {
+      "paper_count_contribution": 0,
+      "units": 40,
+      "scores": 120,
+      "rows": 53160,
+      "independent_audit": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\RF-audit\\per-score-audit.json",
+        "sha256": "8951c6eed9c5f21b9328dcd57ee22dccd77c4ff1d8aa233dbdbc55dcf4176dfb"
+      },
+      "scope": "独立附加经典参照，不归给该作者模型或虚增论文数量"
+    },
+    "result_record_index_sha256": "376f043d8d1045a2c3fed924147f57581ebae5c338285ddbcbf204a1e53a4dc7",
+    "final_administrative_validation": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\v1\\normalized-v2\\summary.json",
+      "sha256": "c7861e41aa25895aed74d9c146375bfd6e3f80c8c1fc687403f73275b7245b09"
+    },
+    "final_adoption_validation": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\v1\\normalized-v2\\batch-result-adoption-proposal.json",
+      "sha256": "3afbfba88bf254d6881356cf7880ebfd19a9a859e58bde617a5a2e53a680ceb8"
+    },
+    "benchmark_CUDA_lineage_sidecar": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\i1\\POSTJOINT-CUDA-LINEAGE.json",
+      "sha256": "53ae604eb9be9a131693fe7d246f298a2add132f364d04076176e04dd2f8094d"
+    },
+    "benchmark_CUDA_attempt_chain": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\CUDA-ATTEMPT-CHAIN.json",
+      "sha256": "d2338c08ad35006eac485064767c56c95c0b818515a98e813273ac9b8f5b128f"
+    },
+    "actual_independent_audit_pipeline": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\POSTSCORE-AUDIT-READY.json",
+      "sha256": "c9c5ae22449822aef294ba281f44915adfad73b46f469d6ebc4d7d2735062480"
+    },
+    "retained_prior_failed_audit_pipeline": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\POSTSCORE-AUDIT-FAILED.json",
+      "sha256": "b245726ab056d67520aab686883195b8c2758e014fcb7baba059bb52aadf1da5"
+    },
+    "actual_RF_subgroup_audit_recovery": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\rf-subgroup-audit-recovery-v1\\SOURCE-FREEZE-v1.json",
+      "sha256": "d7e7b759473b22f6c3849c9c20cb9be11c6f9d2a4f0bb0958270735958d4792c"
+    },
+    "training_hyperparameter_evidence": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\training-metadata-v1\\FINAL-MANIFEST.json",
+      "sha256": "92ff06efbac7182038eab1717ff749966c5cd5fe9afbefc50caf6bbde2f16d5b"
+    },
+    "existing_epoch_budget_diagnostic": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\training-logs-v1\\verification.json",
+      "sha256": "cb59429cb15c19526cbe632d3919ed6550c0b1de5f5440bf958feb23f78adb22"
+    },
+    "full_paper_reproduction_claim": false
+  },
+  {
+    "task_id": "S301_6cf263a8a267",
+    "title": "DGDTA: dynamic graph attention network for predicting drug–target binding affinity",
+    "doi": "10.1186/s12859-023-05497-5",
+    "status": "succeeded",
+    "lifecycle_status": "succeeded",
+    "reproduction_level": "training",
+    "scope_coverage": "partial_subset",
+    "summary": "共同NC亲和力基准：该作者实现完成2面板×2训练口径×10种子，实际训练与三数据评分收据、独立重算均保留。",
+    "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DGDTA.pdf",
+    "source_sha256": "6cf263a8a267f0ca5f7aecdce791f57968b197c4cdff3e165ffa0925da3169ff",
+    "linked_task_ids": [],
+    "publication_status": "published",
+    "dataset": "PPIKB NC2099＋标准7520；来源/肽依赖冷与参考序列同源冷，原数据及身份冲突旗标保留。",
+    "innovation": "无创新模型；五篇已发表方法共同数据适配比较。",
+    "actual_results": "80候选拟合、40验证选择、120评分收据；详细数值与每seed结果见本轮标准结果索引及独立审计。",
+    "differences": "改变数据集与任务范围；原论文主表不作直接数值复现比较。蛋白前缀、化学表示限制、必要适配与统一预算均保留。",
+    "incomplete_reason": null,
+    "execution_location": "本地WSL RTX5080通用现有runtime；Node23仅预处理，Node1忙碌GPU不使用。",
+    "review_status": "accepted",
+    "result_record_index": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\f1\\standard-result-index.with-CUDA.windows-paths.json",
+    "independent_NN_audit": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit\\per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "additional_classic_RF": {
+      "paper_count_contribution": 0,
+      "units": 40,
+      "scores": 120,
+      "rows": 53160,
+      "independent_audit": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\RF-audit\\per-score-audit.json",
+        "sha256": "8951c6eed9c5f21b9328dcd57ee22dccd77c4ff1d8aa233dbdbc55dcf4176dfb"
+      },
+      "scope": "独立附加经典参照，不归给该作者模型或虚增论文数量"
+    },
+    "result_record_index_sha256": "376f043d8d1045a2c3fed924147f57581ebae5c338285ddbcbf204a1e53a4dc7",
+    "final_administrative_validation": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\v1\\normalized-v2\\summary.json",
+      "sha256": "c7861e41aa25895aed74d9c146375bfd6e3f80c8c1fc687403f73275b7245b09"
+    },
+    "final_adoption_validation": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\v1\\normalized-v2\\batch-result-adoption-proposal.json",
+      "sha256": "3afbfba88bf254d6881356cf7880ebfd19a9a859e58bde617a5a2e53a680ceb8"
+    },
+    "benchmark_CUDA_lineage_sidecar": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\i1\\POSTJOINT-CUDA-LINEAGE.json",
+      "sha256": "53ae604eb9be9a131693fe7d246f298a2add132f364d04076176e04dd2f8094d"
+    },
+    "benchmark_CUDA_attempt_chain": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\CUDA-ATTEMPT-CHAIN.json",
+      "sha256": "d2338c08ad35006eac485064767c56c95c0b818515a98e813273ac9b8f5b128f"
+    },
+    "actual_independent_audit_pipeline": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\POSTSCORE-AUDIT-READY.json",
+      "sha256": "c9c5ae22449822aef294ba281f44915adfad73b46f469d6ebc4d7d2735062480"
+    },
+    "retained_prior_failed_audit_pipeline": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\POSTSCORE-AUDIT-FAILED.json",
+      "sha256": "b245726ab056d67520aab686883195b8c2758e014fcb7baba059bb52aadf1da5"
+    },
+    "actual_RF_subgroup_audit_recovery": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\rf-subgroup-audit-recovery-v1\\SOURCE-FREEZE-v1.json",
+      "sha256": "d7e7b759473b22f6c3849c9c20cb9be11c6f9d2a4f0bb0958270735958d4792c"
+    },
+    "training_hyperparameter_evidence": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\training-metadata-v1\\FINAL-MANIFEST.json",
+      "sha256": "92ff06efbac7182038eab1717ff749966c5cd5fe9afbefc50caf6bbde2f16d5b"
+    },
+    "existing_epoch_budget_diagnostic": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\training-logs-v1\\verification.json",
+      "sha256": "cb59429cb15c19526cbe632d3919ed6550c0b1de5f5440bf958feb23f78adb22"
+    },
+    "full_paper_reproduction_claim": false
+  },
+  {
+    "task_id": "S302_401fdeeb8b77",
+    "title": "DeepNC: a framework for drug-target interaction prediction with graph neural networks",
+    "doi": "10.7717/peerj.13163",
+    "status": "succeeded",
+    "lifecycle_status": "succeeded",
+    "reproduction_level": "training",
+    "scope_coverage": "partial_subset",
+    "summary": "共同NC亲和力基准：该作者实现完成2面板×2训练口径×10种子，实际训练与三数据评分收据、独立重算均保留。",
+    "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DeepNC-PMC-published.pdf",
+    "source_sha256": "401fdeeb8b777f29d38628417d71ff967883575b13381b6430843e08154dce16",
+    "linked_task_ids": [],
+    "publication_status": "published",
+    "dataset": "PPIKB NC2099＋标准7520；来源/肽依赖冷与参考序列同源冷，原数据及身份冲突旗标保留。",
+    "innovation": "无创新模型；五篇已发表方法共同数据适配比较。",
+    "actual_results": "80候选拟合、40验证选择、120评分收据；详细数值与每seed结果见本轮标准结果索引及独立审计。",
+    "differences": "改变数据集与任务范围；原论文主表不作直接数值复现比较。蛋白前缀、化学表示限制、必要适配与统一预算均保留。",
+    "incomplete_reason": null,
+    "execution_location": "本地WSL RTX5080通用现有runtime；Node23仅预处理，Node1忙碌GPU不使用。",
+    "review_status": "accepted",
+    "result_record_index": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\f1\\standard-result-index.with-CUDA.windows-paths.json",
+    "independent_NN_audit": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit\\per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "additional_classic_RF": {
+      "paper_count_contribution": 0,
+      "units": 40,
+      "scores": 120,
+      "rows": 53160,
+      "independent_audit": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\RF-audit\\per-score-audit.json",
+        "sha256": "8951c6eed9c5f21b9328dcd57ee22dccd77c4ff1d8aa233dbdbc55dcf4176dfb"
+      },
+      "scope": "独立附加经典参照，不归给该作者模型或虚增论文数量"
+    },
+    "result_record_index_sha256": "376f043d8d1045a2c3fed924147f57581ebae5c338285ddbcbf204a1e53a4dc7",
+    "final_administrative_validation": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\v1\\normalized-v2\\summary.json",
+      "sha256": "c7861e41aa25895aed74d9c146375bfd6e3f80c8c1fc687403f73275b7245b09"
+    },
+    "final_adoption_validation": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\v1\\normalized-v2\\batch-result-adoption-proposal.json",
+      "sha256": "3afbfba88bf254d6881356cf7880ebfd19a9a859e58bde617a5a2e53a680ceb8"
+    },
+    "benchmark_CUDA_lineage_sidecar": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\i1\\POSTJOINT-CUDA-LINEAGE.json",
+      "sha256": "53ae604eb9be9a131693fe7d246f298a2add132f364d04076176e04dd2f8094d"
+    },
+    "benchmark_CUDA_attempt_chain": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\CUDA-ATTEMPT-CHAIN.json",
+      "sha256": "d2338c08ad35006eac485064767c56c95c0b818515a98e813273ac9b8f5b128f"
+    },
+    "actual_independent_audit_pipeline": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\POSTSCORE-AUDIT-READY.json",
+      "sha256": "c9c5ae22449822aef294ba281f44915adfad73b46f469d6ebc4d7d2735062480"
+    },
+    "retained_prior_failed_audit_pipeline": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\POSTSCORE-AUDIT-FAILED.json",
+      "sha256": "b245726ab056d67520aab686883195b8c2758e014fcb7baba059bb52aadf1da5"
+    },
+    "actual_RF_subgroup_audit_recovery": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\rf-subgroup-audit-recovery-v1\\SOURCE-FREEZE-v1.json",
+      "sha256": "d7e7b759473b22f6c3849c9c20cb9be11c6f9d2a4f0bb0958270735958d4792c"
+    },
+    "training_hyperparameter_evidence": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\training-metadata-v1\\FINAL-MANIFEST.json",
+      "sha256": "92ff06efbac7182038eab1717ff749966c5cd5fe9afbefc50caf6bbde2f16d5b"
+    },
+    "existing_epoch_budget_diagnostic": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\training-logs-v1\\verification.json",
+      "sha256": "cb59429cb15c19526cbe632d3919ed6550c0b1de5f5440bf958feb23f78adb22"
+    },
+    "full_paper_reproduction_claim": false
+  },
+  {
+    "task_id": "S303_725e257cf378",
+    "title": "GS-DTA: integrating graph and sequence models for predicting drug-target binding affinity",
+    "doi": "10.1186/s12864-025-11234-4",
+    "status": "succeeded",
+    "lifecycle_status": "succeeded",
+    "reproduction_level": "training",
+    "scope_coverage": "partial_subset",
+    "summary": "共同NC亲和力基准：该作者实现完成2面板×2训练口径×10种子，实际训练与三数据评分收据、独立重算均保留。",
+    "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\replacement-gs-dta\\GS-DTA-published.pdf",
+    "source_sha256": "725e257cf378b2959afc34dd8b65d8c29787af6330c1d9fee3b464fd0a0619e3",
+    "linked_task_ids": [],
+    "publication_status": "published",
+    "dataset": "PPIKB NC2099＋标准7520；来源/肽依赖冷与参考序列同源冷，原数据及身份冲突旗标保留。",
+    "innovation": "无创新模型；五篇已发表方法共同数据适配比较。",
+    "actual_results": "80候选拟合、40验证选择、120评分收据；详细数值与每seed结果见本轮标准结果索引及独立审计。",
+    "differences": "改变数据集与任务范围；原论文主表不作直接数值复现比较。蛋白前缀、化学表示限制、必要适配与统一预算均保留。",
+    "incomplete_reason": null,
+    "execution_location": "本地WSL RTX5080通用现有runtime；Node23仅预处理，Node1忙碌GPU不使用。",
+    "review_status": "accepted",
+    "result_record_index": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\f1\\standard-result-index.with-CUDA.windows-paths.json",
+    "independent_NN_audit": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit\\per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "additional_classic_RF": {
+      "paper_count_contribution": 0,
+      "units": 40,
+      "scores": 120,
+      "rows": 53160,
+      "independent_audit": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\RF-audit\\per-score-audit.json",
+        "sha256": "8951c6eed9c5f21b9328dcd57ee22dccd77c4ff1d8aa233dbdbc55dcf4176dfb"
+      },
+      "scope": "独立附加经典参照，不归给该作者模型或虚增论文数量"
+    },
+    "result_record_index_sha256": "376f043d8d1045a2c3fed924147f57581ebae5c338285ddbcbf204a1e53a4dc7",
+    "final_administrative_validation": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\v1\\normalized-v2\\summary.json",
+      "sha256": "c7861e41aa25895aed74d9c146375bfd6e3f80c8c1fc687403f73275b7245b09"
+    },
+    "final_adoption_validation": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\v1\\normalized-v2\\batch-result-adoption-proposal.json",
+      "sha256": "3afbfba88bf254d6881356cf7880ebfd19a9a859e58bde617a5a2e53a680ceb8"
+    },
+    "benchmark_CUDA_lineage_sidecar": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\i1\\POSTJOINT-CUDA-LINEAGE.json",
+      "sha256": "53ae604eb9be9a131693fe7d246f298a2add132f364d04076176e04dd2f8094d"
+    },
+    "benchmark_CUDA_attempt_chain": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\CUDA-ATTEMPT-CHAIN.json",
+      "sha256": "d2338c08ad35006eac485064767c56c95c0b818515a98e813273ac9b8f5b128f"
+    },
+    "actual_independent_audit_pipeline": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\POSTSCORE-AUDIT-READY.json",
+      "sha256": "c9c5ae22449822aef294ba281f44915adfad73b46f469d6ebc4d7d2735062480"
+    },
+    "retained_prior_failed_audit_pipeline": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\POSTSCORE-AUDIT-FAILED.json",
+      "sha256": "b245726ab056d67520aab686883195b8c2758e014fcb7baba059bb52aadf1da5"
+    },
+    "actual_RF_subgroup_audit_recovery": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\rf-subgroup-audit-recovery-v1\\SOURCE-FREEZE-v1.json",
+      "sha256": "d7e7b759473b22f6c3849c9c20cb9be11c6f9d2a4f0bb0958270735958d4792c"
+    },
+    "training_hyperparameter_evidence": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\training-metadata-v1\\FINAL-MANIFEST.json",
+      "sha256": "92ff06efbac7182038eab1717ff749966c5cd5fe9afbefc50caf6bbde2f16d5b"
+    },
+    "existing_epoch_budget_diagnostic": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\training-logs-v1\\verification.json",
+      "sha256": "cb59429cb15c19526cbe632d3919ed6550c0b1de5f5440bf958feb23f78adb22"
+    },
+    "full_paper_reproduction_claim": false
+  }
+]

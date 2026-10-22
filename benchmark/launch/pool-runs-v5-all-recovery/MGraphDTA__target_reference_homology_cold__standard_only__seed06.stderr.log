@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/run_unit.py", line 103, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/run_unit.py", line 99, in main
+    try:result=execute(args)
+               ^^^^^^^^^^^^^
+  File "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/run_unit.py", line 84, in execute
+    for index in [0,1]:run_stage([sys.executable,str(runner),'fit','--spec',str(path(args.spec)),'--candidate-index',str(index)],folder,'candidate-'+str(index),cutoff)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/run_unit.py", line 73, in run_stage
+    if process.returncode:raise RuntimeError(name+' exited '+str(process.returncode))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: candidate-0 exited 1

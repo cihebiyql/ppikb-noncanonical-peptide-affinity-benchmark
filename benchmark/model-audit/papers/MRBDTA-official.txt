@@ -1,0 +1,2305 @@
+Journal Article
+Predicting drug–target binding affinity through molecule representation block based on multi-head attention and skip connection
+Free
+Li Zhang
+,
+Li Zhang
+School of Information and Control Engineering, China University of Mining and Technology
+,
+Xuzhou, 221116
+,
+China
+Search for other works by this author on:
+Oxford Academic
+PubMed
+Google Scholar
+Chun-Chun Wang
+,
+Chun-Chun Wang
+School of Information and Control Engineering, China University of Mining and Technology
+,
+Xuzhou, 221116
+,
+China
+https://orcid.org/0000-0002-6795-4007
+Search for other works by this author on:
+Oxford Academic
+PubMed
+Google Scholar
+Xing Chen
+Xing Chen
+School of Information and Control Engineering, China University of Mining and Technology
+,
+Xuzhou, 221116
+,
+China
+Artificial Intelligence Research Institute, China University of Mining and Technology
+,
+Xuzhou, 221116
+,
+China
+Corresponding author: Xing Chen, Artificial Intelligence Research Institute, China University of Mining and Technology, Xuzhou 221116, China; School of Information and Control Engineering, China University of Mining and Technology, Xuzhou 221116, China. Tel.: 86-0516-83886606; Fax: 86-0516-83886606; E-mail: xingchen@amss.ac.cn; xingchen@cumt.edu.cn
+https://orcid.org/0000-0001-9028-5342
+Search for other works by this author on:
+Oxford Academic
+PubMed
+Google Scholar
+Briefings in Bioinformatics, Volume 23, Issue 6, November 2022, bbac468, https://doi.org/10.1093/bib/bbac468
+Published:
+31 October 2022
+Article history
+Received:
+04 August 2022
+Revision received:
+13 September 2022
+Accepted:
+29 September 2022
+Published:
+31 October 2022
+Abstract
+Exiting computational models for drug–target binding affinity prediction have much room for improvement in prediction accuracy, robustness and generalization ability. Most deep learning models lack interpretability analysis and few studies provide application examples. Based on these observations, we presented a novel model named Molecule Representation Block-based Drug-Target binding Affinity prediction (MRBDTA). MRBDTA is composed of embedding and positional encoding, molecule representation block and interaction learning module. The advantages of MRBDTA are reflected in three aspects: (i) developing Trans block to extract molecule features through improving the encoder of transformer, (ii) introducing skip connection at encoder level in Trans block and (iii) enhancing the ability to capture interaction sites between proteins and drugs. The test results on two benchmark datasets manifest that MRBDTA achieves the best performance compared with 11 state-of-the-art models. Besides, through replacing Trans block with single Trans encoder and removing skip connection in Trans block, we verified that Trans block and skip connection could effectively improve the prediction accuracy and reliability of MRBDTA. Then, relying on multi-head attention mechanism, we performed interpretability analysis to illustrate that MRBDTA can correctly capture part of interaction sites between proteins and drugs. In case studies, we firstly employed MRBDTA to predict binding affinities between Food and Drug Administration-approved drugs and severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) replication-related proteins. Secondly, we compared true binding affinities between 3C-like proteinase and 185 drugs with those predicted by MRBDTA. The final results of case studies reveal reliable performance of MRBDTA in drug design for SARS-CoV-2.
+drug–target binding affinity, computational model, multi-head attention, skip connection, molecule representation block, SARS-CoV-2
+Introduction
+Proteins are involved in many cellular processes, and lots of diseases are caused by abnormal protein levels [1]. Thus, a large number of drugs have been developed to target proteins. According to statistics, over 70% of 53 Food and Drug Administration (FDA)-approved drugs in 2020 act on proteins for drug effects [2]. In general, identifying novel drug–target interactions (DTIs) and elucidating their biological mechanisms play a vital role in drug discovery and development [3–6]. Although experimental methods are reliable and have been widely applied in drug discovery and repurposing [7–9], it is extremely time-consuming and laborious to screen hit compounds from a large-scale chemical space solely by experimental methods. Computational methods as a supplement to experimental methods have aroused a huge rise in the field of biomedicine [10–15]. Some researchers employed knowledge graph, random walk with restart and Bayesian machine learning to predict DTIs, and they regard DTI prediction as a binary classification problem [16–18]. Different from DTI prediction, drug–target binding affinity prediction can further reveal the strength of DTIs and could be regarded as a regression problem [19–21]. Here, we concentrate on predicting binding affinities of drug–target pairs.
+The following methods are two early representatives of utilizing traditional machine learning models to predict drug–target binding affinity. Pahikkala et al. [22] predicted binding affinities of drug–target pairs based on Kronecker regularized least-squares (KronRLS). Following standards of kernel learning methods, they first defined an objective function where the kernel function indicated the similarity of two drug–target pairs in the Hilbert space. Then, they regarded the problem of learning a prediction function as finding a minimizer of the objective function with the aim of binding affinities prediction. Afterward, He et al. [23] developed a supervised machine learning method named SimBoost to make predictions for binding affinities between drugs and targets. Depending on drug–drug similarity, target–target similarity and known binding affinities, they calculated four properties of each drug (target) as type 1 features by statistical analysis. Through utilizing the k-nearest neighbor method, they extracted six properties as type 2 features from the drug–drug (target–target) similarity network. Relying on the DTI network, they extracted five properties as type 3 features via matrix factorization. For each drug (target), they integrated type 1 and type 2 features as its final features. To obtain final features of drug–target pairs, they integrated features of drugs and targets, as well as type 3 features of drug–target pairs. After training gradient boosting machine based on final features of drug–target pairs, SimBoost can be applied to predict binding affinities of unknown drug–target pairs.
+Recently, due to the breakthroughs in deep learning and the huge increase in computing power, deep learning-based models have gradually been applied to make predictions for drug–target binding affinity [24–32], and some of them have achieved favorable performance [29–32]. Adopting a widespread deep learning framework, convolutional neural network (CNN), Öztürk et al. [24] devised a novel model called DeepDTA to predict drug–target binding affinities. Firstly, they converted FASTA sequences for proteins and Simplified Molecular Input Line Entry System (SMILES) sequences for drugs into the embedding space via the embedding layer. Then, two CNN modules were utilized to learn representations from embedded protein FASTA and drug SMILES sequences, respectively. Each CNN module in DeepDTA is composed of a stack of 1D-convolutional layers with increasing number of filters and one max-pooling layer. Through feeding concatenated representations for protein FASTA and drug SMILES sequences into fully connected layers, drug–target binding affinities could be finally predicted. Depending on a similar deep learning framework to DeepDTA, Öztürk et al. [25] designed another CNN-based model named WideDTA to predict drug–target binding affinity. Originally, they introduced four types of data, including protein FASTA sequences, protein domains and motifs, drug SMILES sequences and drug maximum common substructures, and exploited the Keras-based embedding layer to respectively denote these data with 128-dimensional vectors. Then, the CNN module with two 1D-convolutional layers and a max pooling layer was built and employed to respectively extract features for above-mentioned four types of data. Features extracted from these CNN modules were concatenated and delivered into three fully connected layers to predict drug–target binding affinities. Combining effective feature embedding with powerful deep learning methods, Wan et al. [26] proposed a general and scalable computational framework named DeepCPI. They first exploited a word-embedding technique namely Word2vec, which is popularly applied in different natural language processing (NLP) tasks [33–35] to learn low-dimensional representations of protein FASTA sequences. Secondly, the latent semantic indexing technique [36], one representative method in the field of NLP, was utilized to obtain low-dimensional representations of drug structures. Then, they built a multimodal deep neural network (DNN) by adding the multimodal variant to a Vanilla DNN. Eventually, extracted low-dimensional feature representations of proteins and drugs were fed into the multimodal DNN to predict drug–target binding affinities. Integrating different kinds of DNNs, Lin et al. [27] released the model of Deep representation learning framework for Graphs and Sequences (DeepGS), which was an end-to-end deep learning model and could extract local chemical contexts from protein FASTA and drug SMILES sequences as well as drug molecule structures. Specifically, motivated by Word2Vec [37], they developed methods of Prot2Vec and Smi2Vec to encode all symbols in protein FASTA and drug SMILES sequences, respectively. Each sequence of proteins and drugs could be transformed into a matrix, where a row represented a symbol of sequences. Afterward, they extracted features from protein matrices by employing a CNN and captured features from drug matrices through utilizing a bi-directional gated recurrent unit (BiGRU). Simultaneously, they used a graph attention network (GAT)-based module to gain topology information of drug molecule structures. As a result, they got latent representations for proteins and two types of latent representations for drugs. Last, the concatenation of three kinds of latent representations was input to three consecutive fully connected layers, and a predicted binding affinity value was output. Taking the sequence and structure information of proteins and drugs into consideration, Pu et al. [28] put forward a two-stage DNN ensemble model named DeepFusionDTA to detect binding affinities of drug–target pairs. Above all, through integrating a Dilated-CNN module with three stacked dilated convolution layers [38], and a bi-directional long short-term memory network (BiLSTM), the authors designed a dual-channel sequence analysis module (SeqM) to extract sequence features. Meanwhile, they specially employed a single Dilated-CNN module (StruM) to analyze structure information. Secondly, for proteins (drugs), the authors respectively applied SeqM and StruM to obtain features of their FASTA (SMILES) sequences and secondary structures (fingerprints), and merged the two types of features into protein (drug) feature maps. After concatenating protein and drug feature maps as representations of drug–target pairs, they constructed fully connected layers to decrease the representation dimensionality for each drug–target pair. Conclusively, relying on decreased-dimensionality representations of drug–target pairs, they utilized bagging strategy to integrate outputs of multiple parallel lightGBM models as prediction values for drug–target binding affinity.
+As known, the attention mechanism has achieved a huge success in the field of NLP and computer vision (CV) [39]. Therefore, some researchers attempted exploring the potential of attention mechanism in predicting drug–target binding affinity [29–32]. Shin et al. [29] proposed molecule transformer DTI (MT-DTI) on foundation of the attention mechanism to predict drug–target binding affinity. They encoded protein FASTA sequences into vectors via multi-layer CNNs and generated vectors of drug SMILES sequences through utilizing multi-layered bidirectional Transformer encoders where each Transformer encoder is made up of a self-attention layer and a feed-forward layer. Next, protein and drug vectors were concatenated and fed into the multi-layered feed-forward network to obtain binding affinities of drug–target pairs. Relying on the two-sided attention mechanism, Abbasi et al. [30] proposed a method of DeepCDA to predict binding affinities of drug–target pairs. At first, protein FASTA and drug SMILES sequences were, respectively, processed by the encoding layer to get vectors for proteins and drugs. Hereafter, they exploited the CNN block consisting of three 1D-convolutional layers, two dropout layers and two max-pooling layers to extract features for proteins and drugs. To capture more information from the sequence perspective, they constructed the long short-term memory (LSTM) block with multiple LSTM units to further extract features for proteins and drugs. The feature representations of proteins and drugs were merged in the two-sided attention mechanism layer, and the merged representations were fed into the fully connected layer to predict binding affinities. Combining the attention mechanism, the graph neural network (GNN) and the CNN, Nguyen et al. [31] released a new deep learning-based method named GraphDTA to make drug–target binding affinity prediction. For proteins, they first utilized an embedding layer to encode protein FASTA sequences. Then, a CNN module with three 1D-convolutional layers and a max pooling layer was adopted to get representation vectors of encoded protein FASTA sequences. For drugs, they converted SMILES sequence of each drug to its corresponding molecule graph by using the open-source chemical informatics software RDKit [40], so that GraphDTA could directly capture the interaction information between atoms. Hereafter, they respectively employed four GNN variants, including a graph convolutional network (GCN), a GAT, a graph isomorphism network and a combined GAT–GCN architecture to obtain representation vectors of drug [41–43]. After fusing protein representations with four graph-based drug representations, they utilized two fully connected layers in series to obtain binding affinities of drug–target pairs. Later, Zeng et al. [32] proposed a multiple attention blocks-based model (MATT_DTI) to make predictions for drug–target binding affinity. MATT_DTI includes three parts: protein representation learning, drug representation learning and DTI learning. In protein representation learning, the embedding layer was applied to encode protein FASTA sequences and the CNN module, including three CNN layers, was utilized to extract features for encoded proteins. In drug representation learning, they designed a relation-aware self-attention module to further encode drug SMILES sequences processed by an embedding layer. The same CNN module as in protein representation learning was employed to extract features for encoded drugs. In DTI learning, they exploited the multi-head attention to acquire interaction features of drug and protein representations. The interaction features were finally fed into three factorization machine supported neural network layers to make predictions for drug–target binding affinity.
+Generally, although some computational models of predicting drug–target binding affinity have appeared, and the part of them have achieved good prediction performance, there is no denying that existing computational models still have much room for improvement in prediction accuracy, robustness and generalization ability. Most deep learning models for drug–target binding affinity prediction lack interpretability analysis, which reduces their credibility in practical applications to some extent. What’s more, many studies do not offer application examples in real-life situations. For the sake of solving above problems, we developed a novel deep learning model called Molecule Representation Block-based Drug–Target binding Affinity prediction (MRBDTA). MRBDTA consists of three parts including embedding and positional encoding, molecule representation block (Trans block) and DTI learning. First of all, the original protein FASTA and drug SMILES sequences are encoded during embedding and positional encoding process. Then, two Trans blocks are employed to extract features from encoded proteins and drugs, respectively. Finally, the interaction learning module is utilized to integrate features of proteins and drugs extracted by the Trans block and predict binding affinities between proteins and drugs. To evaluate the performance of our deep learning model, we tested MRBDTA on two benchmark datasets under evaluation metrics of mean squared error (MSE), concordance index (CI) and regression toward the mean (⁠|${r}_m^2$|⁠) and implemented analysis experiments, interpretability analysis and case studies. The test results manifest that MRBDTA achieves better prediction performance and stronger stability compared with 11 state-of-the-art computational models. Besides, we conducted analysis experiments by replacing Trans block with single Trans encoder and removing skip connection in Trans block and verified the effectiveness of Trans block and skip connection in improving the prediction accuracy, stability and reliability of MRBDTA. Then, for 1N6R (PDB ID) formed from reacting Ras-related protein Rab-5A with GppNHp, and 3AQV (PDB ID) obtained from the chemical reaction after mixing AMP-activated protein kinase and Dorsomorphin, we carried out interpretability analysis based on multi-head attention mechanism to illustrate that MRBDTA can correctly capture part of interaction sites between proteins and drugs. In case studies, we firstly applied MRBDTA to predict binding affinities (KIBA score and Kd in nM) between 3137 FDA-approved drugs and severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) replication-related proteins. In top 50 drugs with better predicted affinities, compared with MT-DTI and MATT_DTI, MRBDTA can predict more antiviral drugs and their rankings are higher. Secondly, by comparing experimentally measured binding affinities between 3C-like proteinase and 185 drugs with those predicted by MRBDTA, we observed that most binding affinities predicted by MRBDTA are satisfactory. All in all, MRBDTA is a promising computational tool in predicting binding affinities between drugs and targets and has great potential to assist in drug discovery and repurposing in the future.
+Results
+Performance evaluation
+Based on the Davis and KIBA datasets including known binding affinity values between proteins and drugs, we evaluated the performance of MRBDTA. Using the same method as literature [32], we divided samples in the Davis and KIBA datasets into training set and test set in accordance with the ratio of 5 to 1, respectively. Here, the training set was applied to 5-fold cross-validation experiment to search for optimal parameter settings of MRBDTA, such as embedding size, the number of Trans block and heads in multi-head attention, hidden size, the number of epochs, dropout rate and learning rate. Table 1 gives the parameter settings for MRBDTA in our experiments.
+Table 1
+Open in new tab
+Summary of parameter settings for MRBDTA
+Parameters
+. Davis
+. KIBA
+.
+Max length for drugs85100
+Max length for proteins12001000
+Embedding size128128
+The number of Trans block for drugs11
+The number of Trans block for proteins11
+The number of heads in multi-head attention44
+Feed-forward layer512512
+Hidden size in FNNs2048 512 12048 512 1
+Batch size2561024
+Epoch300600
+Dropout0.10.1
+OptimizerAdamAdam
+Learning rate0.0010.001
+Activation functionReLUReLU
+Parameters
+. Davis
+. KIBA
+.
+Max length for drugs85100
+Max length for proteins12001000
+Embedding size128128
+The number of Trans block for drugs11
+The number of Trans block for proteins11
+The number of heads in multi-head attention44
+Feed-forward layer512512
+Hidden size in FNNs2048 512 12048 512 1
+Batch size2561024
+Epoch300600
+Dropout0.10.1
+OptimizerAdamAdam
+Learning rate0.0010.001
+Activation functionReLUReLU
+Table 1
+Open in new tab
+Summary of parameter settings for MRBDTA
+Parameters
+. Davis
+. KIBA
+.
+Max length for drugs85100
+Max length for proteins12001000
+Embedding size128128
+The number of Trans block for drugs11
+The number of Trans block for proteins11
+The number of heads in multi-head attention44
+Feed-forward layer512512
+Hidden size in FNNs2048 512 12048 512 1
+Batch size2561024
+Epoch300600
+Dropout0.10.1
+OptimizerAdamAdam
+Learning rate0.0010.001
+Activation functionReLUReLU
+Parameters
+. Davis
+. KIBA
+.
+Max length for drugs85100
+Max length for proteins12001000
+Embedding size128128
+The number of Trans block for drugs11
+The number of Trans block for proteins11
+The number of heads in multi-head attention44
+Feed-forward layer512512
+Hidden size in FNNs2048 512 12048 512 1
+Batch size2561024
+Epoch300600
+Dropout0.10.1
+OptimizerAdamAdam
+Learning rate0.0010.001
+Activation functionReLUReLU
+In our study, MSE, CI and |${r}_m^2$| are utilized to evaluate the performance of various computational models. In regression prediction tasks, MSE is a common metric of measuring the deviation between true values and predicted values, and the smaller MSE indicates the higher prediction accuracy of a model. CI is proposed in the literature [44] and can be applied to measure the probability of the concordance between truth values and predicted values. The larger CI manifests the better prediction performance of a model. It is well known that |${r}_m^2$| has been extensively applied in quantitative structure–activity relationship (QASR) models and can reflect the external predictive potential of a model [45]. An acceptable model should have an |${r}_m^2$| value greater than 0.5, and the larger |${r}_m^2$| reflects the better generalization performance of a model.
+As aforementioned, the training set was equally divided into five subsets in the 5-fold cross-validation experiment. Then, one subset was left out in turn and we trained MRBDTA based on other four subsets with the above-obtained optimal parameters. Next, we utilized the trained MRBDTA to predict binding affinities in the test set. Based on the predicted and true affinities of drug–target pairs in the test set, we could calculate the value of MSE, CI and |${r}_m^2$|⁠, respectively. The above experiment process was repeated five times because each of five subsets in the training set was left out in turn. Table 2 shows final results on the test set of two benchmark datasets. Finally, we were able to get the average value and standard deviation (SD) of MSE, CI and |${r}_m^2$|⁠. As displayed in Table 3, the average MSE, CI and |${r}_m^2$| of MRBDTA on the test set in the Davis dataset are 0.216, 0.901 and 0.716, respectively. Besides, the SD of MSE, CI and |${r}_m^2$| is 0.006, 0.004 and 0.008, respectively. Analogously, in Table 4, we have given the average MSE (0.146), CI (0.892) and |${r}_m^2$| (0.778) of MRBDTA on the test set in the KIBA dataset. Besides, the SD of MSE, CI and |${r}_m^2$| is 0.001, 0.002 and 0.005, respectively. Compared with 11 state-of-the-art computational models (KronRLS [22], SimBoost [23], DeepDTA [24], MT-DTI [29], WideDTA [25], DeepCPI [26], DeepCDA [30], GraphDTA [31], DeepGS [27], MATT_DTI [32] and DeepFusionDTA [28]), MRBDTA achieves almost the best performance in both Davis and KIBA datasets (see Tables 3 and 4). Concretely, in the Davis dataset, the MSE, CI and |${r}_m^2$| of MRBDTA are the best. In the KIBA dataset, the CI and |${r}_m^2$| of MRBDTA also gain the best results, and the MSE of MRBDTA (0.146) is second only to the MSE of GraphDTA (0.139) [31]. In addition, the low SD of MSE, CI and |${r}_m^2$| in both Davis and KIBA datasets reflect the strong stability of MRBDTA (See Table 3 and Table 4).
+Table 2
+Open in new tab
+Results predicted by MRBDTA on test set of Davis and KIBA datasets for five times
+Time
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+On Davis dataset
+10.8940.2190.724
+20.9060.2250.707
+30.8990.2180.705
+40.9040.2130.721
+50.9000.2070.723
+Average of five times0.901 (0.004)0.216 (0.006)0.716 (0.008)
+On KIBA dataset
+10.8890.1460.788
+20.8910.1470.776
+30.8940.1450.775
+40.8950.1440.778
+50.8900.1470.773
+Average of five times0.892 (0.002)0.146 (0.001)0.778 (0.005)
+Time
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+On Davis dataset
+10.8940.2190.724
+20.9060.2250.707
+30.8990.2180.705
+40.9040.2130.721
+50.9000.2070.723
+Average of five times0.901 (0.004)0.216 (0.006)0.716 (0.008)
+On KIBA dataset
+10.8890.1460.788
+20.8910.1470.776
+30.8940.1450.775
+40.8950.1440.778
+50.8900.1470.773
+Average of five times0.892 (0.002)0.146 (0.001)0.778 (0.005)
+Table 2
+Open in new tab
+Results predicted by MRBDTA on test set of Davis and KIBA datasets for five times
+Time
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+On Davis dataset
+10.8940.2190.724
+20.9060.2250.707
+30.8990.2180.705
+40.9040.2130.721
+50.9000.2070.723
+Average of five times0.901 (0.004)0.216 (0.006)0.716 (0.008)
+On KIBA dataset
+10.8890.1460.788
+20.8910.1470.776
+30.8940.1450.775
+40.8950.1440.778
+50.8900.1470.773
+Average of five times0.892 (0.002)0.146 (0.001)0.778 (0.005)
+Time
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+On Davis dataset
+10.8940.2190.724
+20.9060.2250.707
+30.8990.2180.705
+40.9040.2130.721
+50.9000.2070.723
+Average of five times0.901 (0.004)0.216 (0.006)0.716 (0.008)
+On KIBA dataset
+10.8890.1460.788
+20.8910.1470.776
+30.8940.1450.775
+40.8950.1440.778
+50.8900.1470.773
+Average of five times0.892 (0.002)0.146 (0.001)0.778 (0.005)
+Table 3
+Open in new tab
+Results on test set of Davis dataset based on MRBDTA and existing baseline methods
+Method
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+KronRLS0.871 (0.0008)0.3790.407 (0.005)
+SimBoost0.872 (0.002)0.2820.644 (0.006)
+DeepDTA0.878 (0.004)0.2610.630 (0.017)
+MT-DTI0.887 (0.003)0.2450.665 (0.014)
+WideDTA0.886 (0.003)0.262–
+DeepCPI0.867 (−)0.2930.607 (−)
+DeepCDA0.891 (0.003)0.2480.649 (0.009)
+GraphDTA0.881 (−)0.245–
+DeepGS0.882 (−)0.2520.686 (−)
+MATT_DTI0.891 (0.002)0.2270.683 (0.017)
+DeepFusionDTA0.887 (−)0.253–
+MRBDTA0.901 (0.004)0.216 (0.006)0.716 (0.008)
+Method
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+KronRLS0.871 (0.0008)0.3790.407 (0.005)
+SimBoost0.872 (0.002)0.2820.644 (0.006)
+DeepDTA0.878 (0.004)0.2610.630 (0.017)
+MT-DTI0.887 (0.003)0.2450.665 (0.014)
+WideDTA0.886 (0.003)0.262–
+DeepCPI0.867 (−)0.2930.607 (−)
+DeepCDA0.891 (0.003)0.2480.649 (0.009)
+GraphDTA0.881 (−)0.245–
+DeepGS0.882 (−)0.2520.686 (−)
+MATT_DTI0.891 (0.002)0.2270.683 (0.017)
+DeepFusionDTA0.887 (−)0.253–
+MRBDTA0.901 (0.004)0.216 (0.006)0.716 (0.008)
+The bold values means the best results among MRBDTA and 11 previous state-of-the-art computational models
+Table 3
+Open in new tab
+Results on test set of Davis dataset based on MRBDTA and existing baseline methods
+Method
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+KronRLS0.871 (0.0008)0.3790.407 (0.005)
+SimBoost0.872 (0.002)0.2820.644 (0.006)
+DeepDTA0.878 (0.004)0.2610.630 (0.017)
+MT-DTI0.887 (0.003)0.2450.665 (0.014)
+WideDTA0.886 (0.003)0.262–
+DeepCPI0.867 (−)0.2930.607 (−)
+DeepCDA0.891 (0.003)0.2480.649 (0.009)
+GraphDTA0.881 (−)0.245–
+DeepGS0.882 (−)0.2520.686 (−)
+MATT_DTI0.891 (0.002)0.2270.683 (0.017)
+DeepFusionDTA0.887 (−)0.253–
+MRBDTA0.901 (0.004)0.216 (0.006)0.716 (0.008)
+Method
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+KronRLS0.871 (0.0008)0.3790.407 (0.005)
+SimBoost0.872 (0.002)0.2820.644 (0.006)
+DeepDTA0.878 (0.004)0.2610.630 (0.017)
+MT-DTI0.887 (0.003)0.2450.665 (0.014)
+WideDTA0.886 (0.003)0.262–
+DeepCPI0.867 (−)0.2930.607 (−)
+DeepCDA0.891 (0.003)0.2480.649 (0.009)
+GraphDTA0.881 (−)0.245–
+DeepGS0.882 (−)0.2520.686 (−)
+MATT_DTI0.891 (0.002)0.2270.683 (0.017)
+DeepFusionDTA0.887 (−)0.253–
+MRBDTA0.901 (0.004)0.216 (0.006)0.716 (0.008)
+The bold values means the best results among MRBDTA and 11 previous state-of-the-art computational models
+Table 4
+Open in new tab
+Results on test set of KIBA dataset based on MRBDTA and existing baseline methods
+Method
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+KronRLS0.782 (0.0009)0.4110.342 (0.001)
+SimBoost0.836 (0.001)0.2220.629 (0.007)
+DeepDTA0.863 (0.002)0.1940.673 (0.009)
+MT-DTI0.882 (0.001)0.1520.738 (0.006)
+WideDTA0.875 (0.001)0.179–
+DeepCPI0.852 (−)0.2110.657 (−)
+DeepCDA0.889 (0.002)0.1760.682 (0.008)
+GraphDTA0.891 (−)0.139–
+DeepGS0.860 (−)0.1930.684 (−)
+MATT_DTI0.889 (0.001)0.1500.756 (0.011)
+DeepFusionDTA0.876 (−)0.176–
+MRBDTA0.892 (0.002)0.146 (0.001)0.778 (0.005)
+Method
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+KronRLS0.782 (0.0009)0.4110.342 (0.001)
+SimBoost0.836 (0.001)0.2220.629 (0.007)
+DeepDTA0.863 (0.002)0.1940.673 (0.009)
+MT-DTI0.882 (0.001)0.1520.738 (0.006)
+WideDTA0.875 (0.001)0.179–
+DeepCPI0.852 (−)0.2110.657 (−)
+DeepCDA0.889 (0.002)0.1760.682 (0.008)
+GraphDTA0.891 (−)0.139–
+DeepGS0.860 (−)0.1930.684 (−)
+MATT_DTI0.889 (0.001)0.1500.756 (0.011)
+DeepFusionDTA0.876 (−)0.176–
+MRBDTA0.892 (0.002)0.146 (0.001)0.778 (0.005)
+The bold values means the best results among MRBDTA and 11 previous state-of-the-art computational models
+Table 4
+Open in new tab
+Results on test set of KIBA dataset based on MRBDTA and existing baseline methods
+Method
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+KronRLS0.782 (0.0009)0.4110.342 (0.001)
+SimBoost0.836 (0.001)0.2220.629 (0.007)
+DeepDTA0.863 (0.002)0.1940.673 (0.009)
+MT-DTI0.882 (0.001)0.1520.738 (0.006)
+WideDTA0.875 (0.001)0.179–
+DeepCPI0.852 (−)0.2110.657 (−)
+DeepCDA0.889 (0.002)0.1760.682 (0.008)
+GraphDTA0.891 (−)0.139–
+DeepGS0.860 (−)0.1930.684 (−)
+MATT_DTI0.889 (0.001)0.1500.756 (0.011)
+DeepFusionDTA0.876 (−)0.176–
+MRBDTA0.892 (0.002)0.146 (0.001)0.778 (0.005)
+Method
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+KronRLS0.782 (0.0009)0.4110.342 (0.001)
+SimBoost0.836 (0.001)0.2220.629 (0.007)
+DeepDTA0.863 (0.002)0.1940.673 (0.009)
+MT-DTI0.882 (0.001)0.1520.738 (0.006)
+WideDTA0.875 (0.001)0.179–
+DeepCPI0.852 (−)0.2110.657 (−)
+DeepCDA0.889 (0.002)0.1760.682 (0.008)
+GraphDTA0.891 (−)0.139–
+DeepGS0.860 (−)0.1930.684 (−)
+MATT_DTI0.889 (0.001)0.1500.756 (0.011)
+DeepFusionDTA0.876 (−)0.176–
+MRBDTA0.892 (0.002)0.146 (0.001)0.778 (0.005)
+The bold values means the best results among MRBDTA and 11 previous state-of-the-art computational models
+Analysis experiments
+The main contributions of MRBDTA lie in developing Trans block to extract molecule features through improving the encoder of transformer and introducing skip connection at encoder level in Trans block. Therefore, in order to verify the effectiveness of Trans block and skip connection, respectively, we implemented analysis experiments by replacing Trans block with single Trans encoder (MRBDTA_STE) and removing skip connection in Trans block (MRBDTA_RSC) based on Davis and KIBA datasets under evaluation metrics of MSE, CI and |${r}_m^2$|⁠. Besides, through comparing MRBDTA_STE and MRBDTA_RSC with MRBDTA, respectively, we have observed that MRBDTA achieved the best performance among the three models (See Table 5, Supplementary Tables 1 and 2 available online at http://bib.oxfordjournals.org/). Further, the results of analysis experiments manifest that Trans block and skip connection can indeed improve the prediction accuracy, stability and reliability of MRBDTA.
+The interpretability based on multi-head attention mechanism
+Another important contribution of MRBDTA lies in that multi-head attention mechanism could enhance the ability to capture interaction sites between proteins and drugs and hence benefit the biological interpretability of MRBDTA. Therefore, depending on multi-head attention mechanism, we calculated the attention weight value for each amino acid residue of a protein, and the attention weight value means contribution of the amino acid residue to DTIs associated with this protein. According to the attention weight value, we ranked all amino acid residues in a protein. In addition, potential and captured interaction sites were introduced to analyze the reliability of MRBDTA. Usually, in the protein data bank (PDB), potential interaction sites between a drug and a protein are defined by a distance in the range of <5.0 Angstrom between a drug and all amino acid residues of a protein [30]. Additionally, for a drug–protein pair, we selected the amino acid residues with higher attention weight values as captured interaction sites by MRBDTA. Here, the number of selected amino acid residues is equal to the number of potential interaction sites in the drug–protein pair. We also visualized potential and captured interaction sites between proteins and drugs based on the 3D View tool of PDB.
+Figure 1 shows the potential and captured interaction sites for two complexes, namely 1N6R and 3AQV. According to PDB, Ras-related protein Rab-5A reacts with GppNHp to form 1N6R, and 3AQV is obtained from the chemical reaction after mixing AMP-activated protein kinase and Dorsomorphin. Concretely, the potential and captured interaction sites marked with red in 1N6R are displayed in Figure 1A and B, respectively. There are 38 amino acid residues viewed as potential interaction sites in 1N6R on the basis of PDB (See Supplementary File 1 available online at http://bib.oxfordjournals.org/). According to the attention weight value, we obtained top 38 amino acid residues with higher attention weight values in 1N6R as captured interaction sites by MRBDTA (See Supplementary File 1 available online at http://bib.oxfordjournals.org/). Here, we regarded these captured interaction sites, which were included in potential interaction sites or near potential interaction sites (the absolute value of the PDB residue number difference between a captured interaction site and a potential interaction site was less than or equal to 10) as correctly captured interaction sites by MRBDTA. As illustrated in Figure 1B, the 21 circled amino acid residues were correctly captured interaction sites in 1N6R (See Supplementary File 1 available online at http://bib.oxfordjournals.org/). Moreover, the potential and captured interaction sites marked with red in 3AQV are shown in Figure 1C and D, respectively. Relying on PDB, there are 22 amino acid residues seen as potential interaction sites in 3AQV (See Supplementary File 1 available online at http://bib.oxfordjournals.org/). Here, we achieved top 22 amino acid residues with higher attention weight values in 3AQV as captured interaction sites by MRBDTA (See Supplementary File 1 available online at http://bib.oxfordjournals.org/). The nine circled amino acid residues were viewed as correctly captured interaction sites in 3AQV (see Figure 1D and Supplementary File 1 available online at http://bib.oxfordjournals.org/).
+Table 5
+Open in new tab
+Results on test set of Davis and KIBA datasets based on analysis experiments
+Analysis experiments
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+On Davis dataset
+MRBDTA_STE0.869 (0.006)0.235 (0.009)0.683 (0.010)
+MRBDTA_RSC0.877 (0.009)0.223 (0.007)0.697 (0.009)
+MRBDTA0.901 (0.004)0.216 (0.006)0.716 (0.008)
+On KIBA dataset
+MRBDTA_STE0.868 (0.005)0.173 (0.002)0.734 (0.007)
+MRBDTA_RSC0.876 (0.004)0.162 (0.007)0.762 (0.006)
+MRBDTA0.892 (0.002)0.146 (0.001)0.778 (0.005)
+Analysis experiments
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+On Davis dataset
+MRBDTA_STE0.869 (0.006)0.235 (0.009)0.683 (0.010)
+MRBDTA_RSC0.877 (0.009)0.223 (0.007)0.697 (0.009)
+MRBDTA0.901 (0.004)0.216 (0.006)0.716 (0.008)
+On KIBA dataset
+MRBDTA_STE0.868 (0.005)0.173 (0.002)0.734 (0.007)
+MRBDTA_RSC0.876 (0.004)0.162 (0.007)0.762 (0.006)
+MRBDTA0.892 (0.002)0.146 (0.001)0.778 (0.005)
+The bold values means the best results among the three models
+Table 5
+Open in new tab
+Results on test set of Davis and KIBA datasets based on analysis experiments
+Analysis experiments
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+On Davis dataset
+MRBDTA_STE0.869 (0.006)0.235 (0.009)0.683 (0.010)
+MRBDTA_RSC0.877 (0.009)0.223 (0.007)0.697 (0.009)
+MRBDTA0.901 (0.004)0.216 (0.006)0.716 (0.008)
+On KIBA dataset
+MRBDTA_STE0.868 (0.005)0.173 (0.002)0.734 (0.007)
+MRBDTA_RSC0.876 (0.004)0.162 (0.007)0.762 (0.006)
+MRBDTA0.892 (0.002)0.146 (0.001)0.778 (0.005)
+Analysis experiments
+. CI (SD)
+. MSE (SD)
+. r2m (SD)
+.
+On Davis dataset
+MRBDTA_STE0.869 (0.006)0.235 (0.009)0.683 (0.010)
+MRBDTA_RSC0.877 (0.009)0.223 (0.007)0.697 (0.009)
+MRBDTA0.901 (0.004)0.216 (0.006)0.716 (0.008)
+On KIBA dataset
+MRBDTA_STE0.868 (0.005)0.173 (0.002)0.734 (0.007)
+MRBDTA_RSC0.876 (0.004)0.162 (0.007)0.762 (0.006)
+MRBDTA0.892 (0.002)0.146 (0.001)0.778 (0.005)
+The bold values means the best results among the three models
+Figure 1
+The visualization of interaction sites between proteins and drugs. The potential and captured interaction sites marked with red in 1N6R are shown in (A) and (B), respectively. As depicted in (A), there are 38 potential interaction sites in 1N6R. In (B), among the 38 captured interaction sites by MRBDTA, the circled 21 captured interaction sites were regarded as correctly captured interaction sites in 1N6R. The potential and captured interaction sites marked with red in 3AQV are exhibited in (C) and (D), respectively. As displayed in (C), there are 22 potential interaction sites in 3AQV. In (D), the circled 9 of the 22 captured interaction sites were considered as correctly captured interaction sites in 3AQV.
+Open in new tabDownload slide
+All in all, the above two examples indicate that our model can correctly capture part of interaction sites between proteins and drugs, which partly explains the reliable performance of MRBDTA.
+Case studies
+In recent years, the infection of SARS-CoV-2 has spread rapidly around the world, posing a huge threat to the human life. Due to a severe shortage of therapeutic drugs for patients with SARS-CoV-2, and long cycle for developing a new drug, drug repurposing, a novel strategy for drug discovery, has been utilized to find effective drugs for patients with SARS-CoV-2 from FDA-approved drugs [46, 47]. In this case study, we firstly applied trained MRBDTA to predict binding affinities between 3137 FDA-approved drugs and SARS-CoV-2 replication-related proteins. Secondly, we compared experimentally measured binding affinities between 3C-like proteinase and 185 drugs with those predicted by trained MRBDTA. The purpose of this case study is to provide an application example of MRBDTA in real-life situations and verify reliable prediction performance of MRBDTA in drug design for SARS-CoV-2. Besides, we expect the predicted results of MRBDTA are capable of providing scientists with some ideas in developing novel drugs against SARS-CoV-2 and assist in treating patients with SARS-CoV-2.
+The FASTA sequences of SARS-CoV-2 replication-related proteins containing 3C-like proteinase (accession YP_009725301.1), RNA-dependent RNA polymerase (accession YP_009725307.1), helicase (accession YP_009725308.1), 3′-to-5′ exonuclease (accession YP_009725309.1), endoRNAse (accession YP_009725310.1) and 2′-O-ribose methyltransferase (accession YP_009725311.1) have been acquired from National Center for Biotechnology Information (NCBI) database. Relying on literature [32], we obtained SMILES sequences of 3137 FDA-approved drugs. The binding affinities predicted by MRBDTA between 3137 FDA-approved drugs and 6 SARS-CoV-2 replication-related proteins based on KIBA score and Kd in nM can be found in Supplementary File 2 and Supplementary File 3 available online at http://bib.oxfordjournals.org/, respectively. For each SARS-CoV-2 replication-related protein, we first ranked 3137 FDA-approved drugs according to predicted binding affinities. Then, through comparing MRBDTA with MT-DTI [29] and MATT_DTI [32], we observed that among top 50 drugs with better predicted affinities, MRBDTA can predict more antiviral drugs and their rankings are higher (See Tables 6 and 7). Specifically, for six SARS-CoV-2 replication-related proteins, there are respectively 22 and 13 antiviral drugs in top 50 drugs predicted by MRBDTA under two different types of binding affinities, while there are merely 6 and 8 antiviral drugs in top 50 drugs predicted by MT-DTI based on the binding affinity of Kd in nM and MATT_DTI based on the binding affinity of KIBA score, respectively. It should be pointed out that since the codes of MT-DTI and MATT_DTI are unavailable, we only could adopt the prediction results of MT-DTI and MATT_DTI in their studies, respectively. What’s more, there are 14 and 12 antiviral drugs in top 30 drugs predicted by MRBDTA, while there are no antiviral drugs in top 30 drugs predicted MT-DTI and only 3 antiviral drugs are included in top 30 drugs predicted by MATT_DTI. Moreover, the best ranking of antiviral drug predicted by MRBDTA is 2nd, while the best ranking of antiviral drug predicted by MT-DTI and MATT_DTI are 32nd and 21st, respectively. To sum up, these results indicate that MRBDTA shows better performance than MT-DTI and MATT_DTI in this important application.
+In order to further verify reliable prediction performance of MRBDTA in drug design for SARS-CoV-2, we first obtained the sequence of 3C-like proteinase, structure files of 185 drugs and experimentally measured binding affinities between 3C-like proteinase and 185 drugs from literature [48, 49]. Then, depending on structure files of the 185 drugs, we utilized the software RDKit [40] to get SMILES sequences of the 185 drugs. Since the type of true binding affinities for drug–target pairs in the Davis dataset is the same as experimentally measured binding affinities of these 185 drug–target pairs, we trained MRBDTA on the basis of the Davis dataset. It is worth nothing that 3C-like proteinase is not included in the training data. The binding affinities predicted by trained MRBDTA between 3C-like proteinase and 185 drugs can be found in Supplementary File 4 available online at http://bib.oxfordjournals.org/. Relying on predicted and experimentally measured binding affinities of the 185 drug–target pairs, we obtained the MSE (1.451) of MRBDTA. Further, the low MSE of MRBDTA on the 185 drug–target pairs manifests that most binding affinities predicted by MRBDTA are satisfactory.
+Table 6
+Open in new tab
+For six SARS-CoV-2 replication-related proteins, the antiviral drugs in top 50 drugs with better affinities predicted by MRBDTA and MT-DTI based on Kd in nM
+Key proteins in SARS-CoV-2
+. MRBDTA
+. MT-DTI
+.
+Antiviral drug
+. Kd in nM
+. Rank out of 3137
+. Antiviral drug
+. Kd in nM
+. Rank out of 3411
+.
+3C-like proteinaseSaquinavir mesylate46.208
+Danoprevir59.3215
+Ritonavir71.3030
+Boceprevir74.4134
+RNA-dependent RNA polymeraseRitonavir56.872Grazoprevir8.6940
+Danoprevir188.2936
+Boceprevir212.3944
+HelicaseRitonavir47.4317Remdesivir6.4832
+Saquinavir mesylate50.2621
+Boceprevir58.5030
+3′-to-5′ exonucleaseSaquinavir mesylate53.5219Simeprevir13.4032
+Danoprevir58.9723
+Ritonavir65.2730
+Boceprevir76.0941
+EndoRNAseSaquinavir mesylate47.1511Efavirenz34.1950
+Ritonavir64.5429
+Boceprevir69.0432
+Danoprevir71.2136
+2’-O-ribose methyltransferaseSaquinavir mesylate44.618Remdesivir134.3940
+Ritonavir64.1127Dolutegravir153.7346
+Boceprevir70.1935
+Danoprevir76.6741
+Key proteins in SARS-CoV-2
+. MRBDTA
+. MT-DTI
+.
+Antiviral drug
+. Kd in nM
+. Rank out of 3137
+. Antiviral drug
+. Kd in nM
+. Rank out of 3411
+.
+3C-like proteinaseSaquinavir mesylate46.208
+Danoprevir59.3215
+Ritonavir71.3030
+Boceprevir74.4134
+RNA-dependent RNA polymeraseRitonavir56.872Grazoprevir8.6940
+Danoprevir188.2936
+Boceprevir212.3944
+HelicaseRitonavir47.4317Remdesivir6.4832
+Saquinavir mesylate50.2621
+Boceprevir58.5030
+3′-to-5′ exonucleaseSaquinavir mesylate53.5219Simeprevir13.4032
+Danoprevir58.9723
+Ritonavir65.2730
+Boceprevir76.0941
+EndoRNAseSaquinavir mesylate47.1511Efavirenz34.1950
+Ritonavir64.5429
+Boceprevir69.0432
+Danoprevir71.2136
+2’-O-ribose methyltransferaseSaquinavir mesylate44.618Remdesivir134.3940
+Ritonavir64.1127Dolutegravir153.7346
+Boceprevir70.1935
+Danoprevir76.6741
+Table 6
+Open in new tab
+For six SARS-CoV-2 replication-related proteins, the antiviral drugs in top 50 drugs with better affinities predicted by MRBDTA and MT-DTI based on Kd in nM
+Key proteins in SARS-CoV-2
+. MRBDTA
+. MT-DTI
+.
+Antiviral drug
+. Kd in nM
+. Rank out of 3137
+. Antiviral drug
+. Kd in nM
+. Rank out of 3411
+.
+3C-like proteinaseSaquinavir mesylate46.208
+Danoprevir59.3215
+Ritonavir71.3030
+Boceprevir74.4134
+RNA-dependent RNA polymeraseRitonavir56.872Grazoprevir8.6940
+Danoprevir188.2936
+Boceprevir212.3944
+HelicaseRitonavir47.4317Remdesivir6.4832
+Saquinavir mesylate50.2621
+Boceprevir58.5030
+3′-to-5′ exonucleaseSaquinavir mesylate53.5219Simeprevir13.4032
+Danoprevir58.9723
+Ritonavir65.2730
+Boceprevir76.0941
+EndoRNAseSaquinavir mesylate47.1511Efavirenz34.1950
+Ritonavir64.5429
+Boceprevir69.0432
+Danoprevir71.2136
+2’-O-ribose methyltransferaseSaquinavir mesylate44.618Remdesivir134.3940
+Ritonavir64.1127Dolutegravir153.7346
+Boceprevir70.1935
+Danoprevir76.6741
+Key proteins in SARS-CoV-2
+. MRBDTA
+. MT-DTI
+.
+Antiviral drug
+. Kd in nM
+. Rank out of 3137
+. Antiviral drug
+. Kd in nM
+. Rank out of 3411
+.
+3C-like proteinaseSaquinavir mesylate46.208
+Danoprevir59.3215
+Ritonavir71.3030
+Boceprevir74.4134
+RNA-dependent RNA polymeraseRitonavir56.872Grazoprevir8.6940
+Danoprevir188.2936
+Boceprevir212.3944
+HelicaseRitonavir47.4317Remdesivir6.4832
+Saquinavir mesylate50.2621
+Boceprevir58.5030
+3′-to-5′ exonucleaseSaquinavir mesylate53.5219Simeprevir13.4032
+Danoprevir58.9723
+Ritonavir65.2730
+Boceprevir76.0941
+EndoRNAseSaquinavir mesylate47.1511Efavirenz34.1950
+Ritonavir64.5429
+Boceprevir69.0432
+Danoprevir71.2136
+2’-O-ribose methyltransferaseSaquinavir mesylate44.618Remdesivir134.3940
+Ritonavir64.1127Dolutegravir153.7346
+Boceprevir70.1935
+Danoprevir76.6741
+Discussion
+The identification of drug–target binding affinities is a crucial step in drug discovery. Lately, computational methods have gradually emerged to predict binding affinities, and some pharmaceutical companies have benefited from these methods to some extent [50–52]. An excellent computational model of predicting drug–target binding affinity can not only shorten the cycle of drug discovery but also reduce the cost of drug discovery. In this research, we put forward a deep learning model named MRBDTA to make predictions for drug–target binding affinity. The implementation process can be divided into three parts. In embedding and positional encoding, we convert the original protein FASTA and drug SMILES sequences into the embedding layer space and add position information to the converted data. Then, we adopt two Trans blocks to extract features for converted proteins and drugs, respectively. In DTI learning, we integrate features of proteins and drugs extracted by the Trans block and predict binding affinities between proteins and drugs. To evaluate the performance of our deep learning method, we tested MRBDTA on two benchmark datasets and carried out analysis experiments, interpretability analysis and case studies. In the Davis and KIBA datasets, the MSE, CI and |${r}_m^2$| of MRBDTA on test data almost exceed all the 11 state-of-the-art computational models. The low SD of MSE, CI and |${r}_m^2$| in both Davis and KIBA datasets reveals the strong stability of MRBDTA. Besides, we conducted analysis experiments via replacing Trans block with single Trans encoder and removing skip connection in Trans block and confirmed that Trans block and skip connection could effectively improve the prediction accuracy, stability and reliability of MRBDTA. Then, for 1N6R and 3AQV, depending on multi-head attention mechanism, we performed the interpretability analysis to illustrate that the ability of correctly capturing part of interaction sites between a protein and a drug is one important reason for the excellent performance of MRBDTA. In case studies, we firstly utilized MRBDTA to predict binding affinities between FDA-approved drugs and SARS-CoV-2 replication-related proteins. As a result, in top 50 drugs with better-predicted affinities, compared with MT-DTI and MATT_DTI, our model can predict more antiviral drugs and their rankings are higher. Secondly, the trained MRBDTA was applied to predict binding affinities between 3C-like proteinase and 185 drugs. We found that most binding affinities predicted by MRBDTA were close to experimentally measured binding affinities of the 185 drug–target pairs. This further comprehensively manifests the excellent performance of MRBDTA.
+MRBDTA shows better performance over the state-of-the-art computational models because of the following three factors. First, through optimizing the encoder of transformer, we developed a novel module called Trans block to extract molecule features. Trans block can fully take advantage of multi-head attention mechanism to capture more detailed information about molecule sequences from a wider perspective. Second, in Trans block, we introduced skip connection at encoder level to avoid the loss of global molecule features when acquiring the local molecule features, so as to ensure comprehensive capture of molecule features. Third, MRBDTA has the ability to correctly capture part of interaction sites between proteins and drugs, which reflects the interpretability of MRBDTA.
+However, MRBDTA still has much room for improvement. Firstly, because MRBDTA is a large model with a lot of parameters, it may suffer from slow convergence when applied to larger datasets. In the future, we will further optimize MRBDTA and reduce the number of parameters in MRBDTA as much as possible when ensuring the performance of MRBDTA. Secondly, all proteins used in this study are less than 1500 amino acids in length. Therefore, when MRBDTA is applied to a protein with the length greater than 1500 amino acids, its performance is unknown. Over time, with the increase of trained data including long-sequence proteins, the generalization performance of MRBDTA will be further promoted. Last but not least, we clarify the biological interpretation of MRBDTA from the perspective of the protein sequence, but a protein and a drug react in three-dimensional space. As more and more protein tertiary structures are reported, and excellent protein structure prediction models such as AlphaFold2 [53], RoseTTAFold [54], trRosetta [55] and MMpred [56] gradually emerge, available protein tertiary structure data will further increase. In future research, we will work on introducing protein tertiary structure data to further improve the interpretability of MRBDTA.
+The future direction of drug–target binding affinity prediction is mainly reflected in three aspects. First, drug and protein tertiary structure data will be widely utilized in predicting drug–target binding affinity. Second, researchers will introduce more different deep learning models to predict drug–target binding affinity, and some deep learning models may achieve excellent performance in this field. Third, the biological interpretability of computational models for drug–target binding affinity prediction will be further enhanced.
+Table 7
+Open in new tab
+For six SARS-CoV-2 replication-related proteins, the antiviral drugs in top 50 drugs with better affinities predicted by MRBDTA and MATT_DTI based on KIBA score
+Key proteins in SARS-CoV-2
+. MRBDTA
+. MATT_DTI
+.
+Antiviral drug
+. KIBA score
+. Rank out of 3137
+. Antiviral drug
+. KIBA score
+. Rank out of 3137
+.
+3C-like proteinaseDaclatasvir (BMS-790052)13.90894Peramivir12.179725
+Ritonavir13.444521Lopinavir12.009045
+RNA-dependent RNA polymeraseDaclatasvir (BMS-790052)13.44018
+Ritonavir12.671429
+Entecavir12.504945
+HelicaseDaclatasvir (BMS-790052)13.90213
+Ritonavir13.343418
+3′-to-5′ exonucleaseDaclatasvir (BMS-790052)13.79575Zanamivir12.246030
+Ritonavir13.342719Peramivir12.196933
+Saquinavir12.146037
+EndoRNAseDaclatasvir (BMS-790052)13.88854Peramivir12.035637
+Ritonavir13.466519
+2’-O-ribose methyltransferaseDaclatasvir (BMS-790052)13.90414Peramivir12.284921
+Ritonavir13.401524Zanamivir12.011046
+Key proteins in SARS-CoV-2
+. MRBDTA
+. MATT_DTI
+.
+Antiviral drug
+. KIBA score
+. Rank out of 3137
+. Antiviral drug
+. KIBA score
+. Rank out of 3137
+.
+3C-like proteinaseDaclatasvir (BMS-790052)13.90894Peramivir12.179725
+Ritonavir13.444521Lopinavir12.009045
+RNA-dependent RNA polymeraseDaclatasvir (BMS-790052)13.44018
+Ritonavir12.671429
+Entecavir12.504945
+HelicaseDaclatasvir (BMS-790052)13.90213
+Ritonavir13.343418
+3′-to-5′ exonucleaseDaclatasvir (BMS-790052)13.79575Zanamivir12.246030
+Ritonavir13.342719Peramivir12.196933
+Saquinavir12.146037
+EndoRNAseDaclatasvir (BMS-790052)13.88854Peramivir12.035637
+Ritonavir13.466519
+2’-O-ribose methyltransferaseDaclatasvir (BMS-790052)13.90414Peramivir12.284921
+Ritonavir13.401524Zanamivir12.011046
+Table 7
+Open in new tab
+For six SARS-CoV-2 replication-related proteins, the antiviral drugs in top 50 drugs with better affinities predicted by MRBDTA and MATT_DTI based on KIBA score
+Key proteins in SARS-CoV-2
+. MRBDTA
+. MATT_DTI
+.
+Antiviral drug
+. KIBA score
+. Rank out of 3137
+. Antiviral drug
+. KIBA score
+. Rank out of 3137
+.
+3C-like proteinaseDaclatasvir (BMS-790052)13.90894Peramivir12.179725
+Ritonavir13.444521Lopinavir12.009045
+RNA-dependent RNA polymeraseDaclatasvir (BMS-790052)13.44018
+Ritonavir12.671429
+Entecavir12.504945
+HelicaseDaclatasvir (BMS-790052)13.90213
+Ritonavir13.343418
+3′-to-5′ exonucleaseDaclatasvir (BMS-790052)13.79575Zanamivir12.246030
+Ritonavir13.342719Peramivir12.196933
+Saquinavir12.146037
+EndoRNAseDaclatasvir (BMS-790052)13.88854Peramivir12.035637
+Ritonavir13.466519
+2’-O-ribose methyltransferaseDaclatasvir (BMS-790052)13.90414Peramivir12.284921
+Ritonavir13.401524Zanamivir12.011046
+Key proteins in SARS-CoV-2
+. MRBDTA
+. MATT_DTI
+.
+Antiviral drug
+. KIBA score
+. Rank out of 3137
+. Antiviral drug
+. KIBA score
+. Rank out of 3137
+.
+3C-like proteinaseDaclatasvir (BMS-790052)13.90894Peramivir12.179725
+Ritonavir13.444521Lopinavir12.009045
+RNA-dependent RNA polymeraseDaclatasvir (BMS-790052)13.44018
+Ritonavir12.671429
+Entecavir12.504945
+HelicaseDaclatasvir (BMS-790052)13.90213
+Ritonavir13.343418
+3′-to-5′ exonucleaseDaclatasvir (BMS-790052)13.79575Zanamivir12.246030
+Ritonavir13.342719Peramivir12.196933
+Saquinavir12.146037
+EndoRNAseDaclatasvir (BMS-790052)13.88854Peramivir12.035637
+Ritonavir13.466519
+2’-O-ribose methyltransferaseDaclatasvir (BMS-790052)13.90414Peramivir12.284921
+Ritonavir13.401524Zanamivir12.011046
+Materials and methods
+Benchmark datasets
+In our research, the Davis and KIBA datasets are used as benchmark datasets [57, 58]. Specifically, the Davis dataset involves interactions between 442 kinase proteins and 68 inhibitors (drugs), measured by the dissociation constant (Kd) value. In line with literature [32], the Kd values are logarithmically transformed into pKd as binding affinities, which is described as follows:
+$$\begin{equation} p{K}_{\mathrm{d}}=-{\log}_{10}\left(\frac{K_{\mathrm{d}}}{10^9}\right) \end{equation}$$
+(1)
+KIBA dataset originally consists of 467 proteins, 52 498 drugs and KIBA scores between these proteins and drugs. KIBA scores measure kinase inhibitor bioactivities and are deemed as binding affinities. To balance samples, He et al. [23] filtered the original KIBA dataset to contain proteins and drugs with at least 10 interactions eventually yielding 229 proteins and 2111 drugs. Table 8 summarizes details of the two benchmark datasets including the number of proteins and drugs, the interactions between proteins and drugs, and the size of training set and test set.
+Table 8
+Open in new tab
+Details of two benchmark datasets
+Details
+. Davis
+. KIBA
+.
+Proteins442229
+Drugs682111
+Interactions30 056118 254
+Training set25 04698 545
+Test set501019 709
+Details
+. Davis
+. KIBA
+.
+Proteins442229
+Drugs682111
+Interactions30 056118 254
+Training set25 04698 545
+Test set501019 709
+Table 8
+Open in new tab
+Details of two benchmark datasets
+Details
+. Davis
+. KIBA
+.
+Proteins442229
+Drugs682111
+Interactions30 056118 254
+Training set25 04698 545
+Test set501019 709
+Details
+. Davis
+. KIBA
+.
+Proteins442229
+Drugs682111
+Interactions30 056118 254
+Training set25 04698 545
+Test set501019 709
+Molecule Representation Block-based Drug-Target binding Affinity prediction
+As demonstrated in Figure 2, based on the embedding layer, the positional encoding, the encoder module of transformer [59], the skip connection and the feed-forward layer, we proposed a novel deep learning model MRBDTA to predict drug–target binding affinities. MRBDTA is composed of three parts: embedding and positional encoding, Trans block and DTI learning. In detail, the original protein FASTA and drug SMILES sequences are encoded during embedding and positional encoding process. Next, two Trans blocks are exploited to extract features from encoded proteins and drugs, respectively. Eventually, the interaction learning module is employed to integrate features of proteins and drugs extracted by Trans block and predict binding affinities between proteins and drugs.
+Figure 2
+Illustration of MRBDTA proposed in this study. The architecture of MRBDTA is shown in (A). Especially, the architecture of MRBDTA consists of three parts: embedding and positional encoding, Trans block and DTI learning. (B) The implementation steps of scaled dot-product attention with mask operation. The principle of multi-head attention mechanism is given in (C). Here, multi-head attention is composed of four attention layers running in parallel. (D) and (E) describe the details of Trans encoder and L-Trans encoder in MRBDTA, respectively.
+Open in new tabDownload slide
+Embedding and positional encoding
+Adopting the same approach used in most prediction models for drug–target binding affinities, we regard the original protein FASTA and drug SMILES sequences as the inputs of MRBDTA. As known, a protein FASTA sequence is composed of different amino acids. In our research, a protein P is defined as below:
+$$\begin{equation} P=\left\{{p}_1,{p}_2,...,{p}_i,...,{p}_{n_P}\right\}\kern0.5em {p}_i\in{N}^p \end{equation}$$
+(2)
+where |${p}_i$| represents the ith amino acid. |${N}^p$| means the amino acid set including 25 common amino acids. The sequence length
+$${n}_{\begin{array}{c}\end{array}P}$$
+is varied depending on protein. Here, we defined a hyperparameter l to denote the length of the largest protein in our study. Inspired by transformer [59], we first implemented the embedding for all amino acids in a protein P, and the output |${E}^P\in{\mathbb{R}}^{l\times e}$| of the embedding layer has a trainable weight |${W}^P\in{\mathbb{R}}^{v\times e}$| where v is the size of the above-mentioned amino acid set, and e is the embedding size of the amino acid. To add the relative or absolute position information for each amino acid in a protein P, we carried out the positional encoding. |$P{E}^P\in{\mathbb{R}}^{l\times d}$| denotes the output of the positional encoding for all amino acids in a protein P and is defined by Equation (3)
+$$\begin{equation} \begin{array}{l}P{E}^P \left(i,2j\right)=\sin (i/{10000}^{2j/d})\\{}P{E}^P(i,2j+1)=\cos (i/{10000}^{2j/d})\end{array} \begin{array}{c}i=1,2,3,...,{n}_P({n}_P\le l)\\ j=0,1,2,...,\frac{d}{2}\end{array} \end{equation}$$
+(3)
+where d is the positional encoding size of the amino acid. |$P{E}^P(i,:)$| is the ith row of the matrix |$P{E}^P$| and represents the positional encoding of the ith amino acid in a protein P. It should be pointed out that if |${n}_P<l$|⁠, the elements from row |${n}_P+1$| to l in |$P{E}^P$| are zero. For a protein P, we set the positional encoding size equal to the embedding size (d = e) and thus can directly add |$P{E}^P$| and
+$${E}^{\begin{array}{c}\end{array}P}$$
+⁠. |${X}^P$| denotes the output of a protein P processed by the embedding and positional encoding and is defined by Equation (4).
+$$\begin{equation} {X}^{\begin{array}{c}\end{array}P}={E}^{\begin{array}{c}\end{array}P}+P{E}^{\begin{array}{c}\end{array}P}{\displaystyle \begin{array}{cc}& \end{array}}{X}^{\begin{array}{c}\end{array}P}\in{\mathbb{R}}^{\begin{array}{c}\end{array}l\times e} \end{equation}$$
+(4)
+In the same way as the definition of a protein P, C is the mathematical expression of a drug and is defined by Equation (5)
+$$\begin{equation} {\displaystyle \begin{array}{cc}C=\left\{{c}_1,{c}_2,...,{c}_i,...,{c}_{m_C}\right\}& {c}_i\in{N}^c\end{array}} \end{equation}$$
+(5)
+where |${c}_i$| means the ith SMILES character.
+$${N}^{\begin{array}{c}\end{array}c}$$
+signifies the SMILES set including 62 SMILES characters. The SMILES length
+$${m}_{\begin{array}{c}\end{array}C}$$
+of a drug C is varied. We also defined a hyperparameter z to denote the length of the largest drug in our study.
+$${X}^{\begin{array}{c}\end{array}C}$$
+represents the output of a drug C processed by the embedding and positional encoding and is defined by Equation (6)
+$$\begin{equation} {X}^{\begin{array}{c}\end{array}C}={E}^{\begin{array}{c}\end{array}C}+P{E}^{\begin{array}{c}\end{array}C}{\displaystyle \begin{array}{cc}& \end{array}}{X}^{\begin{array}{c}\end{array}C}\in{\mathbb{R}}^{\begin{array}{c}\end{array}z\times u} \end{equation}$$
+(6)
+where u is the embedding size of the SMILES character. Here, the amino acid and the SMILES character have the same embedding size (u = e). |${E}^C\in{\mathbb{R}}^{z\times u}$| signifies the output of the embedding for all SMILES characters in a drug C.
+$$P{E}^{\begin{array}{c}\end{array}C}\in{\mathbb{R}}^{z\times r}$$
+(r = u) means the output of the positional encoding for all SMILES characters in a drug C, where r is the positional encoding size of the SMILES character in a drug C.
+Trans block
+The internal details of Trans block are listed in Figure 2A. Concretely, Trans block includes one L-Trans encoder, two parallel Trans encoders, the skip connection drawn as a red line and the concat operation. The input of Trans block is the output
+$${X}^{\begin{array}{c}\end{array}P}$$
+(⁠
+$${X}^{\begin{array}{c}\end{array}C}$$
+⁠) of a protein P (drug C) processed by the embedding and positional encoding. The concatenation for the output of two parallel Trans encoders is treated as the output of Trans block. The output of Trans block is denoted as
+$${X}^{PA}\in{\mathbb{R}}^{\begin{array}{c}\end{array}l\times 2e}$$
+or
+$${X}^{\begin{array}{c}\end{array} CA}\in{\mathbb{R}}^{\begin{array}{c}\end{array}z\times 2u}$$
+⁠. Here, the scaled dot-product attention layer is the fundamental layer in Trans block. Through integrating the linear layer, the scaled dot-product attention layer and the concat operation, we first obtained the multi-head attention layer. Then, based on the linear layer, the multi-head attention layer, the residual connection, the layer normalization and the feed-forward layer, we constructed Trans encoder and L-Trans encoder, respectively. Finally, depending on L-Trans encoder, Trans encoder, the skip connection and the concat operation, we developed the Trans block to extract features from encoded proteins and drugs. The detailed implementation steps of the scaled dot-product attention layer, the multi-head attention layer, Trans block and L-Trans encoder are as follows.
+In Figure 2B, a scaled dot-product attention layer can be depicted as mapping a query (Q) and a set of key-value (K-V) pairs to an output. In detail, the input of the scaled dot-product attention layer in our model contains matrices |${Q}_L$| and |${K}_L$| of dimension dk and a matrix |${V}_L$| of dimension dv (dk = dv = 0.25e). Here,
+$${Q}_{L\begin{array}{c}\end{array}}{=}_{\begin{array}{c}\end{array}}{K}_{L\begin{array}{c}\end{array}}{=}_{\begin{array}{c}\end{array}}{V}_L$$
+is the matrix obtained from performing linear projection on the input matrix of Trans block with the linear layer. As shown in Figure 2B, we performed the MatMul operation to compute the dot product of |${Q}_L$| with |${K}_L$|⁠, carried out the Scale operation of dividing the dot product by |$\sqrt{d_k}$| and applied the SoftMax operation to obtain weights on |${V}_L$|⁠. Before performing the SoftMax operation, we implemented the Mask operation of replacing zeros in the feature matrix of protein or compound with negative bias |$-\infty$| to avoid invalid calculations resulting from the softmax function. Finally, we performed the MatMul operation of calculating the dot product of |${V}_L$| and weights on |${V}_L$| to get matrix |$Attention ({Q}_L,{K}_L,{V}_L)$|⁠, which represents the output of a scaled dot-product attention layer, and |$Attention ({Q}_L,{K}_L,{V}_L)$| is defined by Equation (7)
+$$\begin{equation} Attention\left({Q}_L,{K}_L,{V}_L\right)= soft\max \left(\frac{Q_L{K}_L^T}{\sqrt{d_k}}\right){V}_L \end{equation}$$
+(7)
+where |${Q}_L\in{\mathbb{R}}^{n\times{d}_k}$|⁠, |${K}_L\in{\mathbb{R}}^{n\times{d}_k}$|and |${V}_L\in{\mathbb{R}}^{n\times{d}_v}$|⁠. Here, n is the length of the largest protein or drug in our study (n = l or n = z). As depicted in Figure 2C, the multi-head attention layer in our model is made up of 4 scaled dot-product attention layers running in parallel, 13 linear layers and the concat operation. Here,
+$${Q}_{\begin{array}{c}\end{array}}=_{\begin{array}{c}\end{array}}{K}_{\begin{array}{c}\end{array}}=_{\begin{array}{c}\end{array}}V$$
+is the input
+$${X}^{\begin{array}{c}\end{array}P}$$
+or
+$${X}^{\begin{array}{c}\end{array}C}$$
+of Trans block. Firstly, the e-dimensional matrices Q, K and V were linearly projected h (h = 4) times with linear layers to obtain 4 |${Q}_L$| matrices, 4 |${K}_L$| matrices and 4 |${V}_L$| matrices, respectively. Then, we utilized the scaled dot-product attention layer to process |${Q}_L$|⁠, |${K}_L$| and |${V}_L$|⁠, yielding the output headi of the ith scaled dot-product attention layer (i = 1,2,3,4). The headi is defined by Equation (8)
+$$\begin{equation} hea{d}_i= Attention\left(Q{W}_i^Q,K{W}_i^K,V{W}_i^V\right) \end{equation}$$
+(8)
+where |${W}_i^Q\in{\mathbb{R}}^{e\times{d}_k}$|⁠, |${W}_i^K\in{\mathbb{R}}^{e\times{d}_k}$| and |${W}_i^V\in{\mathbb{R}}^{e\times{d}_v}$| are linear projection matrices. Finally, the outputs of four scaled dot-product attention layers were concatenated and delivered into a linear layer, resulting in the output MultiHead(Q,K,V) of the multi-head attention layer. The MultiHead(Q,K,V) is defined by Equation (9)
+$$\begin{equation} MultiHead\left(Q,K,V\right)= Concat\left( hea{d}_1,..., hea{d}_h\right){W}^O \end{equation}$$
+(9)
+where
+$${W}^{\begin{array}{c}\end{array}O}\in{\mathbb{R}}^{\begin{array}{c}\end{array}h{d}_v\times e}$$
+is a linear projection matrix.
+Figure 2D and E describes the details of Trans encoder and L-Trans encoder, respectively. Trans encoder in our model is the same as the encoder in transformer. Specifically, Trans encoder contains two sub-layers (a multi-head attention layer and a position-wise feed-forward layer), the residual connection namely Add operation and the layer normalization called Norm operation. In the above paragraph, we have elaborated on the multi-head attention layer. The position-wise feed-forward layer is made up of two linear transformations with a ReLU activation in between [60]. What’s more, we applied a residual connection around each of the two sub-layers, followed by layer normalization [61–63]. Unlike Trans encoder, L-Trans encoder, which could extremely enhance the robustness of our deep learning model, was constructed through adding a linear layer at the beginning of Trans encoder.
+In summary, relying on Trans encoder and L-Trans encoder, we introduced the skip connection and the concat operation to develop Trans block. It should be noted that the skip connection is created through adding the input of the L-Trans encoder to the output of the L-Trans encoder at encoder level. As the most important component of MRBDTA, Trans block can extract effective features from encoded proteins and drugs, respectively. Besides, in DTI learning, the extracted features will be utilized to make predictions for drug–target binding affinity.
+DTI learning
+As depicted in Figure 2A, the interaction learning module contains the concat operation, two feed-forward layers and a linear layer. The feed-forward layer is orderly made up of a linear layer, a layer normalization namely Norm operation, a dropout layer and a ReLU activation [64]. Here, we first summed columns of |${X}^{PA}\in{\mathbb{R}}^{l\times 2e}$| and |${X}^{CA}\in{\mathbb{R}}^{z\times 2u}$|⁠, which are outputs of two Trans blocks (one is for a protein P, the other is for a drug C) to get |${X}^{PSA}\in{\mathbb{R}}^{1\times 2e}$| and |${X}^{CSA}\in{\mathbb{R}}^{1\times 2u}$|⁠, respectively. Then, |${X}^A\in{\mathbb{R}}^{1\times 4e}$| obtained from concatenating |${X}^{PSA}\in{\mathbb{R}}^{1\times 2e}$| and |${X}^{CSA}\in{\mathbb{R}}^{1\times 2u}$| was orderly fed into two feed-forward layers and a linear layer to achieve the output |${Y}^A$| of the interaction learning module. |${Y}^A$| is regarded as the predicted binding affinity value between a protein P and a drug C. What’s more, the fusion for features of a protein P and a drug C extracted by the Trans block is realized in the interaction learning module. From the perspective of molecular biology, the interaction learning module can be regarded as the simulation for the chemical reaction of a protein P and a drug C.
+Key points
+MRBDTA is composed of three parts: embedding and positional encoding, Trans block and drug–target interaction learning.
+The Trans block is constructed through improving the encoder of transformer and introducing skip connection at encoder level.
+Compared with 11 state-of-the-art computational models, MRBDTA achieves almost the best performance in both Davis and KIBA datasets.
+Based on multi-head attention mechanism, we performed the interpretability experiment to elaborate that MRBDTA can correctly capture part of interaction sites between proteins and drugs, which further explains the excellent performance of MRBDTA.
+We applied MRBDTA to predict binding affinities (KIBA score and Kd in nM) between 3137 FDA-approved drugs and SARS-CoV-2 replication-related proteins. Through comparing MRBDTA with MT-DTI and MATT_DTI, we observed that among top 50 drugs with better predicted affinities, MRBDTA can predict more antiviral drugs and their rankings are higher.
+Funding
+National Natural Science Foundation of China (under grant no. 61972399 to X.C.).
+Data and code availability
+The supporting data for this study and the implementation codes of MRBDTA are available online at https://github.com/LiZhang30/MRBDTA.
+Author Biographies
+Li Zhang, is a PhD student of School of Information and Control Engineering, China University of Mining and Technology. His research interests include bioinformatics, drug discovery, neural networks and deep learning.
+Chun-Chun Wang, is a PhD student of School of Information and Control Engineering, China University of Mining and Technology. His research interests include bioinformatics, complex network algorithm and machine learning.
+Xing Chen, PhD, is a professor of China University of Mining and Technology. He is the associate dean of Artificial Intelligence Research Institute, China University of Mining and Technology. He is also the founding director of Institute of Bioinformatics, China University of Mining and Technology and Big Data Research Center, China University of Mining and Technology. His research interests include complex disease-related non-coding RNA biomarker prediction, computational models for drug discovery and early detection of human complex disease based on big data and artificial intelligence algorithms.
+References
+1.
+Li
+XH
+,
+Babu
+MM
+.
+Human diseases from gain-of-function mutations in disordered protein regions
+.
+Cell
+2018
+;
+175
+:
+40
+–
+2
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+2.
+Mullard
+A
+.
+2020 FDA drug approvals
+.
+Nat Rev Drug Discov
+2021
+;
+20
+:
+85
+–
+90
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+3.
+Paul
+SM
+,
+Mytelka
+DS
+,
+Dunwiddie
+CT
+, et al.
+How to improve R&D productivity: the pharmaceutical industry's grand challenge
+.
+Nat Rev Drug Discov
+2010
+;
+9
+:
+203
+–
+14
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+4.
+Kola
+I
+,
+Landis
+J
+.
+Can the pharmaceutical industry reduce attrition rates?
+Nat Rev Drug Discov
+2004
+;
+3
+:
+711
+–
+5
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+5.
+Stokes
+JM
+,
+Yang
+K
+,
+Swanson
+K
+, et al.
+A deep learning approach to antibiotic discovery
+.
+Cell
+2020
+;
+180
+:
+688
+–
+702
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+6.
+Chen
+X
+,
+Yan
+CC
+,
+Zhang
+X
+, et al.
+Drug-target interaction prediction: databases, web servers and computational models
+.
+Brief Bioinform
+2016
+;
+17
+:
+696
+–
+712
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+7.
+Sadybekov
+AA
+,
+Sadybekov
+AV
+,
+Liu
+Y
+, et al.
+Synthon-based ligand discovery in virtual libraries of over 11 billion compounds
+.
+Nature
+2022
+;
+601
+:
+452
+–
+9
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+8.
+Sun
+L
+,
+Li
+P
+,
+Ju
+X
+, et al.
+In vivo structural characterization of the SARS-CoV-2 RNA genome identifies host proteins vulnerable to repurposed drugs
+.
+Cell
+2021
+;
+184
+:
+1865
+–
+83
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+9.
+Lago
+SG
+,
+Tomasik
+J
+,
+van
+Rees
+GF
+, et al.
+Drug discovery for psychiatric disorders using high-content single-cell screening of signaling network responses ex vivo
+.
+Sci Adv
+2019
+;
+5
+:eaau9093.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+10.
+Reker
+D
+,
+Bernardes
+GJL
+,
+Rodrigues
+T
+.
+Computational advances in combating colloidal aggregation in drug discovery
+.
+Nat Chem
+2019
+;
+11
+:
+402
+–
+18
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+11.
+Chen
+X
+,
+Xie
+D
+,
+Zhao
+Q
+, et al.
+MicroRNAs and complex diseases: from experimental results to computational models
+.
+Brief Bioinform
+2019
+;
+20
+:
+515
+–
+39
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+12.
+D'Souza
+S
+,
+Prema
+KV
+,
+Balaji
+S
+.
+Machine learning models for drug-target interactions: current knowledge and future directions
+.
+Drug Discov Today
+2020
+;
+25
+:
+748
+–
+56
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+13.
+Yang
+Z
+,
+Zhong
+W
+,
+Zhao
+L
+, et al.
+MGraphDTA: deep multiscale graph neural network for explainable drug-target binding affinity prediction
+.
+Chem Sci
+2022
+;
+13
+:
+816
+–
+33
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+14.
+Chen
+X
+,
+Yan
+CC
+,
+Zhang
+X
+, et al.
+Long non-coding RNAs and complex diseases: from experimental results to computational models
+.
+Brief Bioinform
+2017
+;
+18
+:
+558
+–
+76
+.
+Google Scholar
+PubMed
+OpenURL Placeholder Text
+WorldCat
+15.
+Srivastava
+PK
+,
+van
+Eyll
+J
+,
+Godard
+P
+, et al.
+A systems-level framework for drug discovery identifies Csf1R as an anti-epileptic drug target
+.
+Nat Commun
+2018
+;
+9
+:
+3561
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+16.
+Ye
+Q
+,
+Hsieh
+CY
+,
+Yang
+Z
+, et al.
+A unified drug-target interaction prediction framework based on knowledge graph and recommendation system
+.
+Nat Commun
+2021
+;
+12
+:
+6775
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+17.
+Luo
+Y
+,
+Zhao
+X
+,
+Zhou
+J
+, et al.
+A network integration approach for drug-target interaction prediction and computational drug repositioning from heterogeneous information
+.
+Nat Commun
+2017
+;
+8
+:
+573
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+18.
+Madhukar
+NS
+,
+Khade
+PK
+,
+Huang
+L
+, et al.
+A Bayesian machine learning approach for drug target identification using diverse data types
+.
+Nat Commun
+2019
+;
+10
+:
+5221
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+19.
+Clarelli
+F
+,
+Palmer
+A
+,
+Singh
+B
+, et al.
+Drug-target binding quantitatively predicts optimal antibiotic dose levels in quinolones
+.
+PLoS Comput Biol
+2020
+;
+16
+:e1008106.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+20.
+Piazza
+I
+,
+Beaton
+N
+,
+Bruderer
+R
+, et al.
+A machine learning-based chemoproteomic approach to identify drug targets and binding sites in complex proteomes
+.
+Nat Commun
+2020
+;
+11
+:
+4200
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+21.
+Li
+S
+,
+Wan
+F
+,
+Shu
+H
+, et al.
+MONN: a multi-objective neural network for predicting compound-protein interactions and affinities
+.
+Cell Syst
+2020
+;
+10
+:
+308
+–
+22
+.
+Google Scholar
+Crossref
+Search ADS
+WorldCat
+22.
+Pahikkala
+T
+,
+Airola
+A
+,
+Pietilä
+S
+, et al.
+Toward more realistic drug-target interaction predictions
+.
+Brief Bioinform
+2015
+;
+16
+:
+325
+–
+37
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+23.
+He
+T
+,
+Heidemeyer
+M
+,
+Ban
+F
+, et al.
+SimBoost: a read-across approach for predicting drug-target binding affinities using gradient boosting machines
+.
+J Chem
+2017
+;
+9
+:
+24
+.
+Google Scholar
+Crossref
+Search ADS
+WorldCat
+24.
+Öztürk
+H
+,
+Özgür
+A
+,
+Ozkirimli
+E
+.
+DeepDTA: deep drug-target binding affinity prediction
+.
+Bioinformatics
+2018
+;
+34
+:
+i821
+–
+9
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+25.
+Öztürk
+H
+,
+Ozkirimli
+E
+,
+Özgür
+A
+.
+WideDTA: prediction of drug-target binding affinity
+.
+arXiv preprint
+2019
+;arXiv:1902.04166.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+26.
+Wan
+F
+,
+Zhu
+Y
+,
+Hu
+H
+, et al.
+DeepCPI: a deep learning-based framework for large-scale in silico drug screening
+.
+Genomics Proteomics Bioinformatics
+2019
+;
+17
+:
+478
+–
+95
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+27.
+Lin
+X
+.
+DeepGS: deep representation learning of graphs and sequences for drug-target binding affinity prediction
+.
+Eur Conf Artif Intell (ECAI)
+2020
+;
+325
+:
+1301
+–
+8
+.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+28.
+Pu
+Y
+,
+Li
+J
+,
+Tang
+J
+, et al.
+DeepFusionDTA: drug-target binding affinity prediction with information fusion and hybrid deep-learning ensemble model
+.
+IEEE/ACM Trans Comput Biol Bioinform
+2022
+;
+19
+:2760–69.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+29.
+Shin
+B
+,
+Park
+S
+,
+Kang
+K
+, et al.
+Self-attention based molecule representation for predicting drug-target interaction
+.
+arXiv preprint
+2019
+;arXiv:1908.06760.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+30.
+Abbasi
+K
+,
+Razzaghi
+P
+,
+Poso
+A
+, et al.
+DeepCDA: deep cross-domain compound-protein affinity prediction through LSTM and convolutional neural networks
+.
+Bioinformatics
+2020
+;
+36
+:
+4633
+–
+42
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+31.
+Nguyen
+T
+,
+Le
+H
+,
+Quinn
+TP
+, et al.
+GraphDTA: predicting drug-target binding affinity with graph neural networks
+.
+Bioinformatics
+2021
+;
+37
+:
+1140
+–
+7
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+32.
+Zeng
+Y
+,
+Chen
+X
+,
+Luo
+Y
+, et al.
+Deep drug-target binding affinity prediction with multiple attention blocks
+.
+Brief Bioinform
+2021
+;
+22
+:bbab117.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+33.
+Ding
+SHH
+,
+Fung
+BCM
+,
+Iqbal
+F
+, et al.
+Learning stylometric representations for authorship analysis
+.
+IEEE Trans Cybern
+2019
+;
+49
+:
+107
+–
+21
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+34.
+Manica
+M
+,
+Mathis
+R
+,
+Cadow
+J
+, et al.
+Context-specific interaction networks from vector representation of words
+.
+Nat Mach Intell
+2019
+;
+1
+:
+181
+–
+90
+.
+Google Scholar
+Crossref
+Search ADS
+WorldCat
+35.
+Costa-jussà
+RM
+.
+An analysis of gender bias studies in natural language processing
+.
+Nat Mach Intell
+2019
+;
+1
+:
+495
+–
+6
+.
+Google Scholar
+Crossref
+Search ADS
+WorldCat
+36.
+Papadimitriou
+CH
+,
+Raghavan
+P
+,
+Tamaki
+H
+, et al.
+Latent semantic indexing: a probabilistic analysis
+.
+J Comput Syst Sci
+1998
+;
+61
+:
+217
+–
+35
+.
+Google Scholar
+Crossref
+Search ADS
+WorldCat
+37.
+Zhang
+S
+,
+Tian
+Q
+,
+Hua
+G
+, et al.
+Generating descriptive visual words and visual phrases for large-scale image applications
+.
+IEEE Trans Image Process
+2011
+;
+20
+:
+2664
+–
+77
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+38.
+Yu
+F
+,
+Koltun
+V
+. Multi-scale context aggregation by dilated convolutions. In:
+2016 International Conference on Learning Representation (ICLR).
+San Juan, Puerto Rico, 2016. OpenReview.net, Amherst, Massachusetts, USA.
+39.
+Lin
+T
+,
+Wang
+Y
+,
+Liu
+X
+, et al.
+A Survey of Transformers
+.
+arXiv preprint
+2021
+;arXiv:2106.04554.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+40.
+Landrum
+G
+.
+RDKit: open-source cheminformatics. Release 2014.03.1
+.
+arXiv preprint
+2010
+;arXiv:1908.06760.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+41.
+Kip
+FTN
+,
+Welling
+M
+.
+Semi-supervised classification with graph convolutional networks
+. In:
+2017 International Conference on Learning Representation (ICLR).
+Toulon, France, 2017. OpenReview.net, Amherst, Massachusetts, USA.
+OpenURL Placeholder Text
+WorldCat
+42.
+Velikovi
+P
+,
+Cucurull
+G
+,
+Casanova
+A
+, et al.
+Graph attention networks
+. In:
+2018 International Conference on Learning Representation (ICLR).
+Vancouver, Canada, 2018. OpenReview.net, Amherst, Massachusetts, USA.
+OpenURL Placeholder Text
+WorldCat
+43.
+Xu
+K
+,
+Hu
+W
+,
+Leskovec
+J
+, et al.
+How powerful are graph neural networks?
+In:
+2019 International Conference on Learning Representation (ICLR).
+New Orleans, USA, 2019. OpenReview.net, Amherst, Massachusetts, USA.
+OpenURL Placeholder Text
+WorldCat
+44.
+Mithat
+G
+,
+Glenn
+HJB
+.
+Concordance probability and discriminatory power in proportional hazards regression
+.
+Biometrika
+2005
+;
+92
+:
+965
+–
+70
+.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+45.
+Roy
+K
+,
+Chakraborty
+P
+,
+Mitra
+I
+, et al.
+Some case studies on application of "r(m)2" metrics for judging quality of quantitative structure-activity relationship predictions: emphasis on scaling of response data
+.
+J Comput Chem
+2013
+;
+34
+:
+1071
+–
+82
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+46.
+Riva
+L
+,
+Yuan
+S
+,
+Yin
+X
+, et al.
+Discovery of SARS-CoV-2 antiviral drugs through large-scale compound repurposing
+.
+Nature
+2020
+;
+586
+:
+113
+–
+9
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+47.
+Dittmar
+M
+,
+Lee
+JS
+,
+Whig
+K
+, et al.
+Drug repurposing screens reveal cell-type-specific entry pathways and FDA-approved drugs active against SARS-Cov-2
+.
+Cell Rep
+2021
+;
+35
+:
+108959
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+48.
+Li
+XS
+,
+Liu
+X
+,
+Lu
+L
+, et al.
+Multiphysical graph neural network (MP-GNN) for COVID-19 drug design
+.
+Brief Bioinform
+2022
+;
+23
+:bbac231.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+49.
+Nguyen
+DD
+,
+Gao
+K
+,
+Chen
+J
+, et al.
+Unveiling the molecular mechanism of SARS-CoV-2 main protease inhibition from 137 crystal structures using algebraic topology and deep learning
+.
+Chem Sci
+2020
+;
+11
+:
+12036
+–
+46
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+50.
+Méndez-Lucio
+O
+,
+Baillif
+B
+,
+Clevert
+DA
+, et al.
+De novo generation of hit-like molecules from gene expression signatures using artificial intelligence
+.
+Nat Commun
+2020
+;
+11
+:
+10
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+51.
+Bagherian
+M
+,
+Sabeti
+E
+,
+Wang
+K
+, et al.
+Machine learning approaches and databases for prediction of drug-target interaction: a survey paper
+.
+Brief Bioinform
+2021
+;
+22
+:
+247
+–
+69
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+52.
+Rifaioglu
+AS
+,
+Atas
+H
+,
+Martin
+MJ
+, et al.
+Recent applications of deep learning and machine intelligence on in silico drug discovery: methods, tools and databases
+.
+Brief Bioinform
+2019
+;
+20
+:
+1878
+–
+912
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+53.
+Jumper
+J
+,
+Evans
+R
+,
+Pritzel
+A
+, et al.
+Highly accurate protein structure prediction with AlphaFold
+.
+Nature
+2021
+;
+596
+:
+583
+–
+9
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+54.
+Baek
+M
+,
+DiMaio
+F
+,
+Anishchenko
+I
+, et al.
+Accurate prediction of protein structures and interactions using a three-track neural network
+.
+Science
+2021
+;
+373
+:
+871
+–
+6
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+55.
+Yang
+J
+,
+Anishchenko
+I
+,
+Park
+H
+, et al.
+Improved protein structure prediction using predicted interresidue orientations
+.
+Proc Natl Acad Sci U S A
+2020
+;
+117
+:
+1496
+–
+503
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+56.
+Zhao
+KL
+,
+Liu
+J
+,
+Zhou
+XG
+, et al.
+MMpred: a distance-assisted multimodal conformation sampling for de novo protein structure prediction
+.
+Bioinformatics
+2021
+;
+37
+:4350–4356.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+57.
+Davis
+MI
+,
+Hunt
+JP
+,
+Herrgard
+S
+, et al.
+Comprehensive analysis of kinase inhibitor selectivity
+.
+Nat Biotechnol
+2011
+;
+29
+:
+1046
+–
+51
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+58.
+Tang
+J
+,
+Szwajda
+A
+,
+Shakyawar
+S
+, et al.
+Making sense of large-scale kinase inhibitor bioactivity data sets: a comparative and integrative analysis
+.
+J Chem Inf Model
+2014
+;
+54
+:
+735
+–
+43
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+59.
+Vaswani
+A
+,
+Shazeer
+N
+,
+Parmar
+N
+, et al.
+Attention is all you need
+.
+Adv Neural Inf Process Syst
+2017
+;
+30
+:
+5998
+–
+6008
+.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+60.
+Dittmer
+S
+,
+King
+EJ
+,
+Maass
+P
+.
+Singular values for ReLU layers
+.
+IEEE Trans Neural Netw Learn Syst
+2020
+;
+31
+:
+3594
+–
+605
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+61.
+He
+K
+,
+Zhang
+X
+,
+Ren
+S
+, et al. Deep residual learning for image recognition,
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+2016
+:
+770
+–
+8
+.
+62.
+Lu
+N
+,
+Yu
+W
+,
+Qi
+X
+, et al.
+MASTER: multi-aspect non-local network for scene text recognition
+.
+Pattern Recogn
+2019
+;
+117
+:
+107980
+.
+Google Scholar
+Crossref
+Search ADS
+WorldCat
+63.
+Ba
+JL
+,
+Kiros
+JR
+,
+Hinton
+GE
+.
+Layer normalization
+.
+arXiv preprint
+2016
+;arXiv:1607.06450.
+Google Scholar
+OpenURL Placeholder Text
+WorldCat
+64.
+Choe
+J
+,
+Lee
+S
+,
+Shim
+H
+.
+Attention-based dropout layer for weakly supervised single object localization and semantic segmentation
+.
+IEEE Trans Pattern Anal Mach Intell
+2021
+;
+43
+:
+4256
+–
+71
+.
+Google Scholar
+Crossref
+Search ADS
+PubMed
+WorldCat
+© The Author(s) 2022. Published by Oxford University Press. All rights reserved. For Permissions, please email: journals.permissions@oup.com
+This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model (https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model)

@@ -1,0 +1,39 @@
+{
+  "schema": "CUDA-hostexit-v2-target-runtime-control-verification.v1",
+  "recorded_at": "2026-10-21 22:05:41 UTC",
+  "source_freeze_sha256": "4e2ce860867c6032b54698de48a4c9ff2744128d2f39fe0937106397062830cc",
+  "synthetic_tests": {
+    "actual_exit_code": 0,
+    "actual_tests": 25,
+    "tool_chunk_id": "735db6",
+    "actual_combined_output": "test_actual_exit2_and_exit0_shapes (test_recovery.RecoveryTests.test_actual_exit2_and_exit0_shapes) ... ok\ntest_archive_attachment_false_reads_nothing (test_recovery.RecoveryTests.test_archive_attachment_false_reads_nothing) ... ok\ntest_binding_only_two_permitted_changes (test_recovery.RecoveryTests.test_binding_only_two_permitted_changes) ... ok\ntest_boolean_exit_is_not_integer_wait (test_recovery.RecoveryTests.test_boolean_exit_is_not_integer_wait) ... ok\ntest_existing_archive_path_rejected (test_recovery.RecoveryTests.test_existing_archive_path_rejected) ... ok\ntest_fixture_changed_bytes_rejected (test_recovery.RecoveryTests.test_fixture_changed_bytes_rejected) ... ok\ntest_fixture_inventory_and_atomic_rename_preserve_all_bytes (test_recovery.RecoveryTests.test_fixture_inventory_and_atomic_rename_preserve_all_bytes) ... ok\ntest_future_retry_requires_direct_native0 (test_recovery.RecoveryTests.test_future_retry_requires_direct_native0) ... ok\ntest_gate_false_reads_nothing (test_recovery.RecoveryTests.test_gate_false_reads_nothing) ... ok\ntest_missing_normalization_evidence_rejected (test_recovery.RecoveryTests.test_missing_normalization_evidence_rejected) ... ok\ntest_new_index_cannot_add_new_scientific_coordinates (test_recovery.RecoveryTests.test_new_index_cannot_add_new_scientific_coordinates) ... ok\ntest_no_fabricated_original_native2_receipt (test_recovery.RecoveryTests.test_no_fabricated_original_native2_receipt) ... ok\ntest_no_original_direct_native_observation_claim (test_recovery.RecoveryTests.test_no_original_direct_native_observation_claim) ... ok\ntest_old199failed1_is_honestly_accepted (test_recovery.RecoveryTests.test_old199failed1_is_honestly_accepted) ... ok\ntest_old200_success_is_not_this_recovery (test_recovery.RecoveryTests.test_old200_success_is_not_this_recovery) ... ok\ntest_old_different_failure_is_rejected (test_recovery.RecoveryTests.test_old_different_failure_is_rejected) ... ok\ntest_old_exit2_cannot_be_relabelled_exit0 (test_recovery.RecoveryTests.test_old_exit2_cannot_be_relabelled_exit0) ... ok\ntest_old_still_active_is_rejected (test_recovery.RecoveryTests.test_old_still_active_is_rejected) ... ok\ntest_old_wrong_source_rejected (test_recovery.RecoveryTests.test_old_wrong_source_rejected) ... ok\ntest_postjoint_v2_false_reads_nothing (test_recovery.RecoveryTests.test_postjoint_v2_false_reads_nothing) ... ok\ntest_preparation_execute_false_reads_nothing (test_recovery.RecoveryTests.test_preparation_execute_false_reads_nothing) ... ok\ntest_retry_full200_with_original_ceiling (test_recovery.RecoveryTests.test_retry_full200_with_original_ceiling) ... ok\ntest_retry_global_deadline_would_reset_window (test_recovery.RecoveryTests.test_retry_global_deadline_would_reset_window) ... ok\ntest_retry_second_failure_is_terminal (test_recovery.RecoveryTests.test_retry_second_failure_is_terminal) ... ok\ntest_source_outside_project_rejected (test_recovery.RecoveryTests.test_source_outside_project_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 0.111s\n\nOK\n"
+  },
+  "approved_actual_host_metadata_verification": {
+    "actual_exit_code": 0,
+    "tool_chunk_id": "e27711",
+    "actual_output": {
+      "status": "actual_host_metadata_verified_without_scientific_payload_access",
+      "actual_root_proof": {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/old-v5-hostexit1-proof-v2.json",
+        "sha256": "a8799994016a99d824f498bdc9e0f6c512f78f80348b48bd9a7ab3f4c92814c4"
+      },
+      "observation": {
+        "actual_outer_tool_exit_code": 1,
+        "native_expected_exit_from_verified_terminal": 2,
+        "native_exit_directly_observed": false,
+        "normalization_probe": {
+          "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/host-exit-mapping-probe-v1.json",
+          "sha256": "b57730f8f214660d0ed0d0425bc00331c9d4025aaa2186df0b6b9f35bdd4a2fc"
+        },
+        "supervisor_source": {
+          "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/pool_supervisor.py",
+          "sha256": "73a5dc2e13ebfbe19ebcf91b30d814304eacf0b8338345c4b35ef3202deb43b7"
+        },
+        "basis": "Verified199/1 terminal plus frozen source imply native2; actual outer wait observed1; no direct original native wait is asserted"
+      },
+      "actual_archive_or_retry_or_model_gold_prediction_reads": 0
+    }
+  },
+  "actual_archive_or_retry_or_score_launches": 0,
+  "actual_scientific_model_gold_prediction_reads": 0
+}

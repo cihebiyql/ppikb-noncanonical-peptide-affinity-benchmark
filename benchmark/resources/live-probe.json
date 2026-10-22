@@ -1,0 +1,183 @@
+{
+  "schema_version": "protein-design-resource-probe.v1",
+  "catalog_schema_version": "protein-design-resource-catalog.v1",
+  "probe_started_at": "2026-10-21T23:59:54.5890907+08:00",
+  "generated_at": "2026-10-22T00:00:13.0200723+08:00",
+  "duration_ms": 18431,
+  "read_only": true,
+  "interpretation": "Generic probes establish reachability and raw capacity only. Ready, busy, or degraded require a task contract and task-specific checks.",
+  "results": [
+    {
+      "resource_id": "local-wsl-5080",
+      "label": "Local Windows and Ubuntu-22.04 WSL RTX 5080",
+      "probe_started_at": "2026-10-21T23:59:54.5905071+08:00",
+      "probe_completed_at": "2026-10-21T23:59:55.4231248+08:00",
+      "transport_reachable": true,
+      "reachable": true,
+      "runtime_availability": "reachable",
+      "readiness_requires_task_contract": true,
+      "observed_hostname": "cihebi",
+      "identity_matches_catalog": true,
+      "identity_error": null,
+      "identity": {
+        "command": "hostname; id -un; date -Is; uname -srmo",
+        "started_at": "2026-10-21T23:59:54.5943304+08:00",
+        "completed_at": "2026-10-21T23:59:54.7670648+08:00",
+        "exit_code": 0,
+        "duration_ms": 173,
+        "output": "cihebi\r\nroot\r\n2026-10-21T23:59:57+08:00\r\nLinux 6.6.87.2-microsoft-standard-WSL2 x86_64 GNU/Linux"
+      },
+      "capacity": {
+        "command": "uptime; nproc; free -h; df -hT / /mnt/c /mnt/d 2>/dev/null || true",
+        "started_at": "2026-10-21T23:59:54.7900437+08:00",
+        "completed_at": "2026-10-21T23:59:54.9224658+08:00",
+        "exit_code": 0,
+        "duration_ms": 132,
+        "output": "23:59:58 up 3 days,  6:39,  1 user,  load average: 0.22, 0.26, 0.26\r\n16\r\n               total        used        free      shared  buff/cache   available\r\nMem:            19Gi       2.9Gi        10Gi        21Mi       6.1Gi        16Gi\r\nSwap:          8.0Gi          0B       8.0Gi\r\nFilesystem     Type  Size  Used Avail Use% Mounted on\r\n/dev/sdd       ext4 1007G  199G  758G  21% /\r\nC:\\            9p    931G  764G  167G  83% /mnt/c\r\nD:\\            9p    1.9T  1.8T   71G  97% /mnt/d"
+      },
+      "gpu": {
+        "command": "if command -v nvidia-smi >/dev/null 2>&1; then nvidia-smi --query-gpu=index,name,driver_version,memory.used,memory.total,utilization.gpu,temperature.gpu --format=csv,noheader,nounits; else echo NO_NVIDIA_SMI; fi",
+        "started_at": "2026-10-21T23:59:54.9233344+08:00",
+        "completed_at": "2026-10-21T23:59:55.1308216+08:00",
+        "exit_code": 0,
+        "duration_ms": 207,
+        "output": "0, NVIDIA GeForce RTX 5080, 616.64, 5159, 16303, 3, 38"
+      },
+      "gpu_processes": {
+        "command": "if command -v nvidia-smi >/dev/null 2>&1; then nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_memory --format=csv,noheader,nounits 2>/dev/null || true; else echo NO_NVIDIA_SMI; fi",
+        "started_at": "2026-10-21T23:59:55.1313379+08:00",
+        "completed_at": "2026-10-21T23:59:55.2850613+08:00",
+        "exit_code": 0,
+        "duration_ms": 154,
+        "output": ""
+      },
+      "scheduler": null,
+      "checked_path": {
+        "command": "target='/data/qlyu/projects/peptide-binding-benchmark-20261020'\nif test -e \"$target\"; then\n  probe=\"$target\"\n  echo PATH_PRESENT\nelse\n  probe=\"$target\"\n  while ! test -e \"$probe\"; do\n    parent=$(dirname -- \"$probe\")\n    if test \"$parent\" = \"$probe\"; then break; fi\n    probe=\"$parent\"\n  done\n  echo PATH_MISSING_CHECKING_PARENT\n  echo NEAREST_EXISTING_PARENT=\"$probe\"\nfi\nif test -e \"$probe\"; then\n  if test -w \"$probe\"; then echo PATH_OR_PARENT_WRITABLE; else echo PATH_OR_PARENT_NOT_WRITABLE; fi\n  echo RESOLVED_PATH=\"$(readlink -f -- \"$probe\")\"\n  findmnt -T \"$probe\" -no TARGET,SOURCE,FSTYPE,OPTIONS 2>/dev/null || true\n  df -hT \"$probe\" 2>/dev/null || true\nfi",
+        "started_at": "2026-10-21T23:59:55.2919683+08:00",
+        "completed_at": "2026-10-21T23:59:55.4225970+08:00",
+        "exit_code": 0,
+        "duration_ms": 131,
+        "output": "PATH_MISSING_CHECKING_PARENT\r\nNEAREST_EXISTING_PARENT=/\r\nPATH_OR_PARENT_WRITABLE\r\nRESOLVED_PATH=/\r\n/      /dev/sdd ext4   rw,relatime,discard,errors=remount-ro,data=ordered\r\nFilesystem     Type  Size  Used Avail Use% Mounted on\r\n/dev/sdd       ext4 1007G  199G  758G  21% /"
+      },
+      "tool_path_checks": []
+    },
+    {
+      "resource_id": "node1",
+      "label": "node1 multi-GPU protein-design node",
+      "probe_started_at": "2026-10-21T23:59:55.4263734+08:00",
+      "probe_completed_at": "2026-10-22T00:00:04.6584428+08:00",
+      "transport_reachable": true,
+      "reachable": true,
+      "runtime_availability": "reachable",
+      "readiness_requires_task_contract": true,
+      "observed_hostname": "node1",
+      "identity_matches_catalog": true,
+      "identity_error": null,
+      "identity": {
+        "command": "hostname; id -un; date -Is; uname -srmo",
+        "started_at": "2026-10-21T23:59:55.4265636+08:00",
+        "completed_at": "2026-10-21T23:59:56.6859094+08:00",
+        "exit_code": 0,
+        "duration_ms": 1259,
+        "output": "node1\r\nqlyu\r\n2026-10-22T00:00:02+08:00\r\nLinux 6.8.0-90-generic x86_64 GNU/Linux"
+      },
+      "capacity": {
+        "command": "uptime; nproc; free -h; df -hT / /data /data1 2>/dev/null || true; readlink -f /data1/qlyu 2>/dev/null || true; ulimit -n",
+        "started_at": "2026-10-21T23:59:56.6867913+08:00",
+        "completed_at": "2026-10-21T23:59:57.6697325+08:00",
+        "exit_code": 0,
+        "duration_ms": 983,
+        "output": "00:00:03 up 70 days,  4:57, 16 users,  load average: 145.07, 142.82, 140.27\r\n64\r\n               total        used        free      shared  buff/cache   available\r\nMem:           503Gi       170Gi        53Gi       427Mi       279Gi       328Gi\r\nSwap:          2.0Gi       2.0Gi       0.0Ki\r\nFilesystem       Type  Size  Used Avail Use% Mounted on\r\n/dev/sda2        ext4  786G   63G  684G   9% /\r\n10.0.0.131:/data nfs4   73T   66T  7.3T  91% /data\r\n/dev/nvme0n1     ext4  7.0T  3.8T  2.9T  57% /data1\r\n/data/qlyu\r\n1024"
+      },
+      "gpu": {
+        "command": "if command -v nvidia-smi >/dev/null 2>&1; then nvidia-smi --query-gpu=index,name,driver_version,memory.used,memory.total,utilization.gpu,temperature.gpu --format=csv,noheader,nounits; else echo NO_NVIDIA_SMI; fi",
+        "started_at": "2026-10-21T23:59:57.6700179+08:00",
+        "completed_at": "2026-10-21T23:59:59.4426061+08:00",
+        "exit_code": 0,
+        "duration_ms": 1773,
+        "output": "0, NVIDIA GeForce RTX 4090, 580.95.05, 17641, 24564, 98, 63\r\n1, NVIDIA GeForce RTX 4090, 580.95.05, 12411, 24564, 95, 55\r\n2, NVIDIA GeForce RTX 4090, 580.95.05, 13675, 24564, 100, 56\r\n3, NVIDIA GeForce RTX 4090, 580.95.05, 7277, 24564, 0, 54\r\n4, NVIDIA GeForce RTX 4090, 580.95.05, 11101, 24564, 67, 47\r\n5, NVIDIA GeForce RTX 4090, 580.95.05, 19733, 24564, 91, 58\r\n6, NVIDIA GeForce RTX 4090, 580.95.05, 19153, 24564, 55, 49\r\n7, NVIDIA GeForce RTX 4090, 580.95.05, 9209, 24564, 100, 46"
+      },
+      "gpu_processes": {
+        "command": "if command -v nvidia-smi >/dev/null 2>&1; then nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_memory --format=csv,noheader,nounits 2>/dev/null || true; else echo NO_NVIDIA_SMI; fi",
+        "started_at": "2026-10-21T23:59:59.4429196+08:00",
+        "completed_at": "2026-10-22T00:00:01.3297111+08:00",
+        "exit_code": 0,
+        "duration_ms": 1887,
+        "output": "GPU-1ca5bb20-3e80-d3d9-e6b6-697c01a5cf9f, 1626262, python, 17618\r\nGPU-51a96c5f-a4f5-baff-aa17-a83cabea2e0e, 1626258, python, 12388\r\nGPU-ef1e8b40-b1d7-ed8a-38e8-585b6ebaa1df, 1626259, python, 13652\r\nGPU-d92387c0-aed8-ebd3-c264-bb7c1bdce851, 4150942, python, 7254\r\nGPU-3327c427-8020-e378-d86a-15c27afea036, 4150943, python, 6906\r\nGPU-3327c427-8020-e378-d86a-15c27afea036, 3259705, /data/fpan/GO_ON/try_iso_DTI/.venv_chiral_models/bin/python, 4166\r\nGPU-8d547c0e-4f23-1a56-3d15-b54c1f225aa4, 2039363, python, 14980\r\nGPU-8d547c0e-4f23-1a56-3d15-b54c1f225aa4, 2498968, python, 1478\r\nGPU-8d547c0e-4f23-1a56-3d15-b54c1f225aa4, 2546047, python, 1292\r\nGPU-8d547c0e-4f23-1a56-3d15-b54c1f225aa4, 3266982, /data/khan/anaconda3/envs/alphappimi/bin/python, 1012\r\nGPU-8d547c0e-4f23-1a56-3d15-b54c1f225aa4, 3266977, /data/khan/anaconda3/envs/alphappimi/bin/python, 926\r\nGPU-780e428b-c086-8729-562b-71e8db209020, 2041725, python, 14998\r\nGPU-780e428b-c086-8729-562b-71e8db209020, 3051233, /data/khan/anaconda3/envs/alphappimi/bin/python, 1052\r\nGPU-780e428b-c086-8729-562b-71e8db209020, 3051231, /data/khan/anaconda3/envs/alphappimi/bin/python, 970\r\nGPU-780e428b-c086-8729-562b-71e8db209020, 3051237, /data/khan/anaconda3/envs/alphappimi/bin/python, 1072\r\nGPU-780e428b-c086-8729-562b-71e8db209020, 3251678, /data/khan/anaconda3/envs/alphappimi/bin/python, 1016\r\nGPU-d1a19526-44b4-f27f-b6e1-007c10f71e9c, 3190829, /home/yxfan/anaconda3/envs/knowformer/bin/python, 9186"
+      },
+      "scheduler": {
+        "command": "if command -v sinfo >/dev/null 2>&1; then sinfo -h -o '%P|%a|%D|%t|%C'; scontrol show node node1 2>/dev/null | sed -n '1,20p'; else echo NO_SLURM; fi",
+        "started_at": "2026-10-22T00:00:01.3307073+08:00",
+        "completed_at": "2026-10-22T00:00:03.2337561+08:00",
+        "exit_code": 0,
+        "duration_ms": 1903,
+        "output": "gpu*|up|1|down|0/0/64/64\r\nNodeName=node1 Arch=x86_64 CoresPerSocket=16 \r\n   CPUAlloc=0 CPUTot=64 CPULoad=143.74\r\n   AvailableFeatures=(null)\r\n   ActiveFeatures=(null)\r\n   Gres=gpu:GeForceRTX4090:8\r\n   NodeAddr=node1 NodeHostName=node1 Version=21.08.5\r\n   OS=Linux 6.8.0-90-generic #91~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 15:20:45 UTC 2 \r\n   RealMemory=515014 AllocMem=0 FreeMem=59050 Sockets=2 Boards=1\r\n   State=DOWN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A\r\n   Partitions=gpu \r\n   BootTime=2026-08-12T19:02:07 SlurmdStartTime=2026-08-12T19:02:38\r\n   LastBusyTime=2026-08-08T09:19:47\r\n   CfgTRES=cpu=64,mem=515014M,billing=64\r\n   AllocTRES=\r\n   CapWatts=n/a\r\n   CurrentWatts=0 AveWatts=0\r\n   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s\r\n   Reason=Node unexpectedly rebooted [slurm@2026-07-16T23:12:56]"
+      },
+      "checked_path": {
+        "command": "target='/data/qlyu/projects/peptide-binding-benchmark-20261020'\nif test -e \"$target\"; then\n  probe=\"$target\"\n  echo PATH_PRESENT\nelse\n  probe=\"$target\"\n  while ! test -e \"$probe\"; do\n    parent=$(dirname -- \"$probe\")\n    if test \"$parent\" = \"$probe\"; then break; fi\n    probe=\"$parent\"\n  done\n  echo PATH_MISSING_CHECKING_PARENT\n  echo NEAREST_EXISTING_PARENT=\"$probe\"\nfi\nif test -e \"$probe\"; then\n  if test -w \"$probe\"; then echo PATH_OR_PARENT_WRITABLE; else echo PATH_OR_PARENT_NOT_WRITABLE; fi\n  echo RESOLVED_PATH=\"$(readlink -f -- \"$probe\")\"\n  findmnt -T \"$probe\" -no TARGET,SOURCE,FSTYPE,OPTIONS 2>/dev/null || true\n  df -hT \"$probe\" 2>/dev/null || true\nfi",
+        "started_at": "2026-10-22T00:00:03.2340923+08:00",
+        "completed_at": "2026-10-22T00:00:04.6582666+08:00",
+        "exit_code": 0,
+        "duration_ms": 1424,
+        "output": "PATH_PRESENT\r\nPATH_OR_PARENT_WRITABLE\r\nRESOLVED_PATH=/data/qlyu/projects/peptide-binding-benchmark-20261020\r\n/data  10.0.0.131:/data nfs4   rw,relatime,vers=4.2,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.0.124,local_lock=none,addr=10.0.0.131\r\nFilesystem       Type  Size  Used Avail Use% Mounted on\r\n10.0.0.131:/data nfs4   73T   66T  7.3T  91% /data"
+      },
+      "tool_path_checks": []
+    },
+    {
+      "resource_id": "node23",
+      "label": "node23 direct CPU and overflow node",
+      "probe_started_at": "2026-10-22T00:00:04.6585021+08:00",
+      "probe_completed_at": "2026-10-22T00:00:13.0200178+08:00",
+      "transport_reachable": true,
+      "reachable": true,
+      "runtime_availability": "reachable",
+      "readiness_requires_task_contract": true,
+      "observed_hostname": "node23",
+      "identity_matches_catalog": true,
+      "identity_error": null,
+      "identity": {
+        "command": "hostname; id -un; date -Is; uname -srmo",
+        "started_at": "2026-10-22T00:00:04.6585952+08:00",
+        "completed_at": "2026-10-22T00:00:05.8508742+08:00",
+        "exit_code": 0,
+        "duration_ms": 1192,
+        "output": "node23\r\nqlyu\r\n2026-10-22T00:00:11+08:00\r\nLinux 6.8.0-136-generic x86_64 GNU/Linux"
+      },
+      "capacity": {
+        "command": "uptime; nproc; free -h; df -hT / /data /data1 2>/dev/null || true",
+        "started_at": "2026-10-22T00:00:05.8512498+08:00",
+        "completed_at": "2026-10-22T00:00:07.0696449+08:00",
+        "exit_code": 0,
+        "duration_ms": 1218,
+        "output": "00:00:13 up 74 days, 14:41,  1 user,  load average: 2.17, 2.13, 2.10\r\n64\r\n               total        used        free      shared  buff/cache   available\r\nMem:           125Gi       4.3Gi        41Gi       9.0Mi        79Gi       120Gi\r\nSwap:          2.0Gi       2.0Gi       5.0Mi\r\nFilesystem       Type  Size  Used Avail Use% Mounted on\r\n/dev/sda3        ext4  549G  123G  398G  24% /\r\n10.0.0.131:/data nfs4   73T   66T  7.3T  91% /data"
+      },
+      "gpu": {
+        "command": "if command -v nvidia-smi >/dev/null 2>&1; then nvidia-smi --query-gpu=index,name,driver_version,memory.used,memory.total,utilization.gpu,temperature.gpu --format=csv,noheader,nounits; else echo NO_NVIDIA_SMI; fi",
+        "started_at": "2026-10-22T00:00:07.0698668+08:00",
+        "completed_at": "2026-10-22T00:00:08.7548463+08:00",
+        "exit_code": 0,
+        "duration_ms": 1685,
+        "output": "NO_NVIDIA_SMI"
+      },
+      "gpu_processes": {
+        "command": "if command -v nvidia-smi >/dev/null 2>&1; then nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_memory --format=csv,noheader,nounits 2>/dev/null || true; else echo NO_NVIDIA_SMI; fi",
+        "started_at": "2026-10-22T00:00:08.7552718+08:00",
+        "completed_at": "2026-10-22T00:00:10.6515601+08:00",
+        "exit_code": 0,
+        "duration_ms": 1896,
+        "output": "NO_NVIDIA_SMI"
+      },
+      "scheduler": null,
+      "checked_path": {
+        "command": "target='/data/qlyu/projects/peptide-binding-benchmark-20261020'\nif test -e \"$target\"; then\n  probe=\"$target\"\n  echo PATH_PRESENT\nelse\n  probe=\"$target\"\n  while ! test -e \"$probe\"; do\n    parent=$(dirname -- \"$probe\")\n    if test \"$parent\" = \"$probe\"; then break; fi\n    probe=\"$parent\"\n  done\n  echo PATH_MISSING_CHECKING_PARENT\n  echo NEAREST_EXISTING_PARENT=\"$probe\"\nfi\nif test -e \"$probe\"; then\n  if test -w \"$probe\"; then echo PATH_OR_PARENT_WRITABLE; else echo PATH_OR_PARENT_NOT_WRITABLE; fi\n  echo RESOLVED_PATH=\"$(readlink -f -- \"$probe\")\"\n  findmnt -T \"$probe\" -no TARGET,SOURCE,FSTYPE,OPTIONS 2>/dev/null || true\n  df -hT \"$probe\" 2>/dev/null || true\nfi",
+        "started_at": "2026-10-22T00:00:10.6519310+08:00",
+        "completed_at": "2026-10-22T00:00:13.0198692+08:00",
+        "exit_code": 0,
+        "duration_ms": 2368,
+        "output": "PATH_PRESENT\r\nPATH_OR_PARENT_WRITABLE\r\nRESOLVED_PATH=/data/qlyu/projects/peptide-binding-benchmark-20261020\r\n/data  10.0.0.131:/data nfs4   rw,relatime,vers=4.2,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.0.23,local_lock=none,addr=10.0.0.131\r\nFilesystem       Type  Size  Used Avail Use% Mounted on\r\n10.0.0.131:/data nfs4   73T   66T  7.3T  91% /data"
+      },
+      "tool_path_checks": []
+    }
+  ]
+}

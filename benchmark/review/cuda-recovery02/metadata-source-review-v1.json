@@ -1,0 +1,169 @@
+{
+  "schema": "independent-CUDA-recovery02-metadata-source-review.v1",
+  "created_utc": "2026-10-21T21:46:15.278699+00:00",
+  "conclusion": "pass_with_explicit_runtime_and_final_adoption_conditions_no_source_blocker_identified",
+  "reviewed_source_freeze": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02/SOURCE-FREEZE-v1.json",
+    "sha256": "b20b3a08464d2534d583561bac2bda2dd1993d90a802cf8c12efb07e4fc4b0cf"
+  },
+  "checks": [
+    {
+      "item": "source_freeze_identity",
+      "passed": true
+    },
+    {
+      "item": "all113_code_metadata_SHA",
+      "passed": true
+    },
+    {
+      "item": "original21_evidence_log_SHA",
+      "passed": true
+    },
+    {
+      "item": "independent_original21_owned_fixture_rerun",
+      "passed": true
+    },
+    {
+      "item": "old_exit2_199success1failed_truth",
+      "passed": true,
+      "source": "recovery.py:51-60,119-141"
+    },
+    {
+      "item": "old_pool_wait_and_failed_PGID_absent_before_mutation",
+      "passed": true,
+      "source": "recovery.py:119-141; actual root checks required"
+    },
+    {
+      "item": "exact_failed_spec_contract_bytes_before_namespace_change",
+      "passed": true,
+      "source": "recovery.py:142-150"
+    },
+    {
+      "item": "same_params_unique_attempt_original_science_c7",
+      "passed": true,
+      "source": "recovery.py:103-108,168-176; postjoint_gate_v2.py:55-60"
+    },
+    {
+      "item": "both_binding_and_retry_pool_original_unit_ceiling",
+      "passed": true,
+      "source": "recovery.py:105,173"
+    },
+    {
+      "item": "new_pool_single_worker_failed_first199skip",
+      "passed": true,
+      "source": "recovery.py:171-176; postjoint_gate_v2.py:37,54"
+    },
+    {
+      "item": "complete_file_emptydir_inventory_no_links_hardlinks_special",
+      "passed": true,
+      "source": "recovery.py:63-100,153-166"
+    },
+    {
+      "item": "exclusive_write_fresh_archive_paths_and_preserved_partial_failure",
+      "passed": true,
+      "source": "recovery.py:44-48,65-67,151-166; no rollback/retry implementation"
+    },
+    {
+      "item": "new_actual_exit0_200success0failed_and_finish_before_old_ceiling",
+      "passed": true,
+      "source": "postjoint_gate_v2.py:10-14,38-54"
+    },
+    {
+      "item": "postjoint_no_scores_before_full_NN_byte_audit",
+      "passed": true,
+      "source": "postjoint_v2.py:39-64"
+    },
+    {
+      "item": "original_issuer_retained_extra_chain_input_and_sidecar",
+      "passed": true,
+      "source": "postjoint_v2.py:68-77"
+    },
+    {
+      "item": "old_assembler_selects_new_success_not_old_failure",
+      "passed": true,
+      "source": "assemble_postjoint_archive.py:55-68",
+      "reason": "Same UID oldv5 terminal exit1 is excluded by exit_code==0. Newv6 completed retry exit0 is unique.199skip units emit no new unit terminal, retaining their original unique successful terminal."
+    },
+    {
+      "item": "exact_one_result_copy_new_index_existing_IO_lineage_preserved",
+      "passed": true,
+      "source": "attach_archive_lineage.py:23-49; archive_stage_result.py:196",
+      "reason": "Read fresh old result object, set only new CUDA stage_lineage key, append difference/artifact; no old file writes.239 original index entries retain their refs, including firstIO recovery cell."
+    },
+    {
+      "item": "lineage_acceptance_not_promoting_unreviewed_result",
+      "passed": true,
+      "source": "attach_archive_lineage.py:31-44; defaultpending, explicitrootaccept requires prioraccepted/succeeded/noincomplete and unchanged centralvalidator"
+    }
+  ],
+  "all_checks_passed": true,
+  "source_hash_mismatches": [],
+  "independent_original21_rerun": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/cuda-recovery02/original21-independent-rerun.json",
+    "sha256": "4892640cbeee1215282b74fa3993c0b9c2d58150cef9dc39a8fab8d3ec78dde6",
+    "fixture_scope_only_override": true
+  },
+  "required_caller_conditions": [
+    "Do not run before root actual wait exit2,199/1 closure, poolPID and failedPGID/session absence. Reviewer did not observe those actual runtime facts.",
+    "Before archive, root checks new execution folder and launch/pool-runs-v6-cuda-recovery02 are absent. Code checks pool output existence only at recovery.py:174, after archival; precheck avoids preserved archive but unusable retry metadata.",
+    "Use fresh oneattempt control paths. Actual renamed byte inventory must pass both pre/post verification; partial operation remains preserved and never auto-retries.",
+    "Actual second pool must finish200/0 exit0 within22:54:18.479676UTC; insufficient time or another failure stops without redefining science or clock.",
+    "Mandatory final attach step before adoption; old assembler alone does not infer this CUDA chain. Adopt new with-CUDA index and update the new-batch proposal to point at it, never silently adopt the old index.",
+    "For Windows attach CLI, pass Windows D:/ absolute --index and --chain paths; top-level r.read at:17 does not map/mnt/d.",
+    "Root should verify final --chain byte SHA equals POSTJOINT-CUDA-LINEAGE sidecar cuda_attempt_chain SHA before attach/root-review. Attach CLI checks identity/counts but has no --chain-sha256 argument or upstream sidecar parameter; this digest binding is a caller obligation."
+  ],
+  "scientific_accounting": {
+    "valid_NN_configs": 400,
+    "scientific_NN_cells": 200,
+    "extra_incomplete_attempts_preserved": 2,
+    "RF_valid_fits": 80,
+    "no_new_seed_or_metric_based_selection": true
+  },
+  "limitations": [
+    "Source/static and metadata verification only; actual archive/model/prediction bytes were not opened or rehashed by reviewer.",
+    "Process absence, actual two pool exits, archive completion, new unit success, central acceptance remain future root execution checks.",
+    "Original21tests cover pure guards and synthetic archive fixtures; they do not execute the real authorized recovery or final central-record attachment."
+  ],
+  "reviewer_actions": {
+    "real_archive_or_launch": 0,
+    "real_weights_gold_predictions_or_training_labels_read": 0,
+    "live_pool_files_opened": 0,
+    "frozen_sources_modified": 0,
+    "original21_tests_rerun": 21,
+    "synthetic_fixture_archive_only": true
+  },
+  "evidence": [
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02/recovery.py",
+      "sha256": "ca0b249f5426e53e0dadf70e8d3aba8d8777b5d2139c383e5e1b9ae194c8dfe8"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02/postjoint_gate_v2.py",
+      "sha256": "e07e7b0935dc98f31ae0ebe1990d154acb63d96740bebfcb9e6eb40b9de26e2e"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02/postjoint_v2.py",
+      "sha256": "3f0ae6acdebccebd9b2094e006bcd9b24a66bec1392e99046a15fbbf4e728d0e"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02/attach_archive_lineage.py",
+      "sha256": "72f0d7dca086159da763e933ce75b6776e9857f12a9a0aaad2f6bf4bb11e5666"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02/README.md",
+      "sha256": "7a1da66e3a1559fde6f7ac05b827e34bc9b58d7d6ec9201a299ced75f2ebf914"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02/test_recovery.py",
+      "sha256": "4f027765b7fb8a21cd1f64143787efee86d45cb0e87f0bda390435e997a3d936"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02/synthetic.stderr.log",
+      "sha256": "0508d68e54377a241cf9962c0bee2637bde59fd0e4b8533758c64f67ed7ef38f"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02/WSL-SYNTHETIC-VERIFICATION.json",
+      "sha256": "421017f4cb19f877dd7543066f843cbbcc0f40023a7f647e13f8bfb4f083a633"
+    }
+  ]
+}

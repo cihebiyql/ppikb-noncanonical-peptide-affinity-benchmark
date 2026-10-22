@@ -1,0 +1,107 @@
+[
+  {
+    "name": "remote-preflight",
+    "argv": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=15",
+      "node23",
+      "test ! -e /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1 && mkdir -p /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1 && test -w /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1 && hostname && date -Is && df -h /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1"
+    ],
+    "exit_code": 0,
+    "seconds": 0.9174046516418457
+  },
+  {
+    "name": "upload-adapter.py",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\adapter.py",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1/adapter.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.051116943359375
+  },
+  {
+    "name": "upload-author_model.py",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\author_model.py",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1/author_model.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.9589998722076416
+  },
+  {
+    "name": "upload-vocabularies.json",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\vocabularies.json",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1/vocabularies.json"
+    ],
+    "exit_code": 0,
+    "seconds": 2.5716824531555176
+  },
+  {
+    "name": "upload-smoke.py",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\smoke.py",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1/smoke.py"
+    ],
+    "exit_code": 0,
+    "seconds": 2.292247772216797
+  },
+  {
+    "name": "upload-smoke-inputs.jsonl",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\smoke-inputs.jsonl",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1/smoke-inputs.jsonl"
+    ],
+    "exit_code": 0,
+    "seconds": 1.1325719356536865
+  },
+  {
+    "name": "upload-smoke-contract.json",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\smoke-contract.json",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1/smoke-contract.json"
+    ],
+    "exit_code": 0,
+    "seconds": 1.1195483207702637
+  },
+  {
+    "name": "bounded-smoke",
+    "argv": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=15",
+      "node23",
+      "cd /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1 && ulimit -v 6291456 && CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 timeout 180s /data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/.venv/bin/python -c 'import os,runpy; os.sched_setaffinity(0,{min(os.sched_getaffinity(0))}); runpy.run_path(\"smoke.py\",run_name=\"__main__\")'"
+    ],
+    "exit_code": 0,
+    "seconds": 4.025881290435791
+  },
+  {
+    "name": "download-receipt",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-v1/smoke-receipt.json",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\smoke-receipt.json"
+    ],
+    "exit_code": 0,
+    "seconds": 2.8365581035614014
+  }
+]

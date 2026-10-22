@@ -1,0 +1,87 @@
+{
+  "status": "frozen",
+  "method_id": "DGDTA-CL",
+  "split_id": "target_reference_homology_cold",
+  "regime": "standard_only",
+  "seed": 8,
+  "candidate_index": 0,
+  "checkpoint": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/fits/DGDTA-CL__target_reference_homology_cold__standard_only__seed08/candidate-0/best.pt",
+  "checkpoint_sha256": "e7ba4800ce121f1b786c5432cfacf98680a322644d1164d76adeb4b35c3c9bf4",
+  "fit_spec_sha256": "b2e5754aec5fafadec923da1bc4f3dc74bb3282de9231f73b2500c37d5d61fa0",
+  "candidates": [
+    {
+      "status": "complete",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "candidate_index": 0,
+      "hyperparameters": {
+        "learning_rate": 0.001,
+        "weight_decay": 0.0
+      },
+      "best_validation_MAE": 1.51411412260983,
+      "best_epoch": 0,
+      "train_n": 5324,
+      "validation_n": 1085,
+      "validation_scope": "same_as_regime",
+      "effective_validation_scope": "standard_only",
+      "checkpoint_sha256": "e7ba4800ce121f1b786c5432cfacf98680a322644d1164d76adeb4b35c3c9bf4",
+      "fit_spec_sha256": "b2e5754aec5fafadec923da1bc4f3dc74bb3282de9231f73b2500c37d5d61fa0",
+      "validation_predictions_sha256": "97c50771efcabf253d7d40cd0d56fb01fe7dc03fed616a27ac1a82abcfb31eaf",
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "runner_sha256": "9abe4a9fba5840a6200aecf40fdfb436abbf61d78c3a9a2f28baae7712c6913e",
+      "device_receipt": {
+        "device": "cuda:0",
+        "device_name": "NVIDIA GeForce RTX 5080",
+        "total_memory_bytes": 17066033152,
+        "gpu_allocator_budget_bytes": 3221225472,
+        "allocator_budget_excludes_cuda_context_and_RSS": true,
+        "determinism": "seeded; deterministic_algorithms warn_only; GPU bitwise reproducibility not guaranteed"
+      },
+      "elapsed_seconds": 66.93516254425049,
+      "test_label_reads": 0,
+      "external_label_reads": 0,
+      "procedural_holdout_boundary": "separate files and fit entrypoint; not an OS security guarantee"
+    },
+    {
+      "status": "complete",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "candidate_index": 1,
+      "hyperparameters": {
+        "learning_rate": 0.0003,
+        "weight_decay": 0.0
+      },
+      "best_validation_MAE": 1.527081233004099,
+      "best_epoch": 6,
+      "train_n": 5324,
+      "validation_n": 1085,
+      "validation_scope": "same_as_regime",
+      "effective_validation_scope": "standard_only",
+      "checkpoint_sha256": "9044cb805c0090f875f823be4be3ce96b4a2093da269ccbfacf2fad5dd7f164d",
+      "fit_spec_sha256": "b2e5754aec5fafadec923da1bc4f3dc74bb3282de9231f73b2500c37d5d61fa0",
+      "validation_predictions_sha256": "869a1acd00c06479a6d38f6f3de322e28c15332a58a4bb219ae0e231e04903e9",
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "runner_sha256": "9abe4a9fba5840a6200aecf40fdfb436abbf61d78c3a9a2f28baae7712c6913e",
+      "device_receipt": {
+        "device": "cuda:0",
+        "device_name": "NVIDIA GeForce RTX 5080",
+        "total_memory_bytes": 17066033152,
+        "gpu_allocator_budget_bytes": 3221225472,
+        "allocator_budget_excludes_cuda_context_and_RSS": true,
+        "determinism": "seeded; deterministic_algorithms warn_only; GPU bitwise reproducibility not guaranteed"
+      },
+      "elapsed_seconds": 118.55520868301392,
+      "test_label_reads": 0,
+      "external_label_reads": 0,
+      "procedural_holdout_boundary": "separate files and fit entrypoint; not an OS security guarantee"
+    }
+  ],
+  "selection_metric": "validation_MAE",
+  "tie_break": "lower_candidate_index",
+  "frozen_unix_time": 1792618387.8741698,
+  "holdout_metrics_consulted": false
+}

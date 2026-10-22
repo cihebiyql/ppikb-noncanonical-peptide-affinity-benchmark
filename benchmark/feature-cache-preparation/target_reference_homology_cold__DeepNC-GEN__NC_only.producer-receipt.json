@@ -1,0 +1,61 @@
+{
+  "status": "ready",
+  "train_n": 1409,
+  "validation_n": 358,
+  "seconds": 12.323229551315308,
+  "method_id": "DeepNC-GEN",
+  "split_id": "target_reference_homology_cold",
+  "regime": "NC_only",
+  "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+  "label_scope": "train_and_validation_only",
+  "cell_id": "target_reference_homology_cold__DeepNC-GEN__NC_only",
+  "pid": 674062,
+  "pgid": 674062,
+  "host": "node23",
+  "stage": "feature_preprocessing_only",
+  "model_construction_calls": 0,
+  "optimizer_steps": 0,
+  "test_label_reads": 0,
+  "external_label_reads": 0,
+  "input_sha256": {
+    "train_rows": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+    "validation_rows": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb"
+  },
+  "derived_spec_sha256": "1306bf65628963935c54a9c66abe29808902011da09f52a3afa648e4dd49a972",
+  "original_gpu_spec_sha256": "f5ab2c4bfcd684693d4f6175688fa81627e54800b85319e396119e58657e45ca",
+  "producer_versions": {
+    "torch": "2.6.0+cu124",
+    "pyg": "2.6.1",
+    "rdkit": "2024.03.2",
+    "numpy": "1.26.4"
+  },
+  "python": "/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/.venv/bin/python",
+  "outputs": [
+    {
+      "filename": "target_reference_homology_cold-NC_only-DeepNC-GEN-train.pkl",
+      "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-train.pkl",
+      "bytes": 60180424,
+      "sha256": "28ae4080b45dfbb25aa93f8c2463cc5e0abce46f548d77d55f32268024ff872a"
+    },
+    {
+      "filename": "target_reference_homology_cold-NC_only-DeepNC-GEN-train.input-audit.jsonl",
+      "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-train.input-audit.jsonl",
+      "bytes": 1251402,
+      "sha256": "f673edde16f9a2d7a8557da975b98dba94a3a8746b09319023847290534d65bc"
+    },
+    {
+      "filename": "target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.pkl",
+      "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.pkl",
+      "bytes": 16513375,
+      "sha256": "a30190c162bbca611d732d29a555f6e10411703199122ed15f1cd08134e31935"
+    },
+    {
+      "filename": "target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+      "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/target_reference_homology_cold-NC_only-DeepNC-GEN-validation-same_as_regime.input-audit.jsonl",
+      "bytes": 318016,
+      "sha256": "20ef023275893844fbd4da3bf8b7e35199bc2a3e09e02ffa31cb48a9d11edee0"
+    }
+  ],
+  "elapsed_seconds": 13.671637773513794,
+  "runtime_boundary": "Torch2.6 CPU pickle producer; GPU Torch2.12 compatibility requires consumer verification; not a fit or baseline metric"
+}

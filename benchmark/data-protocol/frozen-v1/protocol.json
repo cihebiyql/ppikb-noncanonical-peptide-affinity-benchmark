@@ -1,0 +1,88 @@
+{
+  "status": "frozen_coordinator_accepted_v1",
+  "task": "peptide-protein Kd affinity regression",
+  "cohort": {
+    "NC_rows": 2099,
+    "standard20_control_rows": 7520,
+    "all_rows": 9619
+  },
+  "raw_data_preservation": "immutable prior inputs; derived full original-observation and residue-audit fields retained",
+  "eligibility": "inherited exact experimental Kd, explicit reference protein sequence, SMILES available; same legacy primary/entity/endpoint/concentration/metadata-only exclusion flags applied to NC and standard controls",
+  "chemistry_strata_mutually_exclusive": {
+    "synthetic_D_backbone": 723,
+    "PTM": 1002,
+    "synthetic_and_PTM": 268,
+    "other_NC": 106,
+    "standard20_control": 7520
+  },
+  "caps_topology_tags": "terminal caps, cyclization, linkers and assay labels retained as independent flags; caps alone are not NC core",
+  "target_view": "database reference protein sequence; no observed assay construct certified",
+  "scope_exclusions": [
+    "PepLand and derived IBM data",
+    "Ki",
+    "IC50",
+    "screening proxies as Kd",
+    "invented negatives",
+    "novel model architectures",
+    "targeted sequence optimization"
+  ],
+  "grouping_input": "label-free-grouping-input.jsonl plus label-free-study-aliases.jsonl; numeric affinity is absent",
+  "source_peptide_panel": {
+    "dependency_edges": [
+      "matching database study ids",
+      "matching normalized source DOI/PMID/title aliases",
+      "identical canonical isomeric molecular graph",
+      "identical achiral molecular graph",
+      "identical raw peptide mother representation",
+      "explicit parent-series id if supplied",
+      "one-substitution raw strings length>=5 including X with same position",
+      "Morgan radius2 2048-bit achiral fingerprint Tanimoto>=0.8"
+    ],
+    "partition": "union-find transitive components, never split any component; deterministic largest-component greedy allocation toward 70/15/15 using counts only; actual ratios reported",
+    "claim_boundary": "zero overlap for declared source/peptide dependency definitions; target similarity may cross"
+  },
+  "target_panel": {
+    "homology": "Bio.Align1.85 optimal local BLOSUM62, gap open=-10 extend=-0.5; first optimal alignment; identity exact matches/nongap paired columns>=0.30, paired-column/full-reference coverage>=0.80 for both",
+    "extra_edges": "exact sequence containment when shorter length>=40 aa",
+    "all_pair_guarantee": "all main-main and external-main pairs examined or mathematically excluded by impossible paired-column coverage or amino-acid composition upper bound; no heuristic sequence prefilter",
+    "claim_boundary": "declared full-reference similarity and exact domain containment; not a universal protein-family guarantee; source and peptide neighbors may cross",
+    "effective_input_edges": "identical first1000 target amino acids; all five planned methods have >=1000 prefix views, MGraph1200; full SMILES retained"
+  },
+  "dual_cold_panel": "diagnostic only; largest component 8948/9619=93.02%; not a primary table",
+  "randomness": {
+    "fixed_group_split_seed": "nc-protocol-20261021-v1",
+    "training_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "resplit_per_training_seed": false
+  },
+  "tuning": "fit preprocessing on training only; hyperparameters and stopping only from validation; test and external labels never used for architecture, tuning, split selection or model selection",
+  "reporting": "per-seed test predictions and exact record ids, fitted checkpoint and hyperparameters, MAE/RMSE/Pearson/Spearman/R2, mean and sample standard deviation across 10 seeds, mutually exclusive residue strata, optional macro per target/source; no finite correlation claimed for constant or undersized groups",
+  "canonical_comparison": "same assay endpoint, same cohort-wide component split, same models and hyperparameter budget; canonical data are controls with reported cap/topology flags, not declared fully unmodified",
+  "external_rule": "held from training/tuning; source aliases checked against all PPIKB, graph/effective-input and target relationships audited; source-independent, entity-independent and target-cold qualifications stated separately; no blind merge of external scores",
+  "source_correction_boundary": "no new primary-source unit investigation; retain quarantines; no value repair",
+  "training_regimes": [
+    "NC_only",
+    "standard_only"
+  ],
+  "pooled_training_this_release": false,
+  "class_graph_discordance": {
+    "molecular_graphs": 60,
+    "NC_rows": 357,
+    "standard_rows": 251,
+    "policy": "all 9619 preserved; primary result called annotation-stratified; use same saved test predictions excluding flagged rows as required sensitivity; do not guess corrected chemistry"
+  },
+  "external_acceptance_manifest": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\acceptance-manifest.json",
+    "sha256": "85973838adc28c0b6b9134a28a90312162a158eafd20f8b2bf14e68e13d36c4d"
+  }
+}

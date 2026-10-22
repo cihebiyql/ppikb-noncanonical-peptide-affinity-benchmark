@@ -1,0 +1,140 @@
+{
+  "schema": "label-free-matched-target-diagnostics.v1",
+  "status": "frozen_metadata_only_not_scored",
+  "created_utc": "2026-10-21T17:31:26.157613+00:00",
+  "decision_rule": "Within each unchanged main test panel, intersect exact full database-reference protein sequence SHA256 between NC and standard records; retain all records for those shared targets; no performance or affinity values used.",
+  "target_key": "SHA256 exact UTF8 target_sequence in immutable frozen inputs, not target_id and not experimental clone/family",
+  "evaluation_rule": "Reuse the same saved full-test predictions. On each training regime separately evaluate matched NC and matched standard rows, compute per-reference-target metrics, then equal-weight macro across the same fixed common reference targets. Also report n observations, n targets and metric-defined-target counts.",
+  "no_fit_or_resplit_or_model_selection": true,
+  "original_main_test_unchanged": true,
+  "gold_reads": 0,
+  "prediction_reads": 0,
+  "dependency_limits": [
+    "Same peptides/chemical entities and sources can repeat within a test panel; these are not independent biological samples.",
+    "Matching target references does not match peptide scaffolds, affinity distributions, assays or actual constructs.",
+    "The source-cold and target-reference-homology-cold panels isolate their own axes, not all dependencies simultaneously.",
+    "Ten training-seed SD is not biological confidence interval."
+  ],
+  "panels": [
+    {
+      "panel": "source_peptide_dependency_cold",
+      "shared_target_reference_count": 26,
+      "NC_main_test_n": 303,
+      "standard_main_test_n": 736,
+      "NC_matched_test_n": 90,
+      "standard_matched_test_n": 124,
+      "NC_matched_strata": {
+        "PTM": 54,
+        "synthetic_and_PTM": 6,
+        "synthetic_D_backbone": 26,
+        "other_NC": 4
+      },
+      "standard_matched_strata": {
+        "standard20_control": 124
+      },
+      "NC_ids": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\NC_only-matched-test-ids.json",
+      "standard_ids": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\standard_only-matched-test-ids.json",
+      "target_reference_shas": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\common-target-reference-sequence-sha256.json",
+      "mapping": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\record-target-map.jsonl"
+    },
+    {
+      "panel": "target_reference_homology_cold",
+      "shared_target_reference_count": 45,
+      "NC_main_test_n": 332,
+      "standard_main_test_n": 1111,
+      "NC_matched_test_n": 174,
+      "standard_matched_test_n": 203,
+      "NC_matched_strata": {
+        "synthetic_D_backbone": 60,
+        "PTM": 81,
+        "synthetic_and_PTM": 25,
+        "other_NC": 8
+      },
+      "standard_matched_strata": {
+        "standard20_control": 203
+      },
+      "NC_ids": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\NC_only-matched-test-ids.json",
+      "standard_ids": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\standard_only-matched-test-ids.json",
+      "target_reference_shas": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\common-target-reference-sequence-sha256.json",
+      "mapping": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\record-target-map.jsonl"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\inputs.jsonl",
+      "sha256": "fd8ae1207818a4b1533c1b1a4ef5b299593a82700fb62c9ef2490656c9af01f5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\manifest.json",
+      "sha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\NC_only\\test-ids.json",
+      "sha256": "724fd9599f8272785c8108fb0dcb17142913db5fe4ae38afc942b4e0dba8ac04"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\source_peptide_dependency_cold\\standard_only\\test-ids.json",
+      "sha256": "00b5917fd617498e7353773d60e85652c15e88992efc24778988f3701e159240"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\NC_only\\test-ids.json",
+      "sha256": "4a19086504149c5701dd952098e02c85bac87e257e61553b3cbed6143081de10"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\standard_only\\test-ids.json",
+      "sha256": "b9ce81a178cbc996ab5342bd8d6055f8861b33b1e4301b76ab7cf1aebb045b98"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\common-target-reference-sequence-sha256.json",
+      "bytes": 1851,
+      "sha256": "1a900d849fedb9919f1f1c3a674f66429c1973e2cfbe60b0e18073fb70f3de70"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\NC_only-matched-test-ids.json",
+      "bytes": 3335,
+      "sha256": "9050c5af4c2ce0ac2576b6c228982cde2a7c3f62d3e95e8f06e29816407b971c"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\per-target-label-free-counts.json",
+      "bytes": 4274,
+      "sha256": "e680be8aae941867a5176507f9b1d3f23774d110bb6aa73c04fab9ae247fb3b7"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\record-target-map.jsonl",
+      "bytes": 52193,
+      "sha256": "0df0cc11c0e6dee6ed2b38c5ab4fc34ce337cab913162a8d4584c10bb0db021d"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\standard_only-matched-test-ids.json",
+      "bytes": 4593,
+      "sha256": "a02e138e6a8c8b9321a09c8c967f933dd4f7afe2ac66f3d8010737931850f31d"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\common-target-reference-sequence-sha256.json",
+      "bytes": 3200,
+      "sha256": "22b9d615d1436dfb001b762795e00b1922d653054e47fc3a3c3ec22fe39c4c8f"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\NC_only-matched-test-ids.json",
+      "bytes": 6443,
+      "sha256": "f9785b07f10973c9c36f14f5f9b0cc4111a73c129fdbebbe258487b0c09b245e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\per-target-label-free-counts.json",
+      "bytes": 7393,
+      "sha256": "8a68060e661ba44ed0a378dc4863005ded0b1b3be5f09c561ce0a23160dfb1e1"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\record-target-map.jsonl",
+      "bytes": 92152,
+      "sha256": "49b5a58757c843d5ce97a6b02c3cec2886d2526d6ab56fb59775ad990f2c9c9a"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\standard_only-matched-test-ids.json",
+      "bytes": 7516,
+      "sha256": "986d8659ffadd88876ed3fec78ce521192ff555e7f4b930f679b6052f8b6fd11"
+    }
+  ]
+}

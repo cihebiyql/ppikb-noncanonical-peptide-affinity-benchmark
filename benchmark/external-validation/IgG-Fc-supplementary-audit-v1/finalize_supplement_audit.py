@@ -1,0 +1,32 @@
+"""Publish a not-adopted supplemental audit; never change accepted external75."""
+from pathlib import Path
+from collections import Counter
+import hashlib,json,py_compile
+HERE=Path(__file__).resolve().parent;EXTERNAL=HERE.parent
+def read(p):return [json.loads(l) for l in p.open(encoding='utf-8') if l.strip()]
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def main():
+ output=HERE/'postfreeze-supplement-candidate-manifest.json';assert not output.exists()
+ rows=read(HERE/'supplement-inputs13-not-adopted.jsonl');gold=read(HERE/'supplement-gold13-not-adopted.jsonl')
+ chemical=json.loads((HERE/'runtime-independence-v1/full-PPIKB-chemical-runtime-receipt.json').read_text(encoding='utf-8'))
+ target=json.loads((HERE/'runtime-independence-v1/supplement-target-reference-audit.json').read_text(encoding='utf-8'))
+ source=json.loads((HERE/'supplement-source-audit.json').read_text(encoding='utf-8'))
+ assert len(rows)==len(gold)==13 and len({r['record_id'] for r in rows})==13
+ assert {r['record_id'] for r in rows}=={r['record_id'] for r in gold}
+ assert Counter(r['evaluation_stratum'] for r in rows)=={'synthetic_D_backbone':8,'standard20_control':5}
+ assert chemical['external_graphs_tested']==13 and chemical['external_full_database_chemically_cold_rows']==13
+ assert not source['DOI_PMID_title_source_matches'] and target['reference_cold_under_frozen_rule'] is False
+ accepted=EXTERNAL/'acceptance-manifest.json';assert sha(accepted)=='85973838adc28c0b6b9134a28a90312162a158eafd20f8b2bf14e68e13d36c4d'
+ for artifact in json.loads(accepted.read_text(encoding='utf-8'))['artifacts']:assert sha(Path(artifact['path']))==artifact['sha256']
+ for p in HERE.glob('*.py'):py_compile.compile(str(p),doraise=True)
+ files=[HERE/'author-SI-0.pdf',HERE/'publisher-supplement-ajax-with-session.html',HERE/'supplement-session-links.json',HERE/'KEGG-D03257.txt',HERE/'target-reference-multichain.json',HERE/'SI-all-23-entity-annotations.json',HERE/'chemistry-exclusions-preserved.jsonl',HERE/'runtime-conversion-v1/author-entity-conversion-summary.json',HERE/'runtime-conversion-v1/author-entity-formats.jsonl',HERE/'supplement-inputs13-not-adopted.jsonl',HERE/'supplement-gold13-not-adopted.jsonl',HERE/'supplement-source-audit.json',HERE/'runtime-independence-v1/full-PPIKB-chemical-runtime-receipt.json',HERE/'runtime-independence-v1/external-versus-all-PPIKB-chemical-overlap.jsonl',HERE/'runtime-independence-v1/supplement-target-reference-audit.json',HERE/'runtime-independence-v1/receipt.json']
+ manifest={'schema':'postfreeze-nonPTM-external-resource-candidate.v1','status':'completed_bounded_input_audit_not_adopted_no_model_predictions',
+  'counts':{'original_new_author_entities':23,'original_new_exact_Kd_points':19,'original_new_noncanonical_Kd_points':13,'format_conversion_attempted':14,'format_conversion_passed':13,'format_conversion_formula_conflict_no_repair':1,'source_annotation_endpoint_or_identity_exclusions_before_conversion':9,'candidate_synthetic_D_backbone':8,'candidate_standard20_controls':5,'PTM_in_this_supplement':0,'source_cold_all_PPIKB':13,'chemical_cold_all_PPIKB_under_declared_rule':13,'reference_target_cold':0,'actual_whole_commercial_antibody_certified':0,'added_to_current75':0,'model_predictions_or_metrics_produced':0},
+  'candidate_nonPTM_record_ids':[r['record_id'] for r in rows if r['NC_core']],
+  'candidate_standard_control_record_ids':[r['record_id'] for r in rows if not r['NC_core']],
+  'eligibility_recommendation':'Can be considered as a separate source/declared-chemical-cold retrospective heavy-chain-reference-view diagnostic after root reviews and creates a new supplementary manifest. The actual whole2H2L monoclonal identity is retained; not a certified single experimental protein construct.',
+  'target_identity':{'source_fact':'Original paper explicitly assays human IgG1 Trastuzumab, supplied by Chugai, not a pooled serum IgG preparation.','reference_source':'Official KEGG D03257 gives449aa heavy and214aa light; full2H2L composition preserved.','proposed_model_view':'Full449aa heavy-chain reference for the Fc-side interaction; no artificial heavy/light concatenation or forced choice from unknown commercial mixtures.','experimental_identity_boundary':'This reference view is not the measured full commercial antibody, a verified isolated Fc construct, or its lot/glycoform. Root must decide whether this explicit view is acceptable for a separate supplementary diagnostic.','reference_related_main_targets':len(target['related_main_target_refs']),'additional_shared_domain_warnings':len(target['additional_shared_domain_warnings']),'family_cold_certified':False},
+  'chemistry_quality':'Fixed existing author SI entities only; N-acetyl/C-amide or C-acid caps, exact disulfide, explicit nonstandard residue attachment/stereochemistry retained. Element counts match original author[M+H]+ formula and every alphaCIP/alloThr check. One inconsistent author formula is quarantined, never repaired.','excluded_chemical_axes':'2Cya salt/ion identity cases retained unresolved,2measured complexTpi entities not transcribed;1standard source sequence conflict retained;2censored and2nonmeasured affinities excluded;1attemptedAbu formula conflict quarantined.','independence_rule':'Same canonical stereo and achiral equality and achiralMorgan radius2/2048bits Tanimoto>=0.8 as frozen benchmark, applied to all21845 PPIKB/11256 unique graphs. Zero source/chemical matches; shared scaffold ancestry still explicitly noted in the original paper.','target_rule':'Same declared BLOSUM62 local identity>=0.30 and paired-column coverage>=0.80 of each reference, exact domain containment. Two related main target references found; additional238aa exact shared segment warning retained.','holdout_policy':'All labels are retrospective publicly observed gold, never used to tune/select models. Only posttraining evaluation if a new root supplementary manifest accepts this input view.','preserved_current75_acceptance_sha256':sha(accepted),'current75_all13_referenced_artifacts_unchanged':True,'no_training_inference_design_optimization':True,'all_audit_processes_exited':True,'scripts_compile':True,
+  'artifacts':[{'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size} for p in files]}
+ output.write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps({'path':str(output),'sha256':sha(output),'counts':manifest['counts']},ensure_ascii=False))
+if __name__=='__main__':main()

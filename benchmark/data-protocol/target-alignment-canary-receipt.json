@@ -1,0 +1,27 @@
+{
+  "host": "node23",
+  "Bio_version": "1.85",
+  "workers": 2,
+  "pairs_examined_or_mathematically_excluded": 47,
+  "positive_edges": 0,
+  "main_sequences": 1411,
+  "union_sequences": 1433,
+  "wall_seconds": 3.241361141204834,
+  "gpu_used": false,
+  "labels_read": false,
+  "mode": "canary",
+  "identity_definition": "exact matched residues / nongap paired columns",
+  "coverage_definition": "nongap paired columns / each full reference sequence length",
+  "threshold_identity": 0.3,
+  "threshold_both_coverage": 0.8,
+  "extra_positive_links": "exact sequence containment, shorter length >=40 aa",
+  "length_ratio_skip": "minimum_length / maximum_length <0.8 proves impossible for paired-column both coverage",
+  "composition_skip": "sum min amino acid counts <0.24*max length proves impossible",
+  "scoring": {
+    "substitution_matrix": "BLOSUM62",
+    "local_open_gap": -10,
+    "local_extend_gap": -0.5,
+    "alignment_selection": "first optimal alignment returned by frozen Bio version"
+  },
+  "claim_boundary": "declared full-reference similarity and exact domain containment; not a certified universal protein-family holdout"
+}

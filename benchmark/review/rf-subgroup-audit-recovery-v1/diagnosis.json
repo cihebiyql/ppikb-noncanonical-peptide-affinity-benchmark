@@ -1,0 +1,42 @@
+{
+  "schema": "RF-subgroup-failure-diagnosis.v1",
+  "failed_auditor": "frozen RFv5 requires pre-existing subgroup columns",
+  "actual_problem_dataset": "supplement13, not external75",
+  "supplement13": {
+    "n": 13,
+    "same_record_ID_sets": true,
+    "canonical_flag_presence": {
+      "input": {
+        "external_supplement_NC": 0,
+        "external_supplement_standard": 0
+      },
+      "blind": {
+        "external_supplement_NC": 0,
+        "external_supplement_standard": 0
+      },
+      "joined": {
+        "external_supplement_NC": 0,
+        "external_supplement_standard": 0
+      }
+    },
+    "input_sha256": "6c7839966e786cc62fb3c1e49eee64898b539a9f2454941e5ec09f0593da44ad"
+  },
+  "external75": {
+    "n": 75,
+    "flags_present_bool_and_frozen_ID_consistent": true,
+    "counts": [
+      67,
+      8,
+      2
+    ],
+    "conflicts": 0,
+    "input_sha256": "f3a8304cdab5e7c0d18cfae2e75518348dd9f0434f24f9bec2c1999e02569ae4"
+  },
+  "diagnosis_scope": "Authorized actual input/blind/joined metadata projection only; no numeric prediction or gold used for grouping, no actual gold/model opened.",
+  "actual_input_and_saved_prediction_metadata_projected": true,
+  "numerical_prediction_values_used": false,
+  "gold_or_model_opened": false,
+  "producer_input_prediction_or_true_result_modified": false,
+  "audit_or_rescore_run": false,
+  "correctness_boundary": "Record/gold join validation precedes this metadata exception, but complete RF120 metrics remain unverified until root runs the revised independent audit."
+}

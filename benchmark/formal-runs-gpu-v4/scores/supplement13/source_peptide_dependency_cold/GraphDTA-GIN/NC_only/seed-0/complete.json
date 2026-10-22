@@ -1,0 +1,109 @@
+{
+  "status": "complete",
+  "stage": "post-selection-score-only",
+  "prediction_protocol": "label-free cached X; blind first, gold later",
+  "method_id": "GraphDTA-GIN",
+  "split_id": "source_peptide_dependency_cold",
+  "regime": "NC_only",
+  "seed": 0,
+  "holdout_id": "supplement13",
+  "holdout_kind": "separate_retrospective13_source_declared_chemical_cold_target_related_heavy_reference",
+  "n": 13,
+  "metrics": {
+    "all": {
+      "n": 13,
+      "MAE": 1.4819213441613444,
+      "RMSE": 1.4908522721233566,
+      "Pearson": -0.35295442901219143,
+      "Spearman": 0.1760661913218335,
+      "R2": -0.7069647540611672
+    },
+    "standard20_control": {
+      "n": 5,
+      "MAE": 1.5501257139652511,
+      "RMSE": 1.5577135024550133,
+      "Pearson": 0.3910440383547426,
+      "Spearman": 0.3999999999999998,
+      "R2": -87.45585218549869
+    },
+    "synthetic_D_backbone": {
+      "n": 8,
+      "MAE": 1.4392936130339025,
+      "RMSE": 1.4474965322146092,
+      "Pearson": -0.3607280188520732,
+      "Spearman": 0.10778636357219326,
+      "R2": -0.2466775144979947
+    },
+    "NC_core": {
+      "n": 8,
+      "MAE": 1.4392936130339025,
+      "RMSE": 1.4474965322146092,
+      "Pearson": -0.3607280188520732,
+      "Spearman": 0.10778636357219326,
+      "R2": -0.2466775144979947
+    },
+    "standard": {
+      "n": 5,
+      "MAE": 1.5501257139652511,
+      "RMSE": 1.5577135024550133,
+      "Pearson": 0.3910440383547426,
+      "Spearman": 0.3999999999999998,
+      "R2": -87.45585218549869
+    },
+    "exclude_discordant_sensitivity": {
+      "n": 13,
+      "MAE": 1.4819213441613444,
+      "RMSE": 1.4908522721233566,
+      "Pearson": -0.35295442901219143,
+      "Spearman": 0.1760661913218335,
+      "R2": -0.7069647540611672
+    },
+    "exclude_discordant:standard20_control": {
+      "n": 5,
+      "MAE": 1.5501257139652511,
+      "RMSE": 1.5577135024550133,
+      "Pearson": 0.3910440383547426,
+      "Spearman": 0.3999999999999998,
+      "R2": -87.45585218549869
+    },
+    "exclude_discordant:synthetic_D_backbone": {
+      "n": 8,
+      "MAE": 1.4392936130339025,
+      "RMSE": 1.4474965322146092,
+      "Pearson": -0.3607280188520732,
+      "Spearman": 0.10778636357219326,
+      "R2": -0.2466775144979947
+    }
+  },
+  "selection_sha256": "79df04bb3875ca5f01adb6a89b0457083f773cac6881604e7d871c3bf328021f",
+  "checkpoint_sha256": "987b1135f24cb799c2b886147dd52cde2657aa1b38435bb8835bdc796bb86ba3",
+  "barrier_sha256": "87382517bf1ee4cbe7e6f7c192de27cb3143dbdf6197490ab95572972b691e1a",
+  "barrier_audit_sha256": "e97e93b046d8baee5a0c170ba252e6b43573c7edf971ae835ed0a5cc58de37b8",
+  "authorization_sha256": "b9f56276fb5a9ae82220cc9c9dce299d7f497071271d7eb75f07206c30e15742",
+  "score_spec_sha256": "48c13f71e5af4c0861c00cb29faeed29d200eed0eec3954b95340094b335c71b",
+  "input_sha256": "6c7839966e786cc62fb3c1e49eee64898b539a9f2454941e5ec09f0593da44ad",
+  "X_cache_sha256": "651c373c4f302d8f8601122206928f7f9557e1069575fe0fdda77d3b7a09db5e",
+  "cache_producer_versions": {
+    "python": "3.11.13 (main, Jun  5 2025, 13:12:00) [GCC 11.2.0]",
+    "torch": "2.6.0+cu124",
+    "pyg": "2.6.1",
+    "rdkit": "2024.03.2",
+    "numpy": "1.26.4"
+  },
+  "blind_predictions_sha256": "4895c166ab869a67c4c76095356ec77c2fa3dc121f972216f79f5a12abda31e8",
+  "predictions_sha256": "663acdd768ac7bfed4768f44825676dfdaefc108fd6005caf1be930f30a226bb",
+  "gold_source_sha256": "ab8514ee1fa1332205d8933ac27cd21e9ef51649d4ffa54f38607f316b1709cd",
+  "device_receipt": {
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5080",
+    "total_memory_bytes": 17066033152,
+    "gpu_allocator_budget_bytes": 3221225472,
+    "allocator_budget_excludes_cuda_context_and_RSS": true,
+    "determinism": "seeded; deterministic_algorithms warn_only; GPU bitwise reproducibility not guaranteed"
+  },
+  "no_parameter_updates": true,
+  "cached_y_constant_zero": true,
+  "true_gold_used_only_after_blind_file": true,
+  "metric_implementation": "independent metrics_stable.py; exact all(x==x[0]) constant detection; undefined is null",
+  "external_67_8_2_or_supplement_subgroups": "Independent review recomputes declared external subsets from retained flags; this receipt does not certify external independence"
+}

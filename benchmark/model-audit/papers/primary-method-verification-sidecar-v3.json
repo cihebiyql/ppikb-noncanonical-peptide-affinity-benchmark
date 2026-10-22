@@ -1,0 +1,258 @@
+{
+  "scope": "primary-method verification sidecar for newly authorized common PPIKB NC benchmark; not a restart of legacy62 or blocked scientific pipelines",
+  "fulltext_verified_methods": 5,
+  "pdf_available": 4,
+  "pdf_missing": 1,
+  "all_doi_identity_verified": true,
+  "primary_format_rule": "Original PDFs remain required wherever execution contract validator strictly requires PDF; HTML/XML fulltext is genuine original article but must not be mislabeled PDF. Missing PDF stays explicit.",
+  "models": [
+    {
+      "method": "GraphDTA-GIN",
+      "paper_title": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+      "doi": "10.1093/bioinformatics/btaa921",
+      "publication_dates": {
+        "first_online": "2020-10-24",
+        "issue_year": 2021
+      },
+      "published_version": "version_of_record_fulltext",
+      "identity_doi_present": true,
+      "source_title_extracted": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+      "primary_fulltext_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-official.html",
+      "primary_fulltext_sha256": "b19c89f1602bb4af89c6888f42d6acb5f023a46d7461c364634fab7037b3d999",
+      "primary_fulltext_format": "publisher_fulltext_html",
+      "source_url": "https://oup.silverchair-cdn.com/article-minimal/5942970",
+      "extracted_text_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-official.txt",
+      "extracted_text_sha256": "4c29b9663eb4a34e5d8e1b901f98aed130afedfb013fdc1a0adf416bf33d8b31",
+      "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-author-lab.pdf",
+      "pdf_sha256": "ef670bb4eeb41ba7db7449f15dd8a8861d6c01029e597e802db8a38df70df907",
+      "pdf_status": "published_pdf_verified_author_official_lab",
+      "source_commit": "6162245c6776684b391d30610850fe7077478435",
+      "original_paper_score_comparison": false,
+      "architecture": {
+        "ligand": "GIN 5layers plus batch normalization",
+        "target": "AA integer encoding, prefix/pad1000",
+        "output": "regression"
+      },
+      "published_training": {
+        "learning_rate": 0.0005,
+        "batch_size": 512,
+        "optimizer": "Adam"
+      },
+      "evidence_text_lines": [
+        101,
+        132,
+        148,
+        149,
+        150
+      ],
+      "differences": [
+        "Paper states global max pool for GIN, frozen author models/ginconv.py uses global_add_pool; preserve chosen author implementation and disclose difference."
+      ],
+      "pdf_pages": 8,
+      "pdf_doi_text_verified": true,
+      "pdf_version": "version_of_record_author_hosted_publisher_copy"
+    },
+    {
+      "method": "MGraphDTA",
+      "paper_title": "MGraphDTA: deep multiscale graph neural network for explainable drug–target binding affinity prediction",
+      "doi": "10.1039/d1sc05180f",
+      "publication_dates": {
+        "first_online": "2022-01-05",
+        "issue_year": 2022
+      },
+      "published_version": "version_of_record_fulltext",
+      "identity_doi_present": true,
+      "source_title_extracted": "MGraphDTA: deep multiscale graph neural network for explainable drug–target binding affinity prediction†",
+      "primary_fulltext_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\MGraphDTA-EuropePMC.xml",
+      "primary_fulltext_sha256": "ce5b406078501f96ca3198fa3673b551166e8a75ad1f40fb9fd89d2fac9437ef",
+      "primary_fulltext_format": "EuropePMC_open_access_fulltext_xml",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8768884/fullTextXML",
+      "extracted_text_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\MGraphDTA-EuropePMC.txt",
+      "extracted_text_sha256": "64554403407710343c18c2fe13fd17f65d9ee7856e2512dad128b4c650cd4fbd",
+      "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\MGraphDTA-PMC-published.pdf",
+      "pdf_sha256": "0a445649ae97d8c2ff2a10842de18bdab946bf22c9471bd81e5a6a9ef581516c",
+      "pdf_status": "published_pdf_verified_via_current_official_PMC_archive",
+      "source_commit": "54386680e8c9562f708a0fe5d381038c62111df6",
+      "original_paper_score_comparison": false,
+      "architecture": {
+        "ligand": "27 graph-convolution layers in three multiscale blocks",
+        "target": "128dim embeddings, prefix/pad1200, three CNN branches",
+        "output": "regression"
+      },
+      "published_training": {
+        "learning_rate": 0.0005,
+        "batch_size": 512,
+        "optimizer": "Adam",
+        "tuning": "Davis train fivefold Optuna; same chosen settings for other source datasets"
+      },
+      "evidence_text_lines": [
+        21,
+        37,
+        53
+      ],
+      "differences": [
+        "Current PPIKB tuning budget/splits must follow new frozen contract rather than original Davis tuning; no task weights used."
+      ],
+      "pdf_pages": 18,
+      "pdf_doi_text_verified": true
+    },
+    {
+      "method": "DGDTA-CL",
+      "paper_title": "DGDTA: dynamic graph attention network for predicting drug–target binding affinity",
+      "doi": "10.1186/s12859-023-05497-5",
+      "publication_dates": {
+        "first_online": "2023-09-30",
+        "issue_year": 2023
+      },
+      "published_version": "version_of_record_fulltext",
+      "identity_doi_present": true,
+      "source_title_extracted": "DGDTA: dynamic graph attention network for predicting drug–target binding affinity",
+      "primary_fulltext_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DGDTA.pdf",
+      "primary_fulltext_sha256": "6cf263a8a267f0ca5f7aecdce791f57968b197c4cdff3e165ffa0925da3169ff",
+      "primary_fulltext_format": "publisher_version_of_record_pdf",
+      "source_url": "https://link.springer.com/content/pdf/10.1186/s12859-023-05497-5.pdf",
+      "extracted_text_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DGDTA.txt",
+      "extracted_text_sha256": "74f0060e255788f676c9c33cb89fafe5130f60e691cca051ea7ae154a53cd285",
+      "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DGDTA.pdf",
+      "pdf_sha256": "6cf263a8a267f0ca5f7aecdce791f57968b197c4cdff3e165ffa0925da3169ff",
+      "pdf_status": "downloaded_pdf_magic_verified",
+      "source_commit": "cc325a361f39652674f54a2120f17991f6f733f1",
+      "original_paper_score_comparison": false,
+      "architecture": {
+        "ligand": "two graph layers with dynamic attention",
+        "target": "BiLSTM plus CNN,128dim embedding,prefix/pad1000",
+        "output": "regression"
+      },
+      "published_training": {
+        "learning_rate": 0.0005,
+        "epochs": 1000,
+        "dropout": 0.2,
+        "optimizer": "Adam",
+        "hidden_states_paper": 10
+      },
+      "evidence_text_lines": [
+        328,
+        329,
+        330,
+        380,
+        383,
+        384,
+        385
+      ],
+      "differences": [
+        "Paper hidden-states value10 differs from frozen author BiLSTM hidden_size64; source configuration selected for common benchmark.",
+        "Author source has shape/layout bugs separately documented; repairs must be tracked and cannot be called bit-identical published implementation."
+      ]
+    },
+    {
+      "method": "DeepNC-GEN",
+      "paper_title": "DeepNC: a framework for drug-target interaction prediction with graph neural networks",
+      "doi": "10.7717/peerj.13163",
+      "publication_dates": {
+        "first_online": "2022-05-11",
+        "issue_year": 2022
+      },
+      "published_version": "version_of_record_fulltext",
+      "identity_doi_present": true,
+      "source_title_extracted": "DeepNC: a framework for drug-target interaction prediction with graph neural networks",
+      "primary_fulltext_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DeepNC-EuropePMC.xml",
+      "primary_fulltext_sha256": "22ee9cad8d6b296bc0e5424e8b75903fe045a112fc5d32429e05842e44554cd6",
+      "primary_fulltext_format": "EuropePMC_open_access_fulltext_xml",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9107302/fullTextXML",
+      "extracted_text_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DeepNC-EuropePMC.txt",
+      "extracted_text_sha256": "a5d4a052aa4b1fd9a3bcc0c5b2f09e5af100f2ac1e2524eb260943610d93d6ef",
+      "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DeepNC-PMC-published.pdf",
+      "pdf_sha256": "401fdeeb8b777f29d38628417d71ff967883575b13381b6430843e08154dce16",
+      "pdf_status": "published_pdf_verified_via_current_official_PMC_archive",
+      "source_commit": "297940199a26aa9a1afa8e3fc1a0b2c3ce9f0d38",
+      "original_paper_score_comparison": false,
+      "architecture": {
+        "ligand": "3 GENConv layers",
+        "target": "1D CNN protein sequence branch",
+        "output": "regression"
+      },
+      "published_training": {
+        "learning_rate": 0.0005,
+        "epochs": 1000,
+        "optimizer": "Adam",
+        "batch_table2": 256,
+        "batch_training_prose": 512
+      },
+      "evidence_text_lines": [
+        69,
+        81
+      ],
+      "differences": [
+        "Table2 batch256 versus prose512 is an unresolved paper inconsistency. Frozen author training_validation.py uses256.",
+        "Author validation script contains two consecutive1000-epoch loops; new frozen common trainer does not pretend original loop is equivalent."
+      ],
+      "pdf_pages": 24,
+      "pdf_doi_text_verified": true
+    },
+    {
+      "method": "MRBDTA-isomeric-author-config",
+      "paper_title": "Predicting drug–target binding affinity through molecule representation block based on multi-head attention and skip connection",
+      "doi": "10.1093/bib/bbac468",
+      "publication_dates": {
+        "first_online": "2022-10-31",
+        "issue_year": 2022
+      },
+      "published_version": "version_of_record_fulltext",
+      "identity_doi_present": true,
+      "source_title_extracted": "Predicting drug–target binding affinity through molecule representation block based on multi-head attention and skip connection",
+      "primary_fulltext_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\MRBDTA-official.html",
+      "primary_fulltext_sha256": "a99b79d2876afd8199ea9e3ff782e0d1c5c386db4dd6b8b4bde2a8b003483a55",
+      "primary_fulltext_format": "publisher_fulltext_html",
+      "source_url": "https://oup.silverchair-cdn.com/article-minimal/6782838",
+      "extracted_text_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\MRBDTA-official.txt",
+      "extracted_text_sha256": "2a8a937da80bbae6221680b8c64331d9aa910ea9d3e82068636fe17cdffb6db4",
+      "pdf_path": null,
+      "pdf_sha256": null,
+      "pdf_status": "unknown_unavailable",
+      "source_commit": "e338dd2f3aa55a09ba8b82c1ee5e79dc3aaab95c",
+      "original_paper_score_comparison": false,
+      "architecture": {
+        "ligand": "SMILES token embedding with molecule-representation transformer blocks",
+        "target": "AA token embedding with transformer blocks",
+        "output": "regression"
+      },
+      "published_training": {
+        "learning_rate": 0.001,
+        "optimizer": "Adam",
+        "dropout": 0.1,
+        "embedding_dim": 128,
+        "heads": 4,
+        "davis": {
+          "drug_smiles_maxlength": 85,
+          "protein_maxlength": 1200,
+          "batch_size": 256,
+          "epochs": 300
+        },
+        "kiba": {
+          "drug_smiles_maxlength": 100,
+          "protein_maxlength": 1000,
+          "batch_size": 1024,
+          "epochs": 600
+        }
+      },
+      "evidence_text_lines": [
+        70,
+        78,
+        79,
+        80,
+        83,
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "differences": [
+        "Full peptide isomeric SMILES and author alternate vocabulary are a predeclared input configuration adaptation; cannot claim original85/100-character source input fidelity.",
+        "Native vocabulary upper-index/device/singleton compatibility issues must retain diff; architecture remains published molecule-representation blocks."
+      ]
+    }
+  ],
+  "version": "v3-author-lab-GraphDTA-addendum",
+  "previous_sidecar_preserved": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar-v2.json"
+}

@@ -1,0 +1,4968 @@
+{
+  "schema": "independent-postfreeze-evaluation-plan.v2",
+  "status": "prepared_no_inference",
+  "created_utc": "2026-10-21T17:36:13.652625+00:00",
+  "model_selection_count": 200,
+  "candidate_fit_count": 400,
+  "expected_score_receipts": 600,
+  "expected_score_receipts_by_dataset": {
+    "PPIKB-internal": 200,
+    "PTM-external75": 200,
+    "IgG-supplement13": 200
+  },
+  "expected_prediction_rows_by_dataset": {
+    "PPIKB-internal": 248200,
+    "PTM-external75": 15000,
+    "IgG-supplement13": 2600
+  },
+  "expected_prediction_rows_total": 265800,
+  "datasets": [
+    {
+      "dataset_id": "PPIKB-internal",
+      "holdout_id": "internal-test",
+      "n_per_selected_model": {
+        "source_peptide_dependency_cold": 1039,
+        "target_reference_homology_cold": 1443
+      },
+      "primary": "NC_core and mutually exclusive NC strata; standard control separately; all is mixed diagnostic only"
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "holdout_id": "external75-PTM-reference-view-v1",
+      "n": 75,
+      "primary": 67,
+      "conditional_sensitivity": 8,
+      "reference_target_cold_subset": 2,
+      "all_PTM": true,
+      "family_cold_certified": 0
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "holdout_id": "postfreeze-supplement13-reference-view-v1",
+      "n": 13,
+      "synthetic_D_backbone": 8,
+      "standard20_control": 5,
+      "PTM": 0,
+      "source_and_declared_chemical_cold": true,
+      "all_reference_targets_related": true,
+      "single_heavy_reference_length": 449,
+      "whole2H2L_reference_identity_provenance_preserved": true,
+      "whole2H2L_actual_construct_lot_glycoform_family_certified": false,
+      "single_study_not13independent_systems": true,
+      "do_not_merge_with_external75": true
+    }
+  ],
+  "supplement_root_manifest": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\root-accepted-manifest.json",
+    "sha256": "eba3933184782b1eed6f178c30edbd4eeb6c9414758adb5584b2acc46beb3c92"
+  },
+  "supplement_label_free_verified": {
+    "rows": 13,
+    "NC8": 8,
+    "standard5": 5,
+    "all_target_length449": true,
+    "shared_full_target_reference_count": 1,
+    "source_id_references": [
+      "10.1248/cpb.c25-00637"
+    ],
+    "source_ref_scope": "machine study_id; one original study, not13independent biological systems",
+    "non_gold_artifacts_verified": [
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\inputs\\input13.jsonl",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\provenance\\target-reference-multichain.json",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\ids-all13.json",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\ids-nc8.json",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\ids-standard5.json",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\source_peptide_dependency_cold-supplement13-score.cpu.json",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\target_reference_homology_cold-supplement13-score.cpu.json"
+    ]
+  },
+  "gold_artifact_read_or_rehashed": false,
+  "real_prediction_read": false,
+  "model_loaded": false,
+  "matched_target_manifest": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\manifest.json",
+    "sha256": "60b3d8e00d10f6d6dde0ee645e18715692c8b271c3e4926ca73c40d8aad89099"
+  },
+  "matched_target_panels": [
+    {
+      "panel": "source_peptide_dependency_cold",
+      "shared_target_reference_count": 26,
+      "NC_main_test_n": 303,
+      "standard_main_test_n": 736,
+      "NC_matched_test_n": 90,
+      "standard_matched_test_n": 124,
+      "NC_matched_strata": {
+        "PTM": 54,
+        "synthetic_and_PTM": 6,
+        "synthetic_D_backbone": 26,
+        "other_NC": 4
+      },
+      "standard_matched_strata": {
+        "standard20_control": 124
+      },
+      "NC_ids": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\NC_only-matched-test-ids.json",
+      "standard_ids": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\standard_only-matched-test-ids.json",
+      "target_reference_shas": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\common-target-reference-sequence-sha256.json",
+      "mapping": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\source_peptide_dependency_cold\\record-target-map.jsonl"
+    },
+    {
+      "panel": "target_reference_homology_cold",
+      "shared_target_reference_count": 45,
+      "NC_main_test_n": 332,
+      "standard_main_test_n": 1111,
+      "NC_matched_test_n": 174,
+      "standard_matched_test_n": 203,
+      "NC_matched_strata": {
+        "synthetic_D_backbone": 60,
+        "PTM": 81,
+        "synthetic_and_PTM": 25,
+        "other_NC": 8
+      },
+      "standard_matched_strata": {
+        "standard20_control": 203
+      },
+      "NC_ids": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\NC_only-matched-test-ids.json",
+      "standard_ids": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\standard_only-matched-test-ids.json",
+      "target_reference_shas": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\common-target-reference-sequence-sha256.json",
+      "mapping": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\target_reference_homology_cold\\record-target-map.jsonl"
+    }
+  ],
+  "statistical_rules": [
+    "Per fixed selected model/seed generate each dataset prediction once; all subgroup metrics reuse it.",
+    "Separate dataset_id for internal,PTM75,IgG13; never sum case sets into universal external family validation.",
+    "Main paired training-regime comparison uses identical heldout NC IDs; matched-target diagnostic additionally uses same common full-reference target SHA sets.",
+    "Target-reference macros are equal-weight per target; report observation n,target n,metric-defined-group n. Study macros include source_refs and are not independent-paper counts.",
+    "Seed SD ddof1 quantifies optimization randomness; data/source/chemical/target dependencies remain, no biological CI claim."
+  ],
+  "runtime_gate": "Every score and independent real-data audit must explicitly require unchanged full200 global selection barrier. This preparation grants no real-gold/prediction audit permission.",
+  "external_score_spec_barriers": [
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-views-v1\\source_peptide_dependency_cold-external75-score.cpu.json",
+      "sha256": "7c9faea5a3f538a920696de1b8a2f1d01cf63a11f39ddd287004716cf4a46b95",
+      "global200_barrier_explicit": true,
+      "numeric_files_dereferenced": false
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-views-v1\\target_reference_homology_cold-external75-score.cpu.json",
+      "sha256": "bc4f80e38033a26faa8ae144bb21c4939e7ac95396694d88f25f5170d3bb16ef",
+      "global200_barrier_explicit": true,
+      "numeric_files_dereferenced": false
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\source_peptide_dependency_cold-supplement13-score.cpu.json",
+      "sha256": "70957bf39f59aca803318e1c41209e6592dc7f7876201decf664067e94f42eac",
+      "global200_barrier_explicit": true,
+      "numeric_files_dereferenced": false
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\scoring-supplement13-v1\\target_reference_homology_cold-supplement13-score.cpu.json",
+      "sha256": "d8ba3062bf8989fdd4455f9f4106dd823da00098f15e7ea3661b69432a5e9421",
+      "global200_barrier_explicit": true,
+      "numeric_files_dereferenced": false
+    }
+  ],
+  "internal_v4_score_binding": "must be issued/verified by administrative lane before scoring; no modification to frozenfit/training here",
+  "evaluator_sha256_at_preparation": "81db2ff6e5926c82d01d732c64e47827f49f039a1ef18263842023a58d4005e3",
+  "expected_unit_identities": [
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 1039
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PPIKB-internal",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 1443
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "PTM-external75",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 75
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DGDTA-CL",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "DeepNC-GEN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GS-DTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "GraphDTA-GIN",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "source_peptide_dependency_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "NC_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 0,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 1,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 2,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 3,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 4,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 5,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 6,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 7,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 8,
+      "expected_prediction_rows": 13
+    },
+    {
+      "dataset_id": "IgG-supplement13",
+      "method_id": "MGraphDTA",
+      "split_id": "target_reference_homology_cold",
+      "regime": "standard_only",
+      "seed": 9,
+      "expected_prediction_rows": 13
+    }
+  ]
+}

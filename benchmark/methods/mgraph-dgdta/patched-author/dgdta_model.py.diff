@@ -1,0 +1,29 @@
+--- luojunwei__DGDTA/model/gatv2GCN.py
++++ patched-author/dgdta_model.py
+@@ -7,7 +7,7 @@
+     def __init__(self, input_dim, output_dim, dropout_rate):
+         super(GraphConvolutionalBlock, self).__init__()
+         self.gatv2_layer1 = GATv2Conv(input_dim, output_dim, heads=10, dropout=dropout_rate)
+-        self.gatv2_layer2 = GCNConv(output_dim * 10, output_dim * 10, dropout=dropout_rate)
++        self.gatv2_layer2 = GCNConv(output_dim * 10, output_dim * 10)
+         self.activation = nn.ReLU()
+         self.dropout = nn.Dropout(dropout_rate)
+ 
+@@ -25,7 +25,7 @@
+         super(ProteinSequenceBlock, self).__init__()
+         self.embedding = nn.Embedding(xt_features + 1, embed_dim)
+         self.conv_protein = nn.Conv1d(in_channels=1000, out_channels=n_filters, kernel_size=8)
+-        self.bilstm = nn.LSTM(embed_dim, 64, 1, dropout=0.2, bidirectional=True)
++        self.bilstm = nn.LSTM(embed_dim, 64, 1, dropout=0.2, bidirectional=True, batch_first=True)
+         self.fc_protein = nn.Linear(32 * 121, output_dim)
+ 
+     def forward(self, target):
+@@ -59,7 +59,7 @@
+         super(GATv2GCNModel, self).__init__()
+         self.graph_block = GraphConvolutionalBlock(xd_features, xd_features, dropout_rate)
+         self.protein_block = ProteinSequenceBlock(xt_features, embedding_dim, filter_count, dense_output_dim)
+-        self.combined_block = CombinedDenseBlock(256, output_size, dropout_rate)
++        self.combined_block = CombinedDenseBlock(xd_features * 10 * 2 + dense_output_dim, output_size, dropout_rate)
+ 
+     def forward(self, data):
+         x, edge_index, batch = data.x, data.edge_index, data.batch

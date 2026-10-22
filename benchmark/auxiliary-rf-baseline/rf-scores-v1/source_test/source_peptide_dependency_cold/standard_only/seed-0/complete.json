@@ -1,0 +1,147 @@
+{
+  "status": "complete",
+  "stage": "additional_classical_RF_post_joint_barrier_score",
+  "method_id": "RF-Morgan2-chiral-AAC-DP",
+  "panel": "source_peptide_dependency_cold",
+  "regime": "standard_only",
+  "seed": 0,
+  "holdout_id": "source_test",
+  "dataset_id": "source_test",
+  "n": 1039,
+  "metrics": {
+    "all": {
+      "n": 1039,
+      "MAE": 1.4204962043751752,
+      "RMSE": 1.7902091354408276,
+      "Pearson": 0.2388964342480893,
+      "Spearman": 0.2788309179275983,
+      "R2": 0.0275179905970524
+    },
+    "PTM": {
+      "n": 158,
+      "MAE": 1.1771824485923548,
+      "RMSE": 1.478056709874711,
+      "Pearson": 0.11882861755157904,
+      "Spearman": 0.14515566218191675,
+      "R2": -0.10064296710333176
+    },
+    "other_NC": {
+      "n": 6,
+      "MAE": 1.712205923709116,
+      "RMSE": 1.867542887533097,
+      "Pearson": 0.6528522848781698,
+      "Spearman": 0.7589709258986453,
+      "R2": 0.1261964684025083
+    },
+    "standard20_control": {
+      "n": 736,
+      "MAE": 1.4515630941930255,
+      "RMSE": 1.8364931202157657,
+      "Pearson": 0.22646178306862325,
+      "Spearman": 0.2811354775601298,
+      "R2": 0.02548123041626349
+    },
+    "synthetic_D_backbone": {
+      "n": 100,
+      "MAE": 1.43945859161036,
+      "RMSE": 1.7550388773110983,
+      "Pearson": 0.40037582211430855,
+      "Spearman": 0.3453090176258431,
+      "R2": 0.15205260802213016
+    },
+    "synthetic_and_PTM": {
+      "n": 39,
+      "MAE": 1.7264409599706998,
+      "RMSE": 2.1086397890622512,
+      "Pearson": 0.18598708388638885,
+      "Spearman": 0.07903027769023972,
+      "R2": -0.22336884684365055
+    },
+    "NC_core": {
+      "n": 303,
+      "MAE": 1.345033396104753,
+      "RMSE": 1.6724574437898911,
+      "Pearson": 0.2944069555142127,
+      "Spearman": 0.28199337654202816,
+      "R2": 0.03248758251403516
+    },
+    "standard": {
+      "n": 736,
+      "MAE": 1.4515630941930255,
+      "RMSE": 1.8364931202157657,
+      "Pearson": 0.22646178306862325,
+      "Spearman": 0.2811354775601298,
+      "R2": 0.02548123041626349
+    },
+    "exclude_discordant_sensitivity": {
+      "n": 998,
+      "MAE": 1.4372965243447275,
+      "RMSE": 1.8078338330516535,
+      "Pearson": 0.2405324855557734,
+      "Spearman": 0.284862986432931,
+      "R2": 0.028957762550626764
+    },
+    "exclude_discordant:PTM": {
+      "n": 130,
+      "MAE": 1.2530837069674887,
+      "RMSE": 1.5496211382772223,
+      "Pearson": 0.12599462313785795,
+      "Spearman": 0.18133178634611183,
+      "R2": -0.1023059798657362
+    },
+    "exclude_discordant:other_NC": {
+      "n": 6,
+      "MAE": 1.712205923709116,
+      "RMSE": 1.867542887533097,
+      "Pearson": 0.6528522848781698,
+      "Spearman": 0.7589709258986453,
+      "R2": 0.1261964684025083
+    },
+    "exclude_discordant:standard20_control": {
+      "n": 724,
+      "MAE": 1.4538653364946017,
+      "RMSE": 1.8411010404771955,
+      "Pearson": 0.22730902203577763,
+      "Spearman": 0.2844998903276302,
+      "R2": 0.026696126497734896
+    },
+    "exclude_discordant:synthetic_D_backbone": {
+      "n": 100,
+      "MAE": 1.43945859161036,
+      "RMSE": 1.7550388773110983,
+      "Pearson": 0.40037582211430855,
+      "Spearman": 0.3453090176258431,
+      "R2": 0.15205260802213016
+    },
+    "exclude_discordant:synthetic_and_PTM": {
+      "n": 38,
+      "MAE": 1.7027223964442697,
+      "RMSE": 2.0932413648310093,
+      "Pearson": 0.1911192767887648,
+      "Spearman": 0.06450211465180998,
+      "R2": -0.29811763031843563
+    }
+  },
+  "blind_predictions_sha256": "65220de6a645f0a28d5b0a2806c6072494a131d2dd428e1be48f0260066905b6",
+  "predictions_sha256": "a53294c6bfed537d60762699f83d902df9cf92e02a39ac9eac211af519df300d",
+  "joint_barrier_sha256": "5c506a6c9d1f140ef0556a2c35e46c0252a7710295017ce080a7830650443fcf",
+  "selected_model_sha256": "b93669394f8261d7e1b5b4cd01c153fb8fcd43cb717fdfc055f09271d45c9674",
+  "selection_sha256": "16e0ecb8a86fa1202ca13344c5dc0f72d510182919e98c602e3b7caedebb9f64",
+  "source_sha256": {
+    "features.py": "f346de665d3ed60f5664d14918c62451a63b2ec1b9fc41de2f1b97bbb278cabf",
+    "common.py": "f10d9bc3acf7b3c7daf39255c79324b11011a9f181746192aed6b38d03589955",
+    "rf_runner.py": "5070e0c52de45f30635ca701212b638d992c099c41f9397b844bc448394bdc44",
+    "rf_score.py": "aff8327ebe4919b37673848f1c63ad8b1b989be5e4566cb8c687f78efb4d383f",
+    "feature-spec-v1.json": "f50a938d2755ef186c0bd7817a354d02ff76bc96357abe04ad6a5ebb65bd770d",
+    "protocol-v1.json": "b590dc7c215b60df8ad6d3d8f7a017e0a03b0154af500621bc7ff019bbee7e2b",
+    "installed-assets-v1.json": "9b9a324e27d9251fda1e13f0e9dac54f8729bde2722148936de1cbba3d32108a",
+    "installed-binaries-v1.json": "58074ca74cec605814ef2c1bbe7014343b022353ad11543203864a1c74f1ddc7"
+  },
+  "feature_manifest_sha256": "fbcde29d5795fdba5941a7903f63fb76cada24b0e4ca7372748bcdca76e83f4c",
+  "score_spec_sha256": "8dbba7a802e5d9783002e2c15b99b4a9b95316b8069390abb13b9251434edf3a",
+  "gold_source_sha256": "8a2c4e545ec322184ea57504cf875abc61805db8bef1b265034f95f4de4d2a7a",
+  "parameter_updates": 0,
+  "blind_before_gold": true,
+  "paper_count_contribution": 0,
+  "external_subgroup_recompute": "independent review handles67/8/2 and NC8/std5; all input metadata retained"
+}

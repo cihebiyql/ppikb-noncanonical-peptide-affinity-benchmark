@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "stage": "local-GPU-train-only-performance-canary",
+  "method_id": "DeepNC-GEN",
+  "host": "cihebi",
+  "pid": 674258,
+  "python": "3.11.15 (main, May 10 2026, 19:28:18) [Clang 22.1.3 ]",
+  "torch": "2.12.1+cu130",
+  "torch_geometric": "2.6.1",
+  "rdkit": "2026.03.4",
+  "cuda_runtime": "13.0",
+  "device": "NVIDIA GeForce RTX 5080",
+  "GPU_UUID": "GPU-e9419f8b-b24b-a22b-c8ec-8f5173f4b45a",
+  "parameter_count": 4933417,
+  "train_sample_n": 32,
+  "unique_training_ids_visited": 32,
+  "optimizer_steps": 2,
+  "batch_size": 32,
+  "gradient_accumulation": 1,
+  "encoding_seconds": 0.9498004260240123,
+  "step_seconds": [
+    0.9814661819837056,
+    0.03131776402005926
+  ],
+  "sample_visits": 64,
+  "training_sample_visits_per_second": 63.192154903847666,
+  "diagnostic_train_losses": [
+    32.27451705932617,
+    358.47991943359375
+  ],
+  "GPU_peak_allocated_bytes": 330803200,
+  "GPU_peak_reserved_bytes": 387973120,
+  "GPU_allocator_budget_bytes": 7516192768,
+  "max_rss_kib": 2249876,
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "cpu_threads": 2,
+  "sample_sha256": "1562172160338140f24cf3de9e2e46c6c14d5e305627caec9e37ceaacb8a8333",
+  "contract_sha256": "8660d8079cf8c35f165a9b2af57867020b1efed77fa82627c52ef0741a34736f",
+  "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+  "compiled_scatter_available": false,
+  "compiled_sparse_available": false,
+  "test_label_reads": 0,
+  "holdout_label_reads": 0,
+  "claim": "real GPU train-only canary; no full fit, no checkpoint retained, no benchmark metric"
+}

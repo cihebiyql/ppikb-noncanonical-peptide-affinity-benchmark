@@ -1,0 +1,187 @@
+[
+  {
+    "task_id": "S299_ef670bb4eeb4",
+    "title": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+    "doi": "10.1093/bioinformatics/btaa921",
+    "status": "succeeded",
+    "lifecycle_status": "succeeded",
+    "reproduction_level": "training",
+    "scope_coverage": "partial_subset",
+    "summary": "共同NC亲和力基准：该作者实现完成2面板×2训练口径×10种子，实际训练与三数据评分收据、独立重算均保留。",
+    "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-author-lab.pdf",
+    "source_sha256": "ef670bb4eeb41ba7db7449f15dd8a8861d6c01029e597e802db8a38df70df907",
+    "linked_task_ids": [],
+    "publication_status": "published",
+    "dataset": "PPIKB NC2099＋标准7520；来源/肽依赖冷与参考序列同源冷，原数据及身份冲突旗标保留。",
+    "innovation": "无创新模型；五篇已发表方法共同数据适配比较。",
+    "actual_results": "80候选拟合、40验证选择、120评分收据；详细数值与每seed结果见本轮标准结果索引及独立审计。",
+    "differences": "改变数据集与任务范围；原论文主表不作直接数值复现比较。蛋白前缀、化学表示限制、必要适配与统一预算均保留。",
+    "incomplete_reason": null,
+    "execution_location": "本地WSL RTX5080通用现有runtime；Node23仅预处理，Node1忙碌GPU不使用。",
+    "review_status": "accepted",
+    "result_record_index": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\a1\\standard-result-index.json",
+    "independent_NN_audit": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit\\per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "additional_classic_RF": {
+      "paper_count_contribution": 0,
+      "units": 40,
+      "scores": 120,
+      "rows": 53160,
+      "independent_audit": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\RF-audit\\per-score-audit.json",
+        "sha256": "8951c6eed9c5f21b9328dcd57ee22dccd77c4ff1d8aa233dbdbc55dcf4176dfb"
+      },
+      "scope": "独立附加经典参照，不归给该作者模型或虚增论文数量"
+    }
+  },
+  {
+    "task_id": "S300_0a445649ae97",
+    "title": "MGraphDTA: deep multiscale graph neural network for explainable drug–target binding affinity prediction",
+    "doi": "10.1039/d1sc05180f",
+    "status": "succeeded",
+    "lifecycle_status": "succeeded",
+    "reproduction_level": "training",
+    "scope_coverage": "partial_subset",
+    "summary": "共同NC亲和力基准：该作者实现完成2面板×2训练口径×10种子，实际训练与三数据评分收据、独立重算均保留。",
+    "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\MGraphDTA-PMC-published.pdf",
+    "source_sha256": "0a445649ae97d8c2ff2a10842de18bdab946bf22c9471bd81e5a6a9ef581516c",
+    "linked_task_ids": [],
+    "publication_status": "published",
+    "dataset": "PPIKB NC2099＋标准7520；来源/肽依赖冷与参考序列同源冷，原数据及身份冲突旗标保留。",
+    "innovation": "无创新模型；五篇已发表方法共同数据适配比较。",
+    "actual_results": "80候选拟合、40验证选择、120评分收据；详细数值与每seed结果见本轮标准结果索引及独立审计。",
+    "differences": "改变数据集与任务范围；原论文主表不作直接数值复现比较。蛋白前缀、化学表示限制、必要适配与统一预算均保留。",
+    "incomplete_reason": null,
+    "execution_location": "本地WSL RTX5080通用现有runtime；Node23仅预处理，Node1忙碌GPU不使用。",
+    "review_status": "accepted",
+    "result_record_index": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\a1\\standard-result-index.json",
+    "independent_NN_audit": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit\\per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "additional_classic_RF": {
+      "paper_count_contribution": 0,
+      "units": 40,
+      "scores": 120,
+      "rows": 53160,
+      "independent_audit": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\RF-audit\\per-score-audit.json",
+        "sha256": "8951c6eed9c5f21b9328dcd57ee22dccd77c4ff1d8aa233dbdbc55dcf4176dfb"
+      },
+      "scope": "独立附加经典参照，不归给该作者模型或虚增论文数量"
+    }
+  },
+  {
+    "task_id": "S301_6cf263a8a267",
+    "title": "DGDTA: dynamic graph attention network for predicting drug–target binding affinity",
+    "doi": "10.1186/s12859-023-05497-5",
+    "status": "succeeded",
+    "lifecycle_status": "succeeded",
+    "reproduction_level": "training",
+    "scope_coverage": "partial_subset",
+    "summary": "共同NC亲和力基准：该作者实现完成2面板×2训练口径×10种子，实际训练与三数据评分收据、独立重算均保留。",
+    "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DGDTA.pdf",
+    "source_sha256": "6cf263a8a267f0ca5f7aecdce791f57968b197c4cdff3e165ffa0925da3169ff",
+    "linked_task_ids": [],
+    "publication_status": "published",
+    "dataset": "PPIKB NC2099＋标准7520；来源/肽依赖冷与参考序列同源冷，原数据及身份冲突旗标保留。",
+    "innovation": "无创新模型；五篇已发表方法共同数据适配比较。",
+    "actual_results": "80候选拟合、40验证选择、120评分收据；详细数值与每seed结果见本轮标准结果索引及独立审计。",
+    "differences": "改变数据集与任务范围；原论文主表不作直接数值复现比较。蛋白前缀、化学表示限制、必要适配与统一预算均保留。",
+    "incomplete_reason": null,
+    "execution_location": "本地WSL RTX5080通用现有runtime；Node23仅预处理，Node1忙碌GPU不使用。",
+    "review_status": "accepted",
+    "result_record_index": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\a1\\standard-result-index.json",
+    "independent_NN_audit": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit\\per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "additional_classic_RF": {
+      "paper_count_contribution": 0,
+      "units": 40,
+      "scores": 120,
+      "rows": 53160,
+      "independent_audit": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\RF-audit\\per-score-audit.json",
+        "sha256": "8951c6eed9c5f21b9328dcd57ee22dccd77c4ff1d8aa233dbdbc55dcf4176dfb"
+      },
+      "scope": "独立附加经典参照，不归给该作者模型或虚增论文数量"
+    }
+  },
+  {
+    "task_id": "S302_401fdeeb8b77",
+    "title": "DeepNC: a framework for drug-target interaction prediction with graph neural networks",
+    "doi": "10.7717/peerj.13163",
+    "status": "succeeded",
+    "lifecycle_status": "succeeded",
+    "reproduction_level": "training",
+    "scope_coverage": "partial_subset",
+    "summary": "共同NC亲和力基准：该作者实现完成2面板×2训练口径×10种子，实际训练与三数据评分收据、独立重算均保留。",
+    "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\DeepNC-PMC-published.pdf",
+    "source_sha256": "401fdeeb8b777f29d38628417d71ff967883575b13381b6430843e08154dce16",
+    "linked_task_ids": [],
+    "publication_status": "published",
+    "dataset": "PPIKB NC2099＋标准7520；来源/肽依赖冷与参考序列同源冷，原数据及身份冲突旗标保留。",
+    "innovation": "无创新模型；五篇已发表方法共同数据适配比较。",
+    "actual_results": "80候选拟合、40验证选择、120评分收据；详细数值与每seed结果见本轮标准结果索引及独立审计。",
+    "differences": "改变数据集与任务范围；原论文主表不作直接数值复现比较。蛋白前缀、化学表示限制、必要适配与统一预算均保留。",
+    "incomplete_reason": null,
+    "execution_location": "本地WSL RTX5080通用现有runtime；Node23仅预处理，Node1忙碌GPU不使用。",
+    "review_status": "accepted",
+    "result_record_index": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\a1\\standard-result-index.json",
+    "independent_NN_audit": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit\\per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "additional_classic_RF": {
+      "paper_count_contribution": 0,
+      "units": 40,
+      "scores": 120,
+      "rows": 53160,
+      "independent_audit": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\RF-audit\\per-score-audit.json",
+        "sha256": "8951c6eed9c5f21b9328dcd57ee22dccd77c4ff1d8aa233dbdbc55dcf4176dfb"
+      },
+      "scope": "独立附加经典参照，不归给该作者模型或虚增论文数量"
+    }
+  },
+  {
+    "task_id": "S303_725e257cf378",
+    "title": "GS-DTA: integrating graph and sequence models for predicting drug-target binding affinity",
+    "doi": "10.1186/s12864-025-11234-4",
+    "status": "succeeded",
+    "lifecycle_status": "succeeded",
+    "reproduction_level": "training",
+    "scope_coverage": "partial_subset",
+    "summary": "共同NC亲和力基准：该作者实现完成2面板×2训练口径×10种子，实际训练与三数据评分收据、独立重算均保留。",
+    "pdf_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\replacement-gs-dta\\GS-DTA-published.pdf",
+    "source_sha256": "725e257cf378b2959afc34dd8b65d8c29787af6330c1d9fee3b464fd0a0619e3",
+    "linked_task_ids": [],
+    "publication_status": "published",
+    "dataset": "PPIKB NC2099＋标准7520；来源/肽依赖冷与参考序列同源冷，原数据及身份冲突旗标保留。",
+    "innovation": "无创新模型；五篇已发表方法共同数据适配比较。",
+    "actual_results": "80候选拟合、40验证选择、120评分收据；详细数值与每seed结果见本轮标准结果索引及独立审计。",
+    "differences": "改变数据集与任务范围；原论文主表不作直接数值复现比较。蛋白前缀、化学表示限制、必要适配与统一预算均保留。",
+    "incomplete_reason": null,
+    "execution_location": "本地WSL RTX5080通用现有runtime；Node23仅预处理，Node1忙碌GPU不使用。",
+    "review_status": "accepted",
+    "result_record_index": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\a1\\standard-result-index.json",
+    "independent_NN_audit": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit\\per-score-audit.json",
+      "sha256": "d1102d59e538e0504c0e0e7cad242c5612a68096e3b70c1d7b2e3c6e472f0520"
+    },
+    "additional_classic_RF": {
+      "paper_count_contribution": 0,
+      "units": 40,
+      "scores": 120,
+      "rows": 53160,
+      "independent_audit": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\RF-audit\\per-score-audit.json",
+        "sha256": "8951c6eed9c5f21b9328dcd57ee22dccd77c4ff1d8aa233dbdbc55dcf4176dfb"
+      },
+      "scope": "独立附加经典参照，不归给该作者模型或虚增论文数量"
+    }
+  }
+]

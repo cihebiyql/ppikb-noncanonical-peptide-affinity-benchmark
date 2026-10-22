@@ -1,0 +1,73 @@
+--- D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\review\postscore-driver-v1\driver.py
++++ D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\review\postscore-driver-v2\driver.py
+@@ -173,6 +173,31 @@
+         raise ValueError('Frozen dependency changed: ' + entry['path'])
+ 
+ 
++def reuse_nn_audit(inputs, nn_map):
++    previous_failure = bound(inputs['prior_failed_pipeline'])
++    if previous_failure['status'] != 'failed_preserved_no_retry' or previous_failure['source_issuance'] != inputs['issuance']:
++        raise ValueError('Explicit original failed-pipeline provenance required')
++    completed = {s['name']: s['exit_code'] for s in previous_failure['completed_steps']}
++    if completed.get('02-NN600-independent') != 0 or completed.get('03-RF120-independent') != 1:
++        raise ValueError('Only the documented RF metadata failure can be resumed')
++    if bound(inputs['prior_NN_task_map']) != read(nn_map['path']):
++        raise ValueError('Previously audited NN600 task mapping changed')
++    files = inputs['prior_NN_audit_files']
++    if set(files) != {'independent-audit-manifest.json', 'independent-matched-target-ten-seed-summary.json', 'independent-ten-seed-summary.json', 'per-score-audit.json'}:
++        raise ValueError('Bind all four completed independent NN audit artifacts')
++    for name, entry in files.items():
++        if path(entry['path']).name != name:
++            raise ValueError('NN audit file identity differs')
++        bound(entry)
++    root = path(files['independent-audit-manifest.json']['path']).parent
++    if any(path(e['path']).parent != root for e in files.values()):
++        raise ValueError('NN artifacts must come from one actual completed audit')
++    check = bound(files['independent-audit-manifest.json'])
++    if check['evaluator_sha256'] != sha(REVIEW / 'recompute_metrics.py') or check['real_score_tasks_audited'] != 600 or not check['complete600_scores_265800_rows'] or check['metric_difference_count'] != 0 or check['all_predictions_true_labels_match'] is not True:
++        raise ValueError('Original NN600 audit incomplete or source changed')
++    return root, check
++
++
+ def execute(inputs, explicit):
+     guard(inputs, explicit)
+     import numpy
+@@ -216,21 +241,22 @@
+     try:
+         nn_map = save('NN600-map.json', maps['NN']); rf_map = save('RF120-map.json', maps['RF']); refs_map = save('reference6-input-map.json', reference_specs)
+         ja = joint_auth(); preflight('01-NN-joint-metadata', 'nn', ja)
+-        numeric('02-NN600-independent', 'recompute_metrics.py', ['--selection-barrier', path(nn_ref['path']), '--barrier-sha256', nn_ref['sha256'], '--task-map', nn_map['path'],
+-            '--matched-target-manifest', REVIEW / 'matched-target-diagnostics-v1/manifest.json', '--matched-target-manifest-sha256', sha(REVIEW / 'matched-target-diagnostics-v1/manifest.json'), '--output', out / 'NN-audit', '--audit-authorized-after-freeze'])
+-        nn_check = read(out / 'NN-audit/independent-audit-manifest.json')
++        nn_audit_root, nn_check = reuse_nn_audit(inputs, nn_map)
++        save('reused-complete-NN600-audit.json', dict(original_files=inputs['prior_NN_audit_files'], original_map=inputs['prior_NN_task_map'], previous_failed_pipeline=inputs['prior_failed_pipeline'], numeric_recomputation_repeated=False))
+         if not nn_check.get('complete600_scores_265800_rows') or nn_check.get('metric_difference_count') != 0 or nn_check.get('all_predictions_true_labels_match') is not True:
+             raise ValueError('NN independent review incomplete/disagrees; stop before further stages')
+-        ra = save('RF120-audit-auth.json', common_auth(rf_map))
+-        numeric('03-RF120-independent', 'recompute_RF_v5.py', ['--root-authorization', ra['path'], '--joint-barrier', path(joint_ref['path']), '--task-map', rf_map['path'], '--matched-target-manifest', REVIEW / 'matched-target-diagnostics-v1/manifest.json', '--output', out / 'RF-audit'])
++        rf_auth = common_auth(rf_map)
++        rf_auth['script_sha256'] = sha(REVIEW / 'rf-subgroup-audit-recovery-v1/recompute_RF_v6.py')
++        ra = save('RF120-audit-auth.json', rf_auth)
++        numeric('03-RF120-independent', 'rf-subgroup-audit-recovery-v1/recompute_RF_v6.py', ['--root-authorization', ra['path'], '--joint-barrier', path(joint_ref['path']), '--task-map', rf_map['path'], '--matched-target-manifest', REVIEW / 'matched-target-diagnostics-v1/manifest.json', '--output', out / 'RF-audit'])
+         rf_check = read(out / 'RF-audit/independent-RF-audit-manifest.json')
+         if rf_check.get('status') != 'complete_independent_RF_audit' or not rf_check.get('complete120_53160') or rf_check.get('metric_difference_count') != 0:
+             raise ValueError('RF independent review incomplete/disagrees; stop')
+         preflight('04-reference-joint-metadata', 'references', ja)
+         numeric('05-three-references-ten-seeds', 'deterministic_references.py', ['--reference-plan', REVIEW / 'deterministic-reference-plan-v2.json', '--reference-plan-sha256', sha(REVIEW / 'deterministic-reference-plan-v2.json'),
+             '--selection-barrier', path(nn_ref['path']), '--barrier-sha256', nn_ref['sha256'], '--holdout-specs-map', refs_map['path'], '--output', out / 'references', '--audit-authorized-after-freeze'])
+-        nn_manifest = ref(out / 'NN-audit/independent-audit-manifest.json'); rf_manifest = ref(out / 'RF-audit/independent-RF-audit-manifest.json')
+-        nn_scores = ref(out / 'NN-audit/per-score-audit.json'); rf_scores = ref(out / 'RF-audit/per-score-audit.json'); ref_manifest = ref(out / 'references/reference-run-manifest.json')
++        nn_manifest = ref(nn_audit_root / 'independent-audit-manifest.json'); rf_manifest = ref(out / 'RF-audit/independent-RF-audit-manifest.json')
++        nn_scores = ref(nn_audit_root / 'per-score-audit.json'); rf_scores = ref(out / 'RF-audit/per-score-audit.json'); ref_manifest = ref(out / 'references/reference-run-manifest.json')
+         reference_receipts = []; reference_internal = []
+         for rule, panel, regime, seed in itertools.product(RULES, PANELS, REGIMES, range(10)):
+             for dataset in ('PPIKB-internal', 'PTM-external75', 'IgG-supplement13'):
+@@ -262,7 +288,7 @@
+         ma = save('v6-merge-auth.json', ma)
+         numeric('08-v6-metric-merge', 'merge_metric_extension_v6.py', ['--root-authorization', ma['path'], '--joint-barrier', path(joint_ref['path']), '--input-map', merge_map['path'], '--output', out / 'unified-v6'])
+         result = dict(status='complete_postscore_independent_pipeline', source_issuance=inputs['issuance'], joint_barrier=joint_ref,
+-            driver_freeze=inputs['driver_freeze'], root_explicit_driver_authorization=True,
++            driver_freeze=inputs['driver_freeze'], root_explicit_driver_authorization=True, prior_failed_pipeline=inputs['prior_failed_pipeline'], reused_prior_NN_audit_files=inputs['prior_NN_audit_files'], RF_subgroup_audit_recovery_freeze=inputs['RF_subgroup_audit_recovery_freeze'],
+             NN_independent_per_score_audit=nn_scores, RF_independent_per_score_audit=rf_scores, NN_audit_manifest=nn_manifest, RF_audit_manifest=rf_manifest,
+             reference_run_manifest=ref_manifest, base_v5_manifest=ref(out / 'base-v5/unified-table-manifest.json'), v6_extension_manifest=ref(out / 'extension-v6/extension-manifest.json'),
+             actual_unified_manifest=ref(out / 'unified-v6/unified-table-manifest.json'), completed_steps=steps,

@@ -1,0 +1,61 @@
+{
+  "status": "ready",
+  "train_n": 5992,
+  "validation_n": 792,
+  "seconds": 66.8586037158966,
+  "method_id": "GraphDTA-GIN",
+  "split_id": "source_peptide_dependency_cold",
+  "regime": "standard_only",
+  "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+  "label_scope": "train_and_validation_only",
+  "cell_id": "source_peptide_dependency_cold__GraphDTA-GIN__standard_only",
+  "pid": 672890,
+  "pgid": 672890,
+  "host": "node23",
+  "stage": "feature_preprocessing_only",
+  "model_construction_calls": 0,
+  "optimizer_steps": 0,
+  "test_label_reads": 0,
+  "external_label_reads": 0,
+  "input_sha256": {
+    "train_rows": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+    "validation_rows": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6"
+  },
+  "derived_spec_sha256": "7ede2f77e2b0bc32c5b06c846257a6d0566a2cd90cd40e15e3bc5e1ef76e5144",
+  "original_gpu_spec_sha256": "1f93a86ccb179f6865e33e8370a0c609353bb850808f697fb0cda2aa9fc8fea0",
+  "producer_versions": {
+    "torch": "2.6.0+cu124",
+    "pyg": "2.6.1",
+    "rdkit": "2024.03.2",
+    "numpy": "1.26.4"
+  },
+  "python": "/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/.venv/bin/python",
+  "outputs": [
+    {
+      "filename": "source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.pkl",
+      "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.pkl",
+      "bytes": 350797711,
+      "sha256": "6b4ec19cbdeb4f644ae7882cc47f2c32c38190ae8f1eb1b57ab09ca693ab197a"
+    },
+    {
+      "filename": "source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.input-audit.jsonl",
+      "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-train.input-audit.jsonl",
+      "bytes": 5335841,
+      "sha256": "575074c97ac898cbcdae3c71182ba366f0939b0e1e0c524c58fca8e7f2e28305"
+    },
+    {
+      "filename": "source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+      "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.pkl",
+      "bytes": 32811419,
+      "sha256": "861f4e9e10c2239db2a42c1d7f69465512d409712df23584b49f5b37eebbe794"
+    },
+    {
+      "filename": "source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+      "path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/encoded-cache-v3/source_peptide_dependency_cold-standard_only-GraphDTA-GIN-validation-same_as_regime.input-audit.jsonl",
+      "bytes": 705706,
+      "sha256": "5aeae4b18b0ef2393279f6cdf5d9ea94705091356cb9a5622fe2bb964f2381ba"
+    }
+  ],
+  "elapsed_seconds": 93.69366431236267,
+  "runtime_boundary": "Torch2.6 CPU pickle producer; GPU Torch2.12 compatibility requires consumer verification; not a fit or baseline metric"
+}

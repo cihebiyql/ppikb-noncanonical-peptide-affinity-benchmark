@@ -1,0 +1,118 @@
+[
+  {
+    "name": "runtime-canary",
+    "command": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1",
+      "printf %s dGVzdCAtdyAvZGF0YS9xbHl1L3Byb2plY3RzL3BlcHRpZGUtYmluZGluZy1iZW5jaG1hcmstMjAyNjEwMjAvY29tbW9uLXByaW9yLW1ldGhvZHMtMjAyNjEwMjEgJiYgL2RhdGEvcWx5dS9wcm9qZWN0cy9wZXB0aWRlLWJpbmRpbmctYmVuY2htYXJrLTIwMjYxMDIwL2NvbW1vbi1wcmlvci1tZXRob2RzLTIwMjYxMDIxLy52ZW52L2Jpbi9weXRob24gLWMgJ2ltcG9ydCBzb2NrZXQscmRraXQ7ZnJvbSByZGtpdCBpbXBvcnQgQ2hlbTthc3NlcnQgc29ja2V0LmdldGhvc3RuYW1lKCk9PSJub2RlMSI7YXNzZXJ0IENoZW0uTW9sRnJvbVNlcXVlbmNlKCJBUyIpIGlzIG5vdCBOb25lO3ByaW50KHJka2l0Ll9fdmVyc2lvbl9fKSc= | base64 -d | bash"
+    ],
+    "exit": 0,
+    "seconds": 3.768629312515259
+  },
+  {
+    "name": "new-directory",
+    "command": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1",
+      "printf %s bWtkaXIgL2RhdGEvcWx5dS9wcm9qZWN0cy9wZXB0aWRlLWJpbmRpbmctYmVuY2htYXJrLTIwMjYxMDIwL2NvbW1vbi1wcmlvci1tZXRob2RzLTIwMjYxMDIxL25jLWV4dGVybmFsLWlnZy1zdXBwbGVtZW50LTIwMjYxMDIyLXYx | base64 -d | bash"
+    ],
+    "exit": 0,
+    "seconds": 0.8930258750915527
+  },
+  {
+    "name": "upload-explicit-label-free-inputs.jsonl",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\explicit-label-free-inputs.jsonl",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-supplement-20261022-v1/explicit-label-free-inputs.jsonl"
+    ],
+    "exit": 0,
+    "seconds": 1.2121820449829102
+  },
+  {
+    "name": "upload-convert_author_entities_cpu.py",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\convert_author_entities_cpu.py",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-supplement-20261022-v1/convert_author_entities_cpu.py"
+    ],
+    "exit": 0,
+    "seconds": 2.064379930496216
+  },
+  {
+    "name": "bounded-conversion",
+    "command": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1",
+      "printf %s Y2QgL2RhdGEvcWx5dS9wcm9qZWN0cy9wZXB0aWRlLWJpbmRpbmctYmVuY2htYXJrLTIwMjYxMDIwL2NvbW1vbi1wcmlvci1tZXRob2RzLTIwMjYxMDIxL25jLWV4dGVybmFsLWlnZy1zdXBwbGVtZW50LTIwMjYxMDIyLXYxICYmIENVREFfVklTSUJMRV9ERVZJQ0VTPSBPTVBfTlVNX1RIUkVBRFM9MSBPUEVOQkxBU19OVU1fVEhSRUFEUz0xIHRpbWVvdXQgNzVzIC9kYXRhL3FseXUvcHJvamVjdHMvcGVwdGlkZS1iaW5kaW5nLWJlbmNobWFyay0yMDI2MTAyMC9jb21tb24tcHJpb3ItbWV0aG9kcy0yMDI2MTAyMS8udmVudi9iaW4vcHl0aG9uIGNvbnZlcnRfYXV0aG9yX2VudGl0aWVzX2NwdS5weQ== | base64 -d | bash"
+    ],
+    "exit": 0,
+    "seconds": 4.56580662727356
+  },
+  {
+    "name": "download-author-entity-formats.jsonl",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-supplement-20261022-v1/author-entity-formats.jsonl",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\runtime-conversion-v1\\author-entity-formats.jsonl"
+    ],
+    "exit": 0,
+    "seconds": 1.3773400783538818
+  },
+  {
+    "name": "download-author-entity-conversion-summary.json",
+    "command": [
+      "scp.exe",
+      "-q",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1:/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/nc-external-igg-supplement-20261022-v1/author-entity-conversion-summary.json",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\IgG-Fc-supplementary-audit-v1\\runtime-conversion-v1\\author-entity-conversion-summary.json"
+    ],
+    "exit": 0,
+    "seconds": 1.3570356369018555
+  },
+  {
+    "name": "process-state",
+    "command": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=12",
+      "node1",
+      "printf %s aWYgdGVzdCAtZCAvcHJvYy8zODAxNjc4OyB0aGVuIGVjaG8gUFJFU0VOVDsgZWxzZSBlY2hvIEVYSVRFRDsgZmk= | base64 -d | bash"
+    ],
+    "exit": 0,
+    "seconds": 1.2212979793548584
+  }
+]

@@ -1,0 +1,499 @@
+{
+  "scope": "read-only route audit; no author execution, no package install, no model training",
+  "selected_count_distinct_papers": 5,
+  "models": [
+    {
+      "name": "GraphDTA-GIN",
+      "paper": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+      "year": 2021,
+      "doi": "10.1093/bioinformatics/btaa921",
+      "repo": "thinng/GraphDTA",
+      "model": "models/ginconv.py",
+      "cls": "GINConvNet",
+      "preprocess": "create_data.py:atom_features,smile_to_graph,seq_cat",
+      "contract": "PyG Batch: x float[N,78], edge_index long[2,E], batch long[N], target long[B,1000]; output float[B,1]",
+      "dependencies": [
+        "torch",
+        "torch_geometric",
+        "rdkit",
+        "numpy",
+        "networkx"
+      ],
+      "cap": 1000,
+      "chirality": false,
+      "route": "author class; use frozen validation partitions instead of author test-selected training.py",
+      "risks": [
+        "Original training.py selects by test MSE; prohibited in current protocol",
+        "Native graph excludes atom chirality AND bond order features",
+        "Fixed 1000-aa protein prefix; report truncation IDs and effective-view hash"
+      ],
+      "source_commit": "6162245c6776684b391d30610850fe7077478435",
+      "source_root": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thinng__GraphDTA\\source",
+      "source_manifest": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thinng__GraphDTA\\manifest.json",
+      "license": null,
+      "author_checkpoint_used": false,
+      "pretraining_used": false,
+      "original_task": "compound-protein affinity regression; transfer benchmark to noncanonical peptide-protein Kd",
+      "reproduction_level": "static_audit",
+      "paper_pdf_path": null,
+      "paper_pdf_status": "No matching named PDF found in D:/work/科研工作台 scoped lookup; official paper DOI verified online. PDF acquisition remains execution prerequisite where standard requires primary PDF.",
+      "model_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thinng__GraphDTA\\source\\models\\ginconv.py",
+      "model_sha256": "6bac0ca17e7185468a824646b2a658d21124264beb203b192e1a40abcb679c9d",
+      "model_ast_parse": true
+    },
+    {
+      "name": "MGraphDTA",
+      "paper": "MGraphDTA: deep multiscale graph neural network for explainable drug–target binding affinity prediction",
+      "year": 2022,
+      "doi": "10.1039/d1sc05180f",
+      "repo": "guaguabujianle/MGraphDTA",
+      "model": "regression/model.py",
+      "cls": "MGraphDTA",
+      "preprocess": "regression/preprocessing.py:GNNDataset.mol2graph,get_nodes,get_edges,seqs2int",
+      "contract": "PyG Batch: x float[N,22] minmax PER GRAPH as author, edge_index long[2,E], edge_attr float[E,6], batch long[N], target long[B,1200]; output float[B,1]; MGraphDTA(3,26,128,32,1)",
+      "dependencies": [
+        "torch",
+        "torch_geometric",
+        "rdkit",
+        "numpy",
+        "networkx",
+        "pandas"
+      ],
+      "cap": 1200,
+      "chirality": false,
+      "route": "author regression class and 22-feature graph preprocessing; preserve architecture",
+      "risks": [
+        "No atom chirality or bond stereochemistry",
+        "Author graph construction double loops O(N_atoms^2), large peptide preprocessing may dominate",
+        "Model forward mutates data.x, use fresh Batch per call or clone cached data",
+        "Per-graph minmax normalization must not become whole-corpus fit"
+      ],
+      "source_commit": "54386680e8c9562f708a0fe5d381038c62111df6",
+      "source_root": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source",
+      "source_manifest": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\manifest.json",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "author_checkpoint_used": false,
+      "pretraining_used": false,
+      "original_task": "compound-protein affinity regression; transfer benchmark to noncanonical peptide-protein Kd",
+      "reproduction_level": "static_audit",
+      "paper_pdf_path": null,
+      "paper_pdf_status": "No matching named PDF found in D:/work/科研工作台 scoped lookup; official paper DOI verified online. PDF acquisition remains execution prerequisite where standard requires primary PDF.",
+      "model_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source\\regression\\model.py",
+      "model_sha256": "683bbd043a047226a96274c23e8f8d823fd1aee3b81f227c15acb2b7dbbef5ed",
+      "model_ast_parse": true
+    },
+    {
+      "name": "DGDTA-CL",
+      "paper": "DGDTA: dynamic graph attention network for predicting drug–target binding affinity",
+      "year": 2023,
+      "doi": "10.1186/s12859-023-05497-5",
+      "repo": "luojunwei/DGDTA",
+      "model": "model/gatv2GCN.py",
+      "cls": "GATv2GCNModel",
+      "preprocess": "create_data.py:get_atom_features,convert_smile_to_graph,encode_sequence",
+      "contract": "PyG Batch: x float[N,78], edge_index long[2,E], batch long[N], target long[B,1000]; output float[B,1]",
+      "dependencies": [
+        "torch",
+        "torch_geometric",
+        "rdkit",
+        "numpy",
+        "networkx"
+      ],
+      "cap": 1000,
+      "chirality": false,
+      "route": "author GATv2GCNModel; author variants remain one paper count",
+      "risks": [
+        "No atom chirality or bond-order features",
+        "create_data.py has incorrect rows,cols RHS arity in test preparation; use frozen shared export not raw author loader",
+        "1000-aa protein prefix; original models retain source architecture",
+        "AUTHOR SOURCE DIMENSION BUG: graph features1560 + protein128 =1688 but CombinedDenseBlock input hardcoded256; adapter requires disclosed 256->1688 dimension repair before training",
+        "AUTHOR SOURCE LAYOUT BUG: nn.LSTM lacks batch_first=True, but input [B,1000,128] means recurrent sequence axis becomes B; must fix intended sequence layout and verify prediction invariance to evaluation batch order; changes execution semantics and must be disclosed"
+      ],
+      "source_commit": "cc325a361f39652674f54a2120f17991f6f733f1",
+      "source_root": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\luojunwei__DGDTA\\source",
+      "source_manifest": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\luojunwei__DGDTA\\manifest.json",
+      "license": {
+        "key": "gpl-3.0",
+        "name": "GNU General Public License v3.0",
+        "spdx_id": "GPL-3.0",
+        "url": "https://api.github.com/licenses/gpl-3.0",
+        "node_id": "MDc6TGljZW5zZTk="
+      },
+      "author_checkpoint_used": false,
+      "pretraining_used": false,
+      "original_task": "compound-protein affinity regression; transfer benchmark to noncanonical peptide-protein Kd",
+      "reproduction_level": "static_audit",
+      "paper_pdf_path": null,
+      "paper_pdf_status": "No matching named PDF found in D:/work/科研工作台 scoped lookup; official paper DOI verified online. PDF acquisition remains execution prerequisite where standard requires primary PDF.",
+      "model_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\luojunwei__DGDTA\\source\\model\\gatv2GCN.py",
+      "model_sha256": "fe1328d98b34030a0f5a3373840b3893dee4c47d5387b3de3e2fe2328751948f",
+      "model_ast_parse": true
+    },
+    {
+      "name": "DeepNC-GEN",
+      "paper": "DeepNC: a framework for drug-target interaction prediction with graph neural networks",
+      "year": 2022,
+      "doi": "10.7717/peerj.13163",
+      "repo": "thntran/DeepNC",
+      "model": "models/gen.py",
+      "cls": "GEN",
+      "preprocess": "prepare_data.py:atom_features,smile_to_graph,seq_cat",
+      "contract": "PyG Batch: x float[N,78], edge_index long[2,E], batch long[N], target long[B,1000]; output float[B,1]",
+      "dependencies": [
+        "torch",
+        "torch_geometric",
+        "rdkit",
+        "numpy",
+        "networkx"
+      ],
+      "cap": 1000,
+      "chirality": false,
+      "route": "author GEN class; use validation-only selection and contract adapter",
+      "risks": [
+        "No atom chirality or bond-order features",
+        "PyG newer releases may replace author GENConv aggr softmax_sg with equivalent softmax_sg compatibility path; record source diff and verify",
+        "Author training imports models.hgc_gcn but repo file is hgc_gnc.py; selected GEN class avoids unrelated typo",
+        "GEN and HGC-GCN count as one paper, not two"
+      ],
+      "source_commit": "297940199a26aa9a1afa8e3fc1a0b2c3ce9f0d38",
+      "source_root": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\source",
+      "source_manifest": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\manifest.json",
+      "license": null,
+      "author_checkpoint_used": false,
+      "pretraining_used": false,
+      "original_task": "compound-protein affinity regression; transfer benchmark to noncanonical peptide-protein Kd",
+      "reproduction_level": "static_audit",
+      "paper_pdf_path": null,
+      "paper_pdf_status": "No matching named PDF found in D:/work/科研工作台 scoped lookup; official paper DOI verified online. PDF acquisition remains execution prerequisite where standard requires primary PDF.",
+      "model_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\source\\models\\gen.py",
+      "model_sha256": "8e9e5f65cbc7f562e8eaae9172c24805890de3ac7cac8a13c830f20e5d718032",
+      "model_ast_parse": true
+    },
+    {
+      "name": "MRBDTA-isomeric-author-config",
+      "paper": "Predicting drug–target binding affinity through molecule representation block based on multi-head attention and skip connection",
+      "year": 2022,
+      "doi": "10.1093/bib/bbac468",
+      "repo": "LiZhang30/MRBDTA",
+      "model": "MRBDTA.py",
+      "cls": "Transformer",
+      "preprocess": "DataHelper.py:LabelDT; commented author CharIsoSmiSet and CharIsoSmiLen",
+      "contract": "input_Drugs long[B,L_SMILES], input_Tars long[B,L_protein]; padding 0; enable author isomeric vocab IDs1..64 and nn.Embedding(65,128); target vocab max25 so Embedding(26,128); forward tuple (affinity[B],6 attention lists)",
+      "dependencies": [
+        "torch",
+        "numpy"
+      ],
+      "cap": null,
+      "chirality": true,
+      "route": "explicit author-supplied alternative isomeric vocabulary configuration; full peptide SMILES; declare configuration-adapted PPIKB benchmark, not native original paper metric replication",
+      "risks": [
+        "Default active drug vocabulary excludes @ / and backslash; author isomeric vocabulary is commented and must explicitly be selected",
+        "Author vocabSize=62 used by Embedding although tokens1..62, so maxindex requires +1; likewise target1..25 needs26",
+        "Author LayerNorm constructed inside forward with cuda(); CPU requires device-aware compatibility change recorded in diff; avoid hidden structural rewrite",
+        "Author positional embedding max5000; full peptide SMILES/protein >5000 need predeclared coverage/block policy; no silent truncation",
+        "Authors sum across padded positions; preserve native behavior, batch padding policies affect comparability",
+        "Quadratic self-attention on long peptide SMILES; bounded batch1/2 and fixed length contract needed",
+        "AUTHOR SOURCE BATCH1 BUG: pooled drug/target .squeeze() removes batch dimension for B=1; preserve batch dimension via narrow compatibility fix and test final singleton batch"
+      ],
+      "source_commit": "e338dd2f3aa55a09ba8b82c1ee5e79dc3aaab95c",
+      "source_root": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source",
+      "source_manifest": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\manifest.json",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "author_checkpoint_used": false,
+      "pretraining_used": false,
+      "original_task": "compound-protein affinity regression; transfer benchmark to noncanonical peptide-protein Kd",
+      "reproduction_level": "static_audit",
+      "paper_pdf_path": null,
+      "paper_pdf_status": "No matching named PDF found in D:/work/科研工作台 scoped lookup; official paper DOI verified online. PDF acquisition remains execution prerequisite where standard requires primary PDF.",
+      "model_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\MRBDTA.py",
+      "model_sha256": "9664cdd2408bacfcdf92d93caea7fc87732118b4cef708ccda767ecc9d852f95",
+      "model_ast_parse": true
+    }
+  ],
+  "not_selected": [
+    {
+      "name": "FusionDTA",
+      "reason": "Author src/utils.py uppercases SMILES; active alphabet lacks @,/ and backslash and maps OOV to255; no direct fidelity on isomeric peptides. ESM1b protein prefix1022 also required."
+    },
+    {
+      "name": "AttentionMGT-DTA",
+      "reason": "Author chirality-aware chemical features verified; protein path requires PDB residue geometry/MDAnalysis plus ESM320dim, unavailable for full2099."
+    },
+    {
+      "name": "GEFormerDTA",
+      "reason": "Requires protein contactmaps/SS8/ASA and defaults drug max_node96; not a full2099 sequence-only comparator without extra modeling."
+    }
+  ],
+  "excluded": [
+    "PepLand and inherited binding datasets",
+    "Twin Peaks: prior platform rejection, do not retry",
+    "blocked primary-source affinity unit investigations"
+  ],
+  "execution_gate": [
+    "Parent freezes scientifically allowed input IDs/splits/external holdouts",
+    "No checkpoint/pretraining leakage here: all5 selected author task weights trained from scratch; no published checkpoint loaded",
+    "All modifications/compatibility diffs isolated from frozen author source",
+    "All transformations trained only on train; validation for tuning and checkpoint; test once",
+    "Preserve all seeds0..9, metrics/predictions/checkpoints/logs/failures/input and output SHA",
+    "Report topology-only stereochemistry blind models as such; never strip SMILES stereo pretending complete NC identity"
+  ],
+  "evidence": [
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\CellNest__GEFormerDTA\\source\\executor\\general_graph.py",
+      "line": 141,
+      "text": "def drug_embedding(smile, max_node=96):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source\\classification\\model.py",
+      "line": 202,
+      "text": "class MGraphDTA(nn.Module):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source\\classification\\preprocessing.py",
+      "line": 63,
+      "text": "def atom_features(atom):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source\\classification\\preprocessing.py",
+      "line": 158,
+      "text": "target_len = 1200"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source\\filtered_davis\\model.py",
+      "line": 202,
+      "text": "class MGraphDTA(nn.Module):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source\\filtered_davis\\preprocessing.py",
+      "line": 82,
+      "text": "target_len = 1200"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source\\regression\\model.py",
+      "line": 202,
+      "text": "class MGraphDTA(nn.Module):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source\\regression\\preprocessing.py",
+      "line": 75,
+      "text": "target_len = 1200"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source\\visualization\\model.py",
+      "line": 202,
+      "text": "class MGraphDTA(nn.Module):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\guaguabujianle__MGraphDTA\\source\\visualization\\preprocessing.py",
+      "line": 67,
+      "text": "target_len = 1200"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\JK-Liu7__AttentionMGT-DTA\\source\\compound_process.py",
+      "line": 75,
+      "text": "def atom_features(atom, explicit_H=False, use_chirality=True):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\JK-Liu7__AttentionMGT-DTA\\source\\compound_process.py",
+      "line": 106,
+      "text": "def bond_features(bond, use_chirality=True):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\JK-Liu7__AttentionMGT-DTA\\source\\compound_process.py",
+      "line": 122,
+      "text": "def smiles_to_graph(smiles, explicit_H=False, use_chirality=True):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\JK-Liu7__AttentionMGT-DTA\\source\\protein_process.py",
+      "line": 162,
+      "text": "def load_protein(protpath, explicit_H=False, use_chirality=True):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\DataHelper.py",
+      "line": 13,
+      "text": "targetSeq_vocabSize = 25"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\DataHelper.py",
+      "line": 28,
+      "text": "drugSeq_vocabSize = 62"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\DataHelper.py",
+      "line": 32,
+      "text": "CharIsoSmiSet = {\"#\": 29, \"%\": 30, \")\": 31, \"(\": 1, \"+\": 32, \"-\": 33,"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\Demo.py",
+      "line": 129,
+      "text": "return nn.LayerNorm(d_model).cuda()(output+residual), attn"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\Demo.py",
+      "line": 144,
+      "text": "return nn.LayerNorm(d_model).cuda()(output+residual)"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\Demo.py",
+      "line": 197,
+      "text": "class Transformer(nn.Module):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\Demo.py",
+      "line": 201,
+      "text": "self.encoderD = Encoder(DH.drugSeq_vocabSize)"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\Demo.py",
+      "line": 202,
+      "text": "self.encoderT = Encoder(DH.targetSeq_vocabSize)"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\MRBDTA.py",
+      "line": 134,
+      "text": "return nn.LayerNorm(d_model).cuda()(output+residual), attn"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\MRBDTA.py",
+      "line": 150,
+      "text": "return nn.LayerNorm(d_model).cuda()(output+residual) # [batch_size, seq_len, d_model]"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\MRBDTA.py",
+      "line": 205,
+      "text": "class Transformer(nn.Module):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\MRBDTA.py",
+      "line": 209,
+      "text": "self.encoderD = Encoder(DH.drugSeq_vocabSize)"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\LiZhang30__MRBDTA\\source\\MRBDTA.py",
+      "line": 210,
+      "text": "self.encoderT = Encoder(DH.targetSeq_vocabSize)"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\luojunwei__DGDTA\\source\\create_data.py",
+      "line": 11,
+      "text": "def get_atom_features(atom):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\luojunwei__DGDTA\\source\\model\\gatv2GCN.py",
+      "line": 56,
+      "text": "class GATv2GCNModel(nn.Module):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thinng__GraphDTA\\source\\create_data.py",
+      "line": 11,
+      "text": "def atom_features(atom):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thinng__GraphDTA\\source\\create_data.py",
+      "line": 103,
+      "text": "max_seq_len = 1000"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thinng__GraphDTA\\source\\models\\ginconv.py",
+      "line": 9,
+      "text": "class GINConvNet(torch.nn.Module):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\source\\prepare_data.py",
+      "line": 11,
+      "text": "def atom_features(atom):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\source\\prepare_data.py",
+      "line": 103,
+      "text": "max_seq_len = 1000"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\source\\models\\gen.py",
+      "line": 7,
+      "text": "class GEN(torch.nn.Module):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\source\\models\\gen.py",
+      "line": 14,
+      "text": "self.conv1 = GENConv(num_features_xd, num_features_xd, aggr='softmax_sg')"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\source\\models\\gen.py",
+      "line": 15,
+      "text": "self.conv2 = GENConv(num_features_xd, num_features_xd * 4, aggr='softmax_sg')"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thntran__DeepNC\\source\\models\\gen.py",
+      "line": 16,
+      "text": "self.conv3 = GENConv(num_features_xd * 4, num_features_xd * 8, aggr='softmax_sg')"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\training.py",
+      "line": 59,
+      "text": "train_protein = [x.encode('utf-8').upper() for x in train_protein]"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\training.py",
+      "line": 75,
+      "text": "test_protein = [x.encode('utf-8').upper() for x in test_protein]"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\training_drug_cold.py",
+      "line": 59,
+      "text": "train_protein = [x.encode('utf-8').upper() for x in train_protein]"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\training_drug_protein_cold.py",
+      "line": 60,
+      "text": "train_protein = [x.encode('utf-8').upper() for x in train_protein]"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\training_KD.py",
+      "line": 61,
+      "text": "train_protein = [x.encode('utf-8').upper() for x in train_protein]"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\training_KD.py",
+      "line": 77,
+      "text": "test_protein = [x.encode('utf-8').upper() for x in test_protein]"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\training_protein_cold.py",
+      "line": 60,
+      "text": "train_protein = [x.encode('utf-8').upper() for x in train_protein]"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\validating.py",
+      "line": 59,
+      "text": "test_protein = [x.encode('utf-8').upper() for x in test_protein]"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\src\\getdata.py",
+      "line": 5,
+      "text": "def atom_features(atom):"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\src\\utils.py",
+      "line": 121,
+      "text": "smiles = [x.encode('utf-8').upper() for x in smiles]"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\yuanweining__FusionDTA\\source\\src\\utils.py",
+      "line": 168,
+      "text": "class Smiles(Alphabets):"
+    }
+  ]
+}

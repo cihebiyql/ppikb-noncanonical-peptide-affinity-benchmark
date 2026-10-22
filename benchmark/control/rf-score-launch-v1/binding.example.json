@@ -1,0 +1,32 @@
+{
+  "schema": "rf-score-unit-binding-v1",
+  "issued": false,
+  "unit_id": "ACTUAL_RF_TRAIN_SPEC_UNIT_ID__evaluation_v1",
+  "expected_hostname": "cihebi",
+  "python": "/root/.venvs/peptide-omnipanel-v31-web311-20260723/bin/python",
+  "PYTHONPATH": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/resources/local-gpu-route/vendor-dependencies",
+  "CUDA_VISIBLE_DEVICES": "",
+  "allowed_cpu_ids": [4,5,6,7],
+  "deadline": "2026-10-22T01:45:00+00:00",
+  "timeout_seconds": 1800,
+  "selection": {"path": "FROZEN_RF_SELECTION", "sha256": "ROOT_FILL_AFTER_JOINT_BARRIER"},
+  "score_specs": [
+    {"path": "FROZEN_INTERNAL_RF_SPEC", "sha256": "ROOT_FILL"},
+    {"path": "FROZEN_EXTERNAL75_RF_SPEC", "sha256": "ROOT_FILL"},
+    {"path": "FROZEN_SUPPLEMENT13_RF_SPEC", "sha256": "ROOT_FILL"}
+  ],
+  "authorization": {"path": "ROOT_POST_JOINT_RF_SCORE_AUTH", "sha256": "ROOT_FILL"},
+  "joint_barrier": {"path": "NN200_PLUS_RF40_JOINT", "sha256": "ROOT_FILL"},
+  "NN_barrier": {"path": "FROZEN_NN200_BARRIER", "sha256": "ROOT_FILL"},
+  "RF_barrier": {"path": "FROZEN_RF40_BARRIER", "sha256": "ROOT_FILL"},
+  "central_contract": {"path": "ISSUED_RF_SCORE_CONTRACT", "sha256": "ROOT_FILL"},
+  "validation": {"path": "POSITIVE_EXACT_CONTRACT_VALIDATION", "sha256": "ROOT_FILL"},
+  "live_cpu_proof": {"path": "ROOT_REAL_CPU_PROOF", "sha256": "ROOT_FILL"},
+  "worker": {"path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf_score.py", "sha256": "ROOT_FILL_FROZEN_WORKER_SHA"},
+  "code_files": [],
+  "receipt_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/receipts/UNIT_ID",
+  "score_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf-scores-v1",
+  "entrypoint_sha256": "ROOT_FILL_AFTER_LAUNCHER_FREEZE",
+  "pool_sha256": "ROOT_FILL_AFTER_LAUNCHER_FREEZE",
+  "common_sha256": "ROOT_FILL_AFTER_LAUNCHER_FREEZE"
+}

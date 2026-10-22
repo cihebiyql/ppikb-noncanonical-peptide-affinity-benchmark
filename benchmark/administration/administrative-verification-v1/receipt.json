@@ -1,0 +1,61 @@
+{
+  "schema": "peptide-binding.nc-benchmark.administration-verification.v1",
+  "started_at": "2026-10-21T16:03:14.060985+00:00",
+  "ended_at": "2026-10-21T16:03:14.344121+00:00",
+  "hostname": "cihebi",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "scientific_models_executed": 0,
+  "gpu_workloads_launched": 0,
+  "all_commands_exit_zero": true,
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\ciheb\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "-v",
+        "test_administration.py"
+      ],
+      "exit_code": 0,
+      "stdout_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\administrative-verification-v1\\check-0-stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\administrative-verification-v1\\check-0-stderr.txt",
+      "stderr_sha256": "14b141e88d51c18f441c0c19a1c3dc694424597d6655c182b1b1e7024b7a4ede"
+    },
+    {
+      "command": [
+        "C:\\Users\\ciheb\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "D:\\work\\科研工作台\\复现\\规范\\validate_reproduction.py",
+        "--contract",
+        "D:\\work\\科研工作台\\复现\\规范\\task-contract.template.json",
+        "--result",
+        "D:\\work\\科研工作台\\复现\\规范\\result-record.template.json",
+        "--allow-template"
+      ],
+      "exit_code": 0,
+      "stdout_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\administrative-verification-v1\\check-1-stdout.txt",
+      "stdout_sha256": "4a900193943eee15ddf8c1574498d531732b279ae4e8626375a12f4db3b6657f",
+      "stderr_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\administrative-verification-v1\\check-1-stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "parseable_json": [
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\campaign-config.skeleton.json",
+      "sha256": "9b2eb5cb0ae8e3df6087fd686094a721f203623c4bfdd41ffb8ed60a3dc1be37"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\method-entry.skeleton.json",
+      "sha256": "7d0e658dde1a0d06e539a35aceb00f981a4fc61e4174b5e67b75f7048c47a452"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\result-tables.schema.json",
+      "sha256": "64ca79066059ed28e727c958146a4723cbcde3d2b4d2a98cd513960a4eb0079e"
+    }
+  ],
+  "scope": "Administrative guard unit tests and central template structure only; not a model-run or full-pipeline test"
+}

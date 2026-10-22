@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\administration\assemble_postjoint_archive.py", line 203, in <module>
+    assemble(pc.read(args.inputs), args.out)
+  File "D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\administration\assemble_postjoint_archive.py", line 178, in assemble
+    existing_rows, batch_ref = read_ref(str(batch_file))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\administration\postjoint_issue_all.py", line 51, in read_ref
+    actual = ref(value)
+             ^^^^^^^^^^
+  File "D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\administration\postjoint_issue_all.py", line 47, in ref
+    return {"path": wsl(path), "sha256": actual}
+                    ^^^^^^^^^
+  File "D:\work\科研工作台\research-tasks\peptide-binding-nc-benchmark-20261021\administration\postjoint_issue_all.py", line 36, in wsl
+    return WSL + "/" + str(file.relative_to(PROJECT)).replace("\\", "/")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciheb\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 730, in relative_to
+    raise ValueError("{!r} is not in the subpath of {!r}"
+ValueError: 'D:\\work\\科研工作台\\复现\\batches\\peptide-binding-nc-benchmark-20261022\\summary-rows.json' is not in the subpath of 'D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021' OR one path is relative and the other is absolute.

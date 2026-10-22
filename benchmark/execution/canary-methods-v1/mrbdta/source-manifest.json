@@ -1,0 +1,24 @@
+{
+  "upstream_commit": "e338dd2f3aa55a09ba8b82c1ee5e79dc3aaab95c",
+  "upstream_sha256": "9664cdd2408bacfcdf92d93caea7fc87732118b4cef708ccda767ecc9d852f95",
+  "adapted_sha256": "5bd1fdb0a1fe42de8bf2cb766bec360e589dd9f9263a7b951284dd74bcfc01b4",
+  "changes": [
+    "Enable author commented CharIsoSmiSet IDs1..64, embedding65 including PAD0; target IDs1..25 embedding26.",
+    "Forward-created CUDA LayerNorm replaced by parameter-free functional LayerNorm, preserving original fresh gamma1/beta0 behavior; no trainable new norm.",
+    "Preserve B dimension after sum and flatten final scalar output only.",
+    "Remove upstream executable training main and unused emetrics import; frozen upstream unchanged."
+  ],
+  "architecture": {
+    "d_model": 128,
+    "d_ff": 512,
+    "d_k": 32,
+    "d_v": 32,
+    "n_layers": 1,
+    "n_heads": 4,
+    "streams_per_modality": 3
+  },
+  "protein_prefix_limit": 1000,
+  "smiles_limit": 5000,
+  "pooling_policy": "Per-record unpadded forwards preserve author all-position sum and avoid batch-composition-dependent padding contributions.",
+  "claim": "Author architecture with disclosed vocabulary and execution compatibility adaptation, not original paper metric replication."
+}

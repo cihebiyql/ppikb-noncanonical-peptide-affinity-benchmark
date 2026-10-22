@@ -1,0 +1,36 @@
+{
+  "schema": "root-reviewed-final-aggregate.v1",
+  "reviewed": true,
+  "independently_recomputed": true,
+  "all_required_selections_frozen": true,
+  "reviewed_at": "2026-10-22T00:31:51.315243+00:00",
+  "source_summary": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\final-v1\\summary.json",
+    "sha256": "e5f5d346c5a5ed2de98cdccd8142cbf2e0c0299df02ca7250556cca27c2ba000"
+  },
+  "source_report_receipt": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\reporting\\final-v1\\report-receipt.json",
+    "sha256": "81614351875344ec03853fb3caf3bdbeeedce07847e311de5fd5144ceffec139"
+  },
+  "independent_pipeline": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v2\\runs\\actual-v2\\POSTSCORE-AUDIT-READY.json",
+    "sha256": "c9c5ae22449822aef294ba281f44915adfad73b46f469d6ebc4d7d2735062480"
+  },
+  "joint_barrier": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\all240-joint-frozen.json",
+    "sha256": "5c506a6c9d1f140ef0556a2c35e46c0252a7710295017ce080a7830650443fcf"
+  },
+  "summary_rows": 11540,
+  "all_summary_rows_completed_ten_seeds": true,
+  "primary_trainable_MAE_groups": 24,
+  "primary_NC_n_by_panel": [
+    303,
+    332
+  ],
+  "NN600_metric_differences": 0,
+  "RF120_metric_differences": 0,
+  "scope": "Five published architectures adapted/retrained on common PPIKB; additional RF and three deterministic references; no innovation model. Seed SD is training variability, not biological CI.",
+  "interpretation": "Source/peptide-cold trainable models do not beat the standard-training constant median on NC MAE; target-reference-cold best displayed trainable mean MAE is DeepNC-GEN NC-only 1.2978. Weak overall generalization; no significance or superiority claim from choosing the minimum.",
+  "external_scope": "PTM primary67/conditional8/reference-target-cold2 subset; supplementary13=8NC+5standard target-related, not family cold.",
+  "optional_training_metadata": "Complete separately bound training-metadata-v1 and training-logs-v1 reports supersede optional missing training map in metric-only report."
+}

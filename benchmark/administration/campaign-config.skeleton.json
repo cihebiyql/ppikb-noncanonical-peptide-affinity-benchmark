@@ -1,0 +1,24 @@
+{
+  "schema": "peptide-binding.nc-benchmark.config.v1",
+  "is_template": true,
+  "authorization_reference": "Latest direct user instruction: PPIKB 2099 noncanonical Kd candidates, standard controls, separate non-natural and PTM evaluation, strict splits, independent external validation, at least five predecessor papers, all ten seeds, no novel model.",
+  "seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "methods": [],
+  "splits": [],
+  "training_regimes": [],
+  "evaluation_strata": [
+    "non_natural_residue_without_PTM",
+    "PTM_without_other_non_natural_residue",
+    "mixed_non_natural_and_PTM",
+    "standard_residue_control",
+    "chemistry_unresolved_diagnostic"
+  ],
+  "targets": [],
+  "notes": [
+    "Method identity, splits, training regimes and target denominators are deliberately empty until independently supplied.",
+    "2099 is an input-candidate count, not a predeclared count surviving strict scope and split QC.",
+    "Non-natural and PTM are separate primary strata; mixed chemistry must not be silently assigned to both denominators.",
+    "A model lacking verified noncanonical encoding must report unsupported coverage rather than substitute unknown residues as standard amino acids.",
+    "No PepLand original or derivative binding records may be added to this campaign."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "argv": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--",
+    "env",
+    "PYTHONPATH=/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/resources/local-gpu-route/vendor-dependencies",
+    "CUDA_VISIBLE_DEVICES=",
+    "PYTHONHASHSEED=0",
+    "OMP_NUM_THREADS=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "NUMEXPR_NUM_THREADS=1",
+    "/root/.venvs/peptide-omnipanel-v31-web311-20260723/bin/python",
+    "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rf_score_pool.py",
+    "--index",
+    "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/i1/RF-score-pool-index.json",
+    "--index-sha256",
+    "556e7567ee385606967b7dbf75e313a5ffe409c58ab2b3c275601ab3bf5bd1ed"
+  ],
+  "output_root": "D:/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/observed-pools/rf-score-real-v1",
+  "source_issuance": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\i1\\POSTJOINT-ISSUANCE.json",
+    "sha256": "47089749c55431a5305b954940a5584f6654ec3fb0f4ea6b35ccfc398139cb5d"
+  },
+  "pool_index_sha256": "556e7567ee385606967b7dbf75e313a5ffe409c58ab2b3c275601ab3bf5bd1ed",
+  "source_cuda_chain": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\CUDA-ATTEMPT-CHAIN.json",
+    "sha256": "d2338c08ad35006eac485064767c56c95c0b818515a98e813273ac9b8f5b128f"
+  }
+}

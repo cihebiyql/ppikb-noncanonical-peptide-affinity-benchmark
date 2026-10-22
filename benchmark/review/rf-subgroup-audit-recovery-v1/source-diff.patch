@@ -1,0 +1,44 @@
+--- frozen_recompute_RF_v5.py
++++ versioned_recompute_RF_v6.py
+@@ -18,7 +18,8 @@
+ import statistics
+ import time
+ 
+-P = Path(__file__).resolve().parent.parent
++REVIEW = Path(__file__).resolve().parent.parent
++P = REVIEW.parent
+ R = P / 'auxiliary-rf-baseline'
+ METHOD = 'RF-Morgan2-chiral-AAC-DP'
+ PANELS = ('source_peptide_dependency_cold', 'target_reference_homology_cold')
+@@ -95,7 +96,7 @@
+ 
+ 
+ def numeric_helper():
+-    path = Path(__file__).with_name('recompute_metrics.py')
++    path = REVIEW / 'recompute_metrics.py'
+     require(path, HELPER_SHA)
+     spec = importlib.util.spec_from_file_location('independent_numeric_RF_v5', path)
+     helper = importlib.util.module_from_spec(spec)
+@@ -115,7 +116,7 @@
+     require(__file__, auth['script_sha256'])
+     if auth.get('numeric_helper_sha256') != HELPER_SHA:
+         raise ValueError('Independent numeric helper not authorized')
+-    require(Path(__file__).with_name('recompute_metrics.py'), HELPER_SHA)
++    require(REVIEW / 'recompute_metrics.py', HELPER_SHA)
+     require(task_map_path, auth['task_map_sha256'])
+     require(joint_path, auth['joint_barrier_sha256'])
+     joint = read(joint_path)
+@@ -222,8 +223,11 @@
+         if not wanted <= ids:
+             raise ValueError('External frozen subgroup outside score IDs')
+         for row in rows:
+-            if flag not in row or type(row[flag]) is not bool or row[flag] != (row['record_id'] in wanted):
+-                raise ValueError('External subgroup flag missing or changed')
++            if flag in row and (type(row[flag]) is not bool or row[flag] != (row['record_id'] in wanted)):
++                raise ValueError('Existing external subgroup flag changed')
++            if flag not in row:
++                # Private audit rows only: frozen ID membership, never gold or predictions.
++                row[flag] = row['record_id'] in wanted
+     if raw_dataset == 'external75':
+         primary, sensitive, cold = (set(subgroup_ids[f]) for f in ('external_primary', 'external_conditional_sensitivity', 'external_reference_target_cold'))
+         if (len(rows), len(primary), len(sensitive), len(cold)) != (75, 67, 8, 2) or primary & sensitive or primary | sensitive != ids or not cold <= primary:

@@ -1,0 +1,78 @@
+[
+  {
+    "line": 4,
+    "source": "from common import read,sha,path,checked,write,utc,deadline,process_table,children,stop_owned_group,GPU_UUID"
+  },
+  {
+    "line": 115,
+    "source": " def watchdog():"
+  },
+  {
+    "line": 119,
+    "source": "    snapshot=dict(active);table=process_table();current,current_owned=rss_snapshot(snapshot,table);total=sum(table[p]['rss'] for p in (current_owned|children(os.getpid(),table)) if p in table)"
+  },
+  {
+    "line": 122,
+    "source": "      state['timeout_fired']=True;state['watchdog_reason']='per_unit_original_timeout';stop_owned_group(state['pgid'],grace=0)"
+  },
+  {
+    "line": 126,
+    "source": "     for state in snapshot.values():stop_owned_group(state['pgid'],grace=0)"
+  },
+  {
+    "line": 130,
+    "source": "     write(root/'progress.json',record);last=time.monotonic()"
+  },
+  {
+    "line": 132,
+    "source": "  except BaseException as error:"
+  },
+  {
+    "line": 133,
+    "source": "   trip['reason']='watchdog_failed:'+repr(error)"
+  },
+  {
+    "line": 135,
+    "source": "    try:stop_owned_group(state['pgid'],grace=0)"
+  },
+  {
+    "line": 141,
+    "source": "   table=process_table();per,owned=rss_snapshot(active,table)"
+  },
+  {
+    "line": 146,
+    "source": "     stop_owned_group(state['pgid'],grace=.2);state['stdout'].close();state['stderr'].close()"
+  },
+  {
+    "line": 153,
+    "source": "     write(root/(uid+'.terminal.json'),{'unit_id':uid,'exit_code':code,'status':'complete' if good else 'failed','reason':None if good else failure,'pgid':state['pgid'],'finished_at':utc(),'stdout_sha256':sha(state['stdout_path']),'stderr_sha256':sha(state['stderr_path'])})"
+  },
+  {
+    "line": 157,
+    "source": "   table=process_table();per,owned=rss_snapshot(active,table)"
+  },
+  {
+    "line": 194,
+    "source": "     write(root/(uid+'.started.json'),{'argv':unit_args(unit,index),'pid':process.pid,'pgid':process.pid,'session_id':process.pid,'CPU_affinity':affinity,'started_at':utc(),'index_sha256':index_hash,'global_deadline':index['deadline'],'per_unit_timeout_seconds':active[uid]['timeout_seconds'],'unit_effective_deadline_epoch':min(cutoff,time.time()+active[uid]['timeout_seconds'])})"
+  },
+  {
+    "line": 197,
+    "source": " except BaseException as exc:"
+  },
+  {
+    "line": 204,
+    "source": "   try:stop_owned_group(state['pgid'])"
+  },
+  {
+    "line": 209,
+    "source": "   write(root/(uid+'.interrupted.json'),{'unit_id':uid,'reason':reason or 'pool_finally','pgid':state['pgid'],'stopped_at':utc(),'retry_clock_reset':False,'stderr_sha256':sha(state['stderr_path']),'stdout_sha256':sha(state['stdout_path'])})"
+  },
+  {
+    "line": 211,
+    "source": "  write(root/'progress.json',{'status':'stopped' if reason else 'complete','at':utc(),'reason':reason,'pending':len(pending),'active':[],'cleanup_errors':cleanup_errors,'complete_count':len(completed),'failed_count':len(failed),'completed_units':completed,'failed_units':failed,'deadline':index['deadline'],'index_sha256':index_hash,'test_scoring_started':False})"
+  },
+  {
+    "line": 217,
+    "source": " except BaseException as error:"
+  }
+]

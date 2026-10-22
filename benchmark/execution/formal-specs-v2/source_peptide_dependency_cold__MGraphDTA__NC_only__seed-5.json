@@ -1,0 +1,31 @@
+{
+  "method_id": "MGraphDTA",
+  "split_id": "source_peptide_dependency_cold",
+  "regime": "NC_only",
+  "seed": 5,
+  "validation_scope": "same_as_regime",
+  "max_epochs": 30,
+  "patience": 5,
+  "batch_size": 32,
+  "gradient_accumulation": 1,
+  "cpu_threads": 1,
+  "device": "cpu",
+  "y_standardize": false,
+  "train_rows": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/execution/prepared-panels-v1/source_peptide_dependency_cold/train.jsonl",
+  "validation_rows": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/execution/prepared-panels-v1/source_peptide_dependency_cold/validation.jsonl",
+  "train_rows_sha256": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+  "validation_rows_sha256": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6",
+  "methods_root": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods",
+  "run_root": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/execution/formal-runs-v1/fits/source_peptide_dependency_cold__MGraphDTA__NC_only__seed-5",
+  "cache_root": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/execution/encoded-cache-v1",
+  "candidates": [
+    {
+      "learning_rate": 0.001,
+      "weight_decay": 0.0
+    },
+    {
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0
+    }
+  ]
+}

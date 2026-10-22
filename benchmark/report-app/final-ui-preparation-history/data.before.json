@@ -1,0 +1,1991 @@
+{
+  "title": "先看清数据，再比较肽—蛋白亲和力模型",
+  "surface": "report",
+  "status": "reviewed_aggregate_data_methods_only",
+  "buildStatus": "updating",
+  "generatedAt": "2026-10-21T19:02:25.991114+00:00",
+  "report": {
+    "asOf": "2026-10-22"
+  },
+  "filters": [],
+  "queries": {
+    "chemistry_counts": {
+      "rows": [
+        {
+          "category": "synthetic_D_backbone",
+          "category_zh": "非蛋白源／D型／骨架改变（无PTM主标记）",
+          "rows": 723,
+          "kind": "mutually_exclusive",
+          "label": "非蛋白源／D型／骨架改变"
+        },
+        {
+          "category": "PTM",
+          "category_zh": "PTM（无前述非天然主标记）",
+          "rows": 1002,
+          "kind": "mutually_exclusive",
+          "label": "PTM残基修饰"
+        },
+        {
+          "category": "synthetic_and_PTM",
+          "category_zh": "非天然主轴与PTM混合",
+          "rows": 268,
+          "kind": "mutually_exclusive",
+          "label": "两类同时出现"
+        },
+        {
+          "category": "other_NC",
+          "category_zh": "其他已注释非标准残基",
+          "rows": 106,
+          "kind": "mutually_exclusive",
+          "label": "其他非标准残基"
+        },
+        {
+          "category": "standard20_control",
+          "category_zh": "标准20残基对照",
+          "rows": 7520,
+          "kind": "mutually_exclusive",
+          "label": "标准20残基对照"
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：chemical-categories.csv",
+        "files": [
+          {
+            "name": "chemical-categories.csv",
+            "sha256": "f25b6d1da3ed7b5cc1d79a98573b83dad2b09c4b7ac4caab176c8c7c066d306f"
+          },
+          {
+            "name": "方法与数据说明.md",
+            "sha256": "9173e68f17874e7d80cf307a33e3a032ad320dc2b4aa97df748b7be484d3d37f"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "互斥残基注释类别的测量记录数；NC四类合计2099，标准对照7520；观测不等于独立分子。",
+            "definition": "互斥残基注释类别的测量记录数；NC四类合计2099，标准对照7520；观测不等于独立分子。",
+            "componentIds": [
+              "chemistry-bars",
+              "cohort-table",
+              "data-brief",
+              "affinity-definition",
+              "chemistry-definition"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "chemical-categories.csv"
+                ]
+              }
+            ]
+          },
+          {
+            "label": "pKd",
+            "definition": "pKd=-log10(Kd/M)，是对以摩尔为单位的Kd取负对数，不是统计检验p值。当前任务只纳入Kd点值。",
+            "componentIds": [
+              "affinity-definition"
+            ],
+            "formula": "-log10(Kd/M)",
+            "sourceLineage": [
+              {
+                "files": [
+                  "方法与数据说明.md"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "chemical-categories.csv；SHA256 f25b6d1da3ed7b5cc1d79a98573b83dad2b09c4b7ac4caab176c8c7c066d306f"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "互斥残基注释类别的测量记录数；NC四类合计2099，标准对照7520；观测不等于独立分子。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "quality_flow": {
+      "rows": [
+        {
+          "cohort": "NC",
+          "stage": "residue_class_start",
+          "before": 4642,
+          "excluded_this_stage": 0,
+          "retained": 4642,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "NC",
+          "stage": "Kd_endpoint",
+          "before": 4642,
+          "excluded_this_stage": 2522,
+          "retained": 2120,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "NC",
+          "stage": "exact_molar_point",
+          "before": 2120,
+          "excluded_this_stage": 0,
+          "retained": 2120,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "NC",
+          "stage": "SMILES_and_standard20_reference_target_available",
+          "before": 2120,
+          "excluded_this_stage": 3,
+          "retained": 2117,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "NC",
+          "stage": "legacy_primary_quarantine",
+          "before": 2117,
+          "excluded_this_stage": 0,
+          "retained": 2117,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "NC",
+          "stage": "existing_entity_representation_conflict",
+          "before": 2117,
+          "excluded_this_stage": 0,
+          "retained": 2117,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "NC",
+          "stage": "endpoint_internal_conflict",
+          "before": 2117,
+          "excluded_this_stage": 0,
+          "retained": 2117,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "NC",
+          "stage": "concentration_internal_conflict",
+          "before": 2117,
+          "excluded_this_stage": 13,
+          "retained": 2104,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "NC",
+          "stage": "inherited_metadata_only_high_risk",
+          "before": 2104,
+          "excluded_this_stage": 5,
+          "retained": 2099,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "standard20_control",
+          "stage": "residue_class_start",
+          "before": 15754,
+          "excluded_this_stage": 0,
+          "retained": 15754,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "standard20_control",
+          "stage": "Kd_endpoint",
+          "before": 15754,
+          "excluded_this_stage": 7851,
+          "retained": 7903,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "standard20_control",
+          "stage": "exact_molar_point",
+          "before": 7903,
+          "excluded_this_stage": 0,
+          "retained": 7903,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "standard20_control",
+          "stage": "SMILES_and_standard20_reference_target_available",
+          "before": 7903,
+          "excluded_this_stage": 159,
+          "retained": 7744,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "standard20_control",
+          "stage": "legacy_primary_quarantine",
+          "before": 7744,
+          "excluded_this_stage": 2,
+          "retained": 7742,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "standard20_control",
+          "stage": "existing_entity_representation_conflict",
+          "before": 7742,
+          "excluded_this_stage": 5,
+          "retained": 7737,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "standard20_control",
+          "stage": "endpoint_internal_conflict",
+          "before": 7737,
+          "excluded_this_stage": 0,
+          "retained": 7737,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "standard20_control",
+          "stage": "concentration_internal_conflict",
+          "before": 7737,
+          "excluded_this_stage": 155,
+          "retained": 7582,
+          "original_deleted": 0
+        },
+        {
+          "cohort": "standard20_control",
+          "stage": "inherited_metadata_only_high_risk",
+          "before": 7582,
+          "excluded_this_stage": 62,
+          "retained": 7520,
+          "original_deleted": 0
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：quality-filter-flow.csv",
+        "files": [
+          {
+            "name": "quality-filter-flow.csv",
+            "sha256": "144ff38d004ab94b6d75906c7cf69fab995b4558a93940030b77fad4a16d8b42"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "固定顺序筛选中每阶段前后记录量及该阶段移出量；原始删除数始终为0。",
+            "definition": "固定顺序筛选中每阶段前后记录量及该阶段移出量；原始删除数始终为0。",
+            "componentIds": [
+              "filter-flow",
+              "quality-brief"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "quality-filter-flow.csv"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "quality-filter-flow.csv；SHA256 144ff38d004ab94b6d75906c7cf69fab995b4558a93940030b77fad4a16d8b42"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "固定顺序筛选中每阶段前后记录量及该阶段移出量；原始删除数始终为0。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "split_counts": {
+      "rows": [
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "train",
+          "evaluation_stratum": "standard20_control",
+          "rows": 5992
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "train",
+          "evaluation_stratum": "synthetic_D_backbone",
+          "rows": 536
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "train",
+          "evaluation_stratum": "other_NC",
+          "rows": 86
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "train",
+          "evaluation_stratum": "PTM",
+          "rows": 747
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "train",
+          "evaluation_stratum": "synthetic_and_PTM",
+          "rows": 179
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "validation",
+          "evaluation_stratum": "standard20_control",
+          "rows": 792
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "validation",
+          "evaluation_stratum": "synthetic_D_backbone",
+          "rows": 87
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "validation",
+          "evaluation_stratum": "PTM",
+          "rows": 97
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "validation",
+          "evaluation_stratum": "other_NC",
+          "rows": 14
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "validation",
+          "evaluation_stratum": "synthetic_and_PTM",
+          "rows": 50
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "test",
+          "evaluation_stratum": "standard20_control",
+          "rows": 736
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "test",
+          "evaluation_stratum": "PTM",
+          "rows": 158
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "test",
+          "evaluation_stratum": "synthetic_D_backbone",
+          "rows": 100
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "test",
+          "evaluation_stratum": "synthetic_and_PTM",
+          "rows": 39
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "partition": "test",
+          "evaluation_stratum": "other_NC",
+          "rows": 6
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "train",
+          "evaluation_stratum": "standard20_control",
+          "rows": 5324
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "train",
+          "evaluation_stratum": "synthetic_D_backbone",
+          "rows": 540
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "train",
+          "evaluation_stratum": "PTM",
+          "rows": 615
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "train",
+          "evaluation_stratum": "other_NC",
+          "rows": 87
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "train",
+          "evaluation_stratum": "synthetic_and_PTM",
+          "rows": 167
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "validation",
+          "evaluation_stratum": "standard20_control",
+          "rows": 1085
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "validation",
+          "evaluation_stratum": "synthetic_D_backbone",
+          "rows": 90
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "validation",
+          "evaluation_stratum": "other_NC",
+          "rows": 7
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "validation",
+          "evaluation_stratum": "PTM",
+          "rows": 197
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "validation",
+          "evaluation_stratum": "synthetic_and_PTM",
+          "rows": 64
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "test",
+          "evaluation_stratum": "synthetic_D_backbone",
+          "rows": 93
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "test",
+          "evaluation_stratum": "standard20_control",
+          "rows": 1111
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "test",
+          "evaluation_stratum": "PTM",
+          "rows": 190
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "test",
+          "evaluation_stratum": "synthetic_and_PTM",
+          "rows": 37
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "partition": "test",
+          "evaluation_stratum": "other_NC",
+          "rows": 12
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：split-strata-counts.csv",
+        "files": [
+          {
+            "name": "split-strata-counts.csv",
+            "sha256": "a470f92ca1c828ce30fbd406d569c0d58c6923a7232f3e96751c364f18eced42"
+          },
+          {
+            "name": "方法与数据说明.md",
+            "sha256": "9173e68f17874e7d80cf307a33e3a032ad320dc2b4aa97df748b7be484d3d37f"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "固定训练/验证/测试分区内各互斥化学组的记录数；先共同划分，再按训练regime取NC或标准子集。",
+            "definition": "固定训练/验证/测试分区内各互斥化学组的记录数；先共同划分，再按训练regime取NC或标准子集。",
+            "componentIds": [
+              "split-brief"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "split-strata-counts.csv"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "split-strata-counts.csv；SHA256 a470f92ca1c828ce30fbd406d569c0d58c6923a7232f3e96751c364f18eced42"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "固定训练/验证/测试分区内各互斥化学组的记录数；先共同划分，再按训练regime取NC或标准子集。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "sensitivity_counts": {
+      "rows": [
+        {
+          "panel": "source_peptide_dependency_cold",
+          "regime": "NC_only",
+          "train": 1548,
+          "validation": 248,
+          "test": 303,
+          "test_sensitivity_rows": 274,
+          "test_sensitivity_excluded": 29
+        },
+        {
+          "panel": "source_peptide_dependency_cold",
+          "regime": "standard_only",
+          "train": 5992,
+          "validation": 792,
+          "test": 736,
+          "test_sensitivity_rows": 724,
+          "test_sensitivity_excluded": 12
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "regime": "NC_only",
+          "train": 1409,
+          "validation": 358,
+          "test": 332,
+          "test_sensitivity_rows": 261,
+          "test_sensitivity_excluded": 71
+        },
+        {
+          "panel": "target_reference_homology_cold",
+          "regime": "standard_only",
+          "train": 5324,
+          "validation": 1085,
+          "test": 1111,
+          "test_sensitivity_rows": 1067,
+          "test_sensitivity_excluded": 44
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：split-regime-counts.csv",
+        "files": [
+          {
+            "name": "split-regime-counts.csv",
+            "sha256": "decb7825cf428febbf1c9e63cac56c4beb6436886fc9a5f3b3d6e62f2f0e3c9b"
+          },
+          {
+            "name": "方法与数据说明.md",
+            "sha256": "9173e68f17874e7d80cf307a33e3a032ad320dc2b4aa97df748b7be484d3d37f"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "同一批测试预测排除结构—注释冲突的分母；只改变评价子集，不重新训练或选模型。",
+            "definition": "同一批测试预测排除结构—注释冲突的分母；只改变评价子集，不重新训练或选模型。",
+            "componentIds": [
+              "discordance-table",
+              "discordance-brief"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "split-regime-counts.csv"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "split-regime-counts.csv；SHA256 decb7825cf428febbf1c9e63cac56c4beb6436886fc9a5f3b3d6e62f2f0e3c9b"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "同一批测试预测排除结构—注释冲突的分母；只改变评价子集，不重新训练或选模型。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "prefix_counts": {
+      "rows": [
+        {
+          "protein_prefix_limit": 1000,
+          "cohort": "NC",
+          "records": 2099,
+          "truncated_records": 344,
+          "unique_reference_sequences": 415,
+          "truncated_reference_sequences": 74,
+          "minimum_reference_length": 19,
+          "maximum_reference_length": 5537
+        },
+        {
+          "protein_prefix_limit": 1000,
+          "cohort": "standard20_control",
+          "records": 7520,
+          "truncated_records": 1145,
+          "unique_reference_sequences": 1226,
+          "truncated_reference_sequences": 211,
+          "minimum_reference_length": 19,
+          "maximum_reference_length": 8525
+        },
+        {
+          "protein_prefix_limit": 1200,
+          "cohort": "NC",
+          "records": 2099,
+          "truncated_records": 247,
+          "unique_reference_sequences": 415,
+          "truncated_reference_sequences": 56,
+          "minimum_reference_length": 19,
+          "maximum_reference_length": 5537
+        },
+        {
+          "protein_prefix_limit": 1200,
+          "cohort": "standard20_control",
+          "records": 7520,
+          "truncated_records": 776,
+          "unique_reference_sequences": 1226,
+          "truncated_reference_sequences": 146,
+          "minimum_reference_length": 19,
+          "maximum_reference_length": 8525
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：target-prefix-coverage.csv",
+        "files": [
+          {
+            "name": "target-prefix-coverage.csv",
+            "sha256": "1a7c83f433403d1dfd5064c6cdc187e5b6d36dbe30018e7f6a64a4c0ffc9ffff"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "作者蛋白前缀上限下会截断的参考序列/观测数；参考不等于实际实验构建体。",
+            "definition": "作者蛋白前缀上限下会截断的参考序列/观测数；参考不等于实际实验构建体。",
+            "componentIds": [
+              "prefix-table",
+              "target-brief"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "target-prefix-coverage.csv"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "target-prefix-coverage.csv；SHA256 1a7c83f433403d1dfd5064c6cdc187e5b6d36dbe30018e7f6a64a4c0ffc9ffff"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "作者蛋白前缀上限下会截断的参考序列/观测数；参考不等于实际实验构建体。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "methods": {
+      "rows": [
+        {
+          "method": "GraphDTA-GIN",
+          "paper_title": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+          "year": 2021,
+          "first_online_date": "2020-10-24",
+          "doi": "10.1093/bioinformatics/btaa921",
+          "paper_url": "https://doi.org/10.1093/bioinformatics/btaa921",
+          "repository": "https://github.com/thinng/GraphDTA",
+          "commit": "6162245c6776684b391d30610850fe7077478435",
+          "protein_prefix_limit": 1000,
+          "atom_chirality_encoded": false,
+          "adapter_repairs_and_differences": "作者GIN模型逐字节保留；纯函数AST提取去除导入即读数据副作用；保持源码global_add_pool并披露论文文字max pool差异；统一validation选优替换作者test选优循环。",
+          "original_task": "compound-protein affinity regression",
+          "current_task": "same frozen PPIKB Kd benchmark retrained from scratch"
+        },
+        {
+          "method": "MGraphDTA",
+          "paper_title": "MGraphDTA: deep multiscale graph neural network for explainable drug–target binding affinity prediction",
+          "year": 2022,
+          "first_online_date": "2022-01-05",
+          "doi": "10.1039/d1sc05180f",
+          "paper_url": "https://doi.org/10.1039/d1sc05180f",
+          "repository": "https://github.com/guaguabujianle/MGraphDTA",
+          "commit": "54386680e8c9562f708a0fe5d381038c62111df6",
+          "protein_prefix_limit": 1200,
+          "atom_chirality_encoded": false,
+          "adapter_repairs_and_differences": "保留22节点/6边特征与单图minmax；forward克隆Data以避免data.x污染复用缓存；核心GraphConv未使用边属性。",
+          "original_task": "compound-protein affinity regression",
+          "current_task": "same frozen PPIKB Kd benchmark retrained from scratch"
+        },
+        {
+          "method": "DGDTA-CL",
+          "paper_title": "DGDTA: dynamic graph attention network for predicting drug–target binding affinity",
+          "year": 2023,
+          "first_online_date": "2023-09-30",
+          "doi": "10.1186/s12859-023-05497-5",
+          "paper_url": "https://doi.org/10.1186/s12859-023-05497-5",
+          "repository": "https://github.com/luojunwei/DGDTA",
+          "commit": "cc325a361f39652674f54a2120f17991f6f733f1",
+          "protein_prefix_limit": 1000,
+          "atom_chirality_encoded": false,
+          "adapter_repairs_and_differences": "删除GCNConv不支持的dropout参数；拼接入口256→1688；LSTM设置batch_first=True，修复跨样本依赖；使用修正版作者实现，原源码及diff保留。",
+          "original_task": "compound-protein affinity regression",
+          "current_task": "same frozen PPIKB Kd benchmark retrained from scratch"
+        },
+        {
+          "method": "DeepNC-GEN",
+          "paper_title": "DeepNC: a framework for drug-target interaction prediction with graph neural networks",
+          "year": 2022,
+          "first_online_date": "2022-05-11",
+          "doi": "10.7717/peerj.13163",
+          "paper_url": "https://doi.org/10.7717/peerj.13163",
+          "repository": "https://github.com/thntran/DeepNC",
+          "commit": "297940199a26aa9a1afa8e3fc1a0b2c3ce9f0d38",
+          "protein_prefix_limit": 1000,
+          "atom_chirality_encoded": false,
+          "adapter_repairs_and_differences": "super(GEN_Conv,self)未定义名称修为super(GEN,self)；现PyG对softmax_sg语义已兼容，无额外聚合替换；保留源码global_add_pool。",
+          "original_task": "compound-protein affinity regression",
+          "current_task": "same frozen PPIKB Kd benchmark retrained from scratch"
+        },
+        {
+          "method": "GS-DTA",
+          "paper_title": "GS-DTA: integrating graph and sequence models for predicting drug-target binding affinity",
+          "year": 2025,
+          "first_online_date": "2025-02-04",
+          "doi": "10.1186/s12864-025-11234-4",
+          "paper_url": "https://doi.org/10.1186/s12864-025-11234-4",
+          "repository": "https://github.com/zhuziguang/GS-DTA",
+          "commit": "a36750c0c2567b5b4c3f9b3aed64eac5c40a3d3c",
+          "protein_prefix_limit": 1000,
+          "atom_chirality_encoded": false,
+          "adapter_repairs_and_differences": "作者模型逐字节保留；AST提取五个纯编码函数；固定路径载入真正GS类，避开大小写目录和原training_validation.py误导入其他模型问题。",
+          "original_task": "compound-protein affinity regression",
+          "current_task": "same frozen PPIKB Kd benchmark retrained from scratch"
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：predecessor-models.csv",
+        "files": [
+          {
+            "name": "predecessor-models.csv",
+            "sha256": "3051e6291d57d4844bced666510f18cd048d7a3fe514ab4552f14c2546768cd1"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "五篇不同公开架构在共同PPIKB数据上从头重训；年份、上游commit和披露修复如实保存。",
+            "definition": "五篇不同公开架构在共同PPIKB数据上从头重训；年份、上游commit和披露修复如实保存。",
+            "componentIds": [
+              "model-table",
+              "method-brief",
+              "model-provenance"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "predecessor-models.csv"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "predecessor-models.csv；SHA256 3051e6291d57d4844bced666510f18cd048d7a3fe514ab4552f14c2546768cd1"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "五篇不同公开架构在共同PPIKB数据上从头重训；年份、上游commit和披露修复如实保存。"
+          }
+        ],
+        "links": [
+          {
+            "label": "GraphDTA-GIN论文",
+            "url": "https://doi.org/10.1093/bioinformatics/btaa921"
+          },
+          {
+            "label": "MGraphDTA论文",
+            "url": "https://doi.org/10.1039/d1sc05180f"
+          },
+          {
+            "label": "DGDTA-CL论文",
+            "url": "https://doi.org/10.1186/s12859-023-05497-5"
+          },
+          {
+            "label": "DeepNC-GEN论文",
+            "url": "https://doi.org/10.7717/peerj.13163"
+          },
+          {
+            "label": "GS-DTA论文",
+            "url": "https://doi.org/10.1186/s12864-025-11234-4"
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "external_scope": {
+      "rows": [
+        {
+          "dataset": "SH2/ProBound",
+          "study_doi": "10.1002/pro.70317",
+          "records": 45,
+          "chemistry": "pY/PTM",
+          "primary": 45,
+          "sensitivity": 0,
+          "separate_supplement": 0,
+          "source_cold": 45,
+          "declared_graph_cold": 45,
+          "target_reference_cold": 0,
+          "target_scope": "protein reference",
+          "training_use": false
+        },
+        {
+          "dataset": "Kliche2023",
+          "study_doi": "10.15252/msb.202211164",
+          "records": 30,
+          "chemistry": "pS/pT PTM",
+          "primary": 22,
+          "sensitivity": 8,
+          "separate_supplement": 0,
+          "source_cold": 30,
+          "declared_graph_cold": 30,
+          "target_reference_cold": 2,
+          "target_scope": "reference/domain;8 conditioned boundary/site views",
+          "training_use": false
+        },
+        {
+          "dataset": "ProfAff2022 assets-only",
+          "study_doi": "10.1038/s41467-022-33018-0",
+          "records": 52,
+          "chemistry": "PTM",
+          "primary": 0,
+          "sensitivity": 0,
+          "separate_supplement": 0,
+          "source_cold": 52,
+          "declared_graph_cold": null,
+          "target_reference_cold": 38,
+          "target_scope": "domain/reference, full fusion unresolved; graph independence unknown without complete SMILES",
+          "training_use": false
+        },
+        {
+          "dataset": "IgG-Fc2025 separate supplement",
+          "study_doi": "10.1248/cpb.c25-00637",
+          "records": 13,
+          "chemistry": "8 synthetic_D_backbone +5 standard",
+          "primary": 0,
+          "sensitivity": 0,
+          "separate_supplement": 13,
+          "source_cold": 13,
+          "declared_graph_cold": 13,
+          "target_reference_cold": 0,
+          "target_scope": "449aa heavy-chain Fc-side reference; full2H2L provenance retained",
+          "training_use": false
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：external-validation-scope.csv",
+        "files": [
+          {
+            "name": "external-validation-scope.csv",
+            "sha256": "c7b7a63c48c20547ab59b631712d241acfd76d96233284b5b3b7f660131a13fc"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "原75为PTM外测（67主用+8条件敏感性）；补13为8非PTM+5标准，单独报告；来源冷、声明图冷和靶标冷分别列示。",
+            "definition": "原75为PTM外测（67主用+8条件敏感性）；补13为8非PTM+5标准，单独报告；来源冷、声明图冷和靶标冷分别列示。",
+            "componentIds": [
+              "external-table",
+              "external-brief"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "external-validation-scope.csv"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "external-validation-scope.csv；SHA256 c7b7a63c48c20547ab59b631712d241acfd76d96233284b5b3b7f660131a13fc"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "原75为PTM外测（67主用+8条件敏感性）；补13为8非PTM+5标准，单独报告；来源冷、声明图冷和靶标冷分别列示。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "evidence": {
+      "rows": [
+        {
+          "evidence_id": "E01",
+          "claim": "冻结9619行NC2099+标准7520，固定seed与两面板",
+          "source_name": "manifest.json",
+          "source_sha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2",
+          "location": "/rows;/NC;/standard;/seed_list;/primary_panels"
+        },
+        {
+          "evidence_id": "E02",
+          "claim": "互斥类别、输入范围、分组规则与注释冲突策略",
+          "source_name": "protocol.json",
+          "source_sha256": "71fd0cee78d2176ce04c7110b4c1c1d953a573368176004209ccbfd5cd2d4870",
+          "location": "/chemistry_strata_mutually_exclusive;/source_peptide_panel;/target_panel;/class_graph_discordance"
+        },
+        {
+          "evidence_id": "E03",
+          "claim": "逐级筛选和残基子类，由冻结继承的无亲和力数值审计表重算",
+          "source_name": "all-21845-status.jsonl",
+          "source_sha256": "6e532671e7deafaa110403cc772b00be0178eee351b9a037da31add276aabb74",
+          "location": "all-21845-status; SHA bound by frozen input-manifest"
+        },
+        {
+          "evidence_id": "E04",
+          "claim": "两面板NC/std计数与同预测敏感性分母",
+          "source_name": "frozen-v1-verification.json",
+          "source_sha256": "feceddfdef56f95ca60e90f0efff69c92916f3a3e684f41f55705bded6aa1d86",
+          "location": "/regime_split_counts"
+        },
+        {
+          "evidence_id": "E05",
+          "claim": "零泄漏声明与允许跨轴关系",
+          "source_name": "independent-leakage-verification.json",
+          "source_sha256": "4f3d42b8abc45cfaa948f3d6e034875ce79187c59a29ffade894d1045e2ea9c1",
+          "location": "/panel_audits"
+        },
+        {
+          "evidence_id": "E06",
+          "claim": "93.02%双冷巨型组件及实际分区",
+          "source_name": "split-feasibility-report.json",
+          "source_sha256": "b837c0f00e3ded1ab37324db8197922fe05d8cefe3e57c515799e3c966d1f653",
+          "location": "/panels"
+        },
+        {
+          "evidence_id": "E07",
+          "claim": "观测/实体/靶标/实体靶标对粒度",
+          "source_name": "granularity-audit.json",
+          "source_sha256": "12591e87d45f2bbbadab9cd5f070906bbafb5f6fcb485a9fba769f1c01fb1eb2",
+          "location": "/all;/NC;/standard20_control"
+        },
+        {
+          "evidence_id": "E08",
+          "claim": "靶标前缀截断计数与独立化学flags；未打开任何金标",
+          "source_name": "inputs.jsonl",
+          "source_sha256": "fd8ae1207818a4b1533c1b1a4ef5b299593a82700fb62c9ef2490656c9af01f5",
+          "location": "label-free target_sequence + chemistry flags"
+        },
+        {
+          "evidence_id": "E09",
+          "claim": "五篇论文正式身份与PDF字节哈希",
+          "source_name": "registered-paper-map.json",
+          "source_sha256": "80a768edb439bd4f57a0a12f31d75083bea728a5c1de78c3dc3c3be7251e688c",
+          "location": "all five method entries"
+        },
+        {
+          "evidence_id": "E10",
+          "claim": "替换MRBDTA为GS及20epochs/pat5/两LR的训练前修订",
+          "source_name": "protocol-revision-v3.json",
+          "source_sha256": "f8056e6a32bef0db4e09b35ae28ab4529caf490b154b144dbee78f9d6c30ccf2",
+          "location": "/replacement_method;/current_max_epochs;/basis"
+        },
+        {
+          "evidence_id": "E11",
+          "claim": "GS论文/仓库commit和原生模型身份",
+          "source_name": "candidate-audit.json",
+          "source_sha256": "dcdf766f75623720ef44ac46cf010a336b92a1637d6ba4a94be1adddbd93c466",
+          "location": "/paper;/code;/method"
+        },
+        {
+          "evidence_id": "E12",
+          "claim": "GraphDTA-GIN输入与执行修复",
+          "source_name": "README.md",
+          "source_sha256": "528ff57f96abcd30f921814fef0531adaaa2a59705155179d11a9c35dff67c85",
+          "location": "Frozen source and disclosed changes / 必要修复 / 接入接口"
+        },
+        {
+          "evidence_id": "E13",
+          "claim": "MGraphDTA输入与执行修复",
+          "source_name": "README.md",
+          "source_sha256": "43797ffbd4f5d5a8f463371552a2b2a19d84b088dcdaef3ef964191442b94817",
+          "location": "Frozen source and disclosed changes / 必要修复 / 接入接口"
+        },
+        {
+          "evidence_id": "E14",
+          "claim": "DGDTA-CL输入与执行修复",
+          "source_name": "README.md",
+          "source_sha256": "43797ffbd4f5d5a8f463371552a2b2a19d84b088dcdaef3ef964191442b94817",
+          "location": "Frozen source and disclosed changes / 必要修复 / 接入接口"
+        },
+        {
+          "evidence_id": "E15",
+          "claim": "DeepNC-GEN输入与执行修复",
+          "source_name": "README.md",
+          "source_sha256": "528ff57f96abcd30f921814fef0531adaaa2a59705155179d11a9c35dff67c85",
+          "location": "Frozen source and disclosed changes / 必要修复 / 接入接口"
+        },
+        {
+          "evidence_id": "E16",
+          "claim": "GS-DTA输入与执行修复",
+          "source_name": "README.md",
+          "source_sha256": "6325976d9b2d72d5bd82fdeb76ea7a54ed3eb6af63d0829a389855823375c05b",
+          "location": "Frozen source and disclosed changes / 必要修复 / 接入接口"
+        },
+        {
+          "evidence_id": "E17",
+          "claim": "原75外测的接受分母、回顾性和独立性边界",
+          "source_name": "acceptance-manifest.json",
+          "source_sha256": "85973838adc28c0b6b9134a28a90312162a158eafd20f8b2bf14e68e13d36c4d",
+          "location": "/counts;/graph_rule;/target_rule;/gold_policy"
+        },
+        {
+          "evidence_id": "E18",
+          "claim": "13补集接受依据和449aa参考视图",
+          "source_name": "root-accepted-manifest.json",
+          "source_sha256": "eba3933184782b1eed6f178c30edbd4eeb6c9414758adb5584b2acc46beb3c92",
+          "location": "/root_direct_task_decision;/counts;/target_input_scope;/evaluation_policy"
+        },
+        {
+          "evidence_id": "E19",
+          "claim": "13补集源23实体至13接受点的筛选",
+          "source_name": "postfreeze-supplement-candidate-manifest.json",
+          "source_sha256": "5a4be60f2b4579d51aa1ff42257751bc8a0619ecb11c207e473b71bdb7a07bfc",
+          "location": "/counts;/chemistry_quality;/excluded_chemical_axes"
+        },
+        {
+          "evidence_id": "E20",
+          "claim": "四个保留方法的首次在线日期；该旧sidecar的MRBDTA名单已被revision-v3替换",
+          "source_name": "primary-method-verification-sidecar-v3.json",
+          "source_sha256": "49e14a3fa11e2bae32821c48a872f5c7be335f57aceba850854f270426361296",
+          "location": "/models/*/publication_dates"
+        },
+        {
+          "evidence_id": "E21",
+          "claim": "外部三来源DOI、来源/实体训练黑名单0",
+          "source_name": "training-blacklist.json",
+          "source_sha256": "b7b72ea2b1fc1eed8e151eba3b8fc4a80bacb7bde79cfc57ef10f8a1ada6b70e",
+          "location": "/external_original_study_aliases;/source_blacklist_record_ids;/conservative_related_entity_blacklist_record_ids"
+        },
+        {
+          "evidence_id": "E22",
+          "claim": "13补集原始研究DOI和来源URL；旧就绪状态由后续接受清单覆盖",
+          "source_name": "IgG-Fc-2025-lead-summary.json",
+          "source_sha256": "e0876b516ec005aa4bd2cc22934db6e7944d1074bf9694f43326961fe4958327",
+          "location": "/study_id;/official_source_url"
+        },
+        {
+          "evidence_id": "E23",
+          "claim": "共同Adam/MSE实现与候选LR常量；只读代码，不执行任何评分",
+          "source_name": "runner.py",
+          "source_sha256": "9abe4a9fba5840a6200aecf40fdfb436abbf61d78c3a9a2f28baae7712c6913e",
+          "location": "HYPERPARAMETERS; train_candidate; torch.optim.Adam; mse_loss"
+        },
+        {
+          "evidence_id": "E24",
+          "claim": "正式DeepNC-GEN参数规格（只读train/validation路径元数据）",
+          "source_name": "DeepNC-GEN__source_peptide_dependency_cold__NC_only__seed00.json",
+          "source_sha256": "d2fb5569448dec1c5f4b8a107e8302697d8904901de0a0ba140aad389eb8330c",
+          "location": "/batch_size;/gradient_accumulation;/max_epochs;/patience;/candidates"
+        },
+        {
+          "evidence_id": "E25",
+          "claim": "正式DGDTA-CL参数规格（只读train/validation路径元数据）",
+          "source_name": "DGDTA-CL__source_peptide_dependency_cold__NC_only__seed00.json",
+          "source_sha256": "266d82a664824a75e42b087e51af0d148d6bf2d0289344ad2df6fdb54efed293",
+          "location": "/batch_size;/gradient_accumulation;/max_epochs;/patience;/candidates"
+        },
+        {
+          "evidence_id": "E26",
+          "claim": "正式GraphDTA-GIN参数规格（只读train/validation路径元数据）",
+          "source_name": "GraphDTA-GIN__source_peptide_dependency_cold__NC_only__seed00.json",
+          "source_sha256": "6e6349f26086ceb2150e11c367ca3274c1dd90c4f72ccf4f4c4908f06d17a774",
+          "location": "/batch_size;/gradient_accumulation;/max_epochs;/patience;/candidates"
+        },
+        {
+          "evidence_id": "E27",
+          "claim": "正式GS-DTA参数规格（只读train/validation路径元数据）",
+          "source_name": "GS-DTA__source_peptide_dependency_cold__NC_only__seed00.json",
+          "source_sha256": "3774a771bb9361cc4b347f5f176a91b4ba5c0643445e7d56cd27a2bc6340f62c",
+          "location": "/batch_size;/gradient_accumulation;/max_epochs;/patience;/candidates"
+        },
+        {
+          "evidence_id": "E28",
+          "claim": "正式MGraphDTA参数规格（只读train/validation路径元数据）",
+          "source_name": "MGraphDTA__source_peptide_dependency_cold__NC_only__seed00.json",
+          "source_sha256": "0caa9a7708b64caaf03833fe370b54f86f9eb39662ea7803c8d430f5f9ea46e7",
+          "location": "/batch_size;/gradient_accumulation;/max_epochs;/patience;/candidates"
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：source-evidence.csv",
+        "files": [
+          {
+            "name": "source-evidence.csv",
+            "sha256": "b2b4fe3412b16815cdc1ae1d6bcccf485c7563991dc3068fd4a12a95016ea12b"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "28条已核验来源声明与SHA；只嵌入聚合证据，不嵌入机器私有路径或原始肽实体。",
+            "definition": "28条已核验来源声明与SHA；只嵌入聚合证据，不嵌入机器私有路径或原始肽实体。",
+            "componentIds": [
+              "evidence-table",
+              "evidence-brief"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "source-evidence.csv"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "source-evidence.csv；SHA256 b2b4fe3412b16815cdc1ae1d6bcccf485c7563991dc3068fd4a12a95016ea12b"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "28条已核验来源声明与SHA；只嵌入聚合证据，不嵌入机器私有路径或原始肽实体。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "subtypes": {
+      "rows": [
+        {
+          "subtype": "d_stereoisomer",
+          "rows": 73,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "n_substituted_or_peptoid",
+          "rows": 69,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "natural_21_22",
+          "rows": 2,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "nonalpha_or_backbone_modified",
+          "rows": 175,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "nonproteinogenic_named",
+          "rows": 384,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "nonproteinogenic_substituted_aminoacid",
+          "rows": 647,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "nonstandard_author_explicit_unspecified",
+          "rows": 31,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "ptm_acylation",
+          "rows": 124,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "ptm_glycosylation",
+          "rows": 29,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "ptm_hydroxylation",
+          "rows": 29,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "ptm_lipidation_sidechain",
+          "rows": 21,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "ptm_methylation",
+          "rows": 422,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "ptm_oxidation",
+          "rows": 3,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "ptm_phosphorylation",
+          "rows": 627,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "ptm_sulfation",
+          "rows": 41,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "residue_sidechain_derivative",
+          "rows": 120,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "reviewed_nonproteinogenic_residue",
+          "rows": 38,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "reviewed_residue_sidechain_modification",
+          "rows": 17,
+          "kind": "overlapping_annotation_flag_not_additive"
+        },
+        {
+          "subtype": "terminal_residue_conversion",
+          "rows": 51,
+          "kind": "overlapping_annotation_flag_not_additive"
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：nc-overlapping-subtypes.csv",
+        "files": [
+          {
+            "name": "nc-overlapping-subtypes.csv",
+            "sha256": "5cde8c81352cac7d1141bad28f55fdb1a0502025f9939e68a5f0d8aaa0f246b9"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "非标准子类注释flag可重叠，不能相加作为独立样本总数。",
+            "definition": "非标准子类注释flag可重叠，不能相加作为独立样本总数。",
+            "componentIds": [
+              "subtype-table"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "nc-overlapping-subtypes.csv"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "nc-overlapping-subtypes.csv；SHA256 5cde8c81352cac7d1141bad28f55fdb1a0502025f9939e68a5f0d8aaa0f246b9"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "非标准子类注释flag可重叠，不能相加作为独立样本总数。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "raw_counts": {
+      "rows": [
+        {
+          "residue_class": "noncanonical_assay_tag_residue",
+          "rows": 100
+        },
+        {
+          "residue_class": "noncanonical_explicit",
+          "rows": 4642
+        },
+        {
+          "residue_class": "standard20_supported",
+          "rows": 15754
+        },
+        {
+          "residue_class": "unresolved",
+          "rows": 1349
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：raw-residue-class-counts.csv",
+        "files": [
+          {
+            "name": "raw-residue-class-counts.csv",
+            "sha256": "57072bc15c8ebd48e7851cdeedd6681f8e17650166e9648cb2f21f2b8c3ceab6"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "原PPIKB21845行残基类别审计；不确定/标签型记录保留原档案，未强行并入核心NC。",
+            "definition": "原PPIKB21845行残基类别审计；不确定/标签型记录保留原档案，未强行并入核心NC。",
+            "componentIds": [
+              "raw-count-table"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "raw-residue-class-counts.csv"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "raw-residue-class-counts.csv；SHA256 57072bc15c8ebd48e7851cdeedd6681f8e17650166e9648cb2f21f2b8c3ceab6"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "原PPIKB21845行残基类别审计；不确定/标签型记录保留原档案，未强行并入核心NC。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "sample_denominators": {
+      "rows": [
+        {
+          "panel_id": "source_peptide_dependency_cold",
+          "regime_id": "NC_only",
+          "chemistry_id": "synthetic_D_backbone",
+          "panel_label": "来源＋肽依赖冷",
+          "regime_label": "只用非标准肽训练",
+          "chemistry_label": "非蛋白源／D型／骨架改变",
+          "train_n": 536,
+          "validation_n": 87,
+          "test_n": 100,
+          "sensitivity_n": null,
+          "training_used": true
+        },
+        {
+          "panel_id": "source_peptide_dependency_cold",
+          "regime_id": "NC_only",
+          "chemistry_id": "PTM",
+          "panel_label": "来源＋肽依赖冷",
+          "regime_label": "只用非标准肽训练",
+          "chemistry_label": "PTM残基修饰",
+          "train_n": 747,
+          "validation_n": 97,
+          "test_n": 158,
+          "sensitivity_n": null,
+          "training_used": true
+        },
+        {
+          "panel_id": "source_peptide_dependency_cold",
+          "regime_id": "NC_only",
+          "chemistry_id": "synthetic_and_PTM",
+          "panel_label": "来源＋肽依赖冷",
+          "regime_label": "只用非标准肽训练",
+          "chemistry_label": "两类同时出现",
+          "train_n": 179,
+          "validation_n": 50,
+          "test_n": 39,
+          "sensitivity_n": null,
+          "training_used": true
+        },
+        {
+          "panel_id": "source_peptide_dependency_cold",
+          "regime_id": "NC_only",
+          "chemistry_id": "other_NC",
+          "panel_label": "来源＋肽依赖冷",
+          "regime_label": "只用非标准肽训练",
+          "chemistry_label": "其他非标准残基",
+          "train_n": 86,
+          "validation_n": 14,
+          "test_n": 6,
+          "sensitivity_n": null,
+          "training_used": true
+        },
+        {
+          "panel_id": "source_peptide_dependency_cold",
+          "regime_id": "NC_only",
+          "chemistry_id": "standard20_control",
+          "panel_label": "来源＋肽依赖冷",
+          "regime_label": "只用非标准肽训练",
+          "chemistry_label": "标准20残基对照",
+          "train_n": 0,
+          "validation_n": 0,
+          "test_n": 736,
+          "sensitivity_n": 724,
+          "training_used": false
+        },
+        {
+          "panel_id": "source_peptide_dependency_cold",
+          "regime_id": "standard_only",
+          "chemistry_id": "synthetic_D_backbone",
+          "panel_label": "来源＋肽依赖冷",
+          "regime_label": "只用标准肽训练",
+          "chemistry_label": "非蛋白源／D型／骨架改变",
+          "train_n": 0,
+          "validation_n": 0,
+          "test_n": 100,
+          "sensitivity_n": null,
+          "training_used": false
+        },
+        {
+          "panel_id": "source_peptide_dependency_cold",
+          "regime_id": "standard_only",
+          "chemistry_id": "PTM",
+          "panel_label": "来源＋肽依赖冷",
+          "regime_label": "只用标准肽训练",
+          "chemistry_label": "PTM残基修饰",
+          "train_n": 0,
+          "validation_n": 0,
+          "test_n": 158,
+          "sensitivity_n": null,
+          "training_used": false
+        },
+        {
+          "panel_id": "source_peptide_dependency_cold",
+          "regime_id": "standard_only",
+          "chemistry_id": "synthetic_and_PTM",
+          "panel_label": "来源＋肽依赖冷",
+          "regime_label": "只用标准肽训练",
+          "chemistry_label": "两类同时出现",
+          "train_n": 0,
+          "validation_n": 0,
+          "test_n": 39,
+          "sensitivity_n": null,
+          "training_used": false
+        },
+        {
+          "panel_id": "source_peptide_dependency_cold",
+          "regime_id": "standard_only",
+          "chemistry_id": "other_NC",
+          "panel_label": "来源＋肽依赖冷",
+          "regime_label": "只用标准肽训练",
+          "chemistry_label": "其他非标准残基",
+          "train_n": 0,
+          "validation_n": 0,
+          "test_n": 6,
+          "sensitivity_n": null,
+          "training_used": false
+        },
+        {
+          "panel_id": "source_peptide_dependency_cold",
+          "regime_id": "standard_only",
+          "chemistry_id": "standard20_control",
+          "panel_label": "来源＋肽依赖冷",
+          "regime_label": "只用标准肽训练",
+          "chemistry_label": "标准20残基对照",
+          "train_n": 5992,
+          "validation_n": 792,
+          "test_n": 736,
+          "sensitivity_n": 724,
+          "training_used": true
+        },
+        {
+          "panel_id": "target_reference_homology_cold",
+          "regime_id": "NC_only",
+          "chemistry_id": "synthetic_D_backbone",
+          "panel_label": "参考蛋白同源冷",
+          "regime_label": "只用非标准肽训练",
+          "chemistry_label": "非蛋白源／D型／骨架改变",
+          "train_n": 540,
+          "validation_n": 90,
+          "test_n": 93,
+          "sensitivity_n": null,
+          "training_used": true
+        },
+        {
+          "panel_id": "target_reference_homology_cold",
+          "regime_id": "NC_only",
+          "chemistry_id": "PTM",
+          "panel_label": "参考蛋白同源冷",
+          "regime_label": "只用非标准肽训练",
+          "chemistry_label": "PTM残基修饰",
+          "train_n": 615,
+          "validation_n": 197,
+          "test_n": 190,
+          "sensitivity_n": null,
+          "training_used": true
+        },
+        {
+          "panel_id": "target_reference_homology_cold",
+          "regime_id": "NC_only",
+          "chemistry_id": "synthetic_and_PTM",
+          "panel_label": "参考蛋白同源冷",
+          "regime_label": "只用非标准肽训练",
+          "chemistry_label": "两类同时出现",
+          "train_n": 167,
+          "validation_n": 64,
+          "test_n": 37,
+          "sensitivity_n": null,
+          "training_used": true
+        },
+        {
+          "panel_id": "target_reference_homology_cold",
+          "regime_id": "NC_only",
+          "chemistry_id": "other_NC",
+          "panel_label": "参考蛋白同源冷",
+          "regime_label": "只用非标准肽训练",
+          "chemistry_label": "其他非标准残基",
+          "train_n": 87,
+          "validation_n": 7,
+          "test_n": 12,
+          "sensitivity_n": null,
+          "training_used": true
+        },
+        {
+          "panel_id": "target_reference_homology_cold",
+          "regime_id": "NC_only",
+          "chemistry_id": "standard20_control",
+          "panel_label": "参考蛋白同源冷",
+          "regime_label": "只用非标准肽训练",
+          "chemistry_label": "标准20残基对照",
+          "train_n": 0,
+          "validation_n": 0,
+          "test_n": 1111,
+          "sensitivity_n": 1067,
+          "training_used": false
+        },
+        {
+          "panel_id": "target_reference_homology_cold",
+          "regime_id": "standard_only",
+          "chemistry_id": "synthetic_D_backbone",
+          "panel_label": "参考蛋白同源冷",
+          "regime_label": "只用标准肽训练",
+          "chemistry_label": "非蛋白源／D型／骨架改变",
+          "train_n": 0,
+          "validation_n": 0,
+          "test_n": 93,
+          "sensitivity_n": null,
+          "training_used": false
+        },
+        {
+          "panel_id": "target_reference_homology_cold",
+          "regime_id": "standard_only",
+          "chemistry_id": "PTM",
+          "panel_label": "参考蛋白同源冷",
+          "regime_label": "只用标准肽训练",
+          "chemistry_label": "PTM残基修饰",
+          "train_n": 0,
+          "validation_n": 0,
+          "test_n": 190,
+          "sensitivity_n": null,
+          "training_used": false
+        },
+        {
+          "panel_id": "target_reference_homology_cold",
+          "regime_id": "standard_only",
+          "chemistry_id": "synthetic_and_PTM",
+          "panel_label": "参考蛋白同源冷",
+          "regime_label": "只用标准肽训练",
+          "chemistry_label": "两类同时出现",
+          "train_n": 0,
+          "validation_n": 0,
+          "test_n": 37,
+          "sensitivity_n": null,
+          "training_used": false
+        },
+        {
+          "panel_id": "target_reference_homology_cold",
+          "regime_id": "standard_only",
+          "chemistry_id": "other_NC",
+          "panel_label": "参考蛋白同源冷",
+          "regime_label": "只用标准肽训练",
+          "chemistry_label": "其他非标准残基",
+          "train_n": 0,
+          "validation_n": 0,
+          "test_n": 12,
+          "sensitivity_n": null,
+          "training_used": false
+        },
+        {
+          "panel_id": "target_reference_homology_cold",
+          "regime_id": "standard_only",
+          "chemistry_id": "standard20_control",
+          "panel_label": "参考蛋白同源冷",
+          "regime_label": "只用标准肽训练",
+          "chemistry_label": "标准20残基对照",
+          "train_n": 5324,
+          "validation_n": 1085,
+          "test_n": 1111,
+          "sensitivity_n": 1067,
+          "training_used": true
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：split-strata-counts.csv",
+        "files": [
+          {
+            "name": "split-strata-counts.csv",
+            "sha256": "a470f92ca1c828ce30fbd406d569c0d58c6923a7232f3e96751c364f18eced42"
+          },
+          {
+            "name": "split-regime-counts.csv",
+            "sha256": "decb7825cf428febbf1c9e63cac56c4beb6436886fc9a5f3b3d6e62f2f0e3c9b"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "每个面板/训练regime/互斥化学组的真实训练、验证和测试分母；训练0表示该regime设计上不使用该组。NC细分冲突排除分母未知而保留null。",
+            "definition": "每个面板/训练regime/互斥化学组的真实训练、验证和测试分母；训练0表示该regime设计上不使用该组。NC细分冲突排除分母未知而保留null。",
+            "componentIds": [
+              "sample-denominators"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "split-strata-counts.csv",
+                  "split-regime-counts.csv"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "split-strata-counts.csv；SHA256 a470f92ca1c828ce30fbd406d569c0d58c6923a7232f3e96751c364f18eced42"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "每个面板/训练regime/互斥化学组的真实训练、验证和测试分母；训练0表示该regime设计上不使用该组。NC细分冲突排除分母未知而保留null。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "phase_snapshot": {
+      "rows": [
+        {
+          "label": "NC神经网络选择完成",
+          "count": 100,
+          "denominator": 100
+        },
+        {
+          "label": "全部神经网络选择完成",
+          "count": 104,
+          "denominator": 200
+        },
+        {
+          "label": "RF选择完成",
+          "count": 40,
+          "denominator": 40
+        },
+        {
+          "label": "真实测试评测已执行",
+          "count": 0,
+          "denominator": null
+        }
+      ],
+      "source": {
+        "label": "协调者本轮直接任务状态快照",
+        "metricDefinitions": [
+          {
+            "label": "训练与选择状态",
+            "definition": "仅为本轮指令提供的非实时状态；日期2026-10-22，精确时刻未提供。不是性能、成功率或独立测试结果。",
+            "componentIds": [
+              "phase-snapshot"
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "协调者同线程指令",
+            "detail": "NC100训练/选择已完成，standard100中，104total；RF40选择完成；真实测试0。未读取任何训练标签或评测产物。"
+          }
+        ]
+      }
+    },
+    "rf_reference": {
+      "rows": [
+        {
+          "method": "随机森林 RF",
+          "method_id": "RF-Morgan2-chiral-AAC-DP",
+          "role": "传统机器学习参考，另计",
+          "feature_dimension": 2469,
+          "n_estimators": 200,
+          "min_leaf_candidates": "2 / 5",
+          "n_jobs": 1,
+          "protein_prefix_limit": 1000,
+          "selected_units": 40,
+          "candidate_fits": 80,
+          "configuration_status": "冻结特征与参数已核验",
+          "neural_paper_count_contribution": 0
+        }
+      ],
+      "source": {
+        "label": "RF冻结特征/协议/已安装库元数据＋协调者执行状态",
+        "files": [
+          {
+            "name": "SOURCE-FREEZE-v1.json",
+            "sha256": "078c507e790140d66e3419246d01d18f6bb2fa785afdb6ef6075cec0df3998ab"
+          },
+          {
+            "name": "feature-spec-v1.json",
+            "sha256": "f50a938d2755ef186c0bd7817a354d02ff76bc96357abe04ad6a5ebb65bd770d"
+          },
+          {
+            "name": "protocol-v1.json",
+            "sha256": "b590dc7c215b60df8ad6d3d8f7a017e0a03b0154af500621bc7ff019bbee7e2b"
+          },
+          {
+            "name": "installed-assets-v1.json",
+            "sha256": "9b9a324e27d9251fda1e13f0e9dac54f8729bde2722148936de1cbba3d32108a"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "RF固定特征与候选",
+            "definition": "2469维=2048位半径2/含已给手性与键型的Morgan指纹+蛋白前1000残基AAC20+DP400+有效长度1。200棵树、max_features=sqrt，叶最少样本数2/5两候选，n_jobs1、训练种子0–9。",
+            "componentIds": [
+              "rf-reference",
+              "rf-method-brief"
+            ]
+          },
+          {
+            "label": "RF训练完成快照",
+            "definition": "协调者新指令确认40单元/80候选均完成退出，选择已冻结；底层SOURCE-FREEZE状态是拟合前准备历史，不改写该文件。本应用没有打开任何RF模型、selection或指标。",
+            "componentIds": [
+              "rf-reference",
+              "rf-method-brief"
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结元信息",
+            "detail": "仅读取SOURCE-FREEZE、feature-spec、protocol、installed-assets四个JSON，并核验后三者SHA。未读真实矩阵、模型、selection、标签或性能指标。"
+          },
+          {
+            "title": "特征构成",
+            "detail": "2048+20+400+1=2469维；使用实际给出的立体信息，不推断未指派构型；不做可学习预处理。"
+          },
+          {
+            "title": "候选选择",
+            "detail": "validation MAE，只取同regime验证；平局取leaf2。40单元/80候选完成由root同线程指令提供，非本应用重新核算。"
+          }
+        ]
+      }
+    },
+    "training_plan": {
+      "rows": [
+        {
+          "methods": 5,
+          "panels": 2,
+          "regimes": 2,
+          "seeds": 10,
+          "candidate_learning_rates": 2,
+          "selected_units_planned": 200,
+          "candidate_fits_planned": 400,
+          "maximum_epochs": 20,
+          "patience": 5,
+          "batch_size": 32
+        }
+      ],
+      "source": {
+        "label": "已核验本地聚合：method-data-evidence.json",
+        "files": [
+          {
+            "name": "method-data-evidence.json",
+            "sha256": "6b34bfc70ca71fd9a08e90589d097b8daee123bd7f76e01b3834486050fdd557"
+          },
+          {
+            "name": "方法与数据说明.md",
+            "sha256": "9173e68f17874e7d80cf307a33e3a032ad320dc2b4aa97df748b7be484d3d37f"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "预声明设计规模：五神经网络、两个冷面板、两个训练方案、十训练种子，构成200个模型选择单元、400候选fit；是计划，不是性能或完成率。",
+            "definition": "预声明设计规模：五神经网络、两个冷面板、两个训练方案、十训练种子，构成200个模型选择单元、400候选fit；是计划，不是性能或完成率。",
+            "componentIds": [
+              "training-plan"
+            ],
+            "sourceLineage": [
+              {
+                "files": [
+                  "method-data-evidence.json"
+                ]
+              }
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "冻结数据与记录级审计",
+            "detail": "依据共同冻结协议，只读取聚合表与公开方法资料。"
+          },
+          {
+            "title": "聚合来源",
+            "detail": "method-data-evidence.json；SHA256 6b34bfc70ca71fd9a08e90589d097b8daee123bd7f76e01b3834486050fdd557"
+          },
+          {
+            "title": "分析粒度",
+            "detail": "预声明设计规模：五神经网络、两个冷面板、两个训练方案、十训练种子，构成200个模型选择单元、400候选fit；是计划，不是性能或完成率。"
+          }
+        ],
+        "links": []
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "直接使用已独立核验的聚合行；各类别的互斥/重叠关系见定义。未读取训练标签、测试/外部金标、预测或检查点。"
+        }
+      ]
+    },
+    "metrics": {
+      "rows": [],
+      "source": {
+        "label": "统一评测结果尚未导入",
+        "metricDefinitions": [
+          {
+            "label": "未来成绩表",
+            "definition": "仅在root提供独立复算和审阅后的汇总CSV/JSON时导入。当前没有性能数值，缺失不按0处理。",
+            "componentIds": [
+              "metrics-table"
+            ]
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "当前状态",
+            "detail": "成绩行为空。模型选择冻结后统一评测，之后由root提供独立核算CSV。"
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "schema: method_id,panel_id,regime_id,chemistry_id,evaluation_set_id,metric_id,mean,sd,n,seed_count. 只接受已审阅汇总。"
+        }
+      ]
+    }
+  },
+  "researchMetadata": {
+    "reviewedEvidenceSha256": "6b34bfc70ca71fd9a08e90589d097b8daee123bd7f76e01b3834486050fdd557",
+    "datasetManifestSha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2",
+    "sourceEvidenceCount": 28,
+    "performanceRows": 0,
+    "metricsSchema": "schema: method_id,panel_id,regime_id,chemistry_id,evaluation_set_id,metric_id,mean,sd,n,seed_count. 只接受已审阅汇总。",
+    "cohortCounts": {
+      "NC": 2099,
+      "standard": 7520,
+      "measurements": 9619,
+      "canonicalIsomericGraphs": 5140,
+      "NCGraphs": 990
+    },
+    "coordinatorStatusSnapshot": {
+      "label": "协调者本轮指令快照，非实时",
+      "asOfDate": "2026-10-22",
+      "exactTimestampKnown": false,
+      "NCNeuralSelectionsComplete": 100,
+      "standardNeuralSelectionsInProgress": true,
+      "totalNeuralSelectionsComplete": 104,
+      "randomForestSelectionsComplete": 40,
+      "actualTestEvaluations": 0
+    }
+  },
+  "id": "report:5569696c-9519-43ed-9a7a-073a11d14850"
+}

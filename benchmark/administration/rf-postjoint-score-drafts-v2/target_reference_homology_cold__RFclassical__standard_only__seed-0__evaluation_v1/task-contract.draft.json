@@ -1,0 +1,2727 @@
+{
+  "schema_version": "1.0",
+  "record_type": "task_contract",
+  "is_template": true,
+  "task_id": "S299_ef670bb4eeb4",
+  "run_id": "target_reference_homology_cold__RFclassical__standard_only__seed-0__evaluation_v1",
+  "contract_status": "draft",
+  "created_at": "2026-10-21T18:57:03.710199+00:00",
+  "frozen_at": null,
+  "revision": 1,
+  "previous_contract_sha256": null,
+  "revision_reason": null,
+  "identity": {
+    "title": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+    "doi": "10.1093/bioinformatics/btaa921",
+    "publication_status": "version_of_record_fulltext",
+    "first_online_date": "2020-10-24",
+    "journal": null,
+    "paper_type": "published_method_article",
+    "pdf": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-author-lab.pdf",
+      "sha256": "ef670bb4eeb41ba7db7449f15dd8a8861d6c01029e597e802db8a38df70df907",
+      "version": "version_of_record",
+      "source_url": null
+    },
+    "primary_document": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-official.html",
+      "sha256": "b19c89f1602bb4af89c6888f42d6acb5f023a46d7461c364634fab7037b3d999",
+      "format": "publisher_fulltext_html",
+      "source_url": "https://oup.silverchair-cdn.com/article-minimal/5942970",
+      "identity_doi_verified": true
+    },
+    "related_versions": [],
+    "eligibility": {
+      "scope": "Prior published model transferred to the newly authorized NC2099 affinity benchmark",
+      "assessment": "allowed_for_scoped_model_comparison",
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar-v2.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar-v3.json"
+      ]
+    },
+    "missing_pdf_note": null,
+    "administrative_anchor_only": true,
+    "administrative_identity_explanation": "S299/GraphDTA is only this registered benchmark's administrative anchor; the extra RandomForest is not a GraphDTA author method or a reproduced paper.0 paper contribution."
+  },
+  "execution_scope": {
+    "objective": "Post-joint fixed selected RF inference on internal test, external75 and separate supplement13; CPU only; no fitting/selection/parameter updates",
+    "authorization_reference": "Direct latest user instruction and frozen control/user-authorization.json",
+    "relation_to_prior_run": "RF evaluation stage of same non-paper auxiliary reference; original RF training/raw exit logs retained and global clock unchanged",
+    "prior_run_ids": [
+      "target_reference_homology_cold__RFclassical__standard_only__seed-0"
+    ],
+    "safety_assessment": "allowed",
+    "scope_coverage": "partial_subset",
+    "intended_level": "independent_inference",
+    "excluded_claims": [
+      "Not a GraphDTA author method or published RF paper replication",
+      "RF contributes0 predecessor papers",
+      "No innovation model or sequence optimization",
+      "No holdout access, test-based selection or scoring permission",
+      "No original or local deadline reset"
+    ],
+    "restriction_check": {
+      "prior_platform_restriction": false,
+      "reason": "This scoped benchmark excludes PepLand, Twin Peaks, previously denied primary-source unit investigations, sequence design/optimization and metadata-only train exclusions. Old restricted work is not restarted.",
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json"
+      ]
+    },
+    "authorization_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\user-authorization.json",
+    "authorization_sha256": "5a474f5725f4fd0b1f7dc31a2e5f859eb61a2c48a4aebdd01a1945494ca16ffd"
+  },
+  "timing": {
+    "first_substantive_started_at": "2026-10-21T15:59:53+00:00",
+    "earliest_associated_preparation_at": null,
+    "wall_clock_cap_hours": 10,
+    "original_deadline_at": "2026-10-22T01:59:53+00:00",
+    "additional_deadlines_at": [
+      "2026-10-22T01:45:00+00:00"
+    ],
+    "effective_deadline_at": "2026-10-22T01:45:00+00:00",
+    "prior_window_expired": false,
+    "retry_resets_clock": false,
+    "timing_evidence_paths": [
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\user-authorization.json",
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\resources\\live-probe.json"
+    ],
+    "clock_notes": "15:59:53Z is first persisted campaign clock as provided by leader; early skill reading may precede this. Conservative hard cutoff01:45Z applies to all papers/panels/seeds. prior_window_expired=false describes the newly authorized scope only; no historical expired task is revived."
+  },
+  "assets": {
+    "datasets": [
+      {
+        "name": "internal",
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/target_test__target_reference_homology_cold__RFclassical.json",
+        "sha256": "9a492ee154f2ec380e7fd1429a527c7f25cbbb4246c47d9e92b6bc58de83f3de",
+        "manifest_sha256": "9a492ee154f2ec380e7fd1429a527c7f25cbbb4246c47d9e92b6bc58de83f3de",
+        "sample_count": 1443,
+        "statistical_unit": "held-out measurement record",
+        "integrity": "complete",
+        "notes": "Frozen metadata spec only; actual gold/array/model bytes first read by authorized worker under joint gate and blind-before-gold protocol."
+      },
+      {
+        "name": "external75",
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/external75__target_reference_homology_cold__RFclassical.json",
+        "sha256": "98baa61e80a4440ef35eb80d0072beadd7c43cce74a199fe790e0723b60a24fe",
+        "manifest_sha256": "98baa61e80a4440ef35eb80d0072beadd7c43cce74a199fe790e0723b60a24fe",
+        "sample_count": 75,
+        "statistical_unit": "held-out measurement record",
+        "integrity": "complete",
+        "notes": "Frozen metadata spec only; actual gold/array/model bytes first read by authorized worker under joint gate and blind-before-gold protocol."
+      },
+      {
+        "name": "supplement13",
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/supplement13__target_reference_homology_cold__RFclassical.json",
+        "sha256": "073a3cace4ef4aed18aead4250f71e92f7466f35d9472bd7fcf0bba19a215fee",
+        "manifest_sha256": "073a3cace4ef4aed18aead4250f71e92f7466f35d9472bd7fcf0bba19a215fee",
+        "sample_count": 13,
+        "statistical_unit": "held-out measurement record",
+        "integrity": "complete",
+        "notes": "Frozen metadata spec only; actual gold/array/model bytes first read by authorized worker under joint gate and blind-before-gold protocol."
+      }
+    ],
+    "code": [
+      {
+        "role": "task_classical_reference_and_private_CPU_launcher",
+        "source_url": null,
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\rf-classic-ready-v2\\rf-frozen-source-snapshot.zip",
+        "archive_sha256": "72e2e916a386becf336e6d19f89b344a367571d295defe771df4f740c1393d52",
+        "sha256": "72e2e916a386becf336e6d19f89b344a367571d295defe771df4f740c1393d52",
+        "commit": null,
+        "license": "Task source snapshot; sklearn dependencies retain installed source/license manifests",
+        "checkout_status": "actual ZIP of exact frozen task/launcher source and installed-version metadata; no Git checkout claim",
+        "integrity": "complete",
+        "notes": "Frozen8 RF source/schema/version assets +actual3 CPU launcher files +frozen launch common; actual worker also verifies installed sklearn/tree native module hashes before fitting. Not a published author implementation.",
+        "evidence_paths": [
+          "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\auxiliary-rf-baseline\\SOURCE-FREEZE-v1.json",
+          "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\auxiliary-RF-source-metadata-review-v4.json"
+        ]
+      }
+    ],
+    "models": [
+      {
+        "name": "Same validation-selected classical RF estimator",
+        "version": "No refit or parameter update",
+        "path": null,
+        "sha256": null,
+        "location": "remote",
+        "integrity": "partial",
+        "notes": "Postjoint selected-model metadata is not populated yet; no claim that trained models are missing."
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "internal::all:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "all",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::all:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "all",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::all:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "all",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::all:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "all",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::all:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "all",
+        "metric": "R2",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::synthetic_D_backbone:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "synthetic_D_backbone",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::synthetic_D_backbone:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "synthetic_D_backbone",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::synthetic_D_backbone:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "synthetic_D_backbone",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::synthetic_D_backbone:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "synthetic_D_backbone",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::synthetic_D_backbone:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "synthetic_D_backbone",
+        "metric": "R2",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::standard20_control:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "standard20_control",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::standard20_control:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "standard20_control",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::standard20_control:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "standard20_control",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::standard20_control:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "standard20_control",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::standard20_control:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "standard20_control",
+        "metric": "R2",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::PTM:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "PTM",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::PTM:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "PTM",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::PTM:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "PTM",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::PTM:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "PTM",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::PTM:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "PTM",
+        "metric": "R2",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::synthetic_and_PTM:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "synthetic_and_PTM",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::synthetic_and_PTM:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "synthetic_and_PTM",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::synthetic_and_PTM:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "synthetic_and_PTM",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::synthetic_and_PTM:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "synthetic_and_PTM",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::synthetic_and_PTM:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "synthetic_and_PTM",
+        "metric": "R2",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::other_NC:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "other_NC",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::other_NC:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "other_NC",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::other_NC:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "other_NC",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::other_NC:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "other_NC",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::other_NC:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "other_NC",
+        "metric": "R2",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::NC_core:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "NC_core",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::NC_core:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "NC_core",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::NC_core:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "NC_core",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::NC_core:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "NC_core",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "internal::NC_core:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ],
+      "metric_binding": {
+        "dataset_role": "internal",
+        "group": "NC_core",
+        "metric": "R2",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "external75::all:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/all",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 75,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "all",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "external75::all:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/all",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 75,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "all",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "external75::all:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/all",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 75,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "all",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "external75::all:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/all",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 75,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "all",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "external75::all:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/all",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 75,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "all",
+        "metric": "R2",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "external75::primary67:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/primary67",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 67,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "primary67",
+        "metric": "MAE",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::primary67:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/primary67",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 67,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "primary67",
+        "metric": "RMSE",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::primary67:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/primary67",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 67,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "primary67",
+        "metric": "Pearson",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::primary67:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/primary67",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 67,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "primary67",
+        "metric": "Spearman",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::primary67:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/primary67",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 67,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "primary67",
+        "metric": "R2",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::conditional8:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/conditional8",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "conditional8",
+        "metric": "MAE",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::conditional8:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/conditional8",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "conditional8",
+        "metric": "RMSE",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::conditional8:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/conditional8",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "conditional8",
+        "metric": "Pearson",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::conditional8:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/conditional8",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "conditional8",
+        "metric": "Spearman",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::conditional8:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/conditional8",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "conditional8",
+        "metric": "R2",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::target_reference_cold2:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/target_reference_cold2",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 2,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "target_reference_cold2",
+        "metric": "MAE",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::target_reference_cold2:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/target_reference_cold2",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 2,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "target_reference_cold2",
+        "metric": "RMSE",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::target_reference_cold2:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/target_reference_cold2",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 2,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "target_reference_cold2",
+        "metric": "Pearson",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::target_reference_cold2:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/target_reference_cold2",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 2,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "target_reference_cold2",
+        "metric": "Spearman",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "external75::target_reference_cold2:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "external75/target_reference_cold2",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 2,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "external75",
+        "group": "target_reference_cold2",
+        "metric": "R2",
+        "source": "review"
+      }
+    },
+    {
+      "target_id": "supplement13::all:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/all",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 13,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "all",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::all:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/all",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 13,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "all",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::all:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/all",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 13,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "all",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::all:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/all",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 13,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "all",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::all:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/all",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 13,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "all",
+        "metric": "R2",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::synthetic_D_backbone:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/synthetic_D_backbone",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "synthetic_D_backbone",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::synthetic_D_backbone:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/synthetic_D_backbone",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "synthetic_D_backbone",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::synthetic_D_backbone:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/synthetic_D_backbone",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "synthetic_D_backbone",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::synthetic_D_backbone:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/synthetic_D_backbone",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "synthetic_D_backbone",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::synthetic_D_backbone:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/synthetic_D_backbone",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 8,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "synthetic_D_backbone",
+        "metric": "R2",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::standard20_control:MAE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/standard20_control",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted-observed))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 5,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "standard20_control",
+        "metric": "MAE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::standard20_control:RMSE",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/standard20_control",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted-observed)^2))",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 5,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "standard20_control",
+        "metric": "RMSE",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::standard20_control:Pearson",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/standard20_control",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson correlation; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 5,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "standard20_control",
+        "metric": "Pearson",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::standard20_control:Spearman",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/standard20_control",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null for undefined groups",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 5,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "standard20_control",
+        "metric": "Spearman",
+        "source": "score"
+      }
+    },
+    {
+      "target_id": "supplement13::standard20_control:R2",
+      "paper_endpoint": "Generic auxiliary RF postjoint holdout comparison; not a GraphDTA author-paper endpoint",
+      "required": true,
+      "dataset_reference": "supplement13/standard20_control",
+      "comparison_endpoint": "exact held-out experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null when observed variance is zero or group undersized",
+      "statistical_unit": "measurement record; dependency grouping and external eligibility remain those frozen before model scoring",
+      "denominator": 5,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "same selected model; no post-test model selection",
+      "checkpoint_selection": "unchanged validation-only selection frozen before all holdout predictions",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Additional classical reference on new common data; not a published-paper numerical reproduction"
+      },
+      "evidence_paths": [],
+      "metric_binding": {
+        "dataset_role": "supplement13",
+        "group": "standard20_control",
+        "metric": "R2",
+        "source": "score"
+      }
+    }
+  ],
+  "environment": {
+    "isolation": "Existing generic WSL virtual environment and task source; CPU only; no installs or shared environment mutation",
+    "environment_path": "/root/.venvs/peptide-omnipanel-v31-web311-20260723",
+    "lockfile_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\auxiliary-rf-baseline\\installed-assets-v1.json",
+    "lockfile_sha256": "9b9a324e27d9251fda1e13f0e9dac54f8729bde2722148936de1cbba3d32108a",
+    "runtime_versions": {
+      "sklearn": "1.9.0",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "joblib": "1.5.3",
+      "rdkit": "2026.03.4"
+    },
+    "numerical_policy": {
+      "author_entrypoint_evidence_paths": [],
+      "parameter_dtype": "Not a neural parameter tensor; sklearn-tree implementation/defaults frozen",
+      "input_dtype": "Xfloat32, supervised y/predictionfloat64; exact feature definitions frozen",
+      "autocast": false,
+      "float32_matmul_precision": null,
+      "cuda_matmul_allow_tf32": null,
+      "cudnn_allow_tf32": null,
+      "determinism": "Python/NumPy/sklearn random_state seed0–9; n_jobs1; actual effective constructor parameters recorded per candidate",
+      "applied_before_model_instantiation": null,
+      "actual_policy_receipt_path": null,
+      "notes": "Morgan chirality-aware2048bits +AAC20+dipep400+effective1000prefix length =2469; no learned scaling, unknown residues remain in denominators; no Torch or visible CUDA inRF worker"
+    },
+    "shared_environment_modified": false
+  },
+  "resources": {
+    "expected_hostname": "cihebi",
+    "cpu_threads": 1,
+    "data_loader_workers": 0,
+    "memory_limit_bytes": 2147483648,
+    "gpu_devices": [],
+    "gpu_memory_budget_bytes": null,
+    "resource_probe_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\control\\rf-live-resource-v1.json",
+    "resource_probe_at": "2026-10-21T18:35:45.562130+00:00",
+    "start_gate": "Actual root liveCPU4–7/version/RSS proof; private RF pool re-probes CPU/load/available memory before startup and each launch, keeps1thread,2GiB/worker,≤4workers and≤8GiB pool; no preemption ofNN GPU jobs",
+    "budget_basis": "Root explicit preregistered extra classic CPU-only reference; no holdout performance used; original01:45Z cutoff and complete1800-second slot required",
+    "no_preemption": true,
+    "allowed_cpu_ids": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "resource_probe_sha256": "e6b3320a1742489e2a7f9893f012b1c0c341b983ec4ac50a72a29f58c7faf173"
+  },
+  "execution": {
+    "command": [
+      "/root/.venvs/peptide-omnipanel-v31-web311-20260723/bin/python",
+      "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rf_score_unit.py",
+      "--binding",
+      "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/bindings/target_reference_homology_cold__RFclassical__standard_only__seed-0__evaluation_v1.json"
+    ],
+    "working_directory": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021",
+    "seed_policy": "Same frozenRF seed/winner, no refit/reselection; score all three fixed datasets once",
+    "seeds": [
+      0
+    ],
+    "timeout_seconds": 1800,
+    "process_control": {
+      "platform": "Linux WSL",
+      "mechanism": "Private CPU4–7 sessions, CPU1/RSS2GiB each,≤4workers/8GiB, whole-tree1800sec/original-global watchdog; actual exit side-signatures",
+      "whole_tree_bounded": true
+    },
+    "stdout_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/pool-runs/target_reference_homology_cold__RFclassical__standard_only__seed-0__evaluation_v1.stdout.log",
+    "stderr_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/pool-runs/target_reference_homology_cold__RFclassical__standard_only__seed-0__evaluation_v1.stderr.log"
+  },
+  "stop_conditions": [
+    "达到有效截止",
+    "达到合同资源上限",
+    "执行范围超出合同",
+    "出现平台拒绝或缺少适用授权"
+  ],
+  "review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "checks": [],
+    "evidence_paths": []
+  },
+  "benchmark_metadata": {
+    "method_id": "RF-Classic",
+    "worker_method_id": "RF-Morgan2-chiral-AAC-DP",
+    "split_id": "target_reference_homology_cold",
+    "regime_id": "standard_only",
+    "seed": 0,
+    "validation_scope": "same_as_regime",
+    "test_used_for_selection": false,
+    "external_used_for_selection": false,
+    "paper_count_contribution": 0
+  },
+  "rf_score_execution_stage": {
+    "selection": {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/real-runs-v1/target_reference_homology_cold__RFclassical__standard_only__seed-0/selection.json",
+      "sha256": null
+    },
+    "score_specs": [
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/target_test__target_reference_homology_cold__RFclassical.json",
+        "sha256": "9a492ee154f2ec380e7fd1429a527c7f25cbbb4246c47d9e92b6bc58de83f3de"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/external75__target_reference_homology_cold__RFclassical.json",
+        "sha256": "98baa61e80a4440ef35eb80d0072beadd7c43cce74a199fe790e0723b60a24fe"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/supplement13__target_reference_homology_cold__RFclassical.json",
+        "sha256": "073a3cace4ef4aed18aead4250f71e92f7466f35d9472bd7fcf0bba19a215fee"
+      }
+    ],
+    "authorization": null,
+    "joint_barrier": null,
+    "NN_barrier": null,
+    "RF_barrier": null,
+    "live_cpu_proof": {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-live-resource-v1.json",
+      "sha256": "e6b3320a1742489e2a7f9893f012b1c0c341b983ec4ac50a72a29f58c7faf173"
+    },
+    "worker": {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf_score.py",
+      "sha256": "aff8327ebe4919b37673848f1c63ad8b1b989be5e4566cb8c687f78efb4d383f"
+    },
+    "code_files": [
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rfs_common.py",
+        "sha256": "8c77f5d06e52e40c479ec8584e6abc6f48ef33c552a09ca5323bc5fb3e3fa6b8"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rf_score_pool.py",
+        "sha256": "09b1f14e08561da4a89e08aeac7ef52e2d2dfbca8b01435b1e4b2b442dc916f3"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rf_score_unit.py",
+        "sha256": "45dfeb4401eb9ab703ca91b1d791540ab433a9fdae97d363abc596c36860d4dc"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-launch-v1/rf_common.py",
+        "sha256": "d68e65bed5dd26a2dab331ab7fcb93fdc2df5c9fa94c38a8ef09a0c91b99b373"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/common.py",
+        "sha256": "35c91d520885e6a447be2863ff7b60df91a8a2bfbc30c336fff7d7cbfd9a1632"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/evaluation/metrics_stable.py",
+        "sha256": "d6b5e596a72474f7980daddf351721fa1881f2d26ec47a0e49f3c9cd733c81ea"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/features.py",
+        "sha256": "f346de665d3ed60f5664d14918c62451a63b2ec1b9fc41de2f1b97bbb278cabf"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/common.py",
+        "sha256": "f10d9bc3acf7b3c7daf39255c79324b11011a9f181746192aed6b38d03589955"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf_runner.py",
+        "sha256": "5070e0c52de45f30635ca701212b638d992c099c41f9397b844bc448394bdc44"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf_score.py",
+        "sha256": "aff8327ebe4919b37673848f1c63ad8b1b989be5e4566cb8c687f78efb4d383f"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/feature-spec-v1.json",
+        "sha256": "f50a938d2755ef186c0bd7817a354d02ff76bc96357abe04ad6a5ebb65bd770d"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/protocol-v1.json",
+        "sha256": "b590dc7c215b60df8ad6d3d8f7a017e0a03b0154af500621bc7ff019bbee7e2b"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/installed-assets-v1.json",
+        "sha256": "9b9a324e27d9251fda1e13f0e9dac54f8729bde2722148936de1cbba3d32108a"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/installed-binaries-v1.json",
+        "sha256": "58074ca74cec605814ef2c1bbe7014343b022353ad11543203864a1c74f1ddc7"
+      }
+    ],
+    "receipt_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/receipts/target_reference_homology_cold__RFclassical__standard_only__seed-0__evaluation_v1",
+    "score_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf-scores-v1"
+  },
+  "evaluation_stage": {
+    "training_run_id": "target_reference_homology_cold__RFclassical__standard_only__seed-0",
+    "training_contract_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\rf-classic-ready-v2\\issued\\target_reference_homology_cold__RFclassical__standard_only__seed-0\\task-contract.json",
+    "training_contract_sha256": "92e32c64933a7646b1af126a758953004f48eb91fea874a24cb9a2786e99c084",
+    "expected_score_receipts": 3,
+    "expected_prediction_rows": 1531,
+    "datasets": [
+      {
+        "role": "internal",
+        "dataset_id": "target_test",
+        "n": 1443,
+        "score_spec": {
+          "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/target_test__target_reference_homology_cold__RFclassical.json",
+          "sha256": "9a492ee154f2ec380e7fd1429a527c7f25cbbb4246c47d9e92b6bc58de83f3de"
+        }
+      },
+      {
+        "role": "external75",
+        "dataset_id": "external75",
+        "n": 75,
+        "score_spec": {
+          "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/external75__target_reference_homology_cold__RFclassical.json",
+          "sha256": "98baa61e80a4440ef35eb80d0072beadd7c43cce74a199fe790e0723b60a24fe"
+        }
+      },
+      {
+        "role": "supplement13",
+        "dataset_id": "supplement13",
+        "n": 13,
+        "score_spec": {
+          "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/supplement13__target_reference_homology_cold__RFclassical.json",
+          "sha256": "073a3cace4ef4aed18aead4250f71e92f7466f35d9472bd7fcf0bba19a215fee"
+        }
+      }
+    ],
+    "root_joint_barrier": null,
+    "score_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf-scores-v1",
+    "no_training_or_parameter_updates": true,
+    "paper_count_contribution": 0
+  }
+}

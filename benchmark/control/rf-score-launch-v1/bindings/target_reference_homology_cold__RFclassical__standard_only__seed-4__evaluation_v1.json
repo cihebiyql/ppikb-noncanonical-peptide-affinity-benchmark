@@ -1,0 +1,130 @@
+{
+  "schema": "rf-score-unit-binding-v1",
+  "issued": true,
+  "unit_id": "target_reference_homology_cold__RFclassical__standard_only__seed-4__evaluation_v1",
+  "expected_hostname": "cihebi",
+  "python": "/root/.venvs/peptide-omnipanel-v31-web311-20260723/bin/python",
+  "PYTHONPATH": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/resources/local-gpu-route/vendor-dependencies",
+  "CUDA_VISIBLE_DEVICES": "",
+  "allowed_cpu_ids": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "deadline": "2026-10-22T01:45:00+00:00",
+  "timeout_seconds": 1800,
+  "selection": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/real-runs-v1/target_reference_homology_cold__RFclassical__standard_only__seed-4/selection.json",
+    "sha256": "828561a160299799ffe1e2219b1a1d2a9b8f03017ec57e1a746552cebf4f263c"
+  },
+  "score_specs": [
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/target_test__target_reference_homology_cold__RFclassical.json",
+      "sha256": "9a492ee154f2ec380e7fd1429a527c7f25cbbb4246c47d9e92b6bc58de83f3de"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/external75__target_reference_homology_cold__RFclassical.json",
+      "sha256": "98baa61e80a4440ef35eb80d0072beadd7c43cce74a199fe790e0723b60a24fe"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/score-specs-v1/supplement13__target_reference_homology_cold__RFclassical.json",
+      "sha256": "073a3cace4ef4aed18aead4250f71e92f7466f35d9472bd7fcf0bba19a215fee"
+    }
+  ],
+  "authorization": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/RF-score-authorization.json",
+    "sha256": "3a6a2d32f2c888c144820984a9bb517fce2249a9683902f3af7f2043827be4a6"
+  },
+  "joint_barrier": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/all240-joint-frozen.json",
+    "sha256": "5c506a6c9d1f140ef0556a2c35e46c0252a7710295017ce080a7830650443fcf"
+  },
+  "NN_barrier": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/all200-selections-frozen.json",
+    "sha256": "87382517bf1ee4cbe7e6f7c192de27cb3143dbdf6197490ab95572972b691e1a"
+  },
+  "RF_barrier": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/all40-selections-frozen-v1.json",
+    "sha256": "c03db701826feaa688ba87bb9cee5e5fea67f2fd17f83dab7c8454aafcea9e12"
+  },
+  "central_contract": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/i1/RF40/target_reference_homology_cold__RFclassical__standard_only__seed-4__evaluation_v1/task-contract.json",
+    "sha256": "744fac39fd7953b3328bd442b188a9a6bcb24b4ff5b848a7902163ffdb422461"
+  },
+  "validation": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/i1/RF40/target_reference_homology_cold__RFclassical__standard_only__seed-4__evaluation_v1/execution-validation.json",
+    "sha256": "2b221d1dd594a103b9f339456851ef885ebb40acf3c81940dbfb677f482e0908"
+  },
+  "live_cpu_proof": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/fresh-CPU-time-proof.json",
+    "sha256": "4cbebd5bf50c7cffc5b774120ead7dd1b448ec352dd78ac24e1689a0db548c13"
+  },
+  "worker": {
+    "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf_score.py",
+    "sha256": "aff8327ebe4919b37673848f1c63ad8b1b989be5e4566cb8c687f78efb4d383f"
+  },
+  "code_files": [
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rfs_common.py",
+      "sha256": "8c77f5d06e52e40c479ec8584e6abc6f48ef33c552a09ca5323bc5fb3e3fa6b8"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rf_score_pool.py",
+      "sha256": "09b1f14e08561da4a89e08aeac7ef52e2d2dfbca8b01435b1e4b2b442dc916f3"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/rf_score_unit.py",
+      "sha256": "45dfeb4401eb9ab703ca91b1d791540ab433a9fdae97d363abc596c36860d4dc"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-launch-v1/rf_common.py",
+      "sha256": "d68e65bed5dd26a2dab331ab7fcb93fdc2df5c9fa94c38a8ef09a0c91b99b373"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/common.py",
+      "sha256": "35c91d520885e6a447be2863ff7b60df91a8a2bfbc30c336fff7d7cbfd9a1632"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/evaluation/metrics_stable.py",
+      "sha256": "d6b5e596a72474f7980daddf351721fa1881f2d26ec47a0e49f3c9cd733c81ea"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/features.py",
+      "sha256": "f346de665d3ed60f5664d14918c62451a63b2ec1b9fc41de2f1b97bbb278cabf"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/common.py",
+      "sha256": "f10d9bc3acf7b3c7daf39255c79324b11011a9f181746192aed6b38d03589955"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf_runner.py",
+      "sha256": "5070e0c52de45f30635ca701212b638d992c099c41f9397b844bc448394bdc44"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf_score.py",
+      "sha256": "aff8327ebe4919b37673848f1c63ad8b1b989be5e4566cb8c687f78efb4d383f"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/feature-spec-v1.json",
+      "sha256": "f50a938d2755ef186c0bd7817a354d02ff76bc96357abe04ad6a5ebb65bd770d"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/protocol-v1.json",
+      "sha256": "b590dc7c215b60df8ad6d3d8f7a017e0a03b0154af500621bc7ff019bbee7e2b"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/installed-assets-v1.json",
+      "sha256": "9b9a324e27d9251fda1e13f0e9dac54f8729bde2722148936de1cbba3d32108a"
+    },
+    {
+      "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/installed-binaries-v1.json",
+      "sha256": "58074ca74cec605814ef2c1bbe7014343b022353ad11543203864a1c74f1ddc7"
+    }
+  ],
+  "receipt_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/rf-score-launch-v1/receipts/target_reference_homology_cold__RFclassical__standard_only__seed-4__evaluation_v1",
+  "score_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/rf-scores-v1",
+  "entrypoint_sha256": "45dfeb4401eb9ab703ca91b1d791540ab433a9fdae97d363abc596c36860d4dc",
+  "pool_sha256": "09b1f14e08561da4a89e08aeac7ef52e2d2dfbca8b01435b1e4b2b442dc916f3",
+  "common_sha256": "8c77f5d06e52e40c479ec8584e6abc6f48ef33c552a09ca5323bc5fb3e3fa6b8"
+}

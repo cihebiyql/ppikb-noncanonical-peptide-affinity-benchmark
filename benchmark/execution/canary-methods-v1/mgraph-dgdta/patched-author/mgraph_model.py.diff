@@ -1,0 +1,10 @@
+--- guaguabujianle__MGraphDTA/regression/model.py
++++ patched-author/mgraph_model.py
+@@ -219,6 +219,7 @@
+         )
+ 
+     def forward(self, data):
++        data = data.clone()  # isolate author in-place intermediate updates
+         target = data.target
+         protein_x = self.protein_encoder(target)
+         ligand_x = self.ligand_encoder(data)

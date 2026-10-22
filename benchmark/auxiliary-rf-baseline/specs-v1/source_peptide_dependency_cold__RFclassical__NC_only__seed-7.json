@@ -1,0 +1,41 @@
+{
+  "method_id": "RF-Morgan2-chiral-AAC-DP",
+  "panel": "source_peptide_dependency_cold",
+  "regime": "NC_only",
+  "seed": 7,
+  "train_rows": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/execution/prepared-panels-wsl-v3/source_peptide_dependency_cold/train.jsonl",
+  "validation_rows": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/execution/prepared-panels-wsl-v3/source_peptide_dependency_cold/validation.jsonl",
+  "train_rows_sha256": "51a7e8a764115971e68e417b1966ffc4897cf57368af9af65dfe7ef615b4d541",
+  "validation_rows_sha256": "88f0e4d1905e92bb0c481bfecc365f8bb4b5c677e03dbd334f673d664d3c05c6",
+  "train_ids": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/data-protocol/frozen-v1/splits/source_peptide_dependency_cold/NC_only/train-ids.json",
+  "validation_ids": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/data-protocol/frozen-v1/splits/source_peptide_dependency_cold/NC_only/validation-ids.json",
+  "train_ids_sha256": "4b955b453d05e4b968bebafd03d48efab04414d8750c0e89415cc8dae7e8cfc2",
+  "validation_ids_sha256": "d2e0ed846c30b07a57f59cf258b2b7d33e9ea4f62675503023336feac72e650d",
+  "train_n": 1548,
+  "validation_n": 248,
+  "feature_manifest": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/X-final-manifest-v1.json",
+  "feature_manifest_sha256": "fbcde29d5795fdba5941a7903f63fb76cada24b0e4ca7372748bcdca76e83f4c",
+  "installed_assets": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/installed-assets-v1.json",
+  "installed_assets_sha256": "9b9a324e27d9251fda1e13f0e9dac54f8729bde2722148936de1cbba3d32108a",
+  "candidates": [
+    {
+      "candidate_index": 0,
+      "min_samples_leaf": 2
+    },
+    {
+      "candidate_index": 1,
+      "min_samples_leaf": 5
+    }
+  ],
+  "selection": "own-regime validation MAE, tie lower candidate_index",
+  "output_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/auxiliary-rf-baseline/real-runs-v1/source_peptide_dependency_cold__RFclassical__NC_only__seed-7",
+  "real_fit_authorized": false,
+  "resource_contract": "root must issue fresh bounded CPU-only fit contract",
+  "baseline_metadata": {
+    "additional_classical_baseline": true,
+    "author_reproduction": false,
+    "paper_count": 0,
+    "NN200_and400_unchanged": true,
+    "global_clock_not_reset": true
+  }
+}

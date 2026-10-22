@@ -1,0 +1,277 @@
+{
+  "stage": "post-freeze-deterministic-reference",
+  "identity": {
+    "dataset_id": "PTM-external75",
+    "split_id": "source_peptide_dependency_cold",
+    "holdout_id": "external75-PTM-reference-view-v1",
+    "method_id": "reference:train_median",
+    "regime": "standard_only",
+    "seed": 0
+  },
+  "n": 75,
+  "metrics": {
+    "all": {
+      "n": 75,
+      "MAE": 1.397223617041333,
+      "RMSE": 1.7546631679873705,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": -0.08697268769597288
+    },
+    "PTM": {
+      "n": 75,
+      "MAE": 1.397223617041333,
+      "RMSE": 1.7546631679873705,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": -0.08697268769597288
+    },
+    "NC_core": {
+      "n": 75,
+      "MAE": 1.397223617041333,
+      "RMSE": 1.7546631679873705,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": -0.08697268769597288
+    },
+    "standard": {
+      "n": 0,
+      "MAE": null,
+      "RMSE": null,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": null
+    },
+    "exclude_discordant_sensitivity": {
+      "n": 75,
+      "MAE": 1.397223617041333,
+      "RMSE": 1.7546631679873705,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": -0.08697268769597288
+    },
+    "exclude_discordant:PTM": {
+      "n": 75,
+      "MAE": 1.397223617041333,
+      "RMSE": 1.7546631679873705,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": -0.08697268769597288
+    },
+    "external_primary67": {
+      "n": 67,
+      "MAE": 1.435077216017266,
+      "RMSE": 1.7977395855220368,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": -0.070340516355623
+    },
+    "external_conditional_sensitivity8": {
+      "n": 8,
+      "MAE": 1.0801997256178921,
+      "RMSE": 1.3406193586927138,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": -0.539154532753584
+    },
+    "external_reference_target_cold2": {
+      "n": 2,
+      "MAE": 2.429966870587519,
+      "RMSE": 2.4511026943631036,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": -57.23563806084021
+    }
+  },
+  "global200_selection_barrier_sha256": "87382517bf1ee4cbe7e6f7c192de27cb3143dbdf6197490ab95572972b691e1a",
+  "reference_plan_sha256": "e485af1dc1bd72e1a80a758817cafaa060a31cb77d057901003050325e111a57",
+  "holdout_spec_sha256": "e62621ea6ceb142c63488d34f4ed588170f8b57e9e85c44b402d604dc12bb3a8",
+  "prediction_sha256": "e75ef5c9e83b82e630c94ebf2e1e3e7ea5725542c44cf0533fc8be41d7642f00",
+  "prediction_vector_sha256": "aea14f2eff26fb2c2c84d4f339f25332a3a92a9fc0afed466f05af73a8311de0",
+  "training_statistic_sha256": "23cb40c35b62badccd04fbd434a2feb34c7a443de35ed1e3fb934016791841ef",
+  "no_validation_or_holdout_fitting": true,
+  "no_NN_fit_or_paper_reproduction_claim": true,
+  "random_parameters": false,
+  "unseen_target_fallback_count": null,
+  "macro_by_full_target_reference": {
+    "group_field": "target_reference_sequence_sha",
+    "group_count": 14,
+    "missing_group_rows": 0,
+    "per_group_metrics": {
+      "106a8b3fd850c7c58d45cc6db56755ed1b061bad0e2c37bbd6ce686387ecd79b": {
+        "n": 3,
+        "MAE": 0.6120655771166407,
+        "RMSE": 0.9696554701927499,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -0.6623396915053477
+      },
+      "339fca2061673ddff292b310512fac14c2ccb2bdc8475de0ba986d6e8fa55224": {
+        "n": 2,
+        "MAE": 2.429966870587519,
+        "RMSE": 2.4511026943631036,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -57.23563806084021
+      },
+      "33a0233648d89771340ba76bb2227ce4ceb24c1737beda97eb1589104681ec7e": {
+        "n": 3,
+        "MAE": 0.4548257379080803,
+        "RMSE": 0.6992603455829033,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -0.3220459403416218
+      },
+      "4cf30524790eb285d88a82368b6439e2c35c59a5891a1627d974fc81cf21a7ec": {
+        "n": 2,
+        "MAE": 1.6481897820766525,
+        "RMSE": 1.740088571091372,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -8.724199034899463
+      },
+      "74d723b5c32d1ecc8089c6c84c98cd41fca45c3dfc77f9a53f07ac87a89516dc": {
+        "n": 2,
+        "MAE": 0.2166644766794561,
+        "RMSE": 0.22806471769239667,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -9.259035554587149
+      },
+      "84bca0bfcf0baaf04c82c70d8b6e1ce9b52634489d2fb766e24db3ff87dc8601": {
+        "n": 8,
+        "MAE": 1.0801997256178921,
+        "RMSE": 1.3406193586927138,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -0.539154532753584
+      },
+      "87208f7d25d760d405971be60e739e07826b41f96550fef7b3e4b593f208c082": {
+        "n": 9,
+        "MAE": 0.7498642402789647,
+        "RMSE": 0.8362353149188783,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -0.008034654513159767
+      },
+      "907190d6984113e380f933f5c52ca845921e460b09488f750311d99f1f6e9279": {
+        "n": 2,
+        "MAE": 2.175490812026177,
+        "RMSE": 2.197068351137738,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -50.16223748428701
+      },
+      "a25f82cd1b4be74e9b43bdc43c058fe9ce987dc011b712f1ce43a21e4d45d0a4": {
+        "n": 15,
+        "MAE": 1.213684513261996,
+        "RMSE": 1.2603647070160124,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -12.754711366804882
+      },
+      "bfb0c691493b552212f52a3e68ec9d6c2e67dc37339f19b6e71c22fd202292f8": {
+        "n": 16,
+        "MAE": 2.260954723562441,
+        "RMSE": 2.6858416681947084,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -0.6732635483110874
+      },
+      "da732b5e8d2d70df356a38fcb7dcb1f2c8c200f00268f7978afe49f9a7b1783d": {
+        "n": 5,
+        "MAE": 1.0370536840083504,
+        "RMSE": 1.364261102538942,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -0.4916632590405099
+      },
+      "e8ebd86ae6e434c61c0134c08ccbeaa09ea0460f87b3647bde4aa665903cb248": {
+        "n": 2,
+        "MAE": 1.4752573184600408,
+        "RMSE": 1.5499205380985628,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -9.635581497300025
+      },
+      "f34f3d1d1d25f09b995d92b277491054857475f386f3c60b35078ef81ca7d5b1": {
+        "n": 3,
+        "MAE": 2.4114884039501594,
+        "RMSE": 2.5272807009781584,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -10.168852870849667
+      },
+      "fe3b75f1b50a89be8afcb7630b4d12728d10924183f6424a4925c746e95cc169": {
+        "n": 3,
+        "MAE": 1.1697686460303547,
+        "RMSE": 1.3667913524970186,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -0.10823490680600933
+      }
+    },
+    "macro_mean": {
+      "MAE": 1.3525338936831945,
+      "RMSE": 1.5154682066425185,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": -11.48178517163141
+    },
+    "defined_group_counts": {
+      "MAE": 14,
+      "RMSE": 14,
+      "Pearson": 0,
+      "Spearman": 0,
+      "R2": 14
+    },
+    "definition": "equal-weight group means; undefined group correlations/R2 excluded and counted",
+    "row_weighted_MAE": 1.3972236170413326,
+    "row_weighted_RMSE": 1.7546631679873703
+  },
+  "macro_by_source": {
+    "group_field": "study_id",
+    "group_count": 2,
+    "missing_group_rows": 0,
+    "per_group_metrics": {
+      "10.1002/pro.70317": {
+        "n": 45,
+        "MAE": 1.473657552410699,
+        "RMSE": 1.8550074134797019,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -0.00287011278024929
+      },
+      "10.15252/msb.202211164": {
+        "n": 30,
+        "MAE": 1.2825727139872842,
+        "RMSE": 1.5923342383531494,
+        "Pearson": null,
+        "Spearman": null,
+        "R2": -0.887822416396624
+      }
+    },
+    "macro_mean": {
+      "MAE": 1.3781151331989916,
+      "RMSE": 1.7236708259164257,
+      "Pearson": null,
+      "Spearman": null,
+      "R2": -0.4453462645884366
+    },
+    "defined_group_counts": {
+      "MAE": 2,
+      "RMSE": 2,
+      "Pearson": 0,
+      "Spearman": 0,
+      "R2": 2
+    },
+    "definition": "equal-weight group means; undefined group correlations/R2 excluded and counted",
+    "row_weighted_MAE": 1.3972236170413332,
+    "row_weighted_RMSE": 1.75466316798737,
+    "source_refs": [
+      "10.1002/pro.70317",
+      "10.15252/msb.202211164"
+    ],
+    "source_ref_scope": "machine study_id references, not independently certified papers or biological experiments"
+  }
+}

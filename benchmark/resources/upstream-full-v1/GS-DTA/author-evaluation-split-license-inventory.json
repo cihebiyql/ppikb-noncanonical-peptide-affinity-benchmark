@@ -1,0 +1,233 @@
+{
+  "evaluation_split_training_script_candidates": [
+    {
+      "path": "create_data.py",
+      "sha256": "87547db4736405097adcbea2de68e25075af4a0bb057bb9e2d46ee49dd38d223",
+      "evidence": {
+        "split_or_validation": [
+          {
+            "line": 62,
+            "text": "train_fold = json.load(open(fpath + \"folds/train_fold_setting1.txt\"))"
+          },
+          {
+            "line": 64,
+            "text": "valid_fold = json.load(open(fpath + \"folds/test_fold_setting1.txt\"))"
+          },
+          {
+            "line": 78,
+            "text": "opts = ['train','test']"
+          },
+          {
+            "line": 83,
+            "text": "elif opt=='test':"
+          },
+          {
+            "line": 107,
+            "text": "opts = ['train','test']"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "training.py",
+      "sha256": "1882692aa64594cf51d2c9e773b4eaa443637f1631a6b9142b2a0e5100b854af",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 94,
+            "text": "ret = [rmse(G,P),mse(G,P),pearson(G,P),spearman(G,P),ci(G,P),get_rm2(G.reshape(G.shape[0],-1),P.reshape(P.shape[0],-1))]"
+          },
+          {
+            "line": 95,
+            "text": "RMSE=rmse(G,P)"
+          },
+          {
+            "line": 96,
+            "text": "MSE=mse(G,P)"
+          },
+          {
+            "line": 99,
+            "text": "Ci=ci(G,P)"
+          },
+          {
+            "line": 109,
+            "text": "MSE_CI=[epoch,RMSE,MSE,Pearson,Spearson,Ci,rm2]"
+          },
+          {
+            "line": 113,
+            "text": "print('rmse improved at epoch ', best_epoch, '; best_mse,best_ci:', best_mse,best_ci,model_st,dataset)"
+          }
+        ],
+        "checkpoint_selection": [
+          {
+            "line": 81,
+            "text": "best_mse = 1000"
+          },
+          {
+            "line": 82,
+            "text": "best_ci = 0"
+          },
+          {
+            "line": 83,
+            "text": "best_epoch = -1"
+          },
+          {
+            "line": 102,
+            "text": "if ret[1]<best_mse:"
+          },
+          {
+            "line": 106,
+            "text": "best_epoch = epoch+1"
+          },
+          {
+            "line": 107,
+            "text": "best_mse = ret[1]"
+          },
+          {
+            "line": 108,
+            "text": "best_ci = ret[-2]"
+          },
+          {
+            "line": 112,
+            "text": "torch.save(model.state_dict(), model_file_name)"
+          },
+          {
+            "line": 113,
+            "text": "print('rmse improved at epoch ', best_epoch, '; best_mse,best_ci:', best_mse,best_ci,model_st,dataset)"
+          },
+          {
+            "line": 115,
+            "text": "print(ret[1],'No improvement since epoch ', best_epoch, '; best_mse,best_ci:', best_mse,best_ci,model_st,dataset)"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "training_validation.py",
+      "sha256": "a853dfe050143b0a1cae59179a948d13e8211d8247d5c387a12a63491aaf8c17",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 100,
+            "text": "val = mse(G,P)"
+          },
+          {
+            "line": 107,
+            "text": "ret = [rmse(G,P),mse(G,P),pearson(G,P),spearman(G,P),ci(G,P)]"
+          },
+          {
+            "line": 112,
+            "text": "print('rmse improved at epoch ', best_epoch, '; best_test_mse,best_test_ci:', best_test_mse,best_test_ci,model_st,dataset)"
+          }
+        ],
+        "split_or_validation": [
+          {
+            "line": 98,
+            "text": "print('predicting for valid data')"
+          },
+          {
+            "line": 105,
+            "text": "print('predicting for test data')"
+          }
+        ],
+        "checkpoint_selection": [
+          {
+            "line": 90,
+            "text": "best_mse = 1000"
+          },
+          {
+            "line": 93,
+            "text": "best_epoch = -1"
+          },
+          {
+            "line": 101,
+            "text": "if val<best_mse:"
+          },
+          {
+            "line": 102,
+            "text": "best_mse = val"
+          },
+          {
+            "line": 103,
+            "text": "best_epoch = epoch+1"
+          },
+          {
+            "line": 104,
+            "text": "torch.save(model.state_dict(), model_file_name)"
+          },
+          {
+            "line": 112,
+            "text": "print('rmse improved at epoch ', best_epoch, '; best_test_mse,best_test_ci:', best_test_mse,best_test_ci,model_st,dataset)"
+          },
+          {
+            "line": 114,
+            "text": "print(ret[1],'No improvement since epoch ', best_epoch, '; best_test_mse,best_test_ci:', best_test_mse,best_test_ci,model_st,dataset)"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    },
+    {
+      "path": "utils.py",
+      "sha256": "cca8b3daebe096f3bde5dcadce294474ac6828a612537ca5975b402779b2b9e4",
+      "evidence": {
+        "evaluation_metrics": [
+          {
+            "line": 120,
+            "text": "def rmse(y,f):"
+          },
+          {
+            "line": 121,
+            "text": "rmse = sqrt(((y - f)**2).mean(axis=0))"
+          },
+          {
+            "line": 122,
+            "text": "return rmse"
+          },
+          {
+            "line": 126,
+            "text": "def mse(y,f):"
+          },
+          {
+            "line": 127,
+            "text": "mse = ((y - f)**2).mean(axis=0)"
+          },
+          {
+            "line": 128,
+            "text": "return mse"
+          },
+          {
+            "line": 133,
+            "text": "rs = stats.spearmanr(y, f)[0]"
+          },
+          {
+            "line": 135,
+            "text": "def ci(y,f):"
+          },
+          {
+            "line": 155,
+            "text": "ci = S/z"
+          },
+          {
+            "line": 156,
+            "text": "return ci"
+          }
+        ],
+        "checkpoint_selection": [
+          {
+            "line": 79,
+            "text": "torch.save((data, slices), self.processed_paths[0])"
+          }
+        ]
+      },
+      "inspection": "static string/line inventory, not executed behavior verification"
+    }
+  ],
+  "license_files": [],
+  "license_status": "no_explicit_license_file_found",
+  "gitmodules_present": false,
+  "git_lfs_pointer_paths": [],
+  "submodules_or_LFS_payloads_fetched": false
+}

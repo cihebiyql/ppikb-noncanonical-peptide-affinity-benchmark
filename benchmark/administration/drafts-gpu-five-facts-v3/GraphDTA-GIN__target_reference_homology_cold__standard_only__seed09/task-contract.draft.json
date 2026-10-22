@@ -1,0 +1,1375 @@
+{
+  "schema_version": "1.0",
+  "record_type": "task_contract",
+  "is_template": true,
+  "task_id": "NC-PAPER-0b3736caf92e",
+  "run_id": "GraphDTA-GIN__target_reference_homology_cold__standard_only__seed09",
+  "contract_status": "draft",
+  "created_at": "2026-10-21T16:38:32.264761+00:00",
+  "frozen_at": null,
+  "revision": 1,
+  "previous_contract_sha256": null,
+  "revision_reason": null,
+  "identity": {
+    "title": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+    "doi": "10.1093/bioinformatics/btaa921",
+    "publication_status": "version_of_record_fulltext",
+    "first_online_date": "2020-10-24",
+    "journal": null,
+    "paper_type": "published_method_article",
+    "pdf": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-author-lab.pdf",
+      "sha256": "ef670bb4eeb41ba7db7449f15dd8a8861d6c01029e597e802db8a38df70df907",
+      "version": "version_of_record",
+      "source_url": null
+    },
+    "primary_document": {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\GraphDTA-official.html",
+      "sha256": "b19c89f1602bb4af89c6888f42d6acb5f023a46d7461c364634fab7037b3d999",
+      "format": "publisher_fulltext_html",
+      "source_url": "https://oup.silverchair-cdn.com/article-minimal/5942970",
+      "identity_doi_verified": true
+    },
+    "related_versions": [],
+    "eligibility": {
+      "scope": "Prior published model transferred to the newly authorized NC2099 affinity benchmark",
+      "assessment": "allowed_for_scoped_model_comparison",
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar-v2.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar-v3.json"
+      ]
+    },
+    "missing_pdf_note": null
+  },
+  "execution_scope": {
+    "objective": "PPIKB noncanonical peptide–protein Kd benchmark with standard-residue controls; stratified non-natural/PTM evaluation",
+    "authorization_reference": "Latest direct user instruction: PPIKB 2099 noncanonical Kd candidates, standard controls, separate non-natural and PTM evaluation, strict splits, independent external validation, at least five predecessor papers, all ten seeds, no novel model.",
+    "relation_to_prior_run": "New direct-user-authorized scientific target: common NC2099 plus standard-residue controls, not a continuation or deadline reset of legacy3354/11250/legacy62 runs. Root must attach matching historic task/run IDs once registered. Existing expired clocks/restrictions remain intact. This DOI-derived stable ID is proposed for a separate new benchmark batch; root must link duplicate historical identities without changing old62 expiry/status.",
+    "prior_run_ids": [],
+    "safety_assessment": "pending",
+    "scope_coverage": "partial_subset",
+    "intended_level": "training",
+    "excluded_claims": [
+      "No novel model",
+      "No claim to reproduce original paper tables on the changed dataset",
+      "No PepLand or PepLand-derived binding input"
+    ],
+    "restriction_check": {
+      "prior_platform_restriction": false,
+      "reason": "This scoped benchmark excludes PepLand, Twin Peaks, previously denied primary-source unit investigations, sequence design/optimization and metadata-only train exclusions. Old restricted work is not restarted.",
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json"
+      ]
+    }
+  },
+  "timing": {
+    "first_substantive_started_at": "2026-10-21T15:59:53+00:00",
+    "earliest_associated_preparation_at": null,
+    "wall_clock_cap_hours": 10,
+    "original_deadline_at": "2026-10-22T01:59:53+00:00",
+    "additional_deadlines_at": [
+      "2026-10-22T01:45:00+00:00"
+    ],
+    "effective_deadline_at": "2026-10-22T01:45:00+00:00",
+    "prior_window_expired": false,
+    "retry_resets_clock": false,
+    "timing_evidence_paths": [
+      "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\resources\\live-probe.json"
+    ],
+    "clock_notes": "15:59:53Z is first persisted campaign clock as provided by leader; early skill reading may precede this. Conservative hard cutoff01:45Z applies to all papers/panels/seeds. prior_window_expired=false describes the newly authorized scope only; no historical expired task is revived."
+  },
+  "assets": {
+    "datasets": [
+      {
+        "name": "PPIKB_NC2099_standard7520_Kd_frozen_v1",
+        "version": "frozen-v1",
+        "source_url": "https://www.nature.com/articles/s41597-026-07962-1",
+        "license": null,
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\manifest.json",
+        "manifest_sha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2",
+        "sha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2",
+        "sample_count": 9619,
+        "statistical_unit": "measurement record; full declared source/chemical or target-reference components assigned together",
+        "splits": {
+          "train": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\train-ids.json",
+          "validation": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\validation-ids.json",
+          "test": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\test-ids.json",
+          "split_manifest_sha256": "3c880300ccbfb479629d77165988c8756f2ee8e6ad46d86146f06706c10f6c4f"
+        },
+        "preprocessing": "No label repair; all original9619 records retained; raw/atomic isomeric SMILES preserved; no peptide cap; annotations used for strata only; model protein prefix limits disclosed",
+        "leakage_check": {
+          "status": "verified_under_declared_panel_definition",
+          "method": "target_reference_homology_cold",
+          "evidence_paths": [
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\independent-leakage-verification.json",
+            "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+          ]
+        },
+        "integrity": "complete",
+        "notes": "Frozen input/label metadata checked by byte SHA at preparation; actual remote training projections must still be hash-verified before launch. Source panel not70/15/15 due giant component; achieved counts preserved.",
+        "frozen_files": [
+          {
+            "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\inputs.jsonl",
+            "sha256": "fd8ae1207818a4b1533c1b1a4ef5b299593a82700fb62c9ef2490656c9af01f5"
+          },
+          {
+            "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\labels.jsonl",
+            "sha256": "8a2c4e545ec322184ea57504cf875abc61805db8bef1b265034f95f4de4d2a7a"
+          },
+          {
+            "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\quality-flags.jsonl",
+            "sha256": "a1e7e041b427b1c7125f433fc101cb4752538041584c402355e0c5444408060a"
+          },
+          {
+            "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\residue-class-graph-discordance.json",
+            "sha256": "1f8f622e70b2e6fe4d760b3f01f003bc3ee8cdfe8d788b7b73917e1031cdb8f4"
+          }
+        ],
+        "actual_panel_counts": {
+          "train": 6733,
+          "validation": 1443,
+          "test": 1443
+        },
+        "actual_panel_strata": {
+          "train": {
+            "standard20_control": 5324,
+            "synthetic_D_backbone": 540,
+            "PTM": 615,
+            "other_NC": 87,
+            "synthetic_and_PTM": 167
+          },
+          "validation": {
+            "standard20_control": 1085,
+            "synthetic_D_backbone": 90,
+            "other_NC": 7,
+            "PTM": 197,
+            "synthetic_and_PTM": 64
+          },
+          "test": {
+            "synthetic_D_backbone": 93,
+            "standard20_control": 1111,
+            "PTM": 190,
+            "synthetic_and_PTM": 37,
+            "other_NC": 12
+          }
+        }
+      }
+    ],
+    "code": [
+      {
+        "role": "primary_author_source",
+        "source_url": "https://github.com/thinng/GraphDTA",
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thinng__GraphDTA\\source",
+        "commit": "6162245c6776684b391d30610850fe7077478435",
+        "archive_sha256": null,
+        "license": null,
+        "checkout_status": "frozen_selected_author_source",
+        "submodules_lfs": "Not asserted complete; selected source tree and manifest retained",
+        "dependency_lock_path": null,
+        "integrity": "partial",
+        "patch_path": null,
+        "evidence_paths": [
+          "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\author-source\\thinng__GraphDTA\\manifest.json",
+          "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json"
+        ],
+        "notes": "Selected author implementation used through isolated adapter. Original training.py selects by test MSE; prohibited in current protocol | Native graph excludes atom chirality AND bond order features | Fixed 1000-aa protein prefix; report truncation IDs and effective-view hash | Paper states global max pool for GIN, frozen author models/ginconv.py uses global_add_pool; preserve chosen author implementation and disclose difference."
+      }
+    ],
+    "models": [
+      {
+        "name": "GraphDTA-GIN",
+        "version": "from_scratch_author_architecture_adapted_input",
+        "source_url": "https://github.com/thinng/GraphDTA",
+        "path": null,
+        "sha256": null,
+        "configuration_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "configuration_sha256": "432b12241d6fff021c24bae93222d2da30927f84272b5e21e57214e7464748e6",
+        "coverage": "NC2099+standard control candidates; exact frozen per-panel/train scope pending",
+        "license": null,
+        "integrity": "not_applicable",
+        "evidence_paths": [
+          "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json"
+        ],
+        "notes": "No pretrained or prior-task supervised weights loaded; checkpoints are outputs of the planned training rather than missing input weights."
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "all:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "all:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "all:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "all:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "all:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/all",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1443,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_D_backbone:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_D_backbone:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_D_backbone:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_D_backbone:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_D_backbone:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_D_backbone",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 93,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "standard20_control:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "standard20_control:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "standard20_control:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "standard20_control:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "standard20_control:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/standard20_control",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 1111,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "PTM:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "PTM:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "PTM:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "PTM:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "PTM:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 190,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_and_PTM:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_and_PTM:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_and_PTM:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_and_PTM:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "synthetic_and_PTM:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/synthetic_and_PTM",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 37,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "other_NC:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "other_NC:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "other_NC:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "other_NC:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "other_NC:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/other_NC",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 12,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "NC_core:MAE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "MAE",
+      "metric_definition": "mean(abs(predicted_pKd-observed_pKd))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "NC_core:RMSE",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "RMSE",
+      "metric_definition": "sqrt(mean((predicted_pKd-observed_pKd)^2))",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "pKd (-log10 molar Kd)",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "NC_core:Pearson",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Pearson",
+      "metric_definition": "Pearson product-moment correlation; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "NC_core:Spearman",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "Spearman",
+      "metric_definition": "Pearson correlation of average-tied ranks; null with reason if undersized/constant group",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    },
+    {
+      "target_id": "NC_core:R2",
+      "paper_endpoint": "New common PPIKB peptide–protein Kd benchmark using the published architecture",
+      "required": true,
+      "dataset_reference": "target_reference_homology_cold/test/NC_core",
+      "comparison_endpoint": "held-out exact experimental pKd",
+      "metric": "R2",
+      "metric_definition": "1-SSE/SST; null with reason if observed group is undersized/constant",
+      "statistical_unit": "measurement record; fixed source/chemical or reference-homology groups define partitions",
+      "denominator": 332,
+      "unit": "dimensionless",
+      "paper_value": null,
+      "paper_value_source": null,
+      "baseline": "standard-only control with same model and search budget",
+      "checkpoint_selection": "validation MAE only; minimum epoch then LR candidate0/1 with fixed tie rule",
+      "repetitions": 10,
+      "tolerance": {
+        "kind": "not_comparable",
+        "absolute": null,
+        "relative": null,
+        "rule": null,
+        "reason": "Changed dataset, endpoint scope, tuning budget and disclosed source repairs; no original-paper table replication claimed."
+      },
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\protocol-v1.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\frozen-v1\\splits\\target_reference_homology_cold\\summary.json"
+      ]
+    }
+  ],
+  "environment": {
+    "isolation": "Task source/adapters/vendor dependencies isolated under current workspace; existing generic WSL Python virtual environment reused read-only; no shared package installation",
+    "environment_path": "/root/.venvs/peptide-omnipanel-v31-web311-20260723",
+    "lockfile_path": null,
+    "lockfile_sha256": null,
+    "runtime_versions": {
+      "python": "3.11.15",
+      "torch": "2.12.1+cu130",
+      "PyG": "2.6.1",
+      "rdkit": "2026.03.4"
+    },
+    "numerical_policy": {
+      "author_entrypoint_evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json"
+      ],
+      "parameter_dtype": "float32",
+      "input_dtype": "float32 graph features and int64 token/edge indices",
+      "autocast": false,
+      "float32_matmul_precision": null,
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false,
+      "determinism": "Torch seeds and deterministic_algorithms(warn_only=True); exact CUDA bit determinism not claimed; MGraphDTA adaptive max pool nondeterminism warning retained",
+      "applied_before_model_instantiation": true,
+      "actual_policy_receipt_path": null,
+      "notes": "Generic WSL GPU route is separate from restricted workflows; GPU canary does not establish full-fit feasibility or equality with Node23. Actual policy/launch snapshot pending."
+    },
+    "shared_environment_modified": false,
+    "PYTHONPATH": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/resources/local-gpu-route/vendor-dependencies"
+  },
+  "resources": {
+    "expected_hostname": "cihebi",
+    "cpu_threads": 2,
+    "data_loader_workers": 0,
+    "memory_limit_bytes": 4294967296,
+    "gpu_devices": [
+      0
+    ],
+    "gpu_memory_budget_bytes": 3221225472,
+    "resource_probe_path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\resources\\local-gpu-route\\route-summary.json",
+    "resource_probe_at": null,
+    "start_gate": "Pending final root live GPU process/profile gate: at most1 physical GPU, at most3 owned concurrent processes only if profiled feasible; per-fit CPU2/RSS4GiB/GPUallocated3GiB",
+    "budget_basis": "Pre-fit throughput-driven revision from Node23 CPU plan; no validation/test metric consulted; current route canary verifies original four retained methods, GS-DTA adapter/GPU gate still pending",
+    "no_preemption": true
+  },
+  "execution": {
+    "command": null,
+    "working_directory": null,
+    "seed_policy": "One model-fit seed per run; frozen split and all hyperparameter-search candidates retained; seeds 0–9 all reported",
+    "seeds": [
+      9
+    ],
+    "timeout_seconds": null,
+    "process_control": {
+      "platform": "Linux WSL",
+      "mechanism": "Pending actual root launch/run_unit.py and process-group supervisor",
+      "whole_tree_bounded": null
+    },
+    "stdout_path": null,
+    "stderr_path": null
+  },
+  "stop_conditions": [
+    "达到有效截止",
+    "达到合同资源上限",
+    "执行范围超出合同",
+    "出现平台拒绝或缺少适用授权"
+  ],
+  "review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "checks": [],
+    "evidence_paths": []
+  },
+  "benchmark_metadata": {
+    "schema": "peptide-binding.nc-benchmark.plan.v1",
+    "method_id": "GraphDTA-GIN",
+    "split_id": "target_reference_homology_cold",
+    "regime_id": "standard_only",
+    "seed": 9,
+    "training_regime": {
+      "regime_id": "standard_only",
+      "train_scope": "standard_only",
+      "validation_scope": "same_as_regime",
+      "selection": "lowest validation MAE by epoch and LR; ties lower candidate index",
+      "candidates": [
+        {
+          "learning_rate": 0.001,
+          "weight_decay": 0.0
+        },
+        {
+          "learning_rate": 0.0003,
+          "weight_decay": 0.0
+        }
+      ],
+      "max_epochs": 20,
+      "patience": 5,
+      "holdout_scope": "all retained test records, mutually exclusive chemistry strata plus608 annotation-discordance sensitivity flags; score only after selection frozen"
+    },
+    "input_encoding_audit": {
+      "status": "verified",
+      "non_natural_residue_supported": true,
+      "PTM_supported": true,
+      "mixed_supported": true,
+      "peptide_sequence_projection_used": false,
+      "chemical_information_loss": "Author graph inputs are stereochemistry-blind; full raw isomeric SMILES retained as provenance and evaluated for blind equivalence sensitivity.",
+      "unrecognized_tokens_handling": "Block with explicit failed coverage; no silent standard-AA substitution",
+      "protein_prefix_length": 1000,
+      "full_peptide_smiles_no_cap": true,
+      "evidence_paths": [
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\model-routes.json",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\model-audit\\papers\\primary-method-verification-sidecar.json"
+      ]
+    },
+    "evaluation_strata": [
+      "synthetic_D_backbone",
+      "PTM",
+      "synthetic_and_PTM",
+      "other_NC",
+      "standard20_control"
+    ],
+    "test_used_for_selection": false,
+    "external_used_for_selection": false
+  }
+}

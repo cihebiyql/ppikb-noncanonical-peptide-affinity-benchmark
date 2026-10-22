@@ -1,0 +1,49 @@
+[
+  {
+    "name": "staging-probe",
+    "args": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=15",
+      "node1",
+      "mkdir -p /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/data-protocol && test -w /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/data-protocol && hostname && date -Is && df -h /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/data-protocol"
+    ],
+    "exit_code": 0,
+    "seconds": 2.1229407787323
+  },
+  {
+    "name": "upload-remote_label_free_groups.py",
+    "args": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\remote_label_free_groups.py",
+      "node1:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/data-protocol/remote_label_free_groups.py"
+    ],
+    "exit_code": 0,
+    "seconds": 2.9513909816741943
+  },
+  {
+    "name": "upload-label-free-grouping-input.jsonl",
+    "args": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\label-free-grouping-input.jsonl",
+      "node1:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/data-protocol/label-free-grouping-input.jsonl"
+    ],
+    "exit_code": 0,
+    "seconds": 3.1725704669952393
+  },
+  {
+    "name": "upload-targets.fasta",
+    "args": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\data-protocol\\targets.fasta",
+      "node1:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/data-protocol/targets.fasta"
+    ],
+    "exit_code": 0,
+    "seconds": 1.3364498615264893
+  }
+]

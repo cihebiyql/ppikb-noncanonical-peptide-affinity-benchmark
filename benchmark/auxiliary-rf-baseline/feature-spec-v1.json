@@ -1,0 +1,42 @@
+{
+  "status": "preregistered_before_any_real_RF_fit_or_holdout_prediction",
+  "baseline_type": "additional_classical_RandomForest_not_an_author_paper_reproduction",
+  "paper_count_contribution": 0,
+  "feature_dimension": 2469,
+  "dtype": "float32",
+  "molecule": {
+    "columns": "0:2048",
+    "algorithm": "RDKit GetMorganGenerator bit fingerprint",
+    "radius": 2,
+    "fpSize": 2048,
+    "includeChirality": true,
+    "countSimulation": false,
+    "useBondTypes": true,
+    "onlyNonzeroInvariants": false,
+    "includeRingMembership": true,
+    "includeRedundantEnvironments": false,
+    "input_preference": "canonical_isomeric_smiles else peptide_smiles",
+    "canonicalization": "No MolToSmiles rewrite. Fingerprint consumes original supplied full molecular graph.",
+    "parser": {"sanitize": true, "removeHs": false},
+    "all_fragments_retained": true,
+    "salt_stripping_neutralization_tautomerization_repair": false,
+    "stereochemistry": "Use only supplied assigned stereochemistry; unspecified centers remain unspecified, never imputed."
+  },
+  "protein": {
+    "prefix": "literal first min(full-reference-length,1000) characters",
+    "alphabet_order": "ACDEFGHIKLMNPQRSTVWY",
+    "AAC_columns": "2048:2068",
+    "AAC_denominator": "entire effective prefix length, including unknown positions",
+    "dipeptide_columns": "2068:2468",
+    "dipeptide_order": "row-major alphabet_i*20+alphabet_j",
+    "dipeptide_denominator": "entire effective prefix length minus one; if prefix length 1, all 400 values are zero",
+    "unknown_characters": "X and any nonalphabet character contribute no canonical count, remain in length denominators, and break adjacent pairs. No deletion, compression, uppercase conversion or imputation.",
+    "length_column": 2468,
+    "length_scalar": "raw EFFECTIVE PREFIX length, not full-reference length; max1000, no learned scaling",
+    "empty_reference": "reject, do not replace"
+  },
+  "learned_preprocessing": false,
+  "y_in_feature_cache": "absent; actual labels are never read in feature preparation",
+  "datasets": ["frozen9619_inputs", "external75_inputs", "separate_supplement13_inputs"],
+  "target_scope": "provided reference sequence view; not certification of actual assay construct"
+}

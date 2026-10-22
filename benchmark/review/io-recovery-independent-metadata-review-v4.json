@@ -1,0 +1,167 @@
+{
+  "schema": "independent-io-recovery-metadata-review-v4",
+  "created_at": "2026-10-21T18:32:30.885825+00:00",
+  "scope": "Static metadata/source bytes only, through WSL Python. No test/external gold, predictions, checkpoints or validation scores read.",
+  "status": "passed",
+  "checks": [
+    {
+      "check": "sha256:administration/io-recovery01/execution-index-v5-recovery.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sha256:administration/io-recovery01/eligible-training-freeze-index-v5.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sha256:control/unit-index-v5-all-recovery.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sha256:control/gpu-fit-specs-v4/MGraphDTA__target_reference_homology_cold__NC_only__seed08.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sha256:administration/io-recovery01/MGraphDTA__target_reference_homology_cold__NC_only__seed08__io_recovery01.fit-spec.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sha256:execution/runner.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "only_two_output_path_spec_deltas",
+      "passed": true,
+      "detail": [
+        "launch_proof.receipt_root",
+        "run_root"
+      ]
+    },
+    {
+      "check": "200_unique_complete_scientific_coordinates",
+      "passed": true,
+      "detail": {
+        "methods": [
+          "DGDTA-CL",
+          "DeepNC-GEN",
+          "GS-DTA",
+          "GraphDTA-GIN",
+          "MGraphDTA"
+        ],
+        "count": 200
+      }
+    },
+    {
+      "check": "exactly_one_scientific_index_replacement",
+      "passed": true,
+      "detail": [
+        [
+          "MGraphDTA",
+          "target_reference_homology_cold",
+          "NC_only",
+          8
+        ]
+      ]
+    },
+    {
+      "check": "199_unit_metadata_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "recovery_same_coordinate_new_attempt_id",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "freeze_index_200_unique_matching_coordinates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "freeze_all_records_valid_frozen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "old_failed_slot_preserved_but_not_eligible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pool_200_unique_attempt_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pool_scientific_index_same_attempt_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "same_original_absolute_unit_deadline",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_recovery_timeout_no_clock_reset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "global_deadline_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pool_metadata_binding_sha:spec",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pool_metadata_binding_sha:contract",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pool_metadata_binding_sha:validation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pool_metadata_binding_sha:unit_binding",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "old_failure_retained_minus15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived_terminal_identical",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "accounting_400_valid_configs_200_cells_plus1_interruption",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "checks_count": 26,
+  "interrupted_inventory_policy": "Declared stat inventory retained; inventory model/prediction/metric file payloads were not opened.",
+  "causal_scope": "Windows default read sharing reproduces the exception type; attribution of the original event remains moderate because exact filename and stack were not captured.",
+  "counting": {
+    "expected_valid_candidate_fits": 400,
+    "scientific_cells": 200,
+    "additional_interrupted_attempts": 1,
+    "completed_performance_runs_claimed_by_this_review": 0
+  },
+  "no_holdout_access": true
+}

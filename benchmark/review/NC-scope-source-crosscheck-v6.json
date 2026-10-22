@@ -1,0 +1,150 @@
+{
+  "schema": "NC-primary-scope-static-source-crosscheck-v6",
+  "created_utc": "2026-10-21T19:28:08.760568+00:00",
+  "scope": "Source/schema only. No actual gold, predictions, audits, selections, weights, matrices or new label-free masks opened. No code changes.",
+  "finding": "Both requested whole-NC outputs are absent from the frozen NN independent audit and deterministic reference output schemas.",
+  "evidence": [
+    {
+      "file": "review/recompute_metrics.py",
+      "lines": [
+        107,
+        115
+      ],
+      "present": [
+        "metrics.NC_core",
+        "metrics.standard",
+        "metrics.exclude_discordant_sensitivity",
+        "metrics.exclude_discordant:<evaluation_stratum>"
+      ],
+      "absent": [
+        "metrics.NC_core_exclude_discordant_sensitivity"
+      ],
+      "reason": "clean is computed across all rows; no intersection of NC_core true with not-discordant is passed to metrics."
+    },
+    {
+      "file": "review/recompute_metrics.py",
+      "lines": [
+        291,
+        304
+      ],
+      "present": [
+        "macro_by_target",
+        "macro_by_source",
+        "macro_by_full_target_reference"
+      ],
+      "scope": "All input rows, no NC filter. Macro helper exposes group_count, per_group_metrics, macro_mean and defined_group_counts at lines124-139."
+    },
+    {
+      "file": "review/recompute_metrics.py",
+      "lines": [
+        201,
+        219
+      ],
+      "present": [
+        "matched_target_diagnostics.cohorts.NC_matched",
+        "matched_target_diagnostics.cohorts.standard_matched"
+      ],
+      "scope": "Frozen matched-reference subset only, not entire NC303/332 test."
+    },
+    {
+      "file": "review/deterministic_references.py",
+      "lines": [
+        120,
+        138
+      ],
+      "present": [
+        "metrics from audit.group_metrics(rows,ds)",
+        "macro_by_full_target_reference",
+        "macro_by_source",
+        "matched_target_diagnostics"
+      ],
+      "scope": "Same missing NCclean group. Macro calls receive full rows. Matched outputs retain subset scope."
+    },
+    {
+      "file": "review/combine_audit_tables_v5.py",
+      "lines": [
+        40,
+        47
+      ],
+      "present": [
+        "cohort_macros.all_diagnostic"
+      ],
+      "scope": "Legacy unfiltered macros deliberately stay all_diagnostic; no false NC relabeling."
+    },
+    {
+      "file": "reporting/FIELD-MAPPING.md",
+      "lines": [
+        19,
+        23
+      ],
+      "scope": "Reporter correctly displays missing whole-NCclean and preserves all_diagnostic; no reconstruction from stratum means."
+    }
+  ],
+  "frozen_known_denominators": {
+    "source_panel": {
+      "NC_main": 303,
+      "NC_clean": 274,
+      "NC_removed": 29
+    },
+    "target_panel": {
+      "NC_main": 332,
+      "NC_clean": 261,
+      "NC_removed": 71
+    },
+    "608_scope": "608 is whole frozen dataset conflict-flag count, not test-only removals. Counts cited from already frozen protocol/root scope, not recomputed from outcomes."
+  },
+  "minimal_proposed_addendum_not_implemented": {
+    "execution_gate": "New explicit root authorization after exact jointNN200_RF40 barrier; preregister before first holdout score.",
+    "inputs": "Explicit old audited prediction/receipt/spec/input SHA map only; same saved predictions and frozen IDs, no model loading or retraining.",
+    "independent_numeric_helper_SHA": "baf78bfa88bf2ba49fcd1f6baae5560c0d89215934c62236e53e9045d36832c8",
+    "new_micro": "NC_core_exclude_discordant_sensitivity: NC_core true AND frozen not-discordant mask; assert source274/target261. Recompute all five metrics from rows.",
+    "new_macro_cohorts": [
+      "NC_core",
+      "synthetic_D_backbone",
+      "PTM",
+      "synthetic_and_PTM",
+      "other_NC",
+      "standard",
+      "optionally NC_core_exclude_discordant_sensitivity"
+    ],
+    "grouping": [
+      "exact full target_reference_sequence_sha",
+      "study_id with source_refs, not independent experiment claims"
+    ],
+    "macro_metadata": [
+      "observation_n",
+      "group_count",
+      "missing_group_rows",
+      "per_group_metrics",
+      "macro_mean",
+      "defined_group_counts"
+    ],
+    "storage": "Separate immutable sidecar/new wrapper version, never mutate frozen NN production, score, v3-v5 auditors or historical manifests.",
+    "table_integration": "Append only new metric/cohort keys with collision equality checks; existing RF NCclean/main-NC macros must agree rather than duplicate. Preserve score denominators NN600/RF120/refs360 and five distinct paper identities.",
+    "cannot_infer": "Allclean cannot be renamed NCclean; matched subset cannot be renamed wholeNC; averaging stratum metrics does not reconstruct complete Pearson/Spearman/R2."
+  },
+  "root_decision_pending": true,
+  "files": [
+    {
+      "path": "review/recompute_metrics.py",
+      "sha256": "baf78bfa88bf2ba49fcd1f6baae5560c0d89215934c62236e53e9045d36832c8"
+    },
+    {
+      "path": "review/deterministic_references.py",
+      "sha256": "c22832788bfbd79f765857f133110b8695d321ec9fcca1559e3d8f38626b7296"
+    },
+    {
+      "path": "review/combine_audit_tables_v5.py",
+      "sha256": "ac9cb4a7987d03224a87cd6a96d1b4194b5c02e7a53ecfb5b3be86640426123c"
+    },
+    {
+      "path": "review/recompute_RF_v5.py",
+      "sha256": "9d6f1e67d6a08c45316014729ffc850e1d59bd6ab3da1c989bcb4280e731e905"
+    },
+    {
+      "path": "reporting/FIELD-MAPPING.md",
+      "sha256": "04d072fb4fe38cad356641561a2d1fa1c08eefa58bdb80a9abe47b2fdf92d006"
+    }
+  ],
+  "actual_computation_or_data_reads": 0
+}

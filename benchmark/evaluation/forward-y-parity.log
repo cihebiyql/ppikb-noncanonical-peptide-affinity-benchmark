@@ -1,0 +1,124 @@
+/data/qlyu/anaconda3/envs/cuda12.1/lib/python3.11/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+/data/qlyu/anaconda3/envs/cuda12.1/lib/python3.11/site-packages/torch/nn/modules/transformer.py:385: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(
+{
+  "status": "passed",
+  "stage": "random_model_training_fixture_X_cache_parity_only",
+  "methods": [
+    {
+      "method_id": "GraphDTA-GIN",
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "forward_y_independent": true,
+      "zero_vs_real_TRAIN_y_prediction_max_abs_difference": 0.0,
+      "zero_vs_arbitrary_y_prediction_max_abs_difference": 0.0,
+      "feature_bytes_equal": true,
+      "single_batch_max_difference": 3.5762786865234375e-07,
+      "batch_permutation_passed": true,
+      "cache_inputs_unchanged": true,
+      "static_forward_y_audit": {
+        "method_id": "GraphDTA-GIN",
+        "source_path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/stage/methods/graphdta-deepnc/vendor/graphdta_gin.py",
+        "source_sha256": "6bac0ca17e7185468a824646b2a658d21124264beb203b192e1a40abcb679c9d",
+        "forward_y_reads": [],
+        "passed": true,
+        "scope": "Static author forward methods; paired dynamic random-model proof is separately required"
+      },
+      "model_source": "random initialization seed314159; no trained checkpoint loaded",
+      "n_train_fixture_rows": 32
+    },
+    {
+      "method_id": "MGraphDTA",
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "forward_y_independent": true,
+      "zero_vs_real_TRAIN_y_prediction_max_abs_difference": 0.0,
+      "zero_vs_arbitrary_y_prediction_max_abs_difference": 0.0,
+      "feature_bytes_equal": true,
+      "single_batch_max_difference": 3.166496753692627e-08,
+      "batch_permutation_passed": true,
+      "cache_inputs_unchanged": true,
+      "static_forward_y_audit": {
+        "method_id": "MGraphDTA",
+        "source_path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/stage/methods/mgraph-dgdta/patched-author/mgraph_model.py",
+        "source_sha256": "46eeb0e8a730db96a95a7791a29c52aabaf06f0c5937a46fd26a688854149496",
+        "forward_y_reads": [],
+        "passed": true,
+        "scope": "Static author forward methods; paired dynamic random-model proof is separately required"
+      },
+      "model_source": "random initialization seed314159; no trained checkpoint loaded",
+      "n_train_fixture_rows": 32
+    },
+    {
+      "method_id": "DGDTA-CL",
+      "adapter_tree_sha256": "608b79f68a86444d764d49dbf6d6c2bcd6917ccd0cc9799e4866b6f8fd9deb1a",
+      "forward_y_independent": true,
+      "zero_vs_real_TRAIN_y_prediction_max_abs_difference": 0.0,
+      "zero_vs_arbitrary_y_prediction_max_abs_difference": 0.0,
+      "feature_bytes_equal": true,
+      "single_batch_max_difference": 7.916241884231567e-09,
+      "batch_permutation_passed": true,
+      "cache_inputs_unchanged": true,
+      "static_forward_y_audit": {
+        "method_id": "DGDTA-CL",
+        "source_path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/stage/methods/mgraph-dgdta/patched-author/dgdta_model.py",
+        "source_sha256": "0cf89adf76f97388d03548a726ec6e564cf94b8d2d43b103f21a7aaf5fcaf6d9",
+        "forward_y_reads": [],
+        "passed": true,
+        "scope": "Static author forward methods; paired dynamic random-model proof is separately required"
+      },
+      "model_source": "random initialization seed314159; no trained checkpoint loaded",
+      "n_train_fixture_rows": 32
+    },
+    {
+      "method_id": "DeepNC-GEN",
+      "adapter_tree_sha256": "93d4ec26c11c2057548c62f3318c52330bd8770de499cb8247f15264461b55d8",
+      "forward_y_independent": true,
+      "zero_vs_real_TRAIN_y_prediction_max_abs_difference": 0.0,
+      "zero_vs_arbitrary_y_prediction_max_abs_difference": 0.0,
+      "feature_bytes_equal": true,
+      "single_batch_max_difference": 2.9802322387695312e-08,
+      "batch_permutation_passed": true,
+      "cache_inputs_unchanged": true,
+      "static_forward_y_audit": {
+        "method_id": "DeepNC-GEN",
+        "source_path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/stage/methods/graphdta-deepnc/vendor/deepnc_gen.py",
+        "source_sha256": "3c51159bf006345f3f1c3fbb69aeab1bb08995272de718ca85e39096bc97aed3",
+        "forward_y_reads": [],
+        "passed": true,
+        "scope": "Static author forward methods; paired dynamic random-model proof is separately required"
+      },
+      "model_source": "random initialization seed314159; no trained checkpoint loaded",
+      "n_train_fixture_rows": 32
+    },
+    {
+      "method_id": "GS-DTA",
+      "adapter_tree_sha256": "1665c2d2662e42b716fb41b9da35367f8a4e1eb9a0de2ea64bd366a31c0fd0df",
+      "forward_y_independent": true,
+      "zero_vs_real_TRAIN_y_prediction_max_abs_difference": 0.0,
+      "zero_vs_arbitrary_y_prediction_max_abs_difference": 0.0,
+      "feature_bytes_equal": true,
+      "single_batch_max_difference": 6.332993507385254e-08,
+      "batch_permutation_passed": true,
+      "cache_inputs_unchanged": true,
+      "static_forward_y_audit": {
+        "method_id": "GS-DTA",
+        "source_path": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/feature-cache-preparation/stage/methods/gs-dta/author_model.py",
+        "source_sha256": "73fb66ed9bfa8706c7dda6127dcbcb12aca528667f19a9dc846079bb4d3874f9",
+        "forward_y_reads": [],
+        "passed": true,
+        "scope": "Static author forward methods; paired dynamic random-model proof is separately required"
+      },
+      "model_source": "random initialization seed314159; no trained checkpoint loaded",
+      "n_train_fixture_rows": 32
+    }
+  ],
+  "training_fixture_sha256": "1562172160338140f24cf3de9e2e46c6c14d5e305627caec9e37ceaacb8a8333",
+  "actual_holdout_predictions": 0,
+  "holdout_gold_reads": 0,
+  "selection_reads": 0,
+  "trained_checkpoint_reads": 0,
+  "parameter_updates": 0,
+  "CPU_threads": 1,
+  "CUDA_VISIBLE_DEVICES": "",
+  "elapsed_seconds": 27.772998094558716
+}

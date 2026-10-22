@@ -1,0 +1,107 @@
+[
+  {
+    "name": "long-remote-preflight",
+    "argv": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=15",
+      "node23",
+      "test ! -e /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1 && mkdir -p /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1 && test -w /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1 && hostname && date -Is && uptime && free -m && df -h /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 1.3645386695861816
+  },
+  {
+    "name": "long-upload-adapter.py",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\adapter.py",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1/adapter.py"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 3.0478274822235107
+  },
+  {
+    "name": "long-upload-author_model.py",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\author_model.py",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1/author_model.py"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 2.6027698516845703
+  },
+  {
+    "name": "long-upload-vocabularies.json",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\vocabularies.json",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1/vocabularies.json"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 1.075103759765625
+  },
+  {
+    "name": "long-upload-long_smoke.py",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\long_smoke.py",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1/long_smoke.py"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 1.0661795139312744
+  },
+  {
+    "name": "long-upload-long-smoke-input.json",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\long-smoke-input.json",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1/long-smoke-input.json"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 1.1740550994873047
+  },
+  {
+    "name": "long-upload-long-smoke-contract.json",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\long-smoke-contract.json",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1/long-smoke-contract.json"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 1.7994062900543213
+  },
+  {
+    "name": "long-bounded-smoke",
+    "argv": [
+      "ssh.exe",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=15",
+      "node23",
+      "cd /data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1 && ulimit -v 6291456 && CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 timeout 180s /data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/.venv/bin/python -c 'import os,runpy; os.sched_setaffinity(0,{min(os.sched_getaffinity(0))}); runpy.run_path(\"long_smoke.py\",run_name=\"__main__\")'"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 5.951755523681641
+  },
+  {
+    "name": "long-download-receipt",
+    "argv": [
+      "scp.exe",
+      "-q",
+      "node23:/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mrbdta/smoke-long-v1/long-smoke-receipt.json",
+      "D:\\work\\\u79d1\u7814\u5de5\u4f5c\u53f0\\research-tasks\\peptide-binding-nc-benchmark-20261021\\methods\\mrbdta\\long-smoke-receipt.json"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 1.1616027355194092
+  }
+]

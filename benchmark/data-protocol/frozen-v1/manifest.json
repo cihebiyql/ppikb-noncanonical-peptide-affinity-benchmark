@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "status": "frozen_for_authorized_baseline_execution",
+  "created_utc": "2026-10-21T16:21:24.964105+00:00",
+  "rows": 9619,
+  "NC": 2099,
+  "standard": 7520,
+  "task": "Kd affinity; annotation-stratified chemistry classes",
+  "input_file": "inputs.jsonl",
+  "label_file": "labels.jsonl",
+  "join_key": "record_id",
+  "seed_list": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "fixed_split_seed": "nc-protocol-20261021-v1",
+  "primary_training_regime": "NC_only",
+  "control_training_regime": "standard_only",
+  "primary_panels": [
+    "source_peptide_dependency_cold",
+    "target_reference_homology_cold"
+  ],
+  "pooled_training": false,
+  "graph_discordance_test_sensitivity_required": true,
+  "external": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\external-validation\\acceptance-manifest.json",
+    "sha256": "85973838adc28c0b6b9134a28a90312162a158eafd20f8b2bf14e68e13d36c4d"
+  },
+  "external_exclusion_authority": "referenced frozen external acceptance-manifest; do not infer all externally new molecules are novel targets",
+  "files": {
+    "external-chemical-runtime-receipt.json": {
+      "bytes": 454,
+      "sha256": "ad2c0a55f25e0786724480353558203ffce8529444cdfab79c80805df365d710"
+    },
+    "external-target-overlap-summary.json": {
+      "bytes": 429,
+      "sha256": "932cef07774b78544b1e183e24048851d266230d259cbb558801814138cdef64"
+    },
+    "granularity-audit.json": {
+      "bytes": 462,
+      "sha256": "12591e87d45f2bbbadab9cd5f070906bbafb5f6fcb485a9fba769f1c01fb1eb2"
+    },
+    "independent-leakage-verification.json": {
+      "bytes": 3219,
+      "sha256": "4f3d42b8abc45cfaa948f3d6e034875ce79187c59a29ffade894d1045e2ea9c1"
+    },
+    "input-manifest.json": {
+      "bytes": 1449,
+      "sha256": "b57410a8254108df2fa688eb3290e41f8142a412a55c4f0f2da878169624621a"
+    },
+    "inputs.jsonl": {
+      "bytes": 21512464,
+      "sha256": "fd8ae1207818a4b1533c1b1a4ef5b299593a82700fb62c9ef2490656c9af01f5"
+    },
+    "labels.jsonl": {
+      "bytes": 889839,
+      "sha256": "8a2c4e545ec322184ea57504cf875abc61805db8bef1b265034f95f4de4d2a7a"
+    },
+    "protocol.json": {
+      "bytes": 5165,
+      "sha256": "71fd0cee78d2176ce04c7110b4c1c1d953a573368176004209ccbfd5cd2d4870"
+    },
+    "quality-flags.jsonl": {
+      "bytes": 874721,
+      "sha256": "a1e7e041b427b1c7125f433fc101cb4752538041584c402355e0c5444408060a"
+    },
+    "residue-class-graph-discordance.json": {
+      "bytes": 154234,
+      "sha256": "1f8f622e70b2e6fe4d760b3f01f003bc3ee8cdfe8d788b7b73917e1031cdb8f4"
+    },
+    "split-feasibility-report.json": {
+      "bytes": 4355,
+      "sha256": "b837c0f00e3ded1ab37324db8197922fe05d8cefe3e57c515799e3c966d1f653"
+    },
+    "splits/source_peptide_dependency_cold/assignments.csv": {
+      "bytes": 1162827,
+      "sha256": "ec7e1757da0fd14b9d685e14e6030402a41d49628ca0acaeb70f35ca56a87230"
+    },
+    "splits/source_peptide_dependency_cold/NC_only/test-ids.json": {
+      "bytes": 11214,
+      "sha256": "724fd9599f8272785c8108fb0dcb17142913db5fe4ae38afc942b4e0dba8ac04"
+    },
+    "splits/source_peptide_dependency_cold/NC_only/test-sensitivity-excluding-graph-discordance-ids.json": {
+      "bytes": 10141,
+      "sha256": "2f2dfeaacfa5a06322d1654be092294a2d18f4a43a6740f4a171096a4b0bad5c"
+    },
+    "splits/source_peptide_dependency_cold/NC_only/train-ids.json": {
+      "bytes": 57279,
+      "sha256": "4b955b453d05e4b968bebafd03d48efab04414d8750c0e89415cc8dae7e8cfc2"
+    },
+    "splits/source_peptide_dependency_cold/NC_only/validation-ids.json": {
+      "bytes": 9179,
+      "sha256": "d2e0ed846c30b07a57f59cf258b2b7d33e9ea4f62675503023336feac72e650d"
+    },
+    "splits/source_peptide_dependency_cold/standard_only/test-ids.json": {
+      "bytes": 27235,
+      "sha256": "00b5917fd617498e7353773d60e85652c15e88992efc24778988f3701e159240"
+    },
+    "splits/source_peptide_dependency_cold/standard_only/test-sensitivity-excluding-graph-discordance-ids.json": {
+      "bytes": 26791,
+      "sha256": "c682eed5cdf8416f1248e929b173fb72c002f8dcfb40814f5f25221509decb90"
+    },
+    "splits/source_peptide_dependency_cold/standard_only/train-ids.json": {
+      "bytes": 221707,
+      "sha256": "2f44d7596d924cc2a3e685804d392f5408419996d012447891e35af3d2c7931b"
+    },
+    "splits/source_peptide_dependency_cold/standard_only/validation-ids.json": {
+      "bytes": 29307,
+      "sha256": "97754bbdca83f2b73380de80299c39e81b3013948c1813ca7c0b0061f4f2569c"
+    },
+    "splits/source_peptide_dependency_cold/summary.json": {
+      "bytes": 1036,
+      "sha256": "c1fddbc09cfa3bf7715513ed5ca583c221926baf3d2bf4089cc364e5b15b6054"
+    },
+    "splits/source_peptide_dependency_cold/test-ids.json": {
+      "bytes": 38446,
+      "sha256": "6785a8902fd6c14984e6e0430a75b33216f2ed8f2b9c77c4b6dee28abaded5c1"
+    },
+    "splits/source_peptide_dependency_cold/train-ids.json": {
+      "bytes": 278983,
+      "sha256": "7aa5cbd6241f9b79f3dee67d03beac03c18fbdb972c2fce41a877e2aa869c7fc"
+    },
+    "splits/source_peptide_dependency_cold/validation-ids.json": {
+      "bytes": 38483,
+      "sha256": "bdaa71047e2c5a781dde7c8d3a7ebf942c1f8f6b2b25b02a0b32b70e0bd47f16"
+    },
+    "splits/target_reference_homology_cold/assignments.csv": {
+      "bytes": 1164438,
+      "sha256": "3c880300ccbfb479629d77165988c8756f2ee8e6ad46d86146f06706c10f6c4f"
+    },
+    "splits/target_reference_homology_cold/NC_only/test-ids.json": {
+      "bytes": 12287,
+      "sha256": "4a19086504149c5701dd952098e02c85bac87e257e61553b3cbed6143081de10"
+    },
+    "splits/target_reference_homology_cold/NC_only/test-sensitivity-excluding-graph-discordance-ids.json": {
+      "bytes": 9660,
+      "sha256": "aade86e5b9ffc32bf4a9961b7fee901a7fd29963de564549b632c413f0bed5f6"
+    },
+    "splits/target_reference_homology_cold/NC_only/train-ids.json": {
+      "bytes": 52136,
+      "sha256": "ac6819116cfddc5f20781bfab73677c2101f89e4ff7a47769118a1938d59d79a"
+    },
+    "splits/target_reference_homology_cold/NC_only/validation-ids.json": {
+      "bytes": 13249,
+      "sha256": "062a43a381cb356393b1321d6471088d86c075bb0665d51ce19e790666a35100"
+    },
+    "splits/target_reference_homology_cold/standard_only/test-ids.json": {
+      "bytes": 41110,
+      "sha256": "b9ce81a178cbc996ab5342bd8d6055f8861b33b1e4301b76ab7cf1aebb045b98"
+    },
+    "splits/target_reference_homology_cold/standard_only/test-sensitivity-excluding-graph-discordance-ids.json": {
+      "bytes": 39482,
+      "sha256": "220a016e93f70d9079dc3f743dbeeccf43d847505b43aab14df62fed1e4507ff"
+    },
+    "splits/target_reference_homology_cold/standard_only/train-ids.json": {
+      "bytes": 196991,
+      "sha256": "c332fd508b743587a155749a54a20a8efff52376d098659cb233b1b4535da026"
+    },
+    "splits/target_reference_homology_cold/standard_only/validation-ids.json": {
+      "bytes": 40148,
+      "sha256": "19e2a4b193f1644e01b1507647b1060ccfff3ffa5ff50617125c9798e2684068"
+    },
+    "splits/target_reference_homology_cold/summary.json": {
+      "bytes": 1046,
+      "sha256": "39f3a975906559cba36982ee7863d3a9d25bbf301df4e1183cdcdaa83b725acc"
+    },
+    "splits/target_reference_homology_cold/test-ids.json": {
+      "bytes": 53394,
+      "sha256": "901df4804a467891ac2de841ddbc6b0da17963480e86029c2fe333ef9b2b7ffe"
+    },
+    "splits/target_reference_homology_cold/train-ids.json": {
+      "bytes": 249124,
+      "sha256": "10dc02f501963d33d3ecd25d0f56b99f927263be023511c9ca26d884a494164b"
+    },
+    "splits/target_reference_homology_cold/validation-ids.json": {
+      "bytes": 53394,
+      "sha256": "80a36c235645d3f9bda9e9df277e62048bfe6316f12601de61e3ff7dbb575afa"
+    }
+  },
+  "scientific_limits": [
+    "No actual assay target constructs certified; database reference view",
+    "Sources are metadata aliases, not full primary-paper certification",
+    "Cold panels enforce their respective axis, not all axes simultaneously",
+    "Residue annotations conflict on 60 actual graphs; no correction asserted",
+    "10 training seeds quantify training variability, not independent experiments"
+  ]
+}

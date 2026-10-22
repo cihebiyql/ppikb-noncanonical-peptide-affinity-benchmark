@@ -1,0 +1,14 @@
+{
+  "schema": "bounded-component-smoke-v1",
+  "host": "node23",
+  "python": "/data/qlyu/projects/peptide-binding-benchmark-20261020/common-prior-methods-20261021/.venv/bin/python",
+  "remote_root": "/data/qlyu/projects/peptide-binding-nc-benchmark-20261021/methods/mgraph-dgdta",
+  "entrypoint": "smoke.py",
+  "resources": {"cpu_threads": 1, "memory_address_space_gib": 6, "gpu_count": 0, "CUDA_VISIBLE_DEVICES": ""},
+  "environment_mutation": false,
+  "inputs": "two synthetic small amides and artificial protein-letter strings; no biological labels",
+  "seed": 11,
+  "timeout_seconds": 180,
+  "stopping_condition": "timeout or first failed assertion; do not start full training",
+  "required_checks": ["import", "batch-size-1-and-2 forward", "repeated batch cache unmodified", "eval batch-order invariance", "finite backward", "all atoms retained", "native protein truncation recorded", "chirality omission disclosed"]
+}

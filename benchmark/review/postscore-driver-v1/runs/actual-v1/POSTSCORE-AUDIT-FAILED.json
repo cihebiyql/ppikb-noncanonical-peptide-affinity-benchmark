@@ -1,0 +1,77 @@
+{
+  "status": "failed_preserved_no_retry",
+  "error": "RuntimeError('Frozen audit stage failed: 03-RF120-independent')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\driver.py\", line 225, in execute\n    numeric('03-RF120-independent', 'recompute_RF_v5.py', ['--root-authorization', ra['path'], '--joint-barrier', path(joint_ref['path']), '--task-map', rf_map['path'], '--matched-target-manifest', REVIEW / 'matched-target-diagnostics-v1/manifest.json', '--output', out / 'RF-audit'])\n  File \"D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\driver.py\", line 206, in numeric\n    def numeric(name, script, args): run(name, [sys.executable, str(REVIEW / script), *[str(a) for a in args]])\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\driver.py\", line 205, in run\n    if result.returncode: raise RuntimeError('Frozen audit stage failed: ' + name)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Frozen audit stage failed: 03-RF120-independent\n",
+  "completed_steps": [
+    {
+      "name": "01-NN-joint-metadata",
+      "argv": [
+        "wsl.exe",
+        "--exec",
+        "/usr/bin/python3",
+        "-c",
+        "import runpy,sys,json; m=runpy.run_path(sys.argv[1]); j,t=m['require_joint'](sys.argv[2],sys.argv[3],sys.argv[4]); print(json.dumps({'status':j['status'],'mode':sys.argv[4],'metadata_only':True}))",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/joint_audit_gate_v4.py",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/review/postscore-driver-v1/runs/actual-v1/maps-and-authorizations/joint-NN-reference-auth.json",
+        "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/administration/cuda-recovery02-hostexit-v2/postjoint-v2-execution1/all240-joint-frozen.json",
+        "nn"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-10-22T00:20:08.601851+00:00",
+      "finished_at": "2026-10-22T00:20:12.300621+00:00"
+    },
+    {
+      "name": "02-NN600-independent",
+      "argv": [
+        "C:\\Users\\ciheb\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\recompute_metrics.py",
+        "--selection-barrier",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\all200-selections-frozen.json",
+        "--barrier-sha256",
+        "87382517bf1ee4cbe7e6f7c192de27cb3143dbdf6197490ab95572972b691e1a",
+        "--task-map",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\maps-and-authorizations\\NN600-map.json",
+        "--matched-target-manifest",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\manifest.json",
+        "--matched-target-manifest-sha256",
+        "60b3d8e00d10f6d6dde0ee645e18715692c8b271c3e4926ca73c40d8aad89099",
+        "--output",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\NN-audit",
+        "--audit-authorized-after-freeze"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-10-22T00:20:12.302682+00:00",
+      "finished_at": "2026-10-22T00:20:48.273370+00:00"
+    },
+    {
+      "name": "03-RF120-independent",
+      "argv": [
+        "C:\\Users\\ciheb\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\recompute_RF_v5.py",
+        "--root-authorization",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\maps-and-authorizations\\RF120-audit-auth.json",
+        "--joint-barrier",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\all240-joint-frozen.json",
+        "--task-map",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\maps-and-authorizations\\RF120-map.json",
+        "--matched-target-manifest",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\matched-target-diagnostics-v1\\manifest.json",
+        "--output",
+        "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\review\\postscore-driver-v1\\runs\\actual-v1\\RF-audit"
+      ],
+      "exit_code": 1,
+      "started_at": "2026-10-22T00:20:48.278488+00:00",
+      "finished_at": "2026-10-22T00:20:49.030725+00:00"
+    }
+  ],
+  "source_issuance": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\i1\\POSTJOINT-ISSUANCE.json",
+    "sha256": "47089749c55431a5305b954940a5584f6654ec3fb0f4ea6b35ccfc398139cb5d"
+  },
+  "joint_barrier": {
+    "path": "D:\\work\\科研工作台\\research-tasks\\peptide-binding-nc-benchmark-20261021\\administration\\cuda-recovery02-hostexit-v2\\postjoint-v2-execution1\\all240-joint-frozen.json",
+    "sha256": "5c506a6c9d1f140ef0556a2c35e46c0252a7710295017ce080a7830650443fcf"
+  },
+  "original_deadline": 1792633500.0,
+  "numeric_or_metric_repair_attempted": false
+}

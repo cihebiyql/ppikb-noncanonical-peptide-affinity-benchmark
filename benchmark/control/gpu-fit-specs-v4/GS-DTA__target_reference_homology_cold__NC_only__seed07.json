@@ -1,0 +1,105 @@
+{
+  "method_id": "GS-DTA",
+  "split_id": "target_reference_homology_cold",
+  "regime": "NC_only",
+  "seed": 7,
+  "validation_scope": "same_as_regime",
+  "max_epochs": 20,
+  "patience": 5,
+  "batch_size": 32,
+  "gradient_accumulation": 1,
+  "cpu_threads": 2,
+  "device": "cuda:0",
+  "y_standardize": false,
+  "gpu_explicitly_authorized": true,
+  "gpu_allocator_budget_bytes": 3221225472,
+  "train_rows": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/execution/prepared-panels-wsl-v3/target_reference_homology_cold/train.jsonl",
+  "validation_rows": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/execution/prepared-panels-wsl-v3/target_reference_homology_cold/validation.jsonl",
+  "train_rows_sha256": "ec7a4721332f6aeaca39ed3138e783fad01fcf13882bf9dba1bac876cdac700e",
+  "validation_rows_sha256": "edecafbdb2925905ef25f5f255d0ec14e0d5dbf0eb7e3b8ecac3c0e6154994eb",
+  "methods_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/methods",
+  "run_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/formal-runs-gpu-v4/fits/GS-DTA__target_reference_homology_cold__NC_only__seed07",
+  "cache_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/encoded-cache-v3",
+  "candidates": [
+    {
+      "learning_rate": 0.001,
+      "weight_decay": 0.0
+    },
+    {
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0
+    }
+  ],
+  "launch_proof": {
+    "expected_hostname": "cihebi",
+    "runner_path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/execution/runner.py",
+    "runner_sha256": "9abe4a9fba5840a6200aecf40fdfb436abbf61d78c3a9a2f28baae7712c6913e",
+    "receipt_root": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/receipts-v4/GS-DTA__target_reference_homology_cold__NC_only__seed07",
+    "files": [
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/execution/runner.py",
+        "sha256": "9abe4a9fba5840a6200aecf40fdfb436abbf61d78c3a9a2f28baae7712c6913e"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/run_bound_unit.py",
+        "sha256": "384813de2c328a18ce03c2c0fd6da10ce42a104e3115d1fb6fa04029206e743d"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/control/user-authorization.json",
+        "sha256": "5a474f5725f4fd0b1f7dc31a2e5f859eb61a2c48a4aebdd01a1945494ca16ffd"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/common.py",
+        "sha256": "35c91d520885e6a447be2863ff7b60df91a8a2bfbc30c336fff7d7cbfd9a1632"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/run_unit.py",
+        "sha256": "ce9c726ea559131221948fb75034250dbda77aac7df2f4064f25a40f6f439633"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/launch/pool_supervisor.py",
+        "sha256": "73a5dc2e13ebfbe19ebcf91b30d814304eacf0b8338345c4b35ef3202deb43b7"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/resources/local-gpu-route/runtime-freeze-for-training.json",
+        "sha256": "047c3ba078aa9c308f35a4da2cbf193240779113d1c631f462666e572034223d"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/resources/local-gpu-route/dependency-import-verification.json",
+        "sha256": "049ad9151700b11bf55bff3196730bdcbcfa9e993bab67399ac61485d9fde42a"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/data-protocol/frozen-v1/manifest.json",
+        "sha256": "cc9575e305f9c9747e472407efe1e13a908b6ebba700990ca6b22d086c268fa2"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/methods/gs-dta/adapter.py",
+        "sha256": "5e5f10df63bd4e7922488f977b4c47e641d4afa8bb689a009e3aaf34a6dd15a3"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/methods/gs-dta/author_features.py",
+        "sha256": "840b7c4a13e9e78579e49fdbd1502491a3b117d408c71f364085320062e39e59"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/methods/gs-dta/author_model.py",
+        "sha256": "73fb66ed9bfa8706c7dda6127dcbcb12aca528667f19a9dc846079bb4d3874f9"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/methods/gs-dta/canary.py",
+        "sha256": "0954a4725bc5e072e85e967b1181e704f51293b4d89563650ef294b623f92fb8"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/methods/gs-dta/prepare.py",
+        "sha256": "604c4cda7857263936e18b049cd9c8db74e9b403108e2efafbd880f21c82b3a5"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/methods/gs-dta/run_canaries_wsl.py",
+        "sha256": "3675e06835c58ccea9ccf9f338a07cff038147af109c8a8db31cf3ee5db43353"
+      },
+      {
+        "path": "/mnt/d/work/科研工作台/research-tasks/peptide-binding-nc-benchmark-20261021/methods/gs-dta/verify_assets.py",
+        "sha256": "1cf2f421ea5379d5c419cd35971ba0782ec91b421b25f03928fa6da0379943b9"
+      }
+    ]
+  }
+}
