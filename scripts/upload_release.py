@@ -23,7 +23,7 @@ def validated(asset, expected):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--manifest',required=True);parser.add_argument('--assets',required=True)
-    parser.add_argument('--audit',required=True);args=parser.parse_args()
+    parser.add_argument('--audit',required=True);parser.add_argument('--release-id',required=True,type=int);args=parser.parse_args()
     manifest=json.loads(Path(args.manifest).read_text());repo=manifest['repository'];tag=manifest['tag']
     assert repo=='cihebiyql/ppikb-noncanonical-peptide-affinity-benchmark' and tag=='v1.0.0'
     audit=Path(args.audit);audit.mkdir(parents=True,exist_ok=False);root=Path(args.assets)
@@ -33,7 +33,7 @@ def main():
         return subprocess.run(['gh',*argv],capture_output=True,text=True,encoding='utf-8',env=environment,timeout=timeout,
                               creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
     def release():
-        r=gh(['api',f'repos/{repo}/releases/tags/{tag}']);assert r.returncode==0,r.stderr
+        r=gh(['api',f'repos/{repo}/releases/{args.release_id}']);assert r.returncode==0,r.stderr
         return json.loads(r.stdout)
     first=release();assert first['draft'] is True and first['tag_name']==tag
     release_id=first['id'];jobs=[];lock=threading.Lock()
