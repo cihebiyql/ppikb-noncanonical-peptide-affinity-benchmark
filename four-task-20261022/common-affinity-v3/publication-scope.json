@@ -1,0 +1,32 @@
+{
+  "schema": "publication.allowlist.common-affinity-v3",
+  "prepared_only_not_uploaded_by_this_task": true,
+  "public_allowlist_relative_to_this_directory": [
+    "REPORT.zh-CN.md",
+    "PUBLIC-PROTOCOL.json",
+    "STATE-ADDENDUM.json",
+    "coverage.csv",
+    "per-seed-metrics.csv",
+    "ten-seed-mean-sampleSD.csv",
+    "paired-seed-MAE-differences.csv",
+    "paired-seed-MAE-summary.csv",
+    "independent-audit.json",
+    "score-receipt.json",
+    "prediction-provenance.json",
+    "preparation-note-v1.json",
+    "prepare_catalog.py",
+    "score_common.py",
+    "verify_common.py",
+    "finalize_delivery.py",
+    "publication-scope.json",
+    "DELIVERY-RECEIPT.json",
+    "local-file-index.json"
+  ],
+  "private_excluded_paths": [
+    "comparison-contract.json",
+    "saved-prediction-cache/"
+  ],
+  "reason": "Private frozen contract and cached original prediction CSV contain original per-record truth; public outputs contain aggregate analysis and metadata/code only.",
+  "recursive_directory_upload_forbidden": true,
+  "external_references_are_metadata_not_automatic_publication_authorization": true
+}

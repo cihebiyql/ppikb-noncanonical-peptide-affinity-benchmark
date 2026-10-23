@@ -1,0 +1,283 @@
+{
+  "schema": "common-affinity.public-safe-protocol.v3",
+  "private_frozen_contract_sha256": "60edff2466218e9c1643477bf136626c8b8e0eb7459852db821a96a323b4e4a5",
+  "canonical_test_cohorts": {
+    "source": {
+      "sha256": "c59382bf9298f4dddf9642c7a88d6e643184445d0276f585247d3335f116f8bc",
+      "n": 683,
+      "parent_sha256": "f4098978e997024c36b2ed72ac5abb37fab1cdf1b0abc25fd28a842edba140ad",
+      "endpoint": "pKd",
+      "path": "methods/interaction/common-comparison-cohorts/pepinter_native6336_source_test_ids.csv",
+      "parent_view": "data/ppikb_kd_source_cold_scope_v2.csv",
+      "chemistry_counts": {
+        "PTM": 53,
+        "synthetic_and_PTM": 1,
+        "other_NC": 3,
+        "synthetic_D_backbone": 3,
+        "standard20_control": 623
+      }
+    },
+    "target": {
+      "sha256": "3d2700b207b0af4f57d80d9314ec03964ffcde7f567e84556e46232d1f746d0e",
+      "n": 946,
+      "parent_sha256": "dec940c4adffccfdb0209ce12cb6ff99d4d0d61a9a6f97b980d4c20988434167",
+      "endpoint": "pKd",
+      "path": "methods/interaction/common-comparison-cohorts/pepinter_native6336_target_test_ids.csv",
+      "parent_view": "data/ppikb_kd_target_cold_scope_v2.csv",
+      "chemistry_counts": {
+        "PTM": 59,
+        "synthetic_and_PTM": 14,
+        "synthetic_D_backbone": 12,
+        "other_NC": 3,
+        "standard20_control": 858
+      }
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "endpoint": "pKd",
+  "method_catalog": [
+    {
+      "method": "manual_sequence__constant",
+      "family": "manual_sequence",
+      "training_scope": "Original full9116-view training retained",
+      "protocol_note": null
+    },
+    {
+      "method": "chiral_Morgan__constant",
+      "family": "chiral_Morgan",
+      "training_scope": "Original full9116-view training retained",
+      "protocol_note": null
+    },
+    {
+      "method": "frozen_ESM2_8M__constant",
+      "family": "frozen_ESM2_8M",
+      "training_scope": "Literal20AA/2048 eligible7419 cohort; frozen8M mean pooling",
+      "protocol_note": null
+    },
+    {
+      "method": "manual_ESM_cohort__constant",
+      "family": "manual_ESM_cohort",
+      "training_scope": "Exact same7419 train/validation/test ID cohort as frozenESM; original manual recipes retained",
+      "protocol_note": null
+    },
+    {
+      "method": "manual_sequence__linear",
+      "family": "manual_sequence",
+      "training_scope": "Original full9116-view training retained",
+      "protocol_note": null
+    },
+    {
+      "method": "chiral_Morgan__linear",
+      "family": "chiral_Morgan",
+      "training_scope": "Original full9116-view training retained",
+      "protocol_note": null
+    },
+    {
+      "method": "frozen_ESM2_8M__linear",
+      "family": "frozen_ESM2_8M",
+      "training_scope": "Literal20AA/2048 eligible7419 cohort; frozen8M mean pooling",
+      "protocol_note": null
+    },
+    {
+      "method": "manual_ESM_cohort__linear",
+      "family": "manual_ESM_cohort",
+      "training_scope": "Exact same7419 train/validation/test ID cohort as frozenESM; original manual recipes retained",
+      "protocol_note": null
+    },
+    {
+      "method": "manual_sequence__random_forest",
+      "family": "manual_sequence",
+      "training_scope": "Original full9116-view training retained",
+      "protocol_note": null
+    },
+    {
+      "method": "chiral_Morgan__random_forest",
+      "family": "chiral_Morgan",
+      "training_scope": "Original full9116-view training retained",
+      "protocol_note": null
+    },
+    {
+      "method": "frozen_ESM2_8M__random_forest",
+      "family": "frozen_ESM2_8M",
+      "training_scope": "Literal20AA/2048 eligible7419 cohort; frozen8M mean pooling",
+      "protocol_note": null
+    },
+    {
+      "method": "manual_ESM_cohort__random_forest",
+      "family": "manual_ESM_cohort",
+      "training_scope": "Exact same7419 train/validation/test ID cohort as frozenESM; original manual recipes retained",
+      "protocol_note": null
+    },
+    {
+      "method": "manual_sequence__extra_trees",
+      "family": "manual_sequence",
+      "training_scope": "Original full9116-view training retained",
+      "protocol_note": null
+    },
+    {
+      "method": "chiral_Morgan__extra_trees",
+      "family": "chiral_Morgan",
+      "training_scope": "Original full9116-view training retained",
+      "protocol_note": null
+    },
+    {
+      "method": "frozen_ESM2_8M__extra_trees",
+      "family": "frozen_ESM2_8M",
+      "training_scope": "Literal20AA/2048 eligible7419 cohort; frozen8M mean pooling",
+      "protocol_note": null
+    },
+    {
+      "method": "manual_ESM_cohort__extra_trees",
+      "family": "manual_ESM_cohort",
+      "training_scope": "Exact same7419 train/validation/test ID cohort as frozenESM; original manual recipes retained",
+      "protocol_note": null
+    },
+    {
+      "method": "manual_sequence__hist_gradient_boosting",
+      "family": "manual_sequence",
+      "training_scope": "Original full9116-view training retained",
+      "protocol_note": null
+    },
+    {
+      "method": "chiral_Morgan__hist_gradient_boosting",
+      "family": "chiral_Morgan",
+      "training_scope": "Original full9116-view training retained",
+      "protocol_note": null
+    },
+    {
+      "method": "frozen_ESM2_8M__hist_gradient_boosting",
+      "family": "frozen_ESM2_8M",
+      "training_scope": "Literal20AA/2048 eligible7419 cohort; frozen8M mean pooling",
+      "protocol_note": null
+    },
+    {
+      "method": "manual_ESM_cohort__hist_gradient_boosting",
+      "family": "manual_ESM_cohort",
+      "training_scope": "Exact same7419 train/validation/test ID cohort as frozenESM; original manual recipes retained",
+      "protocol_note": null
+    },
+    {
+      "method": "PepInter_backbone_native_head",
+      "family": "PepInter_component",
+      "training_scope": "Frozen supervised backbone; literal20AA6336 cohort, sequence chemically blind",
+      "protocol_note": "Previously canonicalized originalCSVfloat64 labels; original workerfloat32 precision is disclosed in source audits, not claimed bit-equal to float64."
+    },
+    {
+      "method": "PepInter_cached_standard_only",
+      "family": "coverage_only",
+      "training_scope": "Standard2919 only; expected incomplete canonical coverage; never shrink683/946",
+      "protocol_note": null
+    },
+    {
+      "method": "DTA__GraphDTA-GIN",
+      "family": "DTA_transfer",
+      "training_scope": "Original full9116-view training; actual backend/input limits remain in final150 provenance",
+      "protocol_note": "DGDTA-CL is the historical run identifier for the MSE paper model; not an extra contrastive model."
+    },
+    {
+      "method": "DTA__MGraphDTA",
+      "family": "DTA_transfer",
+      "training_scope": "Original full9116-view training; actual backend/input limits remain in final150 provenance",
+      "protocol_note": "DGDTA-CL is the historical run identifier for the MSE paper model; not an extra contrastive model."
+    },
+    {
+      "method": "DTA__DGDTA-CL",
+      "family": "DTA_transfer",
+      "training_scope": "Original full9116-view training; actual backend/input limits remain in final150 provenance",
+      "protocol_note": "DGDTA-CL is the historical run identifier for the MSE paper model; not an extra contrastive model."
+    },
+    {
+      "method": "DTA__DeepNC-GEN",
+      "family": "DTA_transfer",
+      "training_scope": "Original full9116-view training; actual backend/input limits remain in final150 provenance",
+      "protocol_note": "DGDTA-CL is the historical run identifier for the MSE paper model; not an extra contrastive model."
+    },
+    {
+      "method": "DTA__GS-DTA",
+      "family": "DTA_transfer",
+      "training_scope": "Original full9116-view training; actual backend/input limits remain in final150 provenance",
+      "protocol_note": "DGDTA-CL is the historical run identifier for the MSE paper model; not an extra contrastive model."
+    },
+    {
+      "method": "SWING_Doc2Vec_XGBRegressor",
+      "family": "SWING_endpoint_adaptation",
+      "training_scope": "Literal20AA7669; nativegrammar/Doc2Vec16train16infer/72D, train-only embedding; regression readout adaptation",
+      "protocol_note": "Endpoint/readout adaptation and custom validation grid, not native-paper affinity task; no model object copied or loaded."
+    }
+  ],
+  "eligibility_rule": "Every method-panel must have all seeds0..9, all fixed canonicalIDs, exact originalfloat64 labels andpKd endpoint; no new intersection or missing->zero.",
+  "coverage_and_scope_only": [
+    {
+      "condition": "ESM/same-cohort-manual silver-effect third view",
+      "reason": "delta_pKd_silver task; not the pKd canonical observation IDs"
+    },
+    {
+      "condition": "UniAIR nativeRDE strictlocal component",
+      "reason": "One HER2 authorDDG context; endpoint and test IDs differ, no pKd common results"
+    },
+    {
+      "condition": "oldGraphDTA source entry in common-v2",
+      "reason": "Duplicate logical model; use final accepted DTA provenance instead"
+    }
+  ],
+  "source_locks": [
+    {
+      "path": "reports/delivery-20261023/generic-completed-metrics-all-panels.csv",
+      "sha256": "60f29ff73f66845f580d4f13e0d9abc88717d30192b68c7765f6afadf7e1b447"
+    },
+    {
+      "path": "methods/interaction/common-comparison-cohorts/pepinter_native6336_source_test_ids.csv",
+      "sha256": "c59382bf9298f4dddf9642c7a88d6e643184445d0276f585247d3335f116f8bc"
+    },
+    {
+      "path": "data/ppikb_kd_source_cold_scope_v2.csv",
+      "sha256": "f4098978e997024c36b2ed72ac5abb37fab1cdf1b0abc25fd28a842edba140ad"
+    },
+    {
+      "path": "methods/interaction/common-comparison-cohorts/pepinter_native6336_target_test_ids.csv",
+      "sha256": "3d2700b207b0af4f57d80d9314ec03964ffcde7f567e84556e46232d1f746d0e"
+    },
+    {
+      "path": "data/ppikb_kd_target_cold_scope_v2.csv",
+      "sha256": "dec940c4adffccfdb0209ce12cb6ff99d4d0d61a9a6f97b980d4c20988434167"
+    },
+    {
+      "path": "reports/dta-pepinter-common-fixed-v1/prediction-provenance.csv",
+      "sha256": "a745a96ff4877336252888e2b85e5c2c72b7af5dd19fe8314893445ee85e7cfd"
+    },
+    {
+      "path": "methods/interaction/continuation-20261023/swing-affinity/affinity-source-independent-audit.latest.json",
+      "sha256": "c58aa02df42e81e4afc730ef44376d4253803052403b0de56b4b3dc843292b24"
+    },
+    {
+      "path": "methods/interaction/continuation-20261023/swing-affinity/affinity-target-independent-audit.latest.json",
+      "sha256": "728ccab6aa572f63981dc26dc3f5a53390a6f18295d2bac42865317c35bb98c2"
+    }
+  ],
+  "source_and_target_separate": true,
+  "no_test_based_subset_or_method_selection": true,
+  "training_cohorts_not_equalized": true,
+  "uncertainty": "Sample SD (ddof=1) over computational seeds; not biological confidence intervals.",
+  "paired_comparison": "All unordered method pairs per panel and same seed; MAE_A - MAE_B; no p-values reported or used.",
+  "undefined_metrics": "Unavailable correlations are null/empty, never zero-imputed; valid seed counts retained.",
+  "precision": "Canonical original CSV float64 labels. Historical PepInter worker float32 precision is disclosed in original audits; its saved common prediction labels were separately canonicalized.",
+  "new_fits": 0,
+  "new_forwards": 0,
+  "deserialized_models": 0,
+  "GPU_jobs": 0,
+  "generic_selected_model_count_unchanged": 1050,
+  "generic_candidate_fit_count_unchanged": 2100,
+  "generic_aggregate_sha256": "60f29ff73f66845f580d4f13e0d9abc88717d30192b68c7765f6afadf7e1b447",
+  "no_raw_label_map_or_sequences_in_this_protocol": true
+}
