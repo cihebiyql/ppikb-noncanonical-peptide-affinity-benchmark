@@ -15,3 +15,4 @@
 |[DTA科学日志补交](dta-logs-v1/README.zh-CN.md)|已公开独立Release：612进程日志＋300运行记录，916归档成员，10资产大小与摘要核验通过；无新增训练。|
 |[自写原生工作流代码补交](native-code-v1/README.zh-CN.md)|17份已有冻结证据的自写源码；路径占位模板，NN/数值/断言/资源门保留，未交依赖与18项排除清单明确；代码公开不表示完整模型已训练完成。|
 |[CPU完整一轮成本与ESM条件外测](native-cost-external-v1/README.zh-CN.md)|UniAIR CPU原B8一轮真实37Adam/63唯一验证/7008秒、独审通过；ESM100个已有模型×27候选的2700固定预测全部10种子已核，0新增fit。仍非完整原生20候选完成或完全认证独立外测。|
+|[PepInter原B24 CPU两步成本实测](pepinter-CPU24-cost-v1/README.zh-CN.md)|已公开两步原始时序、全参数梯度及Adam计数、自写入口和独审；CPU FP32，0正式种子，0验证/测试，无完整权重保存。|

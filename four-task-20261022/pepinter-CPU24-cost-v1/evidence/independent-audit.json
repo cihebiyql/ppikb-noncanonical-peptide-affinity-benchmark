@@ -1,0 +1,260 @@
+{
+  "at": "2026-10-23T20:50:48.277893+00:00",
+  "status": "passed_actual_native_CPU24_two_step_cost_gate",
+  "actual_exit_code": 0,
+  "worker_absent_and_owned_group_empty": true,
+  "contract_sha256": "f5eff5cf20f8574c9e9ae188aefecc8113b819c5238b2547bfea0bff87acafdb",
+  "native_parameters": 576293761,
+  "full_parameter_gradient_coverage": 576293761,
+  "native_Adam_parameter_tensor_count": 369,
+  "finite_Adam_state_tensor_count": 1107,
+  "finite_moment_elements": 1152587522,
+  "optimizer_steps": 2,
+  "LR_used": [
+    0.0,
+    8.849557522123894e-07
+  ],
+  "LR_after_scheduler": [
+    8.849557522123894e-07,
+    1.7699115044247788e-06
+  ],
+  "total_schedule_steps": 2270,
+  "warmup_steps": 113,
+  "actual_encoder_probe_max_abs_change": 8.242204785346985e-07,
+  "head_evidence": "Nativehead is within completegradient/state/stockAdam scope; no savedheadbefore/afterweights, no directlymeasuredheadincrementclaim",
+  "head_numeric_before_after_saved": false,
+  "rows": 24,
+  "tokens": 991,
+  "validation_test_rows": 0,
+  "completed_formal_baseline_seeds": 0,
+  "FP32_CPU_not_GPU_BF16_bitwise_equivalence": true,
+  "checkpoint_write_cost_unmeasured": true,
+  "whole_job_elapsed_seconds": 924.2341083018109,
+  "worker_elapsed_seconds": 912.3531374093145,
+  "guardian_sampled_peak_RSS_bytes": 17224142848,
+  "worker_kernel_peak_RSS_bytes": 17472536576,
+  "minimum_OS_available_bytes": 111154896896,
+  "physical_core_count": 9,
+  "allocation_to_Popen_observation_seconds": 0.020873207598924637,
+  "timings": {
+    "AdamW_update": [
+      {
+        "wall_seconds": 1.6198290027678013,
+        "process_CPU_seconds": 25.84531448100006,
+        "RSS_after_bytes": 10480787456
+      },
+      {
+        "wall_seconds": 1.39324692171067,
+        "process_CPU_seconds": 22.09923200599951,
+        "RSS_after_bytes": 11140952064
+      }
+    ],
+    "backward": [
+      {
+        "wall_seconds": 305.24283044133335,
+        "process_CPU_seconds": 4499.771134881999,
+        "RSS_after_bytes": 5872803840
+      },
+      {
+        "wall_seconds": 304.00127685815096,
+        "process_CPU_seconds": 4475.670995325999,
+        "RSS_after_bytes": 11141652480
+      }
+    ],
+    "forward": [
+      {
+        "wall_seconds": 107.97016873210669,
+        "process_CPU_seconds": 1566.564264823,
+        "RSS_after_bytes": 7535607808
+      },
+      {
+        "wall_seconds": 105.54508826322854,
+        "process_CPU_seconds": 1545.165743863,
+        "RSS_after_bytes": 14536015872
+      }
+    ],
+    "full_model_Adam_finite_audit": [
+      {
+        "wall_seconds": 1.6122337197884917,
+        "process_CPU_seconds": 25.109161416999996,
+        "RSS_after_bytes": 10371186688
+      },
+      {
+        "wall_seconds": 1.5586262783035636,
+        "process_CPU_seconds": 24.792153577000136,
+        "RSS_after_bytes": 11031351296
+      }
+    ],
+    "gradient_clip": [
+      {
+        "wall_seconds": 0.8832490211352706,
+        "process_CPU_seconds": 3.16531061600017,
+        "RSS_after_bytes": 5873311744
+      },
+      {
+        "wall_seconds": 0.6847280291840434,
+        "process_CPU_seconds": 2.7581089899995277,
+        "RSS_after_bytes": 11141652480
+      }
+    ],
+    "initializer_tensor_copy": [
+      {
+        "wall_seconds": 1.0580170387402177,
+        "process_CPU_seconds": 12.868336246999988,
+        "RSS_after_bytes": 5402054656
+      }
+    ],
+    "model_constructor": [
+      {
+        "wall_seconds": 9.047952463850379,
+        "process_CPU_seconds": 9.046729593999999,
+        "RSS_after_bytes": 3105681408
+      }
+    ],
+    "published_checkpoint_load": [
+      {
+        "wall_seconds": 31.396033940836787,
+        "process_CPU_seconds": 31.329766935000002,
+        "RSS_after_bytes": 3106754560
+      }
+    ],
+    "scheduler_update": [
+      {
+        "wall_seconds": 0.0007422259077429771,
+        "process_CPU_seconds": 0.015278455999578,
+        "RSS_after_bytes": 10480787456
+      },
+      {
+        "wall_seconds": 0.0006773769855499268,
+        "process_CPU_seconds": 0.00031085399859875906,
+        "RSS_after_bytes": 11140952064
+      }
+    ],
+    "tokenization": [
+      {
+        "wall_seconds": 0.025382069870829582,
+        "process_CPU_seconds": 0.024915875000004917,
+        "RSS_after_bytes": 3109990400
+      },
+      {
+        "wall_seconds": 0.02419247478246689,
+        "process_CPU_seconds": 0.023733973000162223,
+        "RSS_after_bytes": 10371186688
+      }
+    ],
+    "whole_model_and_tokenizer": [
+      {
+        "wall_seconds": 61.340467957779765,
+        "process_CPU_seconds": 58.82765817400001,
+        "RSS_after_bytes": 3109613568
+      }
+    ],
+    "whole_step_1": [
+      {
+        "wall_seconds": 417.38268050644547,
+        "process_CPU_seconds": 6120.638154005,
+        "RSS_after_bytes": 10371186688
+      }
+    ],
+    "whole_step_2": [
+      {
+        "wall_seconds": 413.23618014343083,
+        "process_CPU_seconds": 6070.702468204001,
+        "RSS_after_bytes": 11031351296
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/allowed-CPU-pool.json",
+      "bytes": 3804,
+      "sha256": "defe2bdecb0013ec2e19b48696ca24d875868491ff84f92948e79d1767106540"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/dispatch/hash-check.json",
+      "bytes": 1462,
+      "sha256": "e3eddea44e33470d0d2e17dc3f4d935bd48990e5fb28df62c7744ce5143ecd97"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/dispatch/launch.json",
+      "bytes": 2346,
+      "sha256": "05fc8af9851a2ad1a703aa0d2be90f7169c918c86130c976b25e1333fe401f12"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/dispatch/process-receipt.json",
+      "bytes": 2587,
+      "sha256": "437749f1e596f8d5d0dc8f21e88d8e6f0832975d080799f42cf254cfb5d1c293"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/dispatch/runtime-admission.json",
+      "bytes": 7825,
+      "sha256": "9631a6756a9cd89c19d2643dc7f4e7f772edb57382decdbd6cfb8cb977cf03b8"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/dispatch/runtime-supervisor-spec.json",
+      "bytes": 20136,
+      "sha256": "15d2d7db20c96e0c9ab4d50f48f2197f423c7651d12f1cf7a4003272f53a21cb"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/dispatch/standard-validation.json",
+      "bytes": 13853,
+      "sha256": "a1c801db864a83165b23559421e36b2d5cff54722f4dfda1b0bcdb1f1080792e"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/dispatch/standard-validation.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/dispatch/standard-validation.stdout.log",
+      "bytes": 13853,
+      "sha256": "a1c801db864a83165b23559421e36b2d5cff54722f4dfda1b0bcdb1f1080792e"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/dispatch/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/dispatch/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/issued.json",
+      "bytes": 966,
+      "sha256": "20717e0cf94e73a38321118bd2fa21463b93ffdc2516ec26ecbd368c9d1b31d2"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/supervisor-spec.json",
+      "bytes": 5299,
+      "sha256": "67eb22dc656f103fe83e3e59bef79a7a2b558bc30ea506f6a7856602a7c3a8ed"
+    },
+    {
+      "path": "record-ref:methods/interaction/continuation-20261023/native-full-classification-CPU24-prepare-v1/issued/20261023T202925539321Z/task-contract.json",
+      "bytes": 30991,
+      "sha256": "f5eff5cf20f8574c9e9ae188aefecc8113b819c5238b2547bfea0bff87acafdb"
+    },
+    {
+      "path": "record-ref:runs/interaction_continuation_pepinter_native_B24_TRAIN991_CPU16_FP32_twoAdam_cost_v1/artifacts/frozen-config.json",
+      "bytes": 1127,
+      "sha256": "42539a81bd30a9e0b360230b8a16cf3f52398af31ff5be784b16dde653a4955a"
+    },
+    {
+      "path": "record-ref:runs/interaction_continuation_pepinter_native_B24_TRAIN991_CPU16_FP32_twoAdam_cost_v1/artifacts/gate-progress.json",
+      "bytes": 1167,
+      "sha256": "7879c0a88ed6f6867aa6d4535aebd1849f5c045d749dbb79e4abaf38d4ea9bf0"
+    },
+    {
+      "path": "record-ref:runs/interaction_continuation_pepinter_native_B24_TRAIN991_CPU16_FP32_twoAdam_cost_v1/artifacts/phase-timings.jsonl",
+      "bytes": 7982,
+      "sha256": "05add47ff7d109d11f4d6db39b8ce13eacb6144cbcf3ed4f4c5c7d78c792be8f"
+    },
+    {
+      "path": "record-ref:runs/interaction_continuation_pepinter_native_B24_TRAIN991_CPU16_FP32_twoAdam_cost_v1/artifacts/summary.json",
+      "bytes": 3519,
+      "sha256": "05ddbba1d85c37450acbbbefccacaa267457d7c380b3bda23ddcc5c4bf5fc440"
+    }
+  ],
+  "new_fit_or_forward_in_audit": 0
+}

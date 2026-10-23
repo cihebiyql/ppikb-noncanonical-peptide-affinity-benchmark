@@ -1,0 +1,136 @@
+{
+  "status": "succeeded",
+  "completed_at": "2026-10-23T20:45:08.980048+00:00",
+  "scope": "CPU16FP32 native B24[24,991]twoAdam cost gate only",
+  "parameters": 576293761,
+  "trainable_parameters": 576293761,
+  "step_records": [
+    {
+      "step": 1,
+      "native_batch_mean_Focal": 0.06763777881860733,
+      "gradient_norm_before_clip": 0.7269689440727234,
+      "learning_rate_used": 0.0,
+      "learning_rate_after_scheduler": 8.849557522123894e-07,
+      "parameters_with_gradient": 576293761,
+      "rows": 24,
+      "paired_token_length": 991,
+      "all_model_and_optimizer_tensors_finite": true,
+      "Adam_state_tensor_count": 1107,
+      "Adam_moment_elements": 1152587522,
+      "optimizer_steps": 1
+    },
+    {
+      "step": 2,
+      "native_batch_mean_Focal": 0.06690803915262222,
+      "gradient_norm_before_clip": 0.7200431227684021,
+      "learning_rate_used": 8.849557522123894e-07,
+      "learning_rate_after_scheduler": 1.7699115044247788e-06,
+      "parameters_with_gradient": 576293761,
+      "rows": 24,
+      "paired_token_length": 991,
+      "all_model_and_optimizer_tensors_finite": true,
+      "Adam_state_tensor_count": 1107,
+      "Adam_moment_elements": 1152587522,
+      "optimizer_steps": 2
+    }
+  ],
+  "encoder_update_probe": 8.242204785346985e-07,
+  "new_optimizer_steps": 2,
+  "completed_baseline_seeds": 0,
+  "validation_test_rows": 0,
+  "CPU_FP32_not_GPU_BF16_bitwise_equivalence": true,
+  "cpu_default_foreach": null,
+  "source_checkpoint_loading": {
+    "md5": "69cc0f4afd28aff1c0c4a16b005716d1",
+    "sha256": "fa0c5692d080f30308a2a8e2e194758fc97b40a28e96f4cf0c422dc8213a08a4",
+    "state_entries": 369,
+    "legacy_tokenizer_spec": {
+      "vocab": {
+        "<cls>": 0,
+        "<pad>": 1,
+        "<eos>": 2,
+        "<unk>": 3,
+        "L": 4,
+        "A": 5,
+        "G": 6,
+        "V": 7,
+        "S": 8,
+        "E": 9,
+        "R": 10,
+        "T": 11,
+        "I": 12,
+        "D": 13,
+        "P": 14,
+        "K": 15,
+        "Q": 16,
+        "N": 17,
+        "F": 18,
+        "Y": 19,
+        "M": 20,
+        "H": 21,
+        "W": 22,
+        "C": 23,
+        "X": 24,
+        "B": 25,
+        "U": 26,
+        "Z": 27,
+        "O": 28,
+        ".": 29,
+        "-": 30,
+        "|": 31,
+        "<mask>": 32
+      },
+      "pair_template": [
+        {
+          "SpecialToken": {
+            "id": "<cls>",
+            "type_id": 0
+          }
+        },
+        {
+          "Sequence": {
+            "id": "A",
+            "type_id": 0
+          }
+        },
+        {
+          "SpecialToken": {
+            "id": "|",
+            "type_id": 0
+          }
+        },
+        {
+          "Sequence": {
+            "id": "B",
+            "type_id": 1
+          }
+        },
+        {
+          "SpecialToken": {
+            "id": "<eos>",
+            "type_id": 1
+          }
+        }
+      ]
+    },
+    "weights_only": true,
+    "mmap": true,
+    "opaque_metadata_aliases": [
+      "astra.tokenizers.esm.tokenization.ESMSeqTokenizer",
+      "omegaconf.base.ContainerMetadata",
+      "omegaconf.base.Metadata",
+      "omegaconf.dictconfig.DictConfig",
+      "omegaconf.listconfig.ListConfig",
+      "omegaconf.nodes.AnyNode",
+      "tokenizers.Tokenizer",
+      "tokenizers.models.Model",
+      "typing.Any"
+    ],
+    "private_astra_tokenizer_executed": false,
+    "optimizer_state_used": false
+  },
+  "elapsed_seconds": 912.3531374093145,
+  "process_peak_RSS_bytes": 17472536576,
+  "full_checkpoint_write_not_measured": true,
+  "GPU_initialized": false
+}
