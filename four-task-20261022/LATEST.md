@@ -1,0 +1,11 @@
+# 四任务基准：公开入口
+
+历史公开快照保持原样；以下入口分别说明资源获取、结果和权重。科学训练完成、文件物理镜像完成、已公开上传是三个状态，不能相互代替。完整全骨干PepInter和四专家UniAIR/MoFPE基准仍待完成，组件或单步成功不补作完整训练。
+
+|入口|状态与范围|
+|---|---|
+|[官方资源获取](official-resources-v1/README.zh-CN.md)|已公开；197项精确获取信息＋1项保留的历史坐标URL pending，输入获取工具不是一键完整复现。|
+|[最新结果更新](results-update-v2/README.zh-CN.md)|已公开75文件；DTA150/300、SWING分类10与亲和力20、RDE10组件、PEPBI条件外测分轴；旧12:31快照13/20本地状态保留；最新全20本地事实见下方交付闭环。|
+|[通用2100候选权重Release](https://github.com/cihebiyql/ppikb-noncanonical-peptide-affinity-benchmark/releases/tag/four-task-20261022-generic-candidates-v1)|已公开并核验18项资产；仅指通用候选权重，不表示全项目模型资产已全部公开。|
+|[SWING亲和力模型本地交付闭环](artifact-delivery-v1/README.zh-CN.md)|本批新增收据；截至12:53UTC，source10＋target10共43,372,437,689字节全部本地SHA及Windows独审通过；这不代表43GB已公开上传。|
+|[历史接触坐标归档恢复补充](contact-archive-restore-v1/README.zh-CN.md)|本批准备的独立固定HTTP来源工具；旧HTTPS锁不改，发布状态以本批提交/发布收据为准；本轮没有重下载691MB。|

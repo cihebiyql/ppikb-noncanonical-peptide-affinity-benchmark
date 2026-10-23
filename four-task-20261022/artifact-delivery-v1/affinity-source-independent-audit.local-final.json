@@ -1,0 +1,1533 @@
+{
+  "audit_at": "2026-10-23T12:53:05.822982+00:00",
+  "panel": "source",
+  "raw_data_sha256": "f4098978e997024c36b2ed72ac5abb37fab1cdf1b0abc25fd28a842edba140ad",
+  "raw_rows": 9116,
+  "eligible_rows": 7669,
+  "excluded_model_inputs": 1447,
+  "split_counts": {
+    "train": 6114,
+    "validation": 781,
+    "test": 774
+  },
+  "completed_and_verified_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "pending_seeds": [],
+  "errors": [],
+  "all10_actual_and_verified": true,
+  "results": [
+    {
+      "seed": 0,
+      "run": "record-ref:peptide-four-task-benchmark-20261022/runs/interaction_continuation_swing_pKd_source_hash0_seed0_v2",
+      "protocol": "v2 original no inference memo; running unchanged",
+      "metrics": {
+        "n": 774,
+        "mae": 1.4568796198707377,
+        "rmse": 1.8103064244521805,
+        "bias": -0.07241698525496024,
+        "r2": 0.007915532463109831,
+        "pearson": 0.1060544816944782,
+        "spearman": 0.05938655756259252
+      },
+      "common_native6336_test_metrics": {
+        "n": 683,
+        "mae": 1.430774013222032,
+        "rmse": 1.7520286031030716,
+        "bias": -0.07912876697957238,
+        "r2": 0.009324936584986232,
+        "pearson": 0.119199391591523,
+        "spearman": 0.07105165687194875
+      },
+      "external_profaff162_metrics": {
+        "n": 162,
+        "mae": 1.155114860601481,
+        "rmse": 1.2803151599998892,
+        "bias": 1.0843441927544426,
+        "r2": -2.6108248866122614,
+        "pearson": -4.4517603151460194e-05,
+        "spearman": 0.005487498941598486
+      },
+      "test_strata": {
+        "PTM": {
+          "n": 53,
+          "mae": 0.9412846244350288,
+          "rmse": 1.2450882937041279,
+          "bias": -0.19685689643692816,
+          "r2": -0.07657845608410052,
+          "pearson": -0.1859196208331813,
+          "spearman": -0.18685612166944984
+        },
+        "synthetic_and_PTM": {
+          "n": 3,
+          "mae": 1.6011417864803688,
+          "rmse": 1.8479537964978592,
+          "bias": 0.22750808749751616,
+          "r2": -0.026613534274751327,
+          "pearson": -0.13936079248740438,
+          "spearman": 0.4999999999999999
+        },
+        "other_NC": {
+          "n": 3,
+          "mae": 1.5602266308482118,
+          "rmse": 1.6862663333445793,
+          "bias": 1.5602266308482118,
+          "r2": -5.94913107161778,
+          "pearson": null,
+          "spearman": null
+        },
+        "synthetic_D_backbone": {
+          "n": 3,
+          "mae": 0.5871347914167012,
+          "rmse": 0.6285476384309898,
+          "bias": 0.5871347914167012,
+          "r2": -12.613725968012327,
+          "pearson": -0.33566606586747516,
+          "spearman": 0.4999999999999999
+        },
+        "standard20_control": {
+          "n": 712,
+          "mae": 1.4978809424981159,
+          "rmse": 1.8490950417742342,
+          "bias": -0.07407575787285013,
+          "r2": 0.009654716612546355,
+          "pearson": 0.12128669764733958,
+          "spearman": 0.0718321736390414
+        },
+        "all_annotated_NC": {
+          "n": 62,
+          "mae": 0.9860257213111674,
+          "rmse": 1.2834145238231225,
+          "bias": -0.053367854546288805,
+          "r2": -0.037086032652969614,
+          "pearson": -0.132446197460927,
+          "spearman": -0.15976370603150153
+        }
+      },
+      "external_strata": {
+        "PTM": {
+          "n": 50,
+          "mae": 1.3076298515689089,
+          "rmse": 1.393098928918993,
+          "bias": 1.3076298515689089,
+          "r2": -7.779470605987145,
+          "pearson": -0.023343635141860393,
+          "spearman": -0.029259156579586883
+        },
+        "standard_backbone_with_tag": {
+          "n": 112,
+          "mae": 1.0870278110624507,
+          "rmse": 1.2266216960990268,
+          "bias": 0.9846630950694131,
+          "r2": -1.8443858698138902,
+          "pearson": 0.027345630732216325,
+          "spearman": 0.020603453982890263
+        },
+        "all_annotated_NC": {
+          "n": 50,
+          "mae": 1.3076298515689089,
+          "rmse": 1.393098928918993,
+          "bias": 1.3076298515689089,
+          "r2": -7.779470605987145,
+          "pearson": -0.023343635141860393,
+          "spearman": -0.029259156579586883
+        }
+      },
+      "validation_only_candidate_selection": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "selection_loss": 1.4707170083446464,
+          "model_sha256": "0b96087a06b000ed8216b291448a3006d49949c8b9ebfa2859e633f27ec88549",
+          "validation_predictions_sha256": "30d5d824cf5e88dbff994483a02a23112f26bec8ee0bccc819bbce5c96619160"
+        },
+        {
+          "candidate": 1,
+          "selection_loss": 1.4997833328792929,
+          "model_sha256": "5c64279c6800e48ffb8ec15184b22441551ffd84e37bb3729ed68259f732e3aa",
+          "validation_predictions_sha256": "77fcc441b224b76cf884a39bbf93616585f831d74783b0316d48730fdcd12cd9"
+        }
+      ],
+      "repeated_exact_effective_inputs_with_identical_predictions": 597,
+      "native16epochs72D_verified": true,
+      "raw_labels_IDs_seeds_and_orders_verified": true,
+      "test_prediction_sha256": "d9376736321385d31b1434d0d2c9bdba4fb11c0d195b8f8f90b98b2478604e89",
+      "external_prediction_sha256": "899b21fb51e656e5b22ffe5a6e27aa59d0f809101ea3980b85902b3b2abd334a",
+      "receipt_sha256": "793072a82de72ed19448def7c2ca8d35c2ac3e9ac5d0c9c8399e0fae92b2b560",
+      "scientific_worker_sha256": "2c233996db3b3b23066e08684e5599c5415e6d87bc8c0b72fbfab277e4e6265b",
+      "new_fit_or_forward_for_audit": 0
+    },
+    {
+      "seed": 1,
+      "run": "record-ref:peptide-four-task-benchmark-20261022/runs/interaction_continuation_swing_pKd_source_hash0_seed1_v2",
+      "protocol": "v2 original no inference memo; running unchanged",
+      "metrics": {
+        "n": 774,
+        "mae": 1.455808239328737,
+        "rmse": 1.8223759347623818,
+        "bias": -0.10178238742242586,
+        "r2": -0.0053572366563907625,
+        "pearson": 0.012180987226260011,
+        "spearman": 0.04218108939156007
+      },
+      "common_native6336_test_metrics": {
+        "n": 683,
+        "mae": 1.4286949603090908,
+        "rmse": 1.7617182117628385,
+        "bias": -0.10685139447133486,
+        "r2": -0.0016632379599887948,
+        "pearson": 0.04667410687617041,
+        "spearman": 0.07154994812033495
+      },
+      "external_profaff162_metrics": {
+        "n": 162,
+        "mae": 1.145332252389673,
+        "rmse": 1.2687059012727941,
+        "bias": 1.069063598693992,
+        "r2": -2.5456394520469297,
+        "pearson": -0.042318672176328995,
+        "spearman": -0.04509867859912841
+      },
+      "test_strata": {
+        "PTM": {
+          "n": 53,
+          "mae": 0.929669827932973,
+          "rmse": 1.2743029283668732,
+          "bias": -0.2193918516595798,
+          "r2": -0.12769264296261107,
+          "pearson": -0.33461526508719863,
+          "spearman": 0.13169684732510564
+        },
+        "synthetic_and_PTM": {
+          "n": 3,
+          "mae": 1.5830478826209122,
+          "rmse": 1.7799567172484745,
+          "bias": 0.08620613767858713,
+          "r2": 0.047546785348433374,
+          "pearson": 0.9952578406251019,
+          "spearman": 0.9999999999999998
+        },
+        "other_NC": {
+          "n": 3,
+          "mae": 1.43119878737287,
+          "rmse": 1.567646955261606,
+          "bias": 1.43119878737287,
+          "r2": -5.005852903727197,
+          "pearson": null,
+          "spearman": null
+        },
+        "synthetic_D_backbone": {
+          "n": 3,
+          "mae": 0.635044528050002,
+          "rmse": 0.6471201604266712,
+          "bias": 0.635044528050002,
+          "r2": -13.430137406227919,
+          "pearson": 0.7501799700026328,
+          "spearman": 0.4999999999999999
+        },
+        "standard20_control": {
+          "n": 712,
+          "mae": 1.4979988802891344,
+          "rmse": 1.8611561244503658,
+          "bias": -0.10338363495267452,
+          "r2": -0.0033068582973407867,
+          "pearson": 0.027070045423934264,
+          "spearman": 0.03915666884198254
+        },
+        "all_annotated_NC": {
+          "n": 62,
+          "mae": 0.9712963624932087,
+          "rmse": 1.2963815877335414,
+          "bias": -0.08339386739763473,
+          "r2": -0.058148435794227904,
+          "pearson": -0.18843933322965603,
+          "spearman": 0.22623677412782248
+        }
+      },
+      "external_strata": {
+        "PTM": {
+          "n": 50,
+          "mae": 1.2893798916232302,
+          "rmse": 1.3751303546233529,
+          "bias": 1.2893798916232302,
+          "r2": -7.554451139493114,
+          "pearson": 0.00203906387713787,
+          "spearman": -0.07663112437510844
+        },
+        "standard_backbone_with_tag": {
+          "n": 112,
+          "mae": 1.0810252705889778,
+          "rmse": 1.2181968559596135,
+          "bias": 0.9707081107791539,
+          "r2": -1.805447700453573,
+          "pearson": -0.03913482302152668,
+          "spearman": -0.03964848963953829
+        },
+        "all_annotated_NC": {
+          "n": 50,
+          "mae": 1.2893798916232302,
+          "rmse": 1.3751303546233529,
+          "bias": 1.2893798916232302,
+          "r2": -7.554451139493114,
+          "pearson": 0.00203906387713787,
+          "spearman": -0.07663112437510844
+        }
+      },
+      "validation_only_candidate_selection": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "selection_loss": 1.474958253619698,
+          "model_sha256": "f891b47775c24b5c5156dea272606727d21ee4e98c77574dc543fde57281fd17",
+          "validation_predictions_sha256": "a50b45a0f40e0bca7342436afec11e8e2445625c153c71c7f8be22ffbaa665bf"
+        },
+        {
+          "candidate": 1,
+          "selection_loss": 1.5247761670034867,
+          "model_sha256": "52de72092f218b77cd18ba4879a68c159a9588f1771ecc89be1f0b87bc31cd8d",
+          "validation_predictions_sha256": "527e07379f48e56b3d06d2d5827b798ddaa674f724d9fa40bab4cb1e88ea3e31"
+        }
+      ],
+      "repeated_exact_effective_inputs_with_identical_predictions": 597,
+      "native16epochs72D_verified": true,
+      "raw_labels_IDs_seeds_and_orders_verified": true,
+      "test_prediction_sha256": "294ff4886ecc1cc47d1bf68b56f14f2872625524b4e1833eacbab7a266035ed2",
+      "external_prediction_sha256": "264796a12292f4f830f07dfecba4ae4781d33e3d9274aea3d9300f9899ae6f7c",
+      "receipt_sha256": "45e36672edf6844c3b4570a325621d3361d1b1adb9ab992262bdb15d0193b262",
+      "scientific_worker_sha256": "2c233996db3b3b23066e08684e5599c5415e6d87bc8c0b72fbfab277e4e6265b",
+      "new_fit_or_forward_for_audit": 0
+    },
+    {
+      "seed": 2,
+      "run": "record-ref:peptide-four-task-benchmark-20261022/runs/interaction_continuation_swing_pKd_source_hash0_seed2_v2",
+      "protocol": "v2 original no inference memo; running unchanged",
+      "metrics": {
+        "n": 774,
+        "mae": 1.4552411324032153,
+        "rmse": 1.8204724789927997,
+        "bias": -0.10099172795905105,
+        "r2": -0.0032581597325034295,
+        "pearson": 0.04053424945097691,
+        "spearman": 0.04203800342184174
+      },
+      "common_native6336_test_metrics": {
+        "n": 683,
+        "mae": 1.4296879047119304,
+        "rmse": 1.7619080755668377,
+        "bias": -0.10802850225298664,
+        "r2": -0.001879151991447392,
+        "pearson": 0.054035451191263725,
+        "spearman": 0.05052919216063855
+      },
+      "external_profaff162_metrics": {
+        "n": 162,
+        "mae": 1.0964430792384554,
+        "rmse": 1.219678524024861,
+        "bias": 1.0084302130710494,
+        "r2": -2.276901634034827,
+        "pearson": -0.003673628808644516,
+        "spearman": -0.0019801952287674847
+      },
+      "test_strata": {
+        "PTM": {
+          "n": 53,
+          "mae": 0.9174747567613039,
+          "rmse": 1.23259243858554,
+          "bias": -0.24585033997998446,
+          "r2": -0.05507755260303315,
+          "pearson": 0.01867167646515285,
+          "spearman": 0.10574914134655324
+        },
+        "synthetic_and_PTM": {
+          "n": 3,
+          "mae": 1.4586598236406063,
+          "rmse": 1.658359325875128,
+          "bias": 0.09675504718379546,
+          "r2": 0.17323507605780863,
+          "pearson": 0.9815307641901845,
+          "spearman": 0.9999999999999998
+        },
+        "other_NC": {
+          "n": 3,
+          "mae": 1.5484992977793641,
+          "rmse": 1.6754214641655378,
+          "bias": 1.5484992977793641,
+          "r2": -5.860034732465448,
+          "pearson": null,
+          "spearman": null
+        },
+        "synthetic_D_backbone": {
+          "n": 3,
+          "mae": 0.6882325341331725,
+          "rmse": 0.7171281266600256,
+          "bias": 0.6882325341331725,
+          "r2": -16.72124048593005,
+          "pearson": -0.19911720832782098,
+          "spearman": -0.4999999999999999
+        },
+        "standard20_control": {
+          "n": 712,
+          "mae": 1.4980959261307303,
+          "rmse": 1.8611916494272522,
+          "bias": -0.10131740176777435,
+          "r2": -0.003345160074013087,
+          "pearson": 0.03801747770366707,
+          "spearman": 0.03743599706694433
+        },
+        "all_annotated_NC": {
+          "n": 62,
+          "mae": 0.9631022108872345,
+          "rmse": 1.2619522433639354,
+          "bias": -0.09725173196209967,
+          "r2": -0.0026900975245691683,
+          "pearson": 0.07564053790342676,
+          "spearman": 0.10397199735065797
+        }
+      },
+      "external_strata": {
+        "PTM": {
+          "n": 50,
+          "mae": 1.2306330482852177,
+          "rmse": 1.3267065921822752,
+          "bias": 1.2306330482852177,
+          "r2": -6.962586929399553,
+          "pearson": -0.07845184355134989,
+          "spearman": -0.0991159934707515
+        },
+        "standard_backbone_with_tag": {
+          "n": 112,
+          "mae": 1.036536843056865,
+          "rmse": 1.1687379664458193,
+          "bias": 0.90923251877901,
+          "r2": -1.5822693055996164,
+          "pearson": 0.032428471235448314,
+          "spearman": 0.039720758794715025
+        },
+        "all_annotated_NC": {
+          "n": 50,
+          "mae": 1.2306330482852177,
+          "rmse": 1.3267065921822752,
+          "bias": 1.2306330482852177,
+          "r2": -6.962586929399553,
+          "pearson": -0.07845184355134989,
+          "spearman": -0.0991159934707515
+        }
+      },
+      "validation_only_candidate_selection": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "selection_loss": 1.4832244005577826,
+          "model_sha256": "50a7e19415cd71f56a6ba996e02cafea6aec7b27237c01c00ff9d8776653fc36",
+          "validation_predictions_sha256": "d5928c286b84c29b3df5b8e8e8f2c9952464cd5b17d044ccf31f7fb7396dd176"
+        },
+        {
+          "candidate": 1,
+          "selection_loss": 1.5315148237447154,
+          "model_sha256": "4b0127e8288e2da10a1ad9225d9a2fe6b0e8786fd7d0aadb5ce8a5adc56f0838",
+          "validation_predictions_sha256": "44d851e3e8d91bc57305444c4eb54fe856b27578f796c67a41fd554b9b8b8f81"
+        }
+      ],
+      "repeated_exact_effective_inputs_with_identical_predictions": 597,
+      "native16epochs72D_verified": true,
+      "raw_labels_IDs_seeds_and_orders_verified": true,
+      "test_prediction_sha256": "aefc588a55bff34804ba4fe617a878e6f1eb7941fbb4be456b7b1d49683f2475",
+      "external_prediction_sha256": "49910e9ee157468a76674821b71296d33f5e5c757011af365749023e395d1e40",
+      "receipt_sha256": "61621ac7340aeddcf85c8eeabe553da6f9874598f732f6fc7fe54c7d05425cf2",
+      "scientific_worker_sha256": "2c233996db3b3b23066e08684e5599c5415e6d87bc8c0b72fbfab277e4e6265b",
+      "new_fit_or_forward_for_audit": 0
+    },
+    {
+      "seed": 3,
+      "run": "record-ref:peptide-four-task-benchmark-20261022/runs/interaction_continuation_swing_pKd_source_hash0_seed3_v2",
+      "protocol": "v2 original no inference memo; running unchanged",
+      "metrics": {
+        "n": 774,
+        "mae": 1.4671527642314206,
+        "rmse": 1.8357333614824052,
+        "bias": -0.10084154458448352,
+        "r2": -0.020149135980286115,
+        "pearson": -0.033253370016419176,
+        "spearman": -0.04880109385785003
+      },
+      "common_native6336_test_metrics": {
+        "n": 683,
+        "mae": 1.4418338139760694,
+        "rmse": 1.779820255476659,
+        "bias": -0.10914584481512453,
+        "r2": -0.022353615717519926,
+        "pearson": -0.034477535474765494,
+        "spearman": -0.05454755144218718
+      },
+      "external_profaff162_metrics": {
+        "n": 162,
+        "mae": 1.1420406110667582,
+        "rmse": 1.2642188695487704,
+        "bias": 1.0638991755873632,
+        "r2": -2.5206040781144337,
+        "pearson": 0.02329306972460965,
+        "spearman": 0.03470476118183257
+      },
+      "test_strata": {
+        "PTM": {
+          "n": 53,
+          "mae": 0.9097856124452852,
+          "rmse": 1.270508333692392,
+          "bias": -0.37507733044583247,
+          "r2": -0.12098659962350977,
+          "pearson": 0.06552674509312081,
+          "spearman": 0.1709447925316582
+        },
+        "synthetic_and_PTM": {
+          "n": 3,
+          "mae": 1.6422631103837704,
+          "rmse": 1.8442303530898028,
+          "bias": 0.16866240853226552,
+          "r2": -0.022480653477184642,
+          "pearson": -0.038442464857163516,
+          "spearman": 0.4999999999999999
+        },
+        "other_NC": {
+          "n": 3,
+          "mae": 1.6758210179026551,
+          "rmse": 1.793756697940861,
+          "bias": 1.6758210179026551,
+          "r2": -6.863307078443205,
+          "pearson": null,
+          "spearman": null
+        },
+        "synthetic_D_backbone": {
+          "n": 3,
+          "mae": 0.6322772830752298,
+          "rmse": 0.6758369499591198,
+          "bias": 0.6322772830752298,
+          "r2": -14.739265842213223,
+          "pearson": -0.7049936005810862,
+          "spearman": -0.9999999999999998
+        },
+        "standard20_control": {
+          "n": 712,
+          "mae": 1.5105428621087562,
+          "rmse": 1.874405179000623,
+          "bias": -0.09213839764507242,
+          "r2": -0.017642228919688252,
+          "pearson": -0.03810557085400739,
+          "spearman": -0.03851925598452743
+        },
+        "all_annotated_NC": {
+          "n": 62,
+          "mae": 0.9688664789304046,
+          "rmse": 1.31234005714136,
+          "bias": -0.2007873610499785,
+          "r2": -0.08436041790519577,
+          "pearson": -0.02850779829154097,
+          "spearman": -0.028593567841432764
+        }
+      },
+      "external_strata": {
+        "PTM": {
+          "n": 50,
+          "mae": 1.2596187019056262,
+          "rmse": 1.3429074849171767,
+          "bias": 1.2535686008822637,
+          "r2": -7.158242331239077,
+          "pearson": 0.017390952420563488,
+          "spearman": 0.04002114520656133
+        },
+        "standard_backbone_with_tag": {
+          "n": 112,
+          "mae": 1.0895503919422633,
+          "rmse": 1.2274624269330463,
+          "bias": 0.9792253250092825,
+          "r2": -1.8482863102455105,
+          "pearson": -0.005544253882414946,
+          "spearman": 0.02372557771039703
+        },
+        "all_annotated_NC": {
+          "n": 50,
+          "mae": 1.2596187019056262,
+          "rmse": 1.3429074849171767,
+          "bias": 1.2535686008822637,
+          "r2": -7.158242331239077,
+          "pearson": 0.017390952420563488,
+          "spearman": 0.04002114520656133
+        }
+      },
+      "validation_only_candidate_selection": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "selection_loss": 1.4624799214978068,
+          "model_sha256": "9a4dc4e948d372b22711a13c34c68ab23cb6172ff14aac9a8194714c0fdf93c9",
+          "validation_predictions_sha256": "d002282f0386917feb53c46368ebdbf0df337bbc2ffde38aaecf1e5ea778fbe2"
+        },
+        {
+          "candidate": 1,
+          "selection_loss": 1.5085224521351395,
+          "model_sha256": "996ddcc6c58ff51f837e4a918fcb0abedfbaf50ebcc4cbb4a4d3019d166fa53f",
+          "validation_predictions_sha256": "dce46aa3e783a19e2444baae5b2bde837b0c19cee950af9f159f8feea3a92eae"
+        }
+      ],
+      "repeated_exact_effective_inputs_with_identical_predictions": 597,
+      "native16epochs72D_verified": true,
+      "raw_labels_IDs_seeds_and_orders_verified": true,
+      "test_prediction_sha256": "6238d562d83c72ced3bb78d40d1ae1ed835f2fb11246bb9167d81c4b0b22cef0",
+      "external_prediction_sha256": "0f675060ed13996dcbf4fb7d4b810dc9677a9050656f96f5e9ae4b01a21e3dde",
+      "receipt_sha256": "b476865ac39b144e2c18778fee9aca82bce2ce2580231bcc0873cf844c32eb8c",
+      "scientific_worker_sha256": "2c233996db3b3b23066e08684e5599c5415e6d87bc8c0b72fbfab277e4e6265b",
+      "new_fit_or_forward_for_audit": 0
+    },
+    {
+      "seed": 4,
+      "run": "record-ref:peptide-four-task-benchmark-20261022/runs/interaction_continuation_swing_pKd_source_hash0_seed4_memo_v3",
+      "protocol": "memo-v3 exact-output/RNG pureperformance",
+      "metrics": {
+        "n": 774,
+        "mae": 1.4781002117407276,
+        "rmse": 1.8688459696532653,
+        "bias": -0.19445334497787636,
+        "r2": -0.05728356531772971,
+        "pearson": 0.042816156724689955,
+        "spearman": 0.04632485114873496
+      },
+      "common_native6336_test_metrics": {
+        "n": 683,
+        "mae": 1.45579649105251,
+        "rmse": 1.8224270001651912,
+        "bias": -0.22587146624103804,
+        "r2": -0.07188731009252658,
+        "pearson": 0.029807269379165738,
+        "spearman": 0.0396801888685608
+      },
+      "external_profaff162_metrics": {
+        "n": 162,
+        "mae": 0.8033142857466147,
+        "rmse": 0.9584968868047016,
+        "bias": 0.5474254893337802,
+        "r2": -1.0237369649738488,
+        "pearson": 0.07856660732843862,
+        "spearman": 0.09604393402181972
+      },
+      "test_strata": {
+        "PTM": {
+          "n": 53,
+          "mae": 1.0900708619845099,
+          "rmse": 1.3930898114787171,
+          "bias": -0.4746236549778195,
+          "r2": -0.3477322377590264,
+          "pearson": -0.08191400489057127,
+          "spearman": -0.012810659869914236
+        },
+        "synthetic_and_PTM": {
+          "n": 3,
+          "mae": 1.5176936943376278,
+          "rmse": 1.9337918811859585,
+          "bias": 0.48034240756587554,
+          "r2": -0.12420168901004502,
+          "pearson": -0.5718742986417671,
+          "spearman": -0.4999999999999999
+        },
+        "other_NC": {
+          "n": 3,
+          "mae": 1.207789611500067,
+          "rmse": 1.366727022126545,
+          "bias": 1.207789611500067,
+          "r2": -3.565009932859181,
+          "pearson": null,
+          "spearman": null
+        },
+        "synthetic_D_backbone": {
+          "n": 3,
+          "mae": 0.9387421141095723,
+          "rmse": 1.0107014397905256,
+          "bias": 0.9387421141095723,
+          "r2": -34.20030083511916,
+          "pearson": -0.9555154104549405,
+          "spearman": -0.9999999999999998
+        },
+        "standard20_control": {
+          "n": 712,
+          "mae": 1.5102291178964917,
+          "rmse": 1.903765081434363,
+          "bias": -0.1871242383407,
+          "r2": -0.049771753742997804,
+          "pearson": 0.05034646003371884,
+          "spearman": 0.057291974808071376
+        },
+        "all_annotated_NC": {
+          "n": 62,
+          "mae": 1.109135999113239,
+          "rmse": 1.4070335552677702,
+          "bias": -0.27861985990803045,
+          "r2": -0.24649286038768192,
+          "pearson": -0.09942869627263898,
+          "spearman": -0.07040563510201944
+        }
+      },
+      "external_strata": {
+        "PTM": {
+          "n": 50,
+          "mae": 0.8497102942468066,
+          "rmse": 1.0067384941929882,
+          "bias": 0.7737166397463996,
+          "r2": -3.584983342501225,
+          "pearson": 0.02830630109020878,
+          "spearman": 0.0946958909989584
+        },
+        "standard_backbone_with_tag": {
+          "n": 112,
+          "mae": 0.7826017819518862,
+          "rmse": 0.9361581725987255,
+          "bias": 0.44640265432814646,
+          "r2": -0.6567832467985968,
+          "pearson": 0.10230414117362621,
+          "spearman": 0.11790181326651854
+        },
+        "all_annotated_NC": {
+          "n": 50,
+          "mae": 0.8497102942468066,
+          "rmse": 1.0067384941929882,
+          "bias": 0.7737166397463996,
+          "r2": -3.584983342501225,
+          "pearson": 0.02830630109020878,
+          "spearman": 0.0946958909989584
+        }
+      },
+      "validation_only_candidate_selection": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "selection_loss": 1.4721408200328099,
+          "model_sha256": "64b90318935203af1460b5579ca4d3833ba92b5bd04f0d944ab222d5e905f8b7",
+          "validation_predictions_sha256": "547b9dde0c2eb0f54aeb1304cbceeee8c69e06ce0106e75e1a49db48bf72451e"
+        },
+        {
+          "candidate": 1,
+          "selection_loss": 1.4654784447506517,
+          "model_sha256": "c3941a219f7744cd65e650940e82354b68f09a31fe91aa1e814c2f5e51dfb263",
+          "validation_predictions_sha256": "66329afd7ea80cf954b1ec3b29cea7223722ed75bdcd1c6b3cdf83f3b42d2ba4"
+        }
+      ],
+      "repeated_exact_effective_inputs_with_identical_predictions": 597,
+      "native16epochs72D_verified": true,
+      "raw_labels_IDs_seeds_and_orders_verified": true,
+      "test_prediction_sha256": "b7c5ec7c650b6db5cd1c94b2c444378bc895291404ec142ed661bc98c88b9d52",
+      "external_prediction_sha256": "04e9342bdbdfdbb0384efd9cca969e00b15e53689d32ec06153f777dfe4ea928",
+      "receipt_sha256": "f5681eac33adaba4531050e4293b722f403e0d9c2423e437665b97bbec58edcd",
+      "scientific_worker_sha256": "7fce97ffea0be0a98f080dffccfa22fca392f0f92ba7e7ed1e0dc8666e6878bf",
+      "new_fit_or_forward_for_audit": 0
+    },
+    {
+      "seed": 5,
+      "run": "record-ref:peptide-four-task-benchmark-20261022/runs/interaction_continuation_swing_pKd_source_hash0_seed5_memo_v3",
+      "protocol": "memo-v3 exact-output/RNG pureperformance",
+      "metrics": {
+        "n": 774,
+        "mae": 1.4718779410650533,
+        "rmse": 1.828741722754463,
+        "bias": -0.06438614127379155,
+        "r2": -0.0123931821098906,
+        "pearson": -0.02761045979046916,
+        "spearman": -0.02449183937737484
+      },
+      "common_native6336_test_metrics": {
+        "n": 683,
+        "mae": 1.4453916408148633,
+        "rmse": 1.7715035478836765,
+        "bias": -0.06918489494388819,
+        "r2": -0.012821472651477483,
+        "pearson": -0.027772041087509764,
+        "spearman": -0.01683031612530847
+      },
+      "external_profaff162_metrics": {
+        "n": 162,
+        "mae": 1.1245451066310694,
+        "rmse": 1.248558392208869,
+        "bias": 1.046327788119802,
+        "r2": -2.4339215358324777,
+        "pearson": 0.01610202087599832,
+        "spearman": 0.016358053686503705
+      },
+      "test_strata": {
+        "PTM": {
+          "n": 53,
+          "mae": 0.933635888084633,
+          "rmse": 1.2442700795331236,
+          "bias": -0.2852758390143622,
+          "r2": -0.0751639663335697,
+          "pearson": 0.008922824180998105,
+          "spearman": 0.1374086065027744
+        },
+        "synthetic_and_PTM": {
+          "n": 3,
+          "mae": 1.6699929395361954,
+          "rmse": 1.945606666890192,
+          "bias": 0.1918231840347883,
+          "r2": -0.13798060385226218,
+          "pearson": -0.8383878014252385,
+          "spearman": -0.9999999999999998
+        },
+        "other_NC": {
+          "n": 3,
+          "mae": 1.5368535038645692,
+          "rmse": 1.6646638398500202,
+          "bias": 1.5368535038645692,
+          "r2": -5.7722230907569205,
+          "pearson": null,
+          "spearman": null
+        },
+        "synthetic_D_backbone": {
+          "n": 3,
+          "mae": 0.6286957591799661,
+          "rmse": 0.6768758549422851,
+          "bias": 0.6286957591799661,
+          "r2": -14.78769222570353,
+          "pearson": -0.7154466292035704,
+          "spearman": -0.9999999999999998
+        },
+        "standard20_control": {
+          "n": 712,
+          "mae": 1.5143879181293871,
+          "rmse": 1.8683444971432357,
+          "bias": -0.05869012811712278,
+          "r2": -0.011072000958863626,
+          "pearson": -0.0279892804637633,
+          "spearman": -0.023877892035643628
+        },
+        "all_annotated_NC": {
+          "n": 62,
+          "mae": 0.9836988496165765,
+          "rmse": 1.2895296805074574,
+          "bias": -0.12979842139553593,
+          "r2": -0.04699250070794303,
+          "pearson": -0.06556585256980271,
+          "spearman": 0.030445680044116494
+        }
+      },
+      "external_strata": {
+        "PTM": {
+          "n": 50,
+          "mae": 1.2636580315056296,
+          "rmse": 1.352583113944843,
+          "bias": 1.2597166340243535,
+          "r2": -7.276225876687269,
+          "pearson": -0.09690916526623207,
+          "spearman": -0.03396752660388817
+        },
+        "standard_backbone_with_tag": {
+          "n": 112,
+          "mae": 1.0624411223120693,
+          "rmse": 1.199208933868733,
+          "bias": 0.9510649104838418,
+          "r2": -1.7186727793705403,
+          "pearson": 0.05038284617551683,
+          "spearman": 0.04910831548409455
+        },
+        "all_annotated_NC": {
+          "n": 50,
+          "mae": 1.2636580315056296,
+          "rmse": 1.352583113944843,
+          "bias": 1.2597166340243535,
+          "r2": -7.276225876687269,
+          "pearson": -0.09690916526623207,
+          "spearman": -0.03396752660388817
+        }
+      },
+      "validation_only_candidate_selection": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "selection_loss": 1.4598092997611858,
+          "model_sha256": "9d94b380e280ffa1c013bcad9752e781be9f07c4ec1d38c5c72366b913476860",
+          "validation_predictions_sha256": "bfdecfffd8ce969f721e96c565b19d2b0228838d975ede8ef417be8b0594e6f0"
+        },
+        {
+          "candidate": 1,
+          "selection_loss": 1.4817993573654087,
+          "model_sha256": "b0f2729551c5ee437be1a436f886cf3819625a2a13dec8910391cae5a918e1bc",
+          "validation_predictions_sha256": "7877d28fdbfbed8723dec04d253bbc9bf714fe05e5f43d8c1cd0faafa9260302"
+        }
+      ],
+      "repeated_exact_effective_inputs_with_identical_predictions": 597,
+      "native16epochs72D_verified": true,
+      "raw_labels_IDs_seeds_and_orders_verified": true,
+      "test_prediction_sha256": "44b12fe5717abd38b38d68617106568c40bd9ad26f2ed9a99dd626d308bef8ef",
+      "external_prediction_sha256": "cbd6ca5aade69a813d4ee2e5f32fc28464c27f058d83dde1b47fb8074409a976",
+      "receipt_sha256": "42f521540828bc78a76e985948bc42d97be8e580dccd5f4188a9105ebaade71a",
+      "scientific_worker_sha256": "7fce97ffea0be0a98f080dffccfa22fca392f0f92ba7e7ed1e0dc8666e6878bf",
+      "new_fit_or_forward_for_audit": 0
+    },
+    {
+      "seed": 6,
+      "run": "record-ref:peptide-four-task-benchmark-20261022/runs/interaction_continuation_swing_pKd_source_hash0_seed6_memo_v3",
+      "protocol": "memo-v3 exact-output/RNG pureperformance",
+      "metrics": {
+        "n": 774,
+        "mae": 1.4872026328339962,
+        "rmse": 1.8706585898640171,
+        "bias": -0.2135486188828986,
+        "r2": -0.059335508589533736,
+        "pearson": 0.038417107238990854,
+        "spearman": 0.03922495204314168
+      },
+      "common_native6336_test_metrics": {
+        "n": 683,
+        "mae": 1.4534411895244104,
+        "rmse": 1.8057791511742578,
+        "bias": -0.24221445209797257,
+        "r2": -0.052393401271950024,
+        "pearson": 0.067421976859211,
+        "spearman": 0.06711200971856304
+      },
+      "external_profaff162_metrics": {
+        "n": 162,
+        "mae": 0.8306103246469244,
+        "rmse": 0.9966233419863882,
+        "bias": 0.5715320463203653,
+        "r2": -1.187936736648993,
+        "pearson": -0.013147023345147434,
+        "spearman": 0.00485378314304454
+      },
+      "test_strata": {
+        "PTM": {
+          "n": 53,
+          "mae": 1.1167260824932677,
+          "rmse": 1.4096835427845325,
+          "bias": -0.266255407567783,
+          "r2": -0.3800303707460808,
+          "pearson": -0.19029143828029313,
+          "spearman": -0.13879574801735114
+        },
+        "synthetic_and_PTM": {
+          "n": 3,
+          "mae": 1.9832377591773087,
+          "rmse": 2.2108141067389977,
+          "bias": -0.018155555385784616,
+          "r2": -0.46936341532531256,
+          "pearson": -0.972961522400983,
+          "spearman": -0.9999999999999998
+        },
+        "other_NC": {
+          "n": 3,
+          "mae": 0.8461152224667677,
+          "rmse": 1.0464894882788385,
+          "bias": 0.8282229420359557,
+          "r2": -1.67638079746134,
+          "pearson": null,
+          "spearman": null
+        },
+        "synthetic_D_backbone": {
+          "n": 3,
+          "mae": 0.38950964676193145,
+          "rmse": 0.4768117902108618,
+          "bias": 0.12471671204048047,
+          "r2": -6.834198617876751,
+          "pearson": -0.7737428559440931,
+          "spearman": -0.4999999999999999
+        },
+        "standard20_control": {
+          "n": 712,
+          "mae": 1.5200165274665052,
+          "rmse": 1.90525397959574,
+          "bias": -0.21626326785160524,
+          "r2": -0.051414408550242374,
+          "pearson": 0.04733493527721095,
+          "spearman": 0.05164750447595922
+        },
+        "all_annotated_NC": {
+          "n": 62,
+          "mae": 1.1103721009251808,
+          "rmse": 1.4139430901367875,
+          "bias": -0.18237394040355717,
+          "r2": -0.25876525155458197,
+          "pearson": -0.09618663054649207,
+          "spearman": -0.0533053114772407
+        }
+      },
+      "external_strata": {
+        "PTM": {
+          "n": 50,
+          "mae": 0.9264826885448398,
+          "rmse": 1.072472319523306,
+          "bias": 0.8810991661441047,
+          "r2": -4.203272803977588,
+          "pearson": -0.021884092671408423,
+          "spearman": 0.012251370981600387
+        },
+        "standard_backbone_with_tag": {
+          "n": 112,
+          "mae": 0.7878101621924978,
+          "rmse": 0.9608309558989718,
+          "bias": 0.4333324392561959,
+          "r2": -0.7452642859923981,
+          "pearson": 0.027012394098642492,
+          "spearman": 0.05551913315165638
+        },
+        "all_annotated_NC": {
+          "n": 50,
+          "mae": 0.9264826885448398,
+          "rmse": 1.072472319523306,
+          "bias": 0.8810991661441047,
+          "r2": -4.203272803977588,
+          "pearson": -0.021884092671408423,
+          "spearman": 0.012251370981600387
+        }
+      },
+      "validation_only_candidate_selection": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "selection_loss": 1.4579124060800561,
+          "model_sha256": "8ef3978fe79746f08dc2609d01ed6afc9a2f2435ba5e91b590b0b83d8b6b4037",
+          "validation_predictions_sha256": "5e17c256789c701a3478aa521e3a54f7018b645e1ee16dd73abfc6bbd68e0884"
+        },
+        {
+          "candidate": 1,
+          "selection_loss": 1.4517707083437688,
+          "model_sha256": "6ddbdb9d2d9793405363a4b7da255624e268cf21298722d2f8c60d646c9838d1",
+          "validation_predictions_sha256": "131ad48886bc962045206638652bbd54ec31d597b31b04a587609104f5fe783a"
+        }
+      ],
+      "repeated_exact_effective_inputs_with_identical_predictions": 597,
+      "native16epochs72D_verified": true,
+      "raw_labels_IDs_seeds_and_orders_verified": true,
+      "test_prediction_sha256": "deeebf2c22f1845f526dda33af503d424601ef49b60263bc6eae98781e3c9d46",
+      "external_prediction_sha256": "3f0f0be25c27181719edfa3d744037a7998761e62653e1a1cec09a593224a20c",
+      "receipt_sha256": "4c5972917fa2a2509dd4288b1aad824797d6253f7d8c094c4d61839450d855b8",
+      "scientific_worker_sha256": "7fce97ffea0be0a98f080dffccfa22fca392f0f92ba7e7ed1e0dc8666e6878bf",
+      "new_fit_or_forward_for_audit": 0
+    },
+    {
+      "seed": 7,
+      "run": "record-ref:peptide-four-task-benchmark-20261022/runs/interaction_continuation_swing_pKd_source_hash0_seed7_memo_v3",
+      "protocol": "memo-v3 exact-output/RNG pureperformance",
+      "metrics": {
+        "n": 774,
+        "mae": 1.4712744962299211,
+        "rmse": 1.8336686881675899,
+        "bias": -0.09214466936959877,
+        "r2": -0.017855676303611068,
+        "pearson": -0.05445530579689426,
+        "spearman": -0.07384664101651725
+      },
+      "common_native6336_test_metrics": {
+        "n": 683,
+        "mae": 1.4454974319058316,
+        "rmse": 1.7750474914764742,
+        "bias": -0.09776633198916287,
+        "r2": -0.016877882816579426,
+        "pearson": -0.04159405557229915,
+        "spearman": -0.06314220459077316
+      },
+      "external_profaff162_metrics": {
+        "n": 162,
+        "mae": 1.1132525874184862,
+        "rmse": 1.2343476315735213,
+        "bias": 1.0381330324949605,
+        "r2": -2.3561984101635955,
+        "pearson": 0.1411214431395945,
+        "spearman": 0.09403975488162687
+      },
+      "test_strata": {
+        "PTM": {
+          "n": 53,
+          "mae": 0.9319711575638152,
+          "rmse": 1.2552493701952938,
+          "bias": -0.21860183145463988,
+          "r2": -0.09422191654341394,
+          "pearson": -0.29768330156190054,
+          "spearman": -0.045530880301988166
+        },
+        "synthetic_and_PTM": {
+          "n": 3,
+          "mae": 1.4924626508399064,
+          "rmse": 1.7391645835105087,
+          "bias": 0.20802547488765288,
+          "r2": 0.09070221332799766,
+          "pearson": 0.9955058976327427,
+          "spearman": 0.9999999999999998
+        },
+        "other_NC": {
+          "n": 3,
+          "mae": 1.692295264881415,
+          "rmse": 1.8091573372439083,
+          "bias": 1.692295264881415,
+          "r2": -6.998910551909524,
+          "pearson": null,
+          "spearman": null
+        },
+        "synthetic_D_backbone": {
+          "n": 3,
+          "mae": 0.7002540757286315,
+          "rmse": 0.7089875840884489,
+          "bias": 0.7002540757286315,
+          "r2": -16.321195600339202,
+          "pearson": 0.8435894570742737,
+          "spearman": 0.4999999999999999
+        },
+        "standard20_control": {
+          "n": 712,
+          "mae": 1.5136474055572002,
+          "rmse": 1.8732823970777874,
+          "bias": -0.09485365375205985,
+          "r2": -0.01642344431375764,
+          "pearson": -0.045885403595907676,
+          "spearman": -0.06889684383215482
+        },
+        "all_annotated_NC": {
+          "n": 62,
+          "mae": 0.9846694729876141,
+          "rmse": 1.2945962339440302,
+          "bias": -0.06103504226778736,
+          "r2": -0.0552359160974194,
+          "pearson": -0.25807863458973074,
+          "spearman": -0.10848810655720185
+        }
+      },
+      "external_strata": {
+        "PTM": {
+          "n": 50,
+          "mae": 1.252074422110291,
+          "rmse": 1.3377834539664935,
+          "bias": 1.252074422110291,
+          "r2": -7.096103525352284,
+          "pearson": 0.13252422892525134,
+          "spearman": 0.04799654749262278
+        },
+        "standard_backbone_with_tag": {
+          "n": 112,
+          "mae": 1.0512785540739304,
+          "rmse": 1.1852601121890702,
+          "bias": 0.942623483559545,
+          "r2": -1.6557951094262888,
+          "pearson": 0.15544118039096116,
+          "spearman": 0.13086439262764457
+        },
+        "all_annotated_NC": {
+          "n": 50,
+          "mae": 1.252074422110291,
+          "rmse": 1.3377834539664935,
+          "bias": 1.252074422110291,
+          "r2": -7.096103525352284,
+          "pearson": 0.13252422892525134,
+          "spearman": 0.04799654749262278
+        }
+      },
+      "validation_only_candidate_selection": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "selection_loss": 1.4664765295074114,
+          "model_sha256": "07d5c579cbbef312285b0753bca836cf6c871adf38900eb60f4158be98b5f483",
+          "validation_predictions_sha256": "e76fd14d40ce392296b187b7be2354c90435c5fbd38b9c33655cafe14ab20b44"
+        },
+        {
+          "candidate": 1,
+          "selection_loss": 1.4864633402835818,
+          "model_sha256": "26ed91f68dfd9d4d9d1bcec09fdd1bc88e1eb6a41eb935dc77291c7c889b03c8",
+          "validation_predictions_sha256": "abcd2905d2ea7f126d59b9c91939c33fb0e89fa10f5646c0d2c1bb8530238c2e"
+        }
+      ],
+      "repeated_exact_effective_inputs_with_identical_predictions": 597,
+      "native16epochs72D_verified": true,
+      "raw_labels_IDs_seeds_and_orders_verified": true,
+      "test_prediction_sha256": "f1567ab011e9147234baf331c6ef7477786827c56833680d0d47a985d0ee1762",
+      "external_prediction_sha256": "adb155de281f055510bcfac5c8e4aba2d21e1679f4a10449d5dd942e137043cd",
+      "receipt_sha256": "6531c9f3b32322edffd453bbd09bc24a64406f0200a7e86a7a2ce7aaf966aa9e",
+      "scientific_worker_sha256": "7fce97ffea0be0a98f080dffccfa22fca392f0f92ba7e7ed1e0dc8666e6878bf",
+      "new_fit_or_forward_for_audit": 0
+    },
+    {
+      "seed": 8,
+      "run": "record-ref:peptide-four-task-benchmark-20261022/runs/interaction_continuation_swing_pKd_source_hash0_seed8_memo_v3",
+      "protocol": "memo-v3 exact-output/RNG pureperformance",
+      "metrics": {
+        "n": 774,
+        "mae": 1.4560796778449758,
+        "rmse": 1.821093876956397,
+        "bias": -0.11136343270132498,
+        "r2": -0.003943178576550688,
+        "pearson": 0.03603640840906254,
+        "spearman": 0.06292398752429143
+      },
+      "common_native6336_test_metrics": {
+        "n": 683,
+        "mae": 1.429645730103696,
+        "rmse": 1.7602994050660774,
+        "bias": -0.12154661995937482,
+        "r2": -5.050077034041145e-05,
+        "pearson": 0.0689846930931321,
+        "spearman": 0.09519846541154627
+      },
+      "external_profaff162_metrics": {
+        "n": 162,
+        "mae": 1.1060665396862774,
+        "rmse": 1.2289926969425045,
+        "bias": 1.0221268159041732,
+        "r2": -2.3271413788239683,
+        "pearson": -0.016928531829116328,
+        "spearman": 0.022054672377969077
+      },
+      "test_strata": {
+        "PTM": {
+          "n": 53,
+          "mae": 0.921094103035406,
+          "rmse": 1.2290794623723085,
+          "bias": -0.22622665554671315,
+          "r2": -0.049072030601194694,
+          "pearson": -0.026304772318135612,
+          "spearman": 0.09522318514770657
+        },
+        "synthetic_and_PTM": {
+          "n": 3,
+          "mae": 1.4919673759782528,
+          "rmse": 1.7508226533374183,
+          "bias": 0.21742361738439767,
+          "r2": 0.07847083894992468,
+          "pearson": 0.9284781942458833,
+          "spearman": 0.4999999999999999
+        },
+        "other_NC": {
+          "n": 3,
+          "mae": 1.4112154957468934,
+          "rmse": 1.5494244682460518,
+          "bias": 1.4112154957468934,
+          "r2": -4.867039127826985,
+          "pearson": null,
+          "spearman": null
+        },
+        "synthetic_D_backbone": {
+          "n": 3,
+          "mae": 0.6037907133527364,
+          "rmse": 0.6231066947138485,
+          "bias": 0.6037907133527364,
+          "r2": -12.379055063626923,
+          "pearson": 0.7410180720359218,
+          "spearman": 0.4999999999999999
+        },
+        "standard20_control": {
+          "n": 712,
+          "mae": 1.4995319697133442,
+          "rmse": 1.8622708635957443,
+          "bias": -0.11362721017739019,
+          "r2": -0.004509079170092356,
+          "pearson": 0.03162286220632072,
+          "spearman": 0.05594806265978164
+        },
+        "all_annotated_NC": {
+          "n": 62,
+          "mae": 0.9570791647759705,
+          "rmse": 1.2548409455401568,
+          "bias": -0.08536650426651153,
+          "r2": 0.00857869241394682,
+          "pearson": 0.11731929732501374,
+          "spearman": 0.20824845150175703
+        }
+      },
+      "external_strata": {
+        "PTM": {
+          "n": 50,
+          "mae": 1.2501127860781864,
+          "rmse": 1.339761883555433,
+          "bias": 1.248287562597962,
+          "r2": -7.120067665146257,
+          "pearson": -0.06510981257408316,
+          "spearman": -0.0806668701102239
+        },
+        "standard_backbone_with_tag": {
+          "n": 112,
+          "mae": 1.0417601796898894,
+          "rmse": 1.176178887059997,
+          "bias": 0.9211621968444462,
+          "r2": -1.6152546746547616,
+          "pearson": 0.02419942676218702,
+          "spearman": 0.06753028206865327
+        },
+        "all_annotated_NC": {
+          "n": 50,
+          "mae": 1.2501127860781864,
+          "rmse": 1.339761883555433,
+          "bias": 1.248287562597962,
+          "r2": -7.120067665146257,
+          "pearson": -0.06510981257408316,
+          "spearman": -0.0806668701102239
+        }
+      },
+      "validation_only_candidate_selection": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "selection_loss": 1.4706271559073354,
+          "model_sha256": "80fcaa94c5996e09edf78cbffaa69913cbdedeec0569409c396779543cd37814",
+          "validation_predictions_sha256": "d3b85de6f48d3e89305e162dfce8f20b1073dca23f638f96de2542a5f1f7ade0"
+        },
+        {
+          "candidate": 1,
+          "selection_loss": 1.4739451286542198,
+          "model_sha256": "696850fc19e9cab411471b6973a27d83602e027aafe61dff81a06892d69e47d5",
+          "validation_predictions_sha256": "9e50e920f17915e7b1460a7cf140f1c1fce76e60697a9a57a26898642cd212ae"
+        }
+      ],
+      "repeated_exact_effective_inputs_with_identical_predictions": 597,
+      "native16epochs72D_verified": true,
+      "raw_labels_IDs_seeds_and_orders_verified": true,
+      "test_prediction_sha256": "ab6bfe27d38b03ea8523594143dcaf5496a5b6611aeebaa95f6242234c60d569",
+      "external_prediction_sha256": "8b3c3d8f1dfe995662ce3ab51ee73ceb4297125a7c281412bf3fd0b3efc342d1",
+      "receipt_sha256": "187f39efe650b63ebd5a472fb544a11ee8561de578ab93ad21d378da4712a888",
+      "scientific_worker_sha256": "7fce97ffea0be0a98f080dffccfa22fca392f0f92ba7e7ed1e0dc8666e6878bf",
+      "new_fit_or_forward_for_audit": 0
+    },
+    {
+      "seed": 9,
+      "run": "record-ref:peptide-four-task-benchmark-20261022/runs/interaction_continuation_swing_pKd_source_hash0_seed9_memo_v3",
+      "protocol": "memo-v3 exact-output/RNG pureperformance",
+      "metrics": {
+        "n": 774,
+        "mae": 1.4741433444892011,
+        "rmse": 1.8372522737729773,
+        "bias": -0.07141558717826949,
+        "r2": -0.021838006640674923,
+        "pearson": -0.11293900966049669,
+        "spearman": -0.11472677630620584
+      },
+      "common_native6336_test_metrics": {
+        "n": 683,
+        "mae": 1.4458938484119086,
+        "rmse": 1.7772926579078334,
+        "bias": -0.08033325135783416,
+        "r2": -0.019451902904493723,
+        "pearson": -0.09154278404296434,
+        "spearman": -0.09915837637300658
+      },
+      "external_profaff162_metrics": {
+        "n": 162,
+        "mae": 1.1938193177078946,
+        "rmse": 1.3175802792134557,
+        "bias": 1.1193409171775097,
+        "r2": -2.8240787135810033,
+        "pearson": -0.1432472096785578,
+        "spearman": -0.11944916105524318
+      },
+      "test_strata": {
+        "PTM": {
+          "n": 53,
+          "mae": 0.9345357122456307,
+          "rmse": 1.2505159741840843,
+          "bias": -0.17939888941615778,
+          "r2": -0.0859851145909245,
+          "pearson": -0.24063185591130176,
+          "spearman": -0.09126575200317885
+        },
+        "synthetic_and_PTM": {
+          "n": 3,
+          "mae": 1.6842188993140275,
+          "rmse": 1.9662250795555036,
+          "bias": 0.23278317803299794,
+          "r2": -0.16222772390343465,
+          "pearson": -0.9802904987604681,
+          "spearman": -0.9999999999999998
+        },
+        "other_NC": {
+          "n": 3,
+          "mae": 1.4983627316172548,
+          "rmse": 1.6291954710417444,
+          "bias": 1.4983627316172548,
+          "r2": -5.486711051667361,
+          "pearson": null,
+          "spearman": null
+        },
+        "synthetic_D_backbone": {
+          "n": 3,
+          "mae": 0.6255239973493184,
+          "rmse": 0.655373187394057,
+          "bias": 0.6255239973493184,
+          "r2": -13.800553105053824,
+          "pearson": -0.9927304190986231,
+          "spearman": -0.9999999999999998
+        },
+        "standard20_control": {
+          "n": 712,
+          "mae": 1.516899212079749,
+          "rmse": 1.877162969854494,
+          "bias": -0.07421001833977937,
+          "r2": -0.02063892249229804,
+          "pearson": -0.10839169478364767,
+          "spearman": -0.1088152583174551
+        },
+        "all_annotated_NC": {
+          "n": 62,
+          "mae": 0.9831404779654878,
+          "rmse": 1.293472318324321,
+          "bias": -0.03932470029125242,
+          "r2": -0.053404485909725796,
+          "pearson": -0.20355093559238455,
+          "spearman": -0.05462462427915242
+        }
+      },
+      "external_strata": {
+        "PTM": {
+          "n": 50,
+          "mae": 1.3403214924227909,
+          "rmse": 1.423141788881448,
+          "bias": 1.3403214924227909,
+          "r2": -8.162220835025698,
+          "pearson": 0.016188171157184194,
+          "spearman": 0.06683002758982809
+        },
+        "standard_backbone_with_tag": {
+          "n": 112,
+          "mae": 1.1284165611387447,
+          "rmse": 1.2676195870919382,
+          "bias": 1.020688874657295,
+          "r2": -2.0377016060802218,
+          "pearson": -0.17721146025172424,
+          "spearman": -0.18350097166164825
+        },
+        "all_annotated_NC": {
+          "n": 50,
+          "mae": 1.3403214924227909,
+          "rmse": 1.423141788881448,
+          "bias": 1.3403214924227909,
+          "r2": -8.162220835025698,
+          "pearson": 0.016188171157184194,
+          "spearman": 0.06683002758982809
+        }
+      },
+      "validation_only_candidate_selection": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "selection_loss": 1.4740303789813047,
+          "model_sha256": "4875520b467977f6660041ad3436d9386f399e2f75742050e90afdaacc2eed82",
+          "validation_predictions_sha256": "781e92a8b2165c7ecdc296c1fba6041f751e7a311f21ad3b28a43b9efd52f6ea"
+        },
+        {
+          "candidate": 1,
+          "selection_loss": 1.4976711600917647,
+          "model_sha256": "ea10febf44d85b7c9043035ef42421ba3fe47db5c18925b268269d79095146fc",
+          "validation_predictions_sha256": "900c54788f09e425695eaf7df02707d5bda87f0fe4e413a7f846245169949bbc"
+        }
+      ],
+      "repeated_exact_effective_inputs_with_identical_predictions": 597,
+      "native16epochs72D_verified": true,
+      "raw_labels_IDs_seeds_and_orders_verified": true,
+      "test_prediction_sha256": "b547f7f68a047e0aad55df0555466507094badb291e6dc4c8dfbf0a06a8641ee",
+      "external_prediction_sha256": "7480433f4e04e3aa41eec6aa055108689f71f9fb6e2857da6e12e228656c5ed3",
+      "receipt_sha256": "d4b6fc70b95fe613ecd508822cabc0219e302cb3717de0a2e7738b94a6e9f149",
+      "scientific_worker_sha256": "7fce97ffea0be0a98f080dffccfa22fca392f0f92ba7e7ed1e0dc8666e6878bf",
+      "new_fit_or_forward_for_audit": 0
+    }
+  ],
+  "mean_sd_test": {
+    "bias": {
+      "mean": -0.11233444396046806,
+      "sd": 0.05091963045424215,
+      "valid_seeds": 10
+    },
+    "mae": {
+      "mean": 1.4673760060037986,
+      "sd": 0.011096874472033856,
+      "valid_seeds": 10
+    },
+    "pearson": {
+      "mean": 0.00477812454801792,
+      "sd": 0.06236727654254464,
+      "valid_seeds": 10
+    },
+    "r2": {
+      "mean": -0.01934981174440612,
+      "sd": 0.02243702184734551,
+      "valid_seeds": 10
+    },
+    "rmse": {
+      "mean": 1.8349149320858475,
+      "sd": 0.02010287467013164,
+      "valid_seeds": 10
+    },
+    "spearman": {
+      "mean": 0.003021309053421442,
+      "sd": 0.06344104141350332,
+      "valid_seeds": 10
+    }
+  },
+  "mean_sd_common_native6336": {
+    "bias": {
+      "mean": -0.1240071525108289,
+      "sd": 0.060315277029627516,
+      "valid_seeds": 10
+    },
+    "mae": {
+      "mean": 1.440665702403234,
+      "sd": 0.0102720113160827,
+      "valid_seeds": 10
+    },
+    "pearson": {
+      "mean": 0.01907364728129272,
+      "sd": 0.06492044244755553,
+      "valid_seeds": 10
+    },
+    "r2": {
+      "mean": -0.019005353959133754,
+      "sd": 0.02521328436227957,
+      "valid_seeds": 10
+    },
+    "rmse": {
+      "mean": 1.7767824399582917,
+      "sd": 0.02185106429281934,
+      "valid_seeds": 10
+    },
+    "spearman": {
+      "mean": 0.016144301262031695,
+      "sd": 0.06858397222613588,
+      "valid_seeds": 10
+    }
+  },
+  "mean_sd_external_profaff162": {
+    "bias": {
+      "mean": 0.9570623269457439,
+      "sd": 0.21195968605828291,
+      "valid_seeds": 10
+    },
+    "mae": {
+      "mean": 1.0710538965133636,
+      "sd": 0.13691202666110228,
+      "valid_seeds": 10
+    },
+    "pearson": {
+      "mean": 0.003972355762769453,
+      "sd": 0.07417364731939478,
+      "valid_seeds": 10
+    },
+    "r2": {
+      "mean": -2.2106983790832335,
+      "sd": 0.6044669991133316,
+      "valid_seeds": 10
+    },
+    "rmse": {
+      "mean": 1.2017517683575754,
+      "sd": 0.12181080087030655,
+      "valid_seeds": 10
+    },
+    "spearman": {
+      "mean": 0.010701442335125589,
+      "sd": 0.0625750260262109,
+      "valid_seeds": 10
+    }
+  },
+  "endpoint": "experimental pKd absolute, extra chemical state omitted by sequence backbone encoder",
+  "external_scope": "Domain backbone ProfAff162; exactpair0 alone does not guarantee source/construct/homology independence; no tuning on external labels",
+  "native_method_scope": "Original grammar/Doc2Vec16train/16infer/72D plus XGBRegressor continuous-output adaptation; not original SWING paper native affinity result",
+  "mixed_runtime_policy": "Startedv2 and exact-output/postRandomState replaymemo-v3 preserved separately, no fit/input/epoch/HPO change",
+  "auditor_sha256": "4d3447af9c659588b6a666511653a920de5fe674ca180543683a5e1f34a961b9",
+  "all20_route_manifest_sha256": "8cc9e206e7052f0f439323078d985eb5d55194ccbe15c44202a309dadaf0e305",
+  "new_fit_or_forward_for_audit": 0
+}

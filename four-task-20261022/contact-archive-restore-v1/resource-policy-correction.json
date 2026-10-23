@@ -1,0 +1,31 @@
+{
+  "schema": "fourtask.public-resource-accounting-correction.v1",
+  "at": "2026-10-23T12:51:42.563481+00:00",
+  "policy": "v5 true NVML memory.free admission",
+  "context_allowance_MiB": 512,
+  "external_growth_reserve_MiB": 6144,
+  "admission_minimum_true_free_formula": "declared_allocator_budget_MiB + 512 + 6144",
+  "legacy_low_use_candidate_limits": {
+    "used_memory_MiB_strictly_below": 12288,
+    "utilization_percent_strictly_below": 60,
+    "campaign_max_simultaneous_devices": 3
+  },
+  "root_independent_synthetic_retest": {
+    "passed": 27,
+    "failed": 0,
+    "model_or_GPU_contexts_created": 0,
+    "source_report_sha256": "c1beaa1e5db0a78d71d88b29a5fd97c35c09e580c65edb7df4094389f311a0db"
+  },
+  "source_policy_sha256": "72f220cf2909ce243eaa088fbd660f0ed8653bebdf4c23ed1b9d6b6630e83929",
+  "old_strict_true_physical_6GiB_certified": false,
+  "old_result_or_checkpoint_bytes_rewritten": false,
+  "meaning": "Older6GiB labels did not establish a strict physical-device6GiB peak bound. Old results stay preserved; v5 revises subsequent resource admission accounting.",
+  "platform_report_correction": {
+    "semantic_objects_equal": true,
+    "CRLF_to_LF_reproduces_prior_bytes": true,
+    "historical_reports_not_rewritten": true,
+    "source_erratum_sha256": "6261bcf89c119377acbd70310bc8caddeddae50117bbf8fc3d7159ef9ce5898f"
+  },
+  "actual_commandlines_device_or_process_identifiers_exported": false,
+  "this_package_calls_GPU_or_trains_models": false
+}
