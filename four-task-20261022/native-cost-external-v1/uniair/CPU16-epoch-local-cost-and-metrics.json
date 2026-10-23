@@ -1,0 +1,41 @@
+{
+  "schema": "fourtask.uniair.CPU16-epoch-local-verification-and-cost.v1",
+  "at": "2026-10-23T19:57:21.651002+00:00",
+  "passed": true,
+  "verified_local_members": 18,
+  "verified_local_bytes": 24835489,
+  "manifest_sha256": "37f6939b7ae7676592620896048f510a2f21465fc76369d5bdd9f758d30b71e4",
+  "E_mirror_receipt_sha256": "d94ed3df9e43448a398bca78a8bec658e5ab72cc6e54a8e15a70bf94fc384ff1",
+  "independent_audit_sha256": "9e9e0d4557b0dc8a771bd2108e122e8eddabca9aad36cceae3f1741fb4116a02",
+  "saved_tensor_audit_sha256": "b92bb721a900f57dcc1a4e541169fb5f2b228c32f6bb7c141fe03a44b9be6229",
+  "source_bindings": {
+    "protocol_sha256": "24c1997c170210aec58f8719f373ecb3c81f77efdba557c8535f8bc21ba9b38d",
+    "source_manifest_sha256": "cda395a15d6956b9542b9255d50e474f9cbab53207a2838a8cfacf811b7231b6",
+    "input_sha256": "ea2d44b99fdb82ff14d308f995a1a8c29ef06b943efdcf399b3bcd2dfc7abd4e",
+    "cache_sha256": "4ee51a0e159b291f19c29acf12c9fa3fea7b3220bb51ec7f2693c6e004906172"
+  },
+  "checkpoint_sha256": "c21b57f322fde81f19a7f71819bea118716e5c2b1abded0e7ae359862a068feb",
+  "validation_MAE": 1.5575887871691905,
+  "validation_MSE": 3.3528807010881527,
+  "validation_endpoint": "uncalibrated_author_DDG",
+  "cost_seconds": {
+    "whole_group": 7008.262449496426,
+    "startup_through_constructor_ready": 75.15872597694397,
+    "training_37_Adam_steps": 4937.812878847122,
+    "first_validation_63": 1003.6807804107666,
+    "after_first_validation_including_original_second_63_validation_and_cleanup": 991.6087968349457
+  },
+  "peak_RSS_bytes": 14805962752,
+  "prospective_CPU_formal_cost_only": {
+    "not_authorized_or_launched": true,
+    "no_promised_parallel_capacity": true,
+    "same_observed_cost_linear_30epoch_candidate_hours": 49.808771472374595,
+    "20_max30epoch_candidates_sequential_days": 41.507309560312166,
+    "existing_7200s_GPU_candidate_window_suitable_for_CPU30epochs": false,
+    "new_CPU_protocol_checkpoint_and_perjob_budget_review_required": true,
+    "CPU_cost_checkpoint_not_a_formal20_seed": true,
+    "estimate_assumes_constant_cost_without_claiming_future_early_stop_or_idle_CPUs": true
+  },
+  "original_GPU_formal20_unchanged": true,
+  "CPU_FP32_is_not_GPU_precision_equivalence": true
+}
