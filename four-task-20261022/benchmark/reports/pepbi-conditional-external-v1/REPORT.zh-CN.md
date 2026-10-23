@@ -41,3 +41,6 @@
 - `independent-recalculation.json`、`group-file-independent-audit.json`：独立复算；`local-delivery-index.json`：本地全部产物及继承权重定位与SHA。
 
 本轮新增固定模型应用100、训练模型0、已认证独立外测记录0。前一轮分类/接触结果及全项目generic训练完成数保持不变。
+
+
+后续输入核查发现3条AP2记录的蛋白输入与原文实体不符。原27条成绩保留；请同时参阅[输入勘误与27／24／PTPA4固定预测敏感性更新](https://github.com/cihebiyql/ppikb-noncanonical-peptide-affinity-benchmark/blob/main/four-task-20261022/pepbi-input-erratum-v1/勘误与敏感性更新.zh-CN.md)。该更新没有重新训练模型。

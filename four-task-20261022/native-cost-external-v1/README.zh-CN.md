@@ -12,3 +12,6 @@
 公开预测只保留原row_id/prediction和目录导出的panel/model/seed，移除原label及其他列；聚合CSV所有单元原值不变。原报告仅遮蔽一处实际进程ID，科学数值未改。原始数据、序列清单、完整合同/inventory、特征缓存、原权重和第三方全文不在本包。报告中的未附原路径是来源标识，访问控制以原资产许可为准。
 
 [DELIVERY-RECEIPT](external/DELIVERY-RECEIPT.json)、[双端独审](external/independent-fixed100-audit.json)、[Windows独审](external/independent-fixed100-audit.windows.json)、[来源审计](external/training-source-overlap-audit.json)均保留科学字段。原/公开SHA映射见 [SOURCE-MAPPING](SOURCE-MAPPING.json)，本轮只做准备、未上传的校验见 [VALIDATION](VALIDATION.json)和 [FILE-MANIFEST](FILE-MANIFEST.json)。
+
+
+后续输入核查发现3条AP2记录的蛋白输入与原文实体不符。原27条成绩保留；请同时参阅[输入勘误与27／24／PTPA4固定预测敏感性更新](https://github.com/cihebiyql/ppikb-noncanonical-peptide-affinity-benchmark/blob/main/four-task-20261022/pepbi-input-erratum-v1/勘误与敏感性更新.zh-CN.md)。该更新没有重新训练模型。
