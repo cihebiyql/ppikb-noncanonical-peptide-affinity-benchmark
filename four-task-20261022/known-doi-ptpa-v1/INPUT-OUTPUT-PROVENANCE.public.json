@@ -1,0 +1,66 @@
+{
+  "schema": "known-doi-PTPA4.public-input-output-provenance.v1",
+  "task": "absoluteaffinitypKd",
+  "implementation": "Stockscikit-learn1.4.2 baselines and self-authoredrun_heads.py;frozenESM640cache,noTorchorPLMforward in this panel",
+  "dependencies": {
+    "scikit-learn": "1.4.2",
+    "numpy": "1.26.4",
+    "joblib": "1.5.3"
+  },
+  "source_code_sha256": "abc176f73ca6bfc5128ef273e37795ef4ec25c3624dd1e6980af149dac272f74",
+  "feature_adapter_sha256": "5502c37b4f958ca2b8af8e79bd44d68911b515dd4a24aae16695c1c5ae2ace24",
+  "feature_version": "frozen-official-esm2-t6-8M-layer6-mean-raw20-v1",
+  "feature_cache": {
+    "logical_name": "frozen-features.npz:not distributed",
+    "sha256": "e332efa87b0986e2a7258fc5947145c593dce094a48e847c7e7fa39a56492326",
+    "shape": [
+      6314,
+      640
+    ]
+  },
+  "feature_cache_sources": [
+    {
+      "logical_name": "feature-cache-cpu-v3/embeddings.npz",
+      "sha256": "a097ddfc203868fa299e4f25dcf01570f0f189de7d5ba4fcc054923417b3179f"
+    },
+    {
+      "logical_name": "plm-pepbi-external-fixed-v1/reused6-CPU-means.npz",
+      "sha256": "29ed8870214a25061061587bc274702567ec73e439a2e187ed751cf1a5a509d5"
+    },
+    {
+      "logical_name": "feature-cache-missing19-gpu-v1/embeddings.npz",
+      "sha256": "710d6d8a46c734946abfac238b5d0b3772570901db78ed39a53306177000f513"
+    }
+  ],
+  "input_views": [
+    {
+      "id": "known_doi_source_PTPA4_v1",
+      "sha256": "acf4c5763f237957ee075aeb2cd34c343f3e17254f95cce9cab64ed4ffb8a980",
+      "endpoint": "pKd",
+      "distributed": false
+    },
+    {
+      "id": "known_doi_target_PTPA4_v1",
+      "sha256": "3d00500529c41d273c6d7f31147dd78599c55180e8e3f045a3eabd115b014cb6",
+      "endpoint": "pKd",
+      "distributed": false
+    }
+  ],
+  "protocol_source_sha256": "c07e9c7ab04aa1ae465cf8c4d5fbbcddc5fa979cd7374cc96c0350527bb9f9a7",
+  "source_delivery_sha256": "6bc47eabf8554cf274edbe5c2ce504daa9b7337b4b14b505d8b92c6b53374860",
+  "old1050_main_CSV_sha256_unchanged": "60f29ff73f66845f580d4f13e0d9abc88717d30192b68c7765f6afadf7e1b447",
+  "checks": {
+    "independent_metric_cells_each_environment": 268800,
+    "meanSD_cells": 1080,
+    "training_only_scaler_candidates": 40
+  },
+  "aggregate_training_resources": {
+    "CPU_threads": 2,
+    "GPU": 0,
+    "elapsed_seconds_reported": 340.34,
+    "peak_RSS_MiB_reported": 372.8
+  },
+  "new_PLM_forwards": 0,
+  "packaging_new_fits": 0,
+  "raw_inputs_labels_features_not_distributed": true
+}

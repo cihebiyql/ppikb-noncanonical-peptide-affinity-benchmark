@@ -1,0 +1,124 @@
+{
+  "schema": "known-DOI-PTPA4-supplementary-benchmark.protocol.v1",
+  "prepared_at": "2026-10-23T22:09:43.643153+00:00",
+  "external_preregistered_row_ids": [
+    "pepbi-ctx-d84e2ff1246a49a1f2a3888c",
+    "pepbi-ctx-b1a6d293886ee5601daa7077",
+    "pepbi-ctx-fe648c7b9e7384c612aeb2ee",
+    "pepbi-ctx-2e5933cfc5a035fc085fdb86"
+  ],
+  "external_candidate_authority_sha256": "e2123665d9b524ae17e0817a53fd31e409f495bab43ba5e9737fb44d349ac71d",
+  "external_four_publication_DOIs_excluded": [
+    "10.1016/j.jmb.2007.10.050",
+    "10.1038/sj.emboj.7600445",
+    "10.1073/pnas.1708852114",
+    "10.1515/hsz-2014-0106"
+  ],
+  "same_original_split_no_row_reassignment": true,
+  "filter_order": [
+    "unknown_DOI",
+    "external4DOIs",
+    "exactexternal observationID/inputpair",
+    "remove train inputpairs also in originalval/test; removevalpairs also in originaltest"
+  ],
+  "external_selection_or_tuning_forbidden": true,
+  "external_threshold_tuning": false,
+  "selection": "originalvalidationMAE only; candidate0 tie",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "model_families": [
+    "constant",
+    "linear",
+    "random_forest",
+    "extra_trees",
+    "hist_gradient_boosting"
+  ],
+  "same_original_HPO_grid": true,
+  "max_selected": 100,
+  "max_candidate_fits": 200,
+  "new_PLM_forwards": 0,
+  "fit_old_models_again": false,
+  "external_n": 4,
+  "external_groups": {
+    "study": 1,
+    "protein": 1
+  },
+  "prior_external_test_exposure_disclosed": true,
+  "source_independence_axes": "known experimentalDOI and exactinput/observation exclusions; does not establish targetfamilycold or absence of PLM sequencepretraining",
+  "assay_buffer_shift_allowed_for_absolute_affinity": true,
+  "no_innovation_architecture": true,
+  "old_data_weights_results_unchanged": true,
+  "external_candidate_authority_reference": "Registered four PTPA row_ids and authority SHA;rawcandidate input is not distributed",
+  "this_publication_step_new_fits": 0,
+  "HPO_grid": {
+    "constant": [
+      {
+        "strategy": "mean"
+      },
+      {
+        "strategy": "median"
+      }
+    ],
+    "linear": [
+      {
+        "alpha": 0.1
+      },
+      {
+        "alpha": 10.0
+      }
+    ],
+    "random_forest": [
+      {
+        "n_estimators": 48,
+        "max_depth": 8,
+        "min_samples_leaf": 3
+      },
+      {
+        "n_estimators": 64,
+        "max_depth": 14,
+        "min_samples_leaf": 2
+      }
+    ],
+    "extra_trees": [
+      {
+        "n_estimators": 48,
+        "max_depth": 8,
+        "min_samples_leaf": 3
+      },
+      {
+        "n_estimators": 64,
+        "max_depth": 14,
+        "min_samples_leaf": 2
+      }
+    ],
+    "hist_gradient_boosting": [
+      {
+        "max_iter": 60,
+        "max_leaf_nodes": 15,
+        "learning_rate": 0.05
+      },
+      {
+        "max_iter": 90,
+        "max_leaf_nodes": 31,
+        "learning_rate": 0.1
+      }
+    ]
+  },
+  "implementation_details": {
+    "linear": "StandardScaler fitted on training rows only + Ridge(solver=lsqr,tol=1e-4,max_iter=1000)",
+    "forests": "random_state=seed,n_jobs=2,max_features=sqrt",
+    "HGB": "random_state=seed,early_stopping=False;original frozen validation selects candidate",
+    "source_code_sha256": "abc176f73ca6bfc5128ef273e37795ef4ec25c3624dd1e6980af149dac272f74",
+    "scaler40_verified_training_only": true
+  }
+}
