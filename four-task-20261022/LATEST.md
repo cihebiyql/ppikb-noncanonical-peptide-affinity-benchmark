@@ -10,3 +10,5 @@
 |[SWING亲和力模型本地交付闭环](artifact-delivery-v1/README.zh-CN.md)|本批新增收据；截至12:53UTC，source10＋target10共43,372,437,689字节全部本地SHA及Windows独审通过；这不代表43GB已公开上传。|
 |[历史接触坐标归档恢复补充](contact-archive-restore-v1/README.zh-CN.md)|本批准备的独立固定HTTP来源工具；旧HTTPS锁不改，发布状态以本批提交/发布收据为准；本轮没有重下载691MB。|
 |[共同测试集亲和力比较 v3](common-affinity-v3/README.zh-CN.md)|本批新增；固定 source683/target946、27方案/面板×10种子共540次已存预测评分；49320数值检查0错误，训练覆盖差异单列。|
+|[DTA 300候选权重Release](https://github.com/cihebiyql/ppikb-noncanonical-peptide-affinity-benchmark/releases/tag/four-task-20261022-dta-candidates-v1)|已发布并核验19项资产、4,405,802,642字节；DTA候选权重交付。|
+|[最新进展补充 v4](progress-v4/README.zh-CN.md)|UniAIR原B8首完整epoch已审37 Adam步，正式20候选仍prepare-only；SWING30种子科学/本地闭环，PDZ2026可用标签0。|
