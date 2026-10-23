@@ -1,0 +1,69 @@
+# PEPBI外测资格审计：27个条件候选，0条已认证独立集
+
+本轮逐行保留329条原始记录，完成结构副本、温度、构建体、序列输入和来源重叠审计。已冻结27行标准序列视图候选，接口可对应既存5类×10种子×2个PPIKB面板的100个固定模型。尚未执行任何模型；候选不冒充blind、跨家族或非天然核心残基外测。
+
+## 数据行究竟代表什么
+
+|统计单位|实际数量|解释|
+|---|---:|---|
+|工作簿结构模型行|329|保留完整原序列、温度、单位、化学/构建体注释及全部原值|
+|PEPBI Complex Name|181|不是独立测量数，部分同名体系在多个温度下测量|
+|序列对×温度×Kd情境|188|另保留来源DOI与binding-site；有141个额外结构副本行|
+|唯一蛋白完整构建体序列×肽序列|147|固定序列模型的独立输入标识|
+|同一序列输入对应多个Kd|35个输入/76个情境|31组仅位点不同，2组仅温度不同，1组同温同位点条件未充分区分，1组温度/位点及未区分条件均变化|
+|binding groups / 原始ITC DOI|32 / 22|通过原描述论文Table1精确关联；不是32个独立蛋白家族|
+
+188个情境内，实验元数据、标签和不确定度一致，变化只涉及晶体copy/结构模型与计算属性，才折叠141个结构副本。标签未取平均，原329行仍可逐项追溯。35个多Kd输入未被强行压成一个标签；当前未包含温度/位点的固定序列接口将它们隔离。
+
+## 序列、化学与单位
+
+329条肽序列和蛋白序列都由标准20AA字符组成；这证明的是输入字母表，不是每个实验化学实体都已认证为未修饰线性肽。原表His-tag174行、GST-tag12行、X143行；X保留为未报告，不能解释为没有标签。完整构建体序列按原表保留，不裁掉标签或换成UniProt参考序列。源字段没有完整SMILES及逐残基端帽/PTM化学身份，本资源作为标准序列对照，不能增加已认证NC核心/PTM样本量。
+4行蛋白长度字段与实际序列长度冲突：Excel3（Fyn SH3）及28–30（APC）。两种长度和原序列均保留，候选资格隔离，不依据长度去裁剪或补残基。
+
+Kd列单位为M，派生pKd只做−log10(Kd[M])。末行Excel331的1.000016M与其CalculatedΔG不满足RT·ln(Kd)身份；其他328行在0.05 kcal/mol容差内。此检查是内部一致性检查，不是独立实验验证。回溯原文Table2第5页，TtSlyDΔIF–S3为34.25±3.40 μM、25°C；换算3.425e−5M与该行CalculatedΔG相符。原值未改，新值仅写入[primary-unit-discrepancy.json](primary-unit-discrepancy.json)供复核，当前候选未使用修正值。[原始数据论文](https://link.springer.com/content/pdf/10.1186/s12915-016-0300-3.pdf)
+
+本轮没有按非人来源删数据。Thermus thermophilus等非人体系保留原信息；未知物种仍标未知。TolB–ColE9的5个结构行按毒素相关情境登记隔离，ClpV–VipB的6行标scope-sensitive待owner确认，不纳模型候选。人源Tat-SF1不会因其名称中涉及HIV而被误排。
+
+## 与当前来源的真实交集
+
+|来源|本轮实际覆盖|PEPBI原329行交集|
+|---|---|---|
+|PPIKB全原记录|21845行全部登记；按既定显式病毒/命名毒素政策隔离1678，比较20167|exact pair3；靶序列直接包含41；同原始ITC DOI197；参考PDB185|
+|PepAffDB作者原表|12个CSV，21102次跨fold出现，按原行内容去重3632；当前使用3620另核|exact pair3；靶序列直接包含31|
+|PepInter作者原表|12个CSV，83354次出现，内容去重17054|exact pair3；靶序列直接包含191|
+|PPIKB接触64结构|8625残基，单独按64个复合物核对|12个情境有靶包含、11个情境有PDB重叠，候选27不受新增排查影响|
+|ProfAff完整XLSX|70479矩阵行；5844显式viral PBM只登记，64635其余行均比较；14个旧名称据既存冻结HU序列映射，缺域序列0|exact pair与直接包含均0；不是家族/预训练独立证明|
+
+PepAff/PepInter原CSV缺逐条DOI和结构ID，因此其DOI/PDB交集为unknown，不能用0冒充无交集。靶序列检查为精确/完整子序列关系，未代替同源家族与预训练暴露审计。所有监督CSV成员SHA和原始出处已冻结，未只比较目前的过滤子集。
+
+ProfAff另发现一个分母差异：完整矩阵70479行中，COMP pKd非空65157（正值18332、零值46825），缺失5322；原文报告65151测量。唯一PDZ–PBM对也为70479，没有重复对能解释这6行差异，本轮保留未解。零和缺测没有转成新的不结合标签。详见ProfAff-count-denominator-independent-audit.json。
+
+## 27行候选的资格
+
+|binding group|独特候选输入|
+|---|---:|
+|PTPA – PP2A Catalytic Subunit|4|
+|Profilin IIa – VASP|2|
+|Profilin IIa – mDia1|2|
+|SH3 STAC – CaV1.1|5|
+|α-adaptin – Motif Peptide|14|
+
+共27个唯一序列输入、13个蛋白构建体、12条肽、4篇ITC论文，对应原65个结构模型行。筛选使用已冻结元数据规则，没有读取模型预测或按性能挑例。排除了长度/热力学未解冲突、同输入多Kd、scope隔离以及已知exact pair、靶包含、源DOI、PDB暴露。排除理由可重叠，不能把各列数量相加解释为删行数。
+这些记录有真实的Table1出处、原表完整构建体、温度和Kd数值，因此可作为**条件外测候选**。全部仍带missing_source_context：尚未逐项闭合原始测定表格单元与缓冲液、完整端基/化学身份，以及所有方法的同源/预训练暴露。所以已认证独立外测为0行。文件certified-independent-external.csv明确为空，不隐藏这一缺口。
+
+## 固定模型接口准备
+
+候选字段符合原固定CPU接口所需row_id/source/split/双方sequence/label/endpoint/group_id；split全为external、endpoint全为pKd。逐行ID、全原记录谱系、温度、标签单位与资格侧车齐全。使用同一冻结手工特征函数得到27×174有限数组，27行输入全部覆盖。改变label、Kd、温度列不会改变特征，确认它们没有进入序列特征。
+已按字节核对既存100个选中权重及两个训练合同，任务、pKd端点、特征版本和174维一致。没有反序列化模型、没有fit/forward。候选manifest状态故意设为prepared_only_not_authorized_for_execution；要实际外测需另行冻结执行合同，不能把准备完成计作100个外测结果。
+后续若运行，应报告10种子结果并保留逐ID预测，同时给出按4篇来源、5个bindinggroup的宏汇总。27行不是27个独立生物体系；种子间SD不等于跨体系置信度，不能由此声称跨家族或NC泛化。
+
+## 主要文件
+
+- [冻结候选CSV](conditional-sequence-external-candidates.csv)与[候选manifest](conditional-view-manifest.json)。
+- all329-row-audit.csv/json：每行全原字段、单位、长度和化学/构建体注释。
+- all188-measurement-contexts.csv/json、copy-collapse-independence-audit.json、sequence-pair-multilabel-dependencies.json：副本与条件依赖。
+- binding-group-source-map.json、raw/table1-primary.xml：32group到22个原ITC DOI的精确映射。
+- all329-cross-source-overlap.csv/json、比较来源coverage及原archive成员SHA：逐行交集。
+- context-qualification-and-exclusions.csv/json：188情境的纳排规则与missing_source_context。
+- fixed-model-interface-and-inputcoverage.json、manual-feature-preparation.npy：准备接口与100固定权重引用。
+- VALIDATION.json、DELIVERY-MANIFEST.json：实物与一致性核验。

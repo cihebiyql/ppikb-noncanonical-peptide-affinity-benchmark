@@ -1,0 +1,17 @@
+source,task,usable,status,limits
+PPIKB,absolute_affinity,"9116 pKd observations, two fixed panels;1996 NC/PTM annotations",supported,NC/PTM strata separate;chemical annotations versus graph conflict flags retained;two panels are same observations
+PPIKB,change_effect,2289 metadata-silver delta-pKd pairs,conditional_silver,same-condition/manual-source gold and broad cross-target four-cell coverage unproven
+PPIKB,interaction_binary,0 frozen independently measured negative cohort,not_supported_current_labels,missing affinity observations are not nonbinding negatives
+PPIKB,contact_site,8625 observed-residue labels from64 referenced experimental complexes;45 Xray+19 solutionNMR,supported_standard_only,5A first-model heavyatom geometry;3complex pilot subset is not external;not all reference-protein residues
+UniAIR/HER2,absolute_affinity,419 original Kd(nM) mapped rows;strict-local293/63/63 derivative,supported_auxiliary_PPI,"Fab-protein,one WT/target context;not short peptides;not independent from DDG cohort"
+UniAIR/HER2,change_effect,419 uncalibrated authorDDG;strict local419 same source,supported_author_scale_only,physical unit/sign uncertified;419 fold0 inference is not10seed training;pretrain exposure partlyunknown
+UniAIR/HER2,interaction_binary,0 frozen general peptide binding classification task,not_supported_current_task,mutation recognition effects/binder collections do not supply this task negative gold
+UniAIR/HER2,contact_site,0 frozen experimental contact benchmark,not_supported_current_labels,author modeled mutant coordinates/interface input are not experimental residue-contact truth
+PepAffDB/PepInter,absolute_affinity,3620 author mixed-pAffinity records,separate_mixed_endpoint_task,do not rename Kd or pool with PPIKB pKd;native common mixed-endpoint benchmark still incomplete
+PepAffDB/PepInter,change_effect,0 frozen matched-effect gold,not_supported_current_labels,absolute row subtraction alone does not establish comparable mutation effects
+PepAffDB/PepInter,interaction_binary,17054 author classification records;method coverage differs,supported_constructed_negatives,author Rosetta/sequence negatives not all experimentally measured nonbinding;SWING eligible15468/test2362;native PepInter partial coverage15389 prepared
+PepAffDB/PepInter,contact_site,0 frozen residue-contact labels,not_supported_current_labels,attention explanations cannot substitute for supervised contact validation
+ProfAff/PDZ,absolute_affinity,162 directFP;17136 HU points (16918standard-core+218PTM projected);default HU16806 contexts/16772 inputs,supported_conditional_external,FP/HU separate calibration endpoints;112 subset of162;218domains indefault;full2022fusion unverified;source already used
+ProfAff/PDZ,change_effect,42 directFP PTM delta-pKd external pairs,supported_conditional_PTM_external,shares base162 measurements;not broad noncanonical-core or target-family external evidence
+ProfAff/PDZ,interaction_binary,0 reliable negative gold;42432 HU censored+5067 unmeasured retained,not_supported_as_binary_gold,do not map zeros/detection-limit records to noninteractions
+ProfAff/PDZ,contact_site,0 contact-label view,not_supported_current_labels,domain sequences/affinity matrices do not supply contact truth

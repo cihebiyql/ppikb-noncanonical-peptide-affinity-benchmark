@@ -1,0 +1,32 @@
+{
+  "schema": "peptide-four-task-definitions.v1",
+  "seeds": [0,1,2,3,4,5,6,7,8,9],
+  "selection_policy": "Fit preprocessing/train parameters on train only; choose hyperparameters/checkpoints on validation only; freeze once before scoring test/external. Fixed split across training seeds.",
+  "sources": ["PPIKB", "UniAIR", "PepAffDB_PepInter", "ProfAff_PDZ2022"],
+  "tasks": {
+    "absolute_affinity": {
+      "gold": "Experimental exact Kd with resolved concentration unit; pKd=-log10(Kd/M). Ki/IC50 and author mixed pAffinity are separate endpoints.",
+      "metrics": ["MAE", "RMSE", "Pearson", "Spearman", "R2", "group_macro_MAE", "bias"],
+      "prohibited": ["Predicted affinity as experimental label", "Censored bound as point value", "IC50 relabelled Kd"]
+    },
+    "modification_effect": {
+      "gold": "Within-comparable-condition observed WT/mutant pair; retain source observations and shared-reference dependencies. Delta-pKd=mutant minus WT, positive strengthens; DDG sign and unit follow separately verified source.",
+      "metrics": ["MAE", "RMSE", "Pearson", "Spearman", "group_macro_MAE", "direction_accuracy_outside_declared_noise_band"],
+      "prohibited": ["Mix DDG and delta-pKd unconverted", "Pair before source-observation split", "Zero placeholder treated measured no-effect", "Infer independent measurement from graph-neighbour relation alone"]
+    },
+    "interaction_classification": {
+      "gold": "Author experimental binary, assay-censored nonbinding, structure-derived positive/sampled-negative, and affinity-threshold-derived binary remain different tracks. Threshold derived labels require predeclared cutoff and assay scope.",
+      "metrics": ["AUROC", "AUPRC", "MCC", "F1", "balanced_accuracy", "Brier", "positive_prevalence", "group_macro_AUPRC"],
+      "prohibited": ["Missing edge means nonbinding", "Measurement zero sentinel means certain negative", "Class threshold selected on test"]
+    },
+    "contact_site": {
+      "gold": "Observed experimental complex coordinate-derived residue contact, minimum non-hydrogen atom distance <=5 angstrom unless a separately named track declares another rule. Preserve chain mapping, unresolved residues and source PDBs.",
+      "metrics": ["residue_AUPRC", "residue_AUROC", "MCC", "F1", "complex_macro_AUPRC", "complex_macro_F1"],
+      "prohibited": ["Predicted structure contacts called experimental", "Unresolved coordinate residues marked negative", "True peptide coordinates/contact features fed to sequence-only site predictor", "Attention map called verified binding site"]
+    }
+  },
+  "chemical_strata": ["standard20", "nonproteinogenic_D_backbone", "PTM", "mixed", "other_nonstandard", "unresolved"],
+  "statistical_units": "Preserve repeated assays and shared WT. Confidence intervals/group summaries should reflect source/mother/target rather than treating paired expansions as independent. Seed SD measures fitting variability only.",
+  "external_policy": "A resource can be training augmentation or external test in a given track, not both. Audit study DOI/PMID, chemical identity, target construct/homology, pair/PDB and published checkpoint exposure. Do not certify external independence from database name alone.",
+  "comparison_policy": "Evaluate every method on its actual admissible track. All-common-subset and per-method coverage are both required when exclusions differ. Native task reproduction, common-data training, head adaptation and released-output reanalysis are separate labels. Unsupported combinations must stay visible."
+}

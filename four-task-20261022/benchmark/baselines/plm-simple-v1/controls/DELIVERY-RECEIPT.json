@@ -1,0 +1,119 @@
+{
+  "schema": "plm.matched-cohort.manual-control-delivery.v1",
+  "status": "complete",
+  "completed_at": "2026-10-23T04:55:34.098457+00:00",
+  "additional_selected_scientific_runs": 150,
+  "additional_candidate_fits": 300,
+  "separate_training_row_canary_fits": 30,
+  "candidate_weights_local": 300,
+  "training_views": 3,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "prediction_sets": {
+    "selected_test": {
+      "files": 150,
+      "calculation_rows": 100800
+    },
+    "selected_validation": {
+      "files": 150,
+      "calculation_rows": 101400
+    },
+    "candidate_validation": {
+      "files": 300,
+      "calculation_rows": 202800
+    }
+  },
+  "mirrored_files": 1519,
+  "mirrored_bytes": 222578049,
+  "independent_numeric_checks_remote": 316150,
+  "independent_numeric_checks_local_repeat": 316150,
+  "independent_differences": 0,
+  "paired_runs": 150,
+  "paired_prediction_calculation_rows": 100800,
+  "independent_paired_checks": 41895,
+  "paired_differences": 0,
+  "constant_prediction_rows_identical": 20160,
+  "matched_test_rows_removed": 0,
+  "p_values_reported_or_used_for_selection": 0,
+  "same_raw_input_train_validation_test_and_runtime_versions": true,
+  "known_recipe_differences": [
+    "Original manual Ridgeauto vs ESM LSQR",
+    "Original manual435D vs ESM960D effect layout"
+  ],
+  "pure_encoder_causal_claim": false,
+  "new_paper_full_reproductions": 0,
+  "gpu_used": false,
+  "cpu_affinity": [
+    25,
+    30
+  ],
+  "reserved_siblings": [
+    57,
+    62
+  ],
+  "cpu_slots_released": true,
+  "scientific_process_pid": 306167,
+  "exit_code": 0,
+  "all_owned_scientific_group_terminal": true,
+  "old_full_manual_and_ESM_tracks_modified": false,
+  "contracts": [
+    {
+      "view_id": "ppikb_kd_source_cold_scope_v2_esm2_raw20_len2048",
+      "control_sha256": "781166f02125c66dd8e23066047e5ab2f9becdeeae1d5b06987c5159b309c6b6",
+      "esm_contract_sha256": "7457961ed622c6cc2d5d8c7070d452afa69759c9fa08c2cbfd0207a330d3a857",
+      "input_sha256": "88dfc56bd01b0e6fb2c10fec7e701dc9edb78edb09a93a927b88fb2ba047fb12",
+      "split_counts": {
+        "train": 5890,
+        "validation": 771,
+        "test": 758
+      },
+      "manual_feature_dimensions": 174
+    },
+    {
+      "view_id": "ppikb_kd_target_cold_scope_v2_esm2_raw20_len2048",
+      "control_sha256": "6efe6dadf822b30b00f13fb3c4521531f9c4c64f7b783cffe176312355939609",
+      "esm_contract_sha256": "a4e0121a30148274d81929aec303236cd81ca17356bafc72cbb5eb3c6ec43a95",
+      "input_sha256": "bc4cafae15675d62c62707f8df61f0171b8a60e43cf74fc2da7022abffd453d1",
+      "split_counts": {
+        "validation": 1087,
+        "test": 1129,
+        "train": 5203
+      },
+      "manual_feature_dimensions": 174
+    },
+    {
+      "view_id": "ppikb_effect_metadata_silver_source_cold_esm2_raw20_len2048",
+      "control_sha256": "7c02878a1e22029118ca696df04ce61717fc681ea1653b47f00090ce16513945",
+      "esm_contract_sha256": "0d6d4d5fea20da650b3336034d00d4f5506b7602cc392cc2d74fff3dfeeb9335",
+      "input_sha256": "83cbc2f4aff951eb27fff115dffd37fc096dba563a05fa2b66e252b24e95849b",
+      "split_counts": {
+        "validation": 170,
+        "test": 129,
+        "train": 1923
+      },
+      "manual_feature_dimensions": 435
+    }
+  ],
+  "reports": {
+    "baselines\\plm-simple-v1\\controls\\RESULTS.md": "2ace778cd5bdf8942086754aeeba60627027dd6b852c4163f181624124744e79",
+    "baselines\\plm-simple-v1\\controls\\comparison-protocol.json": "b03e22f3f0b750fd07ed2004d9df67cb84cbe8f964570ee16c628d82cd3c6921",
+    "baselines\\plm-simple-v1\\controls\\execution-contract.json": "6a726c75685f93eca84a583b949d6561956c90dd2b688e8dad102aaf756baaf6",
+    "baselines\\plm-simple-v1\\controls\\local-mirror-receipt.json": "bbab75b8c23c3dbaf29522c8ae3fbc5621c1545f735475dac01bf0e2db4c7eae",
+    "runs\\plm-cohort-manual-controls-v1\\independent-recalculation.json": "a235365dc555b69a58c3c3591846dbf1cd026b588ae214bfb5ec501c786a3cba",
+    "runs\\plm-cohort-manual-controls-v1\\independent-recalculation.local-v1.json": "5a04ecf2f5e69a17f011a9533d1dad7a178f24e1d46740e15c6da77126bd8cfa",
+    "runs\\plm-cohort-manual-controls-v1\\paired-with-esm\\comparison-receipt.json": "648e93ce57e959364c5e07a4a8a5ba2a24643d925c7711cedf1d730f448114dc",
+    "runs\\plm-cohort-manual-controls-v1\\paired-with-esm\\independent-recalculation.json": "127d29c5732988edf60c0e638b7e1f41be88c4a77c1bf10c765ffe9d5e81d817"
+  },
+  "new_fit_or_forward_during_pair_scoring": 0,
+  "delivery_code_sha256": "d8dfd29d417d1560310b2bafcbd0ad732c4763f94e7aa3172457475341ccc17d"
+}

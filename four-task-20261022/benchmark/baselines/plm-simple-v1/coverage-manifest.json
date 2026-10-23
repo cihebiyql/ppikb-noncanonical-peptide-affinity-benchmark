@@ -1,0 +1,217 @@
+{
+  "schema": "frozen-esm2.raw-input-coverage.v1",
+  "parent_manifest_sha256": "09be156624350725201177baccc34b83d7e41642e546c279f281708b917bb4a4",
+  "raw_parent_observation_sha256": "f4098978e997024c36b2ed72ac5abb37fab1cdf1b0abc25fd28a842edba140ad",
+  "views": [
+    {
+      "id": "ppikb_kd_source_cold_scope_v2_esm2_raw20_len2048",
+      "task": "affinity",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-simple-v1\\inputs\\ppikb_kd_source_cold_scope_v2_esm2_raw20_len2048.csv",
+      "sha256": "88dfc56bd01b0e6fb2c10fec7e701dc9edb78edb09a93a927b88fb2ba047fb12",
+      "status": "ready",
+      "label_column": "label",
+      "split_column": "split",
+      "group_column": "group_id",
+      "endpoint": "pKd",
+      "source": "PPIKB",
+      "rows": 7419,
+      "split_counts": {
+        "train": 5890,
+        "validation": 771,
+        "test": 758
+      },
+      "stratum_counts": {
+        "other_NC": 37,
+        "PTM": 366,
+        "synthetic_and_PTM": 90,
+        "synthetic_D_backbone": 28,
+        "standard20_control": 6898
+      },
+      "split_policy": "source_peptide_dependency_cold",
+      "original_eligible_rows": 9619,
+      "scope_excluded_rows": 503,
+      "canonical_sequence_only": false,
+      "smiles_available": true,
+      "external_test": false,
+      "notes": "New run inputs; old predictions never imported. Fixed source-cold and target-cold panels test different dependencies, not simultaneous double cold.",
+      "metadata_sidecar": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\data\\ppikb_preserved_input_metadata.jsonl",
+      "metadata_sidecar_sha256": "46b29dd1b656a792ddafb5b03276a9dd1210695b9f18f29ef757adec3a124a7f",
+      "parent_view_id": "ppikb_kd_source_cold_scope_v2",
+      "parent_input_sha256": "f4098978e997024c36b2ed72ac5abb37fab1cdf1b0abc25fd28a842edba140ad",
+      "chemical_identity_encoded": false,
+      "coverage_rule": "Exact raw uppercase AA20 sequences; no normalization, projection or truncation. Max2048residues explicit compute budget.",
+      "coverage_path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-simple-v1\\inputs\\ppikb_kd_source_cold_scope_v2_esm2_raw20_len2048.coverage.json"
+    },
+    {
+      "id": "ppikb_kd_target_cold_scope_v2_esm2_raw20_len2048",
+      "task": "affinity",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-simple-v1\\inputs\\ppikb_kd_target_cold_scope_v2_esm2_raw20_len2048.csv",
+      "sha256": "bc4cafae15675d62c62707f8df61f0171b8a60e43cf74fc2da7022abffd453d1",
+      "status": "ready",
+      "label_column": "label",
+      "split_column": "split",
+      "group_column": "group_id",
+      "endpoint": "pKd",
+      "source": "PPIKB",
+      "rows": 7419,
+      "split_counts": {
+        "validation": 1087,
+        "test": 1129,
+        "train": 5203
+      },
+      "stratum_counts": {
+        "other_NC": 37,
+        "PTM": 366,
+        "synthetic_and_PTM": 90,
+        "synthetic_D_backbone": 28,
+        "standard20_control": 6898
+      },
+      "split_policy": "target_reference_homology_cold",
+      "original_eligible_rows": 9619,
+      "scope_excluded_rows": 503,
+      "canonical_sequence_only": false,
+      "smiles_available": true,
+      "external_test": false,
+      "notes": "New run inputs; old predictions never imported. Fixed source-cold and target-cold panels test different dependencies, not simultaneous double cold.",
+      "metadata_sidecar": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\data\\ppikb_preserved_input_metadata.jsonl",
+      "metadata_sidecar_sha256": "46b29dd1b656a792ddafb5b03276a9dd1210695b9f18f29ef757adec3a124a7f",
+      "parent_view_id": "ppikb_kd_target_cold_scope_v2",
+      "parent_input_sha256": "dec940c4adffccfdb0209ce12cb6ff99d4d0d61a9a6f97b980d4c20988434167",
+      "chemical_identity_encoded": false,
+      "coverage_rule": "Exact raw uppercase AA20 sequences; no normalization, projection or truncation. Max2048residues explicit compute budget.",
+      "coverage_path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-simple-v1\\inputs\\ppikb_kd_target_cold_scope_v2_esm2_raw20_len2048.coverage.json"
+    },
+    {
+      "id": "ppikb_effect_metadata_silver_source_cold_esm2_raw20_len2048",
+      "task": "effect",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-simple-v1\\inputs\\ppikb_effect_metadata_silver_source_cold_esm2_raw20_len2048.csv",
+      "sha256": "83cbc2f4aff951eb27fff115dffd37fc096dba563a05fa2b66e252b24e95849b",
+      "status": "ready",
+      "label_column": "label",
+      "split_column": "split",
+      "group_column": "group_id",
+      "endpoint": "delta_pKd_silver",
+      "rows": 2222,
+      "split_counts": {
+        "validation": 170,
+        "test": 129,
+        "train": 1923
+      },
+      "source": "PPIKB",
+      "smiles_available": true,
+      "effect_inputs": true,
+      "gold": false,
+      "split_policy": "original observation source/peptide dependency cold, then within-split pairs only",
+      "independent_observations": 1454,
+      "candidate_edges_not_independent_samples": true,
+      "notes": "Silver diagnostic only. Same reported study/assay/target and one standard-residue edit; no certified same-condition strict gold. Shared endpoints induce correlated errors; bootstrap/groups at source component, not pair rows.",
+      "metadata_sidecar": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\data\\ppikb_preserved_input_metadata.jsonl",
+      "metadata_sidecar_sha256": "46b29dd1b656a792ddafb5b03276a9dd1210695b9f18f29ef757adec3a124a7f",
+      "parent_view_id": "ppikb_effect_metadata_silver_source_cold",
+      "stratum_counts": {
+        "standard20_control": 2207,
+        "PTM": 8,
+        "synthetic_and_PTM": 2,
+        "synthetic_D_backbone": 5
+      },
+      "parent_input_sha256": "f65f3b9c7d679f086d6f75ce66fb00166aab602bef9131e57440135af1e98ef2",
+      "chemical_identity_encoded": false,
+      "coverage_rule": "Exact raw uppercase AA20 sequences; no normalization, projection or truncation. Max2048residues explicit compute budget.",
+      "coverage_path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-simple-v1\\inputs\\ppikb_effect_metadata_silver_source_cold_esm2_raw20_len2048.coverage.json"
+    }
+  ],
+  "reports": [
+    {
+      "view_id": "ppikb_kd_source_cold_scope_v2_esm2_raw20_len2048",
+      "original_rows": 9116,
+      "retained_rows": 7419,
+      "covered_split_counts": {
+        "train": 5890,
+        "validation": 771,
+        "test": 758
+      },
+      "strata": {
+        "other_NC": 37,
+        "PTM": 366,
+        "synthetic_and_PTM": 90,
+        "synthetic_D_backbone": 28,
+        "standard20_control": 6898
+      },
+      "excluded_reason_counts": {
+        "embedding_peptide:non_AA20_raw_symbol": 1447,
+        "embedding_target:exceeds_declared_2048_residue_compute_budget": 283
+      },
+      "pepinter6336_id_overlap": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\methods\\interaction\\nc-backbone-ablation\\ppikb_kd_source_cold_scope_v2_native_backbone_ablation.csv",
+        "sha256": "0fa40d82b5f3168d42223af6ac2697439bb667b33a737256fffe4a98aaefc955",
+        "parent_cohort_rows": 6336,
+        "overlap_split_counts": {
+          "train": 5033,
+          "validation": 620,
+          "test": 683
+        },
+        "missing_test_ids": []
+      }
+    },
+    {
+      "view_id": "ppikb_kd_target_cold_scope_v2_esm2_raw20_len2048",
+      "original_rows": 9116,
+      "retained_rows": 7419,
+      "covered_split_counts": {
+        "validation": 1087,
+        "test": 1129,
+        "train": 5203
+      },
+      "strata": {
+        "other_NC": 37,
+        "PTM": 366,
+        "synthetic_and_PTM": 90,
+        "synthetic_D_backbone": 28,
+        "standard20_control": 6898
+      },
+      "excluded_reason_counts": {
+        "embedding_peptide:non_AA20_raw_symbol": 1447,
+        "embedding_target:exceeds_declared_2048_residue_compute_budget": 283
+      },
+      "pepinter6336_id_overlap": {
+        "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\methods\\interaction\\nc-backbone-ablation\\ppikb_kd_target_cold_scope_v2_native_backbone_ablation.csv",
+        "sha256": "f27b9b21385adfab8ed6156f5e65b00e6c6c45fe78c0936f89cb07437368f244",
+        "parent_cohort_rows": 6336,
+        "overlap_split_counts": {
+          "validation": 887,
+          "test": 946,
+          "train": 4503
+        },
+        "missing_test_ids": []
+      }
+    },
+    {
+      "view_id": "ppikb_effect_metadata_silver_source_cold_esm2_raw20_len2048",
+      "original_rows": 2289,
+      "retained_rows": 2222,
+      "covered_split_counts": {
+        "validation": 170,
+        "test": 129,
+        "train": 1923
+      },
+      "strata": {
+        "standard20_control": 2207,
+        "PTM": 8,
+        "synthetic_and_PTM": 2,
+        "synthetic_D_backbone": 5
+      },
+      "excluded_reason_counts": {
+        "embedding_target:exceeds_declared_2048_residue_compute_budget": 67
+      },
+      "pepinter6336_id_overlap": null
+    }
+  ],
+  "unique_sequence_count": 5159,
+  "sequence_manifest_path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-simple-v1\\inputs\\unique-sequences.jsonl",
+  "sequence_manifest_sha256": "a512f301aaa20e42cf80d82131f490f80b5fed3d34d32e596bcdfacdad438249",
+  "normalization": null,
+  "chemical_identity_encoded": false,
+  "max_residues_compute_budget": 2048,
+  "model_api_hard_maximum_claimed": false,
+  "original_views_changed": false
+}

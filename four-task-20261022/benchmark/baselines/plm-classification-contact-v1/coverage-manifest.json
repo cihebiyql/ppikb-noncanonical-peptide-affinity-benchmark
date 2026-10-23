@@ -1,0 +1,168 @@
+{
+  "schema": "frozen-esm2.classification-contact.coverage.v1",
+  "parent_view_manifest_sha256": "09be156624350725201177baccc34b83d7e41642e546c279f281708b917bb4a4",
+  "views": [
+    {
+      "id": "pepinter_classification_target_cold_esm2_raw20_len2048",
+      "task": "classification",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-classification-contact-v1\\inputs\\pepinter_classification_target_cold_esm2_raw20_len2048.csv",
+      "sha256": "29e4cffcbbf76b8574ea46bf7a32b3eb06d85f7d1d229c87705339248e0053de",
+      "status": "ready",
+      "label_column": "label",
+      "split_column": "split",
+      "group_column": "group_id",
+      "endpoint": "author_interaction_binary",
+      "source": "PepInterDB",
+      "rows": 15468,
+      "split_counts": {
+        "train": 10909,
+        "test": 2362,
+        "validation": 2197
+      },
+      "class_counts": {
+        "train": {
+          "0.0": 5916,
+          "1.0": 4993
+        },
+        "validation": {
+          "0.0": 1282,
+          "1.0": 915
+        },
+        "test": {
+          "1.0": 1100,
+          "0.0": 1262
+        }
+      },
+      "split_audit": {
+        "component_count": 9153,
+        "max_component_rows": 495,
+        "target_sequence_cross_split": 0,
+        "author_target_cluster_cross_split": 0,
+        "peptide_overlap_allowed": true,
+        "notes": "Target-cold via supplied author clusters plus exact target identity; not peptide-cold, source-cold, or proven universal family-cold."
+      },
+      "smiles_available": false,
+      "canonical_sequence_only": false,
+      "external_test": false,
+      "notes": "Independent new target-cluster split for this task. Author original partition retained as metadata, not called a strict common split. Mixed affinity never pooled into pKd; constructed negative labels never called measured nonbinding.",
+      "parent_view_id": "pepinter_classification_target_cold",
+      "parent_input_sha256": "02eb75d9b6ebaab1b4b1cf5338b2141f4d3750d794fc43c38aac57a0e34e03fa",
+      "chemical_identity_encoded": false,
+      "label_meaning": "author positives and constructed negatives; not all measured nonbinding",
+      "coverage_rule": "Exact supplied raw uppercase20AA, no normalization/projection/truncation;2048residues compute budget"
+    },
+    {
+      "id": "ppikb_contact_experimental_64complex_dependency_cold_v2_esm2_residue_raw20_len2048",
+      "task": "contact",
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-classification-contact-v1\\inputs\\ppikb_contact_experimental_64complex_dependency_cold_v2_esm2_residue_raw20_len2048.csv",
+      "sha256": "1f201537536a062d716edf6b97703f8e9c39d2a20ca33eeda3b1e418fc16c1b0",
+      "status": "ready",
+      "label_column": "label",
+      "split_column": "split",
+      "group_column": "group_id",
+      "endpoint": "observed_residue_contact_5A",
+      "source": "PPIKB_experimental_structure_link",
+      "rows": 8625,
+      "complexes": 64,
+      "dependency_components": 40,
+      "largest_component_complexes": 7,
+      "split_counts": {
+        "validation": 1882,
+        "train": 5273,
+        "test": 1470
+      },
+      "complex_split_counts": {
+        "train": 38,
+        "validation": 14,
+        "test": 12
+      },
+      "class_counts": {
+        "validation": {
+          "0": 1613,
+          "1": 269
+        },
+        "train": {
+          "0": 4606,
+          "1": 667
+        },
+        "test": {
+          "0": 1251,
+          "1": 219
+        }
+      },
+      "residue_index_column": "residue_index",
+      "contact_threshold_angstrom": 5.0,
+      "smiles_available": false,
+      "external_test": false,
+      "split_policy": "PDB_target_peptide_neighbor_component_cold",
+      "notes": "Replaces3complex pilot as expanded contact training view; oldpilot unchanged. Only actual human PPIKB rows with explicit PDB reference, exact complete peptide, unambiguous matched observed target chain, experimental PDB metadata. PepBDB supplies coordinates only. Contact labels are geometry, not functional sites or interaction-negative measurements. No coordinate/distance inputs to sequence-only models. Sequence/domain grouping proxy is not proof of unseen evolutionary family.",
+      "metadata_sidecar": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\data\\ppikb_preserved_input_metadata.jsonl",
+      "metadata_sidecar_sha256": "46b29dd1b656a792ddafb5b03276a9dd1210695b9f18f29ef757adec3a124a7f",
+      "parent_view_id": "ppikb_contact_experimental_64complex_dependency_cold_v2",
+      "parent_input_sha256": "b8c172c01c4c72a76eb4ebd22023ea49b3bebc02c121fadc86f316f442df7488",
+      "index_proof_sha256": "48bf8f024ced7d09f6d715cd1d7a2f4e0f82b3d803f83af85e199b919a3d7b67",
+      "index_proof_path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-classification-contact-v1\\inputs\\contact-sequence-index-proof.json",
+      "complex_sequence_provenance_path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\data\\contact_expansion_v2\\complexes.json",
+      "complex_sequence_provenance_sha256": "ef09a52111908a0aa35fc2ba47b390bd4375e0dcaf93fd4e98ecf4a4fd5887f5",
+      "feature_specification": "target layer6 residue at original1basedindex; peptide layer6 residue mean. No coordinates, distances, labels or observed-region masks as features.",
+      "chemical_identity_encoded": false,
+      "unmapped_rows": 0
+    }
+  ],
+  "reports": [
+    {
+      "id": "pepinter_classification_target_cold_esm2_raw20_len2048",
+      "original_rows": 17054,
+      "eligible_rows": 15468,
+      "split_counts": {
+        "train": 10909,
+        "test": 2362,
+        "validation": 2197
+      },
+      "class_counts": {
+        "train": {
+          "0.0": 5916,
+          "1.0": 4993
+        },
+        "validation": {
+          "0.0": 1282,
+          "1.0": 915
+        },
+        "test": {
+          "1.0": 1100,
+          "0.0": 1262
+        }
+      },
+      "excluded_reasons": {
+        "peptide:non_AA20_raw_symbol": 1511,
+        "target:non_AA20_raw_symbol": 97
+      }
+    },
+    {
+      "id": "ppikb_contact_experimental_64complex_dependency_cold_v2_esm2_residue_raw20_len2048",
+      "original_rows": 8625,
+      "eligible_rows": 8625,
+      "complexes_eligible": 64,
+      "split_counts": {
+        "validation": 1882,
+        "train": 5273,
+        "test": 1470
+      },
+      "mapping_failures": 0,
+      "proof_rows": 8625
+    }
+  ],
+  "max_residues_compute_budget": 2048,
+  "model_api_hard_limit_claimed": false,
+  "requested_mean_unique": 25912,
+  "reused_mean_unique": 622,
+  "missing_mean_unique": 25290,
+  "required_residue_unique": 46,
+  "missing_representation_forward_jobs": 25336,
+  "missing_job_residues": 3608633,
+  "missing_sequence_manifest_sha256": "d63bd1f7525a984ed147e985676629a845fb4c7fee609fd8a44e366ffe07aae9",
+  "old_cache_sha256": "a097ddfc203868fa299e4f25dcf01570f0f189de7d5ba4fcc054923417b3179f",
+  "classification_and_contact_heads_separate": true,
+  "labels_or_coordinates_in_extraction_manifest": false,
+  "original_data_and_prior_results_modified": false
+}

@@ -1,0 +1,718 @@
+{
+  "created_at": "2026-10-23T06:36:08.325957+00:00",
+  "status": "generated_pending_visual_review",
+  "test_complexes": 12,
+  "test_residues": 1470,
+  "models": [
+    "constant",
+    "linear",
+    "random_forest",
+    "extra_trees",
+    "hist_gradient_boosting"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "new_fit_count": 0,
+  "new_model_forward_count": 0,
+  "reference_geometry_used_as_model_input": false,
+  "all_test_complexes_included": true,
+  "input_files": [
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\data\\ppikb_contact_experimental_64complex_dependency_cold_v2.csv",
+      "sha256": "b8c172c01c4c72a76eb4ebd22023ea49b3bebc02c121fadc86f316f442df7488"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-00\\test-predictions.csv",
+      "sha256": "5087e8a31bb61cf940fddb71c0db19f1bd586bdf1ef9146f09d3758ddfe9b0a9"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-00\\result.json",
+      "sha256": "ff87610edc5da9c5b72c74a9fba0d380bf8f2b952defa898a22e9a3fc4d7c19a"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-01\\test-predictions.csv",
+      "sha256": "5087e8a31bb61cf940fddb71c0db19f1bd586bdf1ef9146f09d3758ddfe9b0a9"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-01\\result.json",
+      "sha256": "71093729bc46b6baf13ecef54d186c7170828b316eb17db540398f2708b536ee"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-02\\test-predictions.csv",
+      "sha256": "5087e8a31bb61cf940fddb71c0db19f1bd586bdf1ef9146f09d3758ddfe9b0a9"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-02\\result.json",
+      "sha256": "cbd3ef11ef8b24f5ca47b9648b8c96cb325265b62b9b2d3419d0105efd56dcd1"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-03\\test-predictions.csv",
+      "sha256": "5087e8a31bb61cf940fddb71c0db19f1bd586bdf1ef9146f09d3758ddfe9b0a9"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-03\\result.json",
+      "sha256": "5a6e54109d64303fd199bbb1fbd552dbfb321c67babe56a1c0492b0c873a8bd8"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-04\\test-predictions.csv",
+      "sha256": "5087e8a31bb61cf940fddb71c0db19f1bd586bdf1ef9146f09d3758ddfe9b0a9"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-04\\result.json",
+      "sha256": "9fc1b362030ce942d42e347d699d03605ac92f18c960c2cd79f9fa4820540d7c"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-05\\test-predictions.csv",
+      "sha256": "5087e8a31bb61cf940fddb71c0db19f1bd586bdf1ef9146f09d3758ddfe9b0a9"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-05\\result.json",
+      "sha256": "30cf39d4ba1b88a6157d357b462b8c2f71a73339a6a6ba98d7ee1b38cccfd5f5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-06\\test-predictions.csv",
+      "sha256": "5087e8a31bb61cf940fddb71c0db19f1bd586bdf1ef9146f09d3758ddfe9b0a9"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-06\\result.json",
+      "sha256": "d87db4d52b73d6ec4a05e41ee25c0680ea0108fcb7906fedf78161f38d55d96b"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-07\\test-predictions.csv",
+      "sha256": "5087e8a31bb61cf940fddb71c0db19f1bd586bdf1ef9146f09d3758ddfe9b0a9"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-07\\result.json",
+      "sha256": "cd83f21711d3fa68b4af6faf4860b8e707e9d72b5c77305583dbef063a43fd61"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-08\\test-predictions.csv",
+      "sha256": "5087e8a31bb61cf940fddb71c0db19f1bd586bdf1ef9146f09d3758ddfe9b0a9"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-08\\result.json",
+      "sha256": "4a9ef09dcd5c9d40712c61b6a6287fb04cbe68bc8b8239bb14f69e4e13521a61"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-09\\test-predictions.csv",
+      "sha256": "5087e8a31bb61cf940fddb71c0db19f1bd586bdf1ef9146f09d3758ddfe9b0a9"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\constant\\seed-09\\result.json",
+      "sha256": "fe390eddf26d04cd1378144a6cfed963acbdeb0509d0edaeb512d1fafc0ec7d5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-00\\test-predictions.csv",
+      "sha256": "039f4faef91e00a51841cb305483c6973deddc317c57783415a8bad006d9f4e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-00\\result.json",
+      "sha256": "8ce6944c957e0de1d355a3aa269098b9ed1fed1f56ab19ad817c91cd074e9caa"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-01\\test-predictions.csv",
+      "sha256": "039f4faef91e00a51841cb305483c6973deddc317c57783415a8bad006d9f4e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-01\\result.json",
+      "sha256": "8671d62624c9e24c3ced6c78182b28e631ca5835254009dbba81f799df3e7f05"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-02\\test-predictions.csv",
+      "sha256": "039f4faef91e00a51841cb305483c6973deddc317c57783415a8bad006d9f4e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-02\\result.json",
+      "sha256": "721820624e64c3ee070743cb659fd1105de5f2222f7fdcf88ee7a4065d1c6c0e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-03\\test-predictions.csv",
+      "sha256": "039f4faef91e00a51841cb305483c6973deddc317c57783415a8bad006d9f4e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-03\\result.json",
+      "sha256": "a7eb63a2801ba06c0030cd0cedb169b1878cbc2189434f99e68089e87e0f8a19"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-04\\test-predictions.csv",
+      "sha256": "039f4faef91e00a51841cb305483c6973deddc317c57783415a8bad006d9f4e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-04\\result.json",
+      "sha256": "b8d5aa1372b48f540450034c9bf54e051c5daffb01cc1cf562ee1e80c144e840"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-05\\test-predictions.csv",
+      "sha256": "039f4faef91e00a51841cb305483c6973deddc317c57783415a8bad006d9f4e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-05\\result.json",
+      "sha256": "c6adef981379e2b048e67704834c959b1969f4a2989ff93bc0881e06203e48fb"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-06\\test-predictions.csv",
+      "sha256": "039f4faef91e00a51841cb305483c6973deddc317c57783415a8bad006d9f4e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-06\\result.json",
+      "sha256": "acc4174ac8c09d65440d8734bb84ec981101775730e987de858e71da99c6eb72"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-07\\test-predictions.csv",
+      "sha256": "039f4faef91e00a51841cb305483c6973deddc317c57783415a8bad006d9f4e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-07\\result.json",
+      "sha256": "9016c592d298992875943907f587915a1cf8473850d5be5949efa72aec8f3e73"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-08\\test-predictions.csv",
+      "sha256": "039f4faef91e00a51841cb305483c6973deddc317c57783415a8bad006d9f4e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-08\\result.json",
+      "sha256": "ec3ec449a374102b8d4c0c70386671a8fa634f0e49d8a96f4b8fe353bbba6e83"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-09\\test-predictions.csv",
+      "sha256": "039f4faef91e00a51841cb305483c6973deddc317c57783415a8bad006d9f4e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\linear\\seed-09\\result.json",
+      "sha256": "a991086aa075bbdbc5947f62a387e921e2b620e1eee7359be970e978dc2542e5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-00\\test-predictions.csv",
+      "sha256": "d114c8eabf60e5fac0593ed051b4bc1899c8a1d4f6876eb67ae73dca07197904"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-00\\result.json",
+      "sha256": "87653c133413a804fed13f0ef4ad5b0875ed07f8ecef79cf0b778b9d7756c6ed"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-01\\test-predictions.csv",
+      "sha256": "dd41499060520575042a7e21f1389d056ce3ae902a18d4ca98c1566bb1ea57de"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-01\\result.json",
+      "sha256": "7a729a02134ed1d87c09c8e44f5b62800b4231cd248f3a9bb6e49ae73612b10f"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-02\\test-predictions.csv",
+      "sha256": "6babfde3a2b824b313f98a637c066e5cdd9ad549fc4d4b61eeb372f53dd02d1e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-02\\result.json",
+      "sha256": "b562b15055d6394a5811730f06bd7fc9ff32e97f35033965aea6ec892648b388"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-03\\test-predictions.csv",
+      "sha256": "6304985e1f182d4fbd7ddc20549dca3d5702b94357c3acac351a5251f354b826"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-03\\result.json",
+      "sha256": "d3ba4066416058091c99fd58eb1eeaf9f1af6259430be54cdc0e9e05a2558233"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-04\\test-predictions.csv",
+      "sha256": "f523ca9f340b5208f2124e9a1ff7216c3cdd23d0a52165523d7999cbcbd55845"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-04\\result.json",
+      "sha256": "b398a4d22dd899f51dcbb6a78da53023bdce51e67861194c16034a8cc44b334d"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-05\\test-predictions.csv",
+      "sha256": "1e45fcb7704b27239a97675f2ff8a94d11bb7bbfd90feb3b1413c91c1457d0e2"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-05\\result.json",
+      "sha256": "84ff113f3fc2a01265524ce46c1dbb4259d91ee1bbb0d460c59ba2037f9248fc"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-06\\test-predictions.csv",
+      "sha256": "3fc677910deabdcc0044350791082d9a44d80ae2af995be968bd158a08bc8207"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-06\\result.json",
+      "sha256": "39805fb45553615e7833fe489e2880d788f58411ccf283eb739801497f693178"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-07\\test-predictions.csv",
+      "sha256": "d15aad1122f26e565bd183b12a5227eefa9a9c60d8c3bfa6e07f35a6bd701f58"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-07\\result.json",
+      "sha256": "28cdfc158079db8d212dc38caa7ea12af217f2df382e1a0b42f27b2abed3cf8a"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-08\\test-predictions.csv",
+      "sha256": "b5bdc5c3994fbd7eb4d7d296cdb282333b5729c53588372a5f89d144afaa48ac"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-08\\result.json",
+      "sha256": "32cac575922f0e65a824547632e63c80c1701ad0674f26b0613a1fbf029adf99"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-09\\test-predictions.csv",
+      "sha256": "fa86649b98b659f49b8a10452a3ce9dc6765fc14447cff23d9e90c7d92b7c143"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\random_forest\\seed-09\\result.json",
+      "sha256": "11b322690b335e9c5147c995238405bc3b0c944075a0f70eef8af4e423560b67"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-00\\test-predictions.csv",
+      "sha256": "313817d2f337983c208cc8cfe365b8e7c0374f7e6ebd36798e4e10fc5bb3a455"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-00\\result.json",
+      "sha256": "448b6fd8b0e5aa41f025a22b3b97fedf4c95d41e5894c1985facfbf9468c821a"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-01\\test-predictions.csv",
+      "sha256": "8407df556ed6d5cb39dd978d759cc3536ad3e084805e79fb3389ec5578d4e06d"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-01\\result.json",
+      "sha256": "5663d6fe9d88799e382aecff5df53ef231c95a8bff3ef1e1944f7ff201c46856"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-02\\test-predictions.csv",
+      "sha256": "0103110ff51b3dd4459d416ca9d83055f25e533e3b33e4742f2132e485a7d126"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-02\\result.json",
+      "sha256": "ac249672b120e9b3fec1fb3d82dc67c4b0dd0791bce74a7015c5f42de6303e2d"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-03\\test-predictions.csv",
+      "sha256": "50b217ca380c5b1e4d22552960e5acf5bca84dc3d36b715a71b40cc330380269"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-03\\result.json",
+      "sha256": "b848411fe0d41182650344b705656acaca4e405cfb5b9ae8f9f03377fd450b84"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-04\\test-predictions.csv",
+      "sha256": "5475e6485b6a8b15d6dd668aba7afe441bf7d52e40f9f34b756976255afe985b"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-04\\result.json",
+      "sha256": "d590c62249744a0c6b201ad13998d3169414c01766135ea821765714f4b53db5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-05\\test-predictions.csv",
+      "sha256": "8249cce2bc64446098e439c3548bd738ce59feb3e89f3f702c98055af0265b3e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-05\\result.json",
+      "sha256": "54ae8d1fbf3a198ffda15efbac7ac1d96cbffef3012e07a90e71035f755a15bd"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-06\\test-predictions.csv",
+      "sha256": "e4ea98041fae489725b6acb4ffd23f2da189b3d45bb05716e38b02df14031613"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-06\\result.json",
+      "sha256": "bbbcb2b92b29de7f6f8d347867ff9a5c562fb498b6cd534687a60b712e68aa7a"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-07\\test-predictions.csv",
+      "sha256": "b49547aa70c917c5f0aab7140771fbe9e6563dea821daa6aaa93261cfa9a9b64"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-07\\result.json",
+      "sha256": "1930c49ae5c952a5b5dc5ab9a735f664502b5bcf9ff9bd8a2411a30e01952365"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-08\\test-predictions.csv",
+      "sha256": "b886e576e12d921d0aeef1a20dded95f815359f28d7fa41a335f54e0776c654c"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-08\\result.json",
+      "sha256": "3eee0c33ab55b1446c4fe2d4fdae2fad712c684f1aa2b399157bde5e514e27b5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-09\\test-predictions.csv",
+      "sha256": "46df92e21ca25049fdc0809b3654903f08dc0fb6b1a927200f1993b104b10ba8"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\extra_trees\\seed-09\\result.json",
+      "sha256": "c86ea0bf4874ae3a54b144c360561162231fd068f784d243d1b0fc8fa01c3d00"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-00\\test-predictions.csv",
+      "sha256": "8177d43f328d93d2ee57b92c7a8ce166d80fa2c0fe1cbc6edc8999eb89404e7e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-00\\result.json",
+      "sha256": "af53931b2ba7a143923616f399fd4e40a6daf225211b79453e33d6e555ef3272"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-01\\test-predictions.csv",
+      "sha256": "8177d43f328d93d2ee57b92c7a8ce166d80fa2c0fe1cbc6edc8999eb89404e7e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-01\\result.json",
+      "sha256": "26c1c95f4ba45bd532aef5af8fad2bfd17687b03fe4b3dc50036f6bb8cecc210"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-02\\test-predictions.csv",
+      "sha256": "8177d43f328d93d2ee57b92c7a8ce166d80fa2c0fe1cbc6edc8999eb89404e7e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-02\\result.json",
+      "sha256": "52efe21367f55c487b20960caf8fede8a5c477dd13bc8312d1db11cd60c3f34a"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-03\\test-predictions.csv",
+      "sha256": "8177d43f328d93d2ee57b92c7a8ce166d80fa2c0fe1cbc6edc8999eb89404e7e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-03\\result.json",
+      "sha256": "77b6b009673177c849faf087beb404524898be71b714c3a5231faee3bef1bae5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-04\\test-predictions.csv",
+      "sha256": "8177d43f328d93d2ee57b92c7a8ce166d80fa2c0fe1cbc6edc8999eb89404e7e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-04\\result.json",
+      "sha256": "ba63d9534bd013a0fef1f4779a88b1403933b432cbef278f48662a45682038a5"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-05\\test-predictions.csv",
+      "sha256": "8177d43f328d93d2ee57b92c7a8ce166d80fa2c0fe1cbc6edc8999eb89404e7e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-05\\result.json",
+      "sha256": "940f562346446387428e2d66d746d9fba6f5412bd3d9ce32cac5cbc6505aa7fc"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-06\\test-predictions.csv",
+      "sha256": "8177d43f328d93d2ee57b92c7a8ce166d80fa2c0fe1cbc6edc8999eb89404e7e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-06\\result.json",
+      "sha256": "8ae69e98440695208acc03a92a7553017a96f7f0f3712e2525108a5d6f944f63"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-07\\test-predictions.csv",
+      "sha256": "8177d43f328d93d2ee57b92c7a8ce166d80fa2c0fe1cbc6edc8999eb89404e7e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-07\\result.json",
+      "sha256": "5193f0d160e282aaf6d46d49d8b70183cd4a34d61586424bb83b4d6d39258457"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-08\\test-predictions.csv",
+      "sha256": "8177d43f328d93d2ee57b92c7a8ce166d80fa2c0fe1cbc6edc8999eb89404e7e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-08\\result.json",
+      "sha256": "58630f14a3062289135d3b8d5adcd9fae691186624fac8eca8275f9c52927b53"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-09\\test-predictions.csv",
+      "sha256": "8177d43f328d93d2ee57b92c7a8ce166d80fa2c0fe1cbc6edc8999eb89404e7e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\cpu-contact64-v1\\ppikb_contact_experimental_64complex_dependency_cold_v2\\hist_gradient_boosting\\seed-09\\result.json",
+      "sha256": "6543916f2baad1646c2ffd550918bcf28ae34e99ac2ab0acf5e93a30e244b7a9"
+    }
+  ],
+  "script_sha256": "fe2ca213fbf46890cbbadbb1de97d6d52e5f359d1c07fdae0d1c9de8f753ed00",
+  "outputs": [
+    {
+      "path": "00_data_health.md",
+      "bytes": 2634,
+      "sha256": "9c7f297584cf0a81e762ff0f7ae1fe29f1dcb56fa966b806f033f9de6e6e7bc4"
+    },
+    {
+      "path": "captions.md",
+      "bytes": 6976,
+      "sha256": "7151686442b5e1381468dac72dbca08bd88ff1cec34c64e9bc0e84d865be5ee1"
+    },
+    {
+      "path": "figures\\jpg\\fig_01_pepbdb_1lb5_B.jpg",
+      "bytes": 213397,
+      "sha256": "f0c9ff404a1dc12b98c24b491b4684fc01aa1edb1c28db0b1aabba59cdecb611"
+    },
+    {
+      "path": "figures\\jpg\\fig_02_pepbdb_1lb6_B.jpg",
+      "bytes": 212289,
+      "sha256": "403956b6e61570680b482f06d638dd91d8fb50bde3ac4cff485ebf702f133e6a"
+    },
+    {
+      "path": "figures\\jpg\\fig_03_pepbdb_2mwy_B.jpg",
+      "bytes": 148706,
+      "sha256": "371e5c907cd02ae54d9dd5c171868b88b274739475cf798a842b3547305b9ec2"
+    },
+    {
+      "path": "figures\\jpg\\fig_04_pepbdb_3eqs_B.jpg",
+      "bytes": 145741,
+      "sha256": "2ad9a97a8efc6021e1b4afe5d1701774a033f74bffa40ebaa8b85d3d22c9f2bc"
+    },
+    {
+      "path": "figures\\jpg\\fig_05_pepbdb_3jzo_P.jpg",
+      "bytes": 147461,
+      "sha256": "f3b03bc1cbe15d1fe33bfd83483ab92d5df299cd3a46a7bf6f5b39002de54cc9"
+    },
+    {
+      "path": "figures\\jpg\\fig_06_pepbdb_3jzp_P.jpg",
+      "bytes": 147241,
+      "sha256": "2b6f8dbc5860b6897edbec6a4e148fca68d91c49fc1b8d3b00d920e17db547c5"
+    },
+    {
+      "path": "figures\\jpg\\fig_07_pepbdb_3jzq_P.jpg",
+      "bytes": 145568,
+      "sha256": "a925ce3f120d3756cffbecf0b894618cc71f52425cb43f4e923a31c5afa704c7"
+    },
+    {
+      "path": "figures\\jpg\\fig_08_pepbdb_3jzs_P.jpg",
+      "bytes": 145675,
+      "sha256": "a207f3679db0a26efce74af706b4dc516a3d76614996704e4816fefe9572c8f5"
+    },
+    {
+      "path": "figures\\jpg\\fig_09_pepbdb_5sxm_C.jpg",
+      "bytes": 352495,
+      "sha256": "b9087fc0f2c5f928fd9b5153a0f0e160816e68464aaff71e2720fa06880f61c7"
+    },
+    {
+      "path": "figures\\jpg\\fig_10_pepbdb_5umm_B.jpg",
+      "bytes": 145953,
+      "sha256": "51ba6e97192bd448def4ae26199107a62ff233b4e9dded41d7b3d93572d64678"
+    },
+    {
+      "path": "figures\\jpg\\fig_11_pepbdb_6efk_D.jpg",
+      "bytes": 205303,
+      "sha256": "e22636d16ddbe0685f21b286e46ed00d8af0876ebe7fa3766d4603e45764e859"
+    },
+    {
+      "path": "figures\\jpg\\fig_12_pepbdb_6nsv_C.jpg",
+      "bytes": 204122,
+      "sha256": "b300e79d09102b8448461413d3c952d1a78edbeba80ad1e33920a69444aadca6"
+    },
+    {
+      "path": "figures\\pdf\\fig_01_pepbdb_1lb5_B.pdf",
+      "bytes": 45273,
+      "sha256": "ea86e11d45a35c626573dda56dddaba3b3b2b5ef22d425a7bc2f80bc492174aa"
+    },
+    {
+      "path": "figures\\pdf\\fig_02_pepbdb_1lb6_B.pdf",
+      "bytes": 44578,
+      "sha256": "82a3393ceaafb42ac905feaaa6205f064289564007a4c0412ebe8f62a00794fb"
+    },
+    {
+      "path": "figures\\pdf\\fig_03_pepbdb_2mwy_B.pdf",
+      "bytes": 41234,
+      "sha256": "08bf29144da0fa86baadf3093a6e18c435a9ce60740932a3428b1216a5abb022"
+    },
+    {
+      "path": "figures\\pdf\\fig_04_pepbdb_3eqs_B.pdf",
+      "bytes": 39719,
+      "sha256": "8490212a20350a91c75637f4741fe879167776174b7b18983e8745c5ccc2c103"
+    },
+    {
+      "path": "figures\\pdf\\fig_05_pepbdb_3jzo_P.pdf",
+      "bytes": 41410,
+      "sha256": "335177b695ac80f071996e23e7f62a9d88c52a718ac661c061614ae2099a7973"
+    },
+    {
+      "path": "figures\\pdf\\fig_06_pepbdb_3jzp_P.pdf",
+      "bytes": 40994,
+      "sha256": "5ab320a78c7c28226e69016798fef2c6886033f59d2e6e60940eb86bb2ed6a08"
+    },
+    {
+      "path": "figures\\pdf\\fig_07_pepbdb_3jzq_P.pdf",
+      "bytes": 41045,
+      "sha256": "51158382a17ec3046c5470acfbc40ccdf7bf7d430f962b361abdb666a083433b"
+    },
+    {
+      "path": "figures\\pdf\\fig_08_pepbdb_3jzs_P.pdf",
+      "bytes": 40756,
+      "sha256": "5e89f6b0cd8420e40415bcf36a345f5c70542a81dbc449a4b7f9afcf9f04320c"
+    },
+    {
+      "path": "figures\\pdf\\fig_09_pepbdb_5sxm_C.pdf",
+      "bytes": 59337,
+      "sha256": "516f1367d79468560bef2b403b7cc32277cf751600c76ffab499be72eb713a57"
+    },
+    {
+      "path": "figures\\pdf\\fig_10_pepbdb_5umm_B.pdf",
+      "bytes": 40210,
+      "sha256": "df688ad3427b2ecb506736a3fae03d8a7e3919c01c80a2f43a38711dfc3b7ecc"
+    },
+    {
+      "path": "figures\\pdf\\fig_11_pepbdb_6efk_D.pdf",
+      "bytes": 46972,
+      "sha256": "f649e61ba889455e1144e2d5fc7679c73a9b75af4e1237b7fbcefec06cec79c7"
+    },
+    {
+      "path": "figures\\pdf\\fig_12_pepbdb_6nsv_C.pdf",
+      "bytes": 46426,
+      "sha256": "388a1d427c9e98dd67e71df3c5cefa6f82e22efeb83e0d6b455ef942cd13680f"
+    },
+    {
+      "path": "figures\\png\\fig_01_pepbdb_1lb5_B.png",
+      "bytes": 145477,
+      "sha256": "0433b00e9366de102ea01c2753b2ae69e8531b7bf68f349648d1144b92d26f39"
+    },
+    {
+      "path": "figures\\png\\fig_02_pepbdb_1lb6_B.png",
+      "bytes": 144829,
+      "sha256": "5d9587e8f17d8f6127255d38ee7acb80279fbb22fa05f34003f1e911bace7e10"
+    },
+    {
+      "path": "figures\\png\\fig_03_pepbdb_2mwy_B.png",
+      "bytes": 106804,
+      "sha256": "825dcc83bb9bd8a6cc6b47405f5b5faa94074c12b2e42f51dbf5b8abdac4acbc"
+    },
+    {
+      "path": "figures\\png\\fig_04_pepbdb_3eqs_B.png",
+      "bytes": 104528,
+      "sha256": "a0b38bbec68f202f58ce09320b1bc5feff9e307666c3dd36deae76820da5c6c1"
+    },
+    {
+      "path": "figures\\png\\fig_05_pepbdb_3jzo_P.png",
+      "bytes": 104642,
+      "sha256": "d49a4913de38a0a703c21271b1f629d6d9cc6ef1d70e218596c48be7c4bfde5a"
+    },
+    {
+      "path": "figures\\png\\fig_06_pepbdb_3jzp_P.png",
+      "bytes": 104297,
+      "sha256": "6775ab4f8b1fd1b4dd9f0472dcbc0142ebcbffd6caf63925f725da7da5fd1e27"
+    },
+    {
+      "path": "figures\\png\\fig_07_pepbdb_3jzq_P.png",
+      "bytes": 101197,
+      "sha256": "1b47a0e84201dd73ff20485364786f595a26b36a4dd2d28ec41a1f3988a9bc2b"
+    },
+    {
+      "path": "figures\\png\\fig_08_pepbdb_3jzs_P.png",
+      "bytes": 103668,
+      "sha256": "b12a3bf7d44ac10c27235c95ce1631289078facb78734f21c7cb68802419a425"
+    },
+    {
+      "path": "figures\\png\\fig_09_pepbdb_5sxm_C.png",
+      "bytes": 231335,
+      "sha256": "487ad014b094233bc090576bb65f8a0c7223d26ab6fe1631201b5b2c6d5c6967"
+    },
+    {
+      "path": "figures\\png\\fig_10_pepbdb_5umm_B.png",
+      "bytes": 102718,
+      "sha256": "78bd5dc65d577e3171cf152e1c388dd73edf6fa04e7676b3dd8e5e6e8091df10"
+    },
+    {
+      "path": "figures\\png\\fig_11_pepbdb_6efk_D.png",
+      "bytes": 140330,
+      "sha256": "a68c138e6209664f8cd0040012d5307f28cc1500dc694017fe3bde7802a28952"
+    },
+    {
+      "path": "figures\\png\\fig_12_pepbdb_6nsv_C.png",
+      "bytes": 142099,
+      "sha256": "6cf7a09f24e318a704f10fe99417c22d5613a374114c26509374f5c36567cea9"
+    },
+    {
+      "path": "process_data\\01_test_rows_and_inventory.xlsx",
+      "bytes": 164544,
+      "sha256": "2e63f4f620860b47d4abea91d6b3a2923adfbcd84ede6b8be9c06dfd1422cdac"
+    },
+    {
+      "path": "process_data\\02_all_predictions.xlsx",
+      "bytes": 243289,
+      "sha256": "aadf7a03765bbbb9d5ec25153fed0517eaeaa1d27d5f50f60872e6319a8c2358"
+    },
+    {
+      "path": "process_data\\all-test-residue-predictions.csv",
+      "bytes": 410702,
+      "sha256": "7dc14f66fa2be8a699f8365467aa686067d61fbc900141524e7f535caa6912fb"
+    },
+    {
+      "path": "process_data\\complex-index.csv",
+      "bytes": 1096,
+      "sha256": "4018bd6fff8b3cbf772ee75e7375c6fd610d539d64cdf841676ed90dfd462a8e"
+    },
+    {
+      "path": "process_data\\fig_01_data.xlsx",
+      "bytes": 30821,
+      "sha256": "ea310047377507f024bb9b64723b6c5565c8c5b184f94861e7802d2d24ec9a30"
+    },
+    {
+      "path": "process_data\\fig_02_data.xlsx",
+      "bytes": 30727,
+      "sha256": "2a7927ddc334544c8bdb2a8693aae81f9e71a496cc125797eea8728ac62d290d"
+    },
+    {
+      "path": "process_data\\fig_03_data.xlsx",
+      "bytes": 20141,
+      "sha256": "be07660c15d793de2050ffca44400fd9fd61eebc72340b1388ae2ce0f9ac5975"
+    },
+    {
+      "path": "process_data\\fig_04_data.xlsx",
+      "bytes": 19344,
+      "sha256": "be5db83077e79f1766c32e4242568ff37c5da090f07a154d06d7933ea90538a6"
+    },
+    {
+      "path": "process_data\\fig_05_data.xlsx",
+      "bytes": 19857,
+      "sha256": "f64da0a933489f2aef001a9788739a3b5195af65377ba73314211da5a280ba07"
+    },
+    {
+      "path": "process_data\\fig_06_data.xlsx",
+      "bytes": 19802,
+      "sha256": "55fb27a24c66338528d48e4cbbea0712fa23a0b843f75794af496a9ac9012000"
+    },
+    {
+      "path": "process_data\\fig_07_data.xlsx",
+      "bytes": 19361,
+      "sha256": "5f736e97248bce683a72eed044d1bde47c764b8e7596ab5f72e45682805d0f5a"
+    },
+    {
+      "path": "process_data\\fig_08_data.xlsx",
+      "bytes": 19178,
+      "sha256": "544879f9768591fdf2be3190ea8cbecf100feb27c07ae030b2b8cc5b03d64075"
+    },
+    {
+      "path": "process_data\\fig_09_data.xlsx",
+      "bytes": 54596,
+      "sha256": "a189fd04d94bddb351137982a1a285c29ec4aafdf1fa04e04fa6a25a24d1fb1f"
+    },
+    {
+      "path": "process_data\\fig_10_data.xlsx",
+      "bytes": 19045,
+      "sha256": "58739241d019e30f1a64317bf593e1db768f26ddd918d624c9332756de717f06"
+    },
+    {
+      "path": "process_data\\fig_11_data.xlsx",
+      "bytes": 27166,
+      "sha256": "0a9f79c20b9495e758e88c02283f5e94c645d2204ed1dea3ed9c653a3968f39a"
+    },
+    {
+      "path": "process_data\\fig_12_data.xlsx",
+      "bytes": 26438,
+      "sha256": "b686cff9270d82b5841c3e927593c64024220a144ceb518a7a5bffac30c37dbd"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "bytes": 1527,
+      "sha256": "43102a36e698cfa5780fb45b27748084ca22d4cb83211bd73337e77a0600d3b9"
+    },
+    {
+      "path": "report.pdf",
+      "bytes": 126035,
+      "sha256": "7cc47d3d7ed3e6ffaef53a2b281be75095774f69d23b707d15bece7fa69416a9"
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "schema": "fourtask.independent-data-readback.v1",
+  "at": "2026-10-23T02:08:41.796280+00:00",
+  "view_count": 13,
+  "reports": [
+    {
+      "view_id": "ppikb_kd_source_cold_scope_v2",
+      "task": "affinity",
+      "endpoint": "pKd",
+      "rows": 9116,
+      "partition_counts": {
+        "train": 7125,
+        "validation": 977,
+        "test": 1014
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "ppikb_kd_target_cold_scope_v2",
+      "task": "affinity",
+      "endpoint": "pKd",
+      "rows": 9116,
+      "partition_counts": {
+        "train": 6355,
+        "validation": 1378,
+        "test": 1383
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "pepinter_classification_target_cold",
+      "task": "classification",
+      "endpoint": "author_interaction_binary",
+      "rows": 17054,
+      "partition_counts": {
+        "train": 12051,
+        "test": 2577,
+        "validation": 2426
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "pepaff_mixed_target_cold",
+      "task": "affinity",
+      "endpoint": "author_pAffinity_mixed",
+      "rows": 3620,
+      "partition_counts": {
+        "train": 2731,
+        "test": 520,
+        "validation": 369
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "profaff_pKd_domain_external",
+      "task": "affinity",
+      "endpoint": "pKd",
+      "rows": 112,
+      "partition_counts": {
+        "external_test": 112
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "ppikb_contact_experimental_3complex_pilot",
+      "task": "contact",
+      "endpoint": "observed_residue_contact_5A",
+      "rows": 466,
+      "partition_counts": {
+        "validation": 141,
+        "test": 155,
+        "train": 170
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "ppikb_effect_metadata_silver_source_cold",
+      "task": "effect",
+      "endpoint": "delta_pKd_silver",
+      "rows": 2289,
+      "partition_counts": {
+        "validation": 172,
+        "test": 129,
+        "train": 1988
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "profaff_pKd_domain_backbone_all162_external",
+      "task": "affinity",
+      "endpoint": "pKd",
+      "rows": 162,
+      "partition_counts": {
+        "external_test": 162
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "uniair_her2_effect_local_variant_diagnostic",
+      "task": "effect",
+      "endpoint": "author_ddG_unit_unverified",
+      "rows": 419,
+      "partition_counts": {
+        "test": 61,
+        "train": 298,
+        "validation": 60
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "uniair_her2_effect_original_external",
+      "task": "effect",
+      "endpoint": "author_ddG_unit_unverified",
+      "rows": 419,
+      "partition_counts": {
+        "external_test": 419
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "uniair_her2_pKd_protein_extension_external",
+      "task": "affinity",
+      "endpoint": "pKd",
+      "rows": 419,
+      "partition_counts": {
+        "external_test": 419
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "profaff_PTM_delta_pKd_external",
+      "task": "effect",
+      "endpoint": "delta_pKd",
+      "rows": 42,
+      "partition_counts": {
+        "external_test": 42
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    },
+    {
+      "view_id": "ppikb_contact_experimental_64complex_dependency_cold_v2",
+      "task": "contact",
+      "endpoint": "observed_residue_contact_5A",
+      "rows": 8625,
+      "partition_counts": {
+        "validation": 1882,
+        "train": 5273,
+        "test": 1470
+      },
+      "checks": {
+        "hash_matches": true,
+        "row_count_matches": true,
+        "split_counts_match": true,
+        "unique_row_ids": true,
+        "finite_labels": true,
+        "group_leakage_absent": true
+      },
+      "cross_split_groups": 0,
+      "sequence_only_effective_input_cross_split_collisions": 0,
+      "interpretation": "Sequence-only identity is a per-model diagnostic; it does not alter frozen chemistry-based split after fitting."
+    }
+  ],
+  "errors": [],
+  "checks_pass": true,
+  "limitation": "No new certification of chemistry/construct/assay provenance; hash/readback and dependency checks only."
+}

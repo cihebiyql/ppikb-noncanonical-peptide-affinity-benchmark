@@ -1,0 +1,24 @@
+test_contact_aa_and_1based_index_and_no_geometry_features (__main__.Interfaces.test_contact_aa_and_1based_index_and_no_geometry_features) ... ok
+test_labels_splits_and_membership_preserved (__main__.Interfaces.test_labels_splits_and_membership_preserved) ... ok
+test_missing_jobs_are_unlabeled_and_do_not_reextract_old_means (__main__.Interfaces.test_missing_jobs_are_unlabeled_and_do_not_reextract_old_means) ... ok
+test_old_mean_vector_bytes_match_per_vector_hash (__main__.Interfaces.test_old_mean_vector_bytes_match_per_vector_hash) ... ERROR
+
+======================================================================
+ERROR: test_old_mean_vector_bytes_match_per_vector_hash (__main__.Interfaces.test_old_mean_vector_bytes_match_per_vector_hash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\work\科研工作台\research-tasks\peptide-four-task-benchmark-20261022\baselines\plm-classification-contact-v1\test_interfaces.py", line 52, in test_old_mean_vector_bytes_match_per_vector_hash
+    self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),reuse['old_cache_sha256'])
+                                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciheb\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1050, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciheb\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'D:\\work\\绉戠爺宸ヤ綔鍙癨\research-tasks\\peptide-four-task-benchmark-20261022\\baselines\\plm-simple-v1\\feature-cache-cpu-v3\\embeddings.npz'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.792s
+
+FAILED (errors=1)

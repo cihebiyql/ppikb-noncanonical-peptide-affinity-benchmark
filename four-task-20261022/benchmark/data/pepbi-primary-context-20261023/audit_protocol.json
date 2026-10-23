@@ -1,0 +1,13 @@
+{
+  "schema": "pepbi.primary-context-audit.protocol.v1",
+  "scope": "Audit all27 previously frozen conditional external candidates against their four original ITC publications; metadata only",
+  "candidate_sha256": "35573d98d14b4ae65575ba9557a1508ea145c30a47a2855f7ef0bfdd625bdef4",
+  "source_DOIs": ["10.1515/hsz-2014-0106", "10.1016/j.jmb.2007.10.050", "10.1073/pnas.1708852114", "10.1038/sj.emboj.7600445"],
+  "checks": ["primary table or figure measurement identity", "Kd unit and numeric transcription", "temperature and assay context", "protein construct and tag handling", "peptide terminal or residue modifications", "training-source independence for100 non-pretrained fixed manual models"],
+  "performance_based_selection": false,
+  "all27_previously_evaluated_results_preserved": true,
+  "original_candidate_labels_changed": false,
+  "new_training": 0,
+  "new_model_forward": 0,
+  "notes": "Global foundation-model pretraining is not an exposure source for the100 manual models, which have no pretrained encoder. This does not certify chemical/assay identity or transfer the conclusion to pretrained models. Newly verified context is reported separately, never silently rewriting the already evaluated candidate view."
+}

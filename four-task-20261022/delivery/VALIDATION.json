@@ -1,0 +1,754 @@
+{
+  "schema": "fourtask.first-public-snapshot.validation.v1",
+  "at": "2026-10-23T10:16:21.074030+00:00",
+  "checks": {
+    "copy_files_all_actual_SHA_match": true,
+    "metadata_parses_and_endpoints_no_errors": true,
+    "secret_indicators_zero": true,
+    "HER2_full_sequence_indicators_zero": true,
+    "RDE_prediction_projection_all10x63_safe": true,
+    "generic1050_2100_receipt_and_master_SHA_bound": true,
+    "total_under250MB": true,
+    "old_root_worktree_unchanged": true,
+    "old_HEAD_tree_still_same": true
+  },
+  "passed": true,
+  "file_count_before_validation_manifest": 377,
+  "bytes_before_validation_manifest": 7326956,
+  "python_AST_parse_only": 219,
+  "no_import_fit_forward": true,
+  "csv_schemas": [
+    {
+      "path": "benchmark/baselines/all-formal-mean-sd-metrics.csv",
+      "rows": 595,
+      "columns": [
+        "view_id",
+        "task",
+        "model",
+        "split",
+        "metric",
+        "mean",
+        "sd",
+        "valid_seed_count",
+        "seed_count",
+        "n"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/data/pepbi-primary-context-20261023/primary-context-index.csv",
+      "rows": 27,
+      "columns": [
+        "row_id",
+        "study_id",
+        "binding_group",
+        "primary_numeric_status",
+        "primary_temperature_verified",
+        "peptide_termini_primary_verified",
+        "assay_buffer_primary_verified",
+        "extra_target_mutations_vs_reported_variant",
+        "full_assay_construct_and_chemical_identity_certified",
+        "scope",
+        "manual_models_have_no_pretrained_encoder",
+        "detail_file",
+        "original_candidate_labels_changed"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/literature/systematic-2021-2026/current-four-source-task-matrix.csv",
+      "rows": 16,
+      "columns": [
+        "source",
+        "task",
+        "usable",
+        "status",
+        "limits"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/literature/systematic-2021-2026/four-source-method-routing.csv",
+      "rows": 240,
+      "columns": [
+        "method",
+        "doi",
+        "source",
+        "absolute_affinity",
+        "change_effect",
+        "interaction_binary",
+        "contact_site",
+        "conditions",
+        "new_model_execution_this_task"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/literature/systematic-2021-2026/provided-reference-checklist.csv",
+      "rows": 62,
+      "columns": [
+        "provided_line",
+        "label",
+        "section",
+        "alias_keys",
+        "provided_links",
+        "corrected_primary_evidence",
+        "correction_or_limit",
+        "same_reference_seed_not_first_discovery",
+        "original_row_sha256"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/methods/interaction/continuation-20261023/classification-common-mean-sd.csv",
+      "rows": 4,
+      "columns": [
+        "method",
+        "cohort",
+        "n",
+        "seeds",
+        "audit_sha256",
+        "auprc_mean",
+        "auprc_sd",
+        "auroc_mean",
+        "auroc_sd",
+        "balanced_accuracy_mean",
+        "balanced_accuracy_sd",
+        "brier_mean",
+        "brier_sd",
+        "f1_mean",
+        "f1_sd",
+        "mcc_mean",
+        "mcc_sd"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/methods/interaction/continuation-20261023/classification-common-per-seed.csv",
+      "rows": 40,
+      "columns": [
+        "method",
+        "seed",
+        "cohort",
+        "n",
+        "auroc",
+        "auprc",
+        "f1",
+        "mcc",
+        "balanced_accuracy",
+        "brier",
+        "threshold",
+        "audit_sha256"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/all-model-seed-metrics.csv",
+      "rows": 60,
+      "columns": [
+        "model",
+        "seed",
+        "MAE",
+        "RMSE",
+        "Pearson",
+        "Spearman",
+        "R2"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/mean-and-sample-SD.csv",
+      "rows": 6,
+      "columns": [
+        "model",
+        "genuine_seed_runs",
+        "test_rows_per_seed",
+        "MAE_mean",
+        "MAE_sample_SD",
+        "RMSE_mean",
+        "RMSE_sample_SD",
+        "Pearson_mean",
+        "Pearson_sample_SD",
+        "Spearman_mean",
+        "Spearman_sample_SD",
+        "R2_mean",
+        "R2_sample_SD"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/paired-seed-MAE-differences.csv",
+      "rows": 50,
+      "columns": [
+        "seed",
+        "baseline",
+        "native_RDE_MAE",
+        "baseline_MAE",
+        "MAE_RDE_minus_baseline"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-00.csv",
+      "rows": 63,
+      "columns": [
+        "row_id",
+        "component_id",
+        "prediction",
+        "split",
+        "seed",
+        "endpoint"
+      ],
+      "endpoint_values": [
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-01.csv",
+      "rows": 63,
+      "columns": [
+        "row_id",
+        "component_id",
+        "prediction",
+        "split",
+        "seed",
+        "endpoint"
+      ],
+      "endpoint_values": [
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-02.csv",
+      "rows": 63,
+      "columns": [
+        "row_id",
+        "component_id",
+        "prediction",
+        "split",
+        "seed",
+        "endpoint"
+      ],
+      "endpoint_values": [
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-03.csv",
+      "rows": 63,
+      "columns": [
+        "row_id",
+        "component_id",
+        "prediction",
+        "split",
+        "seed",
+        "endpoint"
+      ],
+      "endpoint_values": [
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-04.csv",
+      "rows": 63,
+      "columns": [
+        "row_id",
+        "component_id",
+        "prediction",
+        "split",
+        "seed",
+        "endpoint"
+      ],
+      "endpoint_values": [
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-05.csv",
+      "rows": 63,
+      "columns": [
+        "row_id",
+        "component_id",
+        "prediction",
+        "split",
+        "seed",
+        "endpoint"
+      ],
+      "endpoint_values": [
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-06.csv",
+      "rows": 63,
+      "columns": [
+        "row_id",
+        "component_id",
+        "prediction",
+        "split",
+        "seed",
+        "endpoint"
+      ],
+      "endpoint_values": [
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-07.csv",
+      "rows": 63,
+      "columns": [
+        "row_id",
+        "component_id",
+        "prediction",
+        "split",
+        "seed",
+        "endpoint"
+      ],
+      "endpoint_values": [
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-08.csv",
+      "rows": 63,
+      "columns": [
+        "row_id",
+        "component_id",
+        "prediction",
+        "split",
+        "seed",
+        "endpoint"
+      ],
+      "endpoint_values": [
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-09.csv",
+      "rows": 63,
+      "columns": [
+        "row_id",
+        "component_id",
+        "prediction",
+        "split",
+        "seed",
+        "endpoint"
+      ],
+      "endpoint_values": [
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/reports/delivery-20261023/dta-completion-groups.csv",
+      "rows": 15,
+      "columns": [
+        "view",
+        "method",
+        "n_seed",
+        "completed_seeds",
+        "missing_seeds",
+        "ten_seed_complete"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/reports/delivery-20261023/dta-existing-seed-metrics.csv",
+      "rows": 760,
+      "columns": [
+        "view",
+        "method",
+        "seed",
+        "metric",
+        "value",
+        "test_n",
+        "evidence",
+        "prediction_sha256",
+        "runtime"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/reports/delivery-20261023/generic-completed-metrics-all-panels.csv",
+      "rows": 1350,
+      "columns": [
+        "run_id",
+        "category",
+        "view_id",
+        "task",
+        "endpoint",
+        "model",
+        "split",
+        "metric",
+        "mean",
+        "sd",
+        "valid_seed_count",
+        "seed_count",
+        "n",
+        "evidence",
+        "endpoint_declaration_ref",
+        "endpoint_declaration_sha256"
+      ],
+      "endpoint_values": [
+        "author_ddG_unit_unverified",
+        "author_interaction_binary",
+        "author_pAffinity_mixed",
+        "delta_pKd_silver",
+        "observed_residue_contact_5A",
+        "pKd",
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/reports/delivery-20261023/source-task-eligibility.csv",
+      "rows": 16,
+      "columns": [
+        "source",
+        "task",
+        "status",
+        "qualification"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/reports/delivery-20261023/traditional-metrics-all-panels.csv",
+      "rows": 905,
+      "columns": [
+        "run_id",
+        "category",
+        "view_id",
+        "task",
+        "model",
+        "split",
+        "metric",
+        "mean",
+        "sd",
+        "valid_seed_count",
+        "seed_count",
+        "n",
+        "evidence"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/reports/goal-acceptance-ledger-v2/data-task-matrix.csv",
+      "rows": 16,
+      "columns": [
+        "source",
+        "task",
+        "usable",
+        "status",
+        "limits"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/reports/goal-acceptance-ledger-v2/method-scope-matrix.csv",
+      "rows": 8,
+      "columns": [
+        "method",
+        "runtime_alias",
+        "official_source",
+        "native_task",
+        "actual_scope",
+        "ten_seed_conditions",
+        "remaining",
+        "original_full_paper_reproduction_complete"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/reports/goal-acceptance-ledger-v2/requirements.csv",
+      "rows": 14,
+      "columns": [
+        "requirement",
+        "status",
+        "evidence"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/reports/goal-acceptance-ledger-v2/traditional-seed-coverage.csv",
+      "rows": 80,
+      "columns": [
+        "branch",
+        "view",
+        "model",
+        "actual_seeds",
+        "complete_10"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/reports/her2-strict-local/all-seeds-metrics.csv",
+      "rows": 200,
+      "columns": [
+        "view_id",
+        "endpoint",
+        "model",
+        "seed",
+        "split",
+        "n",
+        "mae",
+        "rmse",
+        "bias",
+        "pearson",
+        "spearman",
+        "r2",
+        "direction_accuracy_nonzero",
+        "nonzero_effect_n"
+      ],
+      "endpoint_values": [
+        "pKd",
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/reports/her2-strict-local/ten-seed-mean-sd.csv",
+      "rows": 160,
+      "columns": [
+        "view_id",
+        "endpoint",
+        "model",
+        "split",
+        "metric",
+        "mean",
+        "sd",
+        "valid_seed_count",
+        "seed_count",
+        "n"
+      ],
+      "endpoint_values": [
+        "pKd",
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "benchmark/reports/profaff-HU-external/all-seeds-metrics.csv",
+      "rows": 100,
+      "columns": [
+        "training_view",
+        "model",
+        "seed",
+        "n",
+        "mae",
+        "rmse",
+        "bias",
+        "r2",
+        "pearson",
+        "spearman",
+        "domain_macro_mae",
+        "input_group_mean_mae"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/reports/profaff-HU-external/ten-seed-mean-sd.csv",
+      "rows": 10,
+      "columns": [
+        "training_view",
+        "model",
+        "seed_count",
+        "mae_mean",
+        "mae_sd",
+        "rmse_mean",
+        "rmse_sd",
+        "r2_mean",
+        "r2_sd",
+        "pearson_mean",
+        "pearson_sd",
+        "spearman_mean",
+        "spearman_sd",
+        "bias_mean",
+        "bias_sd",
+        "domain_macro_mae_mean",
+        "domain_macro_mae_sd",
+        "input_group_mean_mae_mean",
+        "input_group_mean_mae_sd"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    },
+    {
+      "path": "benchmark/reports/root-generic-aggregation-independent-v1/view-endpoint-map.csv",
+      "rows": 15,
+      "columns": [
+        "view_id",
+        "task",
+        "endpoint",
+        "parent_view_id",
+        "run_ids",
+        "evidence"
+      ],
+      "endpoint_values": [
+        "author_ddG_unit_unverified",
+        "author_interaction_binary",
+        "author_pAffinity_mixed",
+        "delta_pKd_silver",
+        "observed_residue_contact_5A",
+        "pKd",
+        "uncalibrated_author_DDG"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "delivery/DTA-accepted144-per-seed.csv",
+      "rows": 144,
+      "columns": [
+        "view",
+        "method",
+        "seed",
+        "task",
+        "endpoint",
+        "test_n",
+        "saved_prediction_sha256",
+        "snapshot_accepted_details_sha256",
+        "claim_scope",
+        "metric_n",
+        "metric_MAE",
+        "metric_RMSE",
+        "metric_R2",
+        "metric_Pearson",
+        "metric_Spearman",
+        "metric_direction_accuracy_nonzero",
+        "metric_direction_n"
+      ],
+      "endpoint_values": [
+        "delta_pKd_silver",
+        "pKd"
+      ],
+      "endpoint_blank_n": 0
+    },
+    {
+      "path": "delivery/DTA-accepted144-view-method-coverage.csv",
+      "rows": 15,
+      "columns": [
+        "view",
+        "method",
+        "accepted_seed_count",
+        "accepted_seeds",
+        "missing_seeds",
+        "ten_seed_complete",
+        "snapshot_at"
+      ],
+      "endpoint_values": null,
+      "endpoint_blank_n": null
+    }
+  ],
+  "secret_indicator_locations": [],
+  "HER2_sequence_indicator_locations": [],
+  "parse_or_scope_errors": [],
+  "owner_sources_changed_after_freeze": [
+    "benchmark/methods/dta/accepted-census-current.json",
+    "benchmark/methods/dta/accepted-details-current.json",
+    "benchmark/methods/dta/export_complete_dta_report.py",
+    "benchmark/methods/interaction/continuation-20261023/REPORT.classification-10seeds.md",
+    "benchmark/methods/interaction/continuation-20261023/classification-summary-export.receipt.json",
+    "benchmark/methods/interaction/status.interaction.continuation.v1.json"
+  ],
+  "RDE_projection_checks": [
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-00.csv",
+      "rows": 63,
+      "labels_absent": true,
+      "original_sequence_columns_absent": true,
+      "correct_endpoint": true
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-01.csv",
+      "rows": 63,
+      "labels_absent": true,
+      "original_sequence_columns_absent": true,
+      "correct_endpoint": true
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-02.csv",
+      "rows": 63,
+      "labels_absent": true,
+      "original_sequence_columns_absent": true,
+      "correct_endpoint": true
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-03.csv",
+      "rows": 63,
+      "labels_absent": true,
+      "original_sequence_columns_absent": true,
+      "correct_endpoint": true
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-04.csv",
+      "rows": 63,
+      "labels_absent": true,
+      "original_sequence_columns_absent": true,
+      "correct_endpoint": true
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-05.csv",
+      "rows": 63,
+      "labels_absent": true,
+      "original_sequence_columns_absent": true,
+      "correct_endpoint": true
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-06.csv",
+      "rows": 63,
+      "labels_absent": true,
+      "original_sequence_columns_absent": true,
+      "correct_endpoint": true
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-07.csv",
+      "rows": 63,
+      "labels_absent": true,
+      "original_sequence_columns_absent": true,
+      "correct_endpoint": true
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-08.csv",
+      "rows": 63,
+      "labels_absent": true,
+      "original_sequence_columns_absent": true,
+      "correct_endpoint": true
+    },
+    {
+      "path": "benchmark/methods/uniair/continuation-20261023/rde-ten-seed-report-v1/prediction-only/seed-09.csv",
+      "rows": 63,
+      "labels_absent": true,
+      "original_sequence_columns_absent": true,
+      "correct_endpoint": true
+    }
+  ],
+  "not_full_project_delivery": true,
+  "no_commit_push": true
+}

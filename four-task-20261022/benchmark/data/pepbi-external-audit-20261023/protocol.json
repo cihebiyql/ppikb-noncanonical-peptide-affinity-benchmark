@@ -1,0 +1,28 @@
+{
+  "schema": "PEPBI.external-data-audit.prepare.v1",
+  "opened_at_utc": "2026-10-23T06:49:20.724715+00:00",
+  "source_workbook_path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\literature\\systematic-2021-2026\\repositories\\PepXPro\\scrape\\inputs\\external\\PEPBI.xlsx",
+  "source_workbook_sha256": "0f3ae5e9021b5c0e925114c5b53a0cb441de90adc42134e5144d4ac9c4826a24",
+  "copied_bytes": 217930,
+  "max_task_minutes": 60,
+  "tasks": [
+    "grain_copy_temperature_construct_dependency",
+    "primary_source_bindinggroup_mapping",
+    "chemical_identity_and_length_units",
+    "all_raw_source_overlap_exactpair_subsequence_DOI_structure",
+    "freeze_only_source_condition_supported_sequence_conditional_candidate"
+  ],
+  "do_not_execute": [
+    "fit",
+    "model_forward",
+    "protein_structure_prediction",
+    "large_model_download",
+    "new_paper_method",
+    "new_negatives_or_contact_labels",
+    "similarity_based_mutation_pair_creation"
+  ],
+  "human_only_required": false,
+  "scope_policy": "same current explicit viral/toxin isolation;nonhuman/unknown by itself is not exclusion",
+  "qualification": "missing source/condition context excluded from certified_independent cohort;conditional candidate allowed with exact status;no blind/newfamily/NCcore claim",
+  "raw_source_modified": false
+}

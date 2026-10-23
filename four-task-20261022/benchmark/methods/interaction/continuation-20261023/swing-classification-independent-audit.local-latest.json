@@ -1,0 +1,184 @@
+{
+  "audit_at": "2026-10-23T05:35:32.459139+00:00",
+  "auditor_sha256": "84215bb817fd6b6ad2eff9f75e6561481bf5ba9951042f860445ed4b75da1909",
+  "independent_metric_source_sha256": "1ef2c6a63dabac0c6758ee4642e9f6c014f4a17db4ab7e76081999f748c6206d",
+  "method": "swing",
+  "raw_data_sha256": "02eb75d9b6ebaab1b4b1cf5338b2141f4d3750d794fc43c38aac57a0e34e03fa",
+  "completed_and_verified_seeds": [
+    5
+  ],
+  "pending_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9
+  ],
+  "errors": [],
+  "all10_actual_and_verified": false,
+  "results": [
+    {
+      "seed": 5,
+      "run": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\interaction_continuation_swing_classification_hash0_seed5_v1",
+      "metrics": {
+        "n": 2362,
+        "auroc": 0.6593477164673678,
+        "auprc": 0.6024756002935174,
+        "f1": 0.6424021838034577,
+        "mcc": 0.11933971151860515,
+        "balanced_accuracy": 0.5304920040340009,
+        "brier": 0.25960336033018117,
+        "threshold": 0.5
+      },
+      "common_cohorts": {
+        "native_common2349": {
+          "n": 2349,
+          "auroc": 0.6608488442073388,
+          "auprc": 0.602583148731656,
+          "f1": 0.6412213740458015,
+          "mcc": 0.11902429126397464,
+          "balanced_accuracy": 0.5304944778714121,
+          "brier": 0.25983242883633084,
+          "threshold": 0.5
+        },
+        "no_exact_affinitytrain2290_conditional": {
+          "n": 2290,
+          "auroc": 0.6570179533158329,
+          "auprc": 0.5846723038301704,
+          "f1": 0.6282457251424952,
+          "mcc": 0.11541082635942783,
+          "balanced_accuracy": 0.5299047337351032,
+          "brier": 0.26342274413130595,
+          "threshold": 0.5
+        }
+      },
+      "selection_verified": true,
+      "candidate_trials": [
+        {
+          "candidate": 0,
+          "validation_logloss": 0.7465594410896301,
+          "weights_path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\interaction_continuation_swing_classification_hash0_seed5_v1\\artifacts\\seed_5\\candidate_0\\model.json",
+          "weights_bytes": 109582,
+          "validation_prediction_sha256": "8bfbd2b44dc140c274476e1af8ecdc17487984097582bbca68f3337f9cfedc53"
+        },
+        {
+          "candidate": 1,
+          "validation_logloss": 0.7997215390205383,
+          "weights_path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\runs\\interaction_continuation_swing_classification_hash0_seed5_v1\\artifacts\\seed_5\\candidate_1\\model.json",
+          "weights_bytes": 1142004,
+          "validation_prediction_sha256": "7c2e8b739ec3ac4f80724edafb3f9a79808e3e3e47fadf56b4d86f013a6846e0"
+        }
+      ],
+      "test_prediction_sha256": "a28e436b3a851a3b089e32810e661bff3b66bc406ad619be9005d61dd35c4902",
+      "test_metrics_sha256": "378c934f8d2d286e67bbec7e180084801aae82c1894aa72d2dbd05a73023761f",
+      "actual_terminal_receipt_sha256": "e1fd966df3c3d43557bfa06d4339b08ba2e5819e5cface4cfa1ebe0bbafc3a3e",
+      "native_grammar_representation_retrained": true,
+      "backbone_finetuned": false,
+      "metric_recomputation_passed": true
+    }
+  ],
+  "mean_sd_full_native_test": {
+    "auprc": {
+      "mean": 0.6024756002935174,
+      "sd": null,
+      "valid_seeds": 1
+    },
+    "auroc": {
+      "mean": 0.6593477164673678,
+      "sd": null,
+      "valid_seeds": 1
+    },
+    "balanced_accuracy": {
+      "mean": 0.5304920040340009,
+      "sd": null,
+      "valid_seeds": 1
+    },
+    "brier": {
+      "mean": 0.25960336033018117,
+      "sd": null,
+      "valid_seeds": 1
+    },
+    "f1": {
+      "mean": 0.6424021838034577,
+      "sd": null,
+      "valid_seeds": 1
+    },
+    "mcc": {
+      "mean": 0.11933971151860515,
+      "sd": null,
+      "valid_seeds": 1
+    }
+  },
+  "mean_sd_common_cohorts": {
+    "native_common2349": {
+      "auprc": {
+        "mean": 0.602583148731656,
+        "sd": null,
+        "valid_seeds": 1
+      },
+      "auroc": {
+        "mean": 0.6608488442073388,
+        "sd": null,
+        "valid_seeds": 1
+      },
+      "balanced_accuracy": {
+        "mean": 0.5304944778714121,
+        "sd": null,
+        "valid_seeds": 1
+      },
+      "brier": {
+        "mean": 0.25983242883633084,
+        "sd": null,
+        "valid_seeds": 1
+      },
+      "f1": {
+        "mean": 0.6412213740458015,
+        "sd": null,
+        "valid_seeds": 1
+      },
+      "mcc": {
+        "mean": 0.11902429126397464,
+        "sd": null,
+        "valid_seeds": 1
+      }
+    },
+    "no_exact_affinitytrain2290_conditional": {
+      "auprc": {
+        "mean": 0.5846723038301704,
+        "sd": null,
+        "valid_seeds": 1
+      },
+      "auroc": {
+        "mean": 0.6570179533158329,
+        "sd": null,
+        "valid_seeds": 1
+      },
+      "balanced_accuracy": {
+        "mean": 0.5299047337351032,
+        "sd": null,
+        "valid_seeds": 1
+      },
+      "brier": {
+        "mean": 0.26342274413130595,
+        "sd": null,
+        "valid_seeds": 1
+      },
+      "f1": {
+        "mean": 0.6282457251424952,
+        "sd": null,
+        "valid_seeds": 1
+      },
+      "mcc": {
+        "mean": 0.11541082635942783,
+        "sd": null,
+        "valid_seeds": 1
+      }
+    }
+  },
+  "audit_method": "Original frozen observation IDs/labels, validation-only two-candidate selection and raw saved probabilities. AUROC via rank sum, AUPRC via tied-score grouped increments; no fitted model loaded or forward performed.",
+  "interpretation": "Constructed negative binary benchmark; native sequence-only chemistry limitations. PepInter fixed supervised backbone conditional exposure, SWING train-only native grammar/Doc2Vec adaptation. Old unknown-hash9 are excluded."
+}

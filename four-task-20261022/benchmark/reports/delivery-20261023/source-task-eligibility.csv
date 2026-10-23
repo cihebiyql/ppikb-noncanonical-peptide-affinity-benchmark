@@ -1,0 +1,17 @@
+﻿source,task,status,qualification
+PPIKB,affinity,ready,9116 point Kd observations; 1996 annotatedNC and7120 standard20; different split panels not two datasets
+PPIKB,effect,silver_diagnostic_ready_strict_gold_missing,"2289 dependent pair rows from measured endpoints; metadata context matched, actual chemistry/construct/conditions incompletely certified"
+PPIKB,classification,not_ready_measured_negatives_missing,The eligible Kd cohort does not provide measured nonbinding negatives; no threshold introduced as native binary label
+PPIKB,contact,expanded_experimental_dependency_cold_ready,"64 source-linked human experimental complexes8625 observed residues;40 conservative dependency components,max7complexes; old3complexpilot retained,not summed as independent experiments"
+UniAIR,affinity,external_protein_extension_ready,"HER2 Kd419 rows but Fab partner227aa, not short-peptide data; one background"
+UniAIR,effect,local_diagnostic_and_original_external_ready,"419 same author measurements, not838 independent samples; local variant diagnostic does not establish cross-background transfer; author-ddG unit/sign unverified"
+UniAIR,classification,not_ready_placeholder_labels,TCRen public DDG zero placeholders cannot serve as measured binary gold; no automatic negative conversion
+UniAIR,contact,experimental_WT_template_present_not_main_contact_benchmark,HER2 has one experimental WT template;419 modeled mutants are not experimental contact ground truth
+PepAffDB/PepInter,affinity,mixed_endpoint_diagnostic_ready,3620 scope-screened author pAffinity records; per-row Kd/Ki/IC50 lineage unresolved; not pooled with pKd
+PepAffDB/PepInter,effect,not_ready_primary_matched_pairs_missing,Released affinity table lacks certified mother/variant assay mapping; do not fabricate pairs from sequence similarity
+PepAffDB/PepInter,classification,author_classification_ready,"17054 source examples; positives structural, negatives author Rosetta/Seq constructed; target-cluster cold, not measured-negative clinical classification"
+PepAffDB/PepInter,contact,not_ready_per_row_experimental_coordinate_mapping_missing,Source PDB origin alone is insufficient to turn every released sequence pair into an experimental residue-contact label
+ProfAff/PDZ2022,affinity,conditional_domain_view_external_ready,"162 human direct FP Kd domain-view inputs,112 standard-backbone50PTM; actual full fusion and chemical encoding limitations retained"
+ProfAff/PDZ2022,effect,PTM_silver_external_ready,"42 PTM contrasts from68 existing observations,2 backbones17domains; shared references held external; sequence-only inputs collide"
+ProfAff/PDZ2022,classification,not_ready_negative_limit_semantics_unresolved,Zero/sentinel/missing direct Kd entries not treated as measured nonbinding labels
+ProfAff/PDZ2022,contact,not_ready_experimental_partner_structure_mapping_missing,Domain clone sequence alone does not specify experimental peptide-bound contacts

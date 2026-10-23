@@ -1,0 +1,38 @@
+{
+  "prepared_at": "2026-10-23T03:43:59.090137+00:00",
+  "new_worker_sha256": "85006f649f05839d7c783d28e02716bdad856239a6a47a62cf525c512e068a9f",
+  "parent_component_sha256": "7cad55dbe4e1e6d10e3cba7f567e2a4ca1dac8a15cb9b38b574831c414ab0d78",
+  "native_head": "RegressionHead(2304,1,1152)",
+  "native_loss": "original public FocalLoss(num_classes=1,task=binary,alpha=.25,gamma2)",
+  "training": "new random native head for each seed/candidate, original frozen regression-supervised backbone",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "grid": [
+    {
+      "learning_rate": 1e-05,
+      "weight_decay": 0.01
+    },
+    {
+      "learning_rate": 0.0001,
+      "weight_decay": 0.01
+    }
+  ],
+  "epochs": 20,
+  "patience": 5,
+  "batch_size": 128,
+  "selection": "validation binary logloss, test once after selection; not author private trainer reproduction",
+  "prior_fitted_head_imported": false,
+  "supervised_backbone_exposure": "conditional, original regression checkpoint; exact training hits/source/homology not erased by new split",
+  "full_backbone_training": false,
+  "private_Astra_framework_used": false
+}

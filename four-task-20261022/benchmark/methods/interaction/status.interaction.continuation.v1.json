@@ -1,0 +1,658 @@
+{
+  "schema": "fourtask.interaction.continuation-status.v1",
+  "updated_at": "2026-10-23T09:59:31.977903+00:00",
+  "snapshot_captured_at": "2026-10-23T09:59:18.192961+00:00",
+  "snapshot_scope": "Node23 CPU PID liveness only; Node1 GPU terminal manifests and router references separate",
+  "status_builder_sha256": "1468c307e9a6937deaa63f6c360c06516f1d0ea3054306f523f9cb512b7a349f",
+  "old_status_v3_is_history_unchanged": "methods/interaction/status.interaction.v3.json",
+  "methods": {
+    "SWING": {
+      "controlled_hash0_classification": {
+        "expected_seed_count": 10,
+        "original_attempt_result_complete_seeds": [
+          1,
+          3,
+          5,
+          7,
+          8,
+          9
+        ],
+        "zero_fit_recovered_result_seeds": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "result_complete_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "result_complete_count": 10,
+        "independently_audited_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "independently_audited_count": 10,
+        "local_complete_rehashed_seeds": [
+          0,
+          1,
+          3,
+          5,
+          7
+        ],
+        "local_complete_rehashed_count": 5,
+        "completed_all10": true,
+        "source_audit": "methods/interaction/continuation-20261023/swing-classification-route-audit.remote-latest.json",
+        "original_unknown_hash9_excluded": true,
+        "native_train_epochs": 16,
+        "native_infer_epochs": 16,
+        "vector_size": 72,
+        "full_native_test_rows": 2362,
+        "common_test_rows": 2349,
+        "conditional_no_exact_affinitytrain_rows": 2290,
+        "zero_fit_restoration_gate": "Four actual original-model continuations all ten validation-anchor maximum probability error exactly0; original1e-7 gate unchanged",
+        "scope": "Native grammar/Doc2Vec/XGB classification with disclosed strict train-only representation adaptation, no original paper full-experiment claim"
+      },
+      "pKd_regression_adaptation": {
+        "source_cold": {
+          "expected_seed_count": 10,
+          "result_complete_seeds": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "independently_audited_seeds": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "local_complete_rehashed_seeds": [],
+          "state": "see_actual_queue_v3_progress",
+          "eligible_observations": 7669,
+          "annotated_NC_observations": 549,
+          "chemical_annotation_encoded": false,
+          "native_representation_unchanged": "16train/16infer/72D",
+          "readout": "XGBRegressor adaptation, not native paper affinity endpoint",
+          "inference_rng_key": "actual full ordered native token-list SHA256+trainseed",
+          "pending_seeds": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "audit_errors": [],
+          "completed_all10": false,
+          "audit_source": "methods/interaction/continuation-20261023/swing-affinity/affinity-source-independent-audit.latest.json"
+        },
+        "target_cold": {
+          "expected_seed_count": 10,
+          "result_complete_seeds": [],
+          "independently_audited_seeds": [],
+          "local_complete_rehashed_seeds": [],
+          "state": "see_actual_queue_v3_progress",
+          "eligible_observations": 7669,
+          "annotated_NC_observations": 549,
+          "chemical_annotation_encoded": false,
+          "native_representation_unchanged": "16train/16infer/72D",
+          "readout": "XGBRegressor adaptation, not native paper affinity endpoint",
+          "inference_rng_key": "actual full ordered native token-list SHA256+trainseed",
+          "pending_seeds": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "audit_errors": [],
+          "completed_all10": false,
+          "audit_source": "methods/interaction/continuation-20261023/swing-affinity/affinity-target-independent-audit.latest.json"
+        }
+      }
+    },
+    "PepInter": {
+      "new_native_classification_component": {
+        "raw_view_rows": 17054,
+        "literal20AA_native_length_eligible_rows": 15389,
+        "known_exact_features": 25,
+        "new_unique_features_required": 15364,
+        "expected_feature_chunk_count": 8,
+        "result_complete_feature_chunks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "result_complete_feature_chunk_count": 8,
+        "independently_audited_feature_chunks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "independently_audited_feature_chunk_count": 8,
+        "local_complete_rehashed_feature_chunks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "local_complete_rehashed_feature_chunk_count": 8,
+        "expected_head_seed_count": 10,
+        "result_complete_head_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "result_complete_head_seed_count": 10,
+        "independently_audited_head_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "local_complete_rehashed_head_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "native_head": "2304->1152->1, public ForClassification RegressionHead/GELU/LayerNorm",
+        "native_loss": "public binary FocalLoss alpha.25 gamma2",
+        "head_grid": "two LR1e-5/1e-4,20epochs/patience5,batch128,validationlogloss only",
+        "frozen_backbone": true,
+        "full_backbone_finetuning_baseline_completed": false,
+        "supervised_exposure": "regression-supervised checkpoint conditional; test59 exact released-affinity-train pairs, no-exact-hit2290 not certified unexposed",
+        "terminal_batch_complete": true,
+        "live_batch_progress_completed_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "controller_state": {
+          "started_at": "2026-10-23T04:33:33.800597+00:00",
+          "pid": 299102,
+          "status": "scientific_batch_dispatched",
+          "new_scientific_fits_launched": 20,
+          "failures": [],
+          "controller_timeout_seconds": 86400,
+          "actually_succeeded_chunks": [
+            "continuation_pepinter_classification_native_feature_chunk00_v1",
+            "continuation_pepinter_classification_native_feature_chunk01_v1",
+            "continuation_pepinter_classification_native_feature_chunk02_v1",
+            "continuation_pepinter_classification_native_feature_chunk03_v1",
+            "continuation_pepinter_classification_native_feature_chunk04_v1",
+            "continuation_pepinter_classification_native_feature_chunk05_v1",
+            "continuation_pepinter_classification_native_feature_chunk06_v1",
+            "continuation_pepinter_classification_native_feature_chunk07_v1"
+          ],
+          "at": "2026-10-23T08:09:02.896906+00:00",
+          "launch": {
+            "started_at": "2026-10-23T08:09:02.881790+00:00",
+            "supervisor_pid": 608868,
+            "supervisor_pgid": 608868,
+            "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_pepinter_native_classification_Focal_head10_CPU_FP32_v1.json",
+            "contract_sha256": "2ee4bceb9d361cb4c6960712618b580e6f02b3111d28100afdd8f61da6ae804c",
+            "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+            "private_validator_passed": true,
+            "files_skipped": 0,
+            "cpu_core": 24,
+            "cpu_only": true,
+            "new_model_fit": 20
+          },
+          "ended_at": "2026-10-23T08:09:02.896867+00:00"
+        },
+        "no_prepared_item_counted_as_result": true,
+        "local_candidate_head_weights_count": 20
+      },
+      "previous_affinity_components": {
+        "history_status_path": "methods/interaction/status.interaction.v3.json",
+        "four_panels_each10seeds_completed": true,
+        "scope": "2919standard and6336literal-backbone views, source/target panels; supervised backbone components, chemistry-blind to extra NC/PTM annotations"
+      },
+      "native_allparameter_trainstep_canary": {
+        "actual_status": "succeeded",
+        "new_optimizer_steps": 1,
+        "completed_baseline_seeds": 0,
+        "new_test_forward_rows": 0,
+        "trainable_parameter_elements": 576293761,
+        "parameter_tensor_gradient_elements": 576293761,
+        "backend": "CPU FP32, no GPU bf16 equivalence claim",
+        "scope": "one48-token shortestTRAIN input only; all original parameter tensors receive finite gradients and AdamWupdate, no full-data or long-input feasibility claim",
+        "actual_local_SHA_audit": "methods/interaction/continuation-20261023/pepinter-classification/native-CPU-FP32-one-step.actual-local-SHA-audit.json"
+      },
+      "native_allparameter_GPU_gradient_gates": {
+        "preflight_index": "methods/interaction/continuation-20261023/pepinter-classification/native-GPU-gradient-gates.latest.json",
+        "actual_GPU_scientific_status_owner": "resources/continuation-20261023",
+        "prepared_is_not_executed": true,
+        "required_sequence": "48token TRAINstep actual success, then991token global-maximum TRAINstep;12GiB budget+6GiBgrowthreserve",
+        "completed_baseline_seeds": 0
+      }
+    }
+  },
+  "diagnostics": {
+    "knownhash0_restore": {
+      "actual_status": "succeeded",
+      "anchors": 10,
+      "maximum_probability_error": 0.0,
+      "unchanged_gate": 1e-07,
+      "new_fit": 0,
+      "new_test_forward_rows": 0,
+      "completed_baseline_seeds": 0,
+      "own_waiting_controller_resumed": true,
+      "source_run": "runs/interaction_continuation_swing_knownhash0_seed5_ten_validation_anchor_restore_canary_v1",
+      "actual_local_SHA_audit": "methods/interaction/continuation-20261023/knownhash-restore-canary.actual-local-SHA-audit.json"
+    }
+  },
+  "active_Node23_scientific_workers": [
+    {
+      "run_id": "interaction_continuation_swing_pKd_source_hash0_seed5_memo_v3",
+      "pid": 680582
+    },
+    {
+      "run_id": "interaction_continuation_swing_pKd_source_hash0_seed6_memo_v3",
+      "pid": 682009
+    },
+    {
+      "run_id": "interaction_continuation_swing_pKd_source_hash0_seed7_memo_v3",
+      "pid": 683214
+    },
+    {
+      "run_id": "interaction_continuation_swing_pKd_source_hash0_seed8_memo_v3",
+      "pid": 708595
+    },
+    {
+      "run_id": "interaction_continuation_swing_pKd_source_hash0_seed9_memo_v3",
+      "pid": 709891
+    },
+    {
+      "run_id": "interaction_continuation_swing_pKd_target_hash0_seed0_memo_v3",
+      "pid": 711068
+    },
+    {
+      "run_id": "interaction_continuation_swing_pKd_target_hash0_seed1_memo_v3",
+      "pid": 713555
+    },
+    {
+      "run_id": "interaction_continuation_swing_pKd_target_hash0_seed2_memo_v3",
+      "pid": 744676
+    }
+  ],
+  "GPU_router_current_reference": "resources/continuation-20261023/native-interleaved-v7-progress.json",
+  "SWING_affinity_queue_current": {
+    "started_at": "2026-10-23T09:04:08.385986+00:00",
+    "pid": 679375,
+    "pending": [
+      "continuation_swing_pKd_target_hash0_seed3_memo_v3",
+      "continuation_swing_pKd_target_hash0_seed4_memo_v3",
+      "continuation_swing_pKd_target_hash0_seed5_memo_v3",
+      "continuation_swing_pKd_target_hash0_seed6_memo_v3",
+      "continuation_swing_pKd_target_hash0_seed7_memo_v3",
+      "continuation_swing_pKd_target_hash0_seed8_memo_v3",
+      "continuation_swing_pKd_target_hash0_seed9_memo_v3"
+    ],
+    "launched": [
+      {
+        "started_at": "2026-10-23T09:04:12.034562+00:00",
+        "supervisor_pid": 679378,
+        "supervisor_pgid": 679378,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_source_hash0_seed4_memo_v3.json",
+        "contract_sha256": "8f57363e53ed9cbafa87e4f1bd778d6356e7286595b9b3febeda9a314530d9f8",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 4,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T09:05:19.129635+00:00",
+        "supervisor_pid": 680580,
+        "supervisor_pgid": 680580,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_source_hash0_seed5_memo_v3.json",
+        "contract_sha256": "15a91ef1120797081d7387506160039da1083e4427b3c1e6066b65b1285081bb",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 5,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T09:06:26.362929+00:00",
+        "supervisor_pid": 682007,
+        "supervisor_pgid": 682007,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_source_hash0_seed6_memo_v3.json",
+        "contract_sha256": "a2fddbe15a4b4c88be2e362fc98032e0ee5bf5688f37b637a1fa284c00a0d3a2",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 6,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T09:07:33.517543+00:00",
+        "supervisor_pid": 683212,
+        "supervisor_pgid": 683212,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_source_hash0_seed7_memo_v3.json",
+        "contract_sha256": "699f9a89d475b90870de0f4bc9b3f790bf67714fce43005dc7e7ac74f01cd42a",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 7,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T09:28:14.514317+00:00",
+        "supervisor_pid": 708593,
+        "supervisor_pgid": 708593,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_source_hash0_seed8_memo_v3.json",
+        "contract_sha256": "45e66f79f7eb1aa5e99c326d883d50eb60f1bcb7171df8a28bc287134ff94bb8",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 0,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T09:29:22.674890+00:00",
+        "supervisor_pid": 709885,
+        "supervisor_pgid": 709885,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_source_hash0_seed9_memo_v3.json",
+        "contract_sha256": "54dfbaa74b73bb0710b8c4cb15458c4e6fd1fc7c0e2922ce1f129fcef2bfa422",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 1,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T09:30:37.886390+00:00",
+        "supervisor_pid": 711066,
+        "supervisor_pgid": 711066,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_target_hash0_seed0_memo_v3.json",
+        "contract_sha256": "9a77de3486da6c0796185051bfa6f29e3bf1559eec53a2300b648038f196d055",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 2,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T09:32:15.373788+00:00",
+        "supervisor_pid": 713553,
+        "supervisor_pgid": 713553,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_target_hash0_seed1_memo_v3.json",
+        "contract_sha256": "b1de955daa4fa837fa191adae0320f8d6fcfea3cc64509fc2e7a757058599b8e",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 3,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T09:58:27.015105+00:00",
+        "supervisor_pid": 744674,
+        "supervisor_pgid": 744674,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_target_hash0_seed2_memo_v3.json",
+        "contract_sha256": "6efd5c731bcb6e78bcbf8e4cdba61895f149d9dbff78a724d6b514ceade8a9f6",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 4,
+        "cpu_only": true,
+        "new_model_fit": 1
+      }
+    ],
+    "failures": [
+      {
+        "job": "continuation_swing_pKd_source_hash0_seed5_memo_v3",
+        "at": "2026-10-23T09:04:15.484150+00:00",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/launch_swing_affinity_memo_v3.py\", line 44, in <module>\n    raise RuntimeError('Scientific SWING worker capacity or requested reserved core occupied')\nRuntimeError: Scientific SWING worker capacity or requested reserved core occupied\n"
+      },
+      {
+        "job": "continuation_swing_pKd_source_hash0_seed6_memo_v3",
+        "at": "2026-10-23T09:05:22.581780+00:00",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/launch_swing_affinity_memo_v3.py\", line 44, in <module>\n    raise RuntimeError('Scientific SWING worker capacity or requested reserved core occupied')\nRuntimeError: Scientific SWING worker capacity or requested reserved core occupied\n"
+      },
+      {
+        "job": "continuation_swing_pKd_source_hash0_seed7_memo_v3",
+        "at": "2026-10-23T09:06:29.813397+00:00",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/launch_swing_affinity_memo_v3.py\", line 44, in <module>\n    raise RuntimeError('Scientific SWING worker capacity or requested reserved core occupied')\nRuntimeError: Scientific SWING worker capacity or requested reserved core occupied\n"
+      },
+      {
+        "job": "continuation_swing_pKd_source_hash0_seed8_memo_v3",
+        "at": "2026-10-23T09:07:36.993685+00:00",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/launch_swing_affinity_memo_v3.py\", line 44, in <module>\n    raise RuntimeError('Scientific SWING worker capacity or requested reserved core occupied')\nRuntimeError: Scientific SWING worker capacity or requested reserved core occupied\n"
+      },
+      {
+        "job": "continuation_swing_pKd_source_hash0_seed9_memo_v3",
+        "at": "2026-10-23T09:28:17.983649+00:00",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/launch_swing_affinity_memo_v3.py\", line 44, in <module>\n    raise RuntimeError('Scientific SWING worker capacity or requested reserved core occupied')\nRuntimeError: Scientific SWING worker capacity or requested reserved core occupied\n"
+      },
+      {
+        "job": "continuation_swing_pKd_target_hash0_seed0_memo_v3",
+        "at": "2026-10-23T09:29:26.578783+00:00",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/launch_swing_affinity_memo_v3.py\", line 44, in <module>\n    raise RuntimeError('Scientific SWING worker capacity or requested reserved core occupied')\nRuntimeError: Scientific SWING worker capacity or requested reserved core occupied\n"
+      },
+      {
+        "job": "continuation_swing_pKd_target_hash0_seed1_memo_v3",
+        "at": "2026-10-23T09:30:41.416381+00:00",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/launch_swing_affinity_memo_v3.py\", line 44, in <module>\n    raise RuntimeError('Scientific SWING worker capacity or requested reserved core occupied')\nRuntimeError: Scientific SWING worker capacity or requested reserved core occupied\n"
+      },
+      {
+        "job": "continuation_swing_pKd_target_hash0_seed2_memo_v3",
+        "at": "2026-10-23T09:32:18.852194+00:00",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/launch_swing_affinity_memo_v3.py\", line 44, in <module>\n    raise RuntimeError('Scientific SWING worker capacity or requested reserved core occupied')\nRuntimeError: Scientific SWING worker capacity or requested reserved core occupied\n"
+      },
+      {
+        "job": "continuation_swing_pKd_target_hash0_seed3_memo_v3",
+        "at": "2026-10-23T09:58:30.510657+00:00",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/launch_swing_affinity_memo_v3.py\", line 44, in <module>\n    raise RuntimeError('Scientific SWING worker capacity or requested reserved core occupied')\nRuntimeError: Scientific SWING worker capacity or requested reserved core occupied\n"
+      }
+    ],
+    "status": "running_or_dispatching_affinity",
+    "maximum_parallel": 8,
+    "controller_timeout_seconds": 172800,
+    "inherited_original_v2_launches": [
+      {
+        "started_at": "2026-10-23T08:33:25.054280+00:00",
+        "supervisor_pid": 640239,
+        "supervisor_pgid": 640239,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_source_hash0_seed0_v2.json",
+        "contract_sha256": "b17dc97369814d76393f5d17fdb093609549561ad7e3af34e4fa8ad18b6d2b4a",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 0,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T08:34:32.108184+00:00",
+        "supervisor_pid": 641512,
+        "supervisor_pgid": 641512,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_source_hash0_seed1_v2.json",
+        "contract_sha256": "e000b2c4e160d70240175addf96b886b865b9a6b517780503a9adc50332ab6d5",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 1,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T08:35:39.191596+00:00",
+        "supervisor_pid": 642711,
+        "supervisor_pgid": 642711,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_source_hash0_seed2_v2.json",
+        "contract_sha256": "382bc495364fcca8643f40f092d19d805d60c6161564286afb91584dc9023500",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 2,
+        "cpu_only": true,
+        "new_model_fit": 1
+      },
+      {
+        "started_at": "2026-10-23T08:36:46.367173+00:00",
+        "supervisor_pid": 644132,
+        "supervisor_pgid": 644132,
+        "contract_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/contracts/continuation_swing_pKd_source_hash0_seed3_v2.json",
+        "contract_sha256": "9bad47706efb599d6633fa81d771241df0a847c28edc651487611cdab9856d25",
+        "actual_private_validator_sha256": "c675b8c99253ee204d177520b128ad96efab7c8e2fd0555da4a60d5e5e9fea6e",
+        "private_validator_passed": true,
+        "files_skipped": 0,
+        "cpu_core": 3,
+        "cpu_only": true,
+        "new_model_fit": 1
+      }
+    ],
+    "pure_performance_revision": "memo-v3 exact vector and postRNG replay, current v2 jobs untouched",
+    "original_attempt_classification_completed": [
+      1,
+      3,
+      5,
+      7,
+      8,
+      9
+    ],
+    "verified_routed_cohort_closure_sha256": "23b24a05faf56fa4a33b8dd6697aabab38cf33234ddab266b7a707dfdb7d88db",
+    "controlled_classification_completed": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "active_scientific_pids": [
+      680582,
+      682009,
+      683214,
+      708595,
+      709891,
+      711068,
+      713555
+    ],
+    "at": "2026-10-23T09:58:30.510717+00:00"
+  },
+  "classification_closure": {
+    "schema": "fourtask.controlled-classification-cohort-closure.v1",
+    "closed_at": "2026-10-23T08:32:37.515627+00:00",
+    "all10_actual_and_verified": true,
+    "scientific_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_audit_path": "/data/qlyu/projects/peptide-four-task-benchmark-20261022/methods/interaction/continuation-20261023/swing-classification-route-audit.remote-latest.json",
+    "source_audit_sha256": "9d47c2c344b2dd7bd7f116738f2692b7696b93a2e21902d1bdc3ea8ab28ae9d7",
+    "seed_route_manifest_sha256": "48de4ec0f95f89b3dba005f6bf54d241dfd9efb343447d8ed7c0c4b6b7b1bdc2",
+    "data_sha256": "02eb75d9b6ebaab1b4b1cf5338b2141f4d3750d794fc43c38aac57a0e34e03fa",
+    "native_train_epochs": 16,
+    "native_infer_epochs": 16,
+    "vector_size": 72,
+    "old_unknown_hash9_included": false
+  },
+  "remaining_critical_path": [
+    "Close/audit remaining controlled SWING classification seeds; knownhash0 strict-anchor test-only recovery is verified if individual old4h window expires.",
+    "Only after classification10 closure, execute20 queued SWING pKd adaptations,10seeds for each existing source/target partition, then conditional ProfAff162 external scoring.",
+    "Finish8 actual native feature chunks, exact15389 input union/no duplicates, then10 native ForClassification/Focal head seeds; prepared artifacts never trigger fit.",
+    "Finish complete model/sidecar/log local delivery, at most2 low-priority streams, final actual local SHA reread for every member."
+  ],
+  "transfer_policy": {
+    "max_parallel_large_streams": 2,
+    "local_raw_transport_tar": false,
+    "post_transfer_actual_local_file_rehash_required": true,
+    "fresh_parallel_probe": "methods/interaction/continuation-20261023/parallel-delivery-throughput.probe.json"
+  }
+}
