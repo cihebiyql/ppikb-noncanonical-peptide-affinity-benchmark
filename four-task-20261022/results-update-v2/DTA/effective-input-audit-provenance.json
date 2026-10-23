@@ -1,0 +1,1645 @@
+{
+  "input_proofs": [
+    {
+      "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/effective-input-audit-cihebi-native-20261023T073053Z/complete.json",
+      "sha256": "284dc4fdec41d6105bab93a3950a246fbdf62054c004a359234886c20bacda66",
+      "runtime": {
+        "host": "cihebi",
+        "python": "3.11.15 (main, May 10 2026, 19:28:18) [Clang 22.1.3 ]",
+        "python_path": "/root/.venvs/peptide-omnipanel-v31-web311-20260723/bin/python",
+        "torch": "2.12.1+cu130",
+        "numpy": "2.4.6",
+        "pyg": "2.6.1",
+        "CUDA_VISIBLE_DEVICES": "",
+        "model_constructed": false,
+        "encoder_called": false,
+        "auditor_source_path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/audit_effective_cached_inputs_frozen_v3.py",
+        "auditor_source_sha256": "5c77fdbe679f1213e04d38109db40d45b6a0d9f32408f7078290997a32b25916",
+        "installed_RDKit_distribution_version": "2026.3.4"
+      },
+      "results": [
+        {
+          "view": "ppikb_kd_source_cold_scope_v2",
+          "method": "GraphDTA-GIN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 7125,
+            "validation": 977,
+            "test": 1014
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 412,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 93,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 1110,
+            "validation": 202,
+            "test": 93
+          },
+          "input_index": "ppikb_kd_source_cold_scope_v2--GraphDTA-GIN.jsonl.gz",
+          "input_index_sha256": "b032f7eb1f4859eb2b25dca55545735d927dfc2332b0bf309bc317f5a9184767",
+          "test_masks_file": "ppikb_kd_source_cold_scope_v2--GraphDTA-GIN.test-masks.json",
+          "test_masks_sha256": "997d5c34819b48dfe16a2023fb5f0dab171f04e6f51e7552ea0542311fdbaaf2",
+          "duplicate_groups_file": "ppikb_kd_source_cold_scope_v2--GraphDTA-GIN.duplicate-groups.json",
+          "duplicate_groups_sha256": "ced91f239a7028634d7d3a2ceaead5ee64cb7b8acaad8cffc976e15e20cb70f7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/86361612be07825c569dd12965ae5fa1aa66f42de3301b87341d3ae88345225a.pkl",
+              "sha256": "448e610185ab583f769d75c05c505ea4c6212dd3df167c9140a5bf1b27d7a6e3",
+              "signature": "86361612be07825c569dd12965ae5fa1aa66f42de3301b87341d3ae88345225a",
+              "rows": 7125,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/e46c7609506af8390c69c47145a9bfdb300c1f4c61b882df84005c6392f9d0ef.pkl",
+              "sha256": "452af97eecb7b20b12d912f609fa284c3fd3d844673cb0d1207af8ff11b35ddf",
+              "signature": "e46c7609506af8390c69c47145a9bfdb300c1f4c61b882df84005c6392f9d0ef",
+              "rows": 977,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/9a9a303d802f2c80da60ed44f069ec497510027e6bf1b2c458ccbaf5e43f8b36.pkl",
+              "sha256": "2eeee0456957f3e313b3bcd71924d5b31901d32fad65260533cc51fb49ab5cec",
+              "signature": "9a9a303d802f2c80da60ed44f069ec497510027e6bf1b2c458ccbaf5e43f8b36",
+              "rows": 1014,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_source_cold_scope_v2",
+          "method": "MGraphDTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 7125,
+            "validation": 977,
+            "test": 1014
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 412,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 63,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 749,
+            "validation": 128,
+            "test": 63
+          },
+          "input_index": "ppikb_kd_source_cold_scope_v2--MGraphDTA.jsonl.gz",
+          "input_index_sha256": "485eb2567acaf4cb7b39b662fd2a9f01571af0716f473c8f56f9a606528134dd",
+          "test_masks_file": "ppikb_kd_source_cold_scope_v2--MGraphDTA.test-masks.json",
+          "test_masks_sha256": "1da304ac5ae90bdac04d9a8a5d42aeb41ab46ab7395fe83a55c5af9c552ab4c2",
+          "duplicate_groups_file": "ppikb_kd_source_cold_scope_v2--MGraphDTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "c9a2e61c492b591031a221afa7901ba26b6671e636af4caf1596a4b63da8e870",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/be89a99f1949d45196044574c1c258af834c9c6a3a801d896f1758376d7d72a9.pkl",
+              "sha256": "0183ac9278a0b012875014f27ffb9581939ddb86355ac2afcfdb18199d84cbda",
+              "signature": "be89a99f1949d45196044574c1c258af834c9c6a3a801d896f1758376d7d72a9",
+              "rows": 7125,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/72176e5717b278c9c7d2a22ca81d2286ac12d72c18d3e81c15371eac3e8fb213.pkl",
+              "sha256": "dfed876b6ba19f8e596f95561f952f0ae206f7844ad0fb670d939b47cb6cba04",
+              "signature": "72176e5717b278c9c7d2a22ca81d2286ac12d72c18d3e81c15371eac3e8fb213",
+              "rows": 977,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/31149150ec31d90dac4700f997a70a8cc2115727d3347f1b0a4dfc17a5cc932e.pkl",
+              "sha256": "e691aa9e3d878ff16440aebdcbc000d157697cd6fcb26212b4382c22f5d2f537",
+              "signature": "31149150ec31d90dac4700f997a70a8cc2115727d3347f1b0a4dfc17a5cc932e",
+              "rows": 1014,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_source_cold_scope_v2",
+          "method": "DGDTA-CL",
+          "complete_partitions": true,
+          "counts": {
+            "train": 7125,
+            "validation": 977,
+            "test": 1014
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 412,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 93,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 1110,
+            "validation": 202,
+            "test": 93
+          },
+          "input_index": "ppikb_kd_source_cold_scope_v2--DGDTA-CL.jsonl.gz",
+          "input_index_sha256": "887d6b029706f26843c9ea7f81533ecb63147ef0a92309ab9ea1c78730299cb3",
+          "test_masks_file": "ppikb_kd_source_cold_scope_v2--DGDTA-CL.test-masks.json",
+          "test_masks_sha256": "997d5c34819b48dfe16a2023fb5f0dab171f04e6f51e7552ea0542311fdbaaf2",
+          "duplicate_groups_file": "ppikb_kd_source_cold_scope_v2--DGDTA-CL.duplicate-groups.json",
+          "duplicate_groups_sha256": "ced91f239a7028634d7d3a2ceaead5ee64cb7b8acaad8cffc976e15e20cb70f7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/1d9f1028e8c2bbaef5e64ca6a905e9413d34011c49aa4a68800de723c8e548fa.pkl",
+              "sha256": "fe74d9dc42f2d4d90a22bf25c218801c1bed29bf45da6f89f760f4ec048d9d14",
+              "signature": "1d9f1028e8c2bbaef5e64ca6a905e9413d34011c49aa4a68800de723c8e548fa",
+              "rows": 7125,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/50a0be62585e5dc25da2d1d3d7e48941dae11dcd49eb3d311e2d29157dcc246b.pkl",
+              "sha256": "927280a3238759777badd9f4ff0c5bf7f45e205d9dc1194b6265d86903a01682",
+              "signature": "50a0be62585e5dc25da2d1d3d7e48941dae11dcd49eb3d311e2d29157dcc246b",
+              "rows": 977,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/3aff314ce9caab76453031e2f7aa23b4e03eacdd79ef66e170bc73fc8699c6f3.pkl",
+              "sha256": "c5b0b0647c4094cdf2f04311f88133d7d1cd81d9e3326d29c2a3c5e0f2c797f1",
+              "signature": "3aff314ce9caab76453031e2f7aa23b4e03eacdd79ef66e170bc73fc8699c6f3",
+              "rows": 1014,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_source_cold_scope_v2",
+          "method": "DeepNC-GEN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 7125,
+            "validation": 977,
+            "test": 1014
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 412,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 93,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 1110,
+            "validation": 202,
+            "test": 93
+          },
+          "input_index": "ppikb_kd_source_cold_scope_v2--DeepNC-GEN.jsonl.gz",
+          "input_index_sha256": "ee6a82fe9f082dba34d205ff46b477a04763c56789a0b4a2bb069bd6f0e2e5cc",
+          "test_masks_file": "ppikb_kd_source_cold_scope_v2--DeepNC-GEN.test-masks.json",
+          "test_masks_sha256": "997d5c34819b48dfe16a2023fb5f0dab171f04e6f51e7552ea0542311fdbaaf2",
+          "duplicate_groups_file": "ppikb_kd_source_cold_scope_v2--DeepNC-GEN.duplicate-groups.json",
+          "duplicate_groups_sha256": "ced91f239a7028634d7d3a2ceaead5ee64cb7b8acaad8cffc976e15e20cb70f7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/f152c2e5048ff5a0c639b0ee705636facaf81761d4eb67d7963ca41e0a8058fd.pkl",
+              "sha256": "448e610185ab583f769d75c05c505ea4c6212dd3df167c9140a5bf1b27d7a6e3",
+              "signature": "f152c2e5048ff5a0c639b0ee705636facaf81761d4eb67d7963ca41e0a8058fd",
+              "rows": 7125,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/18b679a54cfb6eb8a9b91d334290ba94aa3b2c19811ab15cb786f7fdaf37b6d5.pkl",
+              "sha256": "452af97eecb7b20b12d912f609fa284c3fd3d844673cb0d1207af8ff11b35ddf",
+              "signature": "18b679a54cfb6eb8a9b91d334290ba94aa3b2c19811ab15cb786f7fdaf37b6d5",
+              "rows": 977,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/53e96370dcaec14cda366d8725368852ac733ec329ccd890a9161f0f0019b7a7.pkl",
+              "sha256": "2eeee0456957f3e313b3bcd71924d5b31901d32fad65260533cc51fb49ab5cec",
+              "signature": "53e96370dcaec14cda366d8725368852ac733ec329ccd890a9161f0f0019b7a7",
+              "rows": 1014,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_source_cold_scope_v2",
+          "method": "GS-DTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 7125,
+            "validation": 977,
+            "test": 1014
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 412,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 93,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 1110,
+            "validation": 202,
+            "test": 93
+          },
+          "input_index": "ppikb_kd_source_cold_scope_v2--GS-DTA.jsonl.gz",
+          "input_index_sha256": "f5ef610bc67d6ff52b4343137a750ad421c37cdf0e764a2bef59cfa25ffbf011",
+          "test_masks_file": "ppikb_kd_source_cold_scope_v2--GS-DTA.test-masks.json",
+          "test_masks_sha256": "997d5c34819b48dfe16a2023fb5f0dab171f04e6f51e7552ea0542311fdbaaf2",
+          "duplicate_groups_file": "ppikb_kd_source_cold_scope_v2--GS-DTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "ced91f239a7028634d7d3a2ceaead5ee64cb7b8acaad8cffc976e15e20cb70f7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/4cb8921aa46066160a75fbad3411a1e5434ad65549412e8fc25df4c15ce5c9c0.pkl",
+              "sha256": "8267f111f12e324f83b474a64aa7d26eb1cdfb1a54ee6312cb22d433f32911b0",
+              "signature": "4cb8921aa46066160a75fbad3411a1e5434ad65549412e8fc25df4c15ce5c9c0",
+              "rows": 7125,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/3027fb602acd90b6d08a9492778ee808a79a16e2bcdf9805bf76c468ea49c52a.pkl",
+              "sha256": "88fb69d56e68bf836ea2d0500361903cda6cbad9f84371c14e6429113b83ba7e",
+              "signature": "3027fb602acd90b6d08a9492778ee808a79a16e2bcdf9805bf76c468ea49c52a",
+              "rows": 977,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/3ecfcf56d707872b5edaa2dd598d11e5ee6c9de9ff93a6d37efefb98ab483433.pkl",
+              "sha256": "e9a2e6e6b66c9cd32000722ce14a925d6c3480c7ba2bcb5816bfdd39501c0184",
+              "signature": "3ecfcf56d707872b5edaa2dd598d11e5ee6c9de9ff93a6d37efefb98ab483433",
+              "rows": 1014,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_target_cold_scope_v2",
+          "method": "GraphDTA-GIN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 6355,
+            "validation": 1378,
+            "test": 1383
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 0,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 255,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 896,
+            "validation": 254,
+            "test": 255
+          },
+          "input_index": "ppikb_kd_target_cold_scope_v2--GraphDTA-GIN.jsonl.gz",
+          "input_index_sha256": "ce01f0a1c413b6df9f4ebe6765eafa6533a7ea4a0677a5b1ea2c37ca0d701454",
+          "test_masks_file": "ppikb_kd_target_cold_scope_v2--GraphDTA-GIN.test-masks.json",
+          "test_masks_sha256": "000e22dadae9a9e8e78f35e5ef6578113106b061f76f7154b230cf54d53b18be",
+          "duplicate_groups_file": "ppikb_kd_target_cold_scope_v2--GraphDTA-GIN.duplicate-groups.json",
+          "duplicate_groups_sha256": "25eecb589d683a497a2ab23ec9b65c5865f0bd12dd9002b1195b778476e1e211",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/807a9f365bc9359027966a02b51bf681c163aa11ece9a93b8a695f70218ebe74.pkl",
+              "sha256": "03fc13a0938d3fea85de9969b5904e5cf030a30de7cc8f2c5364ded43997c1d6",
+              "signature": "807a9f365bc9359027966a02b51bf681c163aa11ece9a93b8a695f70218ebe74",
+              "rows": 6355,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/1ffe5fa5a397636263f96390fd9f7b1921832eed4e93ddb1cbea10638aea6514.pkl",
+              "sha256": "9f988f84ec9664f85ff4c32fa668140a6f5bb9003f6092afbfe9f427d19ce4a6",
+              "signature": "1ffe5fa5a397636263f96390fd9f7b1921832eed4e93ddb1cbea10638aea6514",
+              "rows": 1378,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/4d1f48d5f183e9e23d4085515ee3c08044c5258d3b491185cc7d6402f2f15fcd.pkl",
+              "sha256": "a0c619ad6c7409483549e593b1669592f65272b935eb27820e6cda0ccb75d6f6",
+              "signature": "4d1f48d5f183e9e23d4085515ee3c08044c5258d3b491185cc7d6402f2f15fcd",
+              "rows": 1383,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_target_cold_scope_v2",
+          "method": "MGraphDTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 6355,
+            "validation": 1378,
+            "test": 1383
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 0,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 178,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 565,
+            "validation": 197,
+            "test": 178
+          },
+          "input_index": "ppikb_kd_target_cold_scope_v2--MGraphDTA.jsonl.gz",
+          "input_index_sha256": "ece0f85b1b77424f9f13bc884475ed2980198d1130bd6d099972b33bd7532712",
+          "test_masks_file": "ppikb_kd_target_cold_scope_v2--MGraphDTA.test-masks.json",
+          "test_masks_sha256": "565238cebf38466c559eb2f796947ca35226b0eb8bee3ca5e7165a79a59bea8c",
+          "duplicate_groups_file": "ppikb_kd_target_cold_scope_v2--MGraphDTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "4acc0e647ddf55849e71e54e2d395d9bd079407f4afe3000955419a1f57258ee",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/496ed3f5023b5eefc171376babf0b73eac5aeb30d6a34587180717114eae52d8.pkl",
+              "sha256": "3d1b37874af3302ccb769eea8ddf1033fdeac7d9a12a7ea58eec29ab5541717e",
+              "signature": "496ed3f5023b5eefc171376babf0b73eac5aeb30d6a34587180717114eae52d8",
+              "rows": 6355,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/6f09169935a72f5f334ed5c21123e01508cb5c32464b92003b6d1a0f15ee7157.pkl",
+              "sha256": "aae145ff4ff7b4fe1e7f722a9f85ed23cf3fb72b726b38f116eca6cf04eba647",
+              "signature": "6f09169935a72f5f334ed5c21123e01508cb5c32464b92003b6d1a0f15ee7157",
+              "rows": 1378,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/f6007005c5fde832dcb2be7751671771aaf91d863edd4f6da6b251218b74e399.pkl",
+              "sha256": "c1e5802241792b6a0fc867266b4950dab4b5cdbd32a06f080d7395380053322a",
+              "signature": "f6007005c5fde832dcb2be7751671771aaf91d863edd4f6da6b251218b74e399",
+              "rows": 1383,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_target_cold_scope_v2",
+          "method": "DGDTA-CL",
+          "complete_partitions": true,
+          "counts": {
+            "train": 6355,
+            "validation": 1378,
+            "test": 1383
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 0,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 255,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 896,
+            "validation": 254,
+            "test": 255
+          },
+          "input_index": "ppikb_kd_target_cold_scope_v2--DGDTA-CL.jsonl.gz",
+          "input_index_sha256": "1c3d60ca62d664ecb37f864ebf437add76e8e92b6f03337c07342ed33cab6c1f",
+          "test_masks_file": "ppikb_kd_target_cold_scope_v2--DGDTA-CL.test-masks.json",
+          "test_masks_sha256": "000e22dadae9a9e8e78f35e5ef6578113106b061f76f7154b230cf54d53b18be",
+          "duplicate_groups_file": "ppikb_kd_target_cold_scope_v2--DGDTA-CL.duplicate-groups.json",
+          "duplicate_groups_sha256": "25eecb589d683a497a2ab23ec9b65c5865f0bd12dd9002b1195b778476e1e211",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/ec978598f2e898c6f0dd28494ead090bae8cbb7f47b294985702979483be5a1b.pkl",
+              "sha256": "55b2005628c74d6ce4ab9771f09153de87e37c35ba5bc07cfc82e155f090d6cc",
+              "signature": "ec978598f2e898c6f0dd28494ead090bae8cbb7f47b294985702979483be5a1b",
+              "rows": 6355,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/b8e4900feb8a421a97d257ba072ecef26c2295ade9081a4e2a14175b1a806f08.pkl",
+              "sha256": "0f2f86bbfae29dcc77104b71b053e9b6ccca36a146370456807527cdba15e246",
+              "signature": "b8e4900feb8a421a97d257ba072ecef26c2295ade9081a4e2a14175b1a806f08",
+              "rows": 1378,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/297d46d6400f97e10429421860a049c9193aa9119faeda698eca3b562977b12a.pkl",
+              "sha256": "2efd29eb7e89f4c1bf89c440b75e040bea512257728c938ceb77601e45e84c49",
+              "signature": "297d46d6400f97e10429421860a049c9193aa9119faeda698eca3b562977b12a",
+              "rows": 1383,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_target_cold_scope_v2",
+          "method": "DeepNC-GEN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 6355,
+            "validation": 1378,
+            "test": 1383
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 0,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 255,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 896,
+            "validation": 254,
+            "test": 255
+          },
+          "input_index": "ppikb_kd_target_cold_scope_v2--DeepNC-GEN.jsonl.gz",
+          "input_index_sha256": "86d287b90dc180156337cfe988dd3946edfa4650ecf0ce9de112934ef4387904",
+          "test_masks_file": "ppikb_kd_target_cold_scope_v2--DeepNC-GEN.test-masks.json",
+          "test_masks_sha256": "000e22dadae9a9e8e78f35e5ef6578113106b061f76f7154b230cf54d53b18be",
+          "duplicate_groups_file": "ppikb_kd_target_cold_scope_v2--DeepNC-GEN.duplicate-groups.json",
+          "duplicate_groups_sha256": "25eecb589d683a497a2ab23ec9b65c5865f0bd12dd9002b1195b778476e1e211",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/8dcdd3dee46dc4d5546d0a37482c238eda188bd15e192d9389c9750123c586e2.pkl",
+              "sha256": "03fc13a0938d3fea85de9969b5904e5cf030a30de7cc8f2c5364ded43997c1d6",
+              "signature": "8dcdd3dee46dc4d5546d0a37482c238eda188bd15e192d9389c9750123c586e2",
+              "rows": 6355,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/3cbbb737e61f4d8439a4752fe6fdf97d7b401b75ab72be0d2654d1ceb8fd18b1.pkl",
+              "sha256": "9f988f84ec9664f85ff4c32fa668140a6f5bb9003f6092afbfe9f427d19ce4a6",
+              "signature": "3cbbb737e61f4d8439a4752fe6fdf97d7b401b75ab72be0d2654d1ceb8fd18b1",
+              "rows": 1378,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/af10a96c45296990e6fa0141bef47c960693062c70f34948ea0cdf7d544f540f.pkl",
+              "sha256": "a0c619ad6c7409483549e593b1669592f65272b935eb27820e6cda0ccb75d6f6",
+              "signature": "af10a96c45296990e6fa0141bef47c960693062c70f34948ea0cdf7d544f540f",
+              "rows": 1383,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_target_cold_scope_v2",
+          "method": "GS-DTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 6355,
+            "validation": 1378,
+            "test": 1383
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 0,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 255,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 896,
+            "validation": 254,
+            "test": 255
+          },
+          "input_index": "ppikb_kd_target_cold_scope_v2--GS-DTA.jsonl.gz",
+          "input_index_sha256": "012e287347f546f9e0a4bda8400b21dc1b6767096947e4de272c294ff4e316f2",
+          "test_masks_file": "ppikb_kd_target_cold_scope_v2--GS-DTA.test-masks.json",
+          "test_masks_sha256": "000e22dadae9a9e8e78f35e5ef6578113106b061f76f7154b230cf54d53b18be",
+          "duplicate_groups_file": "ppikb_kd_target_cold_scope_v2--GS-DTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "25eecb589d683a497a2ab23ec9b65c5865f0bd12dd9002b1195b778476e1e211",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/66a8fddd3a4ae000691393e39f63df330561da51a124f965d3ff6bc7955ce606.pkl",
+              "sha256": "938bcfca0fa680a4465b225c136b28a83650412277c71cd3d8f2e65fc66951f4",
+              "signature": "66a8fddd3a4ae000691393e39f63df330561da51a124f965d3ff6bc7955ce606",
+              "rows": 6355,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/8dc28857e2cff391b55ace107a1712f596a1d05b0b777cc65014a4f5882281a3.pkl",
+              "sha256": "8f0ed66b61b9cc6dff0690e7092f1db61a3b90df794a1378b3bf9ba1649541c0",
+              "signature": "8dc28857e2cff391b55ace107a1712f596a1d05b0b777cc65014a4f5882281a3",
+              "rows": 1378,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/a1dcb8fcb06d1af99d7ee0b8801b1e5b9669921d5b58e9e0633145e56878f910.pkl",
+              "sha256": "93e460bf3c461f1bcb44cfe8accd38b7aa4d5e206be292fa947fc3d959af4de6",
+              "signature": "a1dcb8fcb06d1af99d7ee0b8801b1e5b9669921d5b58e9e0633145e56878f910",
+              "rows": 1383,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_effect_metadata_silver_source_cold",
+          "method": "GraphDTA-GIN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 1988,
+            "validation": 172,
+            "test": 129
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 79,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 2,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 254,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 2,
+          "truncated_counts": {
+            "train": 335,
+            "validation": 12,
+            "test": 2
+          },
+          "input_index": "ppikb_effect_metadata_silver_source_cold--GraphDTA-GIN.jsonl.gz",
+          "input_index_sha256": "9178228d1e2aac93063263b9173ce64da28f6f06b496222dcd9fcb0ba8c895ec",
+          "test_masks_file": "ppikb_effect_metadata_silver_source_cold--GraphDTA-GIN.test-masks.json",
+          "test_masks_sha256": "7d1ab83e185053480452b1ce435721a4222012f2dce0f7a3284f0bfa8aeb4761",
+          "duplicate_groups_file": "ppikb_effect_metadata_silver_source_cold--GraphDTA-GIN.duplicate-groups.json",
+          "duplicate_groups_sha256": "b8583422151ed52aca3138fc21f4f39648569e8e6214e41027ecd4e50678f3e7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/81c8880eda3c924ba4df521ec8e5461a98c9cd84e081ddbda15c970241bc4869.pkl",
+              "sha256": "def07ac77a3e8b8e596889636c3d2273f1e4c48b848d78fb8a00644533dd6285",
+              "signature": "81c8880eda3c924ba4df521ec8e5461a98c9cd84e081ddbda15c970241bc4869",
+              "rows": 1988,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/15105a4208a042841e2d372c4d78e4a578287b0e90ef2d9a32b88903a680a63b.pkl",
+              "sha256": "94c679d5ea0f187de81365de5eb555d1765dc30e95f7ee6de498e6874d818c8e",
+              "signature": "15105a4208a042841e2d372c4d78e4a578287b0e90ef2d9a32b88903a680a63b",
+              "rows": 172,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/064e60e4e7c9db5ab3da0a48dfcc569f9b708ff92f5d3c13741469e3d678cebe.pkl",
+              "sha256": "fc2cf35471078a0acb2a65cbe03dbf04dc773422fb388512982651ce78ede935",
+              "signature": "064e60e4e7c9db5ab3da0a48dfcc569f9b708ff92f5d3c13741469e3d678cebe",
+              "rows": 129,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_effect_metadata_silver_source_cold",
+          "method": "MGraphDTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 1988,
+            "validation": 172,
+            "test": 129
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 79,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 2,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 254,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 2,
+          "truncated_counts": {
+            "train": 231,
+            "validation": 10,
+            "test": 2
+          },
+          "input_index": "ppikb_effect_metadata_silver_source_cold--MGraphDTA.jsonl.gz",
+          "input_index_sha256": "6fea00fdf225eb6ad083aa2332a64ef8b7ed3b2b03fd32b13b81992baa938290",
+          "test_masks_file": "ppikb_effect_metadata_silver_source_cold--MGraphDTA.test-masks.json",
+          "test_masks_sha256": "7d1ab83e185053480452b1ce435721a4222012f2dce0f7a3284f0bfa8aeb4761",
+          "duplicate_groups_file": "ppikb_effect_metadata_silver_source_cold--MGraphDTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "5f71c439d3db4e81ebc5687b1d8f028bb27e77573cb4e6b1a5479df0ca2564f2",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/741bdb5f167f4468651ea2cb378a30b65c12eac784a73375701208d532e1ab2f.pkl",
+              "sha256": "009690892bab1ee63a52cde3050b77454ae2d2435814663b4fcb2288584c7210",
+              "signature": "741bdb5f167f4468651ea2cb378a30b65c12eac784a73375701208d532e1ab2f",
+              "rows": 1988,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/4aa68c6abad3d25cefa8f706b0490e73908ff92c693f29926cc4235f191da50d.pkl",
+              "sha256": "c940f047ba9bb7eb47108f11c475b4779c9079a97b33d57661b65fe4434b55e3",
+              "signature": "4aa68c6abad3d25cefa8f706b0490e73908ff92c693f29926cc4235f191da50d",
+              "rows": 172,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/bdf2726582a4cf3d215464447aca44893a3344168d95a74c5eadc2545fdba99b.pkl",
+              "sha256": "21f134207cf4a7b313f3fd0195e5dfc1de25fcbffc55d118ca9297c115624369",
+              "signature": "bdf2726582a4cf3d215464447aca44893a3344168d95a74c5eadc2545fdba99b",
+              "rows": 129,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_effect_metadata_silver_source_cold",
+          "method": "DGDTA-CL",
+          "complete_partitions": true,
+          "counts": {
+            "train": 1988,
+            "validation": 172,
+            "test": 129
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 79,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 2,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 254,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 2,
+          "truncated_counts": {
+            "train": 335,
+            "validation": 12,
+            "test": 2
+          },
+          "input_index": "ppikb_effect_metadata_silver_source_cold--DGDTA-CL.jsonl.gz",
+          "input_index_sha256": "036bc27784b6ea91dee2b4f6ac4d82c65ee8e8c35aefa37f0936c11f68d1cc36",
+          "test_masks_file": "ppikb_effect_metadata_silver_source_cold--DGDTA-CL.test-masks.json",
+          "test_masks_sha256": "7d1ab83e185053480452b1ce435721a4222012f2dce0f7a3284f0bfa8aeb4761",
+          "duplicate_groups_file": "ppikb_effect_metadata_silver_source_cold--DGDTA-CL.duplicate-groups.json",
+          "duplicate_groups_sha256": "b8583422151ed52aca3138fc21f4f39648569e8e6214e41027ecd4e50678f3e7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/fed1a4256236e52cc048a5927f3003a9afea2d49f249ea3769a75d53fe00af1a.pkl",
+              "sha256": "cee80c6a612daa0840b348f1006edabfb292f23d2aeff8868dbbb1ddaafcfd87",
+              "signature": "fed1a4256236e52cc048a5927f3003a9afea2d49f249ea3769a75d53fe00af1a",
+              "rows": 1988,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/bf8bdc2bc3ebfeb6c21f7d62f38c7d990d06d5899b3ea05ddba8a4eb4672fdce.pkl",
+              "sha256": "4acfe540ba75ad117ea48c31f645e842e3719111c445f6d5ae9921cee82f818e",
+              "signature": "bf8bdc2bc3ebfeb6c21f7d62f38c7d990d06d5899b3ea05ddba8a4eb4672fdce",
+              "rows": 172,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/ef3a123ea9106a58ff30a42a9d10b48bdafb9e55172cdc2e57d4dae9df443a2b.pkl",
+              "sha256": "969f2193071175e13a96e34bd3e6609bd8563de3accd9a25423615bd7dfe9ca0",
+              "signature": "ef3a123ea9106a58ff30a42a9d10b48bdafb9e55172cdc2e57d4dae9df443a2b",
+              "rows": 129,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_effect_metadata_silver_source_cold",
+          "method": "DeepNC-GEN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 1988,
+            "validation": 172,
+            "test": 129
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 79,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 2,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 254,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 2,
+          "truncated_counts": {
+            "train": 335,
+            "validation": 12,
+            "test": 2
+          },
+          "input_index": "ppikb_effect_metadata_silver_source_cold--DeepNC-GEN.jsonl.gz",
+          "input_index_sha256": "3cbaa772e87ca1b30f64f2a6e838732f80e705120c760890d79ba979ee099656",
+          "test_masks_file": "ppikb_effect_metadata_silver_source_cold--DeepNC-GEN.test-masks.json",
+          "test_masks_sha256": "7d1ab83e185053480452b1ce435721a4222012f2dce0f7a3284f0bfa8aeb4761",
+          "duplicate_groups_file": "ppikb_effect_metadata_silver_source_cold--DeepNC-GEN.duplicate-groups.json",
+          "duplicate_groups_sha256": "b8583422151ed52aca3138fc21f4f39648569e8e6214e41027ecd4e50678f3e7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/054577d08f38074d3dddabecbe77be16de1024c1d399e100b32095ddb387405e.pkl",
+              "sha256": "def07ac77a3e8b8e596889636c3d2273f1e4c48b848d78fb8a00644533dd6285",
+              "signature": "054577d08f38074d3dddabecbe77be16de1024c1d399e100b32095ddb387405e",
+              "rows": 1988,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/549840072627f9ce2be38a59691c1768c98aeff0cbe4380f2dd3f772bdaa4159.pkl",
+              "sha256": "94c679d5ea0f187de81365de5eb555d1765dc30e95f7ee6de498e6874d818c8e",
+              "signature": "549840072627f9ce2be38a59691c1768c98aeff0cbe4380f2dd3f772bdaa4159",
+              "rows": 172,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/0c39ee3f9b1026ff4298cda2773a65cd3df9bb8699c22bb84083ec5172f1eb51.pkl",
+              "sha256": "fc2cf35471078a0acb2a65cbe03dbf04dc773422fb388512982651ce78ede935",
+              "signature": "0c39ee3f9b1026ff4298cda2773a65cd3df9bb8699c22bb84083ec5172f1eb51",
+              "rows": 129,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_effect_metadata_silver_source_cold",
+          "method": "GS-DTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 1988,
+            "validation": 172,
+            "test": 129
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 79,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 2,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 254,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 2,
+          "truncated_counts": {
+            "train": 335,
+            "validation": 12,
+            "test": 2
+          },
+          "input_index": "ppikb_effect_metadata_silver_source_cold--GS-DTA.jsonl.gz",
+          "input_index_sha256": "bc1fc0edbd501c59ec09e9c8c51781cabcf934297b561fa21ddab4207287c978",
+          "test_masks_file": "ppikb_effect_metadata_silver_source_cold--GS-DTA.test-masks.json",
+          "test_masks_sha256": "7d1ab83e185053480452b1ce435721a4222012f2dce0f7a3284f0bfa8aeb4761",
+          "duplicate_groups_file": "ppikb_effect_metadata_silver_source_cold--GS-DTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "b8583422151ed52aca3138fc21f4f39648569e8e6214e41027ecd4e50678f3e7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/45f7e0f3934c29420706b6aa41c4ce2dc6c308865927bfd5c329ec27dc77a6b4.pkl",
+              "sha256": "b90be5692993f0cdf32abce2751c90444cba52f1d89343fd5d4c002acbb8d2b5",
+              "signature": "45f7e0f3934c29420706b6aa41c4ce2dc6c308865927bfd5c329ec27dc77a6b4",
+              "rows": 1988,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/cb1c0480bd239c2c04a80affab262d4d0c2dfcecd838e751290981f904744658.pkl",
+              "sha256": "82320873382916077180d5736d040352f2bbb3717a3dd22e805de5be1f8205aa",
+              "signature": "cb1c0480bd239c2c04a80affab262d4d0c2dfcecd838e751290981f904744658",
+              "rows": 172,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/ca3dad97618af4a9a4e4ad57967b758677e5b021623bf08c161675e11a839052.pkl",
+              "sha256": "7139f5c74ea1007f3a208979d332ea1cf4cfe2308f2da7aa34f0e1bb8fb1349d",
+              "signature": "ca3dad97618af4a9a4e4ad57967b758677e5b021623bf08c161675e11a839052",
+              "rows": 129,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/effective-input-audit-node23-manifest24-20261023T073109Z/complete.json",
+      "sha256": "fb7526fa2800cd54f3372d0cace9a74bfd4ac8a18482c0bcd12f3c0614d8d355",
+      "runtime": {
+        "host": "node23",
+        "python": "3.11.13 (main, Jun  5 2025, 13:12:00) [GCC 11.2.0]",
+        "python_path": "record-ref:peptide-binding-benchmark-20261020/common-prior-methods-20261021/.venv/bin/python",
+        "torch": "2.6.0+cu124",
+        "numpy": "1.26.4",
+        "pyg": "2.6.1",
+        "CUDA_VISIBLE_DEVICES": "",
+        "model_constructed": false,
+        "encoder_called": false,
+        "auditor_source_path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/audit_effective_cached_inputs_frozen_v3.py",
+        "auditor_source_sha256": "5c77fdbe679f1213e04d38109db40d45b6a0d9f32408f7078290997a32b25916",
+        "installed_RDKit_distribution_version": "2024.3.2"
+      },
+      "results": [
+        {
+          "view": "ppikb_kd_source_cold_scope_v2",
+          "method": "GraphDTA-GIN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 7125,
+            "validation": 977,
+            "test": 1014
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 412,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 93,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 1110,
+            "validation": 202,
+            "test": 93
+          },
+          "input_index": "ppikb_kd_source_cold_scope_v2--GraphDTA-GIN.jsonl.gz",
+          "input_index_sha256": "e7cc8459944d4b00ea4dc263efa6903de9a3ab29fa841af36e898e4925bc9756",
+          "test_masks_file": "ppikb_kd_source_cold_scope_v2--GraphDTA-GIN.test-masks.json",
+          "test_masks_sha256": "997d5c34819b48dfe16a2023fb5f0dab171f04e6f51e7552ea0542311fdbaaf2",
+          "duplicate_groups_file": "ppikb_kd_source_cold_scope_v2--GraphDTA-GIN.duplicate-groups.json",
+          "duplicate_groups_sha256": "ced91f239a7028634d7d3a2ceaead5ee64cb7b8acaad8cffc976e15e20cb70f7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/86361612be07825c569dd12965ae5fa1aa66f42de3301b87341d3ae88345225a.pkl",
+              "sha256": "dad7e7f1b41ca83fc252ddfb42eb062787ca927d279843ac73c4d37b3035fbd8",
+              "signature": "86361612be07825c569dd12965ae5fa1aa66f42de3301b87341d3ae88345225a",
+              "rows": 7125,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/e46c7609506af8390c69c47145a9bfdb300c1f4c61b882df84005c6392f9d0ef.pkl",
+              "sha256": "e2b6583fb8d55bcd7d889c8ff463cb81804391c3b6fe81f5e1d4245b4cb950be",
+              "signature": "e46c7609506af8390c69c47145a9bfdb300c1f4c61b882df84005c6392f9d0ef",
+              "rows": 977,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/9a9a303d802f2c80da60ed44f069ec497510027e6bf1b2c458ccbaf5e43f8b36.pkl",
+              "sha256": "ac3ce41026a082a98aca5756623b9302325bc90f447fc2602dff35914f5f511b",
+              "signature": "9a9a303d802f2c80da60ed44f069ec497510027e6bf1b2c458ccbaf5e43f8b36",
+              "rows": 1014,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_source_cold_scope_v2",
+          "method": "MGraphDTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 7125,
+            "validation": 977,
+            "test": 1014
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 412,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 63,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 749,
+            "validation": 128,
+            "test": 63
+          },
+          "input_index": "ppikb_kd_source_cold_scope_v2--MGraphDTA.jsonl.gz",
+          "input_index_sha256": "8950c6c517fd3004deae13894ba26e602b7582d5a0e78342b87b4f8d4e2c3740",
+          "test_masks_file": "ppikb_kd_source_cold_scope_v2--MGraphDTA.test-masks.json",
+          "test_masks_sha256": "1da304ac5ae90bdac04d9a8a5d42aeb41ab46ab7395fe83a55c5af9c552ab4c2",
+          "duplicate_groups_file": "ppikb_kd_source_cold_scope_v2--MGraphDTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "c9a2e61c492b591031a221afa7901ba26b6671e636af4caf1596a4b63da8e870",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache-reuse-v3/private-node23-cache/be89a99f1949d45196044574c1c258af834c9c6a3a801d896f1758376d7d72a9.pkl",
+              "sha256": "d4952953f8a6287ecd88a64a5dcc7239ba5a8330b58a13042b77c2543d417e0e",
+              "signature": "be89a99f1949d45196044574c1c258af834c9c6a3a801d896f1758376d7d72a9",
+              "rows": 7125,
+              "origin": "readonly fixed RDKit24 manifest numeric cache"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache-reuse-v3/private-node23-cache/72176e5717b278c9c7d2a22ca81d2286ac12d72c18d3e81c15371eac3e8fb213.pkl",
+              "sha256": "4566daa630957a578cd758d3ce7aee23d54860a8376bbd2fff70d75115ff30ac",
+              "signature": "72176e5717b278c9c7d2a22ca81d2286ac12d72c18d3e81c15371eac3e8fb213",
+              "rows": 977,
+              "origin": "readonly fixed RDKit24 manifest numeric cache"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache-reuse-v3/private-node23-cache/31149150ec31d90dac4700f997a70a8cc2115727d3347f1b0a4dfc17a5cc932e.pkl",
+              "sha256": "caccc297f7f2edbdab9e3fc2f8d51e3d64dd5d333d80ba51a86da91e8120bd8f",
+              "signature": "31149150ec31d90dac4700f997a70a8cc2115727d3347f1b0a4dfc17a5cc932e",
+              "rows": 1014,
+              "origin": "readonly fixed RDKit24 manifest numeric cache"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_source_cold_scope_v2",
+          "method": "DGDTA-CL",
+          "complete_partitions": false,
+          "parts_available": [
+            "train",
+            "validation"
+          ],
+          "input_index": "ppikb_kd_source_cold_scope_v2--DGDTA-CL.jsonl.gz",
+          "input_index_sha256": "a0c57252e21d821dfc331ad632c90a66df2e18bb560ceda99acd57de2011860c",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/1d9f1028e8c2bbaef5e64ca6a905e9413d34011c49aa4a68800de723c8e548fa.pkl",
+              "sha256": "9b8cc9a1beb18ca727e75d974078934cdb65d90de628638f2a8e11b188f6ae08",
+              "signature": "1d9f1028e8c2bbaef5e64ca6a905e9413d34011c49aa4a68800de723c8e548fa",
+              "rows": 7125,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/50a0be62585e5dc25da2d1d3d7e48941dae11dcd49eb3d311e2d29157dcc246b.pkl",
+              "sha256": "9a5446bc39a6726e28abb5abc2421cf90a7bfe0c2f894da012a4a9292e156a5a",
+              "signature": "50a0be62585e5dc25da2d1d3d7e48941dae11dcd49eb3d311e2d29157dcc246b",
+              "rows": 977,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_source_cold_scope_v2",
+          "method": "DeepNC-GEN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 7125,
+            "validation": 977,
+            "test": 1014
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 412,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 93,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 1110,
+            "validation": 202,
+            "test": 93
+          },
+          "input_index": "ppikb_kd_source_cold_scope_v2--DeepNC-GEN.jsonl.gz",
+          "input_index_sha256": "ca03e3046d79e05fe253bee20dabcccdb624c15dd1321bc3ba2b7afd8ece5740",
+          "test_masks_file": "ppikb_kd_source_cold_scope_v2--DeepNC-GEN.test-masks.json",
+          "test_masks_sha256": "997d5c34819b48dfe16a2023fb5f0dab171f04e6f51e7552ea0542311fdbaaf2",
+          "duplicate_groups_file": "ppikb_kd_source_cold_scope_v2--DeepNC-GEN.duplicate-groups.json",
+          "duplicate_groups_sha256": "ced91f239a7028634d7d3a2ceaead5ee64cb7b8acaad8cffc976e15e20cb70f7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/f152c2e5048ff5a0c639b0ee705636facaf81761d4eb67d7963ca41e0a8058fd.pkl",
+              "sha256": "dad7e7f1b41ca83fc252ddfb42eb062787ca927d279843ac73c4d37b3035fbd8",
+              "signature": "f152c2e5048ff5a0c639b0ee705636facaf81761d4eb67d7963ca41e0a8058fd",
+              "rows": 7125,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/18b679a54cfb6eb8a9b91d334290ba94aa3b2c19811ab15cb786f7fdaf37b6d5.pkl",
+              "sha256": "e2b6583fb8d55bcd7d889c8ff463cb81804391c3b6fe81f5e1d4245b4cb950be",
+              "signature": "18b679a54cfb6eb8a9b91d334290ba94aa3b2c19811ab15cb786f7fdaf37b6d5",
+              "rows": 977,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/53e96370dcaec14cda366d8725368852ac733ec329ccd890a9161f0f0019b7a7.pkl",
+              "sha256": "ac3ce41026a082a98aca5756623b9302325bc90f447fc2602dff35914f5f511b",
+              "signature": "53e96370dcaec14cda366d8725368852ac733ec329ccd890a9161f0f0019b7a7",
+              "rows": 1014,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_source_cold_scope_v2",
+          "method": "GS-DTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 7125,
+            "validation": 977,
+            "test": 1014
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 412,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 93,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 1110,
+            "validation": 202,
+            "test": 93
+          },
+          "input_index": "ppikb_kd_source_cold_scope_v2--GS-DTA.jsonl.gz",
+          "input_index_sha256": "4ea458c09544d037d82eb45697e2f4835c77452652ba6b9d35e213314b871b65",
+          "test_masks_file": "ppikb_kd_source_cold_scope_v2--GS-DTA.test-masks.json",
+          "test_masks_sha256": "997d5c34819b48dfe16a2023fb5f0dab171f04e6f51e7552ea0542311fdbaaf2",
+          "duplicate_groups_file": "ppikb_kd_source_cold_scope_v2--GS-DTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "ced91f239a7028634d7d3a2ceaead5ee64cb7b8acaad8cffc976e15e20cb70f7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/4cb8921aa46066160a75fbad3411a1e5434ad65549412e8fc25df4c15ce5c9c0.pkl",
+              "sha256": "3172ff88c8e702d91f0b1476f0903e3596fbadeeaeb14644a9de16877e15d8f5",
+              "signature": "4cb8921aa46066160a75fbad3411a1e5434ad65549412e8fc25df4c15ce5c9c0",
+              "rows": 7125,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/3027fb602acd90b6d08a9492778ee808a79a16e2bcdf9805bf76c468ea49c52a.pkl",
+              "sha256": "dc9be4e6568006ee21bb4b9d2d15efe248cdeed9c788b8f111681fe2f32a7f5b",
+              "signature": "3027fb602acd90b6d08a9492778ee808a79a16e2bcdf9805bf76c468ea49c52a",
+              "rows": 977,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/3ecfcf56d707872b5edaa2dd598d11e5ee6c9de9ff93a6d37efefb98ab483433.pkl",
+              "sha256": "e982bfb4147179862fe96299838fba59f4a6561693cd6e5445073dbe44f994f8",
+              "signature": "3ecfcf56d707872b5edaa2dd598d11e5ee6c9de9ff93a6d37efefb98ab483433",
+              "rows": 1014,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_target_cold_scope_v2",
+          "method": "GraphDTA-GIN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 6355,
+            "validation": 1378,
+            "test": 1383
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 0,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 255,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 896,
+            "validation": 254,
+            "test": 255
+          },
+          "input_index": "ppikb_kd_target_cold_scope_v2--GraphDTA-GIN.jsonl.gz",
+          "input_index_sha256": "922aaf71645bd9a7396d7dca2e6c4d52153b15058bb0034857224c8f0e462178",
+          "test_masks_file": "ppikb_kd_target_cold_scope_v2--GraphDTA-GIN.test-masks.json",
+          "test_masks_sha256": "000e22dadae9a9e8e78f35e5ef6578113106b061f76f7154b230cf54d53b18be",
+          "duplicate_groups_file": "ppikb_kd_target_cold_scope_v2--GraphDTA-GIN.duplicate-groups.json",
+          "duplicate_groups_sha256": "25eecb589d683a497a2ab23ec9b65c5865f0bd12dd9002b1195b778476e1e211",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/807a9f365bc9359027966a02b51bf681c163aa11ece9a93b8a695f70218ebe74.pkl",
+              "sha256": "f9e72cf8299b31c599dbb86ae87c38292ba03fa140d4bc91e3a99f73e191450d",
+              "signature": "807a9f365bc9359027966a02b51bf681c163aa11ece9a93b8a695f70218ebe74",
+              "rows": 6355,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/1ffe5fa5a397636263f96390fd9f7b1921832eed4e93ddb1cbea10638aea6514.pkl",
+              "sha256": "8bf8acd1accd7e1d057f5475657a33c56c920642721591e8dcf40b8b2e528d8b",
+              "signature": "1ffe5fa5a397636263f96390fd9f7b1921832eed4e93ddb1cbea10638aea6514",
+              "rows": 1378,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/4d1f48d5f183e9e23d4085515ee3c08044c5258d3b491185cc7d6402f2f15fcd.pkl",
+              "sha256": "bb7703b7880351374cd9d10bfd1512c47faac6a4345f42033d333c03181e34f3",
+              "signature": "4d1f48d5f183e9e23d4085515ee3c08044c5258d3b491185cc7d6402f2f15fcd",
+              "rows": 1383,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_target_cold_scope_v2",
+          "method": "MGraphDTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 6355,
+            "validation": 1378,
+            "test": 1383
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 0,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 178,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 1475,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 104,
+          "truncated_counts": {
+            "train": 565,
+            "validation": 197,
+            "test": 178
+          },
+          "input_index": "ppikb_kd_target_cold_scope_v2--MGraphDTA.jsonl.gz",
+          "input_index_sha256": "2d79fc95f4972826ae22d03e3048968ac3a1b00779662ac5605fe2bcc2e30739",
+          "test_masks_file": "ppikb_kd_target_cold_scope_v2--MGraphDTA.test-masks.json",
+          "test_masks_sha256": "565238cebf38466c559eb2f796947ca35226b0eb8bee3ca5e7165a79a59bea8c",
+          "duplicate_groups_file": "ppikb_kd_target_cold_scope_v2--MGraphDTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "4acc0e647ddf55849e71e54e2d395d9bd079407f4afe3000955419a1f57258ee",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache-reuse-v3/private-node23-cache/496ed3f5023b5eefc171376babf0b73eac5aeb30d6a34587180717114eae52d8.pkl",
+              "sha256": "3d36ad65b7b9eed5c7a5d557bce3707fa0e6667a4adffef4a2b8e04fb5a74f97",
+              "signature": "496ed3f5023b5eefc171376babf0b73eac5aeb30d6a34587180717114eae52d8",
+              "rows": 6355,
+              "origin": "readonly fixed RDKit24 manifest numeric cache"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache-reuse-v3/private-node23-cache/6f09169935a72f5f334ed5c21123e01508cb5c32464b92003b6d1a0f15ee7157.pkl",
+              "sha256": "472240236347b5bf3316095ca184fb53e9fd4cbcd7400cbb330f0ce71ad75e5f",
+              "signature": "6f09169935a72f5f334ed5c21123e01508cb5c32464b92003b6d1a0f15ee7157",
+              "rows": 1378,
+              "origin": "readonly fixed RDKit24 manifest numeric cache"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache-reuse-v3/private-node23-cache/f6007005c5fde832dcb2be7751671771aaf91d863edd4f6da6b251218b74e399.pkl",
+              "sha256": "0f627bdb996db017655001a52516988f51c17e9e51dd0ee3ba6353f7983d84a2",
+              "signature": "f6007005c5fde832dcb2be7751671771aaf91d863edd4f6da6b251218b74e399",
+              "rows": 1383,
+              "origin": "readonly fixed RDKit24 manifest numeric cache"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_kd_target_cold_scope_v2",
+          "method": "DGDTA-CL",
+          "complete_partitions": false,
+          "parts_available": [],
+          "input_index": "ppikb_kd_target_cold_scope_v2--DGDTA-CL.jsonl.gz",
+          "input_index_sha256": "6e3fdb3ed38e20843644ca55151f414c9f1ccf4eed2f2876c781ba511b18c916",
+          "sources": []
+        },
+        {
+          "view": "ppikb_kd_target_cold_scope_v2",
+          "method": "DeepNC-GEN",
+          "complete_partitions": false,
+          "parts_available": [],
+          "input_index": "ppikb_kd_target_cold_scope_v2--DeepNC-GEN.jsonl.gz",
+          "input_index_sha256": "26e4d0090c1f414e053f6ed8c90df987165d91c27b82b03323e1a520f3b20a20",
+          "sources": []
+        },
+        {
+          "view": "ppikb_kd_target_cold_scope_v2",
+          "method": "GS-DTA",
+          "complete_partitions": false,
+          "parts_available": [],
+          "input_index": "ppikb_kd_target_cold_scope_v2--GS-DTA.jsonl.gz",
+          "input_index_sha256": "2cec2002aaa55e246657031a2e5fdbf5e2d3553f903f0e407d481d5dc2751635",
+          "sources": []
+        },
+        {
+          "view": "ppikb_effect_metadata_silver_source_cold",
+          "method": "GraphDTA-GIN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 1988,
+            "validation": 172,
+            "test": 129
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 79,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 2,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 254,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 2,
+          "truncated_counts": {
+            "train": 335,
+            "validation": 12,
+            "test": 2
+          },
+          "input_index": "ppikb_effect_metadata_silver_source_cold--GraphDTA-GIN.jsonl.gz",
+          "input_index_sha256": "096ca54a3acc6a888b04cd3923d646388eec9707057ac4bd36af0480e2135e21",
+          "test_masks_file": "ppikb_effect_metadata_silver_source_cold--GraphDTA-GIN.test-masks.json",
+          "test_masks_sha256": "7d1ab83e185053480452b1ce435721a4222012f2dce0f7a3284f0bfa8aeb4761",
+          "duplicate_groups_file": "ppikb_effect_metadata_silver_source_cold--GraphDTA-GIN.duplicate-groups.json",
+          "duplicate_groups_sha256": "b8583422151ed52aca3138fc21f4f39648569e8e6214e41027ecd4e50678f3e7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/81c8880eda3c924ba4df521ec8e5461a98c9cd84e081ddbda15c970241bc4869.pkl",
+              "sha256": "ee71fca0925c4340a769241544872acc072f1f513417a9e82e64260877940f7f",
+              "signature": "81c8880eda3c924ba4df521ec8e5461a98c9cd84e081ddbda15c970241bc4869",
+              "rows": 1988,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/15105a4208a042841e2d372c4d78e4a578287b0e90ef2d9a32b88903a680a63b.pkl",
+              "sha256": "68fbde8efd3f7782b2831c94ab0011d03a42e08df4fa3f9d94399ff6c014c7c2",
+              "signature": "15105a4208a042841e2d372c4d78e4a578287b0e90ef2d9a32b88903a680a63b",
+              "rows": 172,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/064e60e4e7c9db5ab3da0a48dfcc569f9b708ff92f5d3c13741469e3d678cebe.pkl",
+              "sha256": "3d3a86a22441b0f0adcd8dc0b83577f97e72b5a398440d47f1a8bfedfa696305",
+              "signature": "064e60e4e7c9db5ab3da0a48dfcc569f9b708ff92f5d3c13741469e3d678cebe",
+              "rows": 129,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_effect_metadata_silver_source_cold",
+          "method": "MGraphDTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 1988,
+            "validation": 172,
+            "test": 129
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 79,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 2,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 254,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 2,
+          "truncated_counts": {
+            "train": 231,
+            "validation": 10,
+            "test": 2
+          },
+          "input_index": "ppikb_effect_metadata_silver_source_cold--MGraphDTA.jsonl.gz",
+          "input_index_sha256": "a7c4e0a92291648324d21567e007ec3870f6f6a8618d3cbff3e04cd8378bce5f",
+          "test_masks_file": "ppikb_effect_metadata_silver_source_cold--MGraphDTA.test-masks.json",
+          "test_masks_sha256": "7d1ab83e185053480452b1ce435721a4222012f2dce0f7a3284f0bfa8aeb4761",
+          "duplicate_groups_file": "ppikb_effect_metadata_silver_source_cold--MGraphDTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "5f71c439d3db4e81ebc5687b1d8f028bb27e77573cb4e6b1a5479df0ca2564f2",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache-reuse-v3/private-node23-cache/741bdb5f167f4468651ea2cb378a30b65c12eac784a73375701208d532e1ab2f.pkl",
+              "sha256": "d375f297fca24cd4943f4309a8b6104ae3155c4e21f21d9144a4a118a0de8948",
+              "signature": "741bdb5f167f4468651ea2cb378a30b65c12eac784a73375701208d532e1ab2f",
+              "rows": 1988,
+              "origin": "readonly fixed RDKit24 manifest numeric cache"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache-reuse-v3/private-node23-cache/4aa68c6abad3d25cefa8f706b0490e73908ff92c693f29926cc4235f191da50d.pkl",
+              "sha256": "ffe17d6529ffc933fbfd7005437babd1e5cf70a16485c045f96f1b202075ac02",
+              "signature": "4aa68c6abad3d25cefa8f706b0490e73908ff92c693f29926cc4235f191da50d",
+              "rows": 172,
+              "origin": "readonly fixed RDKit24 manifest numeric cache"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache-reuse-v3/private-node23-cache/bdf2726582a4cf3d215464447aca44893a3344168d95a74c5eadc2545fdba99b.pkl",
+              "sha256": "c5d0ccbc694d8ea903b11d819fac221d943278c13df4b5ad2ae560004b187709",
+              "signature": "bdf2726582a4cf3d215464447aca44893a3344168d95a74c5eadc2545fdba99b",
+              "rows": 129,
+              "origin": "readonly fixed RDKit24 manifest numeric cache"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_effect_metadata_silver_source_cold",
+          "method": "DGDTA-CL",
+          "complete_partitions": false,
+          "parts_available": [],
+          "input_index": "ppikb_effect_metadata_silver_source_cold--DGDTA-CL.jsonl.gz",
+          "input_index_sha256": "7fc99c1f6596fcddc49e211ae00dcb907cccaebd608dbe1a2ae992b4c19db93f",
+          "sources": []
+        },
+        {
+          "view": "ppikb_effect_metadata_silver_source_cold",
+          "method": "DeepNC-GEN",
+          "complete_partitions": true,
+          "counts": {
+            "train": 1988,
+            "validation": 172,
+            "test": 129
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 79,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 2,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 254,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 2,
+          "truncated_counts": {
+            "train": 335,
+            "validation": 12,
+            "test": 2
+          },
+          "input_index": "ppikb_effect_metadata_silver_source_cold--DeepNC-GEN.jsonl.gz",
+          "input_index_sha256": "15bf32f3c72f06f66eb5144aed2f72607ec3891b143c1e9803999f2faed929ce",
+          "test_masks_file": "ppikb_effect_metadata_silver_source_cold--DeepNC-GEN.test-masks.json",
+          "test_masks_sha256": "7d1ab83e185053480452b1ce435721a4222012f2dce0f7a3284f0bfa8aeb4761",
+          "duplicate_groups_file": "ppikb_effect_metadata_silver_source_cold--DeepNC-GEN.duplicate-groups.json",
+          "duplicate_groups_sha256": "b8583422151ed52aca3138fc21f4f39648569e8e6214e41027ecd4e50678f3e7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/054577d08f38074d3dddabecbe77be16de1024c1d399e100b32095ddb387405e.pkl",
+              "sha256": "ee71fca0925c4340a769241544872acc072f1f513417a9e82e64260877940f7f",
+              "signature": "054577d08f38074d3dddabecbe77be16de1024c1d399e100b32095ddb387405e",
+              "rows": 1988,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/549840072627f9ce2be38a59691c1768c98aeff0cbe4380f2dd3f772bdaa4159.pkl",
+              "sha256": "68fbde8efd3f7782b2831c94ab0011d03a42e08df4fa3f9d94399ff6c014c7c2",
+              "signature": "549840072627f9ce2be38a59691c1768c98aeff0cbe4380f2dd3f772bdaa4159",
+              "rows": 172,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/0c39ee3f9b1026ff4298cda2773a65cd3df9bb8699c22bb84083ec5172f1eb51.pkl",
+              "sha256": "3d3a86a22441b0f0adcd8dc0b83577f97e72b5a398440d47f1a8bfedfa696305",
+              "signature": "0c39ee3f9b1026ff4298cda2773a65cd3df9bb8699c22bb84083ec5172f1eb51",
+              "rows": 129,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        },
+        {
+          "view": "ppikb_effect_metadata_silver_source_cold",
+          "method": "GS-DTA",
+          "complete_partitions": true,
+          "counts": {
+            "train": 1988,
+            "validation": 172,
+            "test": 129
+          },
+          "test_flags": {
+            "effective_pair_seen_train": 0,
+            "effective_pair_seen_train_or_validation": 0,
+            "effect_pair_or_reverse_seen_train": 0,
+            "target_tokens_seen_train": 79,
+            "different_complete_target_same_tokens_in_train": 0,
+            "target_truncated": 2,
+            "effect_WT_mutant_consumed_inputs_identical": 0
+          },
+          "validation_effective_pair_seen_train": 0,
+          "duplicate_effective_input_groups": 254,
+          "groups_with_different_recorded_chemistry": 0,
+          "groups_with_different_complete_targets": 0,
+          "groups_with_multiple_broad_chemical_types": 2,
+          "truncated_counts": {
+            "train": 335,
+            "validation": 12,
+            "test": 2
+          },
+          "input_index": "ppikb_effect_metadata_silver_source_cold--GS-DTA.jsonl.gz",
+          "input_index_sha256": "d1beb11d91c364714ad2d008bfe7755b4ab8a0e256d68b9d6030ced05b542874",
+          "test_masks_file": "ppikb_effect_metadata_silver_source_cold--GS-DTA.test-masks.json",
+          "test_masks_sha256": "7d1ab83e185053480452b1ce435721a4222012f2dce0f7a3284f0bfa8aeb4761",
+          "duplicate_groups_file": "ppikb_effect_metadata_silver_source_cold--GS-DTA.duplicate-groups.json",
+          "duplicate_groups_sha256": "b8583422151ed52aca3138fc21f4f39648569e8e6214e41027ecd4e50678f3e7",
+          "sources": [
+            {
+              "part": "train",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/45f7e0f3934c29420706b6aa41c4ce2dc6c308865927bfd5c329ec27dc77a6b4.pkl",
+              "sha256": "647bd554137b3b268ad3de32fca0dfa7c3da206fecd35ef432cdb5c5bf048562",
+              "signature": "45f7e0f3934c29420706b6aa41c4ce2dc6c308865927bfd5c329ec27dc77a6b4",
+              "rows": 1988,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "validation",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/cb1c0480bd239c2c04a80affab262d4d0c2dfcecd838e751290981f904744658.pkl",
+              "sha256": "26f757f15957b93a176f2f648cef0923a28dd6aa3fd7d2005a943140d38fe01b",
+              "signature": "cb1c0480bd239c2c04a80affab262d4d0c2dfcecd838e751290981f904744658",
+              "rows": 172,
+              "origin": "owned native runtime cache, original byte receipt"
+            },
+            {
+              "part": "test",
+              "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cache/ca3dad97618af4a9a4e4ad57967b758677e5b021623bf08c161675e11a839052.pkl",
+              "sha256": "e3b99bedaba1fe7fb4abbedc0bd005734e4093a59f4472b3cffc0e030fd10b2e",
+              "signature": "ca3dad97618af4a9a4e4ad57967b758677e5b021623bf08c161675e11a839052",
+              "rows": 129,
+              "origin": "owned native runtime cache, original byte receipt"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cross_runtime_overlap_proof": {
+    "path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/cross-runtime-effective-input-comparison-20261023T074046Z.json",
+    "sha256": "c1a02680b44d218926ea047c7c09c8cd842ad6c19cf4cc660bd1636446f7b226",
+    "compared_method_view_row_entries": 71954,
+    "equal_consumed_input_fingerprints": 71954,
+    "scope": "actual overlapping cached inputs only; repeated biological observations, no model or gradient equivalence claim"
+  },
+  "conditional_scores_path": "record-ref:peptide-four-task-benchmark-20261022/methods/dta/conditional-input-scores-20261023T115039Z/scores.json",
+  "conditional_scores_sha256": "b16982efd222a418b131e33f1d782fad27c7396ac5e8ad18333d03c1544fbb41",
+  "conditional_scored_units": 150,
+  "scope": "diagnostic input subsets, original fitted models/test splits and primary metrics unchanged"
+}

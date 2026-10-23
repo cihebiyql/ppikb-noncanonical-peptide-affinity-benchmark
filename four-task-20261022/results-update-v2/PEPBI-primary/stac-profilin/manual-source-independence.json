@@ -1,0 +1,241 @@
+{
+  "scope": "100 existing selected models,2 PPIKB panels x5 manual families x10seeds; supervised-source disjoint conditional validation",
+  "model_code_path": "record-ref:peptide-four-task-benchmark-20261022/baselines/frozen-code/cpu-baselines-v2.py",
+  "model_code_sha256": "d27cd5f913a267e880c05f484cfbfb8df775ab9fbf6cb7a1262886acfcbeb7e1",
+  "imports": [
+    "__future__",
+    "collections",
+    "datetime",
+    "pathlib",
+    "scipy.stats",
+    "sklearn.dummy",
+    "sklearn.ensemble",
+    "sklearn.ensemble",
+    "sklearn.ensemble",
+    "sklearn.linear_model",
+    "sklearn.metrics",
+    "sklearn.metrics",
+    "sklearn.pipeline",
+    "sklearn.preprocessing",
+    "threadpoolctl",
+    "os",
+    "argparse",
+    "csv",
+    "hashlib",
+    "json",
+    "math",
+    "platform",
+    "sys",
+    "time",
+    "traceback",
+    "joblib",
+    "numpy",
+    "pandas",
+    "scipy",
+    "sklearn"
+  ],
+  "features": "87 deterministic sequence counts/length/hashed dipeptide bins per partner,174 affinity dimensions; no pretrained encoder",
+  "pretraining_exposure_gate_applicable_to_these100_models": false,
+  "does_not_transfer_independence_to_pretrained_models": true,
+  "views": [
+    {
+      "view": "ppikb_kd_source_cold_scope_v2",
+      "path": "record-ref:peptide-four-task-benchmark-20261022/data/ppikb_kd_source_cold_scope_v2.csv",
+      "sha256": "f4098978e997024c36b2ed72ac5abb37fab1cdf1b0abc25fd28a842edba140ad",
+      "rows": 9116
+    },
+    {
+      "view": "ppikb_kd_target_cold_scope_v2",
+      "path": "record-ref:peptide-four-task-benchmark-20261022/data/ppikb_kd_target_cold_scope_v2.csv",
+      "sha256": "dec940c4adffccfdb0209ce12cb6ff99d4d0d61a9a6f97b980d4c20988434167",
+      "rows": 9116
+    }
+  ],
+  "per_candidate_panel": [
+    {
+      "row_id": "pepbi-ctx-cc205153d5e095e0c61a71c8",
+      "supervised_view": "ppikb_kd_source_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 7125,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-ac6571094e40daa79880e406",
+      "supervised_view": "ppikb_kd_source_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 7125,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-9b37892319fc7d69c45d85b7",
+      "supervised_view": "ppikb_kd_source_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 7125,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-bd0cbf1fa3a66619a05dd481",
+      "supervised_view": "ppikb_kd_source_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 7125,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-fc3855ef342f3d23a2f4fa2a",
+      "supervised_view": "ppikb_kd_source_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 7125,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-83aa9ef90b4d93cfcc441003",
+      "supervised_view": "ppikb_kd_source_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 7125,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-65c526e590e6eb0fe82ef6b5",
+      "supervised_view": "ppikb_kd_source_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 7125,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-063ff13e5d9cba1fe14c9b59",
+      "supervised_view": "ppikb_kd_source_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 7125,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-2c0229d0d73db412a221eb00",
+      "supervised_view": "ppikb_kd_source_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 7125,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-cc205153d5e095e0c61a71c8",
+      "supervised_view": "ppikb_kd_target_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 6355,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-ac6571094e40daa79880e406",
+      "supervised_view": "ppikb_kd_target_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 6355,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-9b37892319fc7d69c45d85b7",
+      "supervised_view": "ppikb_kd_target_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 6355,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-bd0cbf1fa3a66619a05dd481",
+      "supervised_view": "ppikb_kd_target_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 6355,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-fc3855ef342f3d23a2f4fa2a",
+      "supervised_view": "ppikb_kd_target_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 6355,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-83aa9ef90b4d93cfcc441003",
+      "supervised_view": "ppikb_kd_target_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 6355,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-65c526e590e6eb0fe82ef6b5",
+      "supervised_view": "ppikb_kd_target_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 6355,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-063ff13e5d9cba1fe14c9b59",
+      "supervised_view": "ppikb_kd_target_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 6355,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    },
+    {
+      "row_id": "pepbi-ctx-2c0229d0d73db412a221eb00",
+      "supervised_view": "ppikb_kd_target_cold_scope_v2",
+      "all_splits_checked": true,
+      "train_rows": 6355,
+      "all_rows": 9116,
+      "exact_sequence_pair_overlap_n": 0,
+      "target_exact_or_full_subsequence_overlap_n": 0,
+      "same_primary_DOI_overlap_n": 0
+    }
+  ],
+  "all_exact_pair_and_DOI_zero": true,
+  "homology_generalization_certified": false,
+  "blind": false,
+  "previous_external_evaluation_already_performed": true,
+  "chemical_assay_certification_is_separate": true
+}

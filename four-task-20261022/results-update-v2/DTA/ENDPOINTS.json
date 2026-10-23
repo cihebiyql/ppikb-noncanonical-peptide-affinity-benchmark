@@ -1,0 +1,41 @@
+{
+  "source_ref": "record-ref:data/view_manifest.json",
+  "source_sha256": "09be156624350725201177baccc34b83d7e41642e546c279f281708b917bb4a4",
+  "views": [
+    {
+      "id": "ppikb_kd_source_cold_scope_v2",
+      "task": "affinity",
+      "endpoint": "pKd",
+      "rows": 9116,
+      "split_counts": {
+        "train": 7125,
+        "validation": 977,
+        "test": 1014
+      }
+    },
+    {
+      "id": "ppikb_kd_target_cold_scope_v2",
+      "task": "affinity",
+      "endpoint": "pKd",
+      "rows": 9116,
+      "split_counts": {
+        "train": 6355,
+        "validation": 1378,
+        "test": 1383
+      }
+    },
+    {
+      "id": "ppikb_effect_metadata_silver_source_cold",
+      "task": "effect",
+      "endpoint": "delta_pKd_silver",
+      "rows": 2289,
+      "split_counts": {
+        "validation": 172,
+        "test": 129,
+        "train": 1988
+      }
+    }
+  ],
+  "source_tables_numeric_cells_unchanged": true,
+  "metadata_silver_pair_assay_certification": "not individually complete"
+}
