@@ -1,0 +1,137 @@
+{
+  "schema": "chemical-encoder.canary.v1",
+  "status": "succeeded",
+  "model_identity": {
+    "repository": "aaronfeller/peptideclm-2-mlm-small",
+    "revision": "7fe899df4d9753224aefa955ed0cf859d181e693",
+    "asset_sha256": {
+      "ChemPepMTR.py": "a3b6c48b48a9035bfda6dc7c29c67d7ed6ce74161a3eb116abe3c8a0a438a395",
+      "README.md": "9991584f7d85f87cc4de0f32ec65dc278e1b3715cd2c35df560a3eff46f59f9e",
+      "__init__.py": "a9d40b412d57f23ef80732ca1b25a7cc249282bea5968c3b476dbf5664a14bbc",
+      "config.json": "1aed699cdfb7e5c4ef06666a48f185f4b1bc5711dbccdbd6da2412abd2bf2295",
+      "config.py": "0c8fdf80e5a6eb86b5e019b50cace117579058d09183d7e45c692f61aef621a5",
+      "model.safetensors": "713fb214c51d42bd038b4dd71928ea5f5e0c3c2cf58be1fce8345cc395ef5f4a",
+      "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+      "tokenizer.json": "d7cfeefb9290fb094430641a53dcfeba580efc60b64bb4a84225366d7dc75d98",
+      "tokenizer_config.json": "09a7db7532214b31a8b6ceacd30e26aad089c2c0364b3b5387b3a3681bd23f63"
+    },
+    "asset_receipt_sha256": "b4c82a9706a8ba52f9d7ddf0d3bae2da099fc2642b44f8835676b96a7702679c"
+  },
+  "pooling": "native_mean_pool",
+  "max_tokens_including_special": 768,
+  "tokenizer_model_max_length": 768,
+  "architecture_max_seq_len": 2048,
+  "embedding_dim": 512,
+  "parameter_count": 31668629,
+  "repeat_max_abs_difference": 0.0,
+  "pairs": [
+    {
+      "a": "alanine_L",
+      "b": "alanine_D",
+      "token_ids_differ": true,
+      "max_abs_embedding_difference": 0.6317501068115234
+    },
+    {
+      "a": "serine",
+      "b": "phosphoserine",
+      "token_ids_differ": true,
+      "max_abs_embedding_difference": 1.56423819065094
+    },
+    {
+      "a": "alanine_L",
+      "b": "aminobutyrate",
+      "token_ids_differ": true,
+      "max_abs_embedding_difference": 0.5097428560256958
+    },
+    {
+      "a": "alanine_L",
+      "b": "alaninamide",
+      "token_ids_differ": true,
+      "max_abs_embedding_difference": 0.4606819450855255
+    }
+  ],
+  "tokenizations": {
+    "alanine_L": {
+      "token_count": 6,
+      "input_ids": [
+        2,
+        72,
+        67,
+        240,
+        244,
+        3
+      ]
+    },
+    "alanine_D": {
+      "token_count": 6,
+      "input_ids": [
+        2,
+        72,
+        141,
+        240,
+        244,
+        3
+      ]
+    },
+    "serine": {
+      "token_count": 6,
+      "input_ids": [
+        2,
+        72,
+        67,
+        250,
+        244,
+        3
+      ]
+    },
+    "phosphoserine": {
+      "token_count": 11,
+      "input_ids": [
+        2,
+        72,
+        67,
+        239,
+        150,
+        18,
+        235,
+        270,
+        238,
+        244,
+        3
+      ]
+    },
+    "aminobutyrate": {
+      "token_count": 6,
+      "input_ids": [
+        2,
+        72,
+        67,
+        376,
+        244,
+        3
+      ]
+    },
+    "alaninamide": {
+      "token_count": 6,
+      "input_ids": [
+        2,
+        72,
+        67,
+        240,
+        237,
+        3
+      ]
+    }
+  },
+  "all_finite": true,
+  "no_unknown_tokens": true,
+  "no_truncation": true,
+  "scientific_scope": "Chemical representations differ; no binding-affinity accuracy claim.",
+  "runtime": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.48.1",
+    "device": "cpu",
+    "threads": 2,
+    "dtype": "float32"
+  }
+}

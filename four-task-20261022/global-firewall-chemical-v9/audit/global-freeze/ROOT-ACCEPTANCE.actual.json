@@ -1,0 +1,51 @@
+{
+  "schema": "peptide.global-freeze.root-acceptance.v1",
+  "at_utc": "2026-10-24T16:12:17.553479+00:00",
+  "authority": "direct_user_message",
+  "user_instruction": "先把跨任务的数据泄漏排查清楚，重新冻结预训练、微调和独立外测的划分，更新AGENTS.md。然后优先推进近期、真正支持非天然残基和PTM的模型，全部跑10个随机种子，保留所有结果，持续推进。",
+  "manifest_path": "record-ref:project/data/global-freeze-20261024-v1/frozen-manifest.json",
+  "manifest_sha256": "8825563afe9eedec17e940d06ba0f36ae6ddf1e5337ca1c1bdd4265f62a52582",
+  "accepted_revision": 2,
+  "producer_metadata_checks": 254936,
+  "independent_review_agent": "record-ref:local-runtime/global_freeze_review",
+  "independent_review_checks": 177056,
+  "independent_review_errors": 0,
+  "target_train_validation_test": [
+    554,
+    584,
+    695
+  ],
+  "source_fine_train": 0,
+  "source_status": "blocked",
+  "target_status": "accepted_for_model_input_coverage_freeze_and_training",
+  "pretrain_structures_target": 1,
+  "pretrain_structures_source": 2,
+  "old_scientific_inputs_modified": false,
+  "not_a_new_blind_test": true,
+  "additional_qualification": "Declared metadata dependencies and old target homology/containment audited; new cross-source general homology and foundation-model molecule exposure remain incomplete. External chemical/assay qualification is separate.",
+  "initial_chemistry_models": [
+    "peptideclm-2-hybrid-small",
+    "peptideclm-2-mlm-small"
+  ],
+  "matched_control": "chiral Morgan + same frozen protein ESM2",
+  "seed_policy": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "stages": [
+    "Freeze common model-admissible IDs before any fit",
+    "Frozen encoder five-family regression heads with two validation candidates",
+    "Separately labelled full-encoder task-adaptation after actual resource cost check"
+  ],
+  "gpu_global_max": 3,
+  "encoder_feature_extraction_does_not_train_on_test": true,
+  "external_without_actual_smiles": "Record zero chemistry coverage; do not invent full PTM molecule"
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "chemical-encoder.canary-independent-audit.v1",
+  "checked_at_utc": "2026-10-24T16:14:07.539598+00:00",
+  "status": "passed",
+  "scope": "Read existing six-vector outputs and token IDs; recompute differences in float64; no model load/forward/fit/weight read",
+  "new_model_forwards": 0,
+  "new_fits": 0,
+  "weight_files_read": 0,
+  "results": [
+    {
+      "model": "hybrid",
+      "status": "passed",
+      "shape": [
+        6,
+        512
+      ],
+      "pairs": [
+        {
+          "a": "alanine_L",
+          "b": "alanine_D",
+          "float64_max_abs_difference": 0.3492382764816284
+        },
+        {
+          "a": "serine",
+          "b": "phosphoserine",
+          "float64_max_abs_difference": 0.9882463160902262
+        },
+        {
+          "a": "alanine_L",
+          "b": "aminobutyrate",
+          "float64_max_abs_difference": 0.4457090348005295
+        },
+        {
+          "a": "alanine_L",
+          "b": "alaninamide",
+          "float64_max_abs_difference": 0.9091120362281799
+        }
+      ],
+      "canary_json_sha256": "faae117762b5d866227c536914112967ce3ce50948ae4dee1002d72f0794ba18",
+      "npz_sha256": "c637da6a55ed9d4eb4528116204cd3f6a69a91d415cc852f42c155ec1976f1b4"
+    },
+    {
+      "model": "mlm",
+      "status": "passed",
+      "shape": [
+        6,
+        512
+      ],
+      "pairs": [
+        {
+          "a": "alanine_L",
+          "b": "alanine_D",
+          "float64_max_abs_difference": 0.6317501068115234
+        },
+        {
+          "a": "serine",
+          "b": "phosphoserine",
+          "float64_max_abs_difference": 1.56423819065094
+        },
+        {
+          "a": "alanine_L",
+          "b": "aminobutyrate",
+          "float64_max_abs_difference": 0.5097428858280182
+        },
+        {
+          "a": "alanine_L",
+          "b": "alaninamide",
+          "float64_max_abs_difference": 0.4606819450855255
+        }
+      ],
+      "canary_json_sha256": "b380a93690a1d6652b1c26e891f96be18d0cdac5ca132193b33361abf6b71097",
+      "npz_sha256": "e42f4cae4587c73a4e7005f522dcd3ec188ae87ca7afcc761184b660224e2431"
+    }
+  ]
+}

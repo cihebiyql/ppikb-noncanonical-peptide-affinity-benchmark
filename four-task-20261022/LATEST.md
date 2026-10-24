@@ -22,3 +22,4 @@
 |[PepInter完整B24 GPU能力门通过](pepinter-fullB24-capability-v6/README.zh-CN.md)|CPUAdam＋activation原B24适配输入991两次Adam调用，仅第二次正学习率；快照真恢复与最终状态独审通过。作者pad8同批应992，首authorpad8正式段尚未跑；0完整正式模型／验证测试，旧v5失败保留。|
 |[首段218步固定历史快照 v7](native-formal-progress-v7/README.zh-CN.md)|PepInter首正式段218步／5232训练条、epoch1未完成、0完整候选；这是不可变首段快照，并非最新live进度。第二段与后续状态另看实际收据。UniAIR源码导入通过不等于完整训练，完整原生种子仍未完成。|
 |[训练预算审计与首例验证补充 v8](training-budget-audit-v8/README.zh-CN.md)|原300候选20轮/p5审计：287早停、13到cap；首DGDTA验证候选24轮自然停，额外4轮无best改善，前20轮120数值完全相同。固定首例1/13历史快照，0TEST，非最新live计数；完整脱敏stderr与源码附。|
+|[跨任务防火墙与化学表征基准 v9](global-firewall-chemical-v9/README.zh-CN.md)|source训练0保持blocked；target554/584/695，共同输入388/346/502；同一CLM2论文Hybrid/MLM两个变体与Morgan共150选定模型/300候选，全部10种子及独审闭环。含词表317个出现UNK输入、14个非天然测试与flag敏感性限制；完整encoder微调另列。|

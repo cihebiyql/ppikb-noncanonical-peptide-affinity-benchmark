@@ -1,0 +1,29 @@
+{
+  "schema": "chemical-encoder.native-tokenizer-coverage-audit.v1",
+  "at_utc": "2026-10-24T16:35:44.230203+00:00",
+  "scope": "metadata-only tokenizer/RDKit audit, no NN, no affinity labels used",
+  "source_global_manifest_sha256": "8825563afe9eedec17e940d06ba0f36ae6ddf1e5337ca1c1bdd4265f62a52582",
+  "source_target_csv_sha256": "eec0dbd26d12a0ff0863a6bde7f886584b78b1149c3d1595072a4339485936b4",
+  "rdkit": "2024.03.2",
+  "unique_smiles": 1238,
+  "raw_unknown_token_molecules": 317,
+  "canonical_isomeric_unknown_token_molecules": 317,
+  "canonicalization_recovers_unknown_molecules": 0,
+  "raw_over_768": 0,
+  "canonical_over_768": 0,
+  "actual_unknown_span_counts": {
+    "12": 438
+  },
+  "interpretation": "Published tokenizer has no 12 vocabulary token or ##2 continuation; adjacent ring-closure labels can be unrepresented. Existing native extractor rejects these molecules explicitly. No tokenizer or chemistry entity was altered.",
+  "official_canonicalization_source": "methods/chemical-encoders-20261024-v1/sources/PeptideCLM-2/data_processing/canonicalize.py",
+  "metadata_worker_seconds": 3.409016765654087,
+  "resource_scope": "Node23 CPU1/nice19/2GiB AS/90s external timeout; no weights/model imports",
+  "accepted_raw_and_canonical_observation_counts": {
+    "fine_train": 442,
+    "validation": 415,
+    "test": 526
+  },
+  "final_shared_protein_morgan_coverage_is_separate": true,
+  "peptideclm-2-hybrid-small_tokenizer_sha256": "d7cfeefb9290fb094430641a53dcfeba580efc60b64bb4a84225366d7dc75d98",
+  "peptideclm-2-mlm-small_tokenizer_sha256": "d7cfeefb9290fb094430641a53dcfeba580efc60b64bb4a84225366d7dc75d98"
+}

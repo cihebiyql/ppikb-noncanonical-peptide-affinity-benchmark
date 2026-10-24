@@ -1,0 +1,81 @@
+{
+  "schema": "chemical-encoder.common-cohort.root-acceptance.v1",
+  "at_utc": "2026-10-24T16:52:26.316095+00:00",
+  "parent_global_manifest_sha256": "8825563afe9eedec17e940d06ba0f36ae6ddf1e5337ca1c1bdd4265f62a52582",
+  "cohort_manifest_remote_path": "record-ref:project/runs/chemical-common-cohort-globalfreeze-v1/attempt--20261024T162932/artifacts/frozen-manifest.json",
+  "cohort_manifest_sha256": "3d1dffc18e53426be28fefc7d83012566b88df3c6c2ea78ef07659f13d1eda65",
+  "cohort_csv_sha256": "598e0c9c873aecf29a0b3a7a44a7161f68dc78dc15f43862d1e46e5d1a384310",
+  "split_counts": {
+    "fine_train": 388,
+    "validation": 346,
+    "test": 502
+  },
+  "strata_by_split": {
+    "fine_train": {
+      "standard20_control": 334,
+      "synthetic_D_backbone": 9,
+      "PTM": 33,
+      "synthetic_and_PTM": 12
+    },
+    "validation": {
+      "standard20_control": 292,
+      "synthetic_D_backbone": 20,
+      "PTM": 21,
+      "synthetic_and_PTM": 12,
+      "other_NC": 1
+    },
+    "test": {
+      "standard20_control": 434,
+      "synthetic_D_backbone": 14,
+      "PTM": 34,
+      "synthetic_and_PTM": 17,
+      "other_NC": 3
+    }
+  },
+  "group_counts": {
+    "fine_train": 73,
+    "validation": 99,
+    "test": 118
+  },
+  "discordance_counts": {
+    "fine_train": 3,
+    "validation": 12,
+    "test": 21
+  },
+  "representations": [
+    "CLM2 hybrid small + frozen ESM320",
+    "CLM2 MLM small + frozen ESM320",
+    "chiral Morgan + frozen ESM320"
+  ],
+  "independent_review_agent": "record-ref:local-runtime/global_freeze_review",
+  "decision": "GO_heads_and_cost_scope_after_resource_admission",
+  "input_only_filter": true,
+  "labels_or_predictions_used_to_choose_ids": false,
+  "source_track_blocked": true,
+  "qualifications": [
+    "Pretrained chemistry corpus entity exposure unknown",
+    "Native tokenizers reject317/1238 unique complete SMILES due unknown tokens; no silent truncation",
+    "Test noncanonical/D/backbone stratum has only14 records; seeds are not independent biological systems",
+    "Current conditional external views are not part of head selection"
+  ],
+  "heads_budget": {
+    "representations": 3,
+    "families_each": 5,
+    "candidates_each": 2,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "selected_total": 150,
+    "candidate_fits_total": 300
+  },
+  "full_encoder_finetune": "separate labelled task adaptation; actual cost required"
+}
