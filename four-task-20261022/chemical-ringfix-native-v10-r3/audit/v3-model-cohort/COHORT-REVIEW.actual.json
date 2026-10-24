@@ -1,0 +1,144 @@
+{
+  "schema": "peptide.chemical-homology-v3.cohort-independent-review.v1",
+  "at_utc": "2026-10-24T22:06:38.631041+00:00",
+  "valid": true,
+  "checks": 80331,
+  "errors": [],
+  "disposition": "GO_NEW_V3_HEADS_150_SELECTED_300_FITS",
+  "scope": "CPU metadata/NPZ/canary/source SHA audit; no torch, no model inference, no fit, no sequence/SMILES/label values printed",
+  "manifest_path": "record-ref:project/runs/chemical-common-cohort-homology-v3/attempt--20261024T215937/artifacts/frozen-manifest.json",
+  "manifest_sha256": "963c7bc996643d8c63ccd67c9c2d7697eedf2882a4495367b3dd77bdbc42dace",
+  "parent_global_sha256": "971a1feaafeae45e0e4f29092b80405419d8d47100b0a3e5e936c82ecc0e44c0",
+  "counts": {
+    "test": 656,
+    "fine_train": 497,
+    "validation": 495
+  },
+  "strata_by_split": {
+    "test": {
+      "synthetic_D_backbone": 26,
+      "standard20_control": 572,
+      "PTM": 35,
+      "synthetic_and_PTM": 18,
+      "other_NC": 5
+    },
+    "fine_train": {
+      "PTM": 34,
+      "standard20_control": 440,
+      "synthetic_D_backbone": 10,
+      "synthetic_and_PTM": 13
+    },
+    "validation": {
+      "synthetic_and_PTM": 14,
+      "standard20_control": 425,
+      "synthetic_D_backbone": 27,
+      "PTM": 28,
+      "other_NC": 1
+    }
+  },
+  "parent_rows": 1828,
+  "excluded_rows": 180,
+  "input_only_exclusion_reasons": {
+    "target_embedding_cache_unavailable": 180
+  },
+  "removed_vs_ringfix_v2": [
+    "PPIKB_all_endpoints:PPIPT00657",
+    "PPIKB_all_endpoints:PPIRE16172",
+    "PPIKB_all_endpoints:PPIRE16173",
+    "PPIKB_all_endpoints:PPIRE16174",
+    "PPIKB_all_endpoints:PPIRE16175"
+  ],
+  "retained_fields_vs_v2": "All except dependency component/group identifiers checked; those bound pointwise to new global parent",
+  "cosmetic_parent_field_changes": {
+    "residue_class_graph_discordance_case": 1648
+  },
+  "features": [
+    {
+      "mode": "clm2-hybrid-small-ringfix-v2",
+      "cache_sha256": "3a2191c4d36c3d573a553971dc5cd03b3f3b9297afac33e6e0fa68db33724408",
+      "embedding_sha256": "c3feebd4374ccf274aad15ea979dd84931abcc18dcc59969d89876026763ad74",
+      "shape": [
+        1238,
+        512
+      ],
+      "native_canary_sha256": "075b2748a79e57498a5ad322c4910b43313ba2ad29ce8191a333d8deba13bd44"
+    },
+    {
+      "mode": "clm2-mlm-small-ringfix-v2",
+      "cache_sha256": "d46a33f691cfb44397b6d8a29c9b2562940117333d7458dd9787b83a24731977",
+      "embedding_sha256": "fb6a95e12c59001bc961ae2b82d686a6ebbecaf06e7cdf2a77b9b30f0775fba4",
+      "shape": [
+        1238,
+        512
+      ],
+      "native_canary_sha256": "3a8187908e42e49f0ae3105046eeb39161f10178a1b354a50b295c4e43dd6a03"
+    },
+    {
+      "mode": "chiral_morgan_rdkit",
+      "dimension": 2058
+    }
+  ],
+  "groups": 360,
+  "launch_asset_checks": 26,
+  "process_receipt": {
+    "at": "2026-10-24T21:59:40.381571+00:00",
+    "pid": 3550370,
+    "birth": 672726248,
+    "pgid": 3550370,
+    "sid": 3550370,
+    "contract_sha256": "5c510b4c8d00b58fee6b0d6ebc739e589efb112cb4f5721aad6d7216efb4ab77",
+    "gpu": false,
+    "cpu_affinity": [
+      5,
+      6
+    ],
+    "environment": {
+      "CUDA_VISIBLE_DEVICES": "",
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "NUMEXPR_NUM_THREADS": "2",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "peak_group_rss": 232091648,
+    "stop_reason": null,
+    "finished_at": "2026-10-24T21:59:49.700995+00:00",
+    "exit_code": 0,
+    "elapsed_seconds": 9.319363218732178,
+    "remaining_owned_pids": [],
+    "passed": true
+  },
+  "hashes": {
+    "record-ref:project/runs/chemical-common-cohort-homology-v3/attempt--20261024T215937/artifacts/frozen-manifest.json": "963c7bc996643d8c63ccd67c9c2d7697eedf2882a4495367b3dd77bdbc42dace",
+    "record-ref:project/data/global-freeze-20261025-v3-homology/frozen-manifest.json": "971a1feaafeae45e0e4f29092b80405419d8d47100b0a3e5e936c82ecc0e44c0",
+    "record-ref:project/runs/chemical-common-cohort-homology-v3/attempt--20261024T215937/artifacts/ppikb_kd_target_global_firewall_v1.csv": "4f4694b8937c6e3bd2e5b1091faf948fd66ecc57180b09d0ff5c236cded83c60",
+    "record-ref:project/data/global-freeze-20261025-v3-homology/target/fine_affinity.csv": "82d9462df00049ebb4dad2b4a3d87a839fc6b9e5a3108ded03cbfbfedd311442",
+    "record-ref:project/baselines/chemical-encoder-benchmark-20261024-v1/prepare_model_cohort.py": "44f9aaeaa2821621555aad3b776740527703f5d966fc580239765326b4401413",
+    "record-ref:project/runs/chemical-common-cohort-ringfix-v2/attempt--20261024T185638/artifacts/ppikb_kd_target_global_firewall_v1.csv": "ef1fe61e85b8d1fbbd5f99c60ad727d43c33dabe5765c39edcaa6325f0056129",
+    "record-ref:project/baselines/plm-simple-v1/feature-cache-binding.json": "0267163e62f175c00f25248662221f1ac19be499a89f0a4dcc62af18e55993fc",
+    "record-ref:project/baselines/plm-simple-v1/feature-cache-cpu-v3/embeddings.npz": "a097ddfc203868fa299e4f25dcf01570f0f189de7d5ba4fcc054923417b3179f",
+    "record-ref:project/baselines/plm-simple-v1/feature-cache-cpu-v3/receipt.json": "2ebe900dff405629e84f69a45e37978bb3f0e34935f1089dd0eebf297bc06a7b",
+    "record-ref:project/protocol/global-freeze-20261024-v1/feature-specs-ringfix-v2/clm2-hybrid-small-ringfix-v2.json": "6b2066af18343641901c811ec8c5c53a4b56b4070cacb35ce45d53f6d4932a93",
+    "record-ref:project/runs/chemical-ringfix-features-v2/peptideclm-2-hybrid-small--20261024T182912/artifacts/cache-manifest.json": "3a2191c4d36c3d573a553971dc5cd03b3f3b9297afac33e6e0fa68db33724408",
+    "record-ref:project/runs/chemical-ringfix-features-v2/peptideclm-2-hybrid-small--20261024T182912/artifacts/embeddings.npz": "c3feebd4374ccf274aad15ea979dd84931abcc18dcc59969d89876026763ad74",
+    "record-ref:project/runs/chemical-ringfix-features-v2/peptideclm-2-hybrid-small--20261024T182912/artifacts/canary.json": "075b2748a79e57498a5ad322c4910b43313ba2ad29ce8191a333d8deba13bd44",
+    "record-ref:project/protocol/global-freeze-20261024-v1/feature-specs-ringfix-v2/clm2-mlm-small-ringfix-v2.json": "60e19d02822ab788fdfadf66a5220f291fe4b3c90968b1986b75b48b952d3f1c",
+    "record-ref:project/runs/chemical-ringfix-features-v2/peptideclm-2-mlm-small--20261024T183440/artifacts/cache-manifest.json": "d46a33f691cfb44397b6d8a29c9b2562940117333d7458dd9787b83a24731977",
+    "record-ref:project/runs/chemical-ringfix-features-v2/peptideclm-2-mlm-small--20261024T183440/artifacts/embeddings.npz": "fb6a95e12c59001bc961ae2b82d686a6ebbecaf06e7cdf2a77b9b30f0775fba4",
+    "record-ref:project/runs/chemical-ringfix-features-v2/peptideclm-2-mlm-small--20261024T183440/artifacts/canary.json": "3a8187908e42e49f0ae3105046eeb39161f10178a1b354a50b295c4e43dd6a03",
+    "record-ref:project/protocol/global-freeze-20261024-v1/feature-specs-ringfix-v2/chiral-morgan.json": "f61a7bd301c3fa17bd03f0b19c8167492921f5eea61fdfb197b73209975366c5",
+    "record-ref:project/baselines/molecular/molecular_features.py": "cb7ad4c26c9e21811732fa155c479f404675fb7699cbef85e252ae49bfe4dc14",
+    "record-ref:project/runs/chemical-common-cohort-homology-v3/attempt--20261024T215937/artifacts/input-only-exclusions.csv": "f2af224f0b0c3acf04e2576250f3ab704af39322efadfebd6da39df6b4978bdf",
+    "record-ref:project/runs/chemical-common-cohort-homology-v3/attempt--20261024T215937/process-receipt.json": "6ff101d808159cfeaf78df9686f9c41ab4079696eba1ddadeda8b3d449805f0d"
+  },
+  "limitations": [
+    "Historical tests are not new blind tests",
+    "Reuse of old v2 results is not newly trained v3 evidence",
+    "No new whole neural-weight hash audit or foundation-training exposure certification",
+    "Resource owner must bind this v3 cohort and admit each job under fresh resource guards; old v2 must not resume",
+    "Full encoder finetuning requires separate source-plan and max-train resource qualification"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "chemical-head.three-representation-joint-audit.ringfix-v2",
+  "completed_at": "2026-10-24T21:18:49.351340+00:00",
+  "valid": true,
+  "cohort_manifest_sha256": "a7b04f77f8445173025d0f381aa875e5d545e6f51a6d1db893e855d4cdd1bb59",
+  "cohort_csv_sha256": "ef1fe61e85b8d1fbbd5f99c60ad727d43c33dabe5765c39edcaa6325f0056129",
+  "common_split_counts": {
+    "fine_train": 497,
+    "validation": 500,
+    "test": 656
+  },
+  "expected_selected_units": 150,
+  "actual_selected_units": 150,
+  "validated_candidate_fits": 300,
+  "frozen_auditor_checks": 305937,
+  "independent_record_metadata_checks": 295200,
+  "local_mean_SD_checks": 1800,
+  "audit_receipts": {
+    "hybrid": {
+      "receipt": "record-ref:project/baselines/chemical-encoder-benchmark-20261024-v1/actual-results-audit-ringfix-v2/hybrid--20261024T205227Z/audit.json",
+      "sha256": "06d6cb378abebff805cfc328dcb9aa8737d7517499f5396b390f806ac08d9194",
+      "checks": 101979,
+      "process_sha256": "ff6c38785e1db9f23f8b2077e7b481d286f42f9147c2de2f4d6602a6e868491b"
+    },
+    "mlm": {
+      "receipt": "record-ref:project/baselines/chemical-encoder-benchmark-20261024-v1/actual-results-audit-ringfix-v2/mlm--20261024T205240Z/audit.json",
+      "sha256": "06d6cb378abebff805cfc328dcb9aa8737d7517499f5396b390f806ac08d9194",
+      "checks": 101979,
+      "process_sha256": "56ebcf15367ed572bf3f025c1aee74686dca1c5d0b3d566b9cc691b4c9c482e2"
+    },
+    "morgan": {
+      "receipt": "record-ref:project/baselines/chemical-encoder-benchmark-20261024-v1/actual-results-audit-ringfix-v2/morgan--20261024T205538Z/audit.json",
+      "sha256": "06d6cb378abebff805cfc328dcb9aa8737d7517499f5396b390f806ac08d9194",
+      "checks": 101979,
+      "process_sha256": "613c364055dcda898a128e4dfc95356b89b2ab8d10e820af04743dd09503c614"
+    }
+  },
+  "summary_sha256": "86801afa08f948affad15c2278d7aead6f1b4bbbf590d3c04f8e1fc0d25e5385",
+  "per_seed_sha256": "5b580de438024c09f9b15bf09377910d8bff45346875ed2b51efaa5a9f0652ef",
+  "paired_differences_sha256": "87707b0413fea7743374e38e5fd8fe33162575a4503c6737ba8bbb01d75b6f20",
+  "group_summary_sha256": "e2458574be2078f6ea1bcb963cab1353b52d97d0cec77a936f225ae9be326e67",
+  "this_audit_new_fits": 0,
+  "this_audit_new_predictions": 0,
+  "this_audit_encoder_loads": 0,
+  "this_audit_estimator_loads": 0,
+  "tokenizer_adapter": "ringfix-v2-percent-preserving; official weights/vocabulary and raw SMILES unchanged; adapter is an explicit modification",
+  "scope": "Frozen chemical encoders and same ESM320 target plus ordinary heads. Source panel blocked. The historical test has prior exposure. Full-encoder fine-tuning and conditional external evaluations are separately versioned."
+}

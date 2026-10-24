@@ -1,0 +1,81 @@
+{
+  "schema": "chemical-ringfix-v2.independent-cohort-review.v1",
+  "valid": true,
+  "disposition": "GO_v2_heads",
+  "checked_at_utc": "2026-10-24T19:41:43.938007+00:00",
+  "checks": 41384,
+  "errors": {},
+  "cohort_manifest_path": "record-ref:project/runs/chemical-common-cohort-ringfix-v2/attempt--20261024T185638/artifacts/frozen-manifest.json",
+  "cohort_manifest_sha256": "a7b04f77f8445173025d0f381aa875e5d545e6f51a6d1db893e855d4cdd1bb59",
+  "csv_path": "record-ref:project/runs/chemical-common-cohort-ringfix-v2/attempt--20261024T185638/artifacts/ppikb_kd_target_global_firewall_v1.csv",
+  "csv_sha256": "ef1fe61e85b8d1fbbd5f99c60ad727d43c33dabe5765c39edcaa6325f0056129",
+  "parent_global_manifest_sha256": "8825563afe9eedec17e940d06ba0f36ae6ddf1e5337ca1c1bdd4265f62a52582",
+  "process_receipt_sha256": "e25746dbbb879f952f3af47d70970466e3fb7dbc19761b7460e9121ff51e7d7a",
+  "process_exit_code": 0,
+  "counts": {
+    "test": 656,
+    "fine_train": 497,
+    "validation": 500
+  },
+  "chemical_strata": {
+    "test": {
+      "synthetic_D_backbone": 26,
+      "standard20_control": 572,
+      "PTM": 35,
+      "synthetic_and_PTM": 18,
+      "other_NC": 5
+    },
+    "fine_train": {
+      "PTM": 34,
+      "standard20_control": 440,
+      "synthetic_D_backbone": 10,
+      "synthetic_and_PTM": 13
+    },
+    "validation": {
+      "synthetic_and_PTM": 14,
+      "standard20_control": 430,
+      "synthetic_D_backbone": 27,
+      "PTM": 28,
+      "other_NC": 1
+    }
+  },
+  "exact_input_intersection": 1653,
+  "excluded_rows": 180,
+  "unique_actual_morgan_inputs_parsed": 1118,
+  "chemical_caches": [
+    {
+      "representation": "clm2-hybrid-small-ringfix-v2",
+      "cache_rows": 1238,
+      "embedding_dim": 512,
+      "binding_sha256": "3a2191c4d36c3d573a553971dc5cd03b3f3b9297afac33e6e0fa68db33724408",
+      "canary_sha256": "075b2748a79e57498a5ad322c4910b43313ba2ad29ce8191a333d8deba13bd44",
+      "embedding_sha256": "c3feebd4374ccf274aad15ea979dd84931abcc18dcc59969d89876026763ad74",
+      "model_repository": "aaronfeller/peptideclm-2-hybrid-small",
+      "model_revision": "62d5db6922a5a5ece56f9cd5adc48ab2b19d2e57"
+    },
+    {
+      "representation": "clm2-mlm-small-ringfix-v2",
+      "cache_rows": 1238,
+      "embedding_dim": 512,
+      "binding_sha256": "d46a33f691cfb44397b6d8a29c9b2562940117333d7458dd9787b83a24731977",
+      "canary_sha256": "3a8187908e42e49f0ae3105046eeb39161f10178a1b354a50b295c4e43dd6a03",
+      "embedding_sha256": "fb6a95e12c59001bc961ae2b82d686a6ebbecaf06e7cdf2a77b9b30f0775fba4",
+      "model_repository": "aaronfeller/peptideclm-2-mlm-small",
+      "model_revision": "7fe899df4d9753224aefa955ed0cf859d181e693"
+    }
+  ],
+  "protein_embedding_sha256": "a097ddfc203868fa299e4f25dcf01570f0f189de7d5ba4fcc054923417b3179f",
+  "protein_dimension": 320,
+  "adapter_recipe_sha256": "0cd5d5e04a6503af84033c72b2723e2c19e66e8a74db2315dbf0db037d955a17",
+  "adapter_source_sha256": "e16d7aa4ae16961a9d2f55bdc7a14373c194a2d2e6631c803db307e96bad81ca",
+  "source_track_blocked": true,
+  "old_boolean_text_case_normalized": 1653,
+  "old_global_labels_roles_groups_semantically_unchanged": true,
+  "old_v1_vector_bitwise_equality_claimed": false,
+  "input_only_filtering": true,
+  "neural_modules_imported": false,
+  "models_loaded": 0,
+  "new_fits": 0,
+  "full_encoder_finetune_authorized_by_this_review": false,
+  "scope": "Frozen ringfix-v2 representations plus existing ordinary heads only; per-job resources remain the sole owner responsibility."
+}

@@ -1,0 +1,637 @@
+{
+  "schema": "target-boundary.all-declared-roles-independent-final.v1",
+  "at_utc": "2026-10-24T21:49:13.956395+00:00",
+  "evidence_valid": true,
+  "role_independence_passed": false,
+  "disposition": "REQUIRES_NEW_V3_FOR_VAL_EXTERNAL_TARGET_ROLE_INDEPENDENCE",
+  "checks": 56311,
+  "errors": [],
+  "parent_global_manifest_sha256": "8825563afe9eedec17e940d06ba0f36ae6ddf1e5337ca1c1bdd4265f62a52582",
+  "mirror_map_path": "record-ref:project/resources/chemical-route-20261024-v1/collected/homology-boundary-final-v1/LOCAL-MIRROR-MAP.actual.json",
+  "mirror_map_sha256": "34698c0b177b183ea91f08a257e618cea632f97932065c3c085a0abf5e61235b",
+  "actual_segments": [
+    {
+      "input_manifest_path": "record-ref:project/reports/global-target-homology-feasibility-v1/ACTIVE-BOUNDARY-MANIFEST.json",
+      "input_manifest_sha256": "e59a2311ceb01e9bb8ae34a355b80a33deeaa353908884675adbed886e856126",
+      "actual_result_path": "record-ref:project/resources/chemical-route-20261024-v1/collected/homology-boundary-final-v1/002-pair-results.jsonl",
+      "actual_result_sha256": "1789c10c6444b2acb521bd8aa60040dbf93e0d03eea326f29b4a719ad3085417",
+      "actual_summary_sha256": "aac62c68f9181c49f42c9aa1c8f9c9bd7b13d2eb0288e88a51e8695a864cd59b",
+      "process_receipt_sha256": "17baa628bbab3fdb37c6677db367756e5f5c836b84efe6c767e50d3425f08d72",
+      "pairs": 1235,
+      "new_cross_role_positive_edges": 0,
+      "elapsed_seconds": 3.853066642768681,
+      "remaining_owned_pids": []
+    },
+    {
+      "input_manifest_path": "record-ref:project/reports/global-target-homology-role-extension-v1/SHARD00-MANIFEST.json",
+      "input_manifest_sha256": "fc2948651e7fb40022721b1a5839cab0a56ef35d9bf89384db3ce12e6b63bb5f",
+      "actual_result_path": "record-ref:project/resources/chemical-route-20261024-v1/collected/homology-boundary-final-v1/013-pair-results.jsonl",
+      "actual_result_sha256": "0cb73c2cf21ff96d533752cb59947a3aaf905b785e92993ff3a8f41ab8439380",
+      "actual_summary_sha256": "b00cfa75a2c969a5c07729ebe1f7c2eb447c2393f71084a04bf8d0b0695777db",
+      "process_receipt_sha256": "1dc42e433bd02bc26a5723eda2fce1fdd4b0ede97b15f1a10aa4af5bd0737556",
+      "pairs": 2000,
+      "new_cross_role_positive_edges": 0,
+      "elapsed_seconds": 2.646399660035968,
+      "remaining_owned_pids": []
+    },
+    {
+      "input_manifest_path": "record-ref:project/reports/global-target-homology-role-extension-v1/SHARD01-MANIFEST.json",
+      "input_manifest_sha256": "8c1bd7fb36694576d96a4369cb1411c3f434d04e534992068319321abc347290",
+      "actual_result_path": "record-ref:project/resources/chemical-route-20261024-v1/collected/homology-boundary-final-v1/019-pair-results.jsonl",
+      "actual_result_sha256": "492114ae55aa74f8f3d23ad01ac43f5e5d58dbb109efe71228828ab16b8c050e",
+      "actual_summary_sha256": "97c64ff8911e1cf8a3ce6b29e63e9d52ba55fbb6a446229d04babebc9c62c2f3",
+      "process_receipt_sha256": "63f8223e65e565bee47287baed19053bb843c9c6e7f286f5233d134da47c5613",
+      "pairs": 2000,
+      "new_cross_role_positive_edges": 1,
+      "elapsed_seconds": 3.2512063132598996,
+      "remaining_owned_pids": []
+    },
+    {
+      "input_manifest_path": "record-ref:project/reports/global-target-homology-role-extension-v1/SHARD02-MANIFEST.json",
+      "input_manifest_sha256": "7a75e9d7f325505c692ec010a96dcf5df12c3c6426fd8f89c94ecf39ee660656",
+      "actual_result_path": "record-ref:project/resources/chemical-route-20261024-v1/collected/homology-boundary-final-v1/025-pair-results.jsonl",
+      "actual_result_sha256": "1824f8ac3f4a0654c5e1ae264686c154daf34f561709bd98f5cbf545069f7b6b",
+      "actual_summary_sha256": "4addc0dd6125c4f27443891f830dad721267d4620eb3ecb140d850e75c0e4ab9",
+      "process_receipt_sha256": "8799e86228a41c38af72cc434474af4788c764b71ad1ef4e4c9c13418b0c5ba3",
+      "pairs": 632,
+      "new_cross_role_positive_edges": 1,
+      "elapsed_seconds": 1.2766563147306442,
+      "remaining_owned_pids": []
+    }
+  ],
+  "unique_current_role_targets": 765,
+  "role_target_counts": {
+    "validation": 173,
+    "test": 187,
+    "fine_train": 128,
+    "pretrain": 1,
+    "external": 276
+  },
+  "coverage_by_role_pair": {
+    "pretrain__fine_train": {
+      "all_pairs": 128,
+      "length_upper_bound_excluded": 105,
+      "new_actual_aligned": 23,
+      "new_actual_positive": 0
+    },
+    "pretrain__validation": {
+      "all_pairs": 173,
+      "length_upper_bound_excluded": 158,
+      "new_actual_aligned": 15,
+      "new_actual_positive": 0
+    },
+    "pretrain__test": {
+      "all_pairs": 187,
+      "length_upper_bound_excluded": 168,
+      "new_actual_aligned": 19,
+      "new_actual_positive": 0
+    },
+    "pretrain__external": {
+      "all_pairs": 276,
+      "length_upper_bound_excluded": 263,
+      "new_actual_aligned": 13,
+      "new_actual_positive": 0
+    },
+    "fine_train__validation": {
+      "all_pairs": 22144,
+      "legacy_all_pair_scope": 22144
+    },
+    "fine_train__test": {
+      "all_pairs": 23936,
+      "legacy_all_pair_scope": 23936
+    },
+    "fine_train__external": {
+      "all_pairs": 35328,
+      "length_upper_bound_excluded": 30812,
+      "legacy_all_pair_scope": 3328,
+      "new_actual_aligned": 1188,
+      "new_actual_positive": 0
+    },
+    "validation__test": {
+      "all_pairs": 32351,
+      "legacy_all_pair_scope": 32351
+    },
+    "validation__external": {
+      "all_pairs": 47748,
+      "length_upper_bound_excluded": 40962,
+      "legacy_all_pair_scope": 4498,
+      "new_actual_aligned": 2288,
+      "new_actual_positive": 2
+    },
+    "test__external": {
+      "all_pairs": 51612,
+      "length_upper_bound_excluded": 44429,
+      "legacy_all_pair_scope": 4862,
+      "new_actual_aligned": 2321,
+      "new_actual_positive": 0
+    }
+  },
+  "coverage_total": {
+    "all_pairs": 213883,
+    "length_upper_bound_excluded": 116897,
+    "new_actual_aligned": 5867,
+    "new_actual_positive": 2,
+    "legacy_all_pair_scope": 91119
+  },
+  "actual_new_unique_pairs": 5867,
+  "actual_new_positive_edges": 2,
+  "old_positive_crossrole_edges": [],
+  "node_impact_path": "record-ref:project/reports/global-target-homology-role-extension-v1/NODE-IMPACT.actual.json",
+  "node_impact_sha256": "1b78f1e6e296d631230f685b8c67a0271419c11cfb87100455aa811ed27cd965",
+  "cohort_impacts": {
+    "native_v1": {
+      "path": "record-ref:project/resources/chemical-route-20261024-v1/collected/cohort-v1-v2-raw/v1-target.csv",
+      "sha256": "598e0c9c873aecf29a0b3a7a44a7161f68dc78dc15f43862d1e46e5d1a384310",
+      "current_counts": {
+        "test": 502,
+        "fine_train": 388,
+        "validation": 346
+      },
+      "affected_rows": [
+        {
+          "row_id": "PPIKB_all_endpoints:PPIPT00657",
+          "split": "validation",
+          "global_group_id": "535fbbec4a11de6a953b1e1ffa0c18a4b3ac553c012067b99eb7ae04d74dfdc7",
+          "evaluation_stratum": "standard20_control"
+        }
+      ],
+      "new_input_only_counts_if_same_feature_coverage": {
+        "test": 502,
+        "fine_train": 388,
+        "validation": 345
+      }
+    },
+    "ringfix_v2": {
+      "path": "record-ref:project/resources/chemical-route-20261024-v1/collected/cohort-v1-v2-raw/v2-target.csv",
+      "sha256": "ef1fe61e85b8d1fbbd5f99c60ad727d43c33dabe5765c39edcaa6325f0056129",
+      "current_counts": {
+        "test": 656,
+        "fine_train": 497,
+        "validation": 500
+      },
+      "affected_rows": [
+        {
+          "row_id": "PPIKB_all_endpoints:PPIRE16172",
+          "split": "validation",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "evaluation_stratum": "standard20_control"
+        },
+        {
+          "row_id": "PPIKB_all_endpoints:PPIRE16173",
+          "split": "validation",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "evaluation_stratum": "standard20_control"
+        },
+        {
+          "row_id": "PPIKB_all_endpoints:PPIRE16174",
+          "split": "validation",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "evaluation_stratum": "standard20_control"
+        },
+        {
+          "row_id": "PPIKB_all_endpoints:PPIRE16175",
+          "split": "validation",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "evaluation_stratum": "standard20_control"
+        },
+        {
+          "row_id": "PPIKB_all_endpoints:PPIPT00657",
+          "split": "validation",
+          "global_group_id": "535fbbec4a11de6a953b1e1ffa0c18a4b3ac553c012067b99eb7ae04d74dfdc7",
+          "evaluation_stratum": "standard20_control"
+        }
+      ],
+      "new_input_only_counts_if_same_feature_coverage": {
+        "test": 656,
+        "fine_train": 497,
+        "validation": 495
+      }
+    }
+  },
+  "new_edges": [
+    {
+      "a": "000766728e3fd1887000557b020133a1d8916f9a8400c15c000e02fb113c29a0",
+      "b": "afb991c8411797c646cf1454046e102faff1e289f5071b490ac90a75a7670c0c",
+      "pair_id": "5cf0f4236427161c684ad82dfc18f19936c8dfb3abb6e12b4fff8245a7797aec",
+      "left_role": "validation",
+      "right_role": "external",
+      "left_length": 121,
+      "right_length": 132,
+      "alignment": {
+        "identity": 0.6837606837606838,
+        "paired_columns": 117,
+        "query_coverage": 0.9669421487603306,
+        "target_coverage": 0.8863636363636364,
+        "score": 379.0,
+        "reason": "BLOSUM62_first_optimal_local"
+      },
+      "actual_result_path": "record-ref:project/resources/chemical-route-20261024-v1/collected/homology-boundary-final-v1/019-pair-results.jsonl",
+      "actual_result_sha256": "492114ae55aa74f8f3d23ad01ac43f5e5d58dbb109efe71228828ab16b8c050e",
+      "nodes": [
+        {
+          "dataset": "ppikb_kd",
+          "row_id": "PPIKB_all_endpoints:PPIPT00657",
+          "role": "validation",
+          "global_group_id": "535fbbec4a11de6a953b1e1ffa0c18a4b3ac553c012067b99eb7ae04d74dfdc7",
+          "study_id": null,
+          "target_id": "A2KUC3",
+          "legacy_split": "validation",
+          "side": "left",
+          "source_aliases": [
+            "study:missing_source:PPIKB_all_endpoints:PPIPT00657",
+            "title:constrainedhivv3looppeptidesasnovelimmunogensandreceptorantagonists"
+          ]
+        },
+        {
+          "dataset": "pepbi_background",
+          "row_id": "PEPBI:excel-row-004",
+          "role": "external_background",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1016/j.jmb.2010.07.001",
+          "target_id": null,
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "pepbi_background",
+          "row_id": "PEPBI:excel-row-005",
+          "role": "external_background",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1016/j.jmb.2010.07.001",
+          "target_id": null,
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "pepbi_background",
+          "row_id": "PEPBI:excel-row-006",
+          "role": "external_background",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1016/j.jmb.2010.07.001",
+          "target_id": null,
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "pepbi_background",
+          "row_id": "PEPBI:excel-row-007",
+          "role": "external_background",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1016/j.jmb.2010.07.001",
+          "target_id": null,
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        }
+      ]
+    },
+    {
+      "a": "af386bb2b7dab1193f4e5b2c6bc4c660a743cbac0583d8d18ccab3ffcd8433f3",
+      "b": "170c79e01909e71eb41824bf807f9efeb675283adfa12188e5a9d36856875598",
+      "pair_id": "7897652de0270362b7a059ebef6eff70da6b01c6edc5f366839ddb4d16d0d2a6",
+      "left_role": "validation",
+      "right_role": "external",
+      "left_length": 82,
+      "right_length": 81,
+      "alignment": {
+        "identity": 0.30303030303030304,
+        "paired_columns": 66,
+        "query_coverage": 0.8048780487804879,
+        "target_coverage": 0.8148148148148148,
+        "score": 29.0,
+        "reason": "BLOSUM62_first_optimal_local"
+      },
+      "actual_result_path": "record-ref:project/resources/chemical-route-20261024-v1/collected/homology-boundary-final-v1/025-pair-results.jsonl",
+      "actual_result_sha256": "1824f8ac3f4a0654c5e1ae264686c154daf34f561709bd98f5cbf545069f7b6b",
+      "nodes": [
+        {
+          "dataset": "ppikb_kd",
+          "row_id": "PPIKB_all_endpoints:PPIRE16172",
+          "role": "validation",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "study_id": "10.1016/j.bbagen.2018.03.009",
+          "target_id": "O60356",
+          "legacy_split": "validation",
+          "side": "left",
+          "source_aliases": [
+            "study:10.1016/j.bbagen.2018.03.009",
+            "doi:10.1016/j.bbagen.2018.03.009",
+            "pmid:29530795",
+            "title:amphipathichelicalpeptideshamperproteinproteininteractionsoftheintrinsicallydisorderedchromatinnuclearprotein1nupr1"
+          ]
+        },
+        {
+          "dataset": "ppikb_kd",
+          "row_id": "PPIKB_all_endpoints:PPIRE16173",
+          "role": "validation",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "study_id": "10.1016/j.bbagen.2018.03.009",
+          "target_id": "O60356",
+          "legacy_split": "validation",
+          "side": "left",
+          "source_aliases": [
+            "study:10.1016/j.bbagen.2018.03.009",
+            "doi:10.1016/j.bbagen.2018.03.009",
+            "pmid:29530795",
+            "title:amphipathichelicalpeptideshamperproteinproteininteractionsoftheintrinsicallydisorderedchromatinnuclearprotein1nupr1"
+          ]
+        },
+        {
+          "dataset": "ppikb_kd",
+          "row_id": "PPIKB_all_endpoints:PPIRE16174",
+          "role": "validation",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "study_id": "10.1016/j.bbagen.2018.03.009",
+          "target_id": "O60356",
+          "legacy_split": "validation",
+          "side": "left",
+          "source_aliases": [
+            "study:10.1016/j.bbagen.2018.03.009",
+            "doi:10.1016/j.bbagen.2018.03.009",
+            "pmid:29530795",
+            "title:amphipathichelicalpeptideshamperproteinproteininteractionsoftheintrinsicallydisorderedchromatinnuclearprotein1nupr1"
+          ]
+        },
+        {
+          "dataset": "ppikb_kd",
+          "row_id": "PPIKB_all_endpoints:PPIRE16175",
+          "role": "validation",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "study_id": "10.1016/j.bbagen.2018.03.009",
+          "target_id": "O60356",
+          "legacy_split": "validation",
+          "side": "left",
+          "source_aliases": [
+            "study:10.1016/j.bbagen.2018.03.009",
+            "doi:10.1016/j.bbagen.2018.03.009",
+            "pmid:29530795",
+            "title:amphipathichelicalpeptideshamperproteinproteininteractionsoftheintrinsicallydisorderedchromatinnuclearprotein1nupr1"
+          ]
+        },
+        {
+          "dataset": "ppikb_effect",
+          "row_id": "candidate:5fe33138a68aa2a2ca28e5e8",
+          "role": "quarantine",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "study_id": "10.1016/j.bbagen.2018.03.009",
+          "target_id": "O60356",
+          "legacy_split": "train",
+          "side": "left",
+          "source_aliases": []
+        },
+        {
+          "dataset": "ppikb_effect",
+          "row_id": "candidate:f4f9276a2f93ae5b5063fa1e",
+          "role": "quarantine",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "study_id": "10.1016/j.bbagen.2018.03.009",
+          "target_id": "O60356",
+          "legacy_split": "train",
+          "side": "left",
+          "source_aliases": []
+        },
+        {
+          "dataset": "ppikb_effect",
+          "row_id": "candidate:231d5b2fa1fabdf030f37079",
+          "role": "quarantine",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "study_id": "10.1016/j.bbagen.2018.03.009",
+          "target_id": "O60356",
+          "legacy_split": "train",
+          "side": "left",
+          "source_aliases": []
+        },
+        {
+          "dataset": "ppikb_effect",
+          "row_id": "candidate:a1c245f8cf7212d98e9250ae",
+          "role": "quarantine",
+          "global_group_id": "b1e3354edea39f02fa67c89a12f539efdd6781b120399533c61d9f05906c9ce4",
+          "study_id": "10.1016/j.bbagen.2018.03.009",
+          "target_id": "O60356",
+          "legacy_split": "train",
+          "side": "left",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row15117",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row15191",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row15491",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row15686",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row15857",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row16446",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row17266",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row17381",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row17383",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row17768",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row18026",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row18031",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row18082",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row18286",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        },
+        {
+          "dataset": "profaff_holdup",
+          "row_id": "ProfAff2022_HU_row18308",
+          "role": "external",
+          "global_group_id": "48989a0d0cd5cd3e5424e05a37a5193a3f3b5a15bd92eeef1572809e61be6602",
+          "study_id": "10.1038/s41467-022-33018-0",
+          "target_id": "Q99767",
+          "legacy_split": "external_test",
+          "side": "right",
+          "source_aliases": []
+        }
+      ]
+    }
+  ],
+  "scientific_scope": "765 currently used unique targets across distinct declared roles; external-internal and within-role pairs excluded. No all15k/quarantine matrix certification; foundation pretraining exposure remains unknown.",
+  "interpretation": "Two new VAL-to-external target-homology edges under the predeclared similarity rule; no new training-to-heldout or train-test edge. Preserve old internal metrics with external-role qualification, never relabel historical experiments as v3.",
+  "large_weights_rehashed": 0,
+  "models_loaded": 0,
+  "new_real_alignments_in_independent_review": 0,
+  "frozen_scientific_files_modified": false,
+  "revision": 2,
+  "resource_priority_evidence": {
+    "first_active_receipt_nice": 19,
+    "extension_receipts_nice_field": null,
+    "extension_nice_independently_certified": false,
+    "all_four_CUDA_VISIBLE_DEVICES_empty": true,
+    "all_four_single_CPU_affinity": true,
+    "all_four_exit0_owned_empty": true,
+    "qualification": "Extension receipt schema omits nice. This is not evidence of wrong priority; no nice claim is made for those three receipts. Execution resources remain owner responsibility."
+  },
+  "prior_administrative_draft": {
+    "reason": "Review initially assumed all receipts have the first actor nice field; three extension schemas omit it. Science checks unchanged; corrected evidence scope rather than altering actual receipts.",
+    "review_path": "record-ref:project/reports/global-target-homology-role-extension-v1/preliminary-resource-field-schema-mismatch/TERMINAL-INDEPENDENT-AUDIT.actual.json",
+    "review_sha256": "8be1c907fd31bcc1b3408502b04d96c74a812537cb6a2897de4e553514046872",
+    "positive_manifest_path": "record-ref:project/reports/global-target-homology-role-extension-v1/preliminary-resource-field-schema-mismatch/REVIEWED-POSITIVE-EDGES.actual.json",
+    "positive_manifest_sha256": "b74930b0019a6249c7465b249e659a5e64d6af7ad1aa71cf9c0e5c8edb69ded8"
+  },
+  "v3_minimum_plan": {
+    "inherit_parent_global_manifest_sha256": "8825563afe9eedec17e940d06ba0f36ae6ddf1e5337ca1c1bdd4265f62a52582",
+    "add_only_independently_verified_positive_target_edges": 2,
+    "apply_to_target_panel_only": true,
+    "preserve_external_priority": true,
+    "full_component_propagation": true,
+    "expected_target_counts": {
+      "fine_train": 554,
+      "validation": 579,
+      "test": 695
+    },
+    "source_unchanged": true,
+    "allowed_primary_role_changes": [
+      "validation to quarantine"
+    ],
+    "expected_native_input_counts": {
+      "fine_train": 388,
+      "validation": 345,
+      "test": 502
+    },
+    "expected_ringfix_input_counts": {
+      "fine_train": 497,
+      "validation": 495,
+      "test": 656
+    },
+    "do_not_relabel_legacy_results_as_v3": true,
+    "training_test_leakage_claim": false
+  }
+}

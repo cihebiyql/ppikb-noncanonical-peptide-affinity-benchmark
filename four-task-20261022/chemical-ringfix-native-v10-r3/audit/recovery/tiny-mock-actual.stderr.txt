@@ -1,0 +1,22 @@
+test_complete_mock_encoder_and_regression_head_receive_gradients (__main__.Tests.test_complete_mock_encoder_and_regression_head_receive_gradients) ... ok
+test_existing_segment_is_rejected_before_asset_or_model_load (__main__.Tests.test_existing_segment_is_rejected_before_asset_or_model_load) ... usage: train_finetune.py [-h] --mode {train,select-test,cost} --manifest
+                         MANIFEST --feature-spec FEATURE_SPEC --model-dir
+                         MODEL_DIR --asset-receipt ASSET_RECEIPT --output
+                         OUTPUT --view VIEW --seed {0,1,2,3,4,5,6,7,8,9}
+                         [--candidate {0,1}] [--candidate-dir CANDIDATE_DIR]
+                         [--resume-checkpoint RESUME_CHECKPOINT]
+                         [--resume-sha256 RESUME_SHA256] [--device {cpu,cuda}]
+                         [--threads {1,2}] --max-seconds MAX_SECONDS
+                         [--checkpoint-reserve-seconds CHECKPOINT_RESERVE_SECONDS]
+train_finetune.py: error: Use a new run/segment directory; old partial outputs are immutable
+ok
+test_legacy_manifest_rejected (__main__.Tests.test_legacy_manifest_rejected) ... ok
+test_metric_function_source_identity_and_numeric_fixtures (__main__.Tests.test_metric_function_source_identity_and_numeric_fixtures) ... ok
+test_pure_helpers_do_not_change_cuda_visibility (__main__.Tests.test_pure_helpers_do_not_change_cuda_visibility) ... ok
+test_rng_optimizer_roundtrip_exact_with_dropout (__main__.Tests.test_rng_optimizer_roundtrip_exact_with_dropout) ... ok
+test_same_seed_initialization_independent_of_lr (__main__.Tests.test_same_seed_initialization_independent_of_lr) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.364s
+
+OK

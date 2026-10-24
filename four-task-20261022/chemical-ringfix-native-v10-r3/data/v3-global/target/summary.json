@@ -1,0 +1,87 @@
+{
+  "panel": "target",
+  "training_ready": true,
+  "role_counts": {
+    "her2/quarantine": 419,
+    "pepaff/quarantine": 3620,
+    "pepbi_background/external_background": 329,
+    "pepbi_candidate/external": 27,
+    "pepinter/quarantine": 17054,
+    "ppikb_contact/pretrain": 1,
+    "ppikb_contact/quarantine": 63,
+    "ppikb_effect/quarantine": 2289,
+    "ppikb_kd/fine_train": 554,
+    "ppikb_kd/quarantine": 7288,
+    "ppikb_kd/test": 695,
+    "ppikb_kd/validation": 579,
+    "profaff_effect/external": 42,
+    "profaff_fp/external": 162,
+    "profaff_holdup/external": 16806
+  },
+  "fine_split_counts": {
+    "validation": 579,
+    "test": 695,
+    "fine_train": 554
+  },
+  "fine_source_known_counts": {
+    "True": 554
+  },
+  "fine_chemical_strata": {
+    "fine_train": {
+      "PTM": 54,
+      "standard20_control": 456,
+      "synthetic_and_PTM": 27,
+      "synthetic_D_backbone": 17
+    },
+    "validation": {
+      "synthetic_D_backbone": 48,
+      "other_NC": 2,
+      "PTM": 72,
+      "synthetic_and_PTM": 26,
+      "standard20_control": 431
+    },
+    "test": {
+      "synthetic_D_backbone": 45,
+      "standard20_control": 582,
+      "PTM": 41,
+      "synthetic_and_PTM": 20,
+      "other_NC": 7
+    }
+  },
+  "components": 8291,
+  "largest_component_rows": 32281,
+  "edge_counts": {
+    "chemical_achiral": 4254,
+    "chemical_iso": 20642,
+    "peptide_raw": 30511,
+    "sequence_pair": 6579,
+    "source": 38369,
+    "legacy_component": 8288,
+    "target_exact": 34181,
+    "target_effective_prefix": 34182,
+    "pdb": 1696,
+    "author_target_cluster": 10921,
+    "obs": 4728,
+    "target_homology_preexisting": 1160,
+    "target_exact_containment": 4273,
+    "target_containment_comparisons": 123671154,
+    "target_homology_supplemental_reviewed": 2
+  },
+  "target_similarity_coverage": "Existing registered target alignments and exact containment plus two independently reviewed positives from the actual 5867-pair supplemental screen. Screen scope and remaining gaps are bound in reviewed-positive-edges.json; not universal family-cold.",
+  "supplemental_target_unions": [
+    {
+      "target_a_sha256": "000766728e3fd1887000557b020133a1d8916f9a8400c15c000e02fb113c29a0",
+      "target_b_sha256": "afb991c8411797c646cf1454046e102faff1e289f5071b490ac90a75a7670c0c",
+      "source_pair_id": "5cf0f4236427161c684ad82dfc18f19936c8dfb3abb6e12b4fff8245a7797aec",
+      "a_node_count": 1,
+      "b_node_count": 4
+    },
+    {
+      "target_a_sha256": "af386bb2b7dab1193f4e5b2c6bc4c660a743cbac0583d8d18ccab3ffcd8433f3",
+      "target_b_sha256": "170c79e01909e71eb41824bf807f9efeb675283adfa12188e5a9d36856875598",
+      "source_pair_id": "7897652de0270362b7a059ebef6eff70da6b01c6edc5f366839ddb4d16d0d2a6",
+      "a_node_count": 8,
+      "b_node_count": 15
+    }
+  ]
+}
