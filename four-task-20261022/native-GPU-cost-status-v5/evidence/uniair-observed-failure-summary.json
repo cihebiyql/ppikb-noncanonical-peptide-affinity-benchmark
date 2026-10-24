@@ -1,0 +1,126 @@
+{
+  "schema": "fourtask.combined-observed-cost.independent-terminal.v1",
+  "decision": "VERIFIED_FAILED_ORIGINAL_GEAR_ALLOCATOR_OOM_STOP_NO_COMPLETE_EPOCH",
+  "terminal": {
+    "started_at": "2026-10-23T22:55:51.808796+00:00",
+    "finished_at": "2026-10-23T23:04:58.335340+00:00",
+    "elapsed_seconds": 546.526544,
+    "exit_code": 1,
+    "guard_stop_reason": null,
+    "worker_absent": true,
+    "supervisor_absent": true,
+    "error_class": "torch.cuda.OutOfMemoryError",
+    "failure_site": "training worker line200 pred=model.inference -> Gearbind mutant edge layer -> torch.sparse.mm",
+    "allocator_allowed_GiB": 8,
+    "request_GiB": 1.61,
+    "allocated_at_error_GiB": 5.68,
+    "reserved_at_error_GiB": 6.69,
+    "not_timeout_or_exec_identity_failure": true
+  },
+  "resource": {
+    "observed_physical_peak_MiB": 8696,
+    "physical_limit_MiB": 8704,
+    "observed_minimum_true_free_MiB": 7079,
+    "required_reserve_MiB": 6144,
+    "observed_peak_RSS_bytes": 9528164352,
+    "RSS_limit_bytes": 25769803776,
+    "timeout_seconds": 900,
+    "observed_interval_limits_passed": true,
+    "continuous_unobserved_peak_not_certified": true,
+    "allocator_global_max_not_available_no_result_json": true
+  },
+  "activation": {
+    "event_count": 7076,
+    "event_types": {
+      "protected_original_storage": 1078,
+      "CUDA_to_CPU": 3174,
+      "CPU_to_CUDA": 2824
+    },
+    "unpack_events_with_preceding_exact_meta_bytes_SHA_pack": 2824,
+    "unmatched_unpacks": 0,
+    "pack_minus_unpack_occurrences": 350,
+    "CPU_peak_payload_bytes": 2509093152,
+    "CPU_live_payload_bytes_at_failure": 2509029664,
+    "no_param_buffer_cache_device_assignment": true,
+    "no_crossbatch_feature_cache": true,
+    "cross_payload_alias_and_SavedVariable_version_semantics_not_proven": true
+  },
+  "progress": {
+    "completed_full_epochs": 0,
+    "formal_candidates_completed": 0,
+    "checkpoint_or_perstep_journal_Adam_count": null,
+    "checkpoint_present": false,
+    "validation_file_present": false,
+    "test_file_present": false,
+    "inferred_successful_Adam_calls": 8,
+    "inference_confidence": "high conditional control-flow inference, not directly journaled or checkpoint-certified",
+    "inference_basis": [
+      "residency initial4 boundaries + exactly8 complete original4expert cycles + ninth Gear activation",
+      "original failing stack is worker line200 inside train loop, before first epoch validation",
+      "sequential frozen worker has no other post-install inference caller before train; each next train inference occurs after previous loss/backward/optimizer.step has returned",
+      "8 completed gate_weights forward blocks corroborate prior8 complete inferences"
+    ],
+    "caution": "Preserve recorded Adam count null; do not call this confirmed checkpoint state or all37 success."
+  },
+  "old_unknown_attempt": {
+    "reclassified": false,
+    "source": "reports/uniair-combined-resource-independent-v1/terminal-independent-audit.json",
+    "remains": "old unregistered Popen startup/forward extent unknown"
+  },
+  "not_done": [
+    "complete37Adam",
+    "first full epoch and both validation passes",
+    "86gate/156buffers checkpoint audit",
+    "old13p25 numerical comparison intentionally omitted",
+    "CUDA bitwise equivalence",
+    "new model launch/retry or increased budget"
+  ],
+  "residency": {
+    "event_count": 28768,
+    "event_types": {
+      "initial_inactive_offload": 1683,
+      "expert_transport_boundary": 69,
+      "activate": 13552,
+      "inactive_offload": 13464
+    },
+    "initial_frozen_storage_groups": 1683,
+    "initial_groups_by_expert": {
+      "0": 88,
+      "1": 428,
+      "2": 463,
+      "3": 704
+    },
+    "all_transfer_group_sha_bytes_match_initial": true,
+    "all_logged_layout_value_alias_checks_true": true,
+    "all69_transport_boundary_mode_buffer_cache_RNG_registry_checks_true": true,
+    "buffer_and_plaincache_devices_not_moved": true,
+    "complete_expert_cycles": 8,
+    "partial_next_expert": "ninth inference Gear0 activated; OOM inside original encode",
+    "final_active_expert": 0,
+    "flush_failures": []
+  },
+  "actual": {
+    "contract_sha256": "cc6a68908a4a02b974c86d55e0a77b6a38f9f2230d07271643de3a312b6980d1",
+    "canonical_valid": true,
+    "exec_exact_trace_three_events": true,
+    "exec_exact_argv_birth_pgid_sid_cwd_match": true,
+    "descriptor_sha256": "a399d9b7ce87c9cf1065e23b62864f3378ec8a71523f53da285cf03609fdb855",
+    "worker_sha256": "ba5e115a1588a4b465bb7373474dc927ddefe229e7a652ed397fa42264292222",
+    "helpers_and_resource_sources": {
+      "/combined_gate_activation_residency.py": "e5ac5d87a35db6409087d19edc960ef01672e86b7c722b9d1729b82bd3ed83f8",
+      "/saved_gate_activation_cpu.py": "12a69f3d3adfcd2114c4f20add920af8617498e55e3652cf0508e7002232825c",
+      "/expert_residency_v2.py": "69d13fa1cb6e35a591c39dcf39b8231ff40ad090cb8ebd0f4a1fa7d66d8de2ba",
+      "/exec_identity_diagnostic_v2.py": "f425d39f92af0085365d8c57cc555425b05585ea880ed70043ce3a0ab5043b87",
+      "/bounded_gpu_job_continuation_<HOST>_v5.py": "31b78593aaeabe45d086acf6fa1f0adfb0cef99d08ffb3091814723eff1fea9a",
+      "/launch_uniair_combined_observed_exec_guard_v1.py": "b4a9e08a2d9312ec03e48ac9b0567956cbe20fa4e2507f6343445e5f9770d9ba",
+      "/project_gpu_policy_v5.py": "72f220cf2909ce243eaa088fbd660f0ed8653bebdf4c23ed1b9d6b6630e83929"
+    }
+  },
+  "source_archive": {
+    "bytes": 1393689,
+    "sha256": "d2ba0edbcb29d4c2de82b13b829fe15c663f50db6409001a63b61fc2c2a40c72",
+    "manifest_sha256": "a0c67dc5c1f846aa5d75c4e4e40a42ec97dab7f80db15f1d6d258001290cf0f6",
+    "members_verified": 36
+  },
+  "source_audit_sha256": "21951f409e682fc05332cc9b1865e025bf16ae4c1a9c63b37bcffb372f2e2fcc"
+}
