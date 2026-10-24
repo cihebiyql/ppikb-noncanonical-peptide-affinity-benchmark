@@ -1,0 +1,19 @@
+{
+  "schema": "fourtask.uniair.native-source-import-v2.independent-audit.v1",
+  "passed": true,
+  "NN_training": 0,
+  "new_model_forward": 0,
+  "audit_scope": "existing metadata and source-byte readback, no Torch import/tensor recomputation/model load",
+  "input_readback_sha256": "f15281b10ae43cc422ab160a4a0f336f784e4a4956174e1feba2768cafa7639e",
+  "audit_code_sha256": "08a0aee13a58f29d8d0aa1ac05ba43721f7bf4cf496693dc695c8d33bcd3e25a",
+  "source_import_receipt_sha256": "cf8c8aacb3e4508460069b3cc7e340d21d916bc1748e76eeef5ddf47ab96e352",
+  "process_receipt_sha256": "19b816eb4d91d467262c3857d78c25f2934a66b595ade8ffd01f5de3bf24633a",
+  "limitations": [
+    "This is original source/dependency import only, not a full-model execution or optimizer validation.",
+    "Constant tensor SHA values were recorded by the guarded actual producer; this independent audit verifies record identity and schema, without constructing or recomputing tensors.",
+    "Requested CPU1, but select/linear allocated one64CPU node. Actual worker was pinned CPU0/thread1.",
+    "Memory cgroup was system.slice/slurmd.service, not an owned per-job memory cgroup; monitored own-group RSS is not a certified scheduler hard RAM limit.",
+    "Transformers5.20.2 emits a PyTorch>=2.6 API warning; no Transformers neural model was instantiated and actual original imports succeeded.",
+    "Historical failed job12374288 remains failed; no old producer file changed."
+  ]
+}

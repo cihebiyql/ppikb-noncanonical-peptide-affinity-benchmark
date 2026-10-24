@@ -1,0 +1,65 @@
+{
+  "schema": "formal-paused-checkpoint-inspection.v1",
+  "checkpoint": {
+    "path": "artifact-ref:runs/pepinter_formal_CPUAdamActivation_seed00_candidate00_segment01_v1/artifacts/recovery-slot1.pt",
+    "bytes": 6925539880,
+    "sha256": "5e33ca14cd3ce9c57cf30954f13447db88839ffcf801d4a2a49e14c6d59a5640"
+  },
+  "actual_SHA_verified": true,
+  "mmap_CPU_metadata_only": true,
+  "identity": {
+    "schema": "formalCPUAdamActivation.protocol.v1",
+    "worker_sha256": "e6996e55fcc80120cf6556221602175efa12d28a9267e3a5e16851373ee06fea",
+    "state_helper_sha256": "59ea0f55aa3e607a7fcc1d315b7d8251e554aca3b13b3d8e5d001a00873d42aa",
+    "CPUAdam_helper_sha256": "06cf607def620e6d4bf35fa5e457aa54ea1d55c50d6040bf854554b0e1f259d2",
+    "activation_helper_sha256": "b9324b6cc7bfbf075df7f55c0000823bfa5183be84cdf729c367535a09c9a3ea",
+    "fit_data_sha256": "55935ef3bbab80f23ffccdf42caab462944748108dafa1cd5c2a7e700bd255a9",
+    "sampler_sha256": "b473336aeb7dc30872e8395f96f4abde59ade3a253bcc21f68b1c83d228afe4d",
+    "initializer_sha256": "fa0c5692d080f30308a2a8e2e194758fc97b40a28e96f4cf0c422dc8213a08a4",
+    "seed": 0,
+    "candidate": 0,
+    "lr": 0.0001,
+    "epochs": 5,
+    "batch": 24,
+    "total_steps": 2270,
+    "warmup": 113,
+    "monitor_profile": "production-v1 fullstate/copybackatstep1,checkpoint<=100,epoch;lossclipstructureeachstep",
+    "checkpoint_every": 100,
+    "torch": "2.6.0+cu124",
+    "CUDA_build": "12.4",
+    "native_author_source_sha256": {
+      "src/pepinter/pepinter/modeling_pepinter.py": "85405d76686d501d97895f132bb246445cf5f4dfb47a7ebce89f265ec39f1c32",
+      "src/pepinter/esmc/modeling_esmc.py": "ace296d21f2bdea6c84a28497ea32a7334c04040b43f54e51fb0fc4fb453b267",
+      "src/pepinter/loss/classification.py": "7e174b8621840ceed1a0ee84e6a491b33c6a94910720538f8914f7830d8c56fe",
+      "src/pepinter/pepinter/tokenization_pepinter.py": "15340c802e3bf6ea741fb53dd0f2f8949216f878614a2a5ef6bf728e4868f2be"
+    },
+    "loader_sha256": "99ac143af5b5fb2b9a47a51e6d9fa0adc228cac76cf2fcaa4f4db274a2570c28",
+    "TF32_policy": {
+      "matmul": false,
+      "cudnn": false
+    },
+    "padding_backend": "author-longest-multiple8,no-truncation;ceil(rawpairedmax/8)*8",
+    "recovery_transaction_sha256": "25422914c1b22651238bb633bd3209b0fa4997fcc8c92ff3defa40ed085753b7"
+  },
+  "sampler_sha256": "b473336aeb7dc30872e8395f96f4abde59ade3a253bcc21f68b1c83d228afe4d",
+  "sampler_matches_exact_frozen_plan": true,
+  "committed_steps": 218,
+  "cursor": {
+    "epoch": 1,
+    "next_batch": 218,
+    "completed_optimizer_steps": 218,
+    "epoch_rows": 5232,
+    "epoch_batches": 218,
+    "epoch_batch_loss_fp32_sum": 10.693292617797852,
+    "epoch_weighted_loss_sum": 256.63920744135976,
+    "epoch_summaries": []
+  },
+  "mapping_sha256": "5a37392c945abe5526dab427d8e9fe2c158aee8b2d126517ab8108d302fadd96",
+  "checkpoint_state_structural_audit": "369parameters/369Adamcounters/scheduler/36RoPE/72buffers;finitevaluesnotrecomputedhere",
+  "source_inspector_sha256": "f60b63d03bff93af915492e410e6b0bccea2f9368174d7c15ecfb31e56f5715f",
+  "latest_index_sha256": "e75d66e7f00d733b7a5e6b8c017d3443aafa125a95c272516243e50188853bb9",
+  "prior_terminal_sha256": "f497ffe057637d08c3ee09fd4934e8d3c6b4eb1f01fe1ef18e336e63e081cfc6",
+  "prior_launch_sha256": "268c2670eb7afacb97cc2329e038de0420d0a850ef61066cc200ea086536bbe7",
+  "prior_config_sha256": "87a9f726876c24f43ad11a1dfea816ef48b41b6c4e761cc026f2adc27121cf77",
+  "originalNN_forward_or_newfit": 0
+}

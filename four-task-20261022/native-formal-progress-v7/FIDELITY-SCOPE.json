@@ -1,0 +1,105 @@
+{
+  "protocol_sha256": "bf8d57a20986f0677dd235216bd2bf4a0dc5e447fc74f6a2d0c7a1722cdbd166",
+  "initializer": {
+    "official_regression_checkpoint_sha256": "fa0c5692d080f30308a2a8e2e194758fc97b40a28e96f4cf0c422dc8213a08a4",
+    "original_author_energy_checkpoint_available": false,
+    "scope": "Conditional supervised regressionbackbone initialization; new native classhead. Not original energyinit, not clean unexposedpretraining.",
+    "exact_released_affinitytrain_overlap_in_test2349": 59,
+    "no_exact_hit2290_not_certified_unexposed": true
+  },
+  "padding_backend": {
+    "policy": "authorlongest+pad_to_multiple_of8;no truncation",
+    "expected_shape_formula": "ceil(maxrawpairedlength/8)*8",
+    "author_source_sha256": "3ab34a0ff6a821dfb051aea38780a1a7d72fa7e5bb64532615b9c3558c948bd6",
+    "author_line_ranges": [
+      "577-580",
+      "845-848"
+    ],
+    "actual_CPU_preflight": {
+      "status": "passed",
+      "tests": 2,
+      "errors": 0,
+      "failures": 0,
+      "observations": [
+        {
+          "rows": 1,
+          "raw_max": 7,
+          "padded": 8,
+          "same_as_author_collator": true,
+          "RNG_unchanged": true
+        },
+        {
+          "rows": 1,
+          "raw_max": 8,
+          "padded": 8,
+          "same_as_author_collator": true,
+          "RNG_unchanged": true
+        },
+        {
+          "rows": 1,
+          "raw_max": 9,
+          "padded": 16,
+          "same_as_author_collator": true,
+          "RNG_unchanged": true
+        },
+        {
+          "rows": 1,
+          "raw_max": 15,
+          "padded": 16,
+          "same_as_author_collator": true,
+          "RNG_unchanged": true
+        },
+        {
+          "rows": 1,
+          "raw_max": 16,
+          "padded": 16,
+          "same_as_author_collator": true,
+          "RNG_unchanged": true
+        },
+        {
+          "rows": 1,
+          "raw_max": 17,
+          "padded": 24,
+          "same_as_author_collator": true,
+          "RNG_unchanged": true
+        },
+        {
+          "rows": 2,
+          "raw_max": 9,
+          "padded": 16,
+          "same_as_author_collator": true,
+          "RNG_unchanged": true
+        },
+        {
+          "rows": 24,
+          "raw_max": 991,
+          "padded": 992,
+          "same_as_author_collator": true,
+          "RNG_unchanged": true
+        }
+      ],
+      "official_tokenizer_source_sha256": "15340c802e3bf6ea741fb53dd0f2f8949216f878614a2a5ef6bf728e4868f2be",
+      "formal_trainer_sha256": "e6996e55fcc80120cf6556221602175efa12d28a9267e3a5e16851373ee06fea",
+      "CPU_projection_changes": "Onlycuda->cpu device literal within encode",
+      "originalNN_weights_GPU": 0,
+      "cuda_initialized": false
+    },
+    "old_cost_scope": "raw991/padded991 retained;authorpad8 formal correspondingbatch992;notclaimedalreadyGPUcostvalidated",
+    "two_LR_same_backend": true
+  },
+  "clean2290": {
+    "frozen_exposure_path": "artifact-ref:methods/interaction/continuation-20261023/pepinter-classification/native-classification-exposure.csv",
+    "sha256": "ead11fbdbc0fe4ab6d419e4cd3d1380e1bfa136ab74597d2aa74f22b8f949864",
+    "criterion": "test+released_train_exact_pair=False;59excludedfrom2349=>2290",
+    "meaning": "noexactreleasedaffinitytrainpairhit,notcertifiedunexposed",
+    "posthoc_from_same_saved_test_predictions_only": true
+  },
+  "CPUAdam_backend": "stockCPUFP32optimizer withGPU BF16 autocast/FP32parameters and gradients;not fullGPUoptimizerbitwiseequivalence",
+  "validation_TEST_this_segment": {
+    "completed_validation": false,
+    "TESTrows": 0,
+    "completed_epochs": 0,
+    "completed_candidates": 0,
+    "completed_full_native_seeds": 0
+  }
+}

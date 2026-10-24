@@ -20,3 +20,4 @@
 |[来源受控PTPA补充基准](known-doi-ptpa-v1/README.md)|新100个选定模型／200次候选拟合，五类各10种子；300份预测和200份权重已核验。4条既有测量、1研究1蛋白，来源控制与外测边界单列。|
 |[原完整GPU成本门失败记录](native-GPU-cost-status-v5/README.zh-CN.md)|UniAIR组合与PepInter原B24均发生实际显存不足；原日志、资源和独审摘要保留。推断／直接计数／未知启动分开，两个完整模型仍未完成。|
 |[PepInter完整B24 GPU能力门通过](pepinter-fullB24-capability-v6/README.zh-CN.md)|CPUAdam＋activation原B24适配输入991两次Adam调用，仅第二次正学习率；快照真恢复与最终状态独审通过。作者pad8同批应992，首authorpad8正式段尚未跑；0完整正式模型／验证测试，旧v5失败保留。|
+|[首段218步固定历史快照 v7](native-formal-progress-v7/README.zh-CN.md)|PepInter首正式段218步／5232训练条、epoch1未完成、0完整候选；这是不可变首段快照，并非最新live进度。第二段与后续状态另看实际收据。UniAIR源码导入通过不等于完整训练，完整原生种子仍未完成。|
