@@ -1,0 +1,56 @@
+{
+  "schema": "pepinter.fullB24.cost.input-adapter-scope.v1",
+  "metadata_revision": 2,
+  "source_evidence": {
+    "source_ref": "author-source-ref:PepInter-9046f85/src/pepinter/lightning.py",
+    "local_source_locator": "record-ref:peptide-binding-benchmark-20261020/assets/PepInter-paper-21717699/static-source/zhanxinke-PepInter-9046f85/src/pepinter/lightning.py",
+    "source_sha256": "3ab34a0ff6a821dfb051aea38780a1a7d72fa7e5bb64532615b9c3558c948bd6",
+    "upstream_full_commit_sha": "unknown_not_invented; version directory locator and exact full-fileSHA retained",
+    "collator_evidence": [
+      {
+        "role": "classification training collator",
+        "one_based_start_line": 577,
+        "one_based_end_line": 580,
+        "excerpt_encoding": "UTF8 normalized LF with final newline",
+        "excerpt_sha256": "ed5f4ed77e5854c6addcc0081d35b87d0cad85d7397a5dcc96b5d1b93fb1f935",
+        "excerpt": "        self.data_collator = DataCollatorWithPadding(\n            tokenizer=self.tokenizer,\n            padding=\"longest\",\n            pad_to_multiple_of=8,\n"
+      },
+      {
+        "role": "classification inference collator",
+        "one_based_start_line": 845,
+        "one_based_end_line": 848,
+        "excerpt_encoding": "UTF8 normalized LF with final newline",
+        "excerpt_sha256": "ed5f4ed77e5854c6addcc0081d35b87d0cad85d7397a5dcc96b5d1b93fb1f935",
+        "excerpt": "        self.data_collator = DataCollatorWithPadding(\n            tokenizer=self.tokenizer,\n            padding=\"longest\",\n            pad_to_multiple_of=8,\n"
+      }
+    ]
+  },
+  "successful_cost_adapter": {
+    "actual_paired_tokens": 991,
+    "padding": "longest",
+    "pad_to_multiple_of": null,
+    "exact_author_collator_reproduction": false,
+    "evidence": "Existing frozen actual encode and 144 B24x991 block input records; original cost evidence unchanged"
+  },
+  "author_collator_for_same_batch": {
+    "padding": "longest",
+    "pad_to_multiple_of": 8,
+    "expected_padded_tokens": 992,
+    "derivation": "ceil(991/8)*8=992; static integer arithmetic, no tokenizer/model call"
+  },
+  "meaning": {
+    "full_architecture_and_B24_capability_evidence_remains_valid": true,
+    "exact_author_input_collator_cost_or_bitwise_baseline_claimed": false,
+    "different_padding_can_change_dropout_RNG_consumption_and_numeric_results": true,
+    "formal_authorpad8_mainline": "planned/not_run_at_this_metadata_revision",
+    "formal_scope_from_Root": "B24,5epochs,fixed15389eligible/splits/seeds/HPO/NNdtype/SDPA algorithm preserved; author collator pad8 explicitly restored",
+    "old_cost_result_logs_phases_snapshot_counts_modified": false
+  },
+  "metadata_validation": {
+    "source_fullSHA_and_two_excerptSHAs_verified": true,
+    "static_991_to_992_formula_verified": true,
+    "old3580scientific_numeric_checks_and_traces_unchanged": true,
+    "original_NN_weights_GPU_executed_here": 0,
+    "old_metadata_byte_history": "private retained outside PUBLIC-FILES list; never recursively publish history"
+  }
+}

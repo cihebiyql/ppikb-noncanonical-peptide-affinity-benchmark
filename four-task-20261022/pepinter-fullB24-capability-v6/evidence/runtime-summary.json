@@ -1,0 +1,92 @@
+{
+  "status": "succeeded",
+  "at": "2026-10-24T00:31:44.661079+00:00",
+  "parameters": 576293761,
+  "steps": [
+    {
+      "step": 1,
+      "native_batch_mean_Focal": 0.06584683060646057,
+      "gradient_norm_before_clip": 0.7448099255561829,
+      "learning_rate_used": 0.0,
+      "learning_rate_after_scheduler": 8.849557522123894e-07,
+      "parameters_with_gradient": 576293761,
+      "rows": 24,
+      "paired_token_length": 991,
+      "parameters": 576293761,
+      "optimizer_states": 369,
+      "Adam_state_tensor_count": 1107,
+      "Adam_moment_elements": 1152587522,
+      "optimizer_steps": 1,
+      "all_parameters_and_CPU_Adam_states_finite": true,
+      "copyback_all_parameters_exact": true,
+      "checkpoint": {
+        "path": "artifact-ref:runs/pepinter_CPUAdam_activation_twoStep_B24_TRAIN991_GPU8GiB_v1/artifacts/last-committed.pt",
+        "bytes": 6916041472,
+        "sha256": "5b13a1e1ae36e0af7df8e892623cc3ff5766a974b0126c405c10f249ac92a245",
+        "committed_steps": 1
+      },
+      "restored": {
+        "cursor": {
+          "next_cost_step": 2,
+          "rows_order": "469018f6079f593456ba6af2eac9376edddb06e2ede63ec41573349659ea824d"
+        },
+        "committed_steps": 1,
+        "provenance": {
+          "worker_sha256": "727b767171ff2e7b319e73a517830929a138d6c6c714308aa60b69a87b75a66f",
+          "helper_sha256": "06cf607def620e6d4bf35fa5e457aa54ea1d55c50d6040bf854554b0e1f259d2",
+          "data_sha256": "edc1b966d55b4c0f933198f354fe9f4cce1a4d24ff2f2cdc9662f25bb118ccfe",
+          "initializer_sha256": "fa0c5692d080f30308a2a8e2e194758fc97b40a28e96f4cf0c422dc8213a08a4",
+          "loader_sha256": "99ac143af5b5fb2b9a47a51e6d9fa0adc228cac76cf2fcaa4f4db274a2570c28",
+          "row_order_sha256": "469018f6079f593456ba6af2eac9376edddb06e2ede63ec41573349659ea824d",
+          "seed": 0,
+          "backend": "GPU BF16 forward/backward; stockCPUFP32AdamW; CPU/CUDA numeric backend differs"
+        }
+      },
+      "restore_audit": {
+        "parameters": 576293761,
+        "optimizer_states": 369,
+        "Adam_state_tensor_count": 1107,
+        "Adam_moment_elements": 1152587522,
+        "optimizer_steps": 1,
+        "all_parameters_and_CPU_Adam_states_finite": true,
+        "copyback_all_parameters_exact": true
+      }
+    },
+    {
+      "step": 2,
+      "native_batch_mean_Focal": 0.0680360198020935,
+      "gradient_norm_before_clip": 0.6851398348808289,
+      "learning_rate_used": 8.849557522123894e-07,
+      "learning_rate_after_scheduler": 1.7699115044247788e-06,
+      "parameters_with_gradient": 576293761,
+      "rows": 24,
+      "paired_token_length": 991,
+      "parameters": 576293761,
+      "optimizer_states": 369,
+      "Adam_state_tensor_count": 1107,
+      "Adam_moment_elements": 1152587522,
+      "optimizer_steps": 2,
+      "all_parameters_and_CPU_Adam_states_finite": true,
+      "copyback_all_parameters_exact": true,
+      "checkpoint": {
+        "path": "artifact-ref:runs/pepinter_CPUAdam_activation_twoStep_B24_TRAIN991_GPU8GiB_v1/artifacts/last-committed.pt",
+        "bytes": 6916041472,
+        "sha256": "299775e0ecff49e1de6a4fa08943efbc8bf681d1967a7b6f66f551a781fa6fee",
+        "committed_steps": 2
+      }
+    }
+  ],
+  "probe_max_abs_delta": {
+    "transformer.": 8.284114301204681e-07,
+    "classifier.": 8.856877684593201e-07
+  },
+  "CPU_vs_CUDA_bitwise_equivalence": false,
+  "completed_baseline_seeds": 0,
+  "validation_test_rows": 0,
+  "elapsed_seconds": 341.9072650671005,
+  "RSS_peak_bytes": 24382328832,
+  "GPU_peak_allocated_bytes": 6731026944,
+  "GPU_peak_reserved_bytes": 7566524416,
+  "optimizer": "stockCPUFP32AdamW",
+  "full_checkpoint_and_resume_actually_measured": true
+}

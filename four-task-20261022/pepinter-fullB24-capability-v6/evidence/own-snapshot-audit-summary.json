@@ -1,0 +1,59 @@
+{
+  "schema": "fourtask.pepinter.own-snapshot-artifact-audit.v1",
+  "passed": true,
+  "snapshot_sha256": "299775e0ecff49e1de6a4fa08943efbc8bf681d1967a7b6f66f551a781fa6fee",
+  "snapshot_bytes": 6916041472,
+  "SHA_verified_before_torch_load_at": "2026-10-24T00:48:48.833524+00:00",
+  "torch": "2.6.0+cu124",
+  "map_location": "cpu",
+  "weights_only": false,
+  "trusted_own_checkpoint_only": true,
+  "CUDA_initialized": false,
+  "model_constructions": 0,
+  "original_weight_loads": 0,
+  "forward_training_calls": 0,
+  "model_state_entries": 369,
+  "unique_parameter_tensors": 369,
+  "parameter_elements": 576293761,
+  "optimizer_states": 369,
+  "optimizer_state_tensors": 1107,
+  "FP32_moment_elements": 1152587522,
+  "all_model_and_state_values_finite": true,
+  "all_Adam_steps": 2,
+  "optimizer_group_lr": 1.7699115044247788e-06,
+  "scheduler": {
+    "base_lrs": [
+      0.0001
+    ],
+    "last_epoch": 2,
+    "verbose": false,
+    "_step_count": 3,
+    "_get_lr_called_within_step": false,
+    "_last_lr": [
+      1.7699115044247788e-06
+    ],
+    "lr_lambdas": [
+      {}
+    ]
+  },
+  "cursor": {
+    "next_cost_step": 3,
+    "rows_order": "469018f6079f593456ba6af2eac9376edddb06e2ede63ec41573349659ea824d"
+  },
+  "mapping_sha256": "5a37392c945abe5526dab427d8e9fe2c158aee8b2d126517ab8108d302fadd96",
+  "same_object_aliases": {},
+  "RNG_structure": {
+    "python_tuple_items": 3,
+    "numpy_tuple_items": 5,
+    "torch_CPU_state_bytes": 5056,
+    "saved_torch_CUDA_state_bytes": [
+      16
+    ]
+  },
+  "limitations": [
+    "Only final step2 snapshot remains; step1 SHA/restore is verified from runtime phase and own code, not independently reloaded old bytes.",
+    "CPU master parameter values are not separately serialized in optimizer state; GPU copyback equality is a runtime assertion, not an independent snapshot comparison.",
+    "Focal loss, gradient norm and initial-vs-final probe deltas are runtime records; logits/initial probe tensors are not persisted for artifact recomputation.",
+    "This is two-step cost evidence, not full epochs or ten seed completion."
+  ]
+}

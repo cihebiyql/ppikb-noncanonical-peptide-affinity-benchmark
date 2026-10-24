@@ -1,0 +1,255 @@
+{
+  "schema": "fourtask.pepinter.CPUAdam-activation.small-evidence-independent.v1",
+  "passed": true,
+  "raw_file_SHA_count": 25,
+  "contract_sha256": "cd4a2b7f94490fd31f96686e064b8e56a90f204a9c96bf3ba8e71e66e7462275",
+  "canonical_valid": true,
+  "exact_identity_birth_argv_PGID_SID": true,
+  "terminal": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "remaining_owned": [],
+    "reported_worker_absent": true,
+    "started_at": "2026-10-24T00:25:52.578970+00:00",
+    "finished_at": "2026-10-24T00:31:56.617721+00:00"
+  },
+  "two_update_runtime_records": [
+    {
+      "step": 1,
+      "native_batch_mean_Focal": 0.06584683060646057,
+      "gradient_norm_before_clip": 0.7448099255561829,
+      "learning_rate_used": 0.0,
+      "learning_rate_after_scheduler": 8.849557522123894e-07,
+      "parameters_with_gradient": 576293761,
+      "rows": 24,
+      "paired_token_length": 991,
+      "parameters": 576293761,
+      "optimizer_states": 369,
+      "Adam_state_tensor_count": 1107,
+      "Adam_moment_elements": 1152587522,
+      "optimizer_steps": 1,
+      "all_parameters_and_CPU_Adam_states_finite": true,
+      "copyback_all_parameters_exact": true,
+      "checkpoint": {
+        "path": "artifact-ref:runs/pepinter_CPUAdam_activation_twoStep_B24_TRAIN991_GPU8GiB_v1/artifacts/last-committed.pt",
+        "bytes": 6916041472,
+        "sha256": "5b13a1e1ae36e0af7df8e892623cc3ff5766a974b0126c405c10f249ac92a245",
+        "committed_steps": 1
+      },
+      "restored": {
+        "cursor": {
+          "next_cost_step": 2,
+          "rows_order": "469018f6079f593456ba6af2eac9376edddb06e2ede63ec41573349659ea824d"
+        },
+        "committed_steps": 1,
+        "provenance": {
+          "worker_sha256": "727b767171ff2e7b319e73a517830929a138d6c6c714308aa60b69a87b75a66f",
+          "helper_sha256": "06cf607def620e6d4bf35fa5e457aa54ea1d55c50d6040bf854554b0e1f259d2",
+          "data_sha256": "edc1b966d55b4c0f933198f354fe9f4cce1a4d24ff2f2cdc9662f25bb118ccfe",
+          "initializer_sha256": "fa0c5692d080f30308a2a8e2e194758fc97b40a28e96f4cf0c422dc8213a08a4",
+          "loader_sha256": "99ac143af5b5fb2b9a47a51e6d9fa0adc228cac76cf2fcaa4f4db274a2570c28",
+          "row_order_sha256": "469018f6079f593456ba6af2eac9376edddb06e2ede63ec41573349659ea824d",
+          "seed": 0,
+          "backend": "GPU BF16 forward/backward; stockCPUFP32AdamW; CPU/CUDA numeric backend differs"
+        }
+      },
+      "restore_audit": {
+        "parameters": 576293761,
+        "optimizer_states": 369,
+        "Adam_state_tensor_count": 1107,
+        "Adam_moment_elements": 1152587522,
+        "optimizer_steps": 1,
+        "all_parameters_and_CPU_Adam_states_finite": true,
+        "copyback_all_parameters_exact": true
+      }
+    },
+    {
+      "step": 2,
+      "native_batch_mean_Focal": 0.0680360198020935,
+      "gradient_norm_before_clip": 0.6851398348808289,
+      "learning_rate_used": 8.849557522123894e-07,
+      "learning_rate_after_scheduler": 1.7699115044247788e-06,
+      "parameters_with_gradient": 576293761,
+      "rows": 24,
+      "paired_token_length": 991,
+      "parameters": 576293761,
+      "optimizer_states": 369,
+      "Adam_state_tensor_count": 1107,
+      "Adam_moment_elements": 1152587522,
+      "optimizer_steps": 2,
+      "all_parameters_and_CPU_Adam_states_finite": true,
+      "copyback_all_parameters_exact": true,
+      "checkpoint": {
+        "path": "artifact-ref:runs/pepinter_CPUAdam_activation_twoStep_B24_TRAIN991_GPU8GiB_v1/artifacts/last-committed.pt",
+        "bytes": 6916041472,
+        "sha256": "299775e0ecff49e1de6a4fa08943efbc8bf681d1967a7b6f66f551a781fa6fee",
+        "committed_steps": 2
+      }
+    }
+  ],
+  "phase_counts": {
+    "model_constructor": 1,
+    "published_checkpoint_load": 1,
+    "initializer_tensor_copy": 1,
+    "whole_model_and_tokenizer": 1,
+    "CPU_masters_and_optimizer": 1,
+    "tokenization": 2,
+    "forward": 2,
+    "backward": 2,
+    "GPU_global_clip1": 2,
+    "clipped_gradient_D2H": 2,
+    "CPU_Adam_H2D_scheduler_transaction": 2,
+    "all_parameter_state_finite": 2,
+    "whole_step_1": 1,
+    "full_committed_checkpoint_write": 2,
+    "full_checkpoint_restore_before_second_step": 1,
+    "whole_step_2": 1
+  },
+  "phase_durations_seconds": [
+    {
+      "phase": "model_constructor",
+      "elapsed_seconds": 16.285836471244693
+    },
+    {
+      "phase": "published_checkpoint_load",
+      "elapsed_seconds": 36.308599250391126
+    },
+    {
+      "phase": "initializer_tensor_copy",
+      "elapsed_seconds": 1.3954881811514497
+    },
+    {
+      "phase": "whole_model_and_tokenizer",
+      "elapsed_seconds": 72.91107934433967
+    },
+    {
+      "phase": "CPU_masters_and_optimizer",
+      "elapsed_seconds": 1.803672875277698
+    },
+    {
+      "phase": "tokenization",
+      "elapsed_seconds": 0.02275262400507927
+    },
+    {
+      "phase": "forward",
+      "elapsed_seconds": 18.91747614648193
+    },
+    {
+      "phase": "backward",
+      "elapsed_seconds": 17.526906995102763
+    },
+    {
+      "phase": "GPU_global_clip1",
+      "elapsed_seconds": 0.7170376358553767
+    },
+    {
+      "phase": "clipped_gradient_D2H",
+      "elapsed_seconds": 4.00789610017091
+    },
+    {
+      "phase": "CPU_Adam_H2D_scheduler_transaction",
+      "elapsed_seconds": 20.608019615523517
+    },
+    {
+      "phase": "all_parameter_state_finite",
+      "elapsed_seconds": 16.338876283727586
+    },
+    {
+      "phase": "whole_step_1",
+      "elapsed_seconds": 80.29359085019678
+    },
+    {
+      "phase": "full_committed_checkpoint_write",
+      "elapsed_seconds": 33.743081542663276
+    },
+    {
+      "phase": "full_checkpoint_restore_before_second_step",
+      "elapsed_seconds": 37.62863716855645
+    },
+    {
+      "phase": "tokenization",
+      "elapsed_seconds": 0.03580492828041315
+    },
+    {
+      "phase": "forward",
+      "elapsed_seconds": 18.342748945578933
+    },
+    {
+      "phase": "backward",
+      "elapsed_seconds": 12.141405081376433
+    },
+    {
+      "phase": "GPU_global_clip1",
+      "elapsed_seconds": 0.04747910425066948
+    },
+    {
+      "phase": "clipped_gradient_D2H",
+      "elapsed_seconds": 1.9029131019487977
+    },
+    {
+      "phase": "CPU_Adam_H2D_scheduler_transaction",
+      "elapsed_seconds": 13.332887823693454
+    },
+    {
+      "phase": "all_parameter_state_finite",
+      "elapsed_seconds": 14.625301315449178
+    },
+    {
+      "phase": "whole_step_2",
+      "elapsed_seconds": 62.47520802542567
+    },
+    {
+      "phase": "full_committed_checkpoint_write",
+      "elapsed_seconds": 33.53847269527614
+    }
+  ],
+  "all_phase_nesting_completed": true,
+  "memory_gate_samples": 277,
+  "all_memory_gate_samples_passed": true,
+  "activation": [
+    {
+      "step": 1,
+      "events": 231,
+      "counts": {
+        "preserve": 42,
+        "offload": 95,
+        "restore": 94
+      },
+      "all94_restore_associated_with_prior_meta_payload_SHA": true,
+      "unique_CPU_payload_bytes": 4084480708,
+      "CPU_empty_dummy_preserved": true,
+      "raw_GPU_roundtrip_bytes_not_separately_persisted": true
+    },
+    {
+      "step": 2,
+      "events": 231,
+      "counts": {
+        "preserve": 42,
+        "offload": 95,
+        "restore": 94
+      },
+      "all94_restore_associated_with_prior_meta_payload_SHA": true,
+      "unique_CPU_payload_bytes": 4084480708,
+      "CPU_empty_dummy_preserved": true,
+      "raw_GPU_roundtrip_bytes_not_separately_persisted": true
+    }
+  ],
+  "native_block_input_records": 144,
+  "all_original_B24_T991_FP32_block_inputs": true,
+  "resources": {
+    "observed_physical_peak_MiB": 7690,
+    "physical_limit_MiB": 8704,
+    "observed_min_truefree_MiB": 8249,
+    "reserve_MiB": 6144,
+    "worker_RSS_peak_bytes": 24382328832,
+    "worker_GPU_allocated_peak_bytes": 6731026944,
+    "worker_GPU_reserved_peak_bytes": 7566524416
+  },
+  "scope": "two-step cost only;0 baseline seeds/validation/test",
+  "limitations": [
+    "Focal and gradient norms are checked for consistency/finite values, not recomputed without logits/gradients.",
+    "Probe deltas are positive runtime records, not independently reconstructed initial-vs-final tensor differences.",
+    "Step1 replaced checkpoint bytes are unavailable; source/phase/restore receipts certify actual runtime restore path.",
+    "Offload/restore traces reference checked CPU SHA; raw GPU roundtrip bytes are not persisted for independent numerical rehash."
+  ]
+}

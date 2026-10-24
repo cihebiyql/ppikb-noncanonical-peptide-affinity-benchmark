@@ -1,0 +1,83 @@
+{
+  "schema": "fourtask.pepinter.CPUAdam-activation.independent-final-cost-acceptance.v1",
+  "decision": "PASS_ORIGINAL_B24_TWO_STEP_CAPABILITY_GATE_ONLY",
+  "scope": {
+    "original_parameters": 576293761,
+    "batch": 24,
+    "paired_tokens": 991,
+    "full_forward_backward_transactions": 2,
+    "Adam_state_steps": 2,
+    "first_step_lr": 0,
+    "second_step_lr": 8.849557522123894e-07,
+    "final_scheduler_lr": 1.7699115044247788e-06,
+    "actual_step1_checkpoint_restore_before_step2": true,
+    "validation_test_rows": 0,
+    "completed_full_epochs": 0,
+    "completed_ten_seed_baseline_models": 0
+  },
+  "evidence": {
+    "actual_training_contract_sha256": "cd4a2b7f94490fd31f96686e064b8e56a90f204a9c96bf3ba8e71e66e7462275",
+    "small25_audit_sha256": "d7ad61960f77e516c9c1dfbb1aae11c87d23f9bf3b17b7fbf22368f5ad1dd29d",
+    "resource148_preservation_audit_sha256": "7d069717e7d4f63b1360b4f300f21502cccb719e72706c574d3be29d99170ab4",
+    "final_snapshot_SHA_verified_before_load": "299775e0ecff49e1de6a4fa08943efbc8bf681d1967a7b6f66f551a781fa6fee",
+    "final_snapshot_bytes": 6916041472,
+    "deep_snapshot_audit_sha256": "250e12c9d8e570ac5d1ba11d979ab9e153f02628e31b329853eafb4849aa2002",
+    "deep_snapshot_local9_readback_sha256": "7a95c6926c2554ff81d6819f922857396813449dd4eceeb3b6851413206016b4",
+    "artifact_root_approval_sha256": "8990b6dad6c49c7b8034f792eb810ed9cdf335a1d5ac309a0476b0cfb3b70ba4",
+    "artifact_source_worker_sha256": "827cca0335c44bfae785814c2ebe893966dce45ecc1c3d4b12620347161d53a5",
+    "artifact_process_receipt_sha256": "8c06071ec453030f1811ac0d3bd23f3330da1799c7d6e3d24d089654823866ec",
+    "artifact_supervisor_and_worker_fresh_absence_sha256": "f97145749c4da4bb3b46f1aa2991c1463df165d43b367c1a7f2b933336213a4f"
+  },
+  "independently_verified": {
+    "original25smallfile_byte_SHA": true,
+    "resource148file_byte_SHA": true,
+    "canonical_validator_actual_valid_no_errors_no_skips": true,
+    "training_exact_exec_PID_birth_PGID_SID_argv": true,
+    "training_exit0_remaining_owned_empty": true,
+    "phase48_nested_pairs_and_two_forwards_backwards_updates": true,
+    "memory277_samples_all_reserve_checks_pass": true,
+    "two_activation_traces_and94_restores_each_prior_meta_payloadSHA_association": true,
+    "original144_B24x991x1152_FP32_block_inputs": true,
+    "parameter369_and_elements576293761_shape_stride_dtypefinite": true,
+    "optimizer369_states1107_tensors_and1152587522_FP32moment_elements": true,
+    "all_step_values2_and_moments_finite_sq_nonnegative": true,
+    "final_scheduler_LR_mapping_cursor_and_RNG_structure": true,
+    "root_approved_bounded_CPU_artifact_reader_exit0_noNN": true,
+    "large_snapshot_not_copied_to_Windows": true
+  },
+  "runtime_records_not_fully_recomputable": {
+    "native_Focal_losses": [
+      0.06584683060646057,
+      0.0680360198020935
+    ],
+    "gradient_norms": [
+      0.7448099255561829,
+      0.6851398348808289
+    ],
+    "GPU_copyback_all_parameter_exact": "Asserted in canonical frozen actual worker; separate CPU master values not serialized for independent comparison",
+    "positive_encoder_head_probe": "Positive recorded deltas; initial probe tensors are not persisted",
+    "first_snapshot": "Runtime SHA5b13a1e1... and actual restore/write phases verified; original step1 bytes replaced by final snapshot and not independently reloaded",
+    "activation": "Events record checked CPU payloadSHA/layout; raw per-activation CUDA bytes not separately persisted for bytewise independent rehash"
+  },
+  "training_resources": {
+    "observed_physical_peak_MiB": 7690,
+    "physical_limit_MiB": 8704,
+    "observed_min_truefree_MiB": 8249,
+    "reserve_MiB": 6144,
+    "worker_RSS_peak_bytes": 24382328832,
+    "worker_GPU_allocated_peak_bytes": 6731026944,
+    "worker_GPU_reserved_peak_bytes": 7566524416
+  },
+  "historical_failures_unchanged": [
+    "CPUAdam-only original8GiB first forward OOM remains STOP",
+    "activation-helper v1 storage alias failures remain blocked; v2 separately reviewed",
+    "all UniAIR actual OOMs and old unregistered-Popen unknown startup evidence remain separate"
+  ],
+  "not_claimed": [
+    "Original full five epochs",
+    "ten random seeds complete for native PepInter full fit",
+    "native CPU AdamW vs original CUDA optimizer bitwise identity",
+    "new test/validation scores",
+    "overall user goal complete"
+  ]
+}
