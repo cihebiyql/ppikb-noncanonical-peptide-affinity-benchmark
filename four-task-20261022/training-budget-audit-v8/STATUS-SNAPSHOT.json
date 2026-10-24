@@ -1,0 +1,48 @@
+{
+  "schema": "fourtask.training-budget-audit.public.v8",
+  "scope": "immutable first validation-budget sensitivity acceptance snapshot; not a live job counter",
+  "old_budget": {
+    "selected_models": 150,
+    "candidates": 300,
+    "epoch_records": 2816,
+    "max_epochs": 20,
+    "patience": 5,
+    "early_stopped_candidates": 287,
+    "cap_before_patience_candidates": 13,
+    "cap_candidates_new_best_at_epoch20": 6,
+    "validation_audit_checks": 10548
+  },
+  "supplemental_fixed_whitelist": {
+    "candidates": 13,
+    "logical_units": 12,
+    "completed_in_this_snapshot": 1,
+    "other_candidates_not_completed_in_this_snapshot": 12,
+    "inclusion_uses_old_selected_flag": false,
+    "max_epochs": 100,
+    "patience": 5,
+    "HPO_results": 0,
+    "TEST_accesses": 0
+  },
+  "first_candidate": {
+    "method": "DGDTA (legacy DGDTA-CL alias)",
+    "seed": 0,
+    "candidate_index": 1,
+    "learning_rate": 0.0003,
+    "task": "metadata-silver delta_pKd",
+    "TRAIN": 1988,
+    "VAL": 172,
+    "completed_epochs": 24,
+    "best_epoch_0based": 18,
+    "best_epoch_1based": 19,
+    "final_stale": 5,
+    "best_validation_MAE": 0.5720341960406937,
+    "extra_epochs_after20": 4,
+    "best_validation_improvement_after20": 0.0,
+    "old_new_first20_exact_float_values": 120,
+    "independent_checks": 521,
+    "laststate_internal_Adam_RNG_BN_values_deserialized": false
+  },
+  "baseline_accounting": "Supplemental validation candidate does not increase1050main or100known-source supplement; no new held-out or ten-seed selected panel",
+  "old150300_results_changed": false,
+  "NN_training_GPU_or_weight_read_during_public_preparation": 0
+}

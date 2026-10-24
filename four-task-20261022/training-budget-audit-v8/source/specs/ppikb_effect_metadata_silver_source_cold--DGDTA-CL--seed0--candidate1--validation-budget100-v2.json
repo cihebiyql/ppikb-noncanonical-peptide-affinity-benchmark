@@ -1,0 +1,57 @@
+{
+  "method_id": "DGDTA-CL",
+  "view_id": "ppikb_effect_metadata_silver_source_cold",
+  "task": "effect",
+  "endpoint": "delta_pKd_silver",
+  "seed": 0,
+  "source_manifest": {
+    "path": "methods/dta/source-manifest.json",
+    "sha256": "27beac9747c52c01134405c43840232e1ec43730ce8d459597eb0f1db2a22651"
+  },
+  "batch_size": 16,
+  "cpu_threads": 1,
+  "gpu_allocator_budget_bytes": 2147483648,
+  "native_architecture": true,
+  "reproduction_type": "potential_difference_effect_loss_adaptation",
+  "known_limitation": "atom chirality omitted; author protein prefixes retained",
+  "schema": "fourtask.dta-validation-budget-spec.v2",
+  "job_id": "ppikb_effect_metadata_silver_source_cold--DGDTA-CL--seed0--candidate1--validation-budget100-v2",
+  "stage": "validation_only_budget_sensitivity",
+  "paths": {
+    "train": {
+      "path": "methods/dta/prepared/ppikb_effect_metadata_silver_source_cold/formal/train.jsonl",
+      "sha256": "0f2a37856349b516b1dc64d1a57fa3174fdea7e4870946c052c458497d81fc63",
+      "n": 1988
+    },
+    "validation": {
+      "path": "methods/dta/prepared/ppikb_effect_metadata_silver_source_cold/formal/validation.jsonl",
+      "sha256": "02bfebbf2e99f26d551948424ca322dece04907baa3984dd2017f396140d113e",
+      "n": 172
+    }
+  },
+  "max_epochs": 100,
+  "patience": 5,
+  "candidate_index": 1,
+  "candidates": [
+    {
+      "learning_rate": 0.0003
+    }
+  ],
+  "timeout_seconds": 7200,
+  "run_root": "runs/dta_validation_budget_sensitivity_v2/ppikb_effect_metadata_silver_source_cold--DGDTA-CL--seed0--candidate1--validation-budget100-v2",
+  "fresh_from_seed": true,
+  "old_checkpoint_loaded": false,
+  "expected_torch": "2.12.1+cu130",
+  "expected_numpy": "2.4.6",
+  "original_candidate_spec_sha256": "2aa0ccb8b7321a0d629fd7dc098d7f6d4e6f2a11b27e2124500b7574a8cceaad",
+  "base_science_spec_path": "methods/dta/specs/ppikb_effect_metadata_silver_source_cold--DGDTA-CL--formal--seed0.json",
+  "base_science_spec_sha256": "d5c297800d7917fb6144ab3fdd58e7962aa9a52598094f49035af0e46f78649f",
+  "old_validation_history_sha256": "27152bc41c3ee53137fa12abfdf1a619927a02338fc5908dd13383c6499a75f6",
+  "selection_rule": "all original 300 candidates with 20 completed epochs and stale<5",
+  "execution_status": "HOLD_REQUIRES_INDEPENDENT_SCIENCE_AND_RESOURCE_REVIEW",
+  "allowed_phases": [
+    "train",
+    "validation"
+  ],
+  "future_resume_consumer_implemented": false
+}

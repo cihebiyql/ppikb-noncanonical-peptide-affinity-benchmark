@@ -1,0 +1,17 @@
+{
+  "proposal_only": true,
+  "selection_rule": "all300 existing candidates with actual_epochs20 and stale_at_stop<5, before seeing any new training or test score",
+  "candidate_count": 13,
+  "logical_unit_count": 12,
+  "proposed_max_epochs": 100,
+  "same_patience": 5,
+  "same_learning_rates_and_existing_candidate_ids": true,
+  "from_seed_restart_required": true,
+  "reason": "Old best.pt lacks optimizer/RNG/loader/laststate; never call it seamless resume. Exact old first20-epoch trajectory equivalence requires separately matching and checking backend, source, inputs and RNG behavior.",
+  "validation_only_initial_execution": true,
+  "no_new_test_access_until_future_selection_protocol": true,
+  "observed_serial_epoch_work_hours_at_max100_excluding_startup_IO": 4.310547404819065,
+  "per_candidate_median_epoch_time_is_historical_mixed_host_only": true,
+  "execution_gap": "Original train.py always loops two candidates and accesses heldout after winner; a reviewed single-candidate validation-only entry or explicit skip-test interface is needed before narrow13 execution. This audit does not create or run one.",
+  "normalization_and_family_scope": "same pKd and delta_pKd silver endpoints/splits, no cross-family or original Davis/KIBA main-table claim"
+}
