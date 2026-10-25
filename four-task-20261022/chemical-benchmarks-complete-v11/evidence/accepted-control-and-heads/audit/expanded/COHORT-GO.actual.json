@@ -1,0 +1,167 @@
+{
+  "schema": "peptide.protein-expanded-v3.independent-review.v1",
+  "at_utc": "2026-10-24T23:54:44.277551+00:00",
+  "valid": true,
+  "checks": 47871,
+  "errors": [],
+  "disposition": "GO_EXPANDED_FOUR_REPRESENTATIONS_200_SELECTED_400_CANDIDATE_CPU_HEADS",
+  "manifest_path": "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/cohort/frozen-manifest.json",
+  "manifest_sha256": "93cdc000433e3c0babd7a5b7e183acd2fbe25649f4d2e7d5d95f5f0ad5aacae4",
+  "global_parent_sha256": "971a1feaafeae45e0e4f29092b80405419d8d47100b0a3e5e936c82ecc0e44c0",
+  "csv_sha256": "c3d8f4e42600f0c762bb9d2d24595a32c8f13de7a1f5018d59047d241dd8525a",
+  "counts": {
+    "validation": 570,
+    "test": 685,
+    "fine_train": 531
+  },
+  "strata_by_split": {
+    "validation": {
+      "synthetic_D_backbone": 48,
+      "other_NC": 2,
+      "PTM": 70,
+      "synthetic_and_PTM": 25,
+      "standard20_control": 425
+    },
+    "test": {
+      "synthetic_D_backbone": 45,
+      "standard20_control": 572,
+      "PTM": 41,
+      "synthetic_and_PTM": 20,
+      "other_NC": 7
+    },
+    "fine_train": {
+      "PTM": 54,
+      "standard20_control": 440,
+      "synthetic_and_PTM": 21,
+      "synthetic_D_backbone": 16
+    }
+  },
+  "merged_cache_shape": [
+    5206,
+    320
+  ],
+  "old_prefix_cells_bitwise_verified": 1650880,
+  "delta_tail_cells_bitwise_verified": 15040,
+  "old5159_ids_and_order_preserved": true,
+  "delta47_keys_unique_and_disjoint": true,
+  "old1648_complete_rows_and_relative_order_preserved": true,
+  "new138_observations": 138,
+  "new_raw_target_entities_outside_parent_global": 0,
+  "source_blocked_preserved": true,
+  "excluded_long_rows": 42,
+  "excluded_long_targets": 12,
+  "same_global_homology_scope": "Existing971a763-role-target qualification inherited; no new target entities, roles or sequences introduced",
+  "four_specs": [
+    {
+      "path": "record-ref:project/protocol/feature-specs-expanded-v3/attempt--20261024T234819/clm2-hybrid-small-ringfix-v2.json",
+      "sha256": "765ad532dce0f2757b9aecba262c2dbabc591b441b7a1509b46c900d7f506299",
+      "only_changed_keys": [
+        "protein_cache_binding",
+        "protein_cache_binding_sha256"
+      ]
+    },
+    {
+      "path": "record-ref:project/protocol/feature-specs-expanded-v3/attempt--20261024T234819/clm2-mlm-small-ringfix-v2.json",
+      "sha256": "4aa9efb626b0caaa6e164da531f1f6a17abc8cb8e58c8bee896bc82ceb897bb7",
+      "only_changed_keys": [
+        "protein_cache_binding",
+        "protein_cache_binding_sha256"
+      ]
+    },
+    {
+      "path": "record-ref:project/protocol/feature-specs-expanded-v3/attempt--20261024T234819/chiral-morgan.json",
+      "sha256": "be7c7c5e84fd2b1fa441e59057ef08e18adc9401b3ae9abb37b845660468dc53",
+      "only_changed_keys": [
+        "protein_cache_binding",
+        "protein_cache_binding_sha256"
+      ]
+    },
+    {
+      "path": "record-ref:project/protocol/feature-specs-expanded-v3/attempt--20261024T234819/peptideclm2025-spefix-frozen-esm320-v3.json",
+      "sha256": "8b126e2c28f26e466b8efe0da6e8a12ba96842885e4864f5339a8b611efed74b",
+      "only_changed_keys": [
+        "protein_cache_binding",
+        "protein_cache_binding_sha256"
+      ]
+    }
+  ],
+  "head_runner_sha256": "06e02ed1a8f94de60b633dd14cfa4d309fc7c4569e7d8e4de11e000ca7dc7113",
+  "hashes": {
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/cohort/frozen-manifest.json": "93cdc000433e3c0babd7a5b7e183acd2fbe25649f4d2e7d5d95f5f0ad5aacae4",
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/BUILD-RESULT.actual.json": "a910caf031fa6d03acd61c0ef7484d2b13bb931ce3db176e8f771e6cf47d6e49",
+    "record-ref:project/data/protein-cache-expanded-v3/build_expanded.py": "a3936790d8445377b86807cdac2fdd882826c6f9002ca1fd97b02a71ccdc9e67",
+    "record-ref:project/protocol/feature-specs-expanded-v3/METADATA-BUILD-CONTRACT.actual.json": "eec8cb07ebbbfee07fad36db0fae7172dc4196e221ce82e649907600a8c4519f",
+    "record-ref:project/baselines/chemical-encoder-benchmark-20261024-v1/prepare_model_cohort.py": "44f9aaeaa2821621555aad3b776740527703f5d966fc580239765326b4401413",
+    "record-ref:project/baselines/chemical-encoder-benchmark-20261024-v1/run_heads.py": "06e02ed1a8f94de60b633dd14cfa4d309fc7c4569e7d8e4de11e000ca7dc7113",
+    "record-ref:project/baselines/plm-simple-v1/feature-cache-cpu-v3/embeddings.npz": "a097ddfc203868fa299e4f25dcf01570f0f189de7d5ba4fcc054923417b3179f",
+    "record-ref:project/runs/ESM47-protein-delta-v3/attempt--20261024T232815/artifacts/embeddings.npz": "eaa5f05a1278fe04832298bd56ae1604763ca4ee315bfbd9c881f880f23ff915",
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/merged-cache/embeddings.npz": "00280efab4a6cf613db2edcc76733a351cbe90466941e4564dbef8413d2777bd",
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/feature-cache-binding.json": "db40f506b88eecf3ee8189902d91ed2b614a732d995edb9c766b02ebe1e5d6aa",
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/merged-cache/receipt.json": "3897a9dcf77f4d21c9a07ffc2868170c17341779b4eb0671ed377bc63d013508",
+    "record-ref:project/runs/chemical-common-cohort-homology-v3-plus2025/attempt--20261024T225112/frozen-manifest.json": "e2deb8ee4d3533c33d87401f8df35eb0ea5a3c366e06a6f46d662772bc729190",
+    "record-ref:project/data/global-freeze-20261025-v3-homology/frozen-manifest.json": "971a1feaafeae45e0e4f29092b80405419d8d47100b0a3e5e936c82ecc0e44c0",
+    "record-ref:project/protocol/feature-specs-expanded-v3/attempt--20261024T234819/clm2-hybrid-small-ringfix-v2.json": "765ad532dce0f2757b9aecba262c2dbabc591b441b7a1509b46c900d7f506299",
+    "record-ref:project/protocol/global-freeze-20261024-v1/feature-specs-ringfix-v2/clm2-hybrid-small-ringfix-v2.json": "6b2066af18343641901c811ec8c5c53a4b56b4070cacb35ce45d53f6d4932a93",
+    "record-ref:project/runs/chemical-ringfix-features-v2/peptideclm-2-hybrid-small--20261024T182912/artifacts/cache-manifest.json": "3a2191c4d36c3d573a553971dc5cd03b3f3b9297afac33e6e0fa68db33724408",
+    "record-ref:project/runs/chemical-ringfix-features-v2/peptideclm-2-hybrid-small--20261024T182912/artifacts/embeddings.npz": "c3feebd4374ccf274aad15ea979dd84931abcc18dcc59969d89876026763ad74",
+    "record-ref:project/protocol/feature-specs-expanded-v3/attempt--20261024T234819/clm2-mlm-small-ringfix-v2.json": "4aa9efb626b0caaa6e164da531f1f6a17abc8cb8e58c8bee896bc82ceb897bb7",
+    "record-ref:project/protocol/global-freeze-20261024-v1/feature-specs-ringfix-v2/clm2-mlm-small-ringfix-v2.json": "60e19d02822ab788fdfadf66a5220f291fe4b3c90968b1986b75b48b952d3f1c",
+    "record-ref:project/runs/chemical-ringfix-features-v2/peptideclm-2-mlm-small--20261024T183440/artifacts/cache-manifest.json": "d46a33f691cfb44397b6d8a29c9b2562940117333d7458dd9787b83a24731977",
+    "record-ref:project/runs/chemical-ringfix-features-v2/peptideclm-2-mlm-small--20261024T183440/artifacts/embeddings.npz": "fb6a95e12c59001bc961ae2b82d686a6ebbecaf06e7cdf2a77b9b30f0775fba4",
+    "record-ref:project/protocol/feature-specs-expanded-v3/attempt--20261024T234819/chiral-morgan.json": "be7c7c5e84fd2b1fa441e59057ef08e18adc9401b3ae9abb37b845660468dc53",
+    "record-ref:project/protocol/global-freeze-20261024-v1/feature-specs-ringfix-v2/chiral-morgan.json": "f61a7bd301c3fa17bd03f0b19c8167492921f5eea61fdfb197b73209975366c5",
+    "record-ref:project/baselines/molecular/molecular_features.py": "cb7ad4c26c9e21811732fa155c479f404675fb7699cbef85e252ae49bfe4dc14",
+    "record-ref:project/protocol/feature-specs-expanded-v3/attempt--20261024T234819/peptideclm2025-spefix-frozen-esm320-v3.json": "8b126e2c28f26e466b8efe0da6e8a12ba96842885e4864f5339a8b611efed74b",
+    "record-ref:project/methods/chemical-encoders-20261025-v3-peptideclm2025-spefix/feature-specs/peptideclm2025-spefix-frozen-esm320-v3.json": "9cde3fd5d87e5e4d597393f640a5b8eb9ede702f853e9511e88841414e682db7",
+    "record-ref:project/runs/peptideclm2025-spefix-features-v3/attempt--20261024T222447/artifacts/cache-manifest.json": "616a5f18132c1700ff5ce30088965d301a52d20ad82d9b0580a3c000eab81a37",
+    "record-ref:project/runs/peptideclm2025-spefix-features-v3/attempt--20261024T222447/artifacts/embeddings.npz": "efb74e8cff4bc9f082d5741ad6b6f9a2c735469238b43603772f686b0eaa3383",
+    "record-ref:project/data/global-freeze-20261025-v3-homology/target/fine_affinity.csv": "82d9462df00049ebb4dad2b4a3d87a839fc6b9e5a3108ded03cbfbfedd311442",
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/cohort/ppikb_kd_target_global_firewall_v1.csv": "c3d8f4e42600f0c762bb9d2d24595a32c8f13de7a1f5018d59047d241dd8525a",
+    "record-ref:project/runs/chemical-common-cohort-homology-v3-plus2025/attempt--20261024T225112/ppikb_kd_target_global_firewall_v1.csv": "4f4694b8937c6e3bd2e5b1091faf948fd66ecc57180b09d0ff5c236cded83c60",
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/cohort/input-only-exclusions.csv": "1d30720e4d8fb0aaa0e759507c2e4bfbed58cd5753a546023d7ad55e1da20f31",
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/SPEC-CLONE-PROOF.actual.json": "35f1752460c6ac69102f8ad1f94a4ddcc5c35bb8571e624d56b27860a6a0a37c",
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/ADDED-OBSERVATIONS.metadata.csv": "435e79032e7e4aaf621e5005f8551690b26358c124e8ce80abdd84290e46204c",
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/artifacts/UNENCODED-TARGET-EXCLUSIONS.metadata.csv": "f0371b2dfd73516cd696001a4395673dad6d1ab0ca6561b942b19fe39b3ab95e",
+    "record-ref:project/runs/protein-cache-expanded-v3/attempt--20261024T234819/process-receipt.json": "44e5fc680b77b9995ca82268dae3ea61f0338e483dea6218ee95872c43f96d20"
+  },
+  "actual_metadata_process": {
+    "at": "2026-10-24T23:48:22.676910+00:00",
+    "pid": 3696689,
+    "birth": 673378469,
+    "pgid": 3696689,
+    "sid": 3696689,
+    "contract_sha256": "d5a61d7789e58025b796778995f5d32840d6d6b4843bd49eb27e07452e6c77f6",
+    "gpu": false,
+    "cpu_affinity": [
+      14,
+      22
+    ],
+    "environment": {
+      "CUDA_VISIBLE_DEVICES": "",
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "NUMEXPR_NUM_THREADS": "2",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "peak_group_rss": 347447296,
+    "stop_reason": null,
+    "finished_at": "2026-10-24T23:48:33.031812+00:00",
+    "exit_code": 0,
+    "elapsed_seconds": 10.35485050920397,
+    "remaining_owned_pids": [],
+    "passed": true
+  },
+  "review_new_forwards_or_fits": 0,
+  "limitations": [
+    "Expanded version is separate from963c/e2deb; their completed results and outputs remain unchanged",
+    "No training/prediction/error-based filtering or new blind-test claim",
+    "New CPU head jobs still require sole resource owner fresh admission; expanded GPU fullfine needs separate dataset/source/cost binding",
+    "12 targets above original2048 budget are excluded with retained metadata, never silently truncated",
+    "2025 SPE/pooling adaptation and foundation pretraining exposure unknown remain as declared",
+    "This audit proves cache/cohort qualification, not any newly completed expanded model performance"
+  ]
+}

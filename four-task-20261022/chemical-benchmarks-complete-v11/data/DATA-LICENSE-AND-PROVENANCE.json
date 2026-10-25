@@ -1,0 +1,87 @@
+{
+  "schema": "public-frozen-PPIKB-data-license-and-provenance.v1",
+  "status": "prepared_not_published",
+  "entries": [
+    {
+      "cohort": "control",
+      "public_path": "control-frozen.csv",
+      "source_ref": "record-ref:project/baselines/chemical-encoder-benchmark-20261024-v1/actual-results-audit-homology-v3/inputs/common-cohort.csv",
+      "source_sha256": "4f4694b8937c6e3bd2e5b1091faf948fd66ecc57180b09d0ff5c236cded83c60",
+      "public_sha256": "4f4694b8937c6e3bd2e5b1091faf948fd66ecc57180b09d0ff5c236cded83c60",
+      "rows": 1648,
+      "split_counts": {
+        "test": 656,
+        "fine_train": 497,
+        "validation": 495
+      },
+      "transform": "none; complete frozen CSV original bytes preserved",
+      "license": "CC-BY-4.0 for attributed PPIKB data; project-derived annotations disclosed as changes"
+    },
+    {
+      "cohort": "expanded",
+      "public_path": "expanded-frozen.csv",
+      "source_ref": "record-ref:project/baselines/chemical-encoder-benchmark-20261024-v1/actual-results-audit-expanded-v3/inputs/common-cohort.csv",
+      "source_sha256": "c3d8f4e42600f0c762bb9d2d24595a32c8f13de7a1f5018d59047d241dd8525a",
+      "public_sha256": "c3d8f4e42600f0c762bb9d2d24595a32c8f13de7a1f5018d59047d241dd8525a",
+      "rows": 1786,
+      "split_counts": {
+        "validation": 570,
+        "test": 685,
+        "fine_train": 531
+      },
+      "transform": "none; complete frozen CSV original bytes preserved",
+      "license": "CC-BY-4.0 for attributed PPIKB data; project-derived annotations disclosed as changes"
+    }
+  ],
+  "source_citation": "Zhu, Ning; Ming, Yanyu; Zhang, Chengyun; Cao, Sen; Guo, Jingjing; Wu, Yaling; et al. (2026). PPIKB: a data resource of peptide ligand–protein interaction structures and binding affinity records for peptide drug discovery. figshare. Dataset. https://doi.org/10.6084/m9.figshare.31082407.v5",
+  "official_dataset_doi": "10.6084/m9.figshare.31082407.v5",
+  "official_dataset_url": "https://doi.org/10.6084/m9.figshare.31082407.v5",
+  "official_license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "license_metadata_sha256": "532a44d0116b9314aa5aa21c9929392433c49b762871602edfda0949073d8818",
+  "original_main_workbook_sha256": "0f31b10949195bf25aa258e7b14706f69d82859d8136319118bd81ffcb6ee4e2",
+  "normalized_source_sha256": "844214deb11e4a5106c4575dc34e629dd4e7cd44ea91a8861bdc8e5891a8148e",
+  "column_provenance": {
+    "row_id": "PPIKB record ID plus resource prefix",
+    "source": "Project provenance literal PPIKB",
+    "peptide_sequence": "PPIKB residue string normalized or retained raw; no NC/PTM reconstruction from AA20",
+    "peptide_sequence_raw": "PPIKB Peptide_Sequence",
+    "target_sequence": "PPIKB Protein_Sequence normalized to its reference AA sequence; no new/private lookup and not certified experimental construct",
+    "label": "PPIKB original point Kd transformed to -log10(Kd in M), independently frozen before fitting",
+    "endpoint": "Project pKd endpoint annotation",
+    "peptide_smiles": "PPIKB Peptide_SMILES full raw molecular representation",
+    "smiles": "Exact alias of peptide_smiles; complete chemical input",
+    "study_id": "PPIKB DOI field",
+    "target_id": "PPIKB UniProt_ID field",
+    "split": "Project frozen cross-task/target dependency role",
+    "group_id": "Inherited project dependency component",
+    "global_group_id": "Project global v3 dependency component",
+    "legacy_split": "Project previous fixed role",
+    "freeze_panel": "Project split panel name",
+    "role_reason": "Project frozen allocation explanation",
+    "evaluation_stratum": "Project mutually exclusive chemical stratum derived from PPIKB metadata",
+    "noncanonical_subtypes": "Project noncanonical annotation derived from PPIKB metadata",
+    "chemical_entity_id": "Project molecular-identity key derived from PPIKB chemistry",
+    "target_sequence_scope": "Project qualification of PPIKB reference sequence versus unverified assay construct",
+    "label_kind": "Project point-experimental-Kd qualification",
+    "input_information_limitations": "Project explicit representation caveat",
+    "residue_class_graph_discordance": "Project chemical annotation/graph audit flag; retained without error-driven filtering"
+  },
+  "checks": {
+    "target_sequence_matches_PPIKB_normalized_origin": 3434,
+    "peptide_sequence_raw_matches_PPIKB_normalized_origin": 3434,
+    "peptide_smiles_matches_PPIKB_normalized_origin": 3434,
+    "study_id_matches_PPIKB_normalized_origin": 3434,
+    "target_id_matches_PPIKB_normalized_origin": 3434,
+    "derived_chemical_identity_stratum_target_scope_label_matches_frozen_source": 3434
+  },
+  "all_input_columns_trace_to_PPIKB_or_project_derivation": true,
+  "additional_UniProt_download_used_for_these_rows": false,
+  "independent_restricted_external_data_included": false,
+  "private_compute_fields_included": false,
+  "new_fits": 0,
+  "new_predictions": 0
+}

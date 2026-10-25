@@ -1,0 +1,83 @@
+{
+  "schema": "expanded-v3.independent-comparison-protocol.v1",
+  "at_utc": "2026-10-25T00:42:17.537Z",
+  "scope": "Fixed post-audit comparison of three complete chemical fullfine models and all four-by-five frozen-head configurations; no new fit",
+  "dataset": {
+    "manifest_sha256": "93cdc000433e3c0babd7a5b7e183acd2fbe25649f4d2e7d5d95f5f0ad5aacae4",
+    "csv_sha256": "c3d8f4e42600f0c762bb9d2d24595a32c8f13de7a1f5018d59047d241dd8525a",
+    "splits": {
+      "train": 531,
+      "validation": 570,
+      "test": 685,
+      "external": 0
+    },
+    "test_disjoint_chemical_strata": {
+      "standard20_control": 572,
+      "synthetic_D_backbone": 45,
+      "PTM": 41,
+      "synthetic_and_PTM": 20,
+      "other_NC": 7
+    },
+    "dependency_groups": 155
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "fullfine": [
+    "hybrid",
+    "mlm",
+    "peptideclm2025-spefix"
+  ],
+  "frozen_representations": [
+    "hybrid",
+    "mlm",
+    "morgan",
+    "peptideclm2025"
+  ],
+  "frozen_families": [
+    "constant",
+    "ridge",
+    "random_forest",
+    "extra_trees",
+    "hist_gradient_boosting"
+  ],
+  "selection": "Only per-seed validation metrics may select training candidates; report all fixed model families; any TEST ordering is descriptive and never a model-selection rule.",
+  "required_metrics": [
+    "mae",
+    "rmse",
+    "pearson",
+    "spearman",
+    "r2",
+    "bias"
+  ],
+  "required_summaries": [
+    "Every seed and all defined metrics, with undefined correlations preserved as NA",
+    "Arithmetic mean and sample SD with valid-seed counts",
+    "Five disjoint chemistry layers plus all/NC_all/PTM_bearing/flagged/unflagged",
+    "155 dependency-group macro metrics and valid-group counts",
+    "All five Morgan families, all ten seeds and explicit matching frozen-head family tables, including ET",
+    "Same-case paired-seed differences only as computational repeat variability, not biological significance"
+  ],
+  "capacity_and_resource_disclosures": [
+    "Full encoder optimization and frozen representation heads differ in trainable capacity",
+    "Fullfine two learning-rate candidates versus retained frozen-head tuning grids/selection evidence",
+    "CLM2hybrid/MLM 4GiB and PeptideCLM2025 8GiB are separate resource caps, not scientific accuracy matching",
+    "CLM2 head input832 and PeptideCLM2025 head input1088, frozen ESM320 common",
+    "Two CLM2 variants share one paper; 2025 is a second paper with explicit SPE and pooling adaptation",
+    "Foundation pretraining test-entity exposure remains unknown",
+    "No independent external gold rows in this cohort"
+  ],
+  "timing_disclosure": "Written after expanded frozen-head results were available and before new expanded fullfine training completion/audit. This is a transparent fixed comparison rule, not preregistration before any TEST results.",
+  "head_audit_sha256": "5a37b96fc53dc823331a195fb7bd8a9cee3e5767a9580889d467ebaedb061efc",
+  "no_new_scientific_fits": true,
+  "no_nn_forward": true
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "expanded60.accepted-training-stop-summary.v1",
+  "status": "PASS",
+  "training_review_sha256": "7684788554e23e475726a0219d098849cedf6c989caf7a446d442b05f0800712",
+  "source_sha256": "32bbea139a5351df38522623f011d3955e486a3437290c0590e18841b0fd48f4",
+  "metric_file_hashes": {
+    "TRAINING-STOP-60-per-candidate.actual.csv": "5de05cb47505cfa9dd240245b0ecf7e7b0ddc3e0da2c0fae0128fdc185b6f14d",
+    "TRAINING-STOP-3-model-summary.actual.csv": "aa693fceddb2c03c0b09784ba23a2ec17b0af80da3c48018b5ae14f2f4281e39"
+  },
+  "summary": [
+    {
+      "model": "hybrid",
+      "candidates": 20,
+      "epochs_min": 6,
+      "epochs_max": 10,
+      "epochs_mean": 7.85,
+      "epochs_sampleSD": 1.4244112357114616,
+      "best_epoch_min": 1,
+      "best_epoch_max": 5,
+      "best_epoch_mean": 2.85,
+      "best_epoch_sampleSD": 1.4244112357114616,
+      "patience5_before_budget": 20,
+      "max30_budget_complete": 0,
+      "max30_and_patience5": 0
+    },
+    {
+      "model": "mlm",
+      "candidates": 20,
+      "epochs_min": 6,
+      "epochs_max": 12,
+      "epochs_mean": 8.2,
+      "epochs_sampleSD": 1.7044832524535807,
+      "best_epoch_min": 1,
+      "best_epoch_max": 7,
+      "best_epoch_mean": 3.2,
+      "best_epoch_sampleSD": 1.7044832524535807,
+      "patience5_before_budget": 20,
+      "max30_budget_complete": 0,
+      "max30_and_patience5": 0
+    },
+    {
+      "model": "2025",
+      "candidates": 20,
+      "epochs_min": 6,
+      "epochs_max": 11,
+      "epochs_mean": 7.95,
+      "epochs_sampleSD": 1.4680814547887786,
+      "best_epoch_min": 1,
+      "best_epoch_max": 6,
+      "best_epoch_mean": 2.95,
+      "best_epoch_sampleSD": 1.4680814547887786,
+      "patience5_before_budget": 20,
+      "max30_budget_complete": 0,
+      "max30_and_patience5": 0
+    }
+  ],
+  "interpretation": "Derived from actual epochs/stale cursor and frozen max30/patience5. Budget completion is not evidence of convergence. No TEST-based budget changes.",
+  "NN": 0,
+  "fit": 0,
+  "process": {
+    "pid": 134296,
+    "cpu_affinity_mask": 1,
+    "priority": "IDLE",
+    "Windows_process_commit_limit_bytes": 2147483648,
+    "wall_time_limit_seconds": 180,
+    "Linux_AS_limit_not_applicable": true
+  }
+}

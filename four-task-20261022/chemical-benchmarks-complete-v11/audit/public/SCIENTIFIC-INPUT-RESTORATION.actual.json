@@ -1,0 +1,188 @@
+{
+  "schema": "public-scientific-runtime-input-restoration-check.v1",
+  "status": "passed",
+  "original_files_SHA_verified": 39,
+  "runtime_dependency_SHA_edges_verified": 70,
+  "NPZ_tables": [
+    {
+      "fields": {
+        "embeddings.npy": {
+          "dtype": "<f4",
+          "shape": [
+            5159,
+            320
+          ]
+        },
+        "sequence_ids.npy": {
+          "dtype": "<U64",
+          "shape": [
+            5159
+          ]
+        }
+      },
+      "rows": 5159,
+      "dimensions": 320
+    },
+    {
+      "fields": {
+        "embeddings.npy": {
+          "dtype": "<f4",
+          "shape": [
+            1238,
+            512
+          ]
+        },
+        "smiles_sha256.npy": {
+          "dtype": "<U64",
+          "shape": [
+            1238
+          ]
+        }
+      },
+      "rows": 1238,
+      "dimensions": 512
+    },
+    {
+      "fields": {
+        "embeddings.npy": {
+          "dtype": "<f4",
+          "shape": [
+            1238,
+            512
+          ]
+        },
+        "smiles_sha256.npy": {
+          "dtype": "<U64",
+          "shape": [
+            1238
+          ]
+        }
+      },
+      "rows": 1238,
+      "dimensions": 512
+    },
+    {
+      "fields": {
+        "embeddings.npy": {
+          "dtype": "<f4",
+          "shape": [
+            1238,
+            768
+          ]
+        },
+        "smiles_sha256.npy": {
+          "dtype": "<U64",
+          "shape": [
+            1238
+          ]
+        }
+      },
+      "rows": 1238,
+      "dimensions": 768
+    },
+    {
+      "fields": {
+        "sequence_ids.npy": {
+          "dtype": "<U64",
+          "shape": [
+            5206
+          ]
+        },
+        "embeddings.npy": {
+          "dtype": "<f4",
+          "shape": [
+            5206,
+            320
+          ]
+        }
+      },
+      "rows": 5206,
+      "dimensions": 320
+    }
+  ],
+  "cohort_spec_coverage": [
+    {
+      "cohort": "expanded",
+      "rows": 1786,
+      "feature_spec_sha256": "765ad532dce0f2757b9aecba262c2dbabc591b441b7a1509b46c900d7f506299",
+      "protein_cache_rows": 5206,
+      "chemistry_mode": "cached_encoder"
+    },
+    {
+      "cohort": "expanded",
+      "rows": 1786,
+      "feature_spec_sha256": "4aa9efb626b0caaa6e164da531f1f6a17abc8cb8e58c8bee896bc82ceb897bb7",
+      "protein_cache_rows": 5206,
+      "chemistry_mode": "cached_encoder"
+    },
+    {
+      "cohort": "expanded",
+      "rows": 1786,
+      "feature_spec_sha256": "be7c7c5e84fd2b1fa441e59057ef08e18adc9401b3ae9abb37b845660468dc53",
+      "protein_cache_rows": 5206,
+      "chemistry_mode": "chiral_morgan_rdkit"
+    },
+    {
+      "cohort": "expanded",
+      "rows": 1786,
+      "feature_spec_sha256": "8b126e2c28f26e466b8efe0da6e8a12ba96842885e4864f5339a8b611efed74b",
+      "protein_cache_rows": 5206,
+      "chemistry_mode": "cached_encoder"
+    },
+    {
+      "cohort": "control-three",
+      "rows": 1648,
+      "feature_spec_sha256": "6b2066af18343641901c811ec8c5c53a4b56b4070cacb35ce45d53f6d4932a93",
+      "protein_cache_rows": 5159,
+      "chemistry_mode": "cached_encoder"
+    },
+    {
+      "cohort": "control-three",
+      "rows": 1648,
+      "feature_spec_sha256": "60e19d02822ab788fdfadf66a5220f291fe4b3c90968b1986b75b48b952d3f1c",
+      "protein_cache_rows": 5159,
+      "chemistry_mode": "cached_encoder"
+    },
+    {
+      "cohort": "control-three",
+      "rows": 1648,
+      "feature_spec_sha256": "f61a7bd301c3fa17bd03f0b19c8167492921f5eea61fdfb197b73209975366c5",
+      "protein_cache_rows": 5159,
+      "chemistry_mode": "chiral_morgan_rdkit"
+    },
+    {
+      "cohort": "control-four",
+      "rows": 1648,
+      "feature_spec_sha256": "6b2066af18343641901c811ec8c5c53a4b56b4070cacb35ce45d53f6d4932a93",
+      "protein_cache_rows": 5159,
+      "chemistry_mode": "cached_encoder"
+    },
+    {
+      "cohort": "control-four",
+      "rows": 1648,
+      "feature_spec_sha256": "60e19d02822ab788fdfadf66a5220f291fe4b3c90968b1986b75b48b952d3f1c",
+      "protein_cache_rows": 5159,
+      "chemistry_mode": "cached_encoder"
+    },
+    {
+      "cohort": "control-four",
+      "rows": 1648,
+      "feature_spec_sha256": "f61a7bd301c3fa17bd03f0b19c8167492921f5eea61fdfb197b73209975366c5",
+      "protein_cache_rows": 5159,
+      "chemistry_mode": "chiral_morgan_rdkit"
+    },
+    {
+      "cohort": "control-four",
+      "rows": 1648,
+      "feature_spec_sha256": "9cde3fd5d87e5e4d597393f640a5b8eb9ede702f853e9511e88841414e682db7",
+      "protein_cache_rows": 5159,
+      "chemistry_mode": "cached_encoder"
+    }
+  ],
+  "standard_library_only": true,
+  "models_loaded": 0,
+  "upstream_weights_read": 0,
+  "new_fits": 0,
+  "new_predictions": 0,
+  "scope": "Exact target runtime input closure; blocked-source/external/history-output references explicitly are not execution dependencies; no global closure graph rebuild or full neural training claim"
+}

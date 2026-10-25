@@ -1,0 +1,83 @@
+{
+  "schema": "chemical-head.four-representation-joint-audit.homology-v3",
+  "at_utc": "2026-10-24T23:17:19.495935+00:00",
+  "valid": true,
+  "assembler_sha256": "9f896cab0e512018615fb4bb3d49cd9d2c03b153f287006ca899231ed9ee100d",
+  "source_global_manifest_sha256": "971a1feaafeae45e0e4f29092b80405419d8d47100b0a3e5e936c82ecc0e44c0",
+  "prior_150_joint_path": "record-ref:project\\baselines\\chemical-encoder-benchmark-20261024-v1\\actual-results-audit-homology-v3\\JOINT-AUDIT.actual.json",
+  "prior_150_joint_sha256": "0c30f3e10c913438500f0fa27123bf2b5c3a4c893532f7aabef3e49317d7aa1f",
+  "prior_150_raw_predictions_reaudited_here": false,
+  "accepted_prior_selected_units": 150,
+  "fresh_selected_units": 50,
+  "actual_selected_units": 200,
+  "expected_selected_units": 200,
+  "validated_candidate_fits": 400,
+  "accepted_prior_frozen_auditor_checks": 303837,
+  "fresh_frozen_auditor_checks": 101279,
+  "accepted_total_frozen_auditor_checks": 405116,
+  "accepted_prior_independent_metadata_checks": 295200,
+  "fresh_independent_metadata_checks": 98400,
+  "local_mean_SD_checks": 2400,
+  "base_three_manifest_sha256": "963c7bc996643d8c63ccd67c9c2d7697eedf2882a4495367b3dd77bdbc42dace",
+  "four_representation_manifest_sha256": "e2deb8ee4d3533c33d87401f8df35eb0ea5a3c366e06a6f46d662772bc729190",
+  "cohort_csv_sha256": "4f4694b8937c6e3bd2e5b1091faf948fd66ecc57180b09d0ff5c236cded83c60",
+  "split_counts": {
+    "fine_train": 497,
+    "validation": 495,
+    "test": 656
+  },
+  "fourth_audit_sha256": "e4b0d226cd0b99cce0f88b2431ea288ed17084464d32fc82160743eaab029300",
+  "fourth_summary_sha256": "17b7b107a9cb4b5e755037fda2ea44c57561cc0c4b611d84bc220207ee81c33c",
+  "old_summary_sha256": "e97bbc1e3fd7bac5d733edb3af70d4d5b1380aec976a149c5c1d6bb9c7501bf7",
+  "all_layers": [
+    "NC_all",
+    "PTM",
+    "PTM_bearing",
+    "all",
+    "exclude_discordance",
+    "flagged_discordance",
+    "other_NC",
+    "standard20_control",
+    "synthetic_D_backbone",
+    "synthetic_and_PTM"
+  ],
+  "models": [
+    "constant",
+    "ridge",
+    "random_forest",
+    "extra_trees",
+    "hist_gradient_boosting"
+  ],
+  "representations": [
+    "hybrid",
+    "mlm",
+    "morgan",
+    "peptideclm2025"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "paper_accounting": "Three chemical encoder weight variants from two papers; Morgan is a handcrafted control. Four representations are not four paper reproductions.",
+  "input_adapters": "CLM2 ringfix; PeptideCLM2025 SPEfix with adapted CLS/SEP-inclusive mean pooling, not author-native tokenizer/pooling.",
+  "comparison_role": "Identical cases/order/labels/groups and fixed target ESM320, same ordinary-head HPO/seed budget; feature dimensions and pretraining corpora differ.",
+  "new_fits": 0,
+  "new_predictions": 0,
+  "models_or_encoders_loaded": 0,
+  "metric_file_hashes": {
+    "HEAD-CHEMICAL-2000.actual.csv": "07990d7e3c501f96f369660c41cc3790c07373205f2dc5bd15573ef31fdd609a",
+    "HEAD-OVERALL-200.actual.csv": "eb1a1c5c6ce617b73112ec093c4104c091a97e1e8fdb7f8a932e919de115bfc4",
+    "TEN-SEED-FOUR-REPRESENTATIONS.actual.csv": "a7ad928c24cb0531e66a44317adbe3dbfdc93b998d83f5f6a6847fe721c99349",
+    "PAIRED-HEAD-MAE-300.actual.csv": "d70757be84e49ccb744dd20f4508bc1e9bd6daaf876a2fa9608a0e7c872fc977",
+    "GROUP-MACRO-PER-SEED-200.actual.csv": "3760d4e3d01aed0684f1e47cf875a14bf12f4cd4732ce53e2c79153ecbf4ca61",
+    "GROUP-MACRO-TEN-SEED-20.actual.csv": "62e06983e70a09837ee33718121b8b401a227b9b01904bfb761c39b7f4577d34"
+  }
+}

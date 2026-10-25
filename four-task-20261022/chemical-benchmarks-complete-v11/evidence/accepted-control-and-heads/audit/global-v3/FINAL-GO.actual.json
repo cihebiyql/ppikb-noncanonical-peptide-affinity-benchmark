@@ -1,0 +1,177 @@
+{
+  "schema": "peptide.global-freeze-v3.independent-review.v1",
+  "at_utc": "2026-10-24T21:55:51.278575+00:00",
+  "valid": true,
+  "checks": 422963,
+  "errors": [],
+  "disposition": "GO_NEW_COHORT_AND_BENCHMARK_PREPARATION_ONLY",
+  "manifest_path": "record-ref:project\\data\\global-freeze-20261025-v3-homology\\frozen-manifest.json",
+  "manifest_sha256": "971a1feaafeae45e0e4f29092b80405419d8d47100b0a3e5e936c82ecc0e44c0",
+  "producer_sha256": "7e906e0c903d27e089bef793beb27c8a2aac863f6e11da4dbd42646541017792",
+  "parent_manifest_sha256": "8825563afe9eedec17e940d06ba0f36ae6ddf1e5337ca1c1bdd4265f62a52582",
+  "independent_positive_input_sha256": "cd747503ba488e66d4d9d5106860353a8870be4e15d91ce61bfe7478d32d9a5a",
+  "lossless_positive_adapter_sha256": "d4e384dbf8ad30bc9ac959086c1497984462e7dd15097391b8475d972fa1cf40",
+  "panels": {
+    "source": {
+      "counts": {
+        "validation": 937,
+        "test": 988
+      },
+      "roles": {
+        "quarantine": 30635,
+        "external": 17037,
+        "external_background": 329,
+        "validation": 937,
+        "test": 988,
+        "pretrain": 2
+      },
+      "role_changes": [],
+      "groups": 16887
+    },
+    "target": {
+      "counts": {
+        "validation": 579,
+        "test": 695,
+        "fine_train": 554
+      },
+      "roles": {
+        "quarantine": 30733,
+        "external": 17037,
+        "external_background": 329,
+        "validation": 579,
+        "test": 695,
+        "fine_train": 554,
+        "pretrain": 1
+      },
+      "role_changes": [
+        {
+          "dataset": "ppikb_kd",
+          "row_id": "PPIKB_all_endpoints:PPIRE16172",
+          "old": "validation",
+          "new": "quarantine",
+          "reason": "dependency_to_external"
+        },
+        {
+          "dataset": "ppikb_kd",
+          "row_id": "PPIKB_all_endpoints:PPIRE16173",
+          "old": "validation",
+          "new": "quarantine",
+          "reason": "dependency_to_external"
+        },
+        {
+          "dataset": "ppikb_kd",
+          "row_id": "PPIKB_all_endpoints:PPIRE16174",
+          "old": "validation",
+          "new": "quarantine",
+          "reason": "dependency_to_external"
+        },
+        {
+          "dataset": "ppikb_kd",
+          "row_id": "PPIKB_all_endpoints:PPIRE16175",
+          "old": "validation",
+          "new": "quarantine",
+          "reason": "dependency_to_external"
+        },
+        {
+          "dataset": "ppikb_kd",
+          "row_id": "PPIKB_all_endpoints:PPIPT00657",
+          "old": "validation",
+          "new": "quarantine",
+          "reason": "dependency_to_external"
+        }
+      ],
+      "groups": 8291
+    }
+  },
+  "current_used_unique_targets": 763,
+  "role_target_counts": {
+    "validation": 171,
+    "test": 187,
+    "fine_train": 128,
+    "pretrain": 1,
+    "external": 276
+  },
+  "current_crossrole_coverage_total": {
+    "all_pairs": 212699,
+    "length_upper_bound_excluded": 116643,
+    "prior_actual_alignment": 5619,
+    "legacy_all_pair_scope": 90437
+  },
+  "current_crossrole_coverage": {
+    "pretrain__fine_train": {
+      "all_pairs": 128,
+      "length_upper_bound_excluded": 105,
+      "prior_actual_alignment": 23
+    },
+    "pretrain__validation": {
+      "all_pairs": 171,
+      "length_upper_bound_excluded": 156,
+      "prior_actual_alignment": 15
+    },
+    "pretrain__test": {
+      "all_pairs": 187,
+      "length_upper_bound_excluded": 168,
+      "prior_actual_alignment": 19
+    },
+    "pretrain__external": {
+      "all_pairs": 276,
+      "length_upper_bound_excluded": 263,
+      "prior_actual_alignment": 13
+    },
+    "fine_train__validation": {
+      "all_pairs": 21888,
+      "legacy_all_pair_scope": 21888
+    },
+    "fine_train__test": {
+      "all_pairs": 23936,
+      "legacy_all_pair_scope": 23936
+    },
+    "fine_train__external": {
+      "all_pairs": 35328,
+      "length_upper_bound_excluded": 30812,
+      "prior_actual_alignment": 1188,
+      "legacy_all_pair_scope": 3328
+    },
+    "validation__test": {
+      "all_pairs": 31977,
+      "legacy_all_pair_scope": 31977
+    },
+    "validation__external": {
+      "all_pairs": 47196,
+      "length_upper_bound_excluded": 40710,
+      "legacy_all_pair_scope": 4446,
+      "prior_actual_alignment": 2040
+    },
+    "test__external": {
+      "all_pairs": 51612,
+      "length_upper_bound_excluded": 44429,
+      "legacy_all_pair_scope": 4862,
+      "prior_actual_alignment": 2321
+    }
+  },
+  "residual_positive_edges": [],
+  "prior_actual_unique_alignments_reused": 5867,
+  "new_real_alignments": 0,
+  "models_loaded": 0,
+  "new_fits": 0,
+  "expected_model_cohort_counts_before_new_input_only_freeze": {
+    "native": {
+      "fine_train": 388,
+      "validation": 345,
+      "test": 502
+    },
+    "ringfix": {
+      "fine_train": 497,
+      "validation": 495,
+      "test": 656
+    }
+  },
+  "old_results_remain_legacy": true,
+  "old_v2_training_resume_authorized": false,
+  "new_cohort_actual_freeze_and_review_required": true,
+  "qualifications": [
+    "Coverage is limited to current763 unique role targets under frozen Bio1.85/30%identity/80%dualcoverage/exactcontainment definitions; not an all15k/quarantine matrix.",
+    "Foundation model unsupervised corpus exposure and full external chemical/construct certification remain separate unresolved axes.",
+    "This data GO permits zero-NN cohort freezing and benchmark preparation; actual CPU/GPU model execution still needs the sole resource owner current admission and proper contract."
+  ]
+}

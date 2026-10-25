@@ -1,0 +1,110 @@
+{
+  "schema": "chemical-head.fresh-expanded-four-representation-audit.v1",
+  "at_utc": "2026-10-25T00:23:23.081833+00:00",
+  "valid": true,
+  "assembler_sha256": "9f813a36bc4c31bf2d70cc62acd435ef6014e54ae487f64113d70bf35c6e5e28",
+  "model_cohort_manifest_sha256": "93cdc000433e3c0babd7a5b7e183acd2fbe25649f4d2e7d5d95f5f0ad5aacae4",
+  "cohort_csv_sha256": "c3d8f4e42600f0c762bb9d2d24595a32c8f13de7a1f5018d59047d241dd8525a",
+  "parent_global_manifest_sha256": "971a1feaafeae45e0e4f29092b80405419d8d47100b0a3e5e936c82ecc0e44c0",
+  "merged_protein_cache_sha256": "00280efab4a6cf613db2edcc76733a351cbe90466941e4564dbef8413d2777bd",
+  "merged_protein_shape": [
+    5206,
+    320
+  ],
+  "expansion_independent_GO_sha256": "265dac9eeb17539a6e56bad593b0016c7bfeed287b5bfcf8e26f005475a0a767",
+  "split_counts": {
+    "fine_train": 531,
+    "validation": 570,
+    "test": 685
+  },
+  "expected_selected_units": 200,
+  "actual_selected_units": 200,
+  "validated_candidate_fits": 400,
+  "all_four_fresh_frozen_auditor_checks": 444316,
+  "all_four_fresh_independent_metadata_checks": 411000,
+  "mean_SD_checks": 2400,
+  "audit_receipts": {
+    "hybrid": {
+      "path": "record-ref:project\\baselines\\chemical-encoder-benchmark-20261024-v1\\actual-results-audit-expanded-v3\\hybrid--20261025T002032Z\\audit.json",
+      "sha256": "e5a55ab2bb7ff39a59b771b2e5f86e198d47bcfe08046965fa4ed09e36d16e63",
+      "checks": 111079,
+      "process_sha256": "d935c8fb1fedbbd80b914db0d09d44454dd04e109879db512893b4cd58abd38c"
+    },
+    "mlm": {
+      "path": "record-ref:project\\baselines\\chemical-encoder-benchmark-20261024-v1\\actual-results-audit-expanded-v3\\mlm--20261025T002048Z\\audit.json",
+      "sha256": "e5a55ab2bb7ff39a59b771b2e5f86e198d47bcfe08046965fa4ed09e36d16e63",
+      "checks": 111079,
+      "process_sha256": "a7939cbab1661059cd0826e6a136f3c8e3e7e52d181baa1c5813f9abec2d7c16"
+    },
+    "morgan": {
+      "path": "record-ref:project\\baselines\\chemical-encoder-benchmark-20261024-v1\\actual-results-audit-expanded-v3\\morgan--20261025T002105Z\\audit.json",
+      "sha256": "e5a55ab2bb7ff39a59b771b2e5f86e198d47bcfe08046965fa4ed09e36d16e63",
+      "checks": 111079,
+      "process_sha256": "df53ba1dd588b35350a98badfeb815f210e266571777af14a0c35322d165db60"
+    },
+    "peptideclm2025": {
+      "path": "record-ref:project\\baselines\\chemical-encoder-benchmark-20261024-v1\\actual-results-audit-expanded-v3\\peptideclm2025--20261025T002122Z\\audit.json",
+      "sha256": "e5a55ab2bb7ff39a59b771b2e5f86e198d47bcfe08046965fa4ed09e36d16e63",
+      "checks": 111079,
+      "process_sha256": "204fcfd3e8e5312bd3edf7d8a95f0ec782be3a0510b239073617b6048c1bb286"
+    }
+  },
+  "new_data_cases_all_raw_ID_labels_groups_checked": true,
+  "old1648_or656_model_scores_used": false,
+  "test_dependency_groups": 155,
+  "representations": [
+    "hybrid",
+    "mlm",
+    "morgan",
+    "peptideclm2025"
+  ],
+  "models": [
+    "constant",
+    "ridge",
+    "random_forest",
+    "extra_trees",
+    "hist_gradient_boosting"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "all_strata": [
+    "NC_all",
+    "PTM",
+    "PTM_bearing",
+    "all",
+    "exclude_discordance",
+    "flagged_discordance",
+    "other_NC",
+    "standard20_control",
+    "synthetic_D_backbone",
+    "synthetic_and_PTM"
+  ],
+  "metric_file_hashes": {
+    "HEAD-CHEMICAL-2000.actual.csv": "3ba9c24695c7ac48b0b96239e9361cb0feee7f8a1a28842ee89948b587ffb0c2",
+    "HEAD-OVERALL-200.actual.csv": "0f58c562068f9b26ad55e35170a13a5ecccee75f458e8a8c25b548936246d67b",
+    "TEN-SEED-FOUR-REPRESENTATIONS.actual.csv": "3e0f102d7d5e356ed53d07faba204097ed7cf2016922e813ae4004342bde655b",
+    "PAIRED-HEAD-MAE-300.actual.csv": "3bd222932863434fc7426b6a0d2edaf199d27336e02864d3971c512f75e938e8",
+    "GROUP-MACRO-TEN-SEED-20.actual.csv": "5516f2058c15559fd5b4c50d91864fb73dab37671967171678f1f8de0239cdb3",
+    "group-macro-per-seed.actual.csv": "dec7f502e7ad4c09d5286aa8ab8d06c24c0e1598f02c8ec0df2defdf4b6ef845"
+  },
+  "paper_accounting": "Three chemical encoder variants from two papers plus handcrafted Morgan control; not four paper reproductions.",
+  "new_audit_fits": 0,
+  "new_audit_predictions": 0,
+  "new_audit_model_or_encoder_loads": 0,
+  "limitations": [
+    "Historical seen tests are not prospective blind tests",
+    "Expanded coverage is a separate dataset experiment; 685 and old656 scores are not directly interchangeable",
+    "Adapted ring/SPE tokenization and2025 pooling remain explicitly qualified",
+    "Unknown foundation-model historical corpus exposure and external chemical identity remain separate axes"
+  ]
+}

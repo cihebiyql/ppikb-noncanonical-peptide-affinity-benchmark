@@ -1,0 +1,117 @@
+{
+  "schema": "peptide.reviewed-positive-target-edges.v1",
+  "source_reviewed_manifest_sha256": "cd747503ba488e66d4d9d5106860353a8870be4e15d91ce61bfe7478d32d9a5a",
+  "parent_global_manifest_sha256": "8825563afe9eedec17e940d06ba0f36ae6ddf1e5337ca1c1bdd4265f62a52582",
+  "numeric_labels_used_for_edges": false,
+  "positive_pairs": [
+    {
+      "target_a_sha256": "000766728e3fd1887000557b020133a1d8916f9a8400c15c000e02fb113c29a0",
+      "target_b_sha256": "afb991c8411797c646cf1454046e102faff1e289f5071b490ac90a75a7670c0c",
+      "source_pair_id": "5cf0f4236427161c684ad82dfc18f19936c8dfb3abb6e12b4fff8245a7797aec",
+      "left_role": "validation",
+      "right_role": "external",
+      "alignment": {
+        "identity": 0.6837606837606838,
+        "paired_columns": 117,
+        "query_coverage": 0.9669421487603306,
+        "target_coverage": 0.8863636363636364,
+        "score": 379.0,
+        "reason": "BLOSUM62_first_optimal_local"
+      }
+    },
+    {
+      "target_a_sha256": "af386bb2b7dab1193f4e5b2c6bc4c660a743cbac0583d8d18ccab3ffcd8433f3",
+      "target_b_sha256": "170c79e01909e71eb41824bf807f9efeb675283adfa12188e5a9d36856875598",
+      "source_pair_id": "7897652de0270362b7a059ebef6eff70da6b01c6edc5f366839ddb4d16d0d2a6",
+      "left_role": "validation",
+      "right_role": "external",
+      "alignment": {
+        "identity": 0.30303030303030304,
+        "paired_columns": 66,
+        "query_coverage": 0.8048780487804879,
+        "target_coverage": 0.8148148148148148,
+        "score": 29.0,
+        "reason": "BLOSUM62_first_optimal_local"
+      }
+    }
+  ],
+  "alignment_definition": {
+    "Bio_version": "1.85",
+    "matrix": "BLOSUM62",
+    "mode": "local",
+    "gap_open": -10,
+    "gap_extend": -0.5,
+    "identity_min": 0.3,
+    "both_coverage_min": 0.8,
+    "first_optimal_alignment": true,
+    "containment_shorter_min_aa": 40
+  },
+  "candidate_scope": "765 currently used unique targets across distinct declared roles; external-internal and within-role pairs excluded. No all15k/quarantine matrix certification; foundation pretraining exposure remains unknown.",
+  "actual_screened_unique_pairs": 5867,
+  "evidence_inputs": [
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\data\\global-freeze-20261025-v3-homology\\prepare_reviewed_input.py",
+      "sha256": "2fec52fdfa85dfa0061b9ce59f17ab52f344e656e7061fdc21f938323ec1ca8c"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\reports\\global-target-homology-feasibility-v1\\ACTIVE-BOUNDARY-MANIFEST.json",
+      "sha256": "e59a2311ceb01e9bb8ae34a355b80a33deeaa353908884675adbed886e856126"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\reports\\global-target-homology-role-extension-v1\\NODE-IMPACT.actual.json",
+      "sha256": "1b78f1e6e296d631230f685b8c67a0271419c11cfb87100455aa811ed27cd965"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\reports\\global-target-homology-role-extension-v1\\REVIEWED-POSITIVE-EDGES.actual.json",
+      "sha256": "cd747503ba488e66d4d9d5106860353a8870be4e15d91ce61bfe7478d32d9a5a"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\reports\\global-target-homology-role-extension-v1\\SHARD00-MANIFEST.json",
+      "sha256": "fc2948651e7fb40022721b1a5839cab0a56ef35d9bf89384db3ce12e6b63bb5f"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\reports\\global-target-homology-role-extension-v1\\SHARD01-MANIFEST.json",
+      "sha256": "8c1bd7fb36694576d96a4369cb1411c3f434d04e534992068319321abc347290"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\reports\\global-target-homology-role-extension-v1\\SHARD02-MANIFEST.json",
+      "sha256": "7a75e9d7f325505c692ec010a96dcf5df12c3c6426fd8f89c94ecf39ee660656"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\reports\\global-target-homology-role-extension-v1\\TERMINAL-INDEPENDENT-AUDIT.actual.json",
+      "sha256": "9aae9731d58479b1a7ac9441cdcd9da1a7bfac9e17c9a6529096e32ec60f4252"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\reports\\global-target-homology-role-extension-v1\\preliminary-resource-field-schema-mismatch\\REVIEWED-POSITIVE-EDGES.actual.json",
+      "sha256": "b74930b0019a6249c7465b249e659a5e64d6af7ad1aa71cf9c0e5c8edb69ded8"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\reports\\global-target-homology-role-extension-v1\\preliminary-resource-field-schema-mismatch\\TERMINAL-INDEPENDENT-AUDIT.actual.json",
+      "sha256": "8be1c907fd31bcc1b3408502b04d96c74a812537cb6a2897de4e553514046872"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\resources\\chemical-route-20261024-v1\\collected\\homology-boundary-final-v1\\002-pair-results.jsonl",
+      "sha256": "1789c10c6444b2acb521bd8aa60040dbf93e0d03eea326f29b4a719ad3085417"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\resources\\chemical-route-20261024-v1\\collected\\homology-boundary-final-v1\\013-pair-results.jsonl",
+      "sha256": "0cb73c2cf21ff96d533752cb59947a3aaf905b785e92993ff3a8f41ab8439380"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\resources\\chemical-route-20261024-v1\\collected\\homology-boundary-final-v1\\019-pair-results.jsonl",
+      "sha256": "492114ae55aa74f8f3d23ad01ac43f5e5d58dbb109efe71228828ab16b8c050e"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\resources\\chemical-route-20261024-v1\\collected\\homology-boundary-final-v1\\025-pair-results.jsonl",
+      "sha256": "1824f8ac3f4a0654c5e1ae264686c154daf34f561709bd98f5cbf545069f7b6b"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\resources\\chemical-route-20261024-v1\\collected\\homology-boundary-final-v1\\LOCAL-MIRROR-MAP.actual.json",
+      "sha256": "34698c0b177b183ea91f08a257e618cea632f97932065c3c085a0abf5e61235b"
+    },
+    {
+      "path": "D:\\work\\科研工作台\\research-tasks\\peptide-four-task-benchmark-20261022\\resources\\chemical-route-20261024-v1\\collected\\homology-boundary-final-v1\\POSITIVE-ROWS.raw-actual.json",
+      "sha256": "b5b6641415101eac303b51b87b17322c705b901edb2b59fdc27757c6c2ee9241"
+    }
+  ]
+}

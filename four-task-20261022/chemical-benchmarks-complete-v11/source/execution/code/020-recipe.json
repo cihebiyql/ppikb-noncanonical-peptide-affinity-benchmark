@@ -1,0 +1,25 @@
+{
+  "schema": "peptideclm2025.spe-output-adapter.v1",
+  "name": "peptideclm2025_spe_cccc_to_cc_cc_v1",
+  "model": "aaronfeller/PeptideCLM-23M-all",
+  "revision": "a0847d8231d236645a2c4f629590118716c6fdda",
+  "author_tokenizer_sha256": "753dd37948caaa3ebeceedf8cfc5313477ae3fb1717f522df7a01ae1a39582e9",
+  "vocabulary_sha256": "96af9b4e0aa1fee93a9123720c1a46f977269ecc4ff81ac1cd4e0385b8f4aa2e",
+  "spe_splits_sha256": "90446eadc9a1d8722be58b6b8e31c2756e0d321cd448cb5fae7538a33e3e3af4",
+  "only_rule": {
+    "absent_piece": "cccc",
+    "replacement": [
+      "cc",
+      "cc"
+    ],
+    "existing_cc_id": 92
+  },
+  "other_unknown_policy": "Reject, unchanged from reviewed native loader",
+  "max_tokens_including_special": 768,
+  "truncation": false,
+  "pooling": "adapted_masked_mean_including_cls_sep",
+  "raw_smiles_modified": false,
+  "weights_modified": false,
+  "vocabulary_modified": false,
+  "identity_scope": "Explicit project input adapter; preserve separate native baseline and failed run"
+}

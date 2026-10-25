@@ -1,0 +1,44 @@
+{
+  "schema": "peptideclm2025.raw-audited10-plus-accepted220-comparison.v1",
+  "at": "2026-10-25T00:08:56.380228+00:00",
+  "status": "passed",
+  "checks": 4609,
+  "errors": [],
+  "configurations": 23,
+  "selected_model_seed_units": 230,
+  "prior220_proof_sha256": "f96c8fe0698e925c5fc5965904771f9b2e2db51ddc63dbc5251b1fb88c58c684",
+  "prior220_table_sha256": "78065470f4d5129f0604389756740c2f8a8c06c165fa7d041889ed02a94a27dd",
+  "new10_raw_audit_sha256": "cd4f8f3a7cdf32687197025450b8b30be40c1af7b1f09e068d9e8e6c63bf9aa5",
+  "new10_table_sha256": "bf992cb795c29fc1fc92d923f93796da2d1f4c5cee02f42ab01c0f31a3cad509",
+  "cohort_csv_sha256": "4f4694b8937c6e3bd2e5b1091faf948fd66ecc57180b09d0ff5c236cded83c60",
+  "new2025_manifest_sha256": "e2deb8ee4d3533c33d87401f8df35eb0ea5a3c366e06a6f46d662772bc729190",
+  "prior_CLM2_manifest_sha256": "963c7bc996643d8c63ccd67c9c2d7697eedf2882a4495367b3dd77bdbc42dace",
+  "combined_per_seed_rows": 2300,
+  "combined_summary_rows": 230,
+  "source_sha256": "8c520721323a977fcd16c7f442a8ed9cbde9c9da04539325924c57b84810ecb5",
+  "combined_metrics_sha256": "baf4a5d980493d015075cc7981a794a59dc9c180c9ed258fa90cb502853cea9d",
+  "combined_summary_sha256": "70fd1457b68531fd8bebcacf5bdfa64eb8422b718771d6b44545ab2e4333dd8b",
+  "evidence_boundary": "New2025 rawCSV recomputation is bound to freshselected10 audit. Prior200 frozenhead +20CLM2 actual scores are reused by exact acceptedf96c proof and derivativeSHA; not claimed freshly recomputed again.",
+  "interpretation": [
+    "All cases, rawlabels, roles and groups share exactCSV4f; differentmanifest hashes reflect feature-membership/source bookkeeping.",
+    "Current23 configurations contain three chemical neural weightvariants from two papers plus Morgancontrols; configurationcount is not papercount.",
+    "Across-seed SD is optimization repeat variability on fixed historicaltest, not biologicalreplicates or independentdatasample CI.",
+    "Modelsize31M/43M, adaptedtokenizers/pooling, inputdimensions832/1088 and actualresourcebudgets4/8GiB differ; this is a same-case protocolcomparison, not equalFLOPs.",
+    "All rankings are descriptive TEST results; no new tuning or modelselection performed here."
+  ],
+  "execution": {
+    "NN": 0,
+    "fit": 0,
+    "predict": 0,
+    "weightsloaded": 0
+  },
+  "process": {
+    "pid": 82924,
+    "cpu_affinity_mask": 1,
+    "priority": "IDLE",
+    "Windows_process_commit_limit_bytes": 2147483648,
+    "wall_time_limit_seconds": 180,
+    "Linux_AS_limit_not_applicable": true
+  },
+  "seconds": 0.0940000000409782
+}

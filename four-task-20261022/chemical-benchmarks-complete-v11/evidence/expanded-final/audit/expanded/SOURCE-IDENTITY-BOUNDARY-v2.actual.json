@@ -1,0 +1,57 @@
+{
+  "schema": "expanded1786.source-identity-field-vs-frozen-alias-boundary.v1",
+  "status": "PASS",
+  "cohort_csv_sha256": "c3d8f4e42600f0c762bb9d2d24595a32c8f13de7a1f5018d59047d241dd8525a",
+  "global_manifest_sha256": "971a1feaafeae45e0e4f29092b80405419d8d47100b0a3e5e936c82ecc0e44c0",
+  "role_assignments_sha256": "2f2aab332e2d1ba9297384800b87c995767eddb7a3e94eae2618ca217a0a01d5",
+  "source_producer_sha256": "7e906e0c903d27e089bef793beb27c8a2aac863f6e11da4dbd42646541017792",
+  "summary": [
+    {
+      "split": "fine_train",
+      "rows": 531,
+      "study_id_blank_rows": 146,
+      "global_alias_source_known_rows": 531,
+      "global_alias_source_unknown_rows": 0,
+      "blank_study_but_global_alias_known": 146,
+      "blank_study_and_global_alias_unknown": 0,
+      "unknown_source_roles": {}
+    },
+    {
+      "split": "validation",
+      "rows": 570,
+      "study_id_blank_rows": 92,
+      "global_alias_source_known_rows": 570,
+      "global_alias_source_unknown_rows": 0,
+      "blank_study_but_global_alias_known": 92,
+      "blank_study_and_global_alias_unknown": 0,
+      "unknown_source_roles": {}
+    },
+    {
+      "split": "test",
+      "rows": 685,
+      "study_id_blank_rows": 44,
+      "global_alias_source_known_rows": 685,
+      "global_alias_source_unknown_rows": 0,
+      "blank_study_but_global_alias_known": 44,
+      "blank_study_and_global_alias_unknown": 0,
+      "unknown_source_roles": {}
+    }
+  ],
+  "static_source_alias_policy": "Known DOI in study_id/source_ITC_DOI or inherited valid DOI/PMID/title alias. Unknown/none/null/nan/notreported/n-a sentinels rejected. Nonempty raw study_id alone is not certification.",
+  "role_policy": "Unknown-source pretrain/fine_train are quarantined, but locked preexisting Kd validation/test may remain qualified evaluation.",
+  "limitations": [
+    "Global source_known denotes a retained alias, not original-paper experimental or chemical-identity certification.",
+    "Blank study_id is not equivalent to absent source aliases or a newly proven leak.",
+    "No universal source completeness, family-cold separation, or foundation pretraining exclusion is certified."
+  ],
+  "NN": 0,
+  "fit": 0,
+  "process": {
+    "pid": 124708,
+    "cpu_affinity_mask": 1,
+    "priority": "IDLE",
+    "Windows_process_commit_limit_bytes": 2147483648,
+    "wall_time_limit_seconds": 180,
+    "Linux_AS_limit_not_applicable": true
+  }
+}

@@ -24,3 +24,4 @@
 |[训练预算审计与首例验证补充 v8](training-budget-audit-v8/README.zh-CN.md)|原300候选20轮/p5审计：287早停、13到cap；首DGDTA验证候选24轮自然停，额外4轮无best改善，前20轮120数值完全相同。固定首例1/13历史快照，0TEST，非最新live计数；完整脱敏stderr与源码附。|
 |[跨任务防火墙与化学表征基准 v9](global-firewall-chemical-v9/README.zh-CN.md)|source训练0保持blocked；target554/584/695，共同输入388/346/502；同一CLM2论文Hybrid/MLM两个变体与Morgan共150选定模型/300候选，全部10种子及独审闭环。含词表317个出现UNK输入、14个非天然测试与flag敏感性限制；完整encoder微调另列。|
 |[化学基准历史结果与同源资格修订 v10](chemical-ringfix-native-v10-r3/README.zh-CN.md)|保留原生全encoder20/40、旧ringfix冻结150/300和条件外测坏结果；新增2条VAL↔external同源边使5条标准VAL隔离，旧内部成绩不承担严格外测独立选择。v3全局554/579/695、source0，新共同输入497/495/656均已独审；旧v2 GPU22/40封存、18未发、TEST0。2018两点疑似荧光标签错配隔离，conditional4须重新绑定；本快照未收录新v3模型成绩。|
+|[非标准肽化学基准完整结果 v11](chemical-benchmarks-complete-v11/README.zh-CN.md)|两个冻结cohort分别230模型、全部0–9种子；扩展531/570/685与对照497/495/656分开；全部400头候选＋60全微调候选/每cohort及逐样本预测、日志、原字节数据与评价代码；同一数据并集1786，非3434独立测量。独立gold外测0。|
